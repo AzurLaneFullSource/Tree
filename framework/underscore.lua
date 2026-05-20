@@ -221,8 +221,8 @@ end
 function var0_0.funcs.reverse(arg0_28)
 	local var0_28 = {}
 
-	for iter0_28 in var0_0.iter(arg0_28) do
-		table.insert(var0_28, 1, iter0_28)
+	for iter0_28 = #arg0_28, 1, -1 do
+		table.insert(var0_28, arg0_28[iter0_28])
 	end
 
 	return var0_28

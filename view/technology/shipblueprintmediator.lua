@@ -184,6 +184,7 @@ function var0_0.listNotificationInterests(arg0_20)
 		TaskProxy.TASK_ADDED,
 		TaskProxy.TASK_UPDATED,
 		TaskProxy.TASK_REMOVED,
+		TaskProxy.TASK_DELETE,
 		GAME.SUBMIT_TASK_DONE,
 		GAME.FINISH_SHIP_BLUEPRINT_DONE,
 		GAME.ITEM_LOCK_SHIP_BLUPRINT_DONE,
@@ -209,7 +210,7 @@ function var0_0.handleNotification(arg0_21, arg1_21)
 		arg0_21.viewComponent:clearSelected()
 		arg0_21.viewComponent:updateExchangeItems()
 		arg0_21.viewComponent:updateBuildInfo()
-	elseif var0_21 == TaskProxy.TASK_ADDED or TaskProxy.TASK_UPDATED == var0_21 or TaskProxy.TASK_REMOVED == var0_21 then
+	elseif var0_21 == TaskProxy.TASK_ADDED or TaskProxy.TASK_UPDATED == var0_21 or TaskProxy.TASK_REMOVED == var0_21 or TaskProxy.TASK_DELETE == var0_21 then
 		arg0_21.viewComponent:setTaskVOs(getProxy(TaskProxy):getTasksForBluePrint())
 		arg0_21.viewComponent:updateTaskList()
 		arg0_21.viewComponent:updateTasksProgress()

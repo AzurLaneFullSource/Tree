@@ -401,7 +401,7 @@ function var0_0.timeCall(arg0_13)
 						local var0_40 = getProxy(TaskProxy)
 
 						for iter0_40, iter1_40 in ipairs(var3_35:getConfig("config_data")) do
-							var0_40:removeTaskById(iter1_40)
+							var0_40:deleteTaskById(iter1_40)
 						end
 					end
 				})

@@ -264,6 +264,8 @@ pg.memory_group.all = {
 	362,
 	363,
 	364,
+	365,
+	366,
 	501,
 	502,
 	503,
@@ -399,14 +401,15 @@ pg.base.memory_group = {}
 
 ;(function()
 	pg.base.memory_group[1] = {
-		auto_unlock = "",
-		subtype = 0,
-		title = "Prologue",
+		ship_group = 0,
+		group_id = "",
 		type = 1,
 		link_event = 0,
-		icon = "title_main",
+		title = "Prologue",
+		auto_unlock = "",
+		subtype = 0,
 		id = 1,
-		group_id = "",
+		icon = "title_main",
 		memories = {
 			1,
 			2,
@@ -417,14 +420,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[2] = {
-		auto_unlock = "",
-		subtype = 0,
-		title = "Tora! Tora! Tora!",
+		ship_group = 0,
+		group_id = "",
 		type = 1,
 		link_event = 0,
-		icon = "title_main",
+		title = "Tora! Tora! Tora!",
+		auto_unlock = "",
+		subtype = 0,
 		id = 2,
-		group_id = "",
+		icon = "title_main",
 		memories = {
 			7,
 			8,
@@ -439,14 +443,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[3] = {
-		auto_unlock = "",
-		subtype = 0,
-		title = "Battle of Coral Sea",
+		ship_group = 0,
+		group_id = "",
 		type = 1,
 		link_event = 0,
-		icon = "title_main",
+		title = "Battle of Coral Sea",
+		auto_unlock = "",
+		subtype = 0,
 		id = 3,
-		group_id = "",
+		icon = "title_main",
 		memories = {
 			17,
 			18,
@@ -454,14 +459,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[4] = {
-		auto_unlock = "",
-		subtype = 0,
-		title = "Midway Showdown",
+		ship_group = 0,
+		group_id = "",
 		type = 1,
 		link_event = 0,
-		icon = "title_main",
+		title = "Midway Showdown",
+		auto_unlock = "",
+		subtype = 0,
 		id = 4,
-		group_id = "",
+		icon = "title_main",
 		memories = {
 			20,
 			21,
@@ -475,14 +481,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[98] = {
-		auto_unlock = "",
-		subtype = 0,
-		title = "Unlock \"Fate Simulation.\" ",
+		ship_group = 0,
+		group_id = "",
 		type = 1,
 		link_event = 0,
-		icon = "title_main",
+		title = "Unlock \"Fate Simulation.\" ",
+		auto_unlock = "",
+		subtype = 0,
 		id = 98,
-		group_id = "",
+		icon = "title_main",
 		memories = {
 			716,
 			717,
@@ -517,14 +524,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[99] = {
-		auto_unlock = "",
-		subtype = 0,
-		title = "Enter the Meowfficers! ",
+		ship_group = 0,
+		group_id = "",
 		type = 1,
 		link_event = 0,
-		icon = "title_main",
+		title = "Enter the Meowfficers! ",
+		auto_unlock = "",
+		subtype = 0,
 		id = 99,
-		group_id = "",
+		icon = "title_main",
 		memories = {
 			457,
 			458,
@@ -533,28 +541,30 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[100] = {
-		auto_unlock = "",
-		subtype = 0,
-		title = "Unlock the new Research feature. ",
+		ship_group = 0,
+		group_id = "",
 		type = 1,
 		link_event = 0,
-		icon = "title_main",
+		title = "Unlock the new Research feature. ",
+		auto_unlock = "",
+		subtype = 0,
 		id = 100,
-		group_id = "",
+		icon = "title_main",
 		memories = {
 			299,
 			300
 		}
 	}
 	pg.base.memory_group[101] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Strive, Wish and Strategize ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Strive, Wish and Strategize ",
+		auto_unlock = "",
+		subtype = 2,
 		id = 101,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			29,
 			30,
@@ -565,14 +575,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[102] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Divergent Chessboard",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Divergent Chessboard",
+		auto_unlock = "",
+		subtype = 1,
 		id = 102,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			35,
 			36,
@@ -596,14 +607,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[107] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Mid-Autumn Festival",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Mid-Autumn Festival",
+		auto_unlock = "",
+		subtype = 3,
 		id = 107,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			107,
 			108,
@@ -615,14 +627,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[108] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Visitors Dyed in Red",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Visitors Dyed in Red",
+		auto_unlock = "",
+		subtype = 1,
 		id = 108,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			114,
 			115,
@@ -645,14 +658,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[109] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Glorious Battle ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Glorious Battle ",
+		auto_unlock = "",
+		subtype = 2,
 		id = 109,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			132,
 			133,
@@ -667,14 +681,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[110] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Witches' Eve",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Witches' Eve",
+		auto_unlock = "",
+		subtype = 3,
 		id = 110,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			142,
 			143,
@@ -686,14 +701,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[111] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Bits of Courage",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Bits of Courage",
+		auto_unlock = "",
+		subtype = 3,
 		id = 111,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			149,
 			150,
@@ -705,14 +721,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[112] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Lively Afternoon Tea Party",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Lively Afternoon Tea Party",
+		auto_unlock = "",
+		subtype = 3,
 		id = 112,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			156,
 			157,
@@ -724,14 +741,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[113] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Sacred Love and Peace",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Sacred Love and Peace",
+		auto_unlock = "",
+		subtype = 3,
 		id = 113,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			163,
 			164,
@@ -744,14 +762,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[114] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Lunar New Year Celebration ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Lunar New Year Celebration ",
+		auto_unlock = "",
+		subtype = 3,
 		id = 114,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			171,
 			172,
@@ -763,14 +782,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[115] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Fallen Wings ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Fallen Wings ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 115,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			178,
 			179,
@@ -788,14 +808,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[116] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Winter Offensive",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Winter Offensive",
+		auto_unlock = "",
+		subtype = 3,
 		id = 116,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			189,
 			190,
@@ -807,14 +828,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[117] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "The Pursuit of Graf Spee ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "The Pursuit of Graf Spee ",
+		auto_unlock = "",
+		subtype = 2,
 		id = 117,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			196,
 			197,
@@ -828,14 +850,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[118] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Visitors From Another Dimension: Mission Cutscenes ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Visitors From Another Dimension: Mission Cutscenes ",
+		auto_unlock = "",
+		subtype = 2,
 		id = 118,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			10036,
 			10037,
@@ -847,14 +870,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[119] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Visitors From Another Dimension: Stage Cutscenes ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Visitors From Another Dimension: Stage Cutscenes ",
+		auto_unlock = "",
+		subtype = 2,
 		id = 119,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			10043,
 			10044,
@@ -867,14 +891,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[120] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "An Shan's Coloring Book ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "An Shan's Coloring Book ",
+		auto_unlock = "",
+		subtype = 3,
 		id = 120,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			205,
 			206,
@@ -884,14 +909,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[121] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Fu Shun's Great Adventure ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Fu Shun's Great Adventure ",
+		auto_unlock = "",
+		subtype = 3,
 		id = 121,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			210,
 			211,
@@ -900,14 +926,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[122] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Sea Star on Shore",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Sea Star on Shore",
+		auto_unlock = "",
+		subtype = 3,
 		id = 122,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			214,
 			215,
@@ -919,14 +946,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[123] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Winter's Crown ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Winter's Crown ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 123,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			221,
 			222,
@@ -949,14 +977,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[124] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Flower Festival",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Flower Festival",
+		auto_unlock = "",
+		subtype = 3,
 		id = 124,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			239,
 			240,
@@ -968,14 +997,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[125] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "School Day Celebrations",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "School Day Celebrations",
+		auto_unlock = "",
+		subtype = 3,
 		id = 125,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			253,
 			254,
@@ -987,14 +1017,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[126] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "The War God's Return ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "The War God's Return ",
+		auto_unlock = "",
+		subtype = 3,
 		id = 126,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			10018,
 			10019,
@@ -1003,14 +1034,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[128] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Year 36 Z Class Z23-Sensei",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Year 36 Z Class Z23-Sensei",
+		auto_unlock = "",
+		subtype = 3,
 		id = 128,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			10029,
 			10030,
@@ -1022,14 +1054,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[129] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Lady of Tomorrow",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Lady of Tomorrow",
+		auto_unlock = "",
+		subtype = 3,
 		id = 129,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			295,
 			296,
@@ -1038,14 +1071,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[131] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Ink-Stained Steel Sakura ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Ink-Stained Steel Sakura ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 131,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			10051,
 			10052,
@@ -1064,14 +1098,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[132] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Moonlit Overture ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Moonlit Overture ",
+		auto_unlock = "",
+		subtype = 2,
 		id = 132,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			10072,
 			10073,
@@ -1085,14 +1120,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[133] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Iris of Light and Dark ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Iris of Light and Dark ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 133,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			371,
 			372,
@@ -1108,14 +1144,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[134] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Angel or Devil in White? ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Angel or Devil in White? ",
+		auto_unlock = "",
+		subtype = 3,
 		id = 134,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			382,
 			383,
@@ -1125,14 +1162,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[135] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Midsummer Sagittarius ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Midsummer Sagittarius ",
+		auto_unlock = "",
+		subtype = 3,
 		id = 135,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			401,
 			402,
@@ -1143,14 +1181,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[136] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Mikasa's Model Museum ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Mikasa's Model Museum ",
+		auto_unlock = "",
+		subtype = 3,
 		id = 136,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			407,
 			408,
@@ -1159,14 +1198,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[137] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Ceremonial Gala ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Ceremonial Gala ",
+		auto_unlock = "",
+		subtype = 3,
 		id = 137,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			432,
 			433,
@@ -1176,14 +1216,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[138] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "The Special Banquet",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "The Special Banquet",
+		auto_unlock = "",
+		subtype = 3,
 		id = 138,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			437,
 			438,
@@ -1194,14 +1235,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[139] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Sparkling Battle Star!",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Sparkling Battle Star!",
+		auto_unlock = "",
+		subtype = 3,
 		id = 139,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			461,
 			462,
@@ -1210,14 +1252,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[141] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Trick or Treat Halloween Night! ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Trick or Treat Halloween Night! ",
+		auto_unlock = "",
+		subtype = 3,
 		id = 141,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			494,
 			495,
@@ -1229,14 +1272,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[145] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "The Solomon Ranger",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "The Solomon Ranger",
+		auto_unlock = "",
+		subtype = 2,
 		id = 145,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			574,
 			575,
@@ -1252,14 +1296,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[146] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Operation: Christmas! ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Operation: Christmas! ",
+		auto_unlock = "",
+		subtype = 3,
 		id = 146,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			592,
 			593,
@@ -1271,14 +1316,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[147] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Blessed New Year",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Blessed New Year",
+		auto_unlock = "",
+		subtype = 3,
 		id = 147,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			613,
 			614,
@@ -1290,14 +1336,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[148] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Crimson Echoes ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Crimson Echoes ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 148,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			620,
 			621,
@@ -1324,14 +1371,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[149] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Lunar New Yay-Yay-Year! ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Lunar New Yay-Yay-Year! ",
+		auto_unlock = "",
+		subtype = 3,
 		id = 149,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			677,
 			678,
@@ -1343,14 +1391,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[150] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Air Raid Drills with Essex ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Air Raid Drills with Essex ",
+		auto_unlock = "",
+		subtype = 2,
 		id = 150,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			684,
 			685,
@@ -1360,14 +1409,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[151] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Stars of the Shimmering Fjord",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Stars of the Shimmering Fjord",
+		auto_unlock = "",
+		subtype = 2,
 		id = 151,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			696,
 			697,
@@ -1384,14 +1434,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[152] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "\"Virtual Connection Synchronicity\" - Daily Memorabilia",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "\"Virtual Connection Synchronicity\" - Daily Memorabilia",
+		auto_unlock = "",
+		subtype = 2,
 		id = 152,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			728,
 			729,
@@ -1403,14 +1454,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[153] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "\"Virtual Connection Synchronicity\" - Purification",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "\"Virtual Connection Synchronicity\" - Purification",
+		auto_unlock = "",
+		subtype = 2,
 		id = 153,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			735,
 			736,
@@ -1419,14 +1471,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[154] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "\"Virtual Connection Synchronicity\" - Task",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "\"Virtual Connection Synchronicity\" - Task",
+		auto_unlock = "",
+		subtype = 2,
 		id = 154,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			739,
 			740,
@@ -1455,14 +1508,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[155] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Operation: Escape from Port!",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Operation: Escape from Port!",
+		auto_unlock = "",
+		subtype = 3,
 		id = 155,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			763,
 			764,
@@ -1472,14 +1526,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[156] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "\"One Small Promise\" ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "\"One Small Promise\" ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 156,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			775,
 			776,
@@ -1487,14 +1542,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[157] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Science Rules!",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Science Rules!",
+		auto_unlock = "",
+		subtype = 3,
 		id = 157,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			792,
 			793,
@@ -1504,14 +1560,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[158] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Scherzo of Iron and Blood",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Scherzo of Iron and Blood",
+		auto_unlock = "",
+		subtype = 1,
 		id = 158,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			797,
 			798,
@@ -1537,14 +1594,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[159] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "A Prayer for Peace ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "A Prayer for Peace ",
+		auto_unlock = "",
+		subtype = 3,
 		id = 159,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			818,
 			819,
@@ -1556,14 +1614,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[160] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Javelin's Monthly Manga ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Javelin's Monthly Manga ",
+		auto_unlock = "",
+		subtype = 3,
 		id = 160,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			825,
 			826,
@@ -1573,14 +1632,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[161] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Wallflower in the Corner ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Wallflower in the Corner ",
+		auto_unlock = "",
+		subtype = 3,
 		id = 161,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			840,
 			841,
@@ -1589,14 +1649,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[162] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Approaching Storm ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Approaching Storm ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 162,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			830,
 			831,
@@ -1611,14 +1672,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[163] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Ashen Simulacrum ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Ashen Simulacrum ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 163,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			851,
 			852,
@@ -1656,14 +1718,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[164] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Superstar of the Blue Seas ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Superstar of the Blue Seas ",
+		auto_unlock = "",
+		subtype = 3,
 		id = 164,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			884,
 			885,
@@ -1673,28 +1736,30 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[165] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Summer Festival ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Summer Festival ",
+		auto_unlock = "",
+		subtype = 3,
 		id = 165,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			889,
 			890
 		}
 	}
 	pg.base.memory_group[166] = {
+		ship_group = 0,
+		group_id = "",
+		type = 4,
+		link_event = 0,
+		title = "Hall of Fame",
 		auto_unlock = "",
 		subtype = 0,
-		title = "Hall of Fame",
-		type = 3,
-		link_event = 0,
-		icon = "title_chara_rongyaodiantang",
 		id = 166,
-		group_id = "",
+		icon = "title_chara_rongyaodiantang",
 		memories = {
 			1874,
 			1869,
@@ -1708,14 +1773,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[167] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Empyreal Tragicomedy ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Empyreal Tragicomedy ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 167,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			907,
 			908,
@@ -1743,14 +1809,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[168] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Swept Away in the Moment ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Swept Away in the Moment ",
+		auto_unlock = "",
+		subtype = 3,
 		id = 168,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			930,
 			931,
@@ -1759,14 +1826,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[169] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Crosswave ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Crosswave ",
+		auto_unlock = "",
+		subtype = 2,
 		id = 169,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			934,
 			935,
@@ -1776,14 +1844,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[170] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "The Enigma and the Shark ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "The Enigma and the Shark ",
+		auto_unlock = "",
+		subtype = 2,
 		id = 170,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			940,
 			941,
@@ -1798,14 +1867,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[171] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Halloween Chaos!",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Halloween Chaos!",
+		auto_unlock = "",
+		subtype = 3,
 		id = 171,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			950,
 			951,
@@ -1815,14 +1885,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[172] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Passionate Polaris",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Passionate Polaris",
+		auto_unlock = "",
+		subtype = 2,
 		id = 172,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			960,
 			961,
@@ -1851,14 +1922,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[173] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "A Day with Polaris",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "A Day with Polaris",
+		auto_unlock = "",
+		subtype = 2,
 		id = 173,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			990,
 			991,
@@ -1866,14 +1938,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[174] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Looking Glass of Fact and Fiction",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Looking Glass of Fact and Fiction",
+		auto_unlock = "",
+		subtype = 2,
 		id = 174,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			995,
 			996,
@@ -1929,14 +2002,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[175] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Looking Glass of Fact and Fiction - Funsies",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Looking Glass of Fact and Fiction - Funsies",
+		auto_unlock = "",
+		subtype = 2,
 		id = 175,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1046,
 			1047,
@@ -1951,14 +2025,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[176] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Christmas Party! ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Christmas Party! ",
+		auto_unlock = "",
+		subtype = 3,
 		id = 176,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1056,
 			1057,
@@ -1968,14 +2043,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[177] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Swirling Cherry Blossoms",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Swirling Cherry Blossoms",
+		auto_unlock = "",
+		subtype = 1,
 		id = 177,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1061,
 			1062,
@@ -2008,14 +2084,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[178] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Blessings and Tidings",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Blessings and Tidings",
+		auto_unlock = "",
+		subtype = 3,
 		id = 178,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1091,
 			1092,
@@ -2025,14 +2102,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[179] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Fight On, Royal Maids!(part 2)",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Fight On, Royal Maids!(part 2)",
+		auto_unlock = "",
+		subtype = 2,
 		id = 179,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1096,
 			1097,
@@ -2042,14 +2120,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[180] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Spring Festival Party",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Spring Festival Party",
+		auto_unlock = "",
+		subtype = 3,
 		id = 180,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1101,
 			1102,
@@ -2058,14 +2137,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[181] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Northern Overture ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Northern Overture ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 181,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1110,
 			1111,
@@ -2102,14 +2182,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[182] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Under the Mist ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Under the Mist ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 182,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1149,
 			1150,
@@ -2118,14 +2199,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[183] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Microlayer Medley ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Microlayer Medley ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 183,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1153,
 			1154,
@@ -2165,14 +2247,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[184] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "The Golden Doubulin ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "The Golden Doubulin ",
+		auto_unlock = "",
+		subtype = 3,
 		id = 184,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1188,
 			1189,
@@ -2181,14 +2264,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[185] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "The Way Home in the Dark ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "The Way Home in the Dark ",
+		auto_unlock = "",
+		subtype = 2,
 		id = 185,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1211,
 			1212,
@@ -2202,14 +2286,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[186] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Skybound Oratorio ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Skybound Oratorio ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 186,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1231,
 			1232,
@@ -2248,14 +2333,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[187] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Counterattack Within the Fjord ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Counterattack Within the Fjord ",
+		auto_unlock = "",
+		subtype = 2,
 		id = 187,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1265,
 			1266,
@@ -2273,14 +2359,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[188] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Aurora Noctis ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Aurora Noctis ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 188,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1281,
 			1282,
@@ -2325,14 +2412,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[189] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Dreamwaker's Butterfly ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Dreamwaker's Butterfly ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 189,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1341,
 			1342,
@@ -2379,14 +2467,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[190] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Sundered Blue ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Sundered Blue ",
+		auto_unlock = "",
+		subtype = 2,
 		id = 190,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1386,
 			1387,
@@ -2401,14 +2490,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[191] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Universe in Unison ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Universe in Unison ",
+		auto_unlock = "",
+		subtype = 2,
 		id = 191,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1411,
 			1412,
@@ -2435,14 +2525,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[192] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Vacation Lane - Venus Visitation ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Vacation Lane - Venus Visitation ",
+		auto_unlock = "",
+		subtype = 2,
 		id = 192,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1436,
 			1437,
@@ -2463,14 +2554,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[193] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Vacation Lane - Cozy Days ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Vacation Lane - Cozy Days ",
+		auto_unlock = "",
+		subtype = 2,
 		id = 193,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1452,
 			1453,
@@ -2479,14 +2571,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[194] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Inverted Orthant ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Inverted Orthant ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 194,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1481,
 			1482,
@@ -2526,14 +2619,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[195] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Khorovod of Dawn's Rime",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Khorovod of Dawn's Rime",
+		auto_unlock = "",
+		subtype = 1,
 		id = 195,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1530,
 			1531,
@@ -2569,14 +2663,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[196] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Daedalian Hymn ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Daedalian Hymn ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 196,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1601,
 			1602,
@@ -2616,14 +2711,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[197] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Silver Archives ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Silver Archives ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 197,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1661,
 			1662,
@@ -2632,14 +2728,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[198] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Mirror Involution ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Mirror Involution ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 198,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1681,
 			1682,
@@ -2677,14 +2774,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[199] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Azur Anthem - Side Story",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Azur Anthem - Side Story",
+		auto_unlock = "",
+		subtype = 2,
 		id = 199,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1746,
 			1747,
@@ -2693,14 +2791,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[200] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Azur Anthem",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Azur Anthem",
+		auto_unlock = "",
+		subtype = 2,
 		id = 200,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1751,
 			1752,
@@ -2721,14 +2820,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[202] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Upon the Shimmering Blue ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5069,
-		icon = "title_event",
+		title = "Upon the Shimmering Blue ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 202,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1801,
 			1802,
@@ -2768,14 +2868,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[203] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "The Flame-Touched Dagger ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "The Flame-Touched Dagger ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 203,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1881,
 			1882,
@@ -2792,14 +2893,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[204] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "World-Spanning Arclight",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4932,
-		icon = "title_event",
+		title = "World-Spanning Arclight",
+		auto_unlock = "",
+		subtype = 2,
 		id = 204,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1896,
 			1897,
@@ -2831,14 +2933,15 @@ pg.base.memory_group = {}
 end)()
 ;(function()
 	pg.base.memory_group[205] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Dynamic Days",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4933,
-		icon = "title_event",
+		title = "Dynamic Days",
+		auto_unlock = "",
+		subtype = 2,
 		id = 205,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1921,
 			1922,
@@ -2847,14 +2950,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[206] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Tonic and Tea",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Tonic and Tea",
+		auto_unlock = "",
+		subtype = 3,
 		id = 206,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1926,
 			1927,
@@ -2871,14 +2975,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[207] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Tower of Transcendence",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Tower of Transcendence",
+		auto_unlock = "",
+		subtype = 1,
 		id = 207,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1941,
 			1942,
@@ -2920,14 +3025,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[208] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "An Exercise Gone Slightly Wrong",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "An Exercise Gone Slightly Wrong",
+		auto_unlock = "",
+		subtype = 2,
 		id = 208,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1980,
 			1981,
@@ -2937,14 +3043,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[209] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "The Great Lunar New Year Photoshoot",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "The Great Lunar New Year Photoshoot",
+		auto_unlock = "",
+		subtype = 3,
 		id = 209,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1985,
 			1986,
@@ -2956,14 +3063,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[210] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Darkness Within Dawn ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Darkness Within Dawn ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 210,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2002,
 			2003,
@@ -2972,14 +3080,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[211] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Abyssal Refrain",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Abyssal Refrain",
+		auto_unlock = "",
+		subtype = 1,
 		id = 211,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2006,
 			2007,
@@ -3017,14 +3126,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[212] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Virtual Tower",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Virtual Tower",
+		auto_unlock = "",
+		subtype = 2,
 		id = 212,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2050,
 			2051,
@@ -3040,28 +3150,30 @@ end)()
 		}
 	}
 	pg.base.memory_group[213] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Band of Bulins",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Band of Bulins",
+		auto_unlock = "",
+		subtype = 3,
 		id = 213,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2061,
 			2062
 		}
 	}
 	pg.base.memory_group[214] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Tales From the Count's Castle ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Tales From the Count's Castle ",
+		auto_unlock = "",
+		subtype = 3,
 		id = 214,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2071,
 			2072,
@@ -3073,14 +3185,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[215] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Rondo at Rainbow's End ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Rondo at Rainbow's End ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 215,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2081,
 			2082,
@@ -3119,14 +3232,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[216] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Letters and Travels",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Letters and Travels",
+		auto_unlock = "",
+		subtype = 1,
 		id = 216,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2116,
 			2117,
@@ -3135,14 +3249,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[217] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "The Many Lives of Maids",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "The Many Lives of Maids",
+		auto_unlock = "",
+		subtype = 3,
 		id = 217,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2128,
 			2129,
@@ -3150,14 +3265,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[218] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Pledge of the Radiant Court ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Pledge of the Radiant Court ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 218,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2131,
 			2132,
@@ -3198,14 +3314,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[219] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "The Graceful Banquet",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "The Graceful Banquet",
+		auto_unlock = "",
+		subtype = 3,
 		id = 219,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2167,
 			2168,
@@ -3214,14 +3331,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[220] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Adventures in the Forest of Fables",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Adventures in the Forest of Fables",
+		auto_unlock = "",
+		subtype = 3,
 		id = 220,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2181,
 			2182,
@@ -3232,14 +3350,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[221] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Angel of the Iris",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Angel of the Iris",
+		auto_unlock = "",
+		subtype = 1,
 		id = 221,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2191,
 			2192,
@@ -3251,14 +3370,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[222] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Where All Roads Lead",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Where All Roads Lead",
+		auto_unlock = "",
+		subtype = 1,
 		id = 222,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2211,
 			2212,
@@ -3270,14 +3390,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[223] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Aquilifer's Ballade",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Aquilifer's Ballade",
+		auto_unlock = "",
+		subtype = 1,
 		id = 223,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2221,
 			2222,
@@ -3319,14 +3440,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[224] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Operation Convergence",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Operation Convergence",
+		auto_unlock = "",
+		subtype = 1,
 		id = 224,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2271,
 			2272,
@@ -3347,14 +3469,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[225] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Tranquil Sea, Distant Thunder",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Tranquil Sea, Distant Thunder",
+		auto_unlock = "",
+		subtype = 1,
 		id = 225,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2291,
 			2292,
@@ -3366,14 +3489,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[226] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Violet Tempest, Blooming Lycoris",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Violet Tempest, Blooming Lycoris",
+		auto_unlock = "",
+		subtype = 1,
 		id = 226,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2301,
 			2302,
@@ -3417,14 +3541,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[227] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Rising of the Ship Heroes!",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Rising of the Ship Heroes!",
+		auto_unlock = "",
+		subtype = 2,
 		id = 227,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2351,
 			2352,
@@ -3434,14 +3559,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[228] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "The Pursuit of Little Spee",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "The Pursuit of Little Spee",
+		auto_unlock = "",
+		subtype = 2,
 		id = 228,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2361,
 			2362,
@@ -3449,14 +3575,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[229] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Fight On, Royal Maids! (Part 3)",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Fight On, Royal Maids! (Part 3)",
+		auto_unlock = "",
+		subtype = 3,
 		id = 229,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2378,
 			2379,
@@ -3466,14 +3593,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[230] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Halloween Hijinks",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Halloween Hijinks",
+		auto_unlock = "",
+		subtype = 2,
 		id = 230,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2383,
 			2384,
@@ -3484,14 +3612,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[231] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "The Alchemist and the Archipelago of Secrets - Peaceful Port Days",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4584,
-		icon = "title_event",
+		title = "The Alchemist and the Archipelago of Secrets - Peaceful Port Days",
+		auto_unlock = "",
+		subtype = 2,
 		id = 231,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2401,
 			2402,
@@ -3503,14 +3632,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[232] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "The Alchemist and the Archipelago of Secrets",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4580,
-		icon = "title_event",
+		title = "The Alchemist and the Archipelago of Secrets",
+		auto_unlock = "",
+		subtype = 2,
 		id = 232,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2411,
 			2412,
@@ -3541,14 +3671,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[233] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Causality Transposition",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4597,
-		icon = "title_event",
+		title = "Causality Transposition",
+		auto_unlock = "",
+		subtype = 1,
 		id = 233,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2441,
 			2442,
@@ -3560,14 +3691,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[234] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Beachside Vacation Vignettes",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4618,
-		icon = "title_event",
+		title = "Beachside Vacation Vignettes",
+		auto_unlock = "",
+		subtype = 3,
 		id = 234,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2461,
 			2462,
@@ -3579,14 +3711,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[235] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Parallel Superimposition",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4607,
-		icon = "title_event",
+		title = "Parallel Superimposition",
+		auto_unlock = "",
+		subtype = 1,
 		id = 235,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2471,
 			2472,
@@ -3626,14 +3759,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[236] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Winter Pathfinder",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Winter Pathfinder",
+		auto_unlock = "",
+		subtype = 3,
 		id = 236,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2521,
 			2522,
@@ -3643,14 +3777,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[237] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Myriad Colors of the New Year",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Myriad Colors of the New Year",
+		auto_unlock = "",
+		subtype = 3,
 		id = 237,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2531,
 			2532,
@@ -3659,14 +3794,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[238] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Spring Blossoms in the Sky",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Spring Blossoms in the Sky",
+		auto_unlock = "",
+		subtype = 3,
 		id = 238,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2541,
 			2542,
@@ -3674,14 +3810,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[239] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "The Queen's Ordinary Day",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "The Queen's Ordinary Day",
+		auto_unlock = "",
+		subtype = 1,
 		id = 239,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2551,
 			2552,
@@ -3693,14 +3830,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[240] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Revelations of Dust",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Revelations of Dust",
+		auto_unlock = "",
+		subtype = 1,
 		id = 240,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2571,
 			2572,
@@ -3735,14 +3873,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[241] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Frostfall",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Frostfall",
+		auto_unlock = "",
+		subtype = 1,
 		id = 241,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2611,
 			2612,
@@ -3766,14 +3905,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[242] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Invitation of Melting Snow",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Invitation of Melting Snow",
+		auto_unlock = "",
+		subtype = 3,
 		id = 242,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2631,
 			2632,
@@ -3783,14 +3923,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[243] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "One-Punch! Bulin!",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "One-Punch! Bulin!",
+		auto_unlock = "",
+		subtype = 3,
 		id = 243,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2641,
 			2642,
@@ -3798,14 +3939,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[244] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "The Weaver's Omen",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "The Weaver's Omen",
+		auto_unlock = "",
+		subtype = 1,
 		id = 244,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2661,
 			2662,
@@ -3817,14 +3959,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[245] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Confluence of Nothingness",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Confluence of Nothingness",
+		auto_unlock = "",
+		subtype = 1,
 		id = 245,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2671,
 			2672,
@@ -3866,14 +4009,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[246] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Uncharted Summer",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Uncharted Summer",
+		auto_unlock = "",
+		subtype = 2,
 		id = 246,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2711,
 			2712,
@@ -3912,40 +4056,43 @@ end)()
 		}
 	}
 	pg.base.memory_group[247] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Pristine Leaves, Rich Warmth",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Pristine Leaves, Rich Warmth",
+		auto_unlock = "",
+		subtype = 3,
 		id = 247,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2751
 		}
 	}
 	pg.base.memory_group[248] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Like a Soaring Apsaras",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Like a Soaring Apsaras",
+		auto_unlock = "",
+		subtype = 3,
 		id = 248,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2781
 		}
 	}
 	pg.base.memory_group[249] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Reflections of the Oasis",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4915,
-		icon = "title_event",
+		title = "Reflections of the Oasis",
+		auto_unlock = "",
+		subtype = 1,
 		id = 249,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2791,
 			2792,
@@ -3955,14 +4102,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[250] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Cubicle Dreamin'",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4919,
-		icon = "title_event",
+		title = "Cubicle Dreamin'",
+		auto_unlock = "",
+		subtype = 3,
 		id = 250,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2801,
 			2802,
@@ -3970,14 +4118,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[251] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Anthem of Remembrance",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4940,
-		icon = "title_event",
+		title = "Anthem of Remembrance",
+		auto_unlock = "",
+		subtype = 1,
 		id = 251,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2820,
 			2821,
@@ -3992,14 +4141,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[252] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Eventide's Eve",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4951,
-		icon = "title_event",
+		title = "Eventide's Eve",
+		auto_unlock = "",
+		subtype = 1,
 		id = 252,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2841,
 			2842,
@@ -4011,14 +4161,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[253] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "The Orthodoxy's Banquet",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4963,
-		icon = "title_event",
+		title = "The Orthodoxy's Banquet",
+		auto_unlock = "",
+		subtype = 2,
 		id = 253,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2851,
 			2852,
@@ -4040,14 +4191,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[254] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "The Fool's Scales",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4967,
-		icon = "title_event",
+		title = "The Fool's Scales",
+		auto_unlock = "",
+		subtype = 1,
 		id = 254,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2871,
 			2872,
@@ -4097,14 +4249,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[255] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Invitation of the Wind",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4962,
-		icon = "title_event",
+		title = "Invitation of the Wind",
+		auto_unlock = "",
+		subtype = 3,
 		id = 255,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2921,
 			2922,
@@ -4112,14 +4265,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[256] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Waxing Moonlight",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4974,
-		icon = "title_event",
+		title = "Waxing Moonlight",
+		auto_unlock = "",
+		subtype = 1,
 		id = 256,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2951,
 			2952,
@@ -4131,14 +4285,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[257] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Effulgence Before Eclipse",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5001,
-		icon = "title_event",
+		title = "Effulgence Before Eclipse",
+		auto_unlock = "",
+		subtype = 1,
 		id = 257,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2961,
 			2962,
@@ -4177,14 +4332,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[258] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Port Fashion Collection! Part 1",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5009,
-		icon = "title_event",
+		title = "Port Fashion Collection! Part 1",
+		auto_unlock = "",
+		subtype = 3,
 		id = 258,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3001,
 			3002,
@@ -4194,14 +4350,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[259] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "The Spiriting-Away Incident?",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4990,
-		icon = "title_event",
+		title = "The Spiriting-Away Incident?",
+		auto_unlock = "",
+		subtype = 2,
 		id = 259,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3011,
 			3012,
@@ -4218,14 +4375,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[260] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Port Fashion Collection! Part 2",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5015,
-		icon = "title_event",
+		title = "Port Fashion Collection! Part 2",
+		auto_unlock = "",
+		subtype = 3,
 		id = 260,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3031,
 			3032,
@@ -4233,14 +4391,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[261] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Port Fashion Collection! Racing Special",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5019,
-		icon = "title_event",
+		title = "Port Fashion Collection! Racing Special",
+		auto_unlock = "",
+		subtype = 3,
 		id = 261,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3041,
 			3042,
@@ -4250,14 +4409,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[262] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Royal Fortune's Secret Shipyard",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5023,
-		icon = "title_event",
+		title = "Royal Fortune's Secret Shipyard",
+		auto_unlock = "",
+		subtype = 2,
 		id = 262,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3061,
 			3062,
@@ -4270,14 +4430,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[263] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Tempesta and the Fountain of Youth",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5051,
-		icon = "title_event",
+		title = "Tempesta and the Fountain of Youth",
+		auto_unlock = "",
+		subtype = 2,
 		id = 263,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3071,
 			3072,
@@ -4310,14 +4471,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[264] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "A Bump in the Rainy Night",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5054,
-		icon = "title_event",
+		title = "A Bump in the Rainy Night",
+		auto_unlock = "",
+		subtype = 3,
 		id = 264,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3101,
 			3102,
@@ -4350,14 +4512,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[265] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Today's Featured Product",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5082,
-		icon = "title_event",
+		title = "Today's Featured Product",
+		auto_unlock = "",
+		subtype = 3,
 		id = 265,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3141,
 			3142,
@@ -4365,14 +4528,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[266] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "The Ninja Scrolls: Azur Flash",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5101,
-		icon = "title_event",
+		title = "The Ninja Scrolls: Azur Flash",
+		auto_unlock = "",
+		subtype = 2,
 		id = 266,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3151,
 			3152,
@@ -4401,14 +4565,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[267] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "The Ninja Scrolls: At Your Leisure",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5096,
-		icon = "title_event",
+		title = "The Ninja Scrolls: At Your Leisure",
+		auto_unlock = "",
+		subtype = 2,
 		id = 267,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3181,
 			3182,
@@ -4420,14 +4585,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[268] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Popularity Poll 2023",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 1068,
-		icon = "title_event",
+		title = "Popularity Poll 2023",
+		auto_unlock = "",
+		subtype = 3,
 		id = 268,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3191,
 			3192,
@@ -4449,14 +4615,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[269] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Beneath Clear, Starry Skies",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5105,
-		icon = "title_event",
+		title = "Beneath Clear, Starry Skies",
+		auto_unlock = "",
+		subtype = 1,
 		id = 269,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3221,
 			3222,
@@ -4468,14 +4635,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[270] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Light-Chasing Sea of Stars",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5131,
-		icon = "title_event",
+		title = "Light-Chasing Sea of Stars",
+		auto_unlock = "",
+		subtype = 1,
 		id = 270,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3228,
 			3229,
@@ -4517,14 +4685,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[271] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Port Fashion Collection: Resplendent Night",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5143,
-		icon = "title_event",
+		title = "Port Fashion Collection: Resplendent Night",
+		auto_unlock = "",
+		subtype = 3,
 		id = 271,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3272,
 			3273,
@@ -4533,14 +4702,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[272] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Port Fashion Collection: Resplendent Night II",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5150,
-		icon = "title_event",
+		title = "Port Fashion Collection: Resplendent Night II",
+		auto_unlock = "",
+		subtype = 3,
 		id = 272,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3281,
 			3282,
@@ -4548,14 +4718,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[273] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Spring Festive Fiasco",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5178,
-		icon = "title_event",
+		title = "Spring Festive Fiasco",
+		auto_unlock = "",
+		subtype = 3,
 		id = 273,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3301,
 			3302,
@@ -4565,14 +4736,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[274] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "The Queen of Adventure",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5178,
-		icon = "title_event",
+		title = "The Queen of Adventure",
+		auto_unlock = "",
+		subtype = 3,
 		id = 274,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3311,
 			3312,
@@ -4580,14 +4752,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[275] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Port Fashion Collection: Spring Festival I",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5184,
-		icon = "title_event",
+		title = "Port Fashion Collection: Spring Festival I",
+		auto_unlock = "",
+		subtype = 3,
 		id = 275,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3331,
 			3332,
@@ -4595,14 +4768,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[276] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Port Fashion Collection: Spring Festival II",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5184,
-		icon = "title_event",
+		title = "Port Fashion Collection: Spring Festival II",
+		auto_unlock = "",
+		subtype = 3,
 		id = 276,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3341,
 			3342,
@@ -4610,14 +4784,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[277] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Mist Upon Silver Summits",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5212,
-		icon = "title_event",
+		title = "Mist Upon Silver Summits",
+		auto_unlock = "",
+		subtype = 1,
 		id = 277,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3361,
 			3362,
@@ -4630,14 +4805,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[278] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Snowrealm Peregrination",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5221,
-		icon = "title_event",
+		title = "Snowrealm Peregrination",
+		auto_unlock = "",
+		subtype = 1,
 		id = 278,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3370,
 			3371,
@@ -4676,14 +4852,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[279] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Endless Drama in the Sleepless City",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5224,
-		icon = "title_event",
+		title = "Endless Drama in the Sleepless City",
+		auto_unlock = "",
+		subtype = 3,
 		id = 279,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3411,
 			3412,
@@ -4696,14 +4873,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[280] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "The Bard's Poem",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5243,
-		icon = "title_event",
+		title = "The Bard's Poem",
+		auto_unlock = "",
+		subtype = 2,
 		id = 280,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3431,
 			3432,
@@ -4713,14 +4891,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[281] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "From Zero to Hero",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5265,
-		icon = "title_event",
+		title = "From Zero to Hero",
+		auto_unlock = "",
+		subtype = 2,
 		id = 281,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3441,
 			3442,
@@ -4753,14 +4932,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[282] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Rebirth of Gold",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5267,
-		icon = "title_event",
+		title = "Rebirth of Gold",
+		auto_unlock = "",
+		subtype = 2,
 		id = 282,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3471,
 			3472,
@@ -4768,14 +4948,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[283] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Spider Lily's Redolence",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5305,
-		icon = "title_event",
+		title = "Spider Lily's Redolence",
+		auto_unlock = "",
+		subtype = 1,
 		id = 283,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3491,
 			3492,
@@ -4787,14 +4968,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[284] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Heart-Linking Harmony",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5301,
-		icon = "title_event",
+		title = "Heart-Linking Harmony",
+		auto_unlock = "",
+		subtype = 2,
 		id = 284,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3500,
 			3501,
@@ -4816,14 +4998,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[285] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Port Fashion Collection! A Glimpse Into Another Life",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5311,
-		icon = "title_event",
+		title = "Port Fashion Collection! A Glimpse Into Another Life",
+		auto_unlock = "",
+		subtype = 3,
 		id = 285,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3520,
 			3521,
@@ -4831,14 +5014,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[286] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "The Bon Before the Voyage",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5324,
-		icon = "title_event",
+		title = "The Bon Before the Voyage",
+		auto_unlock = "",
+		subtype = 2,
 		id = 286,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3541,
 			3542,
@@ -4848,14 +5032,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[287] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Echoes From Afar",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5341,
-		icon = "title_event",
+		title = "Echoes From Afar",
+		auto_unlock = "",
+		subtype = 1,
 		id = 287,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3551,
 			3552,
@@ -4867,14 +5052,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[288] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Pleasure, Leisure, and Treasure",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5335,
-		icon = "title_event",
+		title = "Pleasure, Leisure, and Treasure",
+		auto_unlock = "",
+		subtype = 3,
 		id = 288,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3561,
 			3562,
@@ -4925,14 +5111,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[289] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Light of the Martyrium",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5331,
-		icon = "title_event",
+		title = "Light of the Martyrium",
+		auto_unlock = "",
+		subtype = 1,
 		id = 289,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3610,
 			3611,
@@ -4972,40 +5159,43 @@ end)()
 		}
 	}
 	pg.base.memory_group[290] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "A Tale From the Sylvan Garden",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5360,
-		icon = "title_event",
+		title = "A Tale From the Sylvan Garden",
+		auto_unlock = "",
+		subtype = 3,
 		id = 290,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3651
 		}
 	}
 	pg.base.memory_group[291] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "A Leisurely Trip to Jade Seas",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5364,
-		icon = "title_event",
+		title = "A Leisurely Trip to Jade Seas",
+		auto_unlock = "",
+		subtype = 3,
 		id = 291,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3661
 		}
 	}
 	pg.base.memory_group[292] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Welcome to Little Academy",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5402,
-		icon = "title_event",
+		title = "Welcome to Little Academy",
+		auto_unlock = "",
+		subtype = 2,
 		id = 292,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3681,
 			3682,
@@ -5020,14 +5210,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[293] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Interlude of Illusions",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5501,
-		icon = "title_event",
+		title = "Interlude of Illusions",
+		auto_unlock = "",
+		subtype = 1,
 		id = 293,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3701,
 			3702,
@@ -5042,14 +5233,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[294] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Port Fashion Collection: Summer Racing",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5504,
-		icon = "title_event",
+		title = "Port Fashion Collection: Summer Racing",
+		auto_unlock = "",
+		subtype = 3,
 		id = 294,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3711,
 			3712,
@@ -5057,14 +5249,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[295] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Crimson Prelusion",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5512,
-		icon = "title_event",
+		title = "Crimson Prelusion",
+		auto_unlock = "",
+		subtype = 1,
 		id = 295,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3731,
 			3732,
@@ -5076,14 +5269,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[296] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Windborne Steel Wings",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5521,
-		icon = "title_event",
+		title = "Windborne Steel Wings",
+		auto_unlock = "",
+		subtype = 1,
 		id = 296,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3741,
 			3742,
@@ -5125,14 +5319,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[297] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Wild West Vacation Log",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5523,
-		icon = "title_event",
+		title = "Wild West Vacation Log",
+		auto_unlock = "",
+		subtype = 3,
 		id = 297,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3781,
 			3782,
@@ -5155,14 +5350,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[298] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Whence Flowers Bear No Fruit",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5541,
-		icon = "title_event",
+		title = "Whence Flowers Bear No Fruit",
+		auto_unlock = "",
+		subtype = 1,
 		id = 298,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3811,
 			3812,
@@ -5180,14 +5376,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[299] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Whence the Dust Settles",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5551,
-		icon = "title_event",
+		title = "Whence the Dust Settles",
+		auto_unlock = "",
+		subtype = 1,
 		id = 299,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3831,
 			3832,
@@ -5199,14 +5396,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[300] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Paradise Opens for Business",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5548,
-		icon = "title_event",
+		title = "Paradise Opens for Business",
+		auto_unlock = "",
+		subtype = 2,
 		id = 300,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3841,
 			3842,
@@ -5216,14 +5414,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[301] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Dreamy Day in Dream Park",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5560,
-		icon = "title_event",
+		title = "Dreamy Day in Dream Park",
+		auto_unlock = "",
+		subtype = 2,
 		id = 301,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3851,
 			3852,
@@ -5247,14 +5446,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[302] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Ode of Everblooming Crimson",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5562,
-		icon = "title_event",
+		title = "Ode of Everblooming Crimson",
+		auto_unlock = "",
+		subtype = 1,
 		id = 302,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3871,
 			3872,
@@ -5296,27 +5496,29 @@ end)()
 		}
 	}
 	pg.base.memory_group[303] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Dancing Her Heart Out",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5581,
-		icon = "title_event",
+		title = "Dancing Her Heart Out",
+		auto_unlock = "",
+		subtype = 3,
 		id = 303,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3908
 		}
 	}
 	pg.base.memory_group[304] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "The Dorm Extension Project",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "The Dorm Extension Project",
+		auto_unlock = "",
+		subtype = 3,
 		id = 304,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3921
 		}
@@ -5324,27 +5526,29 @@ end)()
 end)()
 ;(function()
 	pg.base.memory_group[305] = {
-		auto_unlock = "",
-		subtype = 0,
-		title = "The Newest App on the Block",
+		ship_group = 0,
+		group_id = "",
 		type = 1,
 		link_event = 0,
-		icon = "title_event",
+		title = "The Newest App on the Block",
+		auto_unlock = "",
+		subtype = 0,
 		id = 305,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3941
 		}
 	}
 	pg.base.memory_group[306] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Tempesta and the Sleeping Sea",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5625,
-		icon = "title_event",
+		title = "Tempesta and the Sleeping Sea",
+		auto_unlock = "",
+		subtype = 2,
 		id = 306,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3951,
 			3952,
@@ -5371,14 +5575,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[307] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Sails and Spooks",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5623,
-		icon = "title_event",
+		title = "Sails and Spooks",
+		auto_unlock = "",
+		subtype = 3,
 		id = 307,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3981,
 			3982,
@@ -5391,27 +5596,29 @@ end)()
 		}
 	}
 	pg.base.memory_group[308] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "A Brand New Sales Campaign!",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5654,
-		icon = "title_event",
+		title = "A Brand New Sales Campaign!",
+		auto_unlock = "",
+		subtype = 3,
 		id = 308,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4011
 		}
 	}
 	pg.base.memory_group[309] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Dangerous Inventions Incoming!",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5679,
-		icon = "title_event",
+		title = "Dangerous Inventions Incoming!",
+		auto_unlock = "",
+		subtype = 2,
 		id = 309,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4021,
 			4022,
@@ -5433,14 +5640,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[310] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Dangerous Inventions Incoming - Port Stories",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5681,
-		icon = "title_event",
+		title = "Dangerous Inventions Incoming - Port Stories",
+		auto_unlock = "",
+		subtype = 2,
 		id = 310,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4041,
 			4042,
@@ -5451,14 +5659,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[311] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Help Me, Miss Lala!",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5691,
-		icon = "title_event",
+		title = "Help Me, Miss Lala!",
+		auto_unlock = "",
+		subtype = 2,
 		id = 311,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4051,
 			4052,
@@ -5471,14 +5680,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[312] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Return From the Beyond",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5699,
-		icon = "title_event",
+		title = "Return From the Beyond",
+		auto_unlock = "",
+		subtype = 1,
 		id = 312,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4071,
 			4072,
@@ -5492,14 +5702,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[313] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Substellar Crepuscule",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5711,
-		icon = "title_event",
+		title = "Substellar Crepuscule",
+		auto_unlock = "",
+		subtype = 1,
 		id = 313,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4081,
 			4082,
@@ -5537,14 +5748,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[314] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Port Fashion Collection: Holiday Special",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5721,
-		icon = "title_event",
+		title = "Port Fashion Collection: Holiday Special",
+		auto_unlock = "",
+		subtype = 3,
 		id = 314,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4121,
 			4122,
@@ -5555,14 +5767,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[315] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Port Fashion Collection: Holiday Special",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5735,
-		icon = "title_event",
+		title = "Port Fashion Collection: Holiday Special",
+		auto_unlock = "",
+		subtype = 3,
 		id = 315,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4131,
 			4132,
@@ -5572,14 +5785,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[316] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Port Fashion Collection: Spring Festival III",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5777,
-		icon = "title_event",
+		title = "Port Fashion Collection: Spring Festival III",
+		auto_unlock = "",
+		subtype = 3,
 		id = 316,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4151,
 			4152,
@@ -5588,14 +5802,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[317] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Spring Fashion Festa",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5772,
-		icon = "title_event",
+		title = "Spring Fashion Festa",
+		auto_unlock = "",
+		subtype = 3,
 		id = 317,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4161,
 			4162,
@@ -5605,14 +5820,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[318] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Port Fashion Collection: Spring Festival IV",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5790,
-		icon = "title_event",
+		title = "Port Fashion Collection: Spring Festival IV",
+		auto_unlock = "",
+		subtype = 3,
 		id = 318,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4171,
 			4172,
@@ -5621,14 +5837,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[319] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Path of the Chosen",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5809,
-		icon = "title_event",
+		title = "Path of the Chosen",
+		auto_unlock = "",
+		subtype = 1,
 		id = 319,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4191,
 			4192,
@@ -5640,14 +5857,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[320] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Paradiso of Shackled Light",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5821,
-		icon = "title_event",
+		title = "Paradiso of Shackled Light",
+		auto_unlock = "",
+		subtype = 1,
 		id = 320,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4201,
 			4202,
@@ -5688,14 +5906,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[321] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Port Fashion Collection: Colors of the Nile",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5830,
-		icon = "title_event",
+		title = "Port Fashion Collection: Colors of the Nile",
+		auto_unlock = "",
+		subtype = 3,
 		id = 321,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4241,
 			4242,
@@ -5704,14 +5923,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[322] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Letters from Valley Hospital",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5871,
-		icon = "title_event",
+		title = "Letters from Valley Hospital",
+		auto_unlock = "",
+		subtype = 2,
 		id = 322,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4261,
 			4262,
@@ -5727,14 +5947,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[323] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "The Bulin Brigade in: Down with the Megacorp!",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5879,
-		icon = "title_event",
+		title = "The Bulin Brigade in: Down with the Megacorp!",
+		auto_unlock = "",
+		subtype = 2,
 		id = 323,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4281,
 			4282,
@@ -5742,14 +5963,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[324] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Port Fashion Collection: Lazy Spring Day",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5911,
-		icon = "title_event",
+		title = "Port Fashion Collection: Lazy Spring Day",
+		auto_unlock = "",
+		subtype = 3,
 		id = 324,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4301,
 			4302,
@@ -5758,14 +5980,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[325] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Toward Tulipa's Seas",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5901,
-		icon = "title_event",
+		title = "Toward Tulipa's Seas",
+		auto_unlock = "",
+		subtype = 1,
 		id = 325,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4311,
 			4312,
@@ -5778,14 +6001,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[326] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Planning the Villa Vacation",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5924,
-		icon = "title_event",
+		title = "Planning the Villa Vacation",
+		auto_unlock = "",
+		subtype = 2,
 		id = 326,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4331,
 			4332,
@@ -5795,14 +6019,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[327] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "March of the Neversetting Sun",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5924,
-		icon = "title_event",
+		title = "March of the Neversetting Sun",
+		auto_unlock = "",
+		subtype = 1,
 		id = 327,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4341,
 			4342,
@@ -5814,14 +6039,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[328] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Midsummer Returns! The Villa Reconstruction",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5952,
-		icon = "title_event",
+		title = "Midsummer Returns! The Villa Reconstruction",
+		auto_unlock = "",
+		subtype = 2,
 		id = 328,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4351,
 			4352,
@@ -5853,14 +6079,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[329] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "A Rose on the High Tower",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5941,
-		icon = "title_event",
+		title = "A Rose on the High Tower",
+		auto_unlock = "",
+		subtype = 1,
 		id = 329,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4381,
 			4382,
@@ -5901,27 +6128,29 @@ end)()
 		}
 	}
 	pg.base.memory_group[330] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "A Sky Blue Eclipsing Jade",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5979,
-		icon = "title_event",
+		title = "A Sky Blue Eclipsing Jade",
+		auto_unlock = "",
+		subtype = 3,
 		id = 330,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4417
 		}
 	}
 	pg.base.memory_group[331] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Illusory Drifters",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5985,
-		icon = "title_event",
+		title = "Illusory Drifters",
+		auto_unlock = "",
+		subtype = 2,
 		id = 331,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4431,
 			4432,
@@ -5931,28 +6160,30 @@ end)()
 		}
 	}
 	pg.base.memory_group[332] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Illusory Drifters - Warm Welcome",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5985,
-		icon = "title_event",
+		title = "Illusory Drifters - Warm Welcome",
+		auto_unlock = "",
+		subtype = 2,
 		id = 332,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4421,
 			4422
 		}
 	}
 	pg.base.memory_group[333] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "The Neon City Investigator",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50013,
-		icon = "title_event",
+		title = "The Neon City Investigator",
+		auto_unlock = "",
+		subtype = 2,
 		id = 333,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4451,
 			4452,
@@ -5967,14 +6198,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[334] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "The Alchemist and the Tower of Horizons",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50054,
-		icon = "title_event",
+		title = "The Alchemist and the Tower of Horizons",
+		auto_unlock = "",
+		subtype = 2,
 		id = 334,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4481,
 			4482,
@@ -6013,14 +6245,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[335] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "The Alchemist and the Tower of Horizons - Daily Life",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50054,
-		icon = "title_event",
+		title = "The Alchemist and the Tower of Horizons - Daily Life",
+		auto_unlock = "",
+		subtype = 2,
 		id = 335,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4521,
 			4522,
@@ -6029,14 +6262,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[336] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Secrets of the Abyss",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50081,
-		icon = "title_event",
+		title = "Secrets of the Abyss",
+		auto_unlock = "",
+		subtype = 2,
 		id = 336,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4541,
 			4542,
@@ -6070,14 +6304,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[337] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Port Fashion Collection: Lazy Vacation Days",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50084,
-		icon = "title_event",
+		title = "Port Fashion Collection: Lazy Vacation Days",
+		auto_unlock = "",
+		subtype = 3,
 		id = 337,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4571,
 			4572,
@@ -6089,14 +6324,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[338] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Summons From the Sakura Empire",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50104,
-		icon = "title_event",
+		title = "Summons From the Sakura Empire",
+		auto_unlock = "",
+		subtype = 1,
 		id = 338,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4591,
 			4592,
@@ -6108,14 +6344,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[339] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "A Dance for Amahara Above",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50114,
-		icon = "title_event",
+		title = "A Dance for Amahara Above",
+		auto_unlock = "",
+		subtype = 1,
 		id = 339,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4601,
 			4602,
@@ -6159,14 +6396,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[340] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Turmoil in the Ninja Castle",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50116,
-		icon = "title_event",
+		title = "Turmoil in the Ninja Castle",
+		auto_unlock = "",
+		subtype = 2,
 		id = 340,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4641,
 			4642,
@@ -6191,14 +6429,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[341] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "An Encounter Beneath Clear Skies",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50156,
-		icon = "title_event",
+		title = "An Encounter Beneath Clear Skies",
+		auto_unlock = "",
+		subtype = 2,
 		id = 341,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4671,
 			4672,
@@ -6218,28 +6457,30 @@ end)()
 		}
 	}
 	pg.base.memory_group[342] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "An Encounter Beneath Clear Skies - Daily Stories",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50156,
-		icon = "title_event",
+		title = "An Encounter Beneath Clear Skies - Daily Stories",
+		auto_unlock = "",
+		subtype = 2,
 		id = 342,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4691,
 			4692
 		}
 	}
 	pg.base.memory_group[343] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Sails and Spooks II",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50202,
-		icon = "title_event",
+		title = "Sails and Spooks II",
+		auto_unlock = "",
+		subtype = 3,
 		id = 343,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4711,
 			4712,
@@ -6252,14 +6493,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[344] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Tempesta and Islas de Libertád",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50181,
-		icon = "title_event",
+		title = "Tempesta and Islas de Libertád",
+		auto_unlock = "",
+		subtype = 2,
 		id = 344,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4721,
 			4722,
@@ -6293,14 +6535,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[345] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Port Fashion Collection: Race Track Fever",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50235,
-		icon = "title_event",
+		title = "Port Fashion Collection: Race Track Fever",
+		auto_unlock = "",
+		subtype = 3,
 		id = 345,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4761,
 			4762,
@@ -6308,27 +6551,29 @@ end)()
 		}
 	}
 	pg.base.memory_group[346] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "The New Sales Campaign Just Dropped!",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50268,
-		icon = "title_event",
+		title = "The New Sales Campaign Just Dropped!",
+		auto_unlock = "",
+		subtype = 3,
 		id = 346,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4771
 		}
 	}
 	pg.base.memory_group[347] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "DATE A LANE",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50256,
-		icon = "title_event",
+		title = "DATE A LANE",
+		auto_unlock = "",
+		subtype = 2,
 		id = 347,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4781,
 			4782,
@@ -6365,14 +6610,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[348] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "DATE A LANE - Side Stories",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50256,
-		icon = "title_event",
+		title = "DATE A LANE - Side Stories",
+		auto_unlock = "",
+		subtype = 2,
 		id = 348,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4821,
 			4822,
@@ -6383,14 +6629,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[349] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Memories in Echo",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50262,
-		icon = "title_event",
+		title = "Memories in Echo",
+		auto_unlock = "",
+		subtype = 1,
 		id = 349,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4841,
 			4842,
@@ -6414,14 +6661,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[350] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "To a Brighter World",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50266,
-		icon = "title_event",
+		title = "To a Brighter World",
+		auto_unlock = "",
+		subtype = 1,
 		id = 350,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4871,
 			4872,
@@ -6435,14 +6683,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[351] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "A Note Through the Firmament",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50281,
-		icon = "title_event",
+		title = "A Note Through the Firmament",
+		auto_unlock = "",
+		subtype = 1,
 		id = 351,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4881,
 			4882,
@@ -6491,14 +6740,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[352] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Port Fashion Collection: Heart-Throbbing Moment I",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50290,
-		icon = "title_event",
+		title = "Port Fashion Collection: Heart-Throbbing Moment I",
+		auto_unlock = "",
+		subtype = 3,
 		id = 352,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4931,
 			4932,
@@ -6508,14 +6758,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[353] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Port Fashion Collection: Heart-Throbbing Moment II",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50297,
-		icon = "title_event",
+		title = "Port Fashion Collection: Heart-Throbbing Moment II",
+		auto_unlock = "",
+		subtype = 3,
 		id = 353,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4941,
 			4942,
@@ -6526,14 +6777,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[354] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Light & Shadow Fashion Shoot!",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50360,
-		icon = "title_event",
+		title = "Light & Shadow Fashion Shoot!",
+		auto_unlock = "",
+		subtype = 3,
 		id = 354,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4961,
 			4962,
@@ -6548,14 +6800,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[355] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Spring Auction Adventure",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50404,
-		icon = "title_event",
+		title = "Spring Auction Adventure",
+		auto_unlock = "",
+		subtype = 3,
 		id = 355,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4981,
 			4982,
@@ -6567,14 +6820,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[356] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Valentine's Day - The Chocolatastrophy!",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50401,
-		icon = "title_event",
+		title = "Valentine's Day - The Chocolatastrophy!",
+		auto_unlock = "",
+		subtype = 3,
 		id = 356,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4991,
 			4992,
@@ -6582,14 +6836,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[357] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Port Fashion Collection: Silken-Red Embrace",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50412,
-		icon = "title_event",
+		title = "Port Fashion Collection: Silken-Red Embrace",
+		auto_unlock = "",
+		subtype = 3,
 		id = 357,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			5001,
 			5002,
@@ -6598,14 +6853,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[358] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Springtide Inn Online",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50402,
-		icon = "title_event",
+		title = "Springtide Inn Online",
+		auto_unlock = "",
+		subtype = 2,
 		id = 358,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			5011,
 			5012,
@@ -6630,12 +6886,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[359] = {
-		title = "The Vagabond's Recruitment Plan",
+		ship_group = 0,
 		subtype = 2,
-		id = 359,
+		title = "The Vagabond's Recruitment Plan",
 		type = 2,
 		link_event = 50481,
 		icon = "title_event",
+		id = 359,
 		group_id = "",
 		memories = {
 			5041,
@@ -6667,14 +6924,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[360] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Operation: Shining Bulin",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50493,
-		icon = "title_event",
+		title = "Operation: Shining Bulin",
+		auto_unlock = "",
+		subtype = 2,
 		id = 360,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			5061,
 			5062,
@@ -6682,14 +6940,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[361] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Beachside Brilliance ~Stages~",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 6025,
-		icon = "title_event",
+		title = "Beachside Brilliance ~Stages~",
+		auto_unlock = "",
+		subtype = 2,
 		id = 361,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			5081,
 			5082,
@@ -6707,14 +6966,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[362] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Beachside Brilliance ~Venus~",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 6028,
-		icon = "title_event",
+		title = "Beachside Brilliance ~Venus~",
+		auto_unlock = "",
+		subtype = 2,
 		id = 362,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			5101,
 			5102,
@@ -6726,14 +6986,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[363] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "Dust-Specked Omen",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 51005,
-		icon = "title_event",
+		title = "Dust-Specked Omen",
+		auto_unlock = "",
+		subtype = 1,
 		id = 363,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			5121,
 			5122,
@@ -6745,14 +7006,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[364] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "Spring Towards Summer!",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 51001,
-		icon = "title_event",
+		title = "Spring Towards Summer!",
+		auto_unlock = "",
+		subtype = 2,
 		id = 364,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			5131,
 			5132,
@@ -6761,15 +7023,105 @@ end)()
 			5135
 		}
 	}
-	pg.base.memory_group[501] = {
+	pg.base.memory_group[365] = {
+		ship_group = 0,
+		group_id = "",
+		type = 2,
+		link_event = 50605,
+		title = "Alliance Before the Hagiobull",
 		auto_unlock = "",
-		subtype = 0,
-		title = "{namecode:98}'s Commission",
+		subtype = 1,
+		id = 365,
+		icon = "title_event",
+		memories = {
+			5141,
+			5142,
+			5143,
+			5144,
+			5145,
+			5146,
+			5147,
+			5148,
+			5149,
+			5150,
+			5151,
+			5152,
+			5153,
+			5154,
+			5155,
+			5156,
+			5157,
+			5158,
+			5159,
+			5160,
+			5161,
+			5162,
+			5163,
+			5164,
+			5165,
+			5166,
+			5167,
+			5168,
+			5169,
+			5170,
+			5171,
+			5172,
+			5173,
+			5174,
+			5175,
+			5176,
+			5177,
+			5178,
+			5179
+		}
+	}
+	pg.base.memory_group[366] = {
+		ship_group = 0,
+		group_id = "",
+		type = 2,
+		link_event = 50602,
+		title = "The Opulent! The Glamorous! Luxury Bay!",
+		auto_unlock = "",
+		subtype = 2,
+		id = 366,
+		icon = "title_event",
+		memories = {
+			5181,
+			5182,
+			5183,
+			5184,
+			5185,
+			5186,
+			5187,
+			5188,
+			5189,
+			5190,
+			5191,
+			5192,
+			5193,
+			5194,
+			5195,
+			5196,
+			5197,
+			5198,
+			5199,
+			5200,
+			5201,
+			5202,
+			5203,
+			5204
+		}
+	}
+	pg.base.memory_group[501] = {
+		ship_group = 31201,
+		group_id = "",
 		type = 3,
 		link_event = 0,
-		icon = "title_chara_mingshi",
+		title = "{namecode:98}'s Commission",
+		auto_unlock = "",
+		subtype = 0,
 		id = 501,
-		group_id = "",
+		icon = "title_chara_mingshi",
 		memories = {
 			62,
 			63,
@@ -6794,12 +7146,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[502] = {
-		auto_unlock = "",
+		ship_group = 10601,
 		subtype = 0,
-		title = "Long Island's Inner Peace",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_changdao",
+		title = "Long Island's Inner Peace",
 		id = 502,
 		memories = {
 			10011,
@@ -6815,12 +7168,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[503] = {
-		auto_unlock = "",
+		ship_group = 30706,
 		subtype = 0,
-		title = "The Lucky Crane ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_ruihe",
+		title = "The Lucky Crane ",
 		id = 503,
 		memories = {
 			246,
@@ -6836,12 +7190,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[504] = {
-		auto_unlock = "",
+		ship_group = 30116,
 		subtype = 0,
-		title = "Call Me Yukikaze the Great! ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_xuefeng",
+		title = "Call Me Yukikaze the Great! ",
 		id = 504,
 		memories = {
 			260,
@@ -6857,12 +7212,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[505] = {
-		auto_unlock = "",
+		ship_group = 20203,
 		subtype = 0,
-		title = "My Fond Memories",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_ajiakesi",
+		title = "My Fond Memories",
 		id = 505,
 		memories = {
 			267,
@@ -6878,12 +7234,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[506] = {
-		auto_unlock = "",
+		ship_group = 10125,
 		subtype = 0,
-		title = "Hammann Observation Diary",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_haman",
+		title = "Hammann Observation Diary",
 		id = 506,
 		memories = {
 			274,
@@ -6899,12 +7256,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[507] = {
-		auto_unlock = "",
+		ship_group = 30701,
 		subtype = 0,
-		title = "Red Spider Lily's Love",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_chicheng",
+		title = "Red Spider Lily's Love",
 		id = 507,
 		memories = {
 			281,
@@ -6920,12 +7278,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[508] = {
-		auto_unlock = "",
+		ship_group = 10209,
 		subtype = 0,
-		title = "Knights & Awards",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_kelifulan",
+		title = "Knights & Awards",
 		id = 508,
 		memories = {
 			288,
@@ -6941,12 +7300,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[509] = {
-		auto_unlock = "",
+		ship_group = 30502,
 		subtype = 0,
-		title = "After the Rain Comes the Sun",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_shancheng2",
+		title = "After the Rain Comes the Sun",
 		id = 509,
 		memories = {
 			301,
@@ -6962,12 +7322,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[510] = {
-		auto_unlock = "",
+		ship_group = 20706,
 		subtype = 0,
-		title = "Glorious Interlude",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_guangrong",
+		title = "Glorious Interlude",
 		id = 510,
 		memories = {
 			308,
@@ -6983,12 +7344,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[511] = {
-		auto_unlock = "",
+		ship_group = 10703,
 		subtype = 0,
-		title = "Best Pictures! ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_salatuojia",
+		title = "Best Pictures! ",
 		id = 511,
 		memories = {
 			322,
@@ -7004,12 +7366,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[512] = {
-		auto_unlock = "",
+		ship_group = 30312,
 		subtype = 0,
-		title = "A Date With Atago ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_aidang",
+		title = "A Date With Atago ",
 		id = 512,
 		memories = {
 			329,
@@ -7025,12 +7388,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[513] = {
-		auto_unlock = "",
+		ship_group = 40146,
 		subtype = 0,
-		title = "Pure-White Poem ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_z46",
+		title = "Pure-White Poem ",
 		id = 513,
 		memories = {
 			336,
@@ -7046,12 +7410,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[515] = {
-		auto_unlock = "",
+		ship_group = 80101,
 		subtype = 0,
-		title = "The Melancholy of a Princess Chevalier",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_kaixuan",
+		title = "The Melancholy of a Princess Chevalier",
 		id = 515,
 		memories = {
 			350,
@@ -7067,12 +7432,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[516] = {
-		auto_unlock = "",
+		ship_group = 80201,
 		subtype = 0,
-		title = "Émile, the Dancing Angel",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_aimier",
+		title = "Émile, the Dancing Angel",
 		id = 516,
 		memories = {
 			357,
@@ -7088,12 +7454,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[517] = {
-		auto_unlock = "",
+		ship_group = 80801,
 		subtype = 0,
-		title = "Journée Surcouf!",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_xukufu",
+		title = "Journée Surcouf!",
 		id = 517,
 		memories = {
 			364,
@@ -7109,12 +7476,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[518] = {
-		auto_unlock = "",
+		ship_group = 40502,
 		subtype = 0,
-		title = "Schmelzen ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_tierbici",
+		title = "Schmelzen ",
 		id = 518,
 		memories = {
 			387,
@@ -7130,12 +7498,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[519] = {
-		auto_unlock = "",
+		ship_group = 20604,
 		subtype = 0,
-		title = "Centaur and the Port \"Elders\" ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_banrenma",
+		title = "Centaur and the Port \"Elders\" ",
 		id = 519,
 		memories = {
 			394,
@@ -7151,12 +7520,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[520] = {
-		auto_unlock = "",
+		ship_group = 30402,
 		subtype = 0,
-		title = "Hiei's Banquet ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_birui",
+		title = "Hiei's Banquet ",
 		id = 520,
 		memories = {
 			411,
@@ -7172,12 +7542,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[521] = {
-		auto_unlock = "",
+		ship_group = 40304,
 		subtype = 0,
-		title = "The Cloudy Mask ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_deyizhi",
+		title = "The Cloudy Mask ",
 		id = 521,
 		memories = {
 			418,
@@ -7193,12 +7564,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[522] = {
-		auto_unlock = "",
+		ship_group = 10802,
 		subtype = 0,
-		title = "Submarine Subterfuge!",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_daqinghuayu",
+		title = "Submarine Subterfuge!",
 		id = 522,
 		memories = {
 			425,
@@ -7214,12 +7586,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[523] = {
-		auto_unlock = "",
+		ship_group = 30707,
 		subtype = 0,
-		title = "Taihou, Body and Soul",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_dafeng",
+		title = "Taihou, Body and Soul",
 		id = 523,
 		memories = {
 			443,
@@ -7235,12 +7608,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[524] = {
-		auto_unlock = "",
+		ship_group = 10709,
 		subtype = 0,
-		title = "Enterprise Troubles",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_aisaikesi",
+		title = "Enterprise Troubles",
 		id = 524,
 		memories = {
 			450,
@@ -7256,12 +7630,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[525] = {
-		auto_unlock = "",
+		ship_group = 30109,
 		subtype = 0,
-		title = "Enter: Akatsuki, The Ninja! ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_xiao",
+		title = "Enter: Akatsuki, The Ninja! ",
 		id = 525,
 		memories = {
 			471,
@@ -7277,12 +7652,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[526] = {
-		auto_unlock = "",
+		ship_group = 20219,
 		subtype = 0,
-		title = "A Paean for Peace ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_niukasier",
+		title = "A Paean for Peace ",
 		id = 526,
 		memories = {
 			478,
@@ -7298,12 +7674,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[527] = {
-		auto_unlock = "",
+		ship_group = 10212,
 		subtype = 0,
-		title = "An Easily Flustered Girl's Story ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_huonululu",
+		title = "An Easily Flustered Girl's Story ",
 		id = 527,
 		memories = {
 			485,
@@ -7319,12 +7696,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[528] = {
-		auto_unlock = "",
+		ship_group = 10127,
 		subtype = 0,
-		title = "Mysterious Rabbit Alien?! ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_beili",
+		title = "Mysterious Rabbit Alien?! ",
 		id = 528,
 		memories = {
 			501,
@@ -7340,12 +7718,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[529] = {
-		auto_unlock = "",
+		ship_group = 30118,
 		subtype = 0,
-		title = "Shiranui, the Do-It-All Shopkeeper ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_buzhihuo",
+		title = "Shiranui, the Do-It-All Shopkeeper ",
 		id = 529,
 		memories = {
 			508,
@@ -7361,12 +7740,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[530] = {
-		auto_unlock = "",
+		ship_group = 10218,
 		subtype = 0,
-		title = "Sugary Concord ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_kangkede",
+		title = "Sugary Concord ",
 		id = 530,
 		memories = {
 			515,
@@ -7382,12 +7762,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[531] = {
-		auto_unlock = "",
+		ship_group = 30606,
 		subtype = 0,
-		title = "Light Carrier Ryuujou, Moving Out!",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_longxiang",
+		title = "Light Carrier Ryuujou, Moving Out!",
 		id = 531,
 		memories = {
 			567,
@@ -7403,12 +7784,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[532] = {
-		auto_unlock = "",
+		ship_group = 30164,
 		subtype = 0,
-		title = "Gentle and Sweet Ooshio!",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_dachao",
+		title = "Gentle and Sweet Ooshio!",
 		id = 532,
 		memories = {
 			585,
@@ -7424,12 +7806,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[533] = {
-		auto_unlock = "",
+		ship_group = 30309,
 		subtype = 0,
-		title = "Ashigara, Advance! ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_zubing",
+		title = "Ashigara, Advance! ",
 		id = 533,
 		memories = {
 			599,
@@ -7445,12 +7828,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[534] = {
-		auto_unlock = "",
+		ship_group = 30703,
 		subtype = 0,
-		title = "Together with Souryuu ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_canglong",
+		title = "Together with Souryuu ",
 		id = 534,
 		memories = {
 			606,
@@ -7466,12 +7850,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[535] = {
-		auto_unlock = "",
+		ship_group = 30121,
 		subtype = 0,
-		title = "The Timid Black Cat ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_chuchun",
+		title = "The Timid Black Cat ",
 		id = 535,
 		memories = {
 			642,
@@ -7487,12 +7872,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[536] = {
-		auto_unlock = "",
+		ship_group = 10310,
 		subtype = 0,
-		title = "My Sister's Growth Spurt?! ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_wensensi",
+		title = "My Sister's Growth Spurt?! ",
 		id = 536,
 		memories = {
 			649,
@@ -7508,12 +7894,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[537] = {
-		auto_unlock = "",
+		ship_group = 20208,
 		subtype = 0,
-		title = "Loaded with Lead and Love ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_xiefeierde",
+		title = "Loaded with Lead and Love ",
 		id = 537,
 		memories = {
 			656,
@@ -7529,12 +7916,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[538] = {
-		auto_unlock = "",
+		ship_group = 20220,
 		subtype = 0,
-		title = "Sirius' Improvement Plan ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_tianlangxing",
+		title = "Sirius' Improvement Plan ",
 		id = 538,
 		memories = {
 			663,
@@ -7550,12 +7938,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[539] = {
-		auto_unlock = "",
+		ship_group = 20502,
 		subtype = 0,
-		title = "The Royal Knight ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_yanzhan",
+		title = "The Royal Knight ",
 		id = 539,
 		memories = {
 			670,
@@ -7570,13 +7959,16 @@ end)()
 			10000
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_group[540] = {
-		auto_unlock = "",
+		ship_group = 10738,
 		subtype = 0,
-		title = "Saffron Travelogue ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_xianggelila",
+		title = "Saffron Travelogue ",
 		id = 540,
 		memories = {
 			689,
@@ -7592,12 +7984,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[542] = {
-		auto_unlock = "",
+		ship_group = 40305,
 		subtype = 0,
-		title = "One Little Incident ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_sipei",
+		title = "One Little Incident ",
 		id = 542,
 		memories = {
 			768,
@@ -7612,15 +8005,14 @@ end)()
 			10000
 		}
 	}
-end)()
-;(function()
 	pg.base.memory_group[543] = {
-		auto_unlock = "",
+		ship_group = 20505,
 		subtype = 0,
-		title = "Another Leader?",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_qiaozhiwushi",
+		title = "Another Leader?",
 		id = 543,
 		memories = {
 			778,
@@ -7636,12 +8028,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[544] = {
-		auto_unlock = "",
+		ship_group = 40804,
 		subtype = 0,
-		title = "A Knight's Promise",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_u556story",
+		title = "A Knight's Promise",
 		id = 544,
 		memories = {
 			785,
@@ -7657,12 +8050,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[545] = {
-		auto_unlock = "",
+		ship_group = 10803,
 		subtype = 0,
-		title = "I'm Not A Baby! ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_jiqi",
+		title = "I'm Not A Baby! ",
 		id = 545,
 		memories = {
 			844,
@@ -7678,12 +8072,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[546] = {
-		auto_unlock = "",
+		ship_group = 60302,
 		subtype = 0,
-		title = "Storia di Rosa ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_zhala",
+		title = "Storia di Rosa ",
 		id = 546,
 		memories = {
 			900,
@@ -7699,12 +8094,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[547] = {
-		auto_unlock = "",
+		ship_group = 70201,
 		subtype = 0,
-		title = "Avrora and Her Jovial Friends ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_afuleer",
+		title = "Avrora and Her Jovial Friends ",
 		id = 547,
 		memories = {
 			1142,
@@ -7720,12 +8116,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[548] = {
-		auto_unlock = "",
+		ship_group = 30180,
 		subtype = 0,
-		title = "A Beaming Smile! ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_juanbo",
+		title = "A Beaming Smile! ",
 		id = 548,
 		memories = {
 			1204,
@@ -7741,12 +8138,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[549] = {
-		auto_unlock = "",
+		ship_group = 10306,
 		subtype = 0,
-		title = "Anything and Everything for Indy! ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_botelan",
+		title = "Anything and Everything for Indy! ",
 		id = 549,
 		memories = {
 			1321,
@@ -7762,12 +8160,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[550] = {
-		auto_unlock = "",
+		ship_group = 20703,
 		subtype = 0,
-		title = "A Lady's Modest Proposal ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_guanghui",
+		title = "A Lady's Modest Proposal ",
 		id = 550,
 		memories = {
 			1331,
@@ -7783,12 +8182,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[551] = {
-		auto_unlock = "",
+		ship_group = 20402,
 		subtype = 0,
-		title = "The Heart Beneath the Smile ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_fanji",
+		title = "The Heart Beneath the Smile ",
 		id = 551,
 		memories = {
 			1401,
@@ -7804,12 +8204,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[552] = {
-		auto_unlock = "",
+		ship_group = 40301,
 		subtype = 0,
-		title = "Paradigm of Happiness ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_xipeier",
+		title = "Paradigm of Happiness ",
 		id = 552,
 		memories = {
 			1461,
@@ -7825,12 +8226,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[553] = {
-		auto_unlock = "",
+		ship_group = 20303,
 		subtype = 0,
-		title = "Unbridled Positivity ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_kente",
+		title = "Unbridled Positivity ",
 		id = 553,
 		memories = {
 			1471,
@@ -7846,12 +8248,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[554] = {
-		auto_unlock = "",
+		ship_group = 20605,
 		subtype = 0,
-		title = "Moments with the Young Miss ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_zhuiganzhe",
+		title = "Moments with the Young Miss ",
 		id = 554,
 		memories = {
 			1521,
@@ -7867,12 +8270,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[555] = {
-		auto_unlock = "",
+		ship_group = 20226,
 		subtype = 0,
-		title = "Tis the Season of Love!",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_gelasige",
+		title = "Tis the Season of Love!",
 		id = 555,
 		memories = {
 			1561,
@@ -7888,12 +8292,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[556] = {
-		auto_unlock = "",
+		ship_group = 70504,
 		subtype = 0,
-		title = "White Gallantry",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_beilaluosi",
+		title = "White Gallantry",
 		id = 556,
 		memories = {
 			1571,
@@ -7909,12 +8314,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[557] = {
-		auto_unlock = "",
+		ship_group = 10215,
 		subtype = 0,
-		title = "Denver's Quest!",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_danfo",
+		title = "Denver's Quest!",
 		id = 557,
 		memories = {
 			1581,
@@ -7930,12 +8336,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[558] = {
-		auto_unlock = "",
+		ship_group = 10145,
 		subtype = 0,
-		title = "Three-Star Luxury Romance",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_ailunsamuna",
+		title = "Three-Star Luxury Romance",
 		id = 558,
 		memories = {
 			1591,
@@ -7951,12 +8358,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[559] = {
-		auto_unlock = "",
+		ship_group = 30115,
 		subtype = 0,
-		title = "Heart in the Right Place",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_shiyu",
+		title = "Heart in the Right Place",
 		id = 559,
 		memories = {
 			1641,
@@ -7972,12 +8380,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[560] = {
-		auto_unlock = "",
+		ship_group = 60701,
 		subtype = 0,
-		title = "The Growth of a Courtly Lady",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_tianying",
+		title = "The Growth of a Courtly Lady",
 		id = 560,
 		memories = {
 			1651,
@@ -7993,12 +8402,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[561] = {
-		auto_unlock = "",
+		ship_group = 40802,
 		subtype = 0,
-		title = "Days of Tranquility",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_u47",
+		title = "Days of Tranquility",
 		id = 561,
 		memories = {
 			1671,
@@ -8014,12 +8424,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[562] = {
-		auto_unlock = "",
+		ship_group = 20503,
 		subtype = 0,
-		title = "The Virtue of Being Earnest",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_naerxun",
+		title = "The Virtue of Being Earnest",
 		id = 562,
 		memories = {
 			1716,
@@ -8035,12 +8446,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[563] = {
-		auto_unlock = "",
+		ship_group = 10229,
 		subtype = 0,
-		title = "Me and the Boise",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_boyixi",
+		title = "Me and the Boise",
 		id = 563,
 		memories = {
 			1725,
@@ -8056,12 +8468,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[564] = {
-		auto_unlock = "",
+		ship_group = 30501,
 		subtype = 0,
-		title = "After the Flowers Bloomed",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_fusang",
+		title = "After the Flowers Bloomed",
 		id = 564,
 		memories = {
 			1736,
@@ -8077,12 +8490,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[565] = {
-		auto_unlock = "",
+		ship_group = 30208,
 		subtype = 0,
-		title = "As Cool As A Demon",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_guinu",
+		title = "As Cool As A Demon",
 		id = 565,
 		memories = {
 			1771,
@@ -8098,12 +8512,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[566] = {
-		auto_unlock = "",
+		ship_group = 10707,
 		subtype = 0,
-		title = "Duelling Sunshine!",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_dahuangfeng",
+		title = "Duelling Sunshine!",
 		id = 566,
 		memories = {
 			1781,
@@ -8119,12 +8534,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[567] = {
-		auto_unlock = "",
+		ship_group = 10655,
 		subtype = 0,
-		title = "A Whirlwind Romance",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_kasabulanka",
+		title = "A Whirlwind Romance",
 		id = 567,
 		memories = {
 			1791,
@@ -8140,12 +8556,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[568] = {
-		auto_unlock = "",
+		ship_group = 10227,
 		subtype = 0,
-		title = "Light Up My Day",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_mabuerheide",
+		title = "Light Up My Day",
 		id = 568,
 		memories = {
 			1841,
@@ -8161,12 +8578,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[569] = {
-		auto_unlock = "",
+		ship_group = 30129,
 		subtype = 0,
-		title = "Full Steam Ahead!",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_daofeng",
+		title = "Full Steam Ahead!",
 		id = 569,
 		memories = {
 			1851,
@@ -8182,12 +8600,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[570] = {
-		auto_unlock = "",
+		ship_group = 30514,
 		subtype = 0,
-		title = "Hidden Charm",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_junhe",
+		title = "Hidden Charm",
 		id = 570,
 		memories = {
 			1861,
@@ -8203,12 +8622,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[571] = {
-		auto_unlock = "",
+		ship_group = 40503,
 		subtype = 0,
-		title = "Quintessential",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_wuerlixi",
+		title = "Quintessential",
 		id = 571,
 		memories = {
 			1995,
@@ -8224,12 +8644,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[572] = {
-		auto_unlock = "",
+		ship_group = 20132,
 		subtype = 0,
-		title = "Summer Surprise",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_aisijimoren",
+		title = "Summer Surprise",
 		id = 572,
 		memories = {
 			2041,
@@ -8245,12 +8666,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[573] = {
-		auto_unlock = "",
+		ship_group = 20211,
 		subtype = 0,
-		title = "Uniquely \"Me\"",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_aidingbao",
+		title = "Uniquely \"Me\"",
 		id = 573,
 		memories = {
 			2063,
@@ -8266,12 +8688,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[574] = {
-		auto_unlock = "",
+		ship_group = 10205,
 		subtype = 0,
-		title = "Cinnamon Roll on a Rainy Day",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_hailunna",
+		title = "Cinnamon Roll on a Rainy Day",
 		id = 574,
 		memories = {
 			2121,
@@ -8287,12 +8710,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[575] = {
-		auto_unlock = "",
+		ship_group = 60105,
 		subtype = 0,
-		title = "A Gust of Motivation!",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_xinanfeng",
+		title = "A Gust of Motivation!",
 		id = 575,
 		memories = {
 			2171,
@@ -8308,12 +8732,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[576] = {
-		auto_unlock = "",
+		ship_group = 20134,
 		subtype = 0,
-		title = "Nursing Honesty",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_jiaweisi",
+		title = "Nursing Honesty",
 		id = 576,
 		memories = {
 			2201,
@@ -8329,12 +8754,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[577] = {
-		auto_unlock = "",
+		ship_group = 70202,
 		subtype = 0,
-		title = "Work Hard, Play Harder!",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_shuixingjinian",
+		title = "Work Hard, Play Harder!",
 		id = 577,
 		memories = {
 			2261,
@@ -8350,12 +8776,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[578] = {
-		auto_unlock = "",
+		ship_group = 10501,
 		subtype = 0,
-		title = "Song of Nevada",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_neihuada",
+		title = "Song of Nevada",
 		id = 578,
 		memories = {
 			2341,
@@ -8371,12 +8798,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[579] = {
-		auto_unlock = "",
+		ship_group = 30182,
 		subtype = 0,
-		title = "The Language of the Flowers",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_huayue",
+		title = "The Language of the Flowers",
 		id = 579,
 		memories = {
 			2371,
@@ -8392,12 +8820,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[580] = {
-		auto_unlock = "",
+		ship_group = 40302,
 		subtype = 0,
-		title = "All-Love Assault!",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_bulvxieer",
+		title = "All-Love Assault!",
 		id = 580,
 		memories = {
 			2391,
@@ -8413,12 +8842,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[581] = {
-		auto_unlock = "",
+		ship_group = 60108,
 		subtype = 0,
-		title = "The Sensationalist Sensation",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_aerfuleiduo",
+		title = "The Sensationalist Sensation",
 		id = 581,
 		memories = {
 			2451,
@@ -8434,12 +8864,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[582] = {
-		auto_unlock = "",
+		ship_group = 10148,
 		subtype = 0,
-		title = "Searching for the Light",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_yinggelahan",
+		title = "Searching for the Light",
 		id = 582,
 		memories = {
 			2511,
@@ -8455,12 +8886,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[583] = {
-		auto_unlock = "",
+		ship_group = 19901,
 		subtype = 0,
-		title = "A Party for the Ages",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_xiyatu",
+		title = "A Party for the Ages",
 		id = 583,
 		memories = {
 			2561,
@@ -8476,12 +8908,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[584] = {
-		auto_unlock = "",
+		ship_group = 60801,
 		subtype = 0,
-		title = "Where the Sun Doesn't Shine",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_tuolichaili",
+		title = "Where the Sun Doesn't Shine",
 		id = 584,
 		memories = {
 			2601,
@@ -8497,12 +8930,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[585] = {
-		auto_unlock = "",
+		ship_group = 10702,
 		subtype = 0,
-		title = "An Ode to the Sea",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_liekexingdun",
+		title = "An Ode to the Sea",
 		id = 585,
 		memories = {
 			2651,
@@ -8518,12 +8952,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[586] = {
-		auto_unlock = "",
+		ship_group = 40603,
 		subtype = 0,
-		title = "Slacking Off with the \"Good\" Girl",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_yade",
+		title = "Slacking Off with the \"Good\" Girl",
 		id = 586,
 		memories = {
 			2761,
@@ -8539,12 +8974,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[587] = {
-		auto_unlock = "",
+		ship_group = 40403,
 		subtype = 0,
-		title = "The Iron Rose Blooms",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_saidelici",
+		title = "The Iron Rose Blooms",
 		id = 587,
 		memories = {
 			2771,
@@ -8560,12 +8996,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[588] = {
-		auto_unlock = "",
+		ship_group = 60802,
 		subtype = 0,
-		title = "Your Dear Inventor",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_dafenqi",
+		title = "Your Dear Inventor",
 		id = 588,
 		memories = {
 			2811,
@@ -8581,12 +9018,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[589] = {
-		auto_unlock = "",
+		ship_group = 60109,
 		subtype = 0,
-		title = "A View For Two With You",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_peisagenuo",
+		title = "A View For Two With You",
 		id = 589,
 		memories = {
 			2831,
@@ -8602,12 +9040,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[590] = {
-		auto_unlock = "",
+		ship_group = 90111,
 		subtype = 0,
-		title = "The Protector Needs Protecting",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_edu",
+		title = "The Protector Needs Protecting",
 		id = 590,
 		memories = {
 			2941,
@@ -8623,12 +9062,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[591] = {
-		auto_unlock = "",
+		ship_group = 90502,
 		subtype = 0,
-		title = "Veiled in White",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_kelaimengsuo",
+		title = "Veiled in White",
 		id = 591,
 		memories = {
 			3051,
@@ -8644,12 +9084,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[592] = {
-		auto_unlock = "",
+		ship_group = 60107,
 		subtype = 0,
-		title = "Captain Pompey Has You Covered!",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_pangpei",
+		title = "Captain Pompey Has You Covered!",
 		id = 592,
 		memories = {
 			3131,
@@ -8665,12 +9106,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[593] = {
-		auto_unlock = "",
+		ship_group = 11802,
 		subtype = 0,
-		title = "Personality, Presenter, Secretary",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_guandao",
+		title = "Personality, Presenter, Secretary",
 		id = 593,
 		memories = {
 			3265,
@@ -8686,12 +9128,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[594] = {
-		auto_unlock = "",
+		ship_group = 50102,
 		subtype = 0,
-		title = "Mysteries and Danger!",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_fushun",
+		title = "Mysteries and Danger!",
 		id = 594,
 		memories = {
 			3291,
@@ -8707,12 +9150,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[595] = {
-		auto_unlock = "",
+		ship_group = 50601,
 		subtype = 0,
-		title = "The Go Master and Her Disciple",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_zhenhai",
+		title = "The Go Master and Her Disciple",
 		id = 595,
 		memories = {
 			3351,
@@ -8728,12 +9172,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[596] = {
-		auto_unlock = "",
+		ship_group = 10730,
 		subtype = 0,
-		title = "The Secret to Curing Exhaustion?!",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_shenghaxintuo",
+		title = "The Secret to Curing Exhaustion?!",
 		id = 596,
 		memories = {
 			3421,
@@ -8749,12 +9194,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[597] = {
-		auto_unlock = "",
+		ship_group = 90701,
 		subtype = 0,
-		title = "Date with an Angel",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_xiafei",
+		title = "Date with an Angel",
 		id = 597,
 		memories = {
 			3481,
@@ -8770,12 +9216,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[598] = {
-		auto_unlock = "",
+		ship_group = 50207,
 		subtype = 0,
-		title = "Set Sail! An Inspiration-Seeking Journey",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_haitian",
+		title = "Set Sail! An Inspiration-Seeking Journey",
 		id = 598,
 		memories = {
 			3531,
@@ -8791,12 +9238,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[599] = {
-		auto_unlock = "",
+		ship_group = 49905,
 		subtype = 0,
-		title = "Lord of Raging Seas",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_aijier",
+		title = "Lord of Raging Seas",
 		id = 599,
 		memories = {
 			3671,
@@ -8812,12 +9260,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[600] = {
-		auto_unlock = "",
+		ship_group = 80503,
 		subtype = 0,
-		title = "Emotional Overload",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_aersasi",
+		title = "Emotional Overload",
 		id = 600,
 		memories = {
 			3691,
@@ -8833,12 +9282,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[601] = {
-		auto_unlock = "",
+		ship_group = 10324,
 		subtype = 0,
-		title = "Consultation Corner's Day Off",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_bulaimodun",
+		title = "Consultation Corner's Day Off",
 		id = 601,
 		memories = {
 			3721,
@@ -8854,12 +9304,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[602] = {
-		auto_unlock = "",
+		ship_group = 30311,
 		subtype = 0,
-		title = "A Study in Takao",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_gaoxiong",
+		title = "A Study in Takao",
 		id = 602,
 		memories = {
 			3911,
@@ -8875,12 +9326,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[603] = {
-		auto_unlock = "",
+		ship_group = 960005,
 		subtype = 0,
-		title = "Set Sail - Treasure Voyage!",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_weidahao",
+		title = "Set Sail - Treasure Voyage!",
 		id = 603,
 		memories = {
 			3931,
@@ -8896,12 +9348,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[604] = {
-		auto_unlock = "",
+		ship_group = 20509,
 		subtype = 0,
-		title = "Our Sweet Cookies",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_hao",
+		title = "Our Sweet Cookies",
 		id = 604,
 		memories = {
 			3991,
@@ -8917,12 +9370,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[605] = {
-		auto_unlock = "",
+		ship_group = 40404,
 		subtype = 0,
-		title = "Sweet Dreams, Come Back to Me",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_lvzuofu",
+		title = "Sweet Dreams, Come Back to Me",
 		id = 605,
 		memories = {
 			4061,
@@ -8938,12 +9392,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[606] = {
-		auto_unlock = "",
+		ship_group = 50105,
 		subtype = 0,
-		title = "From Farm to Fork!",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_longwu",
+		title = "From Farm to Fork!",
 		id = 606,
 		memories = {
 			4141,
@@ -8959,12 +9414,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[607] = {
-		auto_unlock = "",
+		ship_group = 50209,
 		subtype = 0,
-		title = "Commander, It's Time to Eat!",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_jian",
+		title = "Commander, It's Time to Eat!",
 		id = 607,
 		memories = {
 			4181,
@@ -8980,12 +9436,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[608] = {
-		auto_unlock = "",
+		ship_group = 90107,
 		subtype = 0,
-		title = "Warmth in the Storm",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_mojiaduoer",
+		title = "Warmth in the Storm",
 		id = 608,
 		memories = {
 			4251,
@@ -9001,12 +9458,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[609] = {
-		auto_unlock = "",
+		ship_group = 70203,
 		subtype = 0,
-		title = "Bonded Together",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_qiabayefu",
+		title = "Bonded Together",
 		id = 609,
 		memories = {
 			4291,
@@ -9022,12 +9480,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[610] = {
-		auto_unlock = "",
+		ship_group = 20712,
 		subtype = 0,
-		title = "Ineffective Energy Saving",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_bunao",
+		title = "Ineffective Energy Saving",
 		id = 610,
 		memories = {
 			4321,
@@ -9043,12 +9502,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[611] = {
-		auto_unlock = "",
+		ship_group = 49906,
 		subtype = 0,
-		title = "A Night with the Unhulde",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_aogusite",
+		title = "A Night with the Unhulde",
 		id = 611,
 		memories = {
 			4441,
@@ -9064,12 +9524,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[612] = {
-		auto_unlock = "",
+		ship_group = 90401,
 		subtype = 0,
-		title = "Intoxicating Feelings",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_dunkeerke",
+		title = "Intoxicating Feelings",
 		id = 612,
 		memories = {
 			4471,
@@ -9085,12 +9546,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[613] = {
-		auto_unlock = "",
+		ship_group = 90105,
 		subtype = 0,
-		title = "Magician of Flowers and Swords",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_huajian",
+		title = "Magician of Flowers and Swords",
 		id = 613,
 		memories = {
 			4531,
@@ -9106,12 +9568,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[614] = {
-		auto_unlock = "",
+		ship_group = 30225,
 		subtype = 0,
-		title = "A Bond Woven by Thread",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_dulianglai",
+		title = "A Bond Woven by Thread",
 		id = 614,
 		memories = {
 			4661,
@@ -9127,12 +9590,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[615] = {
-		auto_unlock = "",
+		ship_group = 960014,
 		subtype = 0,
-		title = "Sounds of the Ocean",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_zhenzhuhao",
+		title = "Sounds of the Ocean",
 		id = 615,
 		memories = {
 			4701,
@@ -9148,12 +9612,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[616] = {
-		auto_unlock = "",
+		ship_group = 110201,
 		subtype = 0,
-		title = "An Electronics Store in Bloom",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_qisheng",
+		title = "An Electronics Store in Bloom",
 		id = 616,
 		memories = {
 			4751,
@@ -9169,12 +9634,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[617] = {
-		auto_unlock = "",
+		ship_group = 10233,
 		subtype = 0,
-		title = "Happiness Is Incalculable",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_fage",
+		title = "Happiness Is Incalculable",
 		id = 617,
 		memories = {
 			4861,
@@ -9190,12 +9656,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[618] = {
-		auto_unlock = "",
+		ship_group = 60501,
 		subtype = 0,
-		title = "The Guide to Sardegnian Glory",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_weineituo",
+		title = "The Guide to Sardegnian Glory",
 		id = 618,
 		memories = {
 			4951,
@@ -9211,12 +9678,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[619] = {
-		auto_unlock = "",
+		ship_group = 51901,
 		subtype = 0,
-		title = "A Disastrous Investment",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_dingan",
+		title = "A Disastrous Investment",
 		id = 619,
 		memories = {
 			4971,
@@ -9232,12 +9700,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[620] = {
-		auto_unlock = "",
+		ship_group = 20607,
 		subtype = 0,
-		title = "Forest Breeze and the Compass of the Heart",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_aerbien",
+		title = "Forest Breeze and the Compass of the Heart",
 		id = 620,
 		memories = {
 			5031,
@@ -9253,12 +9722,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[621] = {
-		auto_unlock = "",
+		ship_group = 20313,
 		subtype = 0,
-		title = "The Facts and Fictions of Devonshire",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_dewenjun",
+		title = "The Facts and Fictions of Devonshire",
 		id = 621,
 		memories = {
 			5071,
@@ -9274,12 +9744,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[622] = {
-		auto_unlock = "",
+		ship_group = 49910,
 		subtype = 0,
-		title = "The Eternal Night's Oath Under the Blood Moon",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_meikelunbao",
+		title = "The Eternal Night's Oath Under the Blood Moon",
 		id = 622,
 		memories = {
 			5111,
@@ -9295,14 +9766,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[1000] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Project Identity: TB",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Project Identity: TB",
+		auto_unlock = "",
+		subtype = 3,
 		id = 1000,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			20000,
 			20001,
@@ -9351,14 +9823,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[1001] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Convergence of Hearts",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Convergence of Hearts",
+		auto_unlock = "",
+		subtype = 3,
 		id = 1001,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			20044,
 			20045,
@@ -9371,14 +9844,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[1002] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Heartfelt Conversations",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Heartfelt Conversations",
+		auto_unlock = "",
+		subtype = 3,
 		id = 1002,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			20052,
 			20053,
@@ -9413,14 +9887,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[1003] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Project Identity: Oceana",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Project Identity: Oceana",
+		auto_unlock = "",
+		subtype = 3,
 		id = 1003,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			20082,
 			20083,
@@ -9471,14 +9946,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[1004] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Navi's Thoughts",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Navi's Thoughts",
+		auto_unlock = "",
+		subtype = 3,
 		id = 1004,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			20128,
 			20129,
@@ -9492,14 +9968,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[1005] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Shipgirl Interactions",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Shipgirl Interactions",
+		auto_unlock = "",
+		subtype = 3,
 		id = 1005,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			20138,
 			20139,
@@ -9516,14 +9993,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[1006] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Project Identity: Explorer",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Project Identity: Explorer",
+		auto_unlock = "",
+		subtype = 3,
 		id = 1006,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			20150,
 			20151,
@@ -9574,14 +10052,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[1007] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Lora's Thoughts",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Lora's Thoughts",
+		auto_unlock = "",
+		subtype = 3,
 		id = 1007,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			20196,
 			20197,
@@ -9595,14 +10074,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[1008] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "Shipgirl Interactions",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "Shipgirl Interactions",
+		auto_unlock = "",
+		subtype = 3,
 		id = 1008,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			20206,
 			20207,

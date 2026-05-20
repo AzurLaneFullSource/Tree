@@ -1,13 +1,21 @@
 local var0_0 = class("CombatUIPreviewer")
-local var1_0 = Vector3(0, 1, 40)
-local var2_0 = Vector3(35, 1, 40)
-local var3_0 = Vector3(30, 0, 0)
-local var4_0 = Vector3(330, 0, 0)
-local var5_0 = Vector3(-532, 157, 0)
-local var6_0 = Vector3(-665, 70, -675)
-local var7_0 = Vector3(473, 157, 0)
-local var8_0 = Vector3(-791, 70, 0)
-local var9_0 = Vector3(464, 70, -675)
+local var1_0 = {
+	LOOP = 3,
+	FILLED = 2,
+	UNFILLED = 1
+}
+
+var0_0.WeaponButtonPreviewMode = var1_0
+
+local var2_0 = Vector3(0, 1, 40)
+local var3_0 = Vector3(35, 1, 40)
+local var4_0 = Vector3(30, 0, 0)
+local var5_0 = Vector3(330, 0, 0)
+local var6_0 = Vector3(-532, 157, 0)
+local var7_0 = Vector3(-665, 70, -675)
+local var8_0 = Vector3(473, 157, 0)
+local var9_0 = Vector3(-791, 70, 0)
+local var10_0 = Vector3(464, 70, -675)
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.rawImage = arg1_1
@@ -47,33 +55,39 @@ function var0_0.setCombatUI(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3)
 
 	arg0_3.buttonContainer = var0_3:Find("Weapon_button_container")
 
+	local var1_3 = {
+		var1_0.UNFILLED,
+		var1_0.FILLED,
+		var1_0.LOOP
+	}
+
 	for iter0_3 = 1, 3 do
-		local var1_3
+		local var2_3
 
 		if ys.Battle["BattleWeaponButton" .. arg0_3.skinKey] then
-			var1_3 = ys.Battle["BattleWeaponButton" .. arg0_3.skinKey].New()
+			var2_3 = ys.Battle["BattleWeaponButton" .. arg0_3.skinKey].New()
 		else
-			var1_3 = ys.Battle.BattleWeaponButton.New()
+			var2_3 = ys.Battle.BattleWeaponButton.New()
 		end
 
-		local var2_3 = cloneTplTo(var0_3:Find("Weapon_button_progress"), arg0_3.buttonContainer)
+		local var3_3 = cloneTplTo(var0_3:Find("Weapon_button_progress"), arg0_3.buttonContainer)
 
 		skinName = "Skill_" .. iter0_3
 
-		local var3_3 = {}
+		local var4_3 = {}
 
-		ys.Battle.BattleSkillView.SetSkillButtonPreferences(var2_3, iter0_3)
-		var1_3:ConfigSkin(var2_3)
-		var1_3:SwitchIcon(iter0_3, arg4_3)
-		var1_3:SwitchIconEffect(iter0_3, arg4_3)
-		var1_3:SetTextActive(true)
-		var1_3:SetToCombatUIPreview(iter0_3 > 1)
+		ys.Battle.BattleSkillView.SetSkillButtonPreferences(var3_3, iter0_3)
+		var2_3:ConfigSkin(var3_3)
+		var2_3:SwitchIcon(iter0_3, arg4_3)
+		var2_3:SwitchIconEffect(iter0_3, arg4_3)
+		var2_3:SetTextActive(true)
+		var2_3:SetToCombatUIPreview(var1_3[iter0_3])
 
 		if iter0_3 == 3 then
-			local var4_3 = GetOrAddComponent(go(var2_3), typeof(UnityEngine.Playables.PlayableDirector))
+			local var5_3 = GetOrAddComponent(go(var3_3), typeof(UnityEngine.Playables.PlayableDirector))
 
-			if var4_3 then
-				var4_3.enabled = true
+			if var5_3 then
+				var5_3.enabled = true
 			end
 		end
 	end
@@ -104,21 +118,21 @@ function var0_0.setCombatUI(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3)
 
 	setActive(arg0_3.bossHPBar, true)
 
-	local var5_3 = arg0_3.bossHPBar:Find("bloodBarContainer")
-	local var6_3 = var5_3.childCount - 1
+	local var6_3 = arg0_3.bossHPBar:Find("bloodBarContainer")
+	local var7_3 = var6_3.childCount - 1
 
-	for iter1_3 = 0, var6_3 do
-		var5_3:GetChild(iter1_3):GetComponent(typeof(Image)).fillAmount = 1
+	for iter1_3 = 0, var7_3 do
+		var6_3:GetChild(iter1_3):GetComponent(typeof(Image)).fillAmount = 1
 		iter1_3 = iter1_3 + 1
 	end
 
 	arg0_3.skillContainer = var0_3:Find("Skill_Activation/Root")
 	arg0_3.skill = var0_3:Find("Skill_Activation/mask")
 
-	local var7_3 = var0_3:Find("Stick/Area/BG/spine")
+	local var8_3 = var0_3:Find("Stick/Area/BG/spine")
 
-	if var7_3 then
-		var7_3:GetComponent(typeof(SpineAnimUI)):SetAction("normal", 0)
+	if var8_3 then
+		var8_3:GetComponent(typeof(SpineAnimUI)):SetAction("normal", 0)
 	end
 
 	arg0_3.stick = var0_3:Find("Stick/Area/Stick")
@@ -183,7 +197,7 @@ function var0_0.load(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4, arg5_4)
 					var0_7.localScale = Vector3(var4_6, var4_6, var4_6)
 				end
 
-				var0_7.localEulerAngles = var3_0
+				var0_7.localEulerAngles = var4_0
 
 				var0_7:GetComponent("SpineAnim"):SetAction(ys.Battle.BattleConst.ActionName.MOVE, 0, true)
 
@@ -193,7 +207,7 @@ function var0_0.load(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4, arg5_4)
 				var2_7:SetParent(var0_7, false)
 
 				var2_7.localPosition = Vector3.zero
-				var2_7.localEulerAngles = var4_0
+				var2_7.localEulerAngles = var5_0
 
 				local var3_7 = {
 					GetGO = function()
@@ -220,7 +234,7 @@ function var0_0.load(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4, arg5_4)
 
 			var5_6(arg0_4.seaCharacter)
 
-			arg0_4.seaCharacter.transform.localPosition = var1_0
+			arg0_4.seaCharacter.transform.localPosition = var2_0
 
 			arg0_4:SeaUpdate()
 
@@ -261,7 +275,7 @@ function var0_0.load(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4, arg5_4)
 					var0_13.localScale = Vector3(var4_12, var4_12, var4_12)
 				end
 
-				var0_13.localEulerAngles = var3_0
+				var0_13.localEulerAngles = var4_0
 
 				var0_13:GetComponent("SpineAnim"):SetAction(ys.Battle.BattleConst.ActionName.MOVE, 0, true)
 
@@ -271,7 +285,7 @@ function var0_0.load(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4, arg5_4)
 				var2_13:SetParent(var0_13, false)
 
 				var2_13.localPosition = Vector3.zero
-				var2_13.localEulerAngles = var4_0
+				var2_13.localEulerAngles = var5_0
 
 				local var3_13 = {
 					GetGO = function()
@@ -298,7 +312,7 @@ function var0_0.load(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4, arg5_4)
 
 			var5_12(arg0_4.seaEnemy, true)
 
-			arg0_4.seaEnemy.transform.localPosition = var2_0
+			arg0_4.seaEnemy.transform.localPosition = var3_0
 		end
 
 		var0_4:InstCharacter(arg3_4:getPrefab(), function(arg0_18)
@@ -315,19 +329,19 @@ end
 
 function var0_0.updateBarPos(arg0_20)
 	if arg0_20.seaCharacter then
-		arg0_20.heroBar.localPosition = var5_0
-		arg0_20.flagShipMark.localPosition = var6_0
+		arg0_20.heroBar.localPosition = var6_0
+		arg0_20.flagShipMark.localPosition = var7_0
 	end
 
 	if arg0_20.seaEnemy then
-		arg0_20.enemyBar.localPosition = var7_0
+		arg0_20.enemyBar.localPosition = var8_0
 	end
 end
 
 function var0_0.updatePopUp(arg0_21)
 	setActive(arg0_21.chatPop, true)
 
-	arg0_21.chatPop.localPosition = var8_0
+	arg0_21.chatPop.localPosition = var9_0
 
 	LeanTween.cancel(arg0_21.chatPop)
 
@@ -407,34 +421,34 @@ function var0_0.updateHPPop(arg0_25)
 		1
 	})
 
-	var2_25._tf.localPosition = var9_0
+	var2_25._tf.localPosition = var10_0
 
 	var2_25:Play()
 end
 
-local var10_0 = 250
-local var11_0 = 50
-local var12_0 = 1000
-local var13_0 = 2
-local var14_0 = 3
+local var11_0 = 250
+local var12_0 = 50
+local var13_0 = 1000
+local var14_0 = 2
+local var15_0 = 3
 
 function var0_0.updateStick(arg0_26)
-	if arg0_26._stickMoveCount and arg0_26._stickMoveCount <= var10_0 then
+	if arg0_26._stickMoveCount and arg0_26._stickMoveCount <= var11_0 then
 		arg0_26._stickMoveCount = arg0_26._stickMoveCount + 1
 
 		local var0_26 = arg0_26.stickVX + arg0_26.stick.localPosition.x
 		local var1_26 = arg0_26.stickVY + arg0_26.stick.localPosition.y
 
-		if var0_26 * var0_26 + var1_26 * var1_26 > var12_0 * 2 then
+		if var0_26 * var0_26 + var1_26 * var1_26 > var13_0 * 2 then
 			local var2_26 = math.atan2(var1_26, var0_26)
 			local var3_26
 			local var4_26
-			local var5_26 = var12_0 * math.cos(var2_26)
-			local var6_26 = var12_0 * math.sin(var2_26)
-			local var7_26 = var5_26 / var12_0
-			local var8_26 = var6_26 / var12_0
+			local var5_26 = var13_0 * math.cos(var2_26)
+			local var6_26 = var13_0 * math.sin(var2_26)
+			local var7_26 = var5_26 / var13_0
+			local var8_26 = var6_26 / var13_0
 			local var9_26 = math.random() * 2 * math.pi
-			local var10_26 = math.random(var13_0, var14_0)
+			local var10_26 = math.random(var14_0, var15_0)
 
 			arg0_26.stickVX = math.cos(var9_26) * var10_26
 			arg0_26.stickVY = math.sin(var9_26) * var10_26
@@ -449,7 +463,7 @@ function var0_0.updateStick(arg0_26)
 			arg0_26.stick.localPosition = arg0_26.stickPos
 		end
 
-		if arg0_26._stickMoveCount >= var10_0 then
+		if arg0_26._stickMoveCount >= var11_0 then
 			if arg0_26.stickTail then
 				setActive(arg0_26.stickTail, false)
 			end
@@ -458,16 +472,16 @@ function var0_0.updateStick(arg0_26)
 			arg0_26._stickMoveCount = nil
 			arg0_26._stickStopCount = 0
 		end
-	elseif arg0_26._stickStopCount and arg0_26._stickStopCount <= var11_0 then
+	elseif arg0_26._stickStopCount and arg0_26._stickStopCount <= var12_0 then
 		arg0_26._stickStopCount = arg0_26._stickStopCount + 1
 
-		if arg0_26._stickStopCount >= var11_0 then
+		if arg0_26._stickStopCount >= var12_0 then
 			if arg0_26.stickTail then
 				setActive(arg0_26.stickTail, true)
 			end
 
 			local var11_26 = math.random() * 2 * math.pi
-			local var12_26 = math.random(var13_0, var14_0)
+			local var12_26 = math.random(var14_0, var15_0)
 
 			arg0_26.stickVX = math.cos(var11_26) * var12_26
 			arg0_26.stickVY = math.cos(var11_26) * var12_26

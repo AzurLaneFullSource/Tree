@@ -120,6 +120,7 @@ function var5_0.DoWhenAddBuff(arg0_14, arg1_14)
 
 	arg0_14:addInitFX(var0_14)
 	arg0_14:addLastFX(var0_14)
+	arg0_14:updateLastFXStackText(var0_14)
 end
 
 function var5_0.onBuffStack(arg0_15, arg1_15)
@@ -153,6 +154,8 @@ function var5_0.DoWhenStackBuff(arg0_16, arg1_16)
 			end
 		end
 	end
+
+	arg0_16:updateLastFXStackText(var0_16)
 end
 
 function var5_0.onBuffRemove(arg0_17, arg1_17)
@@ -245,163 +248,201 @@ function var5_0.addLastFX(arg0_22, arg1_22)
 	end
 end
 
-function var5_0.generateLastFX(arg0_23, arg1_23, arg2_23)
-	arg0_23._currentLastFXID = arg2_23
+function var5_0.updateLastFXStackText(arg0_23, arg1_23)
+	local var0_23 = var0_0.Battle.BattleDataFunction.GetBuffTemplate(arg1_23).last_effect_stack_text
 
-	local var0_23 = arg0_23._owner:AddFX(arg2_23)
+	if type(var0_23) ~= "table" then
+		return
+	end
 
-	if arg1_23.last_effect_cld_scale or arg1_23.last_effect_cld_angle then
-		local var1_23
-		local var2_23 = arg1_23[buffLv] or arg1_23.effect_list
+	local var1_23 = var0_23.node
 
-		for iter0_23, iter1_23 in ipairs(var2_23) do
-			if iter1_23.arg_list.cld_data then
-				var1_23 = iter1_23
+	if type(var1_23) ~= "string" or var1_23 == "" then
+		return
+	end
+
+	local var2_23 = arg0_23._owner:GetUnitData():GetBuff(arg1_23)
+
+	if not var2_23 then
+		return
+	end
+
+	local var3_23 = var2_23:GetStack() or 1
+	local var4_23 = "X" .. var3_23
+	local var5_23 = arg0_23._buffLastEffects[arg1_23]
+
+	if not var5_23 then
+		return
+	end
+
+	for iter0_23, iter1_23 in ipairs(var5_23) do
+		if iter1_23 then
+			local var6_23 = iter1_23.transform:Find(var1_23)
+
+			if var6_23 then
+				setText(var6_23, var4_23)
+			end
+		end
+	end
+end
+
+function var5_0.generateLastFX(arg0_24, arg1_24, arg2_24)
+	arg0_24._currentLastFXID = arg2_24
+
+	local var0_24 = arg0_24._owner:AddFX(arg2_24)
+
+	if arg1_24.last_effect_cld_scale or arg1_24.last_effect_cld_angle then
+		local var1_24
+		local var2_24 = arg1_24[buffLv] or arg1_24.effect_list
+
+		for iter0_24, iter1_24 in ipairs(var2_24) do
+			if iter1_24.arg_list.cld_data then
+				var1_24 = iter1_24
 
 				break
 			end
 		end
 
-		if var1_23 then
-			if arg1_23.last_effect_cld_scale then
-				local var3_23 = var1_23.arg_list.cld_data.box
-				local var4_23 = var0_23.transform.localScale
+		if var1_24 then
+			if arg1_24.last_effect_cld_scale then
+				local var3_24 = var1_24.arg_list.cld_data.box
+				local var4_24 = var0_24.transform.localScale
 
-				if var3_23.range then
-					var4_23.x = var4_23.x * var3_23.range
-					var4_23.y = var4_23.y * var3_23.range
-					var4_23.z = var4_23.z * var3_23.range
+				if var3_24.range then
+					var4_24.x = var4_24.x * var3_24.range
+					var4_24.y = var4_24.y * var3_24.range
+					var4_24.z = var4_24.z * var3_24.range
 				else
-					var4_23.x = var4_23.x * var3_23[1]
-					var4_23.y = var4_23.y * var3_23[2]
-					var4_23.z = var4_23.z * var3_23[3]
+					var4_24.x = var4_24.x * var3_24[1]
+					var4_24.y = var4_24.y * var3_24[2]
+					var4_24.z = var4_24.z * var3_24[3]
 				end
 
-				var0_23.transform.localScale = var4_23
+				var0_24.transform.localScale = var4_24
 			end
 
-			if arg1_23.last_effect_cld_angle then
-				local var5_23 = var1_23.arg_list.cld_data.angle
-				local var6_23 = var0_23.transform:Find("scale/sector"):GetComponent(typeof(Renderer)).material
-				local var7_23 = (360 - var5_23) * 0.5 - 5
+			if arg1_24.last_effect_cld_angle then
+				local var5_24 = var1_24.arg_list.cld_data.angle
+				local var6_24 = var0_24.transform:Find("scale/sector"):GetComponent(typeof(Renderer)).material
+				local var7_24 = (360 - var5_24) * 0.5 - 5
 
-				var6_23:SetInt("_AngleControl", var7_23)
+				var6_24:SetInt("_AngleControl", var7_24)
 			end
 
-			if arg1_23.last_effect_bound_bone then
-				local var8_23 = arg0_23._owner:GetBoneList()[arg1_23.last_effect_bound_bone]
+			if arg1_24.last_effect_bound_bone then
+				local var8_24 = arg0_24._owner:GetBoneList()[arg1_24.last_effect_bound_bone]
 
-				if var8_23 then
-					var0_23.transform.localPosition = var8_23[1]
+				if var8_24 then
+					var0_24.transform.localPosition = var8_24[1]
 				end
 			end
 		end
 	end
 
-	var0_23:SetActive(true)
+	var0_24:SetActive(true)
 
-	return var0_23
+	return var0_24
 end
 
-function var5_0.addBlink(arg0_24, arg1_24)
-	local var0_24 = var0_0.Battle.BattleDataFunction.GetBuffTemplate(arg1_24)
+function var5_0.addBlink(arg0_25, arg1_25)
+	local var0_25 = var0_0.Battle.BattleDataFunction.GetBuffTemplate(arg1_25)
 
-	if var0_24.blink then
-		local var1_24 = var0_24.blink
-		local var2_24 = arg0_24._owner:AddBlink(var1_24[1], var1_24[2], var1_24[3], var1_24[4], var1_24[5])
+	if var0_25.blink then
+		local var1_25 = var0_25.blink
+		local var2_25 = arg0_25._owner:AddBlink(var1_25[1], var1_25[2], var1_25[3], var1_25[4], var1_25[5])
 
-		arg0_24._blinkIDList[arg1_24] = var2_24
+		arg0_25._blinkIDList[arg1_25] = var2_25
 	end
 end
 
-function var5_0.addEffect(arg0_25, arg1_25)
-	local var0_25 = arg1_25.index or arg0_25:getIndex()
-	local var1_25 = arg0_25._effectList[var0_25]
+function var5_0.addEffect(arg0_26, arg1_26)
+	local var0_26 = arg1_26.index or arg0_26:getIndex()
+	local var1_26 = arg0_26._effectList[var0_26]
 
-	if var1_25 then
-		local var2_25 = var1_25.effect_tf.localScale
+	if var1_26 then
+		local var2_26 = var1_26.effect_tf.localScale
 
-		var1_25.effect_go:SetActive(true)
+		var1_26.effect_go:SetActive(true)
 
-		var1_25.effect_tf.localScale = var2_25
+		var1_26.effect_tf.localScale = var2_26
 	else
-		local var3_25 = arg0_25._owner:AddFX(arg1_25.effect)
+		local var3_26 = arg0_26._owner:AddFX(arg1_26.effect)
 
-		if not var3_25 then
+		if not var3_26 then
 			return
 		end
 
-		local var4_25 = {
+		local var4_26 = {
 			currentTime = 0,
-			effect_go = var3_25,
-			effect_tf = var3_25.transform,
-			posFun = arg1_25.posFun,
-			rotationFun = arg1_25.rotationFun,
+			effect_go = var3_26,
+			effect_tf = var3_26.transform,
+			posFun = arg1_26.posFun,
+			rotationFun = arg1_26.rotationFun,
 			startTime = pg.TimeMgr.GetInstance():GetCombatTime(),
-			fillFunc = arg1_25.fillFunc
+			fillFunc = arg1_26.fillFunc
 		}
 
-		arg0_25._effectList[var0_25] = var4_25
+		arg0_26._effectList[var0_26] = var4_26
 
-		arg0_25:updateEffect(var4_25)
-		pg.EffectMgr.GetInstance():PlayBattleEffect(var3_25, var3_25.transform.localPosition, false, function(arg0_26)
-			arg0_25._owner:RemoveFX(var3_25)
+		arg0_26:updateEffect(var4_26)
+		pg.EffectMgr.GetInstance():PlayBattleEffect(var3_26, var3_26.transform.localPosition, false, function(arg0_27)
+			arg0_26._owner:RemoveFX(var3_26)
 
-			arg0_25._effectList[var0_25] = nil
+			arg0_26._effectList[var0_26] = nil
 		end)
 	end
 end
 
-function var5_0.cancelEffect(arg0_27, arg1_27)
-	local var0_27 = arg1_27.index
-	local var1_27 = arg0_27._effectList[var0_27]
-
-	if var1_27 then
-		arg0_27._owner:RemoveFX(var1_27.effect_go)
-
-		arg0_27._effectList[var0_27] = nil
-	end
-end
-
-function var5_0.deactiveEffect(arg0_28, arg1_28)
+function var5_0.cancelEffect(arg0_28, arg1_28)
 	local var0_28 = arg1_28.index
 	local var1_28 = arg0_28._effectList[var0_28]
 
 	if var1_28 then
-		var1_28.effect_go:SetActive(false)
+		arg0_28._owner:RemoveFX(var1_28.effect_go)
+
+		arg0_28._effectList[var0_28] = nil
 	end
 end
 
-function var5_0.getIndex(arg0_29)
-	arg0_29._effectIndex = arg0_29._effectIndex + 1
+function var5_0.deactiveEffect(arg0_29, arg1_29)
+	local var0_29 = arg1_29.index
+	local var1_29 = arg0_29._effectList[var0_29]
 
-	return arg0_29._effectIndex
+	if var1_29 then
+		var1_29.effect_go:SetActive(false)
+	end
 end
 
-function var5_0.updateEffect(arg0_30, arg1_30)
-	if arg1_30.posFun then
-		local var0_30 = arg1_30.posFun(arg1_30.currentTime)
+function var5_0.getIndex(arg0_30)
+	arg0_30._effectIndex = arg0_30._effectIndex + 1
 
-		arg1_30.effect_tf.localPosition = var0_30
+	return arg0_30._effectIndex
+end
+
+function var5_0.updateEffect(arg0_31, arg1_31)
+	if arg1_31.posFun then
+		local var0_31 = arg1_31.posFun(arg1_31.currentTime)
+
+		arg1_31.effect_tf.localPosition = var0_31
 	end
 
-	if arg1_30.rotationFun then
-		local var1_30 = arg1_30.rotationFun(arg1_30.currentTime)
+	if arg1_31.rotationFun then
+		local var1_31 = arg1_31.rotationFun(arg1_31.currentTime)
 
-		if arg0_30._dir == var0_0.Battle.BattleConst.UnitDir.LEFT then
-			var1_30.y = var1_30.y - 180
+		if arg0_31._dir == var0_0.Battle.BattleConst.UnitDir.LEFT then
+			var1_31.y = var1_31.y - 180
 		end
 
-		arg1_30.effect_tf.localEulerAngles = var1_30
+		arg1_31.effect_tf.localEulerAngles = var1_31
 	end
 
-	if arg1_30.fillFunc then
-		arg0_30._characterScaleX = arg0_30._characterScaleX or arg0_30._owner:GetTf().localScale.x
-		arg0_30._characterScaleZ = arg0_30._characterScaleZ or arg0_30._owner:GetTf().localScale.z
+	if arg1_31.fillFunc then
+		arg0_31._characterScaleX = arg0_31._characterScaleX or arg0_31._owner:GetTf().localScale.x
+		arg0_31._characterScaleZ = arg0_31._characterScaleZ or arg0_31._owner:GetTf().localScale.z
 
-		local var2_30, var3_30, var4_30 = arg1_30.fillFunc()
+		local var2_31, var3_31, var4_31 = arg1_31.fillFunc()
 
-		arg1_30.effect_tf.position = var2_30
-		arg1_30.effect_tf.localScale = Vector3(var3_30 / arg0_30._characterScaleX, 0, var4_30 / arg0_30._characterScaleZ)
+		arg1_31.effect_tf.position = var2_31
+		arg1_31.effect_tf.localScale = Vector3(var3_31 / arg0_31._characterScaleX, 0, var4_31 / arg0_31._characterScaleZ)
 	end
 end

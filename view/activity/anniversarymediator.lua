@@ -66,7 +66,7 @@ function var0_0.listNotificationInterests(arg0_7)
 		TaskProxy.TASK_ADDED,
 		TaskProxy.TASK_UPDATED,
 		TaskProxy.TASK_REMOVED,
-		TaskProxy.TASK_FINISH,
+		TaskProxy.TASK_DELETE,
 		GAME.SUBMIT_TASK_DONE,
 		ActivityProxy.ACTIVITY_UPDATED
 	}
@@ -76,7 +76,7 @@ function var0_0.handleNotification(arg0_8, arg1_8)
 	local var0_8 = arg1_8:getName()
 	local var1_8 = arg1_8:getBody()
 
-	if var0_8 == TaskProxy.TASK_ADDED or var0_8 == TaskProxy.TASK_UPDATED or var0_8 == TaskProxy.TASK_REMOVED or var0_8 == TaskProxy.TASK_FINISH then
+	if var0_8 == TaskProxy.TASK_ADDED or var0_8 == TaskProxy.TASK_UPDATED or var0_8 == TaskProxy.TASK_REMOVED or var0_8 == TaskProxy.TASK_DELETE then
 		local var2_8 = arg0_8:getTaskByIds()
 
 		arg0_8.viewComponent:setTaskList(var2_8)

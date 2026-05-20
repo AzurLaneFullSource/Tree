@@ -69,6 +69,7 @@ function var0_0.AfterCall(arg0_5, arg1_5)
 		arg0_5.notchAdaptRTVector = arg0_5.rightTopVector
 	end
 
+	arg0_5:FixOverlayPadding(var0_5)
 	arg0_5:emit(var0_0.ASPECT_RATIO_UPDATE, arg0_5.targetRatio)
 end
 
@@ -124,4 +125,88 @@ end
 
 function var0_0.Dispose(arg0_12)
 	arg0_12:Clear()
+end
+
+local var1_0 = 1920
+local var2_0 = 1080
+
+local function var3_0(arg0_13, arg1_13, arg2_13)
+	local var0_13 = arg0_13 and not IsNil(arg0_13)
+	local var1_13 = var1_0
+	local var2_13 = var2_0
+
+	if var0_13 then
+		local var3_13 = arg0_13.referenceResolution
+
+		var1_13 = var3_13.x
+		var2_13 = var3_13.y
+	end
+
+	if var1_13 <= 0 or var2_13 <= 0 then
+		var1_13 = var1_0
+		var2_13 = var2_0
+	end
+
+	local var4_13 = arg1_13 / var1_13
+	local var5_13 = arg2_13 / var2_13
+
+	if var0_13 and arg0_13.screenMatchMode == CanvasScaler.ScreenMatchMode.MatchWidthOrHeight then
+		local var6_13 = math.log(var4_13) / math.log(2)
+		local var7_13 = math.log(var5_13) / math.log(2)
+		local var8_13 = arg0_13.matchWidthOrHeight
+
+		return math.pow(2, var6_13 + (var7_13 - var6_13) * var8_13)
+	elseif var0_13 and arg0_13.screenMatchMode == CanvasScaler.ScreenMatchMode.Shrink then
+		return math.max(var4_13, var5_13)
+	else
+		return math.min(var4_13, var5_13)
+	end
+end
+
+function var0_0.FixOverlayPadding(arg0_14, arg1_14)
+	if not arg0_14.paddingCanvas or IsNil(arg0_14.paddingCanvas) then
+		local var0_14 = GameObject.Find("/OverlayCamera/Adpter")
+
+		if not var0_14 or IsNil(var0_14) then
+			return
+		end
+
+		arg0_14.paddingCanvas = rtf(var0_14)
+		arg0_14.paddingCanvasScaler = var0_14:GetComponent(typeof(CanvasScaler))
+		arg0_14.paddingTop = arg0_14.paddingCanvas:Find("top")
+		arg0_14.paddingBottom = arg0_14.paddingCanvas:Find("bottom")
+		arg0_14.paddingLeft = arg0_14.paddingCanvas:Find("left")
+		arg0_14.paddingRight = arg0_14.paddingCanvas:Find("right")
+	end
+
+	if IsNil(arg0_14.paddingTop) or IsNil(arg0_14.paddingBottom) or IsNil(arg0_14.paddingLeft) or IsNil(arg0_14.paddingRight) then
+		return
+	end
+
+	local var1_14 = var3_0(arg0_14.paddingCanvasScaler, arg0_14.currentWidth, arg0_14.currentHeight)
+
+	if var1_14 <= 0 then
+		return
+	end
+
+	local var2_14 = arg0_14.currentWidth / var1_14
+	local var3_14 = arg0_14.currentHeight / var1_14
+	local var4_14
+	local var5_14
+
+	if arg1_14 < arg0_14.targetRatio then
+		var4_14 = var2_14
+		var5_14 = var2_14 / arg0_14.targetRatio
+	else
+		var5_14 = var3_14
+		var4_14 = var3_14 * arg0_14.targetRatio
+	end
+
+	local var6_14 = math.max((var2_14 - var4_14) * 0.5, 0)
+	local var7_14 = math.max((var3_14 - var5_14) * 0.5, 0)
+
+	arg0_14.paddingLeft.sizeDelta = Vector2(var6_14, arg0_14.paddingLeft.sizeDelta.y)
+	arg0_14.paddingRight.sizeDelta = Vector2(var6_14, arg0_14.paddingRight.sizeDelta.y)
+	arg0_14.paddingTop.sizeDelta = Vector2(arg0_14.paddingTop.sizeDelta.x, var7_14)
+	arg0_14.paddingBottom.sizeDelta = Vector2(arg0_14.paddingBottom.sizeDelta.x, var7_14)
 end

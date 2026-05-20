@@ -196,6 +196,10 @@ pg.ship_meta_breakout.all = {
 	9706042,
 	9706043,
 	9706044,
+	9706051,
+	9706052,
+	9706053,
+	9706054,
 	9707011,
 	9707012,
 	9707013,
@@ -3352,6 +3356,75 @@ end)()
 		pre_id = 9706043,
 		weapon_ids = {}
 	}
+	pg.base.ship_meta_breakout[9706051] = {
+		breakout_view = "Unlock Cinders of Hope - Elbe/All Dive Bombers +1/Fighter efficiency +5%",
+		gold = 1000,
+		breakout_id = 9706052,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9706051,
+		item1 = 21061,
+		pre_id = 0,
+		weapon_ids = {
+			60591,
+			54014
+		}
+	}
+	pg.base.ship_meta_breakout[9706052] = {
+		breakout_view = "Hangar capacity +1/All Fighters +1/Fighter efficiency +10%",
+		gold = 3000,
+		breakout_id = 9706053,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9706052,
+		item1 = 21061,
+		pre_id = 9706051,
+		weapon_ids = {
+			60591,
+			54014,
+			60592,
+			54014
+		}
+	}
+	pg.base.ship_meta_breakout[9706053] = {
+		breakout_view = "Improve Cinders of Hope - Elbe/All aircraft +1/Dive Bomber efficiency +10%",
+		gold = 10000,
+		breakout_id = 9706054,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9706053,
+		item1 = 21061,
+		pre_id = 9706052,
+		weapon_ids = {
+			60593,
+			54015,
+			60593,
+			54015
+		}
+	}
+	pg.base.ship_meta_breakout[9706054] = {
+		breakout_view = "None",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9706054,
+		item1 = 21061,
+		pre_id = 9706053,
+		weapon_ids = {}
+	}
 	pg.base.ship_meta_breakout[9707011] = {
 		breakout_view = "Unlock Ashen Might - Hiryuu/All Torpedo Bombers +1/Torpedo Bomber efficiency +5%",
 		gold = 1000,
@@ -3421,6 +3494,8 @@ end)()
 		pre_id = 9707013,
 		weapon_ids = {}
 	}
+end)()
+;(function()
 	pg.base.ship_meta_breakout[9707021] = {
 		breakout_view = "Unlock Ashen Might – Ark Royal/All Torpedo Bombers +1/Torpedo Bomber efficiency +3%",
 		gold = 1000,
@@ -3490,8 +3565,6 @@ end)()
 		pre_id = 9707023,
 		weapon_ids = {}
 	}
-end)()
-;(function()
 	pg.base.ship_meta_breakout[9707031] = {
 		breakout_view = "Unlock Flickering Light – Souryuu/All Dive Bombers +1/Dive Bombers efficiency +5%",
 		gold = 1000,

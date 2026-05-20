@@ -291,8 +291,10 @@ function var0_0.handleNotification(arg0_19, arg1_19)
 	elseif var0_19 == GAME.LOAD_PLAYER_DATA_DONE then
 		arg0_19:checkPaintingRes()
 	elseif var0_19 == GAME.BEGIN_STAGE_DONE then
-		arg0_19.viewComponent:unloadExtraVoice()
-		arg0_19:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var1_19)
+		arg0_19:checkLoadingPicRes(function()
+			arg0_19.viewComponent:unloadExtraVoice()
+			arg0_19:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var1_19)
+		end)
 	elseif var0_19 == GAME.PLATFORM_LOGIN_DONE then
 		arg0_19:sendNotification(GAME.USER_LOGIN, var1_19.user)
 	elseif var0_19 == GAME.SERVER_LOGIN_WAIT then
@@ -318,27 +320,41 @@ function var0_0.handleNotification(arg0_19, arg1_19)
 	end
 end
 
-function var0_0.checkPaintingRes(arg0_23)
-	local function var0_23()
-		arg0_23.viewComponent:onLoadDataDone()
+function var0_0.checkPaintingRes(arg0_24)
+	local function var0_24()
+		arg0_24.viewComponent:onLoadDataDone()
 	end
 
-	local function var1_23()
-		arg0_23.viewComponent.isNeedResCheck = true
+	local function var1_24()
+		arg0_24.viewComponent.isNeedResCheck = true
+	end
+
+	local function var2_24()
+		AppreciatePicConst.checkDownloadMissingPic(var0_24)
 	end
 
 	pg.FileDownloadMgr.GetInstance():SetRemind(false)
 
-	local var2_23 = PaintingGroupConst.GetPaintingNameListInLogin()
-	local var3_23 = {
+	local var3_24 = PaintingGroupConst.GetPaintingNameListInLogin()
+	local var4_24 = {
 		isShowBox = true,
-		paintingNameList = var2_23,
-		finishFunc = var0_23,
-		onNo = var1_23,
-		onClose = var1_23
+		paintingNameList = var3_24,
+		finishFunc = var2_24,
+		onNo = var1_24,
+		onClose = var1_24
 	}
 
-	PaintingGroupConst.PaintingDownload(var3_23)
+	PaintingGroupConst.PaintingDownload(var4_24)
+end
+
+function var0_0.checkLoadingPicRes(arg0_28, arg1_28)
+	local function var0_28()
+		if arg1_28 then
+			arg1_28()
+		end
+	end
+
+	AppreciatePicConst.checkDownloadMissingPic(var0_28)
 end
 
 return var0_0

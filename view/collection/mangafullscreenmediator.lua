@@ -7,7 +7,8 @@ end
 function var0_0.listNotificationInterests(arg0_2)
 	return {
 		GAME.APPRECIATE_MANGA_READ_DONE,
-		GAME.APPRECIATE_MANGA_LIKE_DONE
+		GAME.APPRECIATE_MANGA_LIKE_DONE,
+		GAME.UPDATE_LOADING_PIC_DONE
 	}
 end
 
@@ -23,6 +24,8 @@ function var0_0.handleNotification(arg0_3, arg1_3)
 		end
 	elseif var0_3 == GAME.APPRECIATE_MANGA_LIKE_DONE then
 		arg0_3.viewComponent:updateLikeBtn()
+	elseif var0_3 == GAME.UPDATE_LOADING_PIC_DONE then
+		arg0_3.viewComponent:updateLoadingBtn()
 	end
 end
 

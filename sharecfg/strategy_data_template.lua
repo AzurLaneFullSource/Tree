@@ -369,6 +369,13 @@ pg.strategy_data_template.all = {
 	201741,
 	201742,
 	201743,
+	201750,
+	201754,
+	201755,
+	201759,
+	201763,
+	201764,
+	201765,
 	205001,
 	205002,
 	205003,
@@ -4463,6 +4470,83 @@ end)()
 		icon = "200908",
 		buff_type = 0,
 		desc = "When any boss is defeated, the other will enter Fever status, <color=#ffc038>altering its attack patterns and significantly increasing its DMG dealt</color>.\n- Hard Mode Details -\nEnemy DMG dealt is <color=#ffc038>significantly increased</color>. Large enemy shells cannot be nullified by airstrikes or shields.\nThe hitbox of your Vanguard fleet is <color=#92fc63>limited to only the frontmost ship, and the size of the hitbox is also significantly reduced</color>.\nWhen your ship is hit, it will become invulnerable for a short period of time.\n\nThe following gear or skills are rendered ineffective:\n[Fiercer When Cornered], [Operation Rainbow], [Eleventh Hour], [I Will Not Yield!]",
+		arg = {}
+	}
+	pg.base.strategy_data_template[201750] = {
+		buff_id = 0,
+		name = "Netherworld Corrosion",
+		iconSize = "",
+		type = 10,
+		id = 201750,
+		icon = "201750",
+		buff_type = 0,
+		desc = "When a Sin Shadow is destroyed, it fragments, releasing more corrosion to empower the surrounding Sin Shadows.\nAs the netherworld encroaches, malice runs rampant.",
+		arg = {}
+	}
+	pg.base.strategy_data_template[201754] = {
+		buff_id = 201754,
+		name = "Tribunal's Helping Hand",
+		iconSize = "",
+		type = 10,
+		id = 201754,
+		icon = "201754",
+		buff_type = 0,
+		desc = "The Tribunal's Hand is providing recon and support. During battle, increases all allies' ACC and Crit DMG by 5.0%.",
+		arg = {}
+	}
+	pg.base.strategy_data_template[201755] = {
+		buff_id = 201755,
+		name = "Black Sun",
+		iconSize = "",
+		type = 10,
+		id = 201755,
+		icon = "201755",
+		buff_type = 0,
+		desc = "During this sortie, you will receive support from Mechanicus Harbingers.",
+		arg = {}
+	}
+	pg.base.strategy_data_template[201759] = {
+		buff_id = 201759,
+		name = "Lattice of God's Light",
+		iconSize = "",
+		type = 10,
+		id = 201759,
+		icon = "201270",
+		buff_type = 0,
+		desc = "During this sortie, you will receive support from the Lattice of God's Light, reducing enemies' SPD and EVA.",
+		arg = {}
+	}
+	pg.base.strategy_data_template[201763] = {
+		buff_id = 201763,
+		name = "Orbital Strike",
+		iconSize = "",
+		type = 10,
+		id = 201763,
+		icon = "201763",
+		buff_type = 0,
+		desc = "During this sortie, you will receive support from orbital cannons.",
+		arg = {}
+	}
+	pg.base.strategy_data_template[201764] = {
+		buff_id = 0,
+		name = "Challenge Mode",
+		iconSize = "",
+		type = 10,
+		id = 201764,
+		icon = "200908",
+		buff_type = 0,
+		desc = "The first time the boss's HP drops beneath <color=#92fc63>20.0%</color>, it will enter an enhanced state, reducing DMG taken for 3s before recovering 30.0% of its Max HP. Afterwards, its attack patterns become more intense, but it loses <color=#92fc63>0.5% Max HP every 1s</color>.",
+		arg = {}
+	}
+	pg.base.strategy_data_template[201765] = {
+		buff_id = 0,
+		name = "Challenge Mode",
+		iconSize = "",
+		type = 10,
+		id = 201765,
+		icon = "200908",
+		buff_type = 0,
+		desc = "During battle, any healing effects applied to allies are stolen by the boss; each time this occurs, the boss restores <color=#92fc63>1.0% Max HP</color>. The boss's Nether Barrage cannot be cleared by airstrikes.\nThe first time the boss's HP drops beneath <color=#92fc63>20.0%</color>, it will enter an enhanced state, reducing DMG taken for 3s before recovering 30.0% of its Max HP. Afterwards, its attack patterns become more intense, but it loses <color=#92fc63>0.5% Max HP every 1s</color>.\n\n- Hard Mode Details -\nEnemy DMG dealt is <color=#ffc038>significantly increased</color>. Large enemy shells cannot be nullified by airstrikes or shields.\nThe hitbox of your Vanguard fleet is <color=#92fc63>limited to only the frontmost ship, and the size of the hitbox is also significantly reduced</color>.\nWhen your ship is hit, it will become invulnerable for a short period of time.\n\nThe following gear or skills are rendered ineffective:\n[Fiercer When Cornered], [Operation Rainbow], [Eleventh Hour], [I Will Not Yield!]",
 		arg = {}
 	}
 	pg.base.strategy_data_template[205001] = {

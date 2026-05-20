@@ -58,9 +58,7 @@ function var0_0.OnFirstFlush(arg0_3)
 			return
 		end
 
-		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.ACTIVITY, {
-			id = arg0_3:getTargetID()
-		})
+		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.MALL_MAP)
 	end, SFX_PANEL)
 	setText(arg0_3.lock, i18n("20260514_story_unlock_tip"))
 end
@@ -70,17 +68,18 @@ function var0_0.OnUpdateFlush(arg0_8)
 	arg0_8.enableSign = false
 
 	local var0_8 = arg0_8:isAllSigned()
+	local var1_8 = arg0_8:isTargetLocking()
 
-	setActive(arg0_8.btnSign, arg0_8:isTargetLocking() and not var0_8)
-	setActive(arg0_8.btnLock, arg0_8:isTargetLocking() and var0_8)
-	setActive(arg0_8.btnGo, not arg0_8:isTargetLocking() and var0_8)
+	setActive(arg0_8.btnSign, not var0_8)
+	setActive(arg0_8.btnLock, var1_8 and var0_8)
+	setActive(arg0_8.btnGo, not var1_8 and var0_8)
 
 	if not var0_8 then
-		local var1_8 = arg0_8.taskGroup[arg0_8.curDay]
-		local var2_8 = math.min(arg0_8.activity:getDayIndex(), #arg0_8.taskGroup)
+		local var2_8 = arg0_8.taskGroup[arg0_8.curDay]
+		local var3_8 = math.min(arg0_8.activity:getDayIndex(), #arg0_8.taskGroup)
 
-		arg0_8.curTaskVO = arg0_8.taskProxy:getTaskById(var1_8) or arg0_8.taskProxy:getFinishTaskById(var1_8)
-		arg0_8.remain = math.max(var2_8 - arg0_8.curDay, 0)
+		arg0_8.curTaskVO = arg0_8.taskProxy:getTaskById(var2_8) or arg0_8.taskProxy:getFinishTaskById(var2_8)
+		arg0_8.remain = math.max(var3_8 - arg0_8.curDay, 0)
 
 		if arg0_8.curTaskVO:getTaskStatus() == 1 then
 			arg0_8.remain = arg0_8.remain + 1
@@ -91,13 +90,13 @@ function var0_0.OnUpdateFlush(arg0_8)
 		setText(arg0_8.remainTimes, arg0_8.remain)
 	end
 
-	local var3_8 = arg0_8.enableSign and arg0_8.curDay - 1 or arg0_8.curDay
+	local var4_8 = arg0_8.enableSign and arg0_8.curDay - 1 or arg0_8.curDay
 
-	for iter0_8 = 1, var3_8 do
-		local var4_8 = arg0_8.prog[iter0_8]
+	for iter0_8 = 1, var4_8 do
+		local var5_8 = arg0_8.prog[iter0_8]
 
-		setActive(var4_8.signed, iter0_8 <= var3_8)
-		setActive(var4_8.current, iter0_8 == var3_8 and not var0_8)
+		setActive(var5_8.signed, iter0_8 <= var4_8)
+		setActive(var5_8.current, iter0_8 == var4_8 and not var0_8)
 	end
 
 	setActive(arg0_8.tipSign, arg0_8.enableSign)
@@ -117,7 +116,7 @@ function var0_0.createProg(arg0_9, arg1_9)
 end
 
 function var0_0.getTargetID(arg0_10)
-	return 50602
+	return 50619
 end
 
 function var0_0.isTargetLocking(arg0_11)

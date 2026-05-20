@@ -49,14 +49,16 @@ function var0_0.init(arg0_4)
 	setActive(arg0_4.sortTpl, false)
 
 	arg0_4.equipSkinFilteBtn = arg0_4.topPanel:Find("buttons/EquipSkinFilteBtn")
-	arg0_4.nameSearchInput = arg0_4.topPanel:Find("buttons/serachPanel/search")
-	arg0_4.nameSearchText = arg0_4.nameSearchInput:Find("holder")
-
-	setInputText(arg0_4.nameSearchInput, "")
-	onInputChanged(arg0_4, arg0_4.nameSearchInput, function()
-		arg0_4:filterEquipment()
-	end)
-
+	arg0_4.searchBar = RecordableSearchBar.New(RecordableSearchBar.CreateData({
+		enabledFlag = false,
+		holder = i18n("search_equipment"),
+		onInputChanged = function()
+			arg0_4:filterEquipment()
+		end,
+		key = arg0_4.__cname,
+		parent = arg0_4.blurPanel:Find("adapt"),
+		anchoredPosition = Vector3(-1305, arg0_4.topPanel.sizeDelta.y * -0.5, 0)
+	}))
 	arg0_4.itemView = arg0_4._tf:Find("adapt/item_scrollview")
 
 	local var1_4
@@ -462,6 +464,8 @@ function var0_0.didEnter(arg0_16)
 			setActive(arg0_16.filterBusyToggle, false)
 			setActive(arg0_16.equipmentToggle, false)
 		end
+
+		arg0_16.searchBar:EnableOrDisable(arg0_36)
 	end, SFX_PANEL)
 	onToggle(arg0_16, arg0_16.designToggle, function(arg0_37)
 		if arg0_37 then
@@ -912,7 +916,7 @@ function var0_0.filterEquipment(arg0_79)
 		end
 	end
 
-	local var4_79 = getInputText(arg0_79.nameSearchInput)
+	local var4_79 = arg0_79.searchBar:GetInputText()
 
 	if var4_79 and var4_79 ~= "" then
 		arg0_79.loadEquipmentVOs = underscore.filter(arg0_79.loadEquipmentVOs, function(arg0_81)
@@ -952,7 +956,7 @@ function var0_0.filterEquipSkin(arg0_82)
 		assert(false, "不是外观分页")
 	end
 
-	local var4_82 = getInputText(arg0_82.nameSearchInput)
+	local var4_82 = arg0_82.searchBar:GetInputText()
 
 	for iter0_82, iter1_82 in pairs(arg0_82.equipmentVOs) do
 		if iter1_82.isSkin and iter1_82.count > 0 and (var4_82 == "" or EquipmentTools.IsMatchEquipmentSkinKey(iter1_82.id, var4_82)) then
@@ -1016,7 +1020,7 @@ function var0_0.filterSpWeapon(arg0_83)
 		end
 	end
 
-	local var3_83 = getInputText(arg0_83.nameSearchInput)
+	local var3_83 = arg0_83.searchBar:GetInputText()
 
 	if var3_83 and var3_83 ~= "" then
 		local var4_83 = EquipmentTools.GetMatchSpEquipmentListKeyByShip(var3_83)
@@ -1471,8 +1475,8 @@ function var0_0.SwitchEquipmentType(arg0_131, arg1_131)
 		var0_131 = i18n("search_equipment")
 	end
 
-	setText(arg0_131.nameSearchText, var0_131)
-	setInputText(arg0_131.nameSearchInput, "")
+	arg0_131.searchBar:UpdateHolder(var0_131)
+	arg0_131.searchBar:ClearInputText()
 end
 
 function var0_0.willExit(arg0_132)
@@ -1483,6 +1487,12 @@ function var0_0.willExit(arg0_132)
 		arg0_132.bulinTip:Destroy()
 
 		arg0_132.bulinTip = nil
+	end
+
+	if arg0_132.searchBar then
+		arg0_132.searchBar:Dispose()
+
+		arg0_132.searchBar = nil
 	end
 
 	arg0_132.destroyConfirmView:Destroy()

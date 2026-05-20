@@ -44,4 +44,28 @@ function var0_0.GetBGFuncTag()
 	end
 end
 
+function var0_0.GetGalleryPicPathByID(arg0_3)
+	local var0_3 = pg.gallery_config[arg0_3]
+
+	if not var0_3 then
+		return nil
+	end
+
+	local var1_3 = var0_3.illustration
+
+	return var0_0.PIC_PATH_PREFIX .. var1_3
+end
+
+function var0_0.GetGalleryPreviewPicPathByID(arg0_4)
+	local var0_4 = pg.gallery_config[arg0_4]
+
+	if not var0_4 then
+		return nil
+	end
+
+	local var1_4 = var0_4.illustration .. "_t"
+
+	return var0_0.CARD_PATH_PREFIX .. var1_4
+end
+
 return var0_0

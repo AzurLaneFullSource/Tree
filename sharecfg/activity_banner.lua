@@ -24,19 +24,17 @@ pg.activity_banner.all = {
 	202
 }
 pg.activity_banner.get_id_list_by_type = {
-	{
-		7
-	},
-	{
+	[2] = {
 		1,
 		2,
+		3,
 		4,
 		5,
-		6
+		6,
+		7,
+		8
 	},
-	{
-		3,
-		8,
+	[3] = {
 		9
 	},
 	[9] = {
@@ -67,37 +65,17 @@ pg.base.activity_banner = {}
 	pg.base.activity_banner[1] = {
 		id = 1,
 		pic = "temp1",
-		time = "stop",
 		type = 2,
 		param = {
 			"scene skinshop",
 			{}
-		}
-	}
-	pg.base.activity_banner[2] = {
-		id = 2,
-		pic = "temp2",
-		time = "stop",
-		type = 2,
-		param = {
-			"scene get boat",
-			{
-				projectName = "new",
-				page = 1
-			}
-		}
-	}
-	pg.base.activity_banner[3] = {
-		param = "51005",
-		id = 3,
-		pic = "temp3",
-		type = 3,
+		},
 		time = {
 			{
 				{
 					2026,
 					5,
-					14
+					20
 				},
 				{
 					0,
@@ -108,8 +86,83 @@ pg.base.activity_banner = {}
 			{
 				{
 					2026,
+					6,
+					11
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.activity_banner[2] = {
+		id = 2,
+		pic = "temp2",
+		type = 2,
+		param = {
+			"scene get boat",
+			{
+				projectName = "new",
+				page = 1
+			}
+		},
+		time = {
+			{
+				{
+					2026,
 					5,
-					19
+					20
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					6,
+					11
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.activity_banner[3] = {
+		id = 3,
+		pic = "temp3",
+		type = 2,
+		param = {
+			"scene core activity",
+			{
+				coreName = "GeZiURCoreActivityUI"
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					5,
+					20
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					6,
+					11
 				},
 				{
 					23,
@@ -122,35 +175,11 @@ pg.base.activity_banner = {}
 	pg.base.activity_banner[4] = {
 		id = 4,
 		pic = "temp4",
-		time = "stop",
 		type = 2,
 		param = {
 			"scene charge",
 			{
 				wrap = 4
-			}
-		}
-	}
-	pg.base.activity_banner[5] = {
-		id = 5,
-		pic = "temp5",
-		time = "stop",
-		type = 2,
-		param = {
-			"scene shop",
-			{
-				warp = "shopstreet"
-			}
-		}
-	}
-	pg.base.activity_banner[6] = {
-		id = 6,
-		pic = "temp6",
-		type = 2,
-		param = {
-			"scene core activity",
-			{
-				coreName = "OutPostCoreActivityUI"
 			}
 		},
 		time = {
@@ -158,7 +187,7 @@ pg.base.activity_banner = {}
 				{
 					2026,
 					5,
-					14
+					20
 				},
 				{
 					0,
@@ -169,8 +198,82 @@ pg.base.activity_banner = {}
 			{
 				{
 					2026,
+					6,
+					11
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.activity_banner[5] = {
+		id = 5,
+		pic = "temp5",
+		type = 2,
+		param = {
+			"scene charge",
+			{
+				wrap = 4
+			}
+		},
+		time = {
+			{
+				{
+					2026,
 					5,
-					19
+					20
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					6,
+					11
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.activity_banner[6] = {
+		id = 6,
+		pic = "temp6",
+		type = 2,
+		param = {
+			"scene shop",
+			{
+				warp = "shopstreet"
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					5,
+					20
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					6,
+					11
 				},
 				{
 					23,
@@ -181,23 +284,18 @@ pg.base.activity_banner = {}
 		}
 	}
 	pg.base.activity_banner[7] = {
-		param = "https://game.bilibili.com/blhx/2026-ninth-anniversary/h5",
-		time = "stop",
-		type = 1,
 		id = 7,
-		pic = "temp7"
-	}
-	pg.base.activity_banner[8] = {
-		param = "51001",
-		id = 8,
-		pic = "temp8",
-		type = 3,
+		pic = "temp7",
+		type = 2,
+		param = {
+			"scene court yard"
+		},
 		time = {
 			{
 				{
 					2026,
 					5,
-					14
+					20
 				},
 				{
 					0,
@@ -208,8 +306,45 @@ pg.base.activity_banner = {}
 			{
 				{
 					2026,
+					6,
+					11
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.activity_banner[8] = {
+		id = 8,
+		pic = "temp8",
+		type = 2,
+		param = {
+			"scene core activity",
+			{
+				coreName = "AnniversaryNineCoreActivityUI"
+			}
+		},
+		time = {
+			{
+				{
+					2026,
 					5,
-					19
+					20
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					6,
+					11
 				},
 				{
 					23,
@@ -220,7 +355,7 @@ pg.base.activity_banner = {}
 		}
 	}
 	pg.base.activity_banner[9] = {
-		param = "51002",
+		param = "50618",
 		id = 9,
 		pic = "temp9",
 		type = 3,
@@ -229,7 +364,7 @@ pg.base.activity_banner = {}
 				{
 					2026,
 					5,
-					14
+					20
 				},
 				{
 					0,
@@ -240,8 +375,8 @@ pg.base.activity_banner = {}
 			{
 				{
 					2026,
-					5,
-					19
+					6,
+					11
 				},
 				{
 					23,
@@ -274,10 +409,35 @@ pg.base.activity_banner = {}
 	}
 	pg.base.activity_banner[99] = {
 		param = "",
-		time = "stop",
-		type = 12,
 		id = 99,
-		pic = "limit_skin"
+		pic = "limit_skin",
+		type = 12,
+		time = {
+			{
+				{
+					2026,
+					5,
+					20
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					6,
+					11
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
 	}
 	pg.base.activity_banner[100] = {
 		param = "Dumplings|A world-famous delight from the Dragon Empery! <color=#92fc63>(Increases EXP gained by 5% for 60 minutes.)</color>",

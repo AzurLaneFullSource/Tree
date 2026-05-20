@@ -6,6 +6,7 @@ end
 
 function var0_0.init(arg0_2)
 	arg0_2.recallBtn = arg0_2._tf:Find("Main/recall")
+	arg0_2.recallBtn2 = arg0_2._tf:Find("Main/recall2")
 	arg0_2.cryptolaliaBtn = arg0_2._tf:Find("Main/cryptolalia")
 	arg0_2.archiveBtn = arg0_2._tf:Find("Main/archive")
 	arg0_2.archiveLockTF = arg0_2.archiveBtn:Find("lock")
@@ -37,6 +38,9 @@ function var0_0.didEnter(arg0_3)
 	onButton(arg0_3, arg0_3.recallBtn, function()
 		arg0_3:emit(WorldMediaCollectionEntranceMediator.OPEN_RECALL)
 	end, SFX_PANEL)
+	onButton(arg0_3, arg0_3.recallBtn2, function()
+		arg0_3:emit(WorldMediaCollectionEntranceMediator.OPEN_NEWRECALL)
+	end, SFX_PANEL)
 	onButton(arg0_3, arg0_3.cryptolaliaBtn, function()
 		if LOCK_CRYPTOLALIA then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("word_comingSoon"))
@@ -50,9 +54,9 @@ function var0_0.didEnter(arg0_3)
 	setActive(arg0_3.archiveLockTF, not var0_3)
 	onButton(arg0_3, arg0_3.archiveBtn, function()
 		if not var0_3 then
-			local var0_8 = pg.open_systems_limited[19]
+			local var0_9 = pg.open_systems_limited[19]
 
-			pg.TipsMgr.GetInstance():ShowTips(i18n("no_open_system_tip", var0_8.name, var0_8.level))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("no_open_system_tip", var0_9.name, var0_9.level))
 
 			return
 		end
@@ -67,7 +71,7 @@ function var0_0.didEnter(arg0_3)
 	end, SFX_PANEL)
 end
 
-function var0_0.willExit(arg0_11)
+function var0_0.willExit(arg0_12)
 	return
 end
 

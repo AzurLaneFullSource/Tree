@@ -5040,3 +5040,26 @@ function UnpackIntFromString(arg0_368)
 
 	return tonumber(var0_368), tonumber(var1_368)
 end
+
+function getRandomIdxByWeights(arg0_369)
+	local var0_369 = 0
+
+	for iter0_369, iter1_369 in ipairs(arg0_369) do
+		var0_369 = var0_369 + iter1_369
+	end
+
+	assert(var0_369 ~= 0, "总权重为0")
+
+	local var1_369 = math.random(1, var0_369)
+	local var2_369 = 0
+
+	for iter2_369, iter3_369 in ipairs(arg0_369) do
+		var2_369 = var2_369 + iter3_369
+
+		if var1_369 <= var2_369 then
+			return iter2_369
+		end
+	end
+
+	return #arg0_369
+end

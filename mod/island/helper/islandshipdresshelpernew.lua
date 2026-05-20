@@ -32,6 +32,8 @@ function var0_0.Ctor(arg0_1, arg1_1)
 		arg0_1.curIsland = arg1_1
 		arg0_1.isOtherIsland = getProxy(PlayerProxy):getRawData().id ~= arg0_1.curIsland.id
 	end
+
+	arg0_1.gcCnt = 0
 end
 
 function var0_0.GetInitDressByType(arg0_2)
@@ -562,6 +564,8 @@ function var0_0.ChangeCommanderPartShow(arg0_28, arg1_28, arg2_28)
 end
 
 function var0_0.ChangeModelTransfromByUnitId(arg0_29, arg1_29, arg2_29, arg3_29)
+	arg0_29.gcCnt = arg0_29.gcCnt + 1
+
 	local var0_29 = pg.island_unit_character[arg1_29]
 
 	arg0_29.hasTF = false
@@ -573,6 +577,7 @@ function var0_0.ChangeModelTransfromByUnitId(arg0_29, arg1_29, arg2_29, arg3_29)
 
 	local var1_29 = arg0_29.roleTF:GetChild(0).gameObject
 
+	pg.UIMgr.GetInstance():LoadingOn()
 	_IslandCore:GetPoolMgr():ReturnCharacterModel(arg0_29.modelData.model, arg0_29.modelData.animator, var1_29, true)
 
 	arg0_29.modelData = {
@@ -582,6 +587,8 @@ function var0_0.ChangeModelTransfromByUnitId(arg0_29, arg1_29, arg2_29, arg3_29)
 	}
 
 	_IslandCore:GetPoolMgr():GetCharacterModel(arg0_29.modelData.model, arg0_29.modelData.animator, function(arg0_30)
+		pg.UIMgr.GetInstance():LoadingOff()
+
 		arg0_29.hasTF = true
 
 		local var0_30 = arg0_29.isScene and Layer.Default or Layer.Character3D
@@ -604,6 +611,12 @@ function var0_0.ChangeModelTransfromByUnitId(arg0_29, arg1_29, arg2_29, arg3_29)
 
 		existCall(arg2_29, arg0_29.roleTF)
 	end, true)
+
+	if arg0_29.gcCnt >= 5 then
+		arg0_29.gcCnt = 0
+
+		IslandHelper.RunGC(true)
+	end
 end
 
 function var0_0.ChangeModelTransfromByUnitIdAndChangeDress(arg0_31, arg1_31, arg2_31, arg3_31, arg4_31, arg5_31)

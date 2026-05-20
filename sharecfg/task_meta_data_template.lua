@@ -364,6 +364,11 @@ pg.task_meta_data_template.all = {
 	100533,
 	100534,
 	100535,
+	100561,
+	100562,
+	100563,
+	100564,
+	100565,
 	200001,
 	200002,
 	200003,
@@ -543,7 +548,11 @@ pg.task_meta_data_template.all = {
 	200441,
 	200442,
 	200443,
-	200444
+	200444,
+	200471,
+	200472,
+	200473,
+	200474
 }
 pg.base = pg.base or {}
 pg.base.task_meta_data_template = {}
@@ -3435,6 +3444,46 @@ end)()
 		target_num = 1,
 		target_id = "100"
 	}
+	pg.base.task_meta_data_template[100561] = {
+		target_id_2 = "970605",
+		sub_type = 180,
+		desc = "Sortie and obtain 1 victory with Elbe META in the fleet.",
+		id = 100561,
+		target_num = 1,
+		target_id = "0"
+	}
+	pg.base.task_meta_data_template[100562] = {
+		target_id_2 = "970605",
+		sub_type = 180,
+		desc = "Defeat a Lv. 30+ enemy fleet with Elbe META in the fleet.",
+		id = 100562,
+		target_num = 1,
+		target_id = "30"
+	}
+	pg.base.task_meta_data_template[100563] = {
+		target_id_2 = "970605",
+		sub_type = 180,
+		desc = "Defeat a Lv. 55+ enemy fleet with Elbe META in the fleet.",
+		id = 100563,
+		target_num = 1,
+		target_id = "55"
+	}
+	pg.base.task_meta_data_template[100564] = {
+		target_id_2 = "970605",
+		sub_type = 180,
+		desc = "Defeat a Lv. 80+ enemy fleet with Elbe META in the fleet.",
+		id = 100564,
+		target_num = 1,
+		target_id = "80"
+	}
+	pg.base.task_meta_data_template[100565] = {
+		target_id_2 = "970605",
+		sub_type = 180,
+		desc = "Defeat a Lv. 100+ enemy fleet with Elbe META in the fleet.",
+		id = 100565,
+		target_num = 1,
+		target_id = "100"
+	}
 	pg.base.task_meta_data_template[200001] = {
 		target_id_2 = "970101",
 		sub_type = 302,
@@ -3715,6 +3764,8 @@ end)()
 		target_num = 1,
 		target_id = "90"
 	}
+end)()
+;(function()
 	pg.base.task_meta_data_template[200094] = {
 		target_id_2 = "970302",
 		sub_type = 302,
@@ -3755,8 +3806,6 @@ end)()
 		target_num = 1,
 		target_id = "100"
 	}
-end)()
-;(function()
 	pg.base.task_meta_data_template[200111] = {
 		target_id_2 = "970205",
 		sub_type = 302,
@@ -4517,6 +4566,8 @@ end)()
 		target_num = 1,
 		target_id = "90"
 	}
+end)()
+;(function()
 	pg.base.task_meta_data_template[200344] = {
 		target_id_2 = "970707",
 		sub_type = 302,
@@ -4557,8 +4608,6 @@ end)()
 		target_num = 1,
 		target_id = "100"
 	}
-end)()
-;(function()
 	pg.base.task_meta_data_template[200361] = {
 		target_id_2 = "970406",
 		sub_type = 302,
@@ -4876,6 +4925,38 @@ end)()
 		sub_type = 302,
 		desc = "Defeat a Lv. 100+ fleet in Operation Siren with Regensburg META in your fleet.",
 		id = 200444,
+		target_num = 1,
+		target_id = "100"
+	}
+	pg.base.task_meta_data_template[200471] = {
+		target_id_2 = "970605",
+		sub_type = 302,
+		desc = "Sortie in Operation Siren and obtain 1 victory with Elbe META in the fleet.",
+		id = 200471,
+		target_num = 1,
+		target_id = "0"
+	}
+	pg.base.task_meta_data_template[200472] = {
+		target_id_2 = "970605",
+		sub_type = 302,
+		desc = "Sortie in Operation Siren and defeat a Lv. 70+ enemy fleet with Elbe META in the fleet.",
+		id = 200472,
+		target_num = 1,
+		target_id = "70"
+	}
+	pg.base.task_meta_data_template[200473] = {
+		target_id_2 = "970605",
+		sub_type = 302,
+		desc = "Sortie in Operation Siren and defeat a Lv. 90+ enemy fleet with Elbe META in the fleet.",
+		id = 200473,
+		target_num = 1,
+		target_id = "90"
+	}
+	pg.base.task_meta_data_template[200474] = {
+		target_id_2 = "970605",
+		sub_type = 302,
+		desc = "Sortie in Operation Siren and defeat a Lv. 100+ enemy fleet with Elbe META in the fleet.",
+		id = 200474,
 		target_num = 1,
 		target_id = "100"
 	}

@@ -302,7 +302,7 @@ function var0_0.timeCall(arg0_14)
 				if var1_15 and var1_15:isExpire() then
 					local var2_15 = var1_15:GetPresonTaskId()
 
-					getProxy(TaskProxy):removeTaskById(var2_15)
+					getProxy(TaskProxy):deleteTaskById(var2_15)
 
 					var0_15.weeklyTaskFlag = 0
 				end

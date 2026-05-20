@@ -4,6 +4,7 @@ var0_0.PAGE_MEMORTY = 1
 var0_0.PAGE_FILE = 2
 var0_0.PAGE_RECORD = 3
 var0_0.PAGE_ALBUM = 4
+var0_0.PAGE_SHIP = 5
 
 function var0_0.getUIName(arg0_1)
 	return "WorldMediaCollectionUI"
@@ -33,7 +34,8 @@ local var1_0 = {
 	import(".WorldMediaCollectionMemoryLayer"),
 	import(".WorldMediaCollectionRecordLayer"),
 	import(".WorldMediaCollectionFileLayer"),
-	import(".WorldMediaCollectionAlbumLayer")
+	import(".WorldMediaCollectionAlbumLayer"),
+	import(".NewWorldMediaCollectionMemoryLayer")
 }
 
 function var0_0.GetCurrentPage(arg0_4)

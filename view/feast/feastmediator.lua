@@ -93,6 +93,7 @@ function var0_0.listNotificationInterests(arg0_12)
 		TaskProxy.TASK_ADDED,
 		TaskProxy.TASK_UPDATED,
 		TaskProxy.TASK_REMOVED,
+		TaskProxy.TASK_DELETE,
 		ActivityProxy.ACTIVITY_UPDATED
 	}
 end
@@ -178,7 +179,7 @@ function var0_0.handleNotification(arg0_13, arg1_13)
 				arg0_13:DisplayAwards()
 			end
 		end
-	elseif var0_13 == TaskProxy.TASK_ADDED or var0_13 == TaskProxy.TASK_UPDATED or var0_13 == TaskProxy.TASK_REMOVED then
+	elseif var0_13 == TaskProxy.TASK_ADDED or var0_13 == TaskProxy.TASK_UPDATED or var0_13 == TaskProxy.TASK_REMOVED or var0_13 == TaskProxy.TASK_DELETE then
 		arg0_13.viewComponent:emit(FeastScene.ON_TASK_UPDATE)
 	elseif var0_13 == ActivityProxy.ACTIVITY_UPDATED then
 		if var1_13.id == ActivityConst.FEAST_PT_ACT then

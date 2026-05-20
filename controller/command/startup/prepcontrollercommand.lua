@@ -345,6 +345,7 @@ function var0_0.execute(arg0_1, arg1_1)
 	arg0_1.facade:registerCommand(GAME.ACTIVITY_STORE_DATE, ActivityStoreDataCommand)
 	arg0_1.facade:registerCommand(GAME.ACTIVITY_LINER_OP, ActivityLinerOPCommand)
 	arg0_1.facade:registerCommand(GAME.ACTIVITY_TOWN_OP, ActivityTownOPCommand)
+	arg0_1.facade:registerCommand(GAME.ACTIVITY_MALL_OP, ActivityMallOPCommand)
 	arg0_1.facade:registerCommand(GAME.ACTIVITY_UNLOCKSTORY, ActivityUnlockStoryCommand)
 	arg0_1.facade:registerCommand(GAME.ACTIVITY_DREAMLAND_OP, ActivityDreamlandOPCommand)
 	arg0_1.facade:registerCommand(GAME.ACTIVITY_PERMANENT_START, ActivityPermanentStartCommand)
@@ -708,6 +709,7 @@ function var0_0.execute(arg0_1, arg1_1)
 	arg0_1.facade:registerCommand(GAME.ISLAND_CHEATER_END_SOLO_GAME, IslandEndSoloGameCommand)
 	arg0_1.facade:registerCommand(GAME.ISLAND_PLAYER_CHEATER_CANCEL_DELEGATE, IslandCheaterCancelDelegateCommand)
 	arg0_1.facade:registerCommand(GAME.ISLAND_CHEATER_RECONECTING, IslandCheaterReconectCommand)
+	arg0_1.facade:registerCommand(GAME.UPDATE_LOADING_PIC, UpdateLoadingPicCommand)
 end
 
 return var0_0

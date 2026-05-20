@@ -36,12 +36,16 @@ function var0_0.handleNotification(arg0_6, arg1_6)
 	local var0_6 = arg1_6:getName()
 	local var1_6 = arg1_6:getBody()
 
+	getProxy(TechnologyNationProxy):refreshRedPoint()
+
 	if var0_6 == TechnologyConst.START_TEC_BTN_SUCCESS then
 		arg0_6.viewComponent:updateTecListData()
 		arg0_6.viewComponent:updateTecItem(var1_6)
+		arg0_6.viewComponent:updateAllTecItemRp()
 	elseif var0_6 == TechnologyConst.FINISH_TEC_SUCCESS then
 		arg0_6.viewComponent:updateTecListData()
 		arg0_6.viewComponent:updateTecItem(var1_6)
+		arg0_6.viewComponent:updateAllTecItemRp()
 	elseif var0_6 == TechnologyConst.CLOSE_TECHNOLOGY_NATION_LAYER_NOTIFICATION then
 		arg0_6.viewComponent:closeMyself()
 	elseif var0_6 == TechnologyConst.GOT_TEC_CAMP_AWARD then
@@ -51,6 +55,7 @@ function var0_0.handleNotification(arg0_6, arg1_6)
 
 		arg0_6.viewComponent:updateTecItem(var3_6)
 		arg0_6.viewComponent:updateOneStepBtn()
+		arg0_6.viewComponent:updateAllTecItemRp()
 		arg0_6.viewComponent:emit(BaseUI.ON_ACHIEVE, var2_6)
 	elseif var0_6 == TechnologyConst.GOT_TEC_CAMP_AWARD_ONESTEP then
 		local var5_6 = var1_6.awardList

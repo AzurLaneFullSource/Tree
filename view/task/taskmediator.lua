@@ -146,6 +146,7 @@ function var0_0.listNotificationInterests(arg0_13)
 		TaskProxy.TASK_ADDED,
 		TaskProxy.TASK_UPDATED,
 		TaskProxy.TASK_REMOVED,
+		TaskProxy.TASK_DELETE,
 		GAME.SUBMIT_TASK_DONE,
 		var0_0.TASK_FILTER,
 		GAME.BEGIN_STAGE_DONE,
@@ -197,7 +198,7 @@ function var0_0.handleNotification(arg0_14, arg1_14)
 		end
 
 		arg0_14.viewComponent:updateTask(var1_14)
-	elseif var0_14 == TaskProxy.TASK_REMOVED then
+	elseif var0_14 == TaskProxy.TASK_REMOVED or var0_14 == TaskProxy.TASK_DELETE then
 		arg0_14.viewComponent:removeTask(var1_14)
 	elseif var0_14 == var0_0.TASK_FILTER then
 		arg0_14.viewComponent:GoToFilter(var1_14)

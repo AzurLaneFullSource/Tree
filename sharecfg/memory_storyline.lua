@@ -97,7 +97,8 @@ pg.memory_storyline.all = {
 	92,
 	93,
 	94,
-	95
+	95,
+	96
 }
 pg.base = pg.base or {}
 pg.base.memory_storyline = {}
@@ -2535,9 +2536,34 @@ pg.base.memory_storyline = {}
 		}
 	}
 	pg.base.memory_storyline[95] = {
+		description = "\"I, Götz von Berlichingen...\"\n\"Do solemnly swear upon the Hagiobull.\"\n\"No matter the price, even my very life\"\n\"I will guard this sacred land to my last breath.\"\n\"I shall fight and fight, until...\"",
+		name = "Alliance Before the Hagiobull",
+		world_id = "",
+		memory_lock = 0,
+		column = 59,
+		bgm = "theme-hrr",
+		row = 0,
+		chapter = 5,
+		id = 95,
+		icon = "InterludeOne_2",
+		sort = 1,
+		memory_id = {
+			1,
+			365
+		},
+		shipnation = {
+			4,
+			10,
+			6
+		},
+		link_event = {
+			96
+		}
+	}
+	pg.base.memory_storyline[96] = {
 		description = "Stay Tuned",
 		name = "Stay Tuned",
-		column = 59,
+		column = 60,
 		memory_id = "",
 		link_event = "",
 		shipnation = 0,
@@ -2546,7 +2572,7 @@ pg.base.memory_storyline = {}
 		row = 0,
 		chapter = 0,
 		memory_lock = 1,
-		id = 95,
+		id = 96,
 		icon = "",
 		sort = 0
 	}

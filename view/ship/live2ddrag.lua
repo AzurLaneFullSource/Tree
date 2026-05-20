@@ -1430,8 +1430,14 @@ function var0_0.updateStateData(arg0_79, arg1_79)
 	if arg0_79.l2dIdleIndex ~= arg1_79.idleIndex then
 		if type(arg0_79.revertIdleIndex) == "boolean" and arg0_79.revertIdleIndex == true then
 			arg0_79:setTargetValue(arg0_79.startValue)
+
+			arg0_79.offsetDragX, arg0_79.offsetDragY = arg0_79.startValue, arg0_79.startValue
+			arg0_79.offsetDragTargetX, arg0_79.offsetDragTargetY = arg0_79.startValue, arg0_79.startValue
 		elseif type(arg0_79.revertIdleIndex) == "table" and table.contains(arg0_79.revertIdleIndex, arg1_79.idleIndex) then
 			arg0_79:setTargetValue(arg0_79.startValue)
+
+			arg0_79.offsetDragTargetX, arg0_79.offsetDragTargetY = arg0_79.startValue, arg0_79.startValue
+			arg0_79.offsetDragX, arg0_79.offsetDragY = arg0_79.startValue, arg0_79.startValue
 		end
 	end
 

@@ -98,14 +98,17 @@ function var0_0.InitDetail(arg0_3)
 		arg0_3.recordPanel:Find("frame/container/record_2/equip_btn"),
 		arg0_3.recordPanel:Find("frame/container/record_3/equip_btn")
 	}
-	arg0_3.nameSearchInput = arg0_3.quickPanel:Find("serachPanel/search")
-	arg0_3.nameSearchText = arg0_3.nameSearchInput:Find("holder")
+	arg0_3.searchBar = RecordableSearchBar.New(RecordableSearchBar.CreateData({
+		uiName = "RecordableSearchBarUI4ShipDetailView",
+		holder = i18n("search_equipment"),
+		onInputChanged = function()
+			arg0_3:updateQuickPanel(true)
+		end,
+		key = arg0_3.__cname,
+		parent = arg0_3.quickPanel,
+		anchoredPosition = Vector3(-623, -34, 0)
+	}))
 
-	setText(arg0_3.nameSearchText, i18n("search_equipment"))
-	setInputText(arg0_3.nameSearchInput, "")
-	onInputChanged(arg0_3, arg0_3.nameSearchInput, function()
-		arg0_3:updateQuickPanel(true)
-	end)
 	setActive(arg0_3.detailPanel, true)
 	setActive(arg0_3.attrs, true)
 	setActive(arg0_3.recordPanel, false)
@@ -466,7 +469,7 @@ function var0_0.OnSelected(arg0_39, arg1_39)
 end
 
 function var0_0.UpdateUI(arg0_40)
-	setInputText(arg0_40.nameSearchInput, "")
+	arg0_40.searchBar:ClearInputText()
 
 	local var0_40 = arg0_40:GetShipVO()
 
@@ -703,7 +706,7 @@ function var0_0.getEquipments(arg0_57)
 	local var3_57 = pg.ship_data_template[var1_57.configId]["equip_" .. arg0_57.selectedEquip.index]
 	local var4_57 = var1_57:getShipType()
 	local var5_57 = var2_57:getEquipmentsByFillter(var4_57, var3_57)
-	local var6_57 = getInputText(arg0_57.nameSearchInput)
+	local var6_57 = arg0_57.searchBar:GetInputText()
 
 	if arg0_57.equipingFlag then
 		for iter0_57, iter1_57 in ipairs(var0_57:getEquipsInShips(function(arg0_58, arg1_58)
@@ -959,7 +962,6 @@ function var0_0.clearListener(arg0_78)
 end
 
 function var0_0.OnDestroy(arg0_79)
-	triggerToggle(arg0_79.quickPanel:Find("serachPanel/Image"), true)
 	setParent(arg0_79.randomFlagToggle, arg0_79._tf)
 	arg0_79:clearListener()
 	removeAllChildren(arg0_79.equipmentsGrid)
@@ -986,6 +988,12 @@ function var0_0.OnDestroy(arg0_79)
 	arg0_79.shipDetailLogicPanel:detach()
 
 	arg0_79.shareData = nil
+
+	if arg0_79.searchBar then
+		arg0_79.searchBar:Dispose()
+
+		arg0_79.searchBar = nil
+	end
 end
 
 return var0_0

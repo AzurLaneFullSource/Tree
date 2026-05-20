@@ -1392,13 +1392,8 @@ function var0_0.UpdateStoryTask(arg0_69)
 		return
 	end
 
-	local var1_69 = getProxy(TaskProxy):getTaskVO(var0_69)
-
-	if not var1_69 then
-		errorMsg("Missing Activity Task ID : " .. var0_69)
-	end
-
-	arg0_69.storyTask = var1_69 or Task.New({
+	arg0_69.storyTask = getProxy(TaskProxy):getTaskVO(var0_69) or Task.New({
+		submit_time = 1,
 		id = var0_69
 	})
 end

@@ -51,4 +51,16 @@ function var0_0.isMangaLikeByID(arg0_4)
 	return table.contains(var0_4, arg0_4)
 end
 
+function var0_0.GetMangaPicPathByID(arg0_5)
+	local var0_5 = pg.cartoon[arg0_5]
+
+	if not var0_5 then
+		return nil
+	end
+
+	local var1_5 = var0_5.resource
+
+	return var0_0.MANGA_PATH_PREFIX .. var1_5
+end
+
 return var0_0

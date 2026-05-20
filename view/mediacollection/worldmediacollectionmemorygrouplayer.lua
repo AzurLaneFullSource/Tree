@@ -46,7 +46,7 @@ function var0_0.OnInit(arg0_2)
 	arg0_2.memoryFilterIndex = {
 		true,
 		true,
-		true
+		false
 	}
 	arg0_2.groupToggle = arg0_2._tf:Find("ActivityToggle")
 	arg0_2.memoryActivityTogGroup = arg0_2._tf:Find("ActivityToggle/ActivityBar")
@@ -89,8 +89,6 @@ function var0_0.OnInit(arg0_2)
 
 	local var1_2 = arg0_2.contextData.toggle
 
-	arg0_2.shipNameSearchFlag = true
-
 	triggerToggle(arg0_2.memoryToggles[var1_2], true)
 	arg0_2:SwitchMemoryFilter(var1_2)
 
@@ -98,12 +96,6 @@ function var0_0.OnInit(arg0_2)
 		onToggle(arg0_2, iter5_2, function(arg0_7)
 			if not arg0_7 then
 				return
-			end
-
-			if iter4_2 == 1 or iter4_2 == 4 then
-				arg0_2.shipNameSearchFlag = true
-			else
-				arg0_2.shipNameSearchFlag = false
 			end
 
 			arg0_2:SwitchMemoryFilter(iter4_2)
@@ -228,7 +220,7 @@ function var0_0.SwitchMemoryFilter(arg0_21, arg1_21)
 		arg0_21.memoryFilterIndex = {
 			true,
 			true,
-			true
+			false
 		}
 	else
 		for iter0_21 in ipairs(arg0_21.memoryFilterIndex) do
@@ -435,22 +427,6 @@ function var0_0.GetMatchGroupList(arg0_37, arg1_37, arg2_37)
 	for iter0_37, iter1_37 in pairs(arg0_37.memoryGroups) do
 		if string.find(string.lower(iter1_37.title), arg1_37) then
 			table.insert(var0_37, iter1_37)
-		end
-	end
-
-	if arg0_37.shipNameSearchFlag then
-		for iter2_37, iter3_37 in pairs(arg0_37.memoryGroups) do
-			if type(iter3_37.group_id) == "table" then
-				for iter4_37, iter5_37 in ipairs(iter3_37.group_id) do
-					for iter6_37, iter7_37 in ipairs(pg.ship_data_template.get_id_list_by_group_type[iter5_37]) do
-						if string.find(string.lower(pg.ship_data_statistics[iter7_37].name), arg1_37) then
-							table.insert(var0_37, iter3_37)
-
-							break
-						end
-					end
-				end
-			end
 		end
 	end
 

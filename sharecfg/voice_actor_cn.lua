@@ -1950,4 +1950,28 @@ end)()
 		code = 502,
 		actor_name = "Kanako Nomura"
 	}
+	pg.base.voice_actor_CN[503] = {
+		code = 503,
+		actor_name = "Satomi Akesaka"
+	}
+	pg.base.voice_actor_CN[504] = {
+		code = 504,
+		actor_name = "Reo Osanai"
+	}
+	pg.base.voice_actor_CN[505] = {
+		code = 505,
+		actor_name = "Ai Furihata"
+	}
+	pg.base.voice_actor_CN[506] = {
+		code = 506,
+		actor_name = "Saki Ogasawara"
+	}
+	pg.base.voice_actor_CN[507] = {
+		code = 507,
+		actor_name = "Yuna Taniguchi"
+	}
+	pg.base.voice_actor_CN[508] = {
+		code = 508,
+		actor_name = "Yumi Tōma"
+	}
 end)()

@@ -18,18 +18,19 @@ pg.activity_medal_group.all = {
 	50359,
 	50405,
 	50441,
-	50482
+	50482,
+	50607,
+	50616
 }
 pg.base = pg.base or {}
 pg.base.activity_medal_group = {}
 
 ;(function()
 	pg.base.activity_medal_group[5711] = {
-		is_out_of_print = 0,
-		entrance_picture = "medalAlbum/5711",
-		task_show = "",
-		group_name = "星光下的余晖（占坑配置）",
 		id = 5711,
+		entrance_picture = "medalAlbum/5711",
+		is_out_of_print = 0,
+		group_name = "星光下的余晖（占坑配置）",
 		activity_link = {
 			{
 				1,
@@ -62,14 +63,17 @@ pg.base.activity_medal_group = {}
 				65500,
 				1
 			}
+		},
+		task_show = {
+			21043,
+			21043
 		}
 	}
 	pg.base.activity_medal_group[5769] = {
-		is_out_of_print = 0,
-		entrance_picture = "medalAlbum/5769",
-		task_show = "",
-		group_name = "Spring Fashion Festa",
 		id = 5769,
+		entrance_picture = "medalAlbum/5769",
+		is_out_of_print = 0,
+		group_name = "Spring Fashion Festa",
 		activity_link = {
 			{
 				1,
@@ -98,14 +102,17 @@ pg.base.activity_medal_group = {}
 				65510,
 				1
 			}
+		},
+		task_show = {
+			-1,
+			21126
 		}
 	}
 	pg.base.activity_medal_group[5812] = {
-		is_out_of_print = 0,
-		entrance_picture = "medalAlbum/5812",
-		task_show = "",
-		group_name = "Paradiso of Shackled Light",
 		id = 5812,
+		entrance_picture = "medalAlbum/5812",
+		is_out_of_print = 0,
+		group_name = "Paradiso of Shackled Light",
 		activity_link = {
 			{
 				1,
@@ -138,14 +145,17 @@ pg.base.activity_medal_group = {}
 				65540,
 				1
 			}
+		},
+		task_show = {
+			21286,
+			21286
 		}
 	}
 	pg.base.activity_medal_group[5875] = {
-		is_out_of_print = 0,
-		entrance_picture = "medalAlbum/5875",
-		task_show = "",
-		group_name = "Letters from Valley Hospital",
 		id = 5875,
+		entrance_picture = "medalAlbum/5875",
+		is_out_of_print = 0,
+		group_name = "Letters from Valley Hospital",
 		activity_link = {
 			{
 				1,
@@ -178,6 +188,10 @@ pg.base.activity_medal_group = {}
 				65570,
 				1
 			}
+		},
+		task_show = {
+			21659,
+			21659
 		}
 	}
 	pg.base.activity_medal_group[5913] = {
@@ -239,11 +253,10 @@ pg.base.activity_medal_group = {}
 		}
 	}
 	pg.base.activity_medal_group[5970] = {
-		is_out_of_print = 0,
-		entrance_picture = "medalAlbum/5970",
-		task_show = "",
-		group_name = "A Rose on the High Tower",
 		id = 5970,
+		entrance_picture = "medalAlbum/5970",
+		is_out_of_print = 0,
+		group_name = "A Rose on the High Tower",
 		activity_link = {
 			{
 				1,
@@ -276,14 +289,17 @@ pg.base.activity_medal_group = {}
 				65602,
 				1
 			}
+		},
+		task_show = {
+			21714,
+			21714
 		}
 	}
 	pg.base.activity_medal_group[5971] = {
-		is_out_of_print = 0,
-		entrance_picture = "medalAlbum/5971",
-		task_show = "",
-		group_name = "Villa Resort",
 		id = 5971,
+		entrance_picture = "medalAlbum/5971",
+		is_out_of_print = 0,
+		group_name = "Villa Resort",
 		activity_link = {
 			{
 				1,
@@ -315,14 +331,17 @@ pg.base.activity_medal_group = {}
 				65611,
 				1
 			}
+		},
+		task_show = {
+			21723,
+			21723
 		}
 	}
 	pg.base.activity_medal_group[50021] = {
-		is_out_of_print = 0,
-		entrance_picture = "MedalAlbum/50021",
-		task_show = "",
-		group_name = "The Neon City Investigator",
 		id = 50021,
+		entrance_picture = "MedalAlbum/50021",
+		is_out_of_print = 0,
+		group_name = "The Neon City Investigator",
 		activity_link = {
 			{
 				1,
@@ -351,14 +370,17 @@ pg.base.activity_medal_group = {}
 				65631,
 				1
 			}
+		},
+		task_show = {
+			-1,
+			21776
 		}
 	}
 	pg.base.activity_medal_group[50087] = {
-		is_out_of_print = 0,
-		entrance_picture = "medalAlbum/50087",
-		task_show = "",
-		group_name = "Secrets of the Abyss",
 		id = 50087,
+		entrance_picture = "medalAlbum/50087",
+		is_out_of_print = 0,
+		group_name = "Secrets of the Abyss",
 		activity_link = {
 			{
 				1,
@@ -391,14 +413,17 @@ pg.base.activity_medal_group = {}
 				65665,
 				1
 			}
+		},
+		task_show = {
+			21802,
+			21802
 		}
 	}
 	pg.base.activity_medal_group[50136] = {
-		is_out_of_print = 0,
-		entrance_picture = "medalAlbum/50136",
-		task_show = "",
-		group_name = "A Dance for Amahara Above",
 		id = 50136,
+		entrance_picture = "medalAlbum/50136",
+		is_out_of_print = 0,
+		group_name = "A Dance for Amahara Above",
 		activity_link = {
 			{
 				1,
@@ -432,14 +457,17 @@ pg.base.activity_medal_group = {}
 				65685,
 				1
 			}
+		},
+		task_show = {
+			21844,
+			21835
 		}
 	}
 	pg.base.activity_medal_group[50209] = {
-		is_out_of_print = 0,
-		entrance_picture = "medalAlbum/50209",
-		task_show = "",
-		group_name = "Tempesta and Islas de Libertád",
 		id = 50209,
+		entrance_picture = "medalAlbum/50209",
+		is_out_of_print = 0,
+		group_name = "Tempesta and Islas de Libertád",
 		activity_link = {
 			{
 				1,
@@ -473,14 +501,17 @@ pg.base.activity_medal_group = {}
 				65722,
 				1
 			}
+		},
+		task_show = {
+			21858,
+			21849
 		}
 	}
 	pg.base.activity_medal_group[50295] = {
-		is_out_of_print = 0,
-		entrance_picture = "medalAlbum/50295",
-		task_show = "",
-		group_name = "A Note Through the Firmament",
 		id = 50295,
+		entrance_picture = "medalAlbum/50295",
+		is_out_of_print = 0,
+		group_name = "A Note Through the Firmament",
 		activity_link = {
 			{
 				1,
@@ -514,14 +545,17 @@ pg.base.activity_medal_group = {}
 				65785,
 				1
 			}
+		},
+		task_show = {
+			21882,
+			21873
 		}
 	}
 	pg.base.activity_medal_group[50359] = {
-		is_out_of_print = 0,
-		entrance_picture = "medalAlbum/50359",
-		task_show = "",
-		group_name = "Light & Shadow Fashion Shoot!",
 		id = 50359,
+		entrance_picture = "medalAlbum/50359",
+		is_out_of_print = 0,
+		group_name = "Light & Shadow Fashion Shoot!",
 		activity_link = {
 			{
 				1,
@@ -550,14 +584,17 @@ pg.base.activity_medal_group = {}
 				65802,
 				1
 			}
+		},
+		task_show = {
+			-1,
+			21883
 		}
 	}
 	pg.base.activity_medal_group[50405] = {
-		is_out_of_print = 0,
-		entrance_picture = "medalAlbum/50405",
-		task_show = "",
-		group_name = "Spring Auction Adventure",
 		id = 50405,
+		entrance_picture = "medalAlbum/50405",
+		is_out_of_print = 0,
+		group_name = "Spring Auction Adventure",
 		activity_link = {
 			{
 				1,
@@ -586,14 +623,17 @@ pg.base.activity_medal_group = {}
 				65848,
 				1
 			}
+		},
+		task_show = {
+			-1,
+			21892
 		}
 	}
 	pg.base.activity_medal_group[50441] = {
-		is_out_of_print = 0,
-		entrance_picture = "medalAlbum/50441",
-		task_show = "",
-		group_name = "Springtide Inn Online",
 		id = 50441,
+		entrance_picture = "medalAlbum/50441",
+		is_out_of_print = 0,
+		group_name = "Springtide Inn Online",
 		activity_link = {
 			{
 				1,
@@ -627,14 +667,17 @@ pg.base.activity_medal_group = {}
 				65860,
 				1
 			}
+		},
+		task_show = {
+			21910,
+			21901
 		}
 	}
 	pg.base.activity_medal_group[50482] = {
-		is_out_of_print = 0,
-		entrance_picture = "medalAlbum/50482",
-		task_show = "",
-		group_name = "The Vagabond's Recruitment Plan",
 		id = 50482,
+		entrance_picture = "medalAlbum/50482",
+		is_out_of_print = 0,
+		group_name = "The Vagabond's Recruitment Plan",
 		activity_link = {
 			{
 				1,
@@ -668,6 +711,97 @@ pg.base.activity_medal_group = {}
 				65886,
 				1
 			}
+		},
+		task_show = {
+			21923,
+			21914
+		}
+	}
+	pg.base.activity_medal_group[50607] = {
+		id = 50607,
+		entrance_picture = "MedalAlbum/50607",
+		is_out_of_print = 0,
+		group_name = "Alliance Before the Hagiobull",
+		activity_link = {
+			{
+				1,
+				50607,
+				{
+					21924,
+					21925,
+					21926,
+					21927,
+					21928,
+					21929,
+					21930,
+					21931,
+					21932,
+					21933
+				}
+			}
+		},
+		ui_prefab = {
+			scene = "GeZiMedalAlbumView",
+			mediator = "MedalAlbumTemplateMediator"
+		},
+		item_show = {
+			{
+				5,
+				335,
+				1
+			},
+			{
+				8,
+				65920,
+				1
+			}
+		},
+		task_show = {
+			21933,
+			21924
+		}
+	}
+	pg.base.activity_medal_group[50616] = {
+		id = 50616,
+		entrance_picture = "MedalAlbum/50616",
+		is_out_of_print = 0,
+		group_name = "The Opulent! The Glamorous! Luxury Bay!",
+		activity_link = {
+			{
+				1,
+				50616,
+				{
+					21934,
+					21935,
+					21936,
+					21937,
+					21938,
+					21939,
+					21940,
+					21941,
+					21968
+				}
+			}
+		},
+		ui_prefab = {
+			scene = "FujinBayMedalAlbumView",
+			mediator = "MedalAlbumTemplateMediator"
+		},
+		item_show = {
+			{
+				5,
+				338,
+				1
+			},
+			{
+				8,
+				65929,
+				1
+			}
+		},
+		task_show = {
+			21968,
+			21934
 		}
 	}
 end)()

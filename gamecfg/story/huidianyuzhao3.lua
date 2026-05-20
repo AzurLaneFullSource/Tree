@@ -19,7 +19,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_306",
 			hidePaintObj = true,
-			say = "Early in the morning, I summoned Lexington and the others for an emergency meting.",
+			say = "Early in the morning, I summoned Lexington and the others for an emergency meeting.",
 			bgm = "story-commander-up",
 			typewriter = {
 				speed = 0.05,

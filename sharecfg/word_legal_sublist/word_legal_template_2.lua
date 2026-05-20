@@ -569,6 +569,15 @@ function temp()
 					}
 				}
 			},
+			y = {
+				o = {
+					r = {
+						o = {
+							this = true
+						}
+					}
+				}
+			},
 			c = {
 				h = {
 					i = {
@@ -947,6 +956,22 @@ function temp()
 					}
 				}
 			},
+			z = {
+				u = {
+					this = true,
+					n = {
+						a = {
+							[" "] = {
+								A = {
+									I = {
+										this = true
+									}
+								}
+							}
+						}
+					}
+				}
+			},
 			r = {
 				i = {
 					s = {
@@ -981,21 +1006,6 @@ function temp()
 			e = {
 				v = {
 					this = true
-				}
-			},
-			z = {
-				u = {
-					n = {
-						a = {
-							[" "] = {
-								A = {
-									I = {
-										this = true
-									}
-								}
-							}
-						}
-					}
 				}
 			},
 			t = {
@@ -2456,6 +2466,12 @@ function temp()
 				this = true
 			},
 			["3"] = {
+				this = true
+			},
+			["4"] = {
+				this = true
+			},
+			["5"] = {
 				this = true
 			},
 			["6"] = {

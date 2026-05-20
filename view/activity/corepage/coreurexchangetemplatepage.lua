@@ -7,6 +7,7 @@ var0_0.CHALLANGE = 4
 var0_0.MINI_GAME = 5
 var0_0.SHOP_BUY = 6
 var0_0.GO_TASK = 7
+var0_0.MINI_GAME_ACT = 8
 
 function var0_0.OnInit(arg0_1)
 	arg0_1.shopProxy = getProxy(ShopsProxy)
@@ -257,84 +258,97 @@ var0_0.taskTypeDic = {
 		end
 
 		return var1_27 .. "/" .. #arg1_27, var0_27
+	end,
+	[var0_0.MINI_GAME_ACT] = function(arg0_29, arg1_29, arg2_29)
+		local var0_29 = arg1_29[1]
+		local var1_29 = arg1_29[2]
+		local var2_29 = getProxy(MiniGameProxy):GetHubByGameId(var0_29).count == 0
+
+		local function var3_29()
+			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.ACTIVITY, {
+				id = var1_29
+			})
+		end
+
+		return var2_29 and "1/1" or "0/1", not var2_29 and var3_29 or nil
 	end
 }
 
-function var0_0.UpdateTask(arg0_29, arg1_29, arg2_29)
-	if not arg0_29.isLinkActOpen then
+function var0_0.UpdateTask(arg0_31, arg1_31, arg2_31)
+	if not arg0_31.isLinkActOpen then
 		return
 	end
 
-	local var0_29 = arg1_29 + 1
-	local var1_29 = arg0_29.taskConfig[var0_29][1]
-	local var2_29 = arg0_29.taskConfig[var0_29][2]
-	local var3_29 = arg0_29.taskConfig[var0_29][3]
-	local var4_29 = arg0_29.taskConfig[var0_29][4]
-	local var5_29, var6_29 = var0_0.taskTypeDic[var1_29](arg0_29, var3_29, var4_29)
+	local var0_31 = arg1_31 + 1
+	local var1_31 = arg0_31.taskConfig[var0_31][1]
+	local var2_31 = arg0_31.taskConfig[var0_31][2]
+	local var3_31 = arg0_31.taskConfig[var0_31][3]
+	local var4_31 = arg0_31.taskConfig[var0_31][4]
+	local var5_31, var6_31 = var0_0.taskTypeDic[var1_31](arg0_31, var3_31, var4_31)
 
-	setText(arg2_29:Find("name"), var2_29)
-	setText(arg2_29:Find("count"), var5_29)
-	setActive(arg2_29:Find("complete"), var6_29 == nil)
-	setActive(arg2_29:Find("btn_go"), var6_29 ~= nil)
+	setText(arg2_31:Find("name"), var2_31)
+	setText(arg2_31:Find("count"), var5_31)
+	setActive(arg2_31:Find("complete"), var6_31 == nil)
+	setActive(arg2_31:Find("btn_go"), var6_31 ~= nil)
 
-	if var6_29 then
-		onButton(arg0_29, arg2_29:Find("btn_go"), function()
-			var6_29()
-			pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildUrJump(var1_29))
+	if var6_31 then
+		onButton(arg0_31, arg2_31:Find("btn_go"), function()
+			var6_31()
+			pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildUrJump(var1_31))
 		end)
 	end
 end
 
-function var0_0.OnUpdateFlush(arg0_31)
-	arg0_31:UpdateExchangeStatus()
-	arg0_31.uilist:align(#arg0_31.taskConfig)
-	arg0_31:UpdatePtCount()
-	setActive(arg0_31._btnExchange:Find("red"), arg0_31.canExchange)
-	setGray(arg0_31._btnExchange, arg0_31.exchangeState == 3, false)
+function var0_0.OnUpdateFlush(arg0_33)
+	arg0_33:UpdateExchangeStatus()
+	arg0_33.uilist:align(#arg0_33.taskConfig)
+	arg0_33:UpdatePtCount()
+	setActive(arg0_33._btnExchange:Find("red"), arg0_33.canExchange)
+	setGray(arg0_33._btnExchange, arg0_33.exchangeState == 3, false)
 
-	arg0_31._btnExchange:GetComponent("Image").raycastTarget = arg0_31.exchangeState ~= 3
+	arg0_33._btnExchange:GetComponent("Image").raycastTarget = arg0_33.exchangeState ~= 3
 end
 
-function var0_0.GetGoodsResCnt(arg0_32, arg1_32)
-	return arg0_32.actShop:GetCommodityById(arg1_32):GetPurchasableCnt()
+function var0_0.GetGoodsResCnt(arg0_34, arg1_34)
+	return arg0_34.actShop:GetCommodityById(arg1_34):GetPurchasableCnt()
 end
 
-function var0_0.UpdateExchangeStatus(arg0_33)
-	arg0_33.player = arg0_33.playerProxy:getData()
-	arg0_33.ptCount = arg0_33.player:getResource(arg0_33.uPtId)
-	arg0_33.restExchange = _.reduce(arg0_33.goodsId, 0, function(arg0_34, arg1_34)
-		return arg0_34 + arg0_33.actShop:GetCommodityById(arg1_34):GetPurchasableCnt()
+function var0_0.UpdateExchangeStatus(arg0_35)
+	arg0_35.player = arg0_35.playerProxy:getData()
+	arg0_35.ptCount = arg0_35.player:getResource(arg0_35.uPtId)
+	arg0_35.restExchange = _.reduce(arg0_35.goodsId, 0, function(arg0_36, arg1_36)
+		return arg0_36 + arg0_35.actShop:GetCommodityById(arg1_36):GetPurchasableCnt()
 	end)
-	arg0_33.exchangeState = arg0_33.length - arg0_33.restExchange
-	arg0_33.curGoods = arg0_33.exchangeState < arg0_33.length and pg.activity_shop_template[arg0_33.goodsId[arg0_33.exchangeState]] or nil
-	arg0_33.canExchange = arg0_33.exchangeState < arg0_33.length and arg0_33.ptCount >= arg0_33.curGoods.resource_num
+	arg0_35.exchangeState = arg0_35.length - arg0_35.restExchange
+	arg0_35.curGoods = arg0_35.exchangeState < arg0_35.length and pg.activity_shop_template[arg0_35.goodsId[arg0_35.exchangeState]] or nil
+	arg0_35.canExchange = arg0_35.exchangeState < arg0_35.length and arg0_35.ptCount >= arg0_35.curGoods.resource_num
 end
 
-function var0_0.UpdatePtCount(arg0_35)
-	local var0_35 = ((arg0_35.exchangeState < arg0_35.length and arg0_35.ptCount < arg0_35.curGoods.resource_num and "<color=red>" or "<color=#FFE000>") .. arg0_35.ptCount .. "</color>/" .. (arg0_35.exchangeState == 3 and "--" or arg0_35.curGoods.resource_num)) .. i18n("UrExchange_Pt_charges", arg0_35.restExchange)
+function var0_0.UpdatePtCount(arg0_37)
+	local var0_37 = ((arg0_37.exchangeState < arg0_37.length and arg0_37.ptCount < arg0_37.curGoods.resource_num and "<color=red>" or "<color=#FFE000>") .. arg0_37.ptCount .. "</color>/" .. (arg0_37.exchangeState == 3 and "--" or arg0_37.curGoods.resource_num)) .. i18n("UrExchange_Pt_charges", arg0_37.restExchange)
 
-	setText(arg0_35._ptText, var0_35)
+	setText(arg0_37._ptText, var0_37)
 end
 
-function var0_0.OnDestroy(arg0_36)
-	eachChild(arg0_36._tasksTF, function(arg0_37)
-		Destroy(arg0_37)
+function var0_0.OnDestroy(arg0_38)
+	eachChild(arg0_38._tasksTF, function(arg0_39)
+		Destroy(arg0_39)
 	end)
 end
 
-function var0_0.IsShowingPopWindow(arg0_38)
-	return arg0_38.isMsgBoxShow
+function var0_0.IsShowingPopWindow(arg0_40)
+	return arg0_40.isMsgBoxShow
 end
 
-function var0_0.ClosePopWindow(arg0_39)
-	arg0_39:closeMsgBox()
+function var0_0.ClosePopWindow(arg0_41)
+	arg0_41:closeMsgBox()
 end
 
-function var0_0.closeMsgBox(arg0_40)
-	arg0_40.isMsgBoxShow = false
+function var0_0.closeMsgBox(arg0_42)
+	arg0_42.isMsgBoxShow = false
 
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_40._msgBox)
-	setActive(arg0_40._msgBox, false)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_42._msgBox)
+	setActive(arg0_42._msgBox, false)
 end
 
 return var0_0

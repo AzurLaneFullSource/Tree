@@ -228,20 +228,32 @@ function var0_0.GetActiveActivity(arg0_30)
 	end
 end
 
-function var0_0.onBackPressed(arg0_31)
-	local var0_31 = arg0_31.pageDic[arg0_31.activity.id]
+function var0_0.GetActivityIdByPageClass(arg0_31, arg1_31)
+	for iter0_31, iter1_31 in ipairs(arg0_31.activities or {}) do
+		local var0_31 = iter1_31:getConfig("page_info")
 
-	if var0_31:IsShowingPopWindow() then
-		var0_31:ClosePopWindow()
+		if var0_31 and var0_31.class_name == arg1_31 then
+			return iter1_31.id
+		end
+	end
+
+	return nil
+end
+
+function var0_0.onBackPressed(arg0_32)
+	local var0_32 = arg0_32.pageDic[arg0_32.activity.id]
+
+	if var0_32:IsShowingPopWindow() then
+		var0_32:ClosePopWindow()
 
 		return
 	end
 
-	var0_0.super.onBackPressed(arg0_31)
+	var0_0.super.onBackPressed(arg0_32)
 end
 
-function var0_0.getActClass(arg0_32, arg1_32)
-	return _G[arg1_32]
+function var0_0.getActClass(arg0_33, arg1_33)
+	return _G[arg1_33]
 end
 
 return var0_0

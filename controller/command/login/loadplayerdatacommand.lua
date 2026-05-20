@@ -293,6 +293,10 @@ function var0_0.execute(arg0_1, arg1_1)
 		{
 			PlayRoomProxy,
 			true
+		},
+		{
+			LoadingPicProxy,
+			true
 		}
 	})
 	pg.ConnectionMgr.GetInstance():setPacketIdx(1)

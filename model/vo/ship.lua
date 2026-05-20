@@ -3003,16 +3003,15 @@ function var0_0.IsMatchKey(arg0_243, arg1_243)
 
 	arg1_243 = string.lower(string.gsub(arg1_243, "%.", "%%."))
 
-	local var0_243 = {
-		arg0_243:getName(),
-		arg0_243:GetDefaultName()
+	local var0_243 = pg._ship_data_statistics[arg0_243.configId].name
+	local var1_243 = arg0_243:getName()
+	local var2_243 = {
+		var0_243,
+		arg0_243:GetDefaultName(),
+		var1_243
 	}
 
-	if var0_243[1] == var0_243[2] then
-		table.remove(var0_243)
-	end
-
-	return underscore.any(var0_243, function(arg0_244)
+	return underscore.any(var2_243, function(arg0_244)
 		return string.find(string.lower(arg0_244), arg1_243)
 	end)
 end

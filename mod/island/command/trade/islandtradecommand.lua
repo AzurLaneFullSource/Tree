@@ -11,12 +11,6 @@ function var0_0.execute(arg0_1, arg1_1)
 	local var7_1 = var5_1:GetTradeAgency()
 
 	if var2_1 == IslandConst.TRADE_PURCHASE then
-		if var3_1 > var7_1:GetCanPurchaseCnt() then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("island_trade_purchase_failed_label"))
-
-			return
-		end
-
 		if not var6_1:CanAddItem(IslandItem.PEARL_ID, var3_1) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("island_trade_bag_full_label"))
 

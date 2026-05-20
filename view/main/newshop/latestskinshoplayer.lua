@@ -842,12 +842,8 @@ function var0_0.FlushChangeSkin(arg0_48, arg1_48)
 	if var2_48 and var2_48.description then
 		local var6_48 = var2_48.description
 
-		if table.contains(var6_48, var0_48) then
-			local var7_48 = HXSet.isHx()
-
-			if arg1_48.buyCount <= 0 and var7_48 then
-				var4_48 = true
-			end
+		if table.contains(var6_48, var0_48) and HXSet.isHx() then
+			var4_48 = true
 		end
 	end
 
@@ -1433,7 +1429,7 @@ function var0_0.CheckShowShopHx(arg0_82, arg1_82, arg2_82)
 		return
 	end
 
-	if not IsNil(arg1_82) and arg2_82.buyCount <= 0 then
+	if not IsNil(arg1_82) then
 		setActive(arg1_82, true)
 	end
 end
@@ -1453,7 +1449,7 @@ function var0_0.CheckShowShopHxForL2d(arg0_84, arg1_84, arg2_84)
 		return
 	end
 
-	local var0_84 = arg2_84.buyCount <= 0 and 1 or 0
+	local var0_84 = 1
 
 	arg1_84:changeParamaterValue("shop_hx", var0_84)
 end

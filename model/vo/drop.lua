@@ -177,7 +177,7 @@ function var0_0.getIslandRarity(arg0_38)
 end
 
 function var0_0.getCount(arg0_47)
-	if arg0_47.type == DROP_TYPE_OPERATION or arg0_47.type == DROP_TYPE_LOVE_LETTER then
+	if arg0_47.type == DROP_TYPE_OPERATION or arg0_47.type == DROP_TYPE_LOVE_LETTER or MallActivity.IsStaffDrop(arg0_47) then
 		return 1
 	else
 		return arg0_47.count
@@ -1464,7 +1464,9 @@ function var0_0.InitSwitch()
 						return
 					end
 
-					switch(var1_222:getConfig("type"), {
+					local var2_222 = var1_222:getConfig("type")
+
+					switch(var2_222, {
 						[ActivityConst.ACTIVITY_TYPE_TOWN2] = function()
 							local var0_223 = getProxy(ActivityProxy)
 							local var1_223 = Clone(var0_223:getActivityByType(ActivityConst.ACTIVITY_TYPE_TOWN2))
@@ -1477,48 +1479,53 @@ function var0_0.InitSwitch()
 							end
 
 							var0_223:updateActivity(var1_223)
+						end,
+						[ActivityConst.ACTIVITY_TYPE_MALL] = function()
+							local var0_224 = var1_222:getConfig("config_data")[1]
+							local var1_224 = arg0_190.id ~= var0_224
+
+							if var1_224 then
+								var1_222:AddStaff(arg0_190.id, arg0_190.count)
+							else
+								var1_222:AddGold(arg0_190.count)
+							end
+
+							getProxy(ActivityProxy):updateActivity(var1_222)
+
+							if var1_224 then
+								pg.m02:sendNotification(GAME.ACTIVITY_MALL_OP, {
+									activity_id = var1_222.id,
+									cmd = ActivityMallOPCommand.CMD.GET_STAFF_DATA,
+									arg1 = arg0_190.count
+								})
+							end
 						end
 					}, function()
-						assert(var1_222 .. "对应" .. type .. "错误")
+						assert(var1_222 .. "对应" .. var2_222 .. "错误")
 					end)
 				end
 			})
 		end,
-		[DROP_TYPE_EQUIPMENT_SKIN] = function(arg0_225)
-			getProxy(EquipmentProxy):addEquipmentSkin(arg0_225.id, arg0_225.count)
+		[DROP_TYPE_EQUIPMENT_SKIN] = function(arg0_226)
+			getProxy(EquipmentProxy):addEquipmentSkin(arg0_226.id, arg0_226.count)
 		end,
-		[DROP_TYPE_OPERATION] = function(arg0_226)
-			local var0_226 = getProxy(BayProxy)
-			local var1_226 = var0_226:getShipById(arg0_226.count)
+		[DROP_TYPE_OPERATION] = function(arg0_227)
+			local var0_227 = getProxy(BayProxy)
+			local var1_227 = var0_227:getShipById(arg0_227.count)
 
-			if var1_226 then
-				var1_226:unlockActivityNpc(0)
-				var0_226:updateShip(var1_226)
-				getProxy(CollectionProxy):flushCollection(var1_226)
+			if var1_227 then
+				var1_227:unlockActivityNpc(0)
+				var0_227:updateShip(var1_227)
+				getProxy(CollectionProxy):flushCollection(var1_227)
 			end
 		end,
-		[DROP_TYPE_WORLD_ITEM] = function(arg0_227)
-			nowWorld():GetInventoryProxy():AddItem(arg0_227.id, arg0_227.count)
+		[DROP_TYPE_WORLD_ITEM] = function(arg0_228)
+			nowWorld():GetInventoryProxy():AddItem(arg0_228.id, arg0_228.count)
 		end,
-		[DROP_TYPE_ICON_FRAME] = function(arg0_228)
-			local var0_228 = getProxy(AttireProxy)
-			local var1_228 = pg.TimeMgr.GetInstance():GetServerTime()
-			local var2_228 = IconFrame.New({
-				id = arg0_228.id
-			})
-			local var3_228 = var1_228 + var2_228:getConfig("time_second")
-
-			var2_228:updateData({
-				isNew = true,
-				end_time = var3_228
-			})
-			var0_228:addAttireFrame(var2_228)
-			pg.ToastMgr.GetInstance():ShowToast(pg.ToastMgr.TYPE_ATTIRE, var2_228)
-		end,
-		[DROP_TYPE_CHAT_FRAME] = function(arg0_229)
+		[DROP_TYPE_ICON_FRAME] = function(arg0_229)
 			local var0_229 = getProxy(AttireProxy)
 			local var1_229 = pg.TimeMgr.GetInstance():GetServerTime()
-			local var2_229 = ChatFrame.New({
+			local var2_229 = IconFrame.New({
 				id = arg0_229.id
 			})
 			local var3_229 = var1_229 + var2_229:getConfig("time_second")
@@ -1530,460 +1537,475 @@ function var0_0.InitSwitch()
 			var0_229:addAttireFrame(var2_229)
 			pg.ToastMgr.GetInstance():ShowToast(pg.ToastMgr.TYPE_ATTIRE, var2_229)
 		end,
-		[DROP_TYPE_EMOJI] = function(arg0_230)
-			getProxy(EmojiProxy):addNewEmojiID(arg0_230.id)
-			pg.ToastMgr.GetInstance():ShowToast(pg.ToastMgr.TYPE_EMOJI, arg0_230:getConfigTable())
-		end,
-		[DROP_TYPE_WORLD_COLLECTION] = function(arg0_231)
-			nowWorld():GetCollectionProxy():Unlock(arg0_231.id)
-		end,
-		[DROP_TYPE_META_PT] = function(arg0_232)
-			getProxy(MetaCharacterProxy):getMetaProgressVOByID(arg0_232.id):addPT(arg0_232.count)
-		end,
-		[DROP_TYPE_SKIN_TIMELIMIT] = function(arg0_233)
-			local var0_233 = arg0_233.id
-			local var1_233 = arg0_233.count
-			local var2_233 = getProxy(ShipSkinProxy)
-			local var3_233 = var2_233:getSkinById(var0_233)
+		[DROP_TYPE_CHAT_FRAME] = function(arg0_230)
+			local var0_230 = getProxy(AttireProxy)
+			local var1_230 = pg.TimeMgr.GetInstance():GetServerTime()
+			local var2_230 = ChatFrame.New({
+				id = arg0_230.id
+			})
+			local var3_230 = var1_230 + var2_230:getConfig("time_second")
 
-			if var3_233 and var3_233:isExpireType() then
-				local var4_233 = var1_233 + var3_233.endTime
-				local var5_233 = ShipSkin.New({
-					id = var0_233,
-					end_time = var4_233
-				})
-
-				var2_233:addSkin(var5_233)
-			elseif not var3_233 then
-				local var6_233 = var1_233 + pg.TimeMgr.GetInstance():GetServerTime()
-				local var7_233 = ShipSkin.New({
-					id = var0_233,
-					end_time = var6_233
-				})
-
-				var2_233:addSkin(var7_233)
-			end
+			var2_230:updateData({
+				isNew = true,
+				end_time = var3_230
+			})
+			var0_230:addAttireFrame(var2_230)
+			pg.ToastMgr.GetInstance():ShowToast(pg.ToastMgr.TYPE_ATTIRE, var2_230)
 		end,
-		[DROP_TYPE_BUFF] = function(arg0_234)
+		[DROP_TYPE_EMOJI] = function(arg0_231)
+			getProxy(EmojiProxy):addNewEmojiID(arg0_231.id)
+			pg.ToastMgr.GetInstance():ShowToast(pg.ToastMgr.TYPE_EMOJI, arg0_231:getConfigTable())
+		end,
+		[DROP_TYPE_WORLD_COLLECTION] = function(arg0_232)
+			nowWorld():GetCollectionProxy():Unlock(arg0_232.id)
+		end,
+		[DROP_TYPE_META_PT] = function(arg0_233)
+			getProxy(MetaCharacterProxy):getMetaProgressVOByID(arg0_233.id):addPT(arg0_233.count)
+		end,
+		[DROP_TYPE_SKIN_TIMELIMIT] = function(arg0_234)
 			local var0_234 = arg0_234.id
-			local var1_234 = pg.benefit_buff_template[var0_234]
+			local var1_234 = arg0_234.count
+			local var2_234 = getProxy(ShipSkinProxy)
+			local var3_234 = var2_234:getSkinById(var0_234)
 
-			assert(var1_234 and var1_234.act_id > 0, "should exist act id")
+			if var3_234 and var3_234:isExpireType() then
+				local var4_234 = var1_234 + var3_234.endTime
+				local var5_234 = ShipSkin.New({
+					id = var0_234,
+					end_time = var4_234
+				})
 
-			local var2_234 = getProxy(ActivityProxy):getActivityById(var1_234.act_id)
+				var2_234:addSkin(var5_234)
+			elseif not var3_234 then
+				local var6_234 = var1_234 + pg.TimeMgr.GetInstance():GetServerTime()
+				local var7_234 = ShipSkin.New({
+					id = var0_234,
+					end_time = var6_234
+				})
 
-			if var2_234 and not var2_234:isEnd() then
-				local var3_234 = var1_234.max_time
-				local var4_234 = pg.TimeMgr.GetInstance():GetServerTime() + var3_234
-
-				var2_234:AddBuff(ActivityBuff.New(var2_234.id, var0_234, var4_234))
-				getProxy(ActivityProxy):updateActivity(var2_234)
+				var2_234:addSkin(var7_234)
 			end
 		end,
-		[DROP_TYPE_COMMANDER_CAT] = function(arg0_235)
+		[DROP_TYPE_BUFF] = function(arg0_235)
+			local var0_235 = arg0_235.id
+			local var1_235 = pg.benefit_buff_template[var0_235]
+
+			assert(var1_235 and var1_235.act_id > 0, "should exist act id")
+
+			local var2_235 = getProxy(ActivityProxy):getActivityById(var1_235.act_id)
+
+			if var2_235 and not var2_235:isEnd() then
+				local var3_235 = var1_235.max_time
+				local var4_235 = pg.TimeMgr.GetInstance():GetServerTime() + var3_235
+
+				var2_235:AddBuff(ActivityBuff.New(var2_235.id, var0_235, var4_235))
+				getProxy(ActivityProxy):updateActivity(var2_235)
+			end
+		end,
+		[DROP_TYPE_COMMANDER_CAT] = function(arg0_236)
 			return
 		end,
-		[DROP_TYPE_DORM3D_FURNITURE] = function(arg0_236)
-			getProxy(ApartmentProxy):ModifyRoom(arg0_236:getConfig("room_id"), function(arg0_237)
-				arg0_237:AddFurnitureByID(arg0_236.id)
+		[DROP_TYPE_DORM3D_FURNITURE] = function(arg0_237)
+			getProxy(ApartmentProxy):ModifyRoom(arg0_237:getConfig("room_id"), function(arg0_238)
+				arg0_238:AddFurnitureByID(arg0_237.id)
 			end)
 		end,
-		[DROP_TYPE_DORM3D_GIFT] = function(arg0_238)
-			getProxy(ApartmentProxy):changeGiftCount(arg0_238.id, arg0_238.count)
+		[DROP_TYPE_DORM3D_GIFT] = function(arg0_239)
+			getProxy(ApartmentProxy):changeGiftCount(arg0_239.id, arg0_239.count)
 		end,
-		[DROP_TYPE_DORM3D_SKIN] = function(arg0_239)
-			getProxy(ApartmentProxy):ModifyApartment(arg0_239:getConfig("ship_group"), function(arg0_240)
-				arg0_240:addSkin(arg0_239.id)
+		[DROP_TYPE_DORM3D_SKIN] = function(arg0_240)
+			getProxy(ApartmentProxy):ModifyApartment(arg0_240:getConfig("ship_group"), function(arg0_241)
+				arg0_241:addSkin(arg0_240.id)
 			end)
 		end,
-		[DROP_TYPE_LIVINGAREA_COVER] = function(arg0_241)
-			local var0_241 = getProxy(LivingAreaCoverProxy)
-			local var1_241 = LivingAreaCover.New({
+		[DROP_TYPE_LIVINGAREA_COVER] = function(arg0_242)
+			local var0_242 = getProxy(LivingAreaCoverProxy)
+			local var1_242 = LivingAreaCover.New({
 				unlock = true,
 				isNew = true,
-				id = arg0_241.id
-			})
-
-			var0_241:UpdateCover(var1_241)
-			pg.ToastMgr.GetInstance():ShowToast(pg.ToastMgr.TYPE_COVER, var1_241)
-			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataCover(arg0_241.id, 1))
-		end,
-		[DROP_TYPE_COMBAT_UI_STYLE] = function(arg0_242)
-			local var0_242 = getProxy(AttireProxy)
-			local var1_242 = pg.TimeMgr.GetInstance():GetServerTime()
-			local var2_242 = CombatUIStyle.New({
 				id = arg0_242.id
 			})
 
-			var2_242:setUnlock()
-			var2_242:setNew()
-			var0_242:addAttireFrame(var2_242)
-			pg.ToastMgr.GetInstance():ShowToast(pg.ToastMgr.TYPE_COMBAT_UI, var2_242)
+			var0_242:UpdateCover(var1_242)
+			pg.ToastMgr.GetInstance():ShowToast(pg.ToastMgr.TYPE_COVER, var1_242)
+			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataCover(arg0_242.id, 1))
 		end,
-		[DROP_TYPE_ISLAND_ITEM] = function(arg0_243)
-			local var0_243 = getProxy(IslandProxy):GetIsland()
+		[DROP_TYPE_COMBAT_UI_STYLE] = function(arg0_243)
+			local var0_243 = getProxy(AttireProxy)
+			local var1_243 = pg.TimeMgr.GetInstance():GetServerTime()
+			local var2_243 = CombatUIStyle.New({
+				id = arg0_243.id
+			})
 
-			if not var0_243 then
+			var2_243:setUnlock()
+			var2_243:setNew()
+			var0_243:addAttireFrame(var2_243)
+			pg.ToastMgr.GetInstance():ShowToast(pg.ToastMgr.TYPE_COMBAT_UI, var2_243)
+		end,
+		[DROP_TYPE_ISLAND_ITEM] = function(arg0_244)
+			local var0_244 = getProxy(IslandProxy):GetIsland()
+
+			if not var0_244 then
 				return
 			end
 
-			var0_243:GetInventoryAgency():AddItem(IslandItem.New({
-				id = arg0_243.id,
-				num = arg0_243.count
+			var0_244:GetInventoryAgency():AddItem(IslandItem.New({
+				id = arg0_244.id,
+				num = arg0_244.count
 			}))
 		end
 	}
 
-	function var0_0.AddItemDefault(arg0_244)
-		if arg0_244.type > DROP_TYPE_USE_ACTIVITY_DROP then
-			local var0_244 = getProxy(ActivityProxy):getActivityById(pg.activity_drop_type[arg0_244.type].activity_id)
+	function var0_0.AddItemDefault(arg0_245)
+		if arg0_245.type > DROP_TYPE_USE_ACTIVITY_DROP then
+			local var0_245 = getProxy(ActivityProxy):getActivityById(pg.activity_drop_type[arg0_245.type].activity_id)
 
-			if arg0_244.type == DROP_TYPE_RYZA_DROP then
-				if var0_244 and not var0_244:isEnd() then
-					var0_244:AddItem(AtelierMaterial.New({
-						configId = arg0_244.id,
-						count = arg0_244.count
+			if arg0_245.type == DROP_TYPE_RYZA_DROP then
+				if var0_245 and not var0_245:isEnd() then
+					var0_245:AddItem(AtelierMaterial.New({
+						configId = arg0_245.id,
+						count = arg0_245.count
 					}))
-					getProxy(ActivityProxy):updateActivity(var0_244)
+					getProxy(ActivityProxy):updateActivity(var0_245)
 				end
-			elseif var0_244 and not var0_244:isEnd() then
-				var0_244:addVitemNumber(arg0_244.id, arg0_244.count)
-				getProxy(ActivityProxy):updateActivity(var0_244)
+			elseif var0_245 and not var0_245:isEnd() then
+				var0_245:addVitemNumber(arg0_245.id, arg0_245.count)
+				getProxy(ActivityProxy):updateActivity(var0_245)
 			end
-		elseif arg0_244.type >= DROP_TYPE_ISLAND_ITEM and arg0_244.type <= DROP_TYPE_ISLAND_CARD_DIY then
+		elseif arg0_245.type >= DROP_TYPE_ISLAND_ITEM and arg0_245.type <= DROP_TYPE_ISLAND_CARD_DIY then
 			if not getProxy(IslandProxy):GetIsland() then
 				return
 			end
 
-			local var1_244 = {}
+			local var1_245 = {}
 
-			table.insert(var1_244, {
-				type = arg0_244.type,
-				id = arg0_244.id,
-				number = arg0_244.count
+			table.insert(var1_245, {
+				type = arg0_245.type,
+				id = arg0_245.id,
+				number = arg0_245.count
 			})
 			IslandDropHelper.AddItems({
-				drop_list = var1_244
+				drop_list = var1_245
 			})
 		else
-			print("can not handle this type>>" .. arg0_244.type)
+			print("can not handle this type>>" .. arg0_245.type)
 		end
 	end
 
 	var0_0.MsgboxIntroCase = {
-		[DROP_TYPE_RESOURCE] = function(arg0_245, arg1_245, arg2_245)
-			setText(arg2_245, arg0_245:getConfig("display"))
+		[DROP_TYPE_RESOURCE] = function(arg0_246, arg1_246, arg2_246)
+			setText(arg2_246, arg0_246:getConfig("display"))
 		end,
-		[DROP_TYPE_ITEM] = function(arg0_246, arg1_246, arg2_246)
-			local var0_246 = arg0_246:getConfig("display")
+		[DROP_TYPE_ITEM] = function(arg0_247, arg1_247, arg2_247)
+			local var0_247 = arg0_247:getConfig("display")
 
-			if arg0_246:getConfig("type") == Item.LOVE_LETTER_TYPE then
-				var0_246 = string.gsub(var0_246, "$1", ShipGroup.getDefaultShipNameByGroupID(arg0_246.extra))
-			elseif arg0_246:getConfig("combination_display") ~= nil then
-				local var1_246 = arg0_246:getConfig("combination_display")
+			if arg0_247:getConfig("type") == Item.LOVE_LETTER_TYPE then
+				var0_247 = string.gsub(var0_247, "$1", ShipGroup.getDefaultShipNameByGroupID(arg0_247.extra))
+			elseif arg0_247:getConfig("combination_display") ~= nil then
+				local var1_247 = arg0_247:getConfig("combination_display")
 
-				if var1_246 and #var1_246 > 0 then
-					var0_246 = Item.StaticCombinationDisplay(var1_246)
+				if var1_247 and #var1_247 > 0 then
+					var0_247 = Item.StaticCombinationDisplay(var1_247)
 				end
 			end
 
-			setText(arg2_246, SwitchSpecialChar(var0_246, true))
+			setText(arg2_247, SwitchSpecialChar(var0_247, true))
 		end,
-		[DROP_TYPE_FURNITURE] = function(arg0_247, arg1_247, arg2_247)
-			setText(arg2_247, arg0_247:getConfig("describe"))
+		[DROP_TYPE_FURNITURE] = function(arg0_248, arg1_248, arg2_248)
+			setText(arg2_248, arg0_248:getConfig("describe"))
 		end,
-		[DROP_TYPE_SHIP] = function(arg0_248, arg1_248, arg2_248)
-			local var0_248 = arg0_248:getConfig("skin_id")
-			local var1_248, var2_248, var3_248 = ShipWordHelper.GetWordAndCV(var0_248, ShipWordHelper.WORD_TYPE_DROP, nil, PLATFORM_CODE ~= PLATFORM_US)
-
-			setText(arg2_248, var3_248 or i18n("ship_drop_desc_default"))
-		end,
-		[DROP_TYPE_OPERATION] = function(arg0_249, arg1_249, arg2_249)
+		[DROP_TYPE_SHIP] = function(arg0_249, arg1_249, arg2_249)
 			local var0_249 = arg0_249:getConfig("skin_id")
 			local var1_249, var2_249, var3_249 = ShipWordHelper.GetWordAndCV(var0_249, ShipWordHelper.WORD_TYPE_DROP, nil, PLATFORM_CODE ~= PLATFORM_US)
 
 			setText(arg2_249, var3_249 or i18n("ship_drop_desc_default"))
 		end,
-		[DROP_TYPE_EQUIP] = function(arg0_250, arg1_250, arg2_250)
-			setText(arg2_250, arg1_250.name or arg0_250:getConfig("name") or "")
-		end,
-		[DROP_TYPE_STRATEGY] = function(arg0_251, arg1_251, arg2_251)
-			local var0_251 = arg0_251:getConfig("desc")
+		[DROP_TYPE_OPERATION] = function(arg0_250, arg1_250, arg2_250)
+			local var0_250 = arg0_250:getConfig("skin_id")
+			local var1_250, var2_250, var3_250 = ShipWordHelper.GetWordAndCV(var0_250, ShipWordHelper.WORD_TYPE_DROP, nil, PLATFORM_CODE ~= PLATFORM_US)
 
-			for iter0_251, iter1_251 in ipairs({
-				arg0_251.count
+			setText(arg2_250, var3_250 or i18n("ship_drop_desc_default"))
+		end,
+		[DROP_TYPE_EQUIP] = function(arg0_251, arg1_251, arg2_251)
+			setText(arg2_251, arg1_251.name or arg0_251:getConfig("name") or "")
+		end,
+		[DROP_TYPE_STRATEGY] = function(arg0_252, arg1_252, arg2_252)
+			local var0_252 = arg0_252:getConfig("desc")
+
+			for iter0_252, iter1_252 in ipairs({
+				arg0_252.count
 			}) do
-				var0_251 = string.gsub(var0_251, "$" .. iter0_251, iter1_251)
+				var0_252 = string.gsub(var0_252, "$" .. iter0_252, iter1_252)
 			end
 
-			setText(arg2_251, var0_251)
+			setText(arg2_252, var0_252)
 		end,
-		[DROP_TYPE_SKIN] = function(arg0_252, arg1_252, arg2_252)
-			setText(arg2_252, arg0_252:getConfig("desc"))
-		end,
-		[DROP_TYPE_SKIN_TIMELIMIT] = function(arg0_253, arg1_253, arg2_253)
+		[DROP_TYPE_SKIN] = function(arg0_253, arg1_253, arg2_253)
 			setText(arg2_253, arg0_253:getConfig("desc"))
 		end,
-		[DROP_TYPE_EQUIPMENT_SKIN] = function(arg0_254, arg1_254, arg2_254)
-			local var0_254 = arg0_254:getConfig("desc")
-			local var1_254 = _.map(arg0_254:getConfig("equip_type"), function(arg0_255)
-				return EquipType.Type2Name2(arg0_255)
+		[DROP_TYPE_SKIN_TIMELIMIT] = function(arg0_254, arg1_254, arg2_254)
+			setText(arg2_254, arg0_254:getConfig("desc"))
+		end,
+		[DROP_TYPE_EQUIPMENT_SKIN] = function(arg0_255, arg1_255, arg2_255)
+			local var0_255 = arg0_255:getConfig("desc")
+			local var1_255 = _.map(arg0_255:getConfig("equip_type"), function(arg0_256)
+				return EquipType.Type2Name2(arg0_256)
 			end)
 
-			setText(arg2_254, var0_254 .. "\n\n" .. i18n("word_fit") .. ": " .. table.concat(var1_254, ","))
+			setText(arg2_255, var0_255 .. "\n\n" .. i18n("word_fit") .. ": " .. table.concat(var1_255, ","))
 		end,
-		[DROP_TYPE_VITEM] = function(arg0_256, arg1_256, arg2_256)
-			setText(arg2_256, arg0_256:getConfig("display"))
-		end,
-		[DROP_TYPE_WORLD_ITEM] = function(arg0_257, arg1_257, arg2_257)
+		[DROP_TYPE_VITEM] = function(arg0_257, arg1_257, arg2_257)
 			setText(arg2_257, arg0_257:getConfig("display"))
 		end,
-		[DROP_TYPE_WORLD_COLLECTION] = function(arg0_258, arg1_258, arg2_258, arg3_258)
-			local var0_258 = WorldCollectionProxy.GetCollectionType(arg0_258.id) == WorldCollectionProxy.WorldCollectionType.FILE and "file" or "record"
+		[DROP_TYPE_WORLD_ITEM] = function(arg0_258, arg1_258, arg2_258)
+			setText(arg2_258, arg0_258:getConfig("display"))
+		end,
+		[DROP_TYPE_WORLD_COLLECTION] = function(arg0_259, arg1_259, arg2_259, arg3_259)
+			local var0_259 = WorldCollectionProxy.GetCollectionType(arg0_259.id) == WorldCollectionProxy.WorldCollectionType.FILE and "file" or "record"
 
-			setText(arg2_258, i18n("world_" .. var0_258 .. "_desc", arg0_258:getConfig("name")))
-			setText(arg3_258, i18n("world_" .. var0_258 .. "_name", arg0_258:getConfig("name")))
+			setText(arg2_259, i18n("world_" .. var0_259 .. "_desc", arg0_259:getConfig("name")))
+			setText(arg3_259, i18n("world_" .. var0_259 .. "_name", arg0_259:getConfig("name")))
 		end,
-		[DROP_TYPE_ICON_FRAME] = function(arg0_259, arg1_259, arg2_259)
-			setText(arg2_259, arg0_259.desc and arg0_259.desc or arg0_259:getConfig("desc"))
+		[DROP_TYPE_ICON_FRAME] = function(arg0_260, arg1_260, arg2_260)
+			setText(arg2_260, arg0_260.desc and arg0_260.desc or arg0_260:getConfig("desc"))
 		end,
-		[DROP_TYPE_CHAT_FRAME] = function(arg0_260, arg1_260, arg2_260)
-			setText(arg2_260, arg0_260:getConfig("desc"))
+		[DROP_TYPE_CHAT_FRAME] = function(arg0_261, arg1_261, arg2_261)
+			setText(arg2_261, arg0_261:getConfig("desc"))
 		end,
-		[DROP_TYPE_EMOJI] = function(arg0_261, arg1_261, arg2_261)
-			setText(arg2_261, arg0_261:getConfig("item_desc"))
+		[DROP_TYPE_EMOJI] = function(arg0_262, arg1_262, arg2_262)
+			setText(arg2_262, arg0_262:getConfig("item_desc"))
 		end,
-		[DROP_TYPE_LOVE_LETTER] = function(arg0_262, arg1_262, arg2_262)
-			local var0_262 = string.gsub(arg0_262:getConfig("display"), "$1", ShipGroup.getDefaultShipNameByGroupID(arg0_262.count))
+		[DROP_TYPE_LOVE_LETTER] = function(arg0_263, arg1_263, arg2_263)
+			local var0_263 = string.gsub(arg0_263:getConfig("display"), "$1", ShipGroup.getDefaultShipNameByGroupID(arg0_263.count))
 
-			setText(arg2_262, SwitchSpecialChar(var0_262, true))
+			setText(arg2_263, SwitchSpecialChar(var0_263, true))
 		end,
-		[DROP_TYPE_META_PT] = function(arg0_263, arg1_263, arg2_263)
-			setText(arg2_263, arg0_263:getConfig("display"))
+		[DROP_TYPE_META_PT] = function(arg0_264, arg1_264, arg2_264)
+			setText(arg2_264, arg0_264:getConfig("display"))
 		end,
-		[DROP_TYPE_BUFF] = function(arg0_264, arg1_264, arg2_264)
-			setText(arg2_264, arg0_264:getConfig("desc"))
-		end,
-		[DROP_TYPE_COMBAT_UI_STYLE] = function(arg0_265, arg1_265, arg2_265)
+		[DROP_TYPE_BUFF] = function(arg0_265, arg1_265, arg2_265)
 			setText(arg2_265, arg0_265:getConfig("desc"))
 		end,
-		[DROP_TYPE_ACTIVITY_MEDAL] = function(arg0_266, arg1_266, arg2_266)
-			setText(arg2_266, arg0_266:getConfig("display"))
+		[DROP_TYPE_COMBAT_UI_STYLE] = function(arg0_266, arg1_266, arg2_266)
+			setText(arg2_266, arg0_266:getConfig("desc"))
 		end,
-		[DROP_TYPE_LIVINGAREA_COVER] = function(arg0_267, arg1_267, arg2_267)
-			setText(arg2_267, arg0_267:getConfig("desc"))
+		[DROP_TYPE_ACTIVITY_MEDAL] = function(arg0_267, arg1_267, arg2_267)
+			setText(arg2_267, arg0_267:getConfig("display"))
 		end,
-		[DROP_TYPE_ISLAND_ITEM] = function(arg0_268, arg1_268, arg2_268)
+		[DROP_TYPE_LIVINGAREA_COVER] = function(arg0_268, arg1_268, arg2_268)
 			setText(arg2_268, arg0_268:getConfig("desc"))
 		end,
-		[DROP_TYPE_ISLAND_ABILITY] = function(arg0_269, arg1_269, arg2_269)
-			setText(arg2_269, "")
+		[DROP_TYPE_ISLAND_ITEM] = function(arg0_269, arg1_269, arg2_269)
+			setText(arg2_269, arg0_269:getConfig("desc"))
 		end,
-		[DROP_TYPE_ISLAND_INVITATION] = function(arg0_270, arg1_270, arg2_270)
-			setText(arg2_270, arg0_270.desc)
+		[DROP_TYPE_ISLAND_ABILITY] = function(arg0_270, arg1_270, arg2_270)
+			setText(arg2_270, "")
 		end,
-		[DROP_TYPE_ISLAND_FURNITURE] = function(arg0_271, arg1_271, arg2_271)
+		[DROP_TYPE_ISLAND_INVITATION] = function(arg0_271, arg1_271, arg2_271)
 			setText(arg2_271, arg0_271.desc)
 		end,
-		[DROP_TYPE_ISLAND_DRESS] = function(arg0_272, arg1_272, arg2_272)
+		[DROP_TYPE_ISLAND_FURNITURE] = function(arg0_272, arg1_272, arg2_272)
 			setText(arg2_272, arg0_272.desc)
 		end,
-		[DROP_TYPE_ISLAND_SKIN] = function(arg0_273, arg1_273, arg2_273)
+		[DROP_TYPE_ISLAND_DRESS] = function(arg0_273, arg1_273, arg2_273)
 			setText(arg2_273, arg0_273.desc)
+		end,
+		[DROP_TYPE_ISLAND_SKIN] = function(arg0_274, arg1_274, arg2_274)
+			setText(arg2_274, arg0_274.desc)
 		end
 	}
 
-	function var0_0.MsgboxIntroDefault(arg0_274, arg1_274, arg2_274)
-		if arg0_274.type > DROP_TYPE_USE_ACTIVITY_DROP then
-			setText(arg2_274, arg0_274:getConfig("display"))
+	function var0_0.MsgboxIntroDefault(arg0_275, arg1_275, arg2_275)
+		if arg0_275.type > DROP_TYPE_USE_ACTIVITY_DROP then
+			setText(arg2_275, arg0_275:getConfig("display"))
 		else
-			setText(arg2_274, arg0_274.desc or "")
+			setText(arg2_275, arg0_275.desc or "")
 		end
 	end
 
 	var0_0.UpdateDropCase = {
-		[DROP_TYPE_RESOURCE] = function(arg0_275, arg1_275, arg2_275)
-			if arg0_275.id == PlayerConst.ResStoreGold or arg0_275.id == PlayerConst.ResStoreOil then
-				arg2_275 = arg2_275 or {}
-				arg2_275.frame = "frame_store"
+		[DROP_TYPE_RESOURCE] = function(arg0_276, arg1_276, arg2_276)
+			if arg0_276.id == PlayerConst.ResStoreGold or arg0_276.id == PlayerConst.ResStoreOil then
+				arg2_276 = arg2_276 or {}
+				arg2_276.frame = "frame_store"
 			end
 
-			updateItem(arg1_275, Item.New({
-				id = id2ItemId(arg0_275.id)
-			}), arg2_275)
+			updateItem(arg1_276, Item.New({
+				id = id2ItemId(arg0_276.id)
+			}), arg2_276)
 		end,
-		[DROP_TYPE_ITEM] = function(arg0_276, arg1_276, arg2_276)
-			updateItem(arg1_276, arg0_276:getSubClass(), arg2_276)
+		[DROP_TYPE_ITEM] = function(arg0_277, arg1_277, arg2_277)
+			updateItem(arg1_277, arg0_277:getSubClass(), arg2_277)
 		end,
-		[DROP_TYPE_EQUIP] = function(arg0_277, arg1_277, arg2_277)
-			updateEquipment(arg1_277, arg0_277:getSubClass(), arg2_277)
+		[DROP_TYPE_EQUIP] = function(arg0_278, arg1_278, arg2_278)
+			updateEquipment(arg1_278, arg0_278:getSubClass(), arg2_278)
 		end,
-		[DROP_TYPE_SHIP] = function(arg0_278, arg1_278, arg2_278)
-			updateShip(arg1_278, arg0_278.ship, arg2_278)
-		end,
-		[DROP_TYPE_OPERATION] = function(arg0_279, arg1_279, arg2_279)
+		[DROP_TYPE_SHIP] = function(arg0_279, arg1_279, arg2_279)
 			updateShip(arg1_279, arg0_279.ship, arg2_279)
 		end,
-		[DROP_TYPE_FURNITURE] = function(arg0_280, arg1_280, arg2_280)
-			updateFurniture(arg1_280, arg0_280, arg2_280)
+		[DROP_TYPE_OPERATION] = function(arg0_280, arg1_280, arg2_280)
+			updateShip(arg1_280, arg0_280.ship, arg2_280)
 		end,
-		[DROP_TYPE_STRATEGY] = function(arg0_281, arg1_281, arg2_281)
-			arg2_281.isWorldBuff = arg0_281.isWorldBuff
+		[DROP_TYPE_FURNITURE] = function(arg0_281, arg1_281, arg2_281)
+			updateFurniture(arg1_281, arg0_281, arg2_281)
+		end,
+		[DROP_TYPE_STRATEGY] = function(arg0_282, arg1_282, arg2_282)
+			arg2_282.isWorldBuff = arg0_282.isWorldBuff
 
-			updateStrategy(arg1_281, arg0_281, arg2_281)
+			updateStrategy(arg1_282, arg0_282, arg2_282)
 		end,
-		[DROP_TYPE_SKIN] = function(arg0_282, arg1_282, arg2_282)
-			arg2_282.isSkin = true
-			arg2_282.isNew = arg0_282.isNew
+		[DROP_TYPE_SKIN] = function(arg0_283, arg1_283, arg2_283)
+			arg2_283.isSkin = true
+			arg2_283.isNew = arg0_283.isNew
 
-			updateShip(arg1_282, Ship.New({
-				configId = tonumber(arg0_282:getConfig("ship_group") .. "1"),
-				skin_id = arg0_282.id
-			}), arg2_282)
+			updateShip(arg1_283, Ship.New({
+				configId = tonumber(arg0_283:getConfig("ship_group") .. "1"),
+				skin_id = arg0_283.id
+			}), arg2_283)
 		end,
-		[DROP_TYPE_EQUIPMENT_SKIN] = function(arg0_283, arg1_283, arg2_283)
-			local var0_283 = setmetatable({
-				count = arg0_283.count
+		[DROP_TYPE_EQUIPMENT_SKIN] = function(arg0_284, arg1_284, arg2_284)
+			local var0_284 = setmetatable({
+				count = arg0_284.count
 			}, {
-				__index = arg0_283:getConfigTable()
+				__index = arg0_284:getConfigTable()
 			})
 
-			updateEquipmentSkin(arg1_283, var0_283, arg2_283)
+			updateEquipmentSkin(arg1_284, var0_284, arg2_284)
 		end,
-		[DROP_TYPE_VITEM] = function(arg0_284, arg1_284, arg2_284)
-			updateItem(arg1_284, Item.New({
-				id = arg0_284.id
-			}), arg2_284)
-		end,
-		[DROP_TYPE_WORLD_ITEM] = function(arg0_285, arg1_285, arg2_285)
-			updateWorldItem(arg1_285, WorldItem.New({
+		[DROP_TYPE_VITEM] = function(arg0_285, arg1_285, arg2_285)
+			updateItem(arg1_285, Item.New({
 				id = arg0_285.id
 			}), arg2_285)
 		end,
-		[DROP_TYPE_WORLD_COLLECTION] = function(arg0_286, arg1_286, arg2_286)
-			updateWorldCollection(arg1_286, arg0_286, arg2_286)
+		[DROP_TYPE_WORLD_ITEM] = function(arg0_286, arg1_286, arg2_286)
+			updateWorldItem(arg1_286, WorldItem.New({
+				id = arg0_286.id
+			}), arg2_286)
 		end,
-		[DROP_TYPE_CHAT_FRAME] = function(arg0_287, arg1_287, arg2_287)
-			updateAttire(arg1_287, AttireConst.TYPE_CHAT_FRAME, arg0_287:getConfigTable(), arg2_287)
+		[DROP_TYPE_WORLD_COLLECTION] = function(arg0_287, arg1_287, arg2_287)
+			updateWorldCollection(arg1_287, arg0_287, arg2_287)
 		end,
-		[DROP_TYPE_ICON_FRAME] = function(arg0_288, arg1_288, arg2_288)
-			updateAttire(arg1_288, AttireConst.TYPE_ICON_FRAME, arg0_288:getConfigTable(), arg2_288)
+		[DROP_TYPE_CHAT_FRAME] = function(arg0_288, arg1_288, arg2_288)
+			updateAttire(arg1_288, AttireConst.TYPE_CHAT_FRAME, arg0_288:getConfigTable(), arg2_288)
 		end,
-		[DROP_TYPE_EMOJI] = function(arg0_289, arg1_289, arg2_289)
-			updateEmoji(arg1_289, arg0_289:getConfigTable(), arg2_289)
+		[DROP_TYPE_ICON_FRAME] = function(arg0_289, arg1_289, arg2_289)
+			updateAttire(arg1_289, AttireConst.TYPE_ICON_FRAME, arg0_289:getConfigTable(), arg2_289)
 		end,
-		[DROP_TYPE_LOVE_LETTER] = function(arg0_290, arg1_290, arg2_290)
-			arg2_290.count = 1
+		[DROP_TYPE_EMOJI] = function(arg0_290, arg1_290, arg2_290)
+			updateEmoji(arg1_290, arg0_290:getConfigTable(), arg2_290)
+		end,
+		[DROP_TYPE_LOVE_LETTER] = function(arg0_291, arg1_291, arg2_291)
+			arg2_291.count = 1
 
-			updateItem(arg1_290, arg0_290:getSubClass(), arg2_290)
+			updateItem(arg1_291, arg0_291:getSubClass(), arg2_291)
 		end,
-		[DROP_TYPE_SPWEAPON] = function(arg0_291, arg1_291, arg2_291)
-			updateSpWeapon(arg1_291, SpWeapon.New({
-				id = arg0_291.id
-			}), arg2_291)
-		end,
-		[DROP_TYPE_META_PT] = function(arg0_292, arg1_292, arg2_292)
-			updateItem(arg1_292, Item.New({
-				id = arg0_292:getConfig("id")
+		[DROP_TYPE_SPWEAPON] = function(arg0_292, arg1_292, arg2_292)
+			updateSpWeapon(arg1_292, SpWeapon.New({
+				id = arg0_292.id
 			}), arg2_292)
 		end,
-		[DROP_TYPE_SKIN_TIMELIMIT] = function(arg0_293, arg1_293, arg2_293)
-			arg2_293.isSkin = true
-			arg2_293.isTimeLimit = true
-			arg2_293.count = 1
-
-			updateShip(arg1_293, Ship.New({
-				configId = tonumber(arg0_293:getConfig("ship_group") .. "1"),
-				skin_id = arg0_293.id
+		[DROP_TYPE_META_PT] = function(arg0_293, arg1_293, arg2_293)
+			updateItem(arg1_293, Item.New({
+				id = arg0_293:getConfig("id")
 			}), arg2_293)
 		end,
-		[DROP_TYPE_RYZA_DROP] = function(arg0_294, arg1_294, arg2_294)
-			AtelierMaterial.UpdateRyzaItem(arg1_294, arg0_294.item, arg2_294)
+		[DROP_TYPE_SKIN_TIMELIMIT] = function(arg0_294, arg1_294, arg2_294)
+			arg2_294.isSkin = true
+			arg2_294.isTimeLimit = true
+			arg2_294.count = 1
+
+			updateShip(arg1_294, Ship.New({
+				configId = tonumber(arg0_294:getConfig("ship_group") .. "1"),
+				skin_id = arg0_294.id
+			}), arg2_294)
 		end,
-		[DROP_TYPE_WORKBENCH_DROP] = function(arg0_295, arg1_295, arg2_295)
-			WorkBenchItem.UpdateDrop(arg1_295, arg0_295.item, arg2_295)
+		[DROP_TYPE_RYZA_DROP] = function(arg0_295, arg1_295, arg2_295)
+			AtelierMaterial.UpdateRyzaItem(arg1_295, arg0_295.item, arg2_295)
 		end,
-		[DROP_TYPE_FEAST_DROP] = function(arg0_296, arg1_296, arg2_296)
-			WorkBenchItem.UpdateDrop(arg1_296, WorkBenchItem.New({
-				configId = arg0_296.id,
-				count = arg0_296.count
-			}), arg2_296)
+		[DROP_TYPE_WORKBENCH_DROP] = function(arg0_296, arg1_296, arg2_296)
+			WorkBenchItem.UpdateDrop(arg1_296, arg0_296.item, arg2_296)
 		end,
-		[DROP_TYPE_BUFF] = function(arg0_297, arg1_297, arg2_297)
-			updateBuff(arg1_297, arg0_297.id, arg2_297)
+		[DROP_TYPE_FEAST_DROP] = function(arg0_297, arg1_297, arg2_297)
+			WorkBenchItem.UpdateDrop(arg1_297, WorkBenchItem.New({
+				configId = arg0_297.id,
+				count = arg0_297.count
+			}), arg2_297)
 		end,
-		[DROP_TYPE_COMMANDER_CAT] = function(arg0_298, arg1_298, arg2_298)
-			updateCommander(arg1_298, arg0_298, arg2_298)
+		[DROP_TYPE_BUFF] = function(arg0_298, arg1_298, arg2_298)
+			updateBuff(arg1_298, arg0_298.id, arg2_298)
 		end,
-		[DROP_TYPE_LIVINGAREA_COVER] = function(arg0_299, arg1_299, arg2_299)
-			updateCover(arg1_299, arg0_299, arg2_299)
+		[DROP_TYPE_COMMANDER_CAT] = function(arg0_299, arg1_299, arg2_299)
+			updateCommander(arg1_299, arg0_299, arg2_299)
 		end,
-		[DROP_TYPE_COMBAT_UI_STYLE] = function(arg0_300, arg1_300, arg2_300)
-			updateAttireCombatUI(arg1_300, AttireConst.TYPE_ICON_FRAME, arg0_300:getConfigTable(), arg2_300)
+		[DROP_TYPE_LIVINGAREA_COVER] = function(arg0_300, arg1_300, arg2_300)
+			updateCover(arg1_300, arg0_300, arg2_300)
 		end,
-		[DROP_TYPE_ACTIVITY_MEDAL] = function(arg0_301, arg1_301, arg2_301)
-			updateActivityMedal(arg1_301, arg0_301:getConfigTable(), arg2_301)
+		[DROP_TYPE_COMBAT_UI_STYLE] = function(arg0_301, arg1_301, arg2_301)
+			updateAttireCombatUI(arg1_301, AttireConst.TYPE_ICON_FRAME, arg0_301:getConfigTable(), arg2_301)
+		end,
+		[DROP_TYPE_ACTIVITY_MEDAL] = function(arg0_302, arg1_302, arg2_302)
+			updateActivityMedal(arg1_302, arg0_302:getConfigTable(), arg2_302)
 		end
 	}
 
-	function var0_0.UpdateDropDefault(arg0_302, arg1_302, arg2_302)
-		updateDefaultIconTpl(arg1_302, arg0_302, arg2_302)
+	function var0_0.UpdateDropDefault(arg0_303, arg1_303, arg2_303)
+		updateDefaultIconTpl(arg1_303, arg0_303, arg2_303)
 	end
 
 	var0_0.UpdateCustomDropCase = {
-		[DROP_TYPE_DORM3D_FURNITURE] = function(arg0_303, arg1_303, arg2_303)
-			updateDorm3dIcon(arg1_303, arg0_303, arg2_303)
-		end,
-		[DROP_TYPE_DORM3D_GIFT] = function(arg0_304, arg1_304, arg2_304)
+		[DROP_TYPE_DORM3D_FURNITURE] = function(arg0_304, arg1_304, arg2_304)
 			updateDorm3dIcon(arg1_304, arg0_304, arg2_304)
 		end,
-		[DROP_TYPE_DORM3D_SKIN] = function(arg0_305, arg1_305, arg2_305)
+		[DROP_TYPE_DORM3D_GIFT] = function(arg0_305, arg1_305, arg2_305)
 			updateDorm3dIcon(arg1_305, arg0_305, arg2_305)
 		end,
-		[DROP_TYPE_ISLAND_ITEM] = function(arg0_306, arg1_306, arg2_306)
-			updateIslandItem(arg1_306, arg0_306, arg2_306)
+		[DROP_TYPE_DORM3D_SKIN] = function(arg0_306, arg1_306, arg2_306)
+			updateDorm3dIcon(arg1_306, arg0_306, arg2_306)
 		end,
-		[DROP_TYPE_ISLAND_ABILITY] = function(arg0_307, arg1_307, arg2_307)
-			updateIslandUnlock(arg1_307, arg0_307, arg2_307)
+		[DROP_TYPE_ISLAND_ITEM] = function(arg0_307, arg1_307, arg2_307)
+			updateIslandItem(arg1_307, arg0_307, arg2_307)
 		end,
-		[DROP_TYPE_ISLAND_INVITATION] = function(arg0_308, arg1_308, arg2_308)
-			updateIslandInvitation(arg1_308, arg0_308, arg2_308)
+		[DROP_TYPE_ISLAND_ABILITY] = function(arg0_308, arg1_308, arg2_308)
+			updateIslandUnlock(arg1_308, arg0_308, arg2_308)
 		end,
-		[VIRTUAL_DROP_TYPE_ISLAND_SEASON_PT] = function(arg0_309, arg1_309, arg2_309)
-			updateIslandSeasonPt(arg1_309, arg0_309, arg2_309)
+		[DROP_TYPE_ISLAND_INVITATION] = function(arg0_309, arg1_309, arg2_309)
+			updateIslandInvitation(arg1_309, arg0_309, arg2_309)
 		end,
-		[DROP_TYPE_ISLAND_COLLECTION] = function(arg0_310, arg1_310, arg2_310)
-			updateIslandWatherCollect(arg1_310, arg0_310, arg2_310)
+		[VIRTUAL_DROP_TYPE_ISLAND_SEASON_PT] = function(arg0_310, arg1_310, arg2_310)
+			updateIslandSeasonPt(arg1_310, arg0_310, arg2_310)
 		end,
-		[DROP_TYPE_ISLAND_FURNITURE] = function(arg0_311, arg1_311, arg2_311)
-			updateIslandFurniture(arg1_311, arg0_311, arg2_311)
+		[DROP_TYPE_ISLAND_COLLECTION] = function(arg0_311, arg1_311, arg2_311)
+			updateIslandWatherCollect(arg1_311, arg0_311, arg2_311)
 		end,
-		[DROP_TYPE_ISLAND_CARD_DIY] = function(arg0_312, arg1_312, arg2_312)
-			updateIslandCardDiy(arg1_312, arg0_312, arg2_312)
+		[DROP_TYPE_ISLAND_FURNITURE] = function(arg0_312, arg1_312, arg2_312)
+			updateIslandFurniture(arg1_312, arg0_312, arg2_312)
 		end,
-		[DROP_TYPE_ISLAND_SPEEDUP_TICKET] = function(arg0_313, arg1_313, arg2_313)
-			updateIslandSpeedupTicket(arg1_313, arg0_313, arg2_313)
+		[DROP_TYPE_ISLAND_CARD_DIY] = function(arg0_313, arg1_313, arg2_313)
+			updateIslandCardDiy(arg1_313, arg0_313, arg2_313)
 		end,
-		[DROP_TYPE_HOLIDAY_VILLA] = function(arg0_314, arg1_314, arg2_314)
-			updateItem(arg1_314, Item.New({
-				id = arg0_314.id
-			}), arg2_314)
+		[DROP_TYPE_ISLAND_SPEEDUP_TICKET] = function(arg0_314, arg1_314, arg2_314)
+			updateIslandSpeedupTicket(arg1_314, arg0_314, arg2_314)
 		end,
-		[DROP_TYPE_ISLAND_SKIN] = function(arg0_315, arg1_315, arg2_315)
-			updateIslandSkin(arg1_315, arg0_315, arg2_315)
+		[DROP_TYPE_HOLIDAY_VILLA] = function(arg0_315, arg1_315, arg2_315)
+			updateItem(arg1_315, Item.New({
+				id = arg0_315.id
+			}), arg2_315)
 		end,
-		[DROP_TYPE_ISLAND_DRESS] = function(arg0_316, arg1_316, arg2_316)
-			updateIslandDress(arg1_316, arg0_316, arg2_316)
+		[DROP_TYPE_ISLAND_SKIN] = function(arg0_316, arg1_316, arg2_316)
+			updateIslandSkin(arg1_316, arg0_316, arg2_316)
+		end,
+		[DROP_TYPE_ISLAND_DRESS] = function(arg0_317, arg1_317, arg2_317)
+			updateIslandDress(arg1_317, arg0_317, arg2_317)
 		end
 	}
 
-	function var0_0.UpdateCustomDropDefault(arg0_317, arg1_317, arg2_317)
-		if arg2_317.style == "dorm" then
-			updateDorm3dIcon(arg1_317, arg0_317, arg2_317)
-		elseif arg2_317.style == "island" then
-			updateIslandDefaultIconTpl(arg1_317, arg0_317, arg2_317)
+	function var0_0.UpdateCustomDropDefault(arg0_318, arg1_318, arg2_318)
+		if arg2_318.style == "dorm" then
+			updateDorm3dIcon(arg1_318, arg0_318, arg2_318)
+		elseif arg2_318.style == "island" then
+			updateIslandDefaultIconTpl(arg1_318, arg0_318, arg2_318)
 		else
-			warning(string.format("without dropType %d in updateCustomDrop", arg0_317.type))
+			warning(string.format("without dropType %d in updateCustomDrop", arg0_318.type))
 		end
 	end
 end

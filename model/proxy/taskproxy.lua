@@ -3,7 +3,7 @@ local var0_0 = class("TaskProxy", import(".NetProxy"))
 var0_0.TASK_ADDED = "task added"
 var0_0.TASK_UPDATED = "task updated"
 var0_0.TASK_REMOVED = "task removed"
-var0_0.TASK_FINISH = "task finish"
+var0_0.TASK_DELETE = "task deleted"
 var0_0.TASK_PROGRESS_UPDATE = "task TASK_PROGRESS_UPDATE"
 var0_0.WEEK_TASK_UPDATED = "week task updated"
 var0_0.WEEK_TASKS_ADDED = "week tasks added"
@@ -35,7 +35,7 @@ function var0_0.register(arg0_1)
 	end)
 	arg0_1:on(20004, function(arg0_5)
 		for iter0_5, iter1_5 in ipairs(arg0_5.id_list) do
-			arg0_1:removeTaskById(iter1_5)
+			arg0_1:deleteTaskById(iter1_5)
 		end
 	end)
 	arg0_1:on(20015, function(arg0_6)
@@ -177,7 +177,7 @@ end
 
 function var0_0.removeActData(arg0_19, arg1_19, arg2_19)
 	for iter0_19, iter1_19 in ipairs(arg2_19) do
-		arg0_19:removeTaskById(iter1_19.id)
+		arg0_19:deleteTaskById(iter1_19.id)
 	end
 end
 
@@ -205,7 +205,7 @@ function var0_0.clearTimeOut(arg0_20)
 	end
 
 	for iter1_20 = 1, #var1_20 do
-		arg0_20:removeTask(var1_20[iter1_20])
+		arg0_20:deleteTask(var1_20[iter1_20])
 	end
 end
 
@@ -377,189 +377,205 @@ function var0_0.removeTaskById(arg0_35, arg1_35)
 	arg0_35.finishData[arg1_35].submitTime = pg.TimeMgr.GetInstance():GetServerTime()
 	arg0_35.data[arg1_35] = nil
 
-	arg0_35.facade:sendNotification(var0_0.TASK_REMOVED, var0_35)
+	arg0_35:sendNotification(var0_0.TASK_REMOVED, var0_35)
 	arg0_35:checkTmpTask(arg1_35)
 end
 
-function var0_0.getmingshiTaskID(arg0_36, arg1_36)
-	local var0_36 = pg.task_data_trigger[mingshiTriggerId]
+function var0_0.deleteTask(arg0_36, arg1_36)
+	assert(isa(arg1_36, Task), "should be an instance of Task")
+	arg0_36:deleteTaskById(arg1_36.id)
+end
 
-	if arg1_36 >= var0_36.count then
-		local var1_36 = var0_36.task_id
+function var0_0.deleteTaskById(arg0_37, arg1_37)
+	local var0_37 = arg0_37.data[arg1_37] or arg0_37.finishData[arg1_37]
 
-		if var1_36 and not arg0_36:getTaskVO(var1_36) then
-			return var1_36
+	arg0_37.data[arg1_37] = nil
+	arg0_37.finishData[arg1_37] = nil
+
+	if tobool(var0_37) then
+		arg0_37:sendNotification(var0_0.TASK_DELETE, var0_37)
+	end
+end
+
+function var0_0.getmingshiTaskID(arg0_38, arg1_38)
+	local var0_38 = pg.task_data_trigger[mingshiTriggerId]
+
+	if arg1_38 >= var0_38.count then
+		local var1_38 = var0_38.task_id
+
+		if var1_38 and not arg0_38:getTaskVO(var1_38) then
+			return var1_38
 		end
 	end
 
 	return 0
 end
 
-function var0_0.dealMingshiTouchFlag(arg0_37, arg1_37)
-	local var0_37 = getProxy(ActivityProxy):getActivityById(mingshiActivityId)
+function var0_0.dealMingshiTouchFlag(arg0_39, arg1_39)
+	local var0_39 = getProxy(ActivityProxy):getActivityById(mingshiActivityId)
 
-	if not var0_37 or var0_37:isEnd() then
+	if not var0_39 or var0_39:isEnd() then
 		return
 	end
 
-	local var1_37 = var0_37:getConfig("config_id")
-	local var2_37 = var0_37:getConfig("config_data")[1]
+	local var1_39 = var0_39:getConfig("config_id")
+	local var2_39 = var0_39:getConfig("config_data")[1]
 
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		hideNo = true,
-		content = i18n("mingshi_task_tip_" .. arg1_37)
+		content = i18n("mingshi_task_tip_" .. arg1_39)
 	})
 
-	local var3_37 = arg0_37:getTaskById(var2_37)
+	local var3_39 = arg0_39:getTaskById(var2_39)
 
-	if var3_37 and var3_37:getTaskStatus() < 1 then
-		if not arg0_37.mingshiTouchList then
-			arg0_37.mingshiTouchList = {}
+	if var3_39 and var3_39:getTaskStatus() < 1 then
+		if not arg0_39.mingshiTouchList then
+			arg0_39.mingshiTouchList = {}
 		end
 
-		for iter0_37, iter1_37 in pairs(arg0_37.mingshiTouchList) do
-			if iter1_37 == arg1_37 then
+		for iter0_39, iter1_39 in pairs(arg0_39.mingshiTouchList) do
+			if iter1_39 == arg1_39 then
 				return
 			end
 		end
 
-		for iter2_37, iter3_37 in pairs(var0_37.data1_list) do
-			if iter3_37 == arg1_37 then
+		for iter2_39, iter3_39 in pairs(var0_39.data1_list) do
+			if iter3_39 == arg1_39 then
 				return
 			end
 		end
 
-		table.insert(arg0_37.mingshiTouchList, arg1_37)
-		arg0_37:sendNotification(GAME.ACTIVITY_OPERATION, {
+		table.insert(arg0_39.mingshiTouchList, arg1_39)
+		arg0_39:sendNotification(GAME.ACTIVITY_OPERATION, {
 			cmd = 2,
 			activity_id = mingshiActivityId,
-			arg1 = arg1_37
+			arg1 = arg1_39
 		})
 	end
 end
 
-function var0_0.mingshiTouchFlagEnabled(arg0_38)
-	local var0_38 = getProxy(ActivityProxy):getActivityById(mingshiActivityId)
+function var0_0.mingshiTouchFlagEnabled(arg0_40)
+	local var0_40 = getProxy(ActivityProxy):getActivityById(mingshiActivityId)
 
-	if not var0_38 or var0_38:isEnd() then
+	if not var0_40 or var0_40:isEnd() then
 		return
 	end
 
-	local var1_38 = tonumber(var0_38:getConfig("config_id"))
-	local var2_38 = tonumber(var0_38:getConfig("config_data")[1])
-	local var3_38 = arg0_38:getTaskById(var2_38)
+	local var1_40 = tonumber(var0_40:getConfig("config_id"))
+	local var2_40 = tonumber(var0_40:getConfig("config_data")[1])
+	local var3_40 = arg0_40:getTaskById(var2_40)
 
-	if var3_38 and var3_38:getTaskStatus() < 1 then
+	if var3_40 and var3_40:getTaskStatus() < 1 then
 		return true
 	end
 
-	if arg0_38:getTaskVO(var1_38) then
+	if arg0_40:getTaskVO(var1_40) then
 		return false
 	end
 
 	return true
 end
 
-function var0_0.getAcademyTask(arg0_39, arg1_39)
-	local var0_39 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_TASK_LIST)
-	local var1_39 = _.detect(var0_39, function(arg0_40)
-		local var0_40 = arg0_40:getTaskShip()
+function var0_0.getAcademyTask(arg0_41, arg1_41)
+	local var0_41 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_TASK_LIST)
+	local var1_41 = _.detect(var0_41, function(arg0_42)
+		local var0_42 = arg0_42:getTaskShip()
 
-		return var0_40 and var0_40.groupId == arg1_39
+		return var0_42 and var0_42.groupId == arg1_41
 	end)
 
-	if var1_39 and not var1_39:isEnd() then
-		return getActivityTask(var1_39, true)
+	if var1_41 and not var1_41:isEnd() then
+		return getActivityTask(var1_41, true)
 	end
 end
 
-function var0_0.isFinishPrevTasks(arg0_41, arg1_41)
-	local var0_41 = Task.New({
-		id = arg1_41
+function var0_0.isFinishPrevTasks(arg0_43, arg1_43)
+	local var0_43 = Task.New({
+		id = arg1_43
 	}):getConfig("open_need")
 
-	if var0_41 and type(var0_41) == "table" and #var0_41 > 0 then
-		return _.all(var0_41, function(arg0_42)
-			local var0_42 = arg0_41:getTaskById(arg0_42) or arg0_41:getFinishTaskById(arg0_42)
+	if var0_43 and type(var0_43) == "table" and #var0_43 > 0 then
+		return _.all(var0_43, function(arg0_44)
+			local var0_44 = arg0_43:getTaskById(arg0_44) or arg0_43:getFinishTaskById(arg0_44)
 
-			return var0_42 and var0_42:isReceive()
+			return var0_44 and var0_44:isReceive()
 		end)
 	end
 
 	return true
 end
 
-function var0_0.isReceiveTasks(arg0_43, arg1_43)
-	return _.all(arg1_43, function(arg0_44)
-		local var0_44 = arg0_43:getFinishTaskById(arg0_44)
+function var0_0.isReceiveTasks(arg0_45, arg1_45)
+	return _.all(arg1_45, function(arg0_46)
+		local var0_46 = arg0_45:getFinishTaskById(arg0_46)
 
-		return var0_44 and var0_44:isReceive()
+		return var0_46 and var0_46:isReceive()
 	end)
 end
 
-function var0_0.pushAutoSubmitTask(arg0_45)
-	for iter0_45, iter1_45 in pairs(arg0_45.data) do
-		arg0_45:checkAutoSubmitTask(iter1_45)
+function var0_0.pushAutoSubmitTask(arg0_47)
+	for iter0_47, iter1_47 in pairs(arg0_47.data) do
+		arg0_47:checkAutoSubmitTask(iter1_47)
 	end
 end
 
-function var0_0.checkAutoSubmitTask(arg0_46, arg1_46)
-	if arg1_46:getConfig("auto_commit") == 1 and arg1_46:isFinish() and not arg1_46:getAutoSubmit() then
-		arg1_46:setAutoSubmit(true)
-		arg0_46:sendNotification(GAME.SUBMIT_TASK, arg1_46.id, function(arg0_47)
-			if arg0_47 and arg1_46:IsCommanderManualType() then
-				getProxy(CommanderManualProxy):TaskAutoSubmitCall(arg1_46.id)
+function var0_0.checkAutoSubmitTask(arg0_48, arg1_48)
+	if arg1_48:getConfig("auto_commit") == 1 and arg1_48:isFinish() and not arg1_48:getAutoSubmit() then
+		arg1_48:setAutoSubmit(true)
+		arg0_48:sendNotification(GAME.SUBMIT_TASK, arg1_48.id, function(arg0_49)
+			if arg0_49 and arg1_48:IsCommanderManualType() then
+				getProxy(CommanderManualProxy):TaskAutoSubmitCall(arg1_48.id)
 			end
 		end)
 	end
 end
 
-function var0_0.addSubmittingTask(arg0_48, arg1_48)
-	arg0_48.submittingTask[arg1_48] = true
+function var0_0.addSubmittingTask(arg0_50, arg1_50)
+	arg0_50.submittingTask[arg1_50] = true
 end
 
-function var0_0.removeSubmittingTask(arg0_49, arg1_49)
-	arg0_49.submittingTask[arg1_49] = nil
+function var0_0.removeSubmittingTask(arg0_51, arg1_51)
+	arg0_51.submittingTask[arg1_51] = nil
 end
 
-function var0_0.isSubmitting(arg0_50, arg1_50)
-	return arg0_50.submittingTask[arg1_50]
+function var0_0.isSubmitting(arg0_52, arg1_52)
+	return arg0_52.submittingTask[arg1_52]
 end
 
-function var0_0.triggerClientTasks(arg0_51)
-	local var0_51 = {}
-
-	for iter0_51, iter1_51 in pairs(arg0_51.data) do
-		if iter1_51:isClientTrigger() then
-			table.insert(var0_51, iter1_51)
-		end
-	end
-
-	return var0_51
-end
-
-function var0_0.GetBackYardInterActionTaskList(arg0_52)
-	local var0_52 = {}
-
-	for iter0_52, iter1_52 in pairs(arg0_52.data) do
-		if iter1_52:IsBackYardInterActionType() then
-			table.insert(var0_52, iter1_52)
-		end
-	end
-
-	return var0_52
-end
-
-function var0_0.GetFlagShipInterActionTaskList(arg0_53)
+function var0_0.triggerClientTasks(arg0_53)
 	local var0_53 = {}
 
 	for iter0_53, iter1_53 in pairs(arg0_53.data) do
-		if iter1_53:IsFlagShipInterActionType() then
+		if iter1_53:isClientTrigger() then
 			table.insert(var0_53, iter1_53)
 		end
 	end
 
 	return var0_53
+end
+
+function var0_0.GetBackYardInterActionTaskList(arg0_54)
+	local var0_54 = {}
+
+	for iter0_54, iter1_54 in pairs(arg0_54.data) do
+		if iter1_54:IsBackYardInterActionType() then
+			table.insert(var0_54, iter1_54)
+		end
+	end
+
+	return var0_54
+end
+
+function var0_0.GetFlagShipInterActionTaskList(arg0_55)
+	local var0_55 = {}
+
+	for iter0_55, iter1_55 in pairs(arg0_55.data) do
+		if iter1_55:IsFlagShipInterActionType() then
+			table.insert(var0_55, iter1_55)
+		end
+	end
+
+	return var0_55
 end
 
 return var0_0
