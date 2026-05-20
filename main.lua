@@ -232,47 +232,48 @@ function PressBack()
 end
 
 local function var0_0(arg0_8)
+	pg.ShaderMgr.GetInstance():Init(arg0_8)
+end
+
+local function var1_0(arg0_9)
 	require("HybridCLRConst")
 
-	local var0_8 = Application.streamingAssetsPath .. "/AssetBundles/hybridclr/patch/"
-	local var1_8 = HybridCLRConst.PatchDllList
+	local var0_9 = Application.streamingAssetsPath .. "/AssetBundles/hybridclr/patch/"
+	local var1_9 = HybridCLRConst.PatchDllList
 
-	Sandystar.HybridCLRTool.HybridCLRHelper.LoadPatchDLL(var0_8, var1_8)
+	Sandystar.HybridCLRTool.HybridCLRHelper.LoadPatchDLL(var0_9, var1_9)
 
-	local var2_8 = Application.persistentDataPath .. "/AssetBundles/hybridclr/hotfix/"
-	local var3_8 = HybridCLRConst.HotfixDllList
+	local var2_9 = Application.persistentDataPath .. "/AssetBundles/hybridclr/hotfix/"
+	local var3_9 = HybridCLRConst.HotfixDllList
 
-	Sandystar.HybridCLRTool.HybridCLRHelper.LoadHotfixDLL(var2_8, var3_8)
+	Sandystar.HybridCLRTool.HybridCLRHelper.LoadHotfixDLL(var2_9, var3_9)
 	Sandystar.HybridCLRTool.HybridCLRHelper.SetFinishCallback(function()
 		GraphicsInterface = BLHX.Rendering.GraphicsInterface
 
 		GraphicSettingConst.ClearPlayerPrefs()
 		GraphicSettingConst.InitDefautQuality()
-		arg0_8()
+		arg0_9()
 	end)
 end
 
-local function var1_0(arg0_10)
+local function var2_0(arg0_11)
 	parallelAsync({
-		function(arg0_11)
-			pg.LayerWeightMgr.GetInstance():Init(arg0_11)
-		end,
 		function(arg0_12)
-			pg.UIMgr.GetInstance():Init(arg0_12)
+			pg.LayerWeightMgr.GetInstance():Init(arg0_12)
 		end,
 		function(arg0_13)
-			pg.CriMgr.GetInstance():Init(arg0_13)
+			pg.UIMgr.GetInstance():Init(arg0_13)
+		end,
+		function(arg0_14)
+			pg.CriMgr.GetInstance():Init(arg0_14)
 		end
-	}, arg0_10)
+	}, arg0_11)
 end
 
-local function var2_0(arg0_14)
+local function var3_0(arg0_15)
 	parallelAsync({
-		function(arg0_15)
-			pg.FontMgr.GetInstance():Init(arg0_15)
-		end,
 		function(arg0_16)
-			pg.ShaderMgr.GetInstance():Init(arg0_16)
+			pg.FontMgr.GetInstance():Init(arg0_16)
 		end,
 		function(arg0_17)
 			pg.PoolMgr.GetInstance():Init(arg0_17)
@@ -369,18 +370,19 @@ local function var2_0(arg0_14)
 				pg.IslandVisitorNotificationMgr.GetInstance():Init(arg0_46)
 			end
 		end
-	}, arg0_14)
+	}, arg0_15)
 end
 
-local var3_0 = os.clock()
+local var4_0 = os.clock()
 
 seriesAsync({
 	var0_0,
 	var1_0,
-	var2_0
+	var2_0,
+	var3_0
 }, function(arg0_47)
 	pg.SdkMgr.GetInstance():QueryWithProduct()
-	print("loading cost: " .. os.clock() - var3_0)
+	print("loading cost: " .. os.clock() - var4_0)
 	VersionMgr.Inst:DestroyUI()
 
 	local var0_47 = GameObject.Find("OverlayCamera/Overlay/UIMain/ServerChoosePanel")
@@ -418,23 +420,5 @@ seriesAsync({
 		originalPrint("内存:" .. SystemInfo.systemMemorySize)
 		originalPrint("主频:" .. SystemInfo.processorFrequency)
 		originalPrint("+++++++++++")
-	end)
-	pg.UIMgr.GetInstance():AddDebugButton("delete test", function()
-		print("步骤4，删除custom_builtin AssetBundle")
-
-		local var0_49 = {
-			"custom_builtin"
-		}
-		local var1_49 = #var0_49
-
-		if var1_49 > 0 then
-			local var2_49 = System.Array.CreateInstance(typeof(System.String), var1_49)
-
-			for iter0_49 = 0, var1_49 - 1 do
-				var2_49[iter0_49] = var0_49[iter0_49 + 1]
-			end
-
-			HotfixHelper.DeleteFileByShortPathArr("DEFAULT_RES", var2_49)
-		end
 	end)
 end)

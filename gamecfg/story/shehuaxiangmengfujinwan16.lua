@@ -18,7 +18,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_178",
 			hidePaintObj = true,
-			say = "人文区·香料市场",
+			say = "Public Area – Spice Market",
 			bgm = "story-richang-wavelight",
 			typewriter = {
 				speed = 0.05,

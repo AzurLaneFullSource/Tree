@@ -25,16 +25,14 @@ pg.base.activity_mall_custom_order = {}
 ;(function()
 	pg.base.activity_mall_custom_order[1] = {
 		unlock_time = 1,
-		cost_time = 10,
-		order_cost_gold = 0,
+		unlock_lv = 2,
+		story_unlock = "SHEHUAXIANGMENGFUJINWAN3",
 		char = 201350,
 		char_name = "Janus",
-		story_unlock = "SHEHUAXIANGMENGFUJINWAN3",
+		desc = "To get ready for her poolside experience, Janus ordered a cute and classy swimsuit for herself.",
+		cost_time = 10,
+		order_cost_gold = 0,
 		id = 1,
-		unlock_lv = 2,
-		desc = {
-			"To get ready for her poolside experience, Janus ordered a cute and classy swimsuit for herself."
-		},
 		word = {
 			intro_word = {
 				"C-Commander, um... I have a minor request... Would you please hear me out?"
@@ -73,16 +71,14 @@ pg.base.activity_mall_custom_order = {}
 	}
 	pg.base.activity_mall_custom_order[2] = {
 		unlock_time = 1,
-		cost_time = 10,
-		order_cost_gold = 0,
+		unlock_lv = 2,
+		story_unlock = "SHEHUAXIANGMENGFUJINWAN4",
 		char = 901070,
 		char_name = "Mogador",
-		story_unlock = "SHEHUAXIANGMENGFUJINWAN4",
+		desc = "To experience the thrill of extreme sports, Mogador ordered a full set of gear for herself, complete with safety features.",
+		cost_time = 10,
+		order_cost_gold = 0,
 		id = 2,
-		unlock_lv = 2,
-		desc = {
-			"To experience the thrill of extreme sports, Mogador ordered a full set of gear for herself, complete with safety features."
-		},
 		word = {
 			intro_word = {
 				"Commander, if you have a moment... There's a little request I'd like you to do for me... You'll hear me out, right~♡"
@@ -121,16 +117,14 @@ pg.base.activity_mall_custom_order = {}
 	}
 	pg.base.activity_mall_custom_order[3] = {
 		unlock_time = 1,
-		cost_time = 10,
-		order_cost_gold = 0,
+		unlock_lv = 2,
+		story_unlock = "SHEHUAXIANGMENGFUJINWAN5",
 		char = 899010,
 		char_name = "Saint Louis",
-		story_unlock = "SHEHUAXIANGMENGFUJINWAN5",
+		desc = "To accompany the Commander throughout various activities during their vacation, Saint Louis ordered a dress with a simple design.",
+		cost_time = 10,
+		order_cost_gold = 0,
 		id = 3,
-		unlock_lv = 2,
-		desc = {
-			"To accompany the Commander throughout various activities during their vacation, Saint Louis ordered a dress with a simple design."
-		},
 		word = {
 			intro_word = {
 				"Commander, there's something I want you to get for me."
@@ -169,16 +163,14 @@ pg.base.activity_mall_custom_order = {}
 	}
 	pg.base.activity_mall_custom_order[4] = {
 		unlock_time = 1,
-		cost_time = 10,
-		order_cost_gold = 0,
+		unlock_lv = 2,
+		story_unlock = "SHEHUAXIANGMENGFUJINWAN6",
 		char = 408150,
 		char_name = "{namecode:558}",
-		story_unlock = "SHEHUAXIANGMENGFUJINWAN6",
+		desc = "U-2501's order also came with an invitation – one for a special candlelit dinner for herself and the Commander.",
+		cost_time = 10,
+		order_cost_gold = 0,
 		id = 4,
-		unlock_lv = 2,
-		desc = {
-			"U-2501's order also came with an invitation – one for a special candlelit dinner for herself and the Commander."
-		},
 		word = {
 			intro_word = {
 				"Commander... there's something I want... Here's a sticky note... [Can you please get it for me? >w<]"
@@ -217,16 +209,14 @@ pg.base.activity_mall_custom_order = {}
 	}
 	pg.base.activity_mall_custom_order[5] = {
 		unlock_time = 1,
-		cost_time = 10,
-		order_cost_gold = 0,
+		unlock_lv = 2,
+		story_unlock = "SHEHUAXIANGMENGFUJINWAN7",
 		char = 402070,
 		char_name = "{namecode:448}",
-		story_unlock = "SHEHUAXIANGMENGFUJINWAN7",
+		desc = "Emden was particularly excited about her swimsuit and ordered one that would fit 'both' of her aesthetic sensibilities.",
+		cost_time = 10,
+		order_cost_gold = 0,
 		id = 5,
-		unlock_lv = 2,
-		desc = {
-			"Emden was particularly excited about her swimsuit and ordered one that would fit 'both' of her aesthetic sensibilities."
-		},
 		word = {
 			intro_word = {
 				"My dear human, I shall give you a chance to fulfill Emden's wishes."
@@ -265,16 +255,14 @@ pg.base.activity_mall_custom_order = {}
 	}
 	pg.base.activity_mall_custom_order[6] = {
 		unlock_time = 1,
-		cost_time = 10,
-		order_cost_gold = 0,
+		unlock_lv = 4,
+		story_unlock = "SHEHUAXIANGMENGFUJINWAN8",
 		char = 405070,
 		char_name = "{namecode:557}",
-		story_unlock = "SHEHUAXIANGMENGFUJINWAN8",
+		desc = "Götz wanted to create an unforgettable romantic surprise, so she ordered 9,999 red roses.",
+		cost_time = 10,
+		order_cost_gold = 0,
 		id = 6,
-		unlock_lv = 4,
-		desc = {
-			"Götz wanted to create an unforgettable romantic surprise, so she ordered 9,999 red roses."
-		},
 		word = {
 			intro_word = {
 				"Commander, I have but a single request, but it is important."
@@ -313,16 +301,14 @@ pg.base.activity_mall_custom_order = {}
 	}
 	pg.base.activity_mall_custom_order[7] = {
 		unlock_time = 1,
-		cost_time = 10,
-		order_cost_gold = 0,
+		unlock_lv = 4,
+		story_unlock = "SHEHUAXIANGMENGFUJINWAN9",
 		char = 307150,
 		char_name = "{namecode:161}",
-		story_unlock = "SHEHUAXIANGMENGFUJINWAN9",
+		desc = "Amagi seems to be preparing a special performance, and has put in a rather unusual swimsuit order for it.",
+		cost_time = 10,
+		order_cost_gold = 0,
 		id = 7,
-		unlock_lv = 4,
-		desc = {
-			"Amagi seems to be preparing a special performance, and has put in a rather unusual swimsuit order for it."
-		},
 		word = {
 			intro_word = {
 				"Commander, I have a request, but... it's rather hard to put into words, so can I draw it for you later?"
@@ -361,16 +347,14 @@ pg.base.activity_mall_custom_order = {}
 	}
 	pg.base.activity_mall_custom_order[8] = {
 		unlock_time = 2,
-		cost_time = 10,
-		order_cost_gold = 0,
+		unlock_lv = 4,
+		story_unlock = "SHEHUAXIANGMENGFUJINWAN10",
 		char = 403170,
 		char_name = "{namecode:559}",
-		story_unlock = "SHEHUAXIANGMENGFUJINWAN10",
+		desc = "Prinz Moritz ordered a rather exotic swimsuit. Apparently, it is meant to help her look more in-character for a role she's playing.",
+		cost_time = 10,
+		order_cost_gold = 0,
 		id = 8,
-		unlock_lv = 4,
-		desc = {
-			"Prinz Moritz ordered a rather exotic swimsuit. Apparently, it is meant to help her look more in-character for a role she's playing."
-		},
 		word = {
 			intro_word = {
 				"Heeehehehe~♪ I'm gonna pass this order straight on to you, Commander!"
@@ -409,16 +393,14 @@ pg.base.activity_mall_custom_order = {}
 	}
 	pg.base.activity_mall_custom_order[9] = {
 		unlock_time = 2,
-		cost_time = 10,
-		order_cost_gold = 0,
+		unlock_lv = 4,
+		story_unlock = "SHEHUAXIANGMENGFUJINWAN11",
 		char = 499060,
 		char_name = "{namecode:481}",
-		story_unlock = "SHEHUAXIANGMENGFUJINWAN11",
+		desc = "The curtain is about to rise on a lively night banquet. For such an occasion, August has ordered an exquisite evening dress.",
+		cost_time = 10,
+		order_cost_gold = 0,
 		id = 9,
-		unlock_lv = 4,
-		desc = {
-			"The curtain is about to rise on a lively night banquet. For such an occasion, August has ordered an exquisite evening dress."
-		},
 		word = {
 			intro_word = {
 				"I bear a secret wish meant for your ears only... Would you grant it for me?"
@@ -452,16 +434,14 @@ pg.base.activity_mall_custom_order = {}
 	}
 	pg.base.activity_mall_custom_order[10] = {
 		unlock_time = 3,
-		cost_time = 10,
-		order_cost_gold = 0,
+		unlock_lv = 4,
+		story_unlock = "SHEHUAXIANGMENGFUJINWAN12",
 		char = 401150,
 		char_name = "{namecode:561}",
-		story_unlock = "SHEHUAXIANGMENGFUJINWAN12",
+		desc = "Z15, searching for a new water-capable vehicle, ordered a rather unconventional way to get across the water.",
+		cost_time = 10,
+		order_cost_gold = 0,
 		id = 10,
-		unlock_lv = 4,
-		desc = {
-			"Z15, searching for a new water-capable vehicle, ordered a rather unconventional way to get across the water."
-		},
 		word = {
 			intro_word = {
 				"Commander, would you please grant my wish? Pretty please? ...Then, take this order~♪"
@@ -495,16 +475,14 @@ pg.base.activity_mall_custom_order = {}
 	}
 	pg.base.activity_mall_custom_order[11] = {
 		unlock_time = 3,
-		cost_time = 10,
-		order_cost_gold = 0,
+		unlock_lv = 7,
+		story_unlock = "",
 		char = 401520,
 		char_name = "Z52",
-		story_unlock = "",
+		desc = "Z52 ordered a set of high-speed surfing gear to work up a good sweat while out on the waves.",
+		cost_time = 10,
+		order_cost_gold = 0,
 		id = 11,
-		unlock_lv = 7,
-		desc = {
-			"Z52 ordered a set of high-speed surfing gear to work up a good sweat while out on the waves."
-		},
 		word = {
 			intro_word = {
 				"Woooah! Close one, almost blew right past – Oh, Commander, I have a request for you! It's about this order!"
@@ -543,16 +521,14 @@ pg.base.activity_mall_custom_order = {}
 	}
 	pg.base.activity_mall_custom_order[12] = {
 		unlock_time = 3,
-		cost_time = 10,
-		order_cost_gold = 0,
+		unlock_lv = 7,
+		story_unlock = "",
 		char = 299030,
 		char_name = "Cheshire",
-		story_unlock = "",
+		desc = "To enjoy a sweet, leisurely afternoon, Cheshire ordered a visually-stunning limited-edition dessert tower.",
+		cost_time = 10,
+		order_cost_gold = 0,
 		id = 12,
-		unlock_lv = 7,
-		desc = {
-			"To enjoy a sweet, leisurely afternoon, Cheshire ordered a visually-stunning limited-edition dessert tower."
-		},
 		word = {
 			intro_word = {
 				"Owwwnerrr! Come give me a biiiiig hug! Orders? Oh right, I've got one here~"
@@ -591,16 +567,14 @@ pg.base.activity_mall_custom_order = {}
 	}
 	pg.base.activity_mall_custom_order[13] = {
 		unlock_time = 4,
-		cost_time = 10,
-		order_cost_gold = 0,
+		unlock_lv = 7,
+		story_unlock = "",
 		char = 503020,
 		char_name = "Chang Wu",
-		story_unlock = "",
+		desc = "Chang Wu seems interested in the jade processing techniques commonly seen across Luxury Bay, and as such, has sent me a special request.",
+		cost_time = 10,
+		order_cost_gold = 0,
 		id = 13,
-		unlock_lv = 7,
-		desc = {
-			"Chang Wu seems interested in the jade processing techniques commonly seen across Luxury Bay, and as such, has sent me a special request."
-		},
 		word = {
 			intro_word = {
 				"Commander, there's something I'd like to ask of you..."
@@ -639,16 +613,14 @@ pg.base.activity_mall_custom_order = {}
 	}
 	pg.base.activity_mall_custom_order[14] = {
 		unlock_time = 4,
-		cost_time = 10,
-		order_cost_gold = 0,
+		unlock_lv = 7,
+		story_unlock = "",
 		char = 1199010,
 		char_name = "Gouden Leeuw",
-		story_unlock = "",
+		desc = "Gouden Leeuw wanted to commemorate this occasion, ordering nature-themed accessories.",
+		cost_time = 10,
+		order_cost_gold = 0,
 		id = 14,
-		unlock_lv = 7,
-		desc = {
-			"Gouden Leeuw wanted to commemorate this occasion, ordering nature-themed accessories."
-		},
 		word = {
 			intro_word = {
 				"Commander, I happen to have an interesting idea. Would you fulfill a little request for me?"

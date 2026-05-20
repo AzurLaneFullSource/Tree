@@ -57562,7 +57562,7 @@ end)()
 		config_client = {
 			shopId = 50611,
 			uPtId = 702,
-			activitytime = 50612,
+			activitytime = 50609,
 			expedition = 9808,
 			ptId = 701,
 			taskConfig = {

@@ -27,7 +27,27 @@ function var0_0.ShaderMgr.Init(arg0_1, arg1_1)
 	end
 
 	local function var4_1(arg0_6)
-		ResourceMgr.Inst:LoadShaderAndCached("custom_builtin", arg0_6, false, false)
+		if not EDITOR_TOOL then
+			seriesAsync({
+				function(arg0_7)
+					ResourceMgr.Inst:unloadUnusedAssetBundles()
+					onDelayTick(arg0_7, 0.0001)
+				end,
+				function(arg0_8)
+					ResourceMgr.Inst:loadAssetBundleAsync("custom_builtin", function(arg0_9)
+						arg0_9:Unload(false)
+						onDelayTick(arg0_8, 0.0001)
+					end)
+				end,
+				function(arg0_10)
+					var1_0.cacheCustomBuiltin = UnityEngine.AssetBundle.LoadFromFile(PathMgr.getAssetBundle("custom_builtin"))
+
+					arg0_10()
+				end
+			}, arg0_6)
+		else
+			ResourceMgr.Inst:LoadShaderAndCached("custom_builtin", arg0_6, false, false)
+		end
 	end
 
 	local var5_1 = {
@@ -39,32 +59,31 @@ function var0_0.ShaderMgr.Init(arg0_1, arg1_1)
 
 	var4_1(function()
 		parallelAsync(var5_1, function()
-			originalPrint("所有shader加载完成")
 			arg1_1()
 		end)
 	end)
 end
 
-function var1_0.GetShader(arg0_9, arg1_9)
-	return (ResourceMgr.Inst:GetShader(arg1_9))
+function var1_0.GetShader(arg0_13, arg1_13)
+	return (ResourceMgr.Inst:GetShader(arg1_13))
 end
 
-function var1_0.GetBlurMaterialSync(arg0_10)
-	if arg0_10.blurMaterial ~= nil then
-		return arg0_10.blurMaterial
+function var1_0.GetBlurMaterialSync(arg0_14)
+	if arg0_14.blurMaterial ~= nil then
+		return arg0_14.blurMaterial
 	else
-		local var0_10 = arg0_10:GetShader("Hidden/MobileBlur")
+		local var0_14 = arg0_14:GetShader("Hidden/MobileBlur")
 
-		arg0_10.blurMaterial = Material.New(var0_10)
+		arg0_14.blurMaterial = Material.New(var0_14)
 
-		arg0_10.blurMaterial:SetVector("_Parameter", Vector4.New(1, -1, 0, 0))
+		arg0_14.blurMaterial:SetVector("_Parameter", Vector4.New(1, -1, 0, 0))
 
-		return arg0_10.blurMaterial
+		return arg0_14.blurMaterial
 	end
 end
 
-function var1_0.BlurTexture(arg0_11, arg1_11)
-	local var0_11 = ReflectionHelp.RefCallStaticMethod(typeof("UnityEngine.RenderTexture"), "GetTemporary", {
+function var1_0.BlurTexture(arg0_15, arg1_15)
+	local var0_15 = ReflectionHelp.RefCallStaticMethod(typeof("UnityEngine.RenderTexture"), "GetTemporary", {
 		typeof("System.Int32"),
 		typeof("System.Int32"),
 		typeof("System.Int32")
@@ -73,7 +92,7 @@ function var1_0.BlurTexture(arg0_11, arg1_11)
 		Screen.height * 0.25,
 		0
 	})
-	local var1_11 = ReflectionHelp.RefCallStaticMethod(typeof("UnityEngine.RenderTexture"), "GetTemporary", {
+	local var1_15 = ReflectionHelp.RefCallStaticMethod(typeof("UnityEngine.RenderTexture"), "GetTemporary", {
 		typeof("System.Int32"),
 		typeof("System.Int32"),
 		typeof("System.Int32")
@@ -83,9 +102,9 @@ function var1_0.BlurTexture(arg0_11, arg1_11)
 		0
 	})
 
-	var0_11.filterMode = ReflectionHelp.RefGetField(typeof("UnityEngine.FilterMode"), "Bilinear")
+	var0_15.filterMode = ReflectionHelp.RefGetField(typeof("UnityEngine.FilterMode"), "Bilinear")
 
-	local var2_11 = arg0_11:GetBlurMaterialSync()
+	local var2_15 = arg0_15:GetBlurMaterialSync()
 
 	ReflectionHelp.RefCallStaticMethod(typeof("UnityEngine.Graphics"), "Blit", {
 		typeof("UnityEngine.RenderTexture"),
@@ -93,23 +112,23 @@ function var1_0.BlurTexture(arg0_11, arg1_11)
 		typeof("UnityEngine.Material"),
 		typeof("System.Int32")
 	}, {
-		arg1_11,
-		var0_11,
-		var2_11,
+		arg1_15,
+		var0_15,
+		var2_15,
 		0
 	})
 
-	for iter0_11 = 0, 1 do
-		var2_11:SetVector("_Parameter", Vector4.New(1 + iter0_11, -1 - iter0_11, 0, 0))
+	for iter0_15 = 0, 1 do
+		var2_15:SetVector("_Parameter", Vector4.New(1 + iter0_15, -1 - iter0_15, 0, 0))
 		ReflectionHelp.RefCallStaticMethod(typeof("UnityEngine.Graphics"), "Blit", {
 			typeof("UnityEngine.RenderTexture"),
 			typeof("UnityEngine.RenderTexture"),
 			typeof("UnityEngine.Material"),
 			typeof("System.Int32")
 		}, {
-			var0_11,
-			var1_11,
-			var2_11,
+			var0_15,
+			var1_15,
+			var2_15,
 			1
 		})
 		ReflectionHelp.RefCallStaticMethod(typeof("UnityEngine.Graphics"), "Blit", {
@@ -118,9 +137,9 @@ function var1_0.BlurTexture(arg0_11, arg1_11)
 			typeof("UnityEngine.Material"),
 			typeof("System.Int32")
 		}, {
-			var1_11,
-			var0_11,
-			var2_11,
+			var1_15,
+			var0_15,
+			var2_15,
 			2
 		})
 	end
@@ -128,24 +147,24 @@ function var1_0.BlurTexture(arg0_11, arg1_11)
 	ReflectionHelp.RefCallStaticMethod(typeof("UnityEngine.RenderTexture"), "ReleaseTemporary", {
 		typeof("UnityEngine.RenderTexture")
 	}, {
-		var1_11
+		var1_15
 	})
 
-	return var0_11
+	return var0_15
 end
 
-function var1_0.SetSpineUIOutline(arg0_12, arg1_12, arg2_12)
-	local var0_12 = arg0_12:GetShader("M02/Unlit Colored_Alpha_UI_Outline")
-	local var1_12 = GetComponent(arg1_12, "SkeletonGraphic")
-	local var2_12 = Material.New(var0_12)
+function var1_0.SetSpineUIOutline(arg0_16, arg1_16, arg2_16)
+	local var0_16 = arg0_16:GetShader("M02/Unlit Colored_Alpha_UI_Outline")
+	local var1_16 = GetComponent(arg1_16, "SkeletonGraphic")
+	local var2_16 = Material.New(var0_16)
 
-	var2_12:SetColor("_OutlineColor", arg2_12)
-	var2_12:SetFloat("_OutlineWidth", 5.75)
-	var2_12:SetFloat("_ThresholdEnd", 0.2)
+	var2_16:SetColor("_OutlineColor", arg2_16)
+	var2_16:SetFloat("_OutlineWidth", 5.75)
+	var2_16:SetFloat("_ThresholdEnd", 0.2)
 
-	var1_12.material = var2_12
+	var1_16.material = var2_16
 end
 
-function var1_0.DelSpineUIOutline(arg0_13, arg1_13)
-	GetComponent(arg1_13, "SkeletonGraphic").material = nil
+function var1_0.DelSpineUIOutline(arg0_17, arg1_17)
+	GetComponent(arg1_17, "SkeletonGraphic").material = nil
 end
