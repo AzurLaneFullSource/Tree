@@ -35,7 +35,7 @@ function var0_0.initListData(arg0_3, arg1_3, arg2_3, arg3_3)
 	table.insert(arg0_3.avatarFrames, {
 		actId = arg1_3,
 		tasks = var0_3,
-		finish_tasks = finishTask
+		finish_tasks = var1_3
 	})
 end
 

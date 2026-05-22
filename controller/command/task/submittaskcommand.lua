@@ -190,12 +190,12 @@ function var0_0.CheckTaskType(arg0_12)
 		})
 	end
 
-	if arg0_12:getConfig("type") ~= 8 then
-		getProxy(TaskProxy):removeTask(arg0_12)
-	else
+	if arg0_12:getConfig("type") == 8 then
 		arg0_12.submitTime = 1
 
 		getProxy(TaskProxy):updateTask(arg0_12)
+	else
+		getProxy(TaskProxy):removeTask(arg0_12)
 	end
 end
 

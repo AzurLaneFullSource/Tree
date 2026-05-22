@@ -43,29 +43,25 @@ function var0_0.handleNotification(arg0_5, arg1_5)
 				arg0_5.viewComponent:ShowCompleteDialogue(arg0_6)
 			end)
 
-			if #var1_5.awards >= 0 then
+			local var5_5 = pg.activity_mall_custom_order[var1_5.completeOrderId].story_unlock
+
+			if var5_5 ~= "" then
 				table.insert(var4_5, function(arg0_7)
-					arg0_5.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_5.awards, arg0_7)
+					pg.NewStoryMgr.GetInstance():Play(var5_5, arg0_7)
+				end)
+			end
+
+			if #var1_5.awards >= 0 then
+				table.insert(var4_5, function(arg0_8)
+					arg0_5.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_5.awards, arg0_8)
 				end)
 			end
 
 			if var3_5 ~= var2_5 then
-				table.insert(var4_5, function(arg0_8)
-					arg0_5.viewComponent:ShowUpgradeBox(var2_5, var3_5, arg0_8)
+				table.insert(var4_5, function(arg0_9)
+					arg0_5.viewComponent:ShowUpgradeBox(var2_5, var3_5, arg0_9)
 				end)
 			end
-
-			table.insert(var4_5, function(arg0_9)
-				local var0_9 = pg.activity_mall_custom_order[var1_5.completeOrderId].story_unlock
-
-				if var0_9 == "" then
-					arg0_9()
-
-					return
-				end
-
-				pg.NewStoryMgr.GetInstance():Play(var0_9, arg0_9)
-			end)
 		end
 
 		seriesAsync(var4_5, function()

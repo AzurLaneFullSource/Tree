@@ -54,11 +54,13 @@ return {
 		},
 		{
 			actor = 405071,
-			nameColor = "#A9F548FF",
+			side = 2,
 			bgName = "star_level_bg_146",
 			live2d = true,
-			side = 2,
+			withoutActorName = true,
+			nameColor = "#A9F548FF",
 			say = "At Götz's invitation, I try what she calls a full body VR experience.",
+			hideRecordIco = true,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
