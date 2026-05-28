@@ -248,7 +248,7 @@ pg.base.activity_mall_story = {}
 		type = 2,
 		id = 201,
 		icon = "icon_1",
-		desc = "Time to Wake Up, Commander",
+		desc = "Time to Wake Up, Commander ",
 		posion = {
 			327,
 			198,
@@ -261,7 +261,7 @@ pg.base.activity_mall_story = {}
 		type = 2,
 		id = 202,
 		icon = "icon_1",
-		desc = "The Missing Jewel That Shows Itself",
+		desc = "The Missing Jewel That Shows Itself ",
 		posion = {
 			-341,
 			-20,
@@ -274,7 +274,7 @@ pg.base.activity_mall_story = {}
 		type = 2,
 		id = 203,
 		icon = "icon_1",
-		desc = "Where the Seagulls Go",
+		desc = "Where the Seagulls Go ",
 		posion = {
 			1019,
 			168,
@@ -287,7 +287,7 @@ pg.base.activity_mall_story = {}
 		type = 2,
 		id = 204,
 		icon = "icon_1",
-		desc = "Rooftop \"Pirates\"",
+		desc = "Rooftop \"Pirates\" ",
 		posion = {
 			172,
 			-331,
@@ -300,7 +300,7 @@ pg.base.activity_mall_story = {}
 		type = 2,
 		id = 205,
 		icon = "icon_1",
-		desc = "Wish Upon the Lamp",
+		desc = "Wish Upon the Lamp ",
 		posion = {
 			-478,
 			408,
@@ -313,7 +313,7 @@ pg.base.activity_mall_story = {}
 		type = 2,
 		id = 206,
 		icon = "icon_1",
-		desc = "Magical(?) Garden Banquet",
+		desc = "Magical(?) Garden Banquet ",
 		posion = {
 			140,
 			531,
@@ -326,7 +326,7 @@ pg.base.activity_mall_story = {}
 		type = 2,
 		id = 207,
 		icon = "icon_1",
-		desc = "The Light of a Miracle",
+		desc = "The Light of a Miracle ",
 		posion = {
 			-164,
 			401,
@@ -339,7 +339,7 @@ pg.base.activity_mall_story = {}
 		type = 2,
 		id = 208,
 		icon = "icon_1",
-		desc = "A Gift Dedicated to You",
+		desc = "A Gift Dedicated to You ",
 		posion = {
 			653,
 			-269,

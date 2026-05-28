@@ -407,12 +407,14 @@ function var0_0.ShowGuidePage(arg0_20)
 	var0_20:make(function(arg0_21, arg1_21, arg2_21)
 		if arg0_21 == UIItemList.EventUpdate then
 			local var0_21 = arg0_20.guidePages[arg1_21 + 1]
+			local var1_21 = var0_21:getConfig("name")
+			local var2_21 = var0_21:getConfig("lock_name")
 
 			setActive(arg2_21:Find("lock0/lock"), not var0_21.isUnlock)
 			setActive(arg2_21:Find("tip"), var0_21:ShouldShowTip())
-			arg2_21:Find("mask/name"):GetComponent("ScrollText"):SetText(var0_21.isUnlock and var0_21:getConfig("name") or var0_21:getConfig("lock_name"))
+			arg2_21:Find("mask/name"):GetComponent("ScrollText"):SetText(var0_21.isUnlock and var1_21 or var2_21 or "")
 			setText(arg2_21:Find("en"), var0_21:getConfig("eng_name"))
-			arg2_21:Find("select/mask/name"):GetComponent("ScrollText"):SetText(var0_21:getConfig("name"))
+			arg2_21:Find("select/mask/name"):GetComponent("ScrollText"):SetText(tostring(var1_21 or ""))
 			setText(arg2_21:Find("select/en"), var0_21:getConfig("eng_name"))
 
 			arg2_21:GetComponent(typeof(CanvasGroup)).alpha = var0_21.isUnlock and 1 or 0.5

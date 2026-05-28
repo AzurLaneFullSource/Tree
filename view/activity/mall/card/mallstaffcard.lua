@@ -16,9 +16,14 @@ function var0_0.Ctor(arg0_1, arg1_1)
 		arg0_1._tf:Find("attrs/2/Text"),
 		arg0_1._tf:Find("attrs/3/Text")
 	}
+	arg0_1.attrBgTFs = {
+		arg0_1._tf:Find("attrs/1"),
+		arg0_1._tf:Find("attrs/2"),
+		arg0_1._tf:Find("attrs/3")
+	}
 end
 
-function var0_0.Update(arg0_2, arg1_2, arg2_2, arg3_2)
+function var0_0.Update(arg0_2, arg1_2, arg2_2, arg3_2, arg4_2)
 	arg0_2.staff = arg1_2
 	arg0_2.id = arg0_2.staff.id
 	arg0_2.tid = arg0_2.staff.tid
@@ -31,25 +36,35 @@ function var0_0.Update(arg0_2, arg1_2, arg2_2, arg3_2)
 
 	arg0_2.attrList = arg0_2.staff:GetAttrList()
 
+	local var1_2
+
+	var1_2 = arg4_2 or {}
+
 	for iter0_2, iter1_2 in ipairs(arg0_2.attrList) do
 		setText(arg0_2.attrTextTFs[iter0_2], iter1_2)
+
+		if table.contains(arg4_2, iter0_2) then
+			GetImageSpriteFromAtlasAsync("ui/mallstafftpl_atlas", "attr_bg2", arg0_2.attrBgTFs[iter0_2], true)
+		else
+			GetImageSpriteFromAtlasAsync("ui/mallstafftpl_atlas", "attr_bg1", arg0_2.attrBgTFs[iter0_2], true)
+		end
 	end
 
-	local var1_2 = table.indexof(arg2_2, arg0_2.id)
+	local var2_2 = table.indexof(arg2_2, arg0_2.id)
 
-	setActive(arg0_2.selTF, var1_2)
+	setActive(arg0_2.selTF, var2_2)
 
-	if var1_2 then
-		setText(arg0_2.selTF:Find("Text"), var1_2)
+	if var2_2 then
+		setText(arg0_2.selTF:Find("Text"), var2_2)
 	end
 
-	local var2_2, var3_2 = arg0_2.staff:GetStatusInfos()
+	local var3_2, var4_2 = arg0_2.staff:GetStatusInfos()
 
-	setActive(arg0_2.orderTF, var2_2 == MallStaff.STATUS.ORDER)
-	setActive(arg0_2.floorTF, var2_2 == MallStaff.STATUS.FLOOR and (arg3_2 and not var1_2 or not arg3_2))
+	setActive(arg0_2.orderTF, var3_2 == MallStaff.STATUS.ORDER)
+	setActive(arg0_2.floorTF, var3_2 == MallStaff.STATUS.FLOOR and (arg3_2 and not var2_2 or not arg3_2))
 
-	if var2_2 == MallStaff.STATUS.FLOOR then
-		setText(arg0_2.floorTF:Find("Text"), i18n("mall_staff_in_floor", var3_2.floorId))
+	if var3_2 == MallStaff.STATUS.FLOOR then
+		setText(arg0_2.floorTF:Find("Text"), i18n("mall_staff_in_floor", var4_2.floorId))
 	end
 end
 

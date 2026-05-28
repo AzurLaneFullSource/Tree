@@ -329,28 +329,31 @@ function var0_0.OnUpdateStaffItem(arg0_39, arg1_39, arg2_39)
 	end
 
 	local var1_39 = arg0_39.staffList[arg1_39 + 1]
+	local var2_39 = underscore.map(arg0_39.showAttrDatas, function(arg0_40)
+		return arg0_40.id
+	end)
 
-	var0_39:Update(var1_39, arg0_39.selIds, true)
+	var0_39:Update(var1_39, arg0_39.selIds, true, var2_39)
 end
 
-function var0_0.willExit(arg0_40)
-	var0_0.CheckUpdateFloorStaffs(arg0_40.activity)
-	ClearLScrollrect(arg0_40.scrollCom)
+function var0_0.willExit(arg0_41)
+	var0_0.CheckUpdateFloorStaffs(arg0_41.activity)
+	ClearLScrollrect(arg0_41.scrollCom)
 
-	for iter0_40, iter1_40 in pairs(arg0_40.cards) do
-		iter1_40:Dispose()
+	for iter0_41, iter1_41 in pairs(arg0_41.cards) do
+		iter1_41:Dispose()
 	end
 
-	arg0_40.cards = {}
+	arg0_41.cards = {}
 end
 
-function var0_0.CheckUpdateFloorStaffs(arg0_41, arg1_41)
-	if arg0_41:NeedUpdateFloorStaff() then
+function var0_0.CheckUpdateFloorStaffs(arg0_42, arg1_42)
+	if arg0_42:NeedUpdateFloorStaff() then
 		pg.m02:sendNotification(GAME.ACTIVITY_MALL_OP, {
-			activity_id = arg0_41.id,
+			activity_id = arg0_42.id,
 			cmd = ActivityMallOPCommand.CMD.SET_FLOOR_STAFF,
-			arg_list = arg0_41:GetFloorStaffList(),
-			callback = arg1_41
+			arg_list = arg0_42:GetFloorStaffList(),
+			callback = arg1_42
 		})
 	end
 end

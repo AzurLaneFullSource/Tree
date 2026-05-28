@@ -364,6 +364,11 @@ pg.task_meta_data_template.all = {
 	100533,
 	100534,
 	100535,
+	100551,
+	100552,
+	100553,
+	100554,
+	100555,
 	100561,
 	100562,
 	100563,
@@ -549,6 +554,10 @@ pg.task_meta_data_template.all = {
 	200442,
 	200443,
 	200444,
+	200461,
+	200462,
+	200463,
+	200464,
 	200471,
 	200472,
 	200473,
@@ -3444,6 +3453,46 @@ end)()
 		target_num = 1,
 		target_id = "100"
 	}
+	pg.base.task_meta_data_template[100551] = {
+		target_id_2 = "970212",
+		sub_type = 180,
+		desc = "Sortie and obtain 1 victory with  Königsberg META in the fleet.",
+		id = 100551,
+		target_num = 1,
+		target_id = "0"
+	}
+	pg.base.task_meta_data_template[100552] = {
+		target_id_2 = "970212",
+		sub_type = 180,
+		desc = "Defeat a Lv. 30+ enemy fleet with Königsberg META in the fleet.",
+		id = 100552,
+		target_num = 1,
+		target_id = "30"
+	}
+	pg.base.task_meta_data_template[100553] = {
+		target_id_2 = "970212",
+		sub_type = 180,
+		desc = "Defeat a Lv. 55+ enemy fleet with Königsberg META in the fleet.",
+		id = 100553,
+		target_num = 1,
+		target_id = "55"
+	}
+	pg.base.task_meta_data_template[100554] = {
+		target_id_2 = "970212",
+		sub_type = 180,
+		desc = "Defeat a Lv. 80+ enemy fleet with Königsberg META in the fleet.",
+		id = 100554,
+		target_num = 1,
+		target_id = "80"
+	}
+	pg.base.task_meta_data_template[100555] = {
+		target_id_2 = "970212",
+		sub_type = 180,
+		desc = "Defeat a Lv. 100+ enemy fleet with Königsberg META in the fleet.",
+		id = 100555,
+		target_num = 1,
+		target_id = "100"
+	}
 	pg.base.task_meta_data_template[100561] = {
 		target_id_2 = "970605",
 		sub_type = 180,
@@ -3724,6 +3773,8 @@ end)()
 		target_num = 1,
 		target_id = "70"
 	}
+end)()
+;(function()
 	pg.base.task_meta_data_template[200083] = {
 		target_id_2 = "971201",
 		sub_type = 302,
@@ -3764,8 +3815,6 @@ end)()
 		target_num = 1,
 		target_id = "90"
 	}
-end)()
-;(function()
 	pg.base.task_meta_data_template[200094] = {
 		target_id_2 = "970302",
 		sub_type = 302,
@@ -4526,6 +4575,8 @@ end)()
 		target_num = 1,
 		target_id = "70"
 	}
+end)()
+;(function()
 	pg.base.task_meta_data_template[200333] = {
 		target_id_2 = "970107",
 		sub_type = 302,
@@ -4566,8 +4617,6 @@ end)()
 		target_num = 1,
 		target_id = "90"
 	}
-end)()
-;(function()
 	pg.base.task_meta_data_template[200344] = {
 		target_id_2 = "970707",
 		sub_type = 302,
@@ -4925,6 +4974,38 @@ end)()
 		sub_type = 302,
 		desc = "Defeat a Lv. 100+ fleet in Operation Siren with Regensburg META in your fleet.",
 		id = 200444,
+		target_num = 1,
+		target_id = "100"
+	}
+	pg.base.task_meta_data_template[200461] = {
+		target_id_2 = "970212",
+		sub_type = 302,
+		desc = "Sortie in Operation Siren and obtain 1 victory with Königsberg META in the fleet.",
+		id = 200461,
+		target_num = 1,
+		target_id = "0"
+	}
+	pg.base.task_meta_data_template[200462] = {
+		target_id_2 = "970212",
+		sub_type = 302,
+		desc = "Sortie in Operation Siren and defeat a Lv. 70+ enemy fleet with Königsberg META in the fleet.",
+		id = 200462,
+		target_num = 1,
+		target_id = "70"
+	}
+	pg.base.task_meta_data_template[200463] = {
+		target_id_2 = "970212",
+		sub_type = 302,
+		desc = "Sortie in Operation Siren and defeat a Lv. 90+ enemy fleet with Königsberg META in the fleet.",
+		id = 200463,
+		target_num = 1,
+		target_id = "90"
+	}
+	pg.base.task_meta_data_template[200464] = {
+		target_id_2 = "970212",
+		sub_type = 302,
+		desc = "Sortie in Operation Siren and defeat a Lv. 100+ enemy fleet with Königsberg META in the fleet.",
+		id = 200464,
 		target_num = 1,
 		target_id = "100"
 	}

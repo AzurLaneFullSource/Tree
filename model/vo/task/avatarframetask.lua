@@ -193,18 +193,17 @@ function var0_0.createData(arg0_21, arg1_21, arg2_21)
 		}
 	elseif arg1_21 == var0_0.type_task_ship then
 		local var12_21, var13_21, var14_21, var15_21 = unpack(arg2_21)
-		local var16_21 = var13_21 * 10 + 1
-		local var17_21 = pg.ship_data_statistics[var16_21].name
+		local var16_21 = ShipGroup.getDefaultShipNameByGroupID(var13_21)
 
 		if var14_21 == 1 then
 			var0_21 = {
 				award_num = var15_21,
-				desc = i18n(var4_0, var17_21)
+				desc = i18n(var4_0, var16_21)
 			}
 		elseif var14_21 == 2 then
 			var0_21 = {
 				award_num = var15_21,
-				desc = i18n(var5_0, var17_21),
+				desc = i18n(var5_0, var16_21),
 				scene = {
 					"DOCKYARD",
 					{

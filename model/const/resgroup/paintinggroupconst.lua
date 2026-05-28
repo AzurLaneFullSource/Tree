@@ -203,57 +203,67 @@ function var0_0.GetPaintingNameListByShipVO(arg0_13)
 	return var0_13
 end
 
-function var0_0.PaintingDownload(arg0_14)
+function var0_0.GetPaintingNameListForMallAct(arg0_14)
 	local var0_14 = {}
 
+	for iter0_14, iter1_14 in ipairs(pg.activity_mall_custom_order.all) do
+		var0_0.AddPaintingNameBySkinID(var0_14, pg.activity_mall_custom_order[iter1_14].char)
+	end
+
+	return var0_14
+end
+
+function var0_0.PaintingDownload(arg0_15)
+	local var0_15 = {}
+
 	if var0_0.IsPaintingNeedCheck() then
-		local var1_14 = arg0_14.isShowBox
-		local var2_14 = pg.FileDownloadMgr.GetInstance():IsNeedRemind()
-		local var3_14 = IsUsingWifi()
-		local var4_14 = var1_14 and var2_14
-		local var5_14 = arg0_14.paintingNameList
+		local var1_15 = arg0_15.isShowBox
+		local var2_15 = pg.FileDownloadMgr.GetInstance():IsNeedRemind()
+		local var3_15 = IsUsingWifi()
+		local var4_15 = var1_15 and var2_15
+		local var5_15 = arg0_15.paintingNameList
 
-		if #var5_14 > 0 then
-			if not var3_14 and var4_14 then
-				local var6_14, var7_14 = var0_0.CalcPaintingListSize(var5_14)
+		if #var5_15 > 0 then
+			if not var3_15 and var4_15 then
+				local var6_15, var7_15 = var0_0.CalcPaintingListSize(var5_15)
 
-				if var6_14 > 0 then
-					table.insert(var0_14, function(arg0_15)
+				if var6_15 > 0 then
+					table.insert(var0_15, function(arg0_16)
 						pg.MsgboxMgr.GetInstance():ShowMsgBox({
 							modal = true,
 							locked = true,
 							type = MSGBOX_TYPE_FILE_DOWNLOAD,
-							content = string.format(i18n("file_down_msgbox", var7_14)),
-							onYes = arg0_15,
-							onNo = arg0_14.onNo,
-							onClose = arg0_14.onClose
+							content = string.format(i18n("file_down_msgbox", var7_15)),
+							onYes = arg0_16,
+							onNo = arg0_15.onNo,
+							onClose = arg0_15.onClose
 						})
 					end)
 				end
 			end
 
-			table.insert(var0_14, function(arg0_16)
-				local var0_16 = {
+			table.insert(var0_15, function(arg0_17)
+				local var0_17 = {
 					groupName = var0_0.PaintingGroupName,
-					fileNameList = var5_14
+					fileNameList = var5_15
 				}
-				local var1_16 = {
+				local var1_17 = {
 					dataList = {
-						var0_16
+						var0_17
 					},
-					onFinish = arg0_16
+					onFinish = arg0_17
 				}
 
-				pg.FileDownloadMgr.GetInstance():Main(var1_16)
+				pg.FileDownloadMgr.GetInstance():Main(var1_17)
 			end)
-			table.insert(var0_14, function(arg0_17)
+			table.insert(var0_15, function(arg0_18)
 				pg.m02:sendNotification(var0_0.NotifyPaintingDownloadFinish)
-				arg0_17()
+				arg0_18()
 			end)
 		end
 	end
 
-	seriesAsync(var0_14, arg0_14.finishFunc)
+	seriesAsync(var0_15, arg0_15.finishFunc)
 end
 
 return var0_0

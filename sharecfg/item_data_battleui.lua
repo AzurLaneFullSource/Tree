@@ -17,6 +17,7 @@ pg.item_data_battleui.all = {
 	111,
 	113,
 	114,
+	115,
 	201,
 	202,
 	203,
@@ -233,6 +234,21 @@ pg.base.item_data_battleui = {}
 		unlock = "Cruise Missions S28",
 		id = 114,
 		icon = "114",
+		scene = {},
+		rare_display = {
+			1
+		}
+	}
+	pg.base.item_data_battleui[115] = {
+		key = "SkinNormal_20260528",
+		name = "Azure Core",
+		desc = "A rusty, mechanical heart beats anew, reverberating with the souls of ancient civilizations.",
+		display_icon = "ui_115",
+		is_unlock = 1,
+		rare = 3,
+		unlock = "Cruise Missions S29",
+		id = 115,
+		icon = "115",
 		scene = {},
 		rare_display = {
 			1

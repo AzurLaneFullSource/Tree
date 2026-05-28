@@ -249,32 +249,46 @@ function var2_0.generateCommonButton(arg0_22, arg1_22)
 end
 
 function var2_0.generateSubmarineFuncButton(arg0_23, arg1_23)
-	local var0_23 = var0_0.Battle.BattleSubmarineFuncButton.New()
+	local var0_23 = var0_0.Battle.BattleState.GetCombatSkinKey()
+	local var1_23
+
+	if var0_0.Battle["BattleSubmarineFuncButton" .. var0_23] then
+		var1_23 = var0_0.Battle["BattleSubmarineFuncButton" .. var0_23].New()
+	else
+		var1_23 = var0_0.Battle.BattleSubmarineFuncButton.New()
+	end
 
 	arg0_23._progressSkin = arg0_23._progressSkin or arg0_23._ui._tf:Find("Weapon_button_progress")
 
-	local var1_23 = cloneTplTo(arg0_23._progressSkin, arg0_23._buttonContainer)
+	local var2_23 = cloneTplTo(arg0_23._progressSkin, arg0_23._buttonContainer)
 
-	var0_23:ConfigSkin(var1_23)
-	var0_23:SwitchIcon(arg1_23)
-	var0_23:SetTextActive(false)
-	table.insert(arg0_23._skillBtnList, var0_23)
+	var1_23:ConfigSkin(var2_23)
+	var1_23:SwitchIcon(arg1_23)
+	var1_23:SetTextActive(false)
+	table.insert(arg0_23._skillBtnList, var1_23)
 
-	return var0_23
+	return var1_23
 end
 
 function var2_0.generateSubmarineButton(arg0_24, arg1_24)
-	local var0_24 = var0_0.Battle.BattleSubmarineButton.New()
+	local var0_24 = var0_0.Battle.BattleState.GetCombatSkinKey()
+	local var1_24
+
+	if var0_0.Battle["BattleSubmarineButton" .. var0_24] then
+		var1_24 = var0_0.Battle["BattleSubmarineButton" .. var0_24].New()
+	else
+		var1_24 = var0_0.Battle.BattleSubmarineButton.New()
+	end
 
 	arg0_24._disposableSkin = arg0_24._disposableSkin or arg0_24._ui._tf:Find("Weapon_button")
 
-	local var1_24 = cloneTplTo(arg0_24._disposableSkin, arg0_24._buttonContainer)
+	local var2_24 = cloneTplTo(arg0_24._disposableSkin, arg0_24._buttonContainer)
 
-	var0_24:ConfigSkin(var1_24)
-	var0_24:SwitchIcon(arg1_24)
-	table.insert(arg0_24._skillBtnList, var0_24)
+	var1_24:ConfigSkin(var2_24)
+	var1_24:SwitchIcon(arg1_24)
+	table.insert(arg0_24._skillBtnList, var1_24)
 
-	return var0_24
+	return var1_24
 end
 
 function var2_0.CustomButton(arg0_25, arg1_25)

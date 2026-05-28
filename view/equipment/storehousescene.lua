@@ -56,7 +56,8 @@ function var0_0.init(arg0_4)
 			arg0_4:filterEquipment()
 		end,
 		key = arg0_4.__cname,
-		parent = arg0_4.blurPanel:Find("adapt"),
+		parent = arg0_4.topPanel:Find("buttons"),
+		expand_parent = arg0_4.blurPanel:Find("adapt"),
 		anchoredPosition = Vector3(-1305, arg0_4.topPanel.sizeDelta.y * -0.5, 0)
 	}))
 	arg0_4.itemView = arg0_4._tf:Find("adapt/item_scrollview")

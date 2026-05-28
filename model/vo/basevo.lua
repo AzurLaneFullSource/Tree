@@ -59,6 +59,10 @@ function var0_0.getConfig(arg0_7, arg1_7)
 
 	assert(var0_7 ~= nil, "Config missed, type -" .. arg0_7.__cname .. " configId: " .. tostring(arg0_7.configId))
 
+	if arg1_7 == "name" or arg1_7 == "desc" then
+		return (HXSet.hxLan(var0_7[arg1_7]))
+	end
+
 	return var0_7[arg1_7]
 end
 

@@ -1434,6 +1434,8 @@ pg.skill_data_template.all = {
 	152380,
 	152390,
 	152410,
+	152440,
+	152450,
 	18010,
 	18040,
 	18050,
@@ -1719,6 +1721,8 @@ pg.skill_data_template.all = {
 	22262,
 	22271,
 	22272,
+	22281,
+	22282,
 	22311,
 	22312,
 	22411,
@@ -2848,6 +2852,12 @@ pg.skill_data_template.all = {
 	802172,
 	802175,
 	802177,
+	802180,
+	802190,
+	802201,
+	802202,
+	802205,
+	802207,
 	802210,
 	802220,
 	802231,
@@ -121790,6 +121800,254 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+	pg.base.skill_data_template[152440] = {
+		desc_get = "",
+		name = "Journey to Wonderland",
+		id = 152440,
+		type = 1,
+		max_level = 10,
+		desc = "10s after the battle starts, and every 20s after that: fires a $1 special barrage (DMG is based on the skill's level) and increases this ship's EVA and AA by $2, lasting for 10s. During a sortie, for each enemy fleet sunk by the fleet this ship is in: increases this ship's DMG dealt by $3 (can be stacked up to 3 times).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"10.0%",
+				"20.0%"
+			},
+			{
+				"1.0%",
+				"5.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+0.4%"
+				},
+				{
+					"1.4%",
+					"+0.4%"
+				},
+				{
+					"1.8%",
+					"+0.4%"
+				},
+				{
+					"2.2%",
+					"+0.4%"
+				},
+				{
+					"2.6%",
+					"+0.4%"
+				},
+				{
+					"3.0%",
+					"+0.5%"
+				},
+				{
+					"3.5%",
+					"+0.5%"
+				},
+				{
+					"4.0%",
+					"+0.5%"
+				},
+				{
+					"4.5%",
+					"+0.5%"
+				},
+				{
+					"5.0%"
+				}
+			}
+		}
+	}
+	pg.base.skill_data_template[152450] = {
+		desc_get = "",
+		name = "Treasures of Hidden Realms",
+		id = 152450,
+		type = 3,
+		max_level = 10,
+		desc = "At the start of battle and every 20s after that, randomly activates one of the following 3 effects:\n1) Increases this ship's FP, RLD, and ACC by $1.\n2) Increases this ship's Torpedo Crit Rate by $1 and Torpedo Crit DMG by $2.\n3) Restores $1 of this ship's Max HP.\nEach effect can only be activated once per battle. When all 3 effects have been activated, this skill will no longer be triggered.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"1.0%",
+				"10.0%"
+			},
+			{
+				"10.0%",
+				"20.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			}
+		}
+	}
 	pg.base.skill_data_template[18010] = {
 		desc_get = "",
 		name = "MKV-Class AP Shells+",
@@ -128281,6 +128539,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[19320] = {
 		desc_get = "",
 		name = "Ausgewogen",
@@ -128673,8 +128933,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[19340] = {
 		desc_get = "",
 		name = "Herteitr's Rolling Thunder",
@@ -136398,7 +136656,7 @@ end)()
 	}
 	pg.base.skill_data_template[20022] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 20022,
 		type = 1,
 		max_level = 1,
@@ -136426,7 +136684,7 @@ end)()
 	}
 	pg.base.skill_data_template[20032] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 20032,
 		type = 1,
 		max_level = 1,
@@ -136454,7 +136712,7 @@ end)()
 	}
 	pg.base.skill_data_template[20042] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 20042,
 		type = 1,
 		max_level = 1,
@@ -136482,7 +136740,7 @@ end)()
 	}
 	pg.base.skill_data_template[20052] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 20052,
 		type = 1,
 		max_level = 1,
@@ -136510,7 +136768,7 @@ end)()
 	}
 	pg.base.skill_data_template[20062] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 20062,
 		type = 1,
 		max_level = 1,
@@ -136538,7 +136796,7 @@ end)()
 	}
 	pg.base.skill_data_template[20072] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 20072,
 		type = 1,
 		max_level = 1,
@@ -136566,7 +136824,7 @@ end)()
 	}
 	pg.base.skill_data_template[20082] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 20082,
 		type = 1,
 		max_level = 1,
@@ -136594,7 +136852,7 @@ end)()
 	}
 	pg.base.skill_data_template[20092] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 20092,
 		type = 1,
 		max_level = 1,
@@ -136622,7 +136880,7 @@ end)()
 	}
 	pg.base.skill_data_template[20112] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 20112,
 		type = 1,
 		max_level = 1,
@@ -136650,7 +136908,7 @@ end)()
 	}
 	pg.base.skill_data_template[20122] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 20122,
 		type = 1,
 		max_level = 1,
@@ -136678,7 +136936,7 @@ end)()
 	}
 	pg.base.skill_data_template[20132] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 20132,
 		type = 1,
 		max_level = 1,
@@ -136720,7 +136978,7 @@ end)()
 	}
 	pg.base.skill_data_template[20142] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 20142,
 		type = 1,
 		max_level = 1,
@@ -136732,6 +136990,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[20211] = {
 		desc_get = "",
 		name = "All Out Assault I",
@@ -136748,7 +137008,7 @@ end)()
 	}
 	pg.base.skill_data_template[20212] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 20212,
 		type = 1,
 		max_level = 1,
@@ -136760,8 +137020,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[20221] = {
 		desc_get = "",
 		name = "All Out Assault I",
@@ -136778,7 +137036,7 @@ end)()
 	}
 	pg.base.skill_data_template[20222] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 20222,
 		type = 1,
 		max_level = 1,
@@ -136806,7 +137064,7 @@ end)()
 	}
 	pg.base.skill_data_template[20232] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 20232,
 		type = 1,
 		max_level = 1,
@@ -136834,7 +137092,7 @@ end)()
 	}
 	pg.base.skill_data_template[20242] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 20242,
 		type = 1,
 		max_level = 1,
@@ -136862,7 +137120,7 @@ end)()
 	}
 	pg.base.skill_data_template[20252] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 20252,
 		type = 1,
 		max_level = 1,
@@ -136890,7 +137148,7 @@ end)()
 	}
 	pg.base.skill_data_template[20262] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 20262,
 		type = 1,
 		max_level = 1,
@@ -136918,7 +137176,7 @@ end)()
 	}
 	pg.base.skill_data_template[20272] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 20272,
 		type = 1,
 		max_level = 1,
@@ -136946,7 +137204,7 @@ end)()
 	}
 	pg.base.skill_data_template[20282] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 20282,
 		type = 1,
 		max_level = 1,
@@ -136974,7 +137232,7 @@ end)()
 	}
 	pg.base.skill_data_template[20312] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 20312,
 		type = 1,
 		max_level = 1,
@@ -137002,7 +137260,7 @@ end)()
 	}
 	pg.base.skill_data_template[20322] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 20322,
 		type = 1,
 		max_level = 1,
@@ -137030,7 +137288,7 @@ end)()
 	}
 	pg.base.skill_data_template[21012] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 21012,
 		type = 1,
 		max_level = 1,
@@ -137058,7 +137316,7 @@ end)()
 	}
 	pg.base.skill_data_template[21017] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 21017,
 		type = 1,
 		max_level = 1,
@@ -137086,7 +137344,7 @@ end)()
 	}
 	pg.base.skill_data_template[21022] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 21022,
 		type = 1,
 		max_level = 1,
@@ -137114,7 +137372,7 @@ end)()
 	}
 	pg.base.skill_data_template[21027] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 21027,
 		type = 1,
 		max_level = 1,
@@ -137142,7 +137400,7 @@ end)()
 	}
 	pg.base.skill_data_template[21032] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 21032,
 		type = 1,
 		max_level = 1,
@@ -137170,7 +137428,7 @@ end)()
 	}
 	pg.base.skill_data_template[21042] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 21042,
 		type = 1,
 		max_level = 1,
@@ -137198,7 +137456,7 @@ end)()
 	}
 	pg.base.skill_data_template[21052] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 21052,
 		type = 1,
 		max_level = 1,
@@ -137226,7 +137484,7 @@ end)()
 	}
 	pg.base.skill_data_template[21062] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 21062,
 		type = 1,
 		max_level = 1,
@@ -137254,7 +137512,7 @@ end)()
 	}
 	pg.base.skill_data_template[21072] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 21072,
 		type = 1,
 		max_level = 1,
@@ -137282,7 +137540,7 @@ end)()
 	}
 	pg.base.skill_data_template[21082] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 21082,
 		type = 1,
 		max_level = 1,
@@ -137310,7 +137568,7 @@ end)()
 	}
 	pg.base.skill_data_template[21092] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 21092,
 		type = 1,
 		max_level = 1,
@@ -137338,7 +137596,7 @@ end)()
 	}
 	pg.base.skill_data_template[21112] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 21112,
 		type = 1,
 		max_level = 1,
@@ -137366,7 +137624,7 @@ end)()
 	}
 	pg.base.skill_data_template[21122] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 21122,
 		type = 1,
 		max_level = 1,
@@ -137394,7 +137652,7 @@ end)()
 	}
 	pg.base.skill_data_template[21132] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 21132,
 		type = 1,
 		max_level = 1,
@@ -137422,7 +137680,7 @@ end)()
 	}
 	pg.base.skill_data_template[21142] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 21142,
 		type = 1,
 		max_level = 1,
@@ -137450,7 +137708,7 @@ end)()
 	}
 	pg.base.skill_data_template[21152] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 21152,
 		type = 1,
 		max_level = 1,
@@ -137478,7 +137736,7 @@ end)()
 	}
 	pg.base.skill_data_template[21162] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 21162,
 		type = 1,
 		max_level = 1,
@@ -137506,7 +137764,7 @@ end)()
 	}
 	pg.base.skill_data_template[21172] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 21172,
 		type = 1,
 		max_level = 1,
@@ -137534,7 +137792,7 @@ end)()
 	}
 	pg.base.skill_data_template[21182] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 21182,
 		type = 1,
 		max_level = 1,
@@ -137562,7 +137820,7 @@ end)()
 	}
 	pg.base.skill_data_template[21192] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 21192,
 		type = 1,
 		max_level = 1,
@@ -137590,7 +137848,7 @@ end)()
 	}
 	pg.base.skill_data_template[21212] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 21212,
 		type = 1,
 		max_level = 1,
@@ -137618,7 +137876,7 @@ end)()
 	}
 	pg.base.skill_data_template[21222] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 21222,
 		type = 1,
 		max_level = 1,
@@ -137646,7 +137904,7 @@ end)()
 	}
 	pg.base.skill_data_template[21232] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 21232,
 		type = 1,
 		max_level = 1,
@@ -137674,7 +137932,7 @@ end)()
 	}
 	pg.base.skill_data_template[21242] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 21242,
 		type = 1,
 		max_level = 1,
@@ -137702,7 +137960,7 @@ end)()
 	}
 	pg.base.skill_data_template[22012] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 22012,
 		type = 1,
 		max_level = 1,
@@ -137730,7 +137988,7 @@ end)()
 	}
 	pg.base.skill_data_template[22022] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 22022,
 		type = 1,
 		max_level = 1,
@@ -137758,7 +138016,7 @@ end)()
 	}
 	pg.base.skill_data_template[22032] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 22032,
 		type = 1,
 		max_level = 1,
@@ -137786,7 +138044,7 @@ end)()
 	}
 	pg.base.skill_data_template[22042] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 22042,
 		type = 1,
 		max_level = 1,
@@ -137814,7 +138072,7 @@ end)()
 	}
 	pg.base.skill_data_template[22052] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 22052,
 		type = 1,
 		max_level = 1,
@@ -137842,7 +138100,7 @@ end)()
 	}
 	pg.base.skill_data_template[22057] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 22057,
 		type = 1,
 		max_level = 1,
@@ -137870,7 +138128,7 @@ end)()
 	}
 	pg.base.skill_data_template[22062] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 22062,
 		type = 1,
 		max_level = 1,
@@ -137898,7 +138156,7 @@ end)()
 	}
 	pg.base.skill_data_template[22072] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 22072,
 		type = 1,
 		max_level = 1,
@@ -137926,7 +138184,7 @@ end)()
 	}
 	pg.base.skill_data_template[22082] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 22082,
 		type = 1,
 		max_level = 1,
@@ -137954,7 +138212,7 @@ end)()
 	}
 	pg.base.skill_data_template[22092] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 22092,
 		type = 1,
 		max_level = 1,
@@ -137982,7 +138240,7 @@ end)()
 	}
 	pg.base.skill_data_template[22112] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 22112,
 		type = 1,
 		max_level = 1,
@@ -138010,7 +138268,7 @@ end)()
 	}
 	pg.base.skill_data_template[22122] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 22122,
 		type = 1,
 		max_level = 1,
@@ -138038,7 +138296,7 @@ end)()
 	}
 	pg.base.skill_data_template[22132] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 22132,
 		type = 1,
 		max_level = 1,
@@ -138066,7 +138324,7 @@ end)()
 	}
 	pg.base.skill_data_template[22142] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 22142,
 		type = 1,
 		max_level = 1,
@@ -138094,7 +138352,7 @@ end)()
 	}
 	pg.base.skill_data_template[22152] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 22152,
 		type = 1,
 		max_level = 1,
@@ -138122,7 +138380,7 @@ end)()
 	}
 	pg.base.skill_data_template[22162] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 22162,
 		type = 1,
 		max_level = 1,
@@ -138134,6 +138392,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[22211] = {
 		desc_get = "",
 		name = "All Out Assault I",
@@ -138150,7 +138410,7 @@ end)()
 	}
 	pg.base.skill_data_template[22212] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 22212,
 		type = 1,
 		max_level = 1,
@@ -138162,8 +138422,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[22221] = {
 		desc_get = "",
 		name = "All Out Assault I",
@@ -138180,7 +138438,7 @@ end)()
 	}
 	pg.base.skill_data_template[22222] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 22222,
 		type = 1,
 		max_level = 1,
@@ -138208,7 +138466,7 @@ end)()
 	}
 	pg.base.skill_data_template[22232] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 22232,
 		type = 1,
 		max_level = 1,
@@ -138236,7 +138494,7 @@ end)()
 	}
 	pg.base.skill_data_template[22242] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 22242,
 		type = 1,
 		max_level = 1,
@@ -138264,7 +138522,7 @@ end)()
 	}
 	pg.base.skill_data_template[22252] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 22252,
 		type = 1,
 		max_level = 1,
@@ -138306,7 +138564,7 @@ end)()
 	}
 	pg.base.skill_data_template[22255] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 22255,
 		type = 1,
 		max_level = 1,
@@ -138334,7 +138592,7 @@ end)()
 	}
 	pg.base.skill_data_template[22262] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 22262,
 		type = 1,
 		max_level = 1,
@@ -138374,6 +138632,34 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+	pg.base.skill_data_template[22281] = {
+		desc_get = "",
+		name = "All Out Assault I",
+		id = 22281,
+		type = 1,
+		max_level = 1,
+		desc = "Activates All Out Assault I: Unzen once every 12 times the Main Guns are fired.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	}
+	pg.base.skill_data_template[22282] = {
+		desc_get = "",
+		name = "All Out Assault II",
+		id = 22282,
+		type = 1,
+		max_level = 1,
+		desc = "Activates All Out Assault II: Unzen once every 8 times the Main Guns are fired.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	}
 	pg.base.skill_data_template[22311] = {
 		desc_get = "",
 		name = "All Out Assault I",
@@ -138390,7 +138676,7 @@ end)()
 	}
 	pg.base.skill_data_template[22312] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 22312,
 		type = 1,
 		max_level = 1,
@@ -138418,7 +138704,7 @@ end)()
 	}
 	pg.base.skill_data_template[22412] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 22412,
 		type = 1,
 		max_level = 1,
@@ -138446,7 +138732,7 @@ end)()
 	}
 	pg.base.skill_data_template[23012] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 23012,
 		type = 1,
 		max_level = 1,
@@ -138474,7 +138760,7 @@ end)()
 	}
 	pg.base.skill_data_template[23022] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 23022,
 		type = 1,
 		max_level = 1,
@@ -138502,7 +138788,7 @@ end)()
 	}
 	pg.base.skill_data_template[23032] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 23032,
 		type = 1,
 		max_level = 1,
@@ -138530,7 +138816,7 @@ end)()
 	}
 	pg.base.skill_data_template[23042] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 23042,
 		type = 1,
 		max_level = 1,
@@ -138558,7 +138844,7 @@ end)()
 	}
 	pg.base.skill_data_template[23052] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 23052,
 		type = 1,
 		max_level = 1,
@@ -138586,7 +138872,7 @@ end)()
 	}
 	pg.base.skill_data_template[23112] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 23112,
 		type = 1,
 		max_level = 1,
@@ -138614,7 +138900,7 @@ end)()
 	}
 	pg.base.skill_data_template[23122] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 23122,
 		type = 1,
 		max_level = 1,
@@ -138642,7 +138928,7 @@ end)()
 	}
 	pg.base.skill_data_template[23132] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 23132,
 		type = 1,
 		max_level = 1,
@@ -138670,7 +138956,7 @@ end)()
 	}
 	pg.base.skill_data_template[23212] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 23212,
 		type = 1,
 		max_level = 1,
@@ -138698,7 +138984,7 @@ end)()
 	}
 	pg.base.skill_data_template[23222] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 23222,
 		type = 1,
 		max_level = 1,
@@ -138726,7 +139012,7 @@ end)()
 	}
 	pg.base.skill_data_template[23232] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 23232,
 		type = 1,
 		max_level = 1,
@@ -138754,7 +139040,7 @@ end)()
 	}
 	pg.base.skill_data_template[23242] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 23242,
 		type = 1,
 		max_level = 1,
@@ -138782,7 +139068,7 @@ end)()
 	}
 	pg.base.skill_data_template[23312] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 23312,
 		type = 1,
 		max_level = 1,
@@ -138810,7 +139096,7 @@ end)()
 	}
 	pg.base.skill_data_template[23322] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 23322,
 		type = 1,
 		max_level = 1,
@@ -138838,7 +139124,7 @@ end)()
 	}
 	pg.base.skill_data_template[23412] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 23412,
 		type = 1,
 		max_level = 1,
@@ -138866,7 +139152,7 @@ end)()
 	}
 	pg.base.skill_data_template[23512] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 23512,
 		type = 1,
 		max_level = 1,
@@ -138894,7 +139180,7 @@ end)()
 	}
 	pg.base.skill_data_template[23612] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 23612,
 		type = 1,
 		max_level = 1,
@@ -138922,7 +139208,7 @@ end)()
 	}
 	pg.base.skill_data_template[24012] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 24012,
 		type = 1,
 		max_level = 1,
@@ -139034,7 +139320,7 @@ end)()
 	}
 	pg.base.skill_data_template[24112] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 24112,
 		type = 1,
 		max_level = 1,
@@ -139062,7 +139348,7 @@ end)()
 	}
 	pg.base.skill_data_template[24122] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 24122,
 		type = 1,
 		max_level = 1,
@@ -139090,7 +139376,7 @@ end)()
 	}
 	pg.base.skill_data_template[24132] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 24132,
 		type = 1,
 		max_level = 1,
@@ -139118,7 +139404,7 @@ end)()
 	}
 	pg.base.skill_data_template[24142] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 24142,
 		type = 1,
 		max_level = 1,
@@ -139174,7 +139460,7 @@ end)()
 	}
 	pg.base.skill_data_template[25012] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 25012,
 		type = 1,
 		max_level = 1,
@@ -139230,7 +139516,7 @@ end)()
 	}
 	pg.base.skill_data_template[25032] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 25032,
 		type = 1,
 		max_level = 1,
@@ -139258,7 +139544,7 @@ end)()
 	}
 	pg.base.skill_data_template[25042] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 25042,
 		type = 1,
 		max_level = 1,
@@ -139286,7 +139572,7 @@ end)()
 	}
 	pg.base.skill_data_template[25212] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 25212,
 		type = 1,
 		max_level = 1,
@@ -139314,7 +139600,7 @@ end)()
 	}
 	pg.base.skill_data_template[25214] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 25214,
 		type = 1,
 		max_level = 1,
@@ -139342,7 +139628,7 @@ end)()
 	}
 	pg.base.skill_data_template[25222] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 25222,
 		type = 1,
 		max_level = 1,
@@ -139370,7 +139656,7 @@ end)()
 	}
 	pg.base.skill_data_template[25232] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 25232,
 		type = 1,
 		max_level = 1,
@@ -139398,7 +139684,7 @@ end)()
 	}
 	pg.base.skill_data_template[25512] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 25512,
 		type = 1,
 		max_level = 1,
@@ -139426,7 +139712,7 @@ end)()
 	}
 	pg.base.skill_data_template[26012] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 26012,
 		type = 1,
 		max_level = 1,
@@ -139454,7 +139740,7 @@ end)()
 	}
 	pg.base.skill_data_template[26022] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 26022,
 		type = 1,
 		max_level = 1,
@@ -139482,7 +139768,7 @@ end)()
 	}
 	pg.base.skill_data_template[26032] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 26032,
 		type = 1,
 		max_level = 1,
@@ -139508,9 +139794,11 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[26112] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 26112,
 		type = 1,
 		max_level = 1,
@@ -139564,11 +139852,9 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[26212] = {
 		desc_get = "",
-		name = "All Out Assault - Tallinn II",
+		name = "All Out Assault II",
 		id = 26212,
 		type = 1,
 		max_level = 1,
@@ -139624,7 +139910,7 @@ end)()
 	}
 	pg.base.skill_data_template[28012] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 28012,
 		type = 1,
 		max_level = 1,
@@ -139652,7 +139938,7 @@ end)()
 	}
 	pg.base.skill_data_template[28022] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 28022,
 		type = 1,
 		max_level = 1,
@@ -139680,7 +139966,7 @@ end)()
 	}
 	pg.base.skill_data_template[28032] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 28032,
 		type = 1,
 		max_level = 1,
@@ -139708,7 +139994,7 @@ end)()
 	}
 	pg.base.skill_data_template[28112] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 28112,
 		type = 1,
 		max_level = 1,
@@ -139736,7 +140022,7 @@ end)()
 	}
 	pg.base.skill_data_template[28122] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 28122,
 		type = 1,
 		max_level = 1,
@@ -139764,7 +140050,7 @@ end)()
 	}
 	pg.base.skill_data_template[28212] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 28212,
 		type = 1,
 		max_level = 1,
@@ -139792,7 +140078,7 @@ end)()
 	}
 	pg.base.skill_data_template[28222] = {
 		desc_get = "",
-		name = "All Out Assault Ⅱ",
+		name = "All Out Assault II",
 		id = 28222,
 		type = 1,
 		max_level = 1,
@@ -140910,6 +141196,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[29302] = {
 		desc_get = "",
 		name = "Future Content ",
@@ -140968,8 +141256,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[29322] = {
 		desc_get = "",
 		name = "All Out Assault Ⅱ",
@@ -142320,6 +142606,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[29821] = {
 		desc_get = "",
 		name = "All Out Assault I",
@@ -142376,8 +142664,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[29841] = {
 		desc_get = "",
 		name = "All Out Assault I",
@@ -143722,6 +144008,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[30351] = {
 		desc_get = "",
 		name = "All Out Assault I",
@@ -143778,8 +144066,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[30371] = {
 		desc_get = "",
 		name = "All Out Assault I",
@@ -148637,6 +148923,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[106090] = {
 		desc_get = "",
 		name = "Not-So-Gentle Sister",
@@ -148998,8 +149286,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[106130] = {
 		desc_get = "",
 		name = "Dance of the Heavens",
@@ -157745,6 +158031,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[108350] = {
 		desc_get = "",
 		name = "Dragon Figurine",
@@ -157801,8 +158089,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[108440] = {
 		desc_get = "",
 		name = "Buster Borr Upgrade",
@@ -166066,6 +166352,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[112070] = {
 		desc_get = "",
 		name = "Trial of Death+",
@@ -166389,8 +166677,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[112110] = {
 		desc_get = "",
 		name = "One Step Toward Tomorrow",
@@ -173015,6 +173301,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[800260] = {
 		desc_get = "",
 		name = "Seething Chains",
@@ -173349,8 +173637,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[800292] = {
 		desc_get = "",
 		name = "Cinders of Hope - Gneisenau II",
@@ -177890,6 +178176,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[800817] = {
 		desc_get = "",
 		name = "All Out Assault II",
@@ -178134,8 +178422,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[800842] = {
 		desc_get = "",
 		name = "Framework of Logic – Vestal II",
@@ -183182,6 +183468,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[801370] = {
 		desc_get = "",
 		name = "The Rain Weaves and Disperses",
@@ -183282,8 +183570,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[801387] = {
 		desc_get = "",
 		name = "Smoldering Core - Nagato II",
@@ -188692,6 +188978,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[801932] = {
 		desc_get = "",
 		name = "Ashen Might - Dewey II",
@@ -188891,8 +189179,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[801950] = {
 		desc_get = "",
 		name = "Tragedy's Ward",
@@ -191208,6 +191494,354 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+	pg.base.skill_data_template[802180] = {
+		desc_get = "",
+		name = "Disciplinary Whip",
+		id = 802180,
+		type = 3,
+		max_level = 10,
+		desc = "At the start of battle, increases your Vanguard's RLD by $1. During a sortie, for each enemy fleet sunk by the fleet this ship is in: increases this ship's FP and TRP by $2 (can be stacked up to 3 times).\nEvery 20s: fires a $3 special barrage (DMG is based on the skill's level) that inflicts Disciplinary Mark to enemies hit. Enemies with Disciplinary Mark receive $4 increased DMG from your Vanguard.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"10.0%",
+				"15.0%"
+			},
+			{
+				"1.0%",
+				"5.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"4.5%",
+				"12.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"10.0%",
+					"+0.5%"
+				},
+				{
+					"10.5%",
+					"+0.5%"
+				},
+				{
+					"11.0%",
+					"+0.5%"
+				},
+				{
+					"11.5%",
+					"+0.5%"
+				},
+				{
+					"12.0%",
+					"+0.5%"
+				},
+				{
+					"12.5%",
+					"+0.5%"
+				},
+				{
+					"13.0%",
+					"+0.5%"
+				},
+				{
+					"13.5%",
+					"+0.5%"
+				},
+				{
+					"14.0%",
+					"+1%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+0.4%"
+				},
+				{
+					"1.4%",
+					"+0.4%"
+				},
+				{
+					"1.8%",
+					"+0.4%"
+				},
+				{
+					"2.2%",
+					"+0.4%"
+				},
+				{
+					"2.6%",
+					"+0.4%"
+				},
+				{
+					"3.0%",
+					"+0.5%"
+				},
+				{
+					"3.5%",
+					"+0.5%"
+				},
+				{
+					"4.0%",
+					"+0.5%"
+				},
+				{
+					"4.5%",
+					"+0.5%"
+				},
+				{
+					"5.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"4.5%",
+					"+0.7%"
+				},
+				{
+					"5.2%",
+					"+0.8%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+0.7%"
+				},
+				{
+					"7.7%",
+					"+0.8%"
+				},
+				{
+					"8.5%",
+					"+1.0%"
+				},
+				{
+					"9.5%",
+					"+0.7%"
+				},
+				{
+					"10.2%",
+					"+0.8%"
+				},
+				{
+					"11.0%",
+					"+1.0%"
+				},
+				{
+					"12.0%"
+				}
+			}
+		}
+	}
+	pg.base.skill_data_template[802190] = {
+		desc_get = "",
+		name = "Protective Apparatus",
+		id = 802190,
+		type = 2,
+		max_level = 10,
+		desc = "Every 15s after the start of battle: deploys a shield that can block up to $1 enemy projectiles, lasting up to 8s. If there is an enemy with Disciplinary Mark when this shield is deployed, also deploys a shield for a random Vanguard member that can negate DMG equal to $2 of the recipient's Max HP, lasting up to 8s.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"2",
+				"8"
+			},
+			{
+				"1.0%",
+				"5.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"2"
+				},
+				{
+					"3"
+				},
+				{
+					"4"
+				},
+				{
+					"5"
+				},
+				{
+					"6"
+				},
+				{
+					"6"
+				},
+				{
+					"7"
+				},
+				{
+					"7"
+				},
+				{
+					"8"
+				},
+				{
+					"8"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+0.4%"
+				},
+				{
+					"1.4%",
+					"+0.4%"
+				},
+				{
+					"1.8%",
+					"+0.4%"
+				},
+				{
+					"2.2%",
+					"+0.4%"
+				},
+				{
+					"2.6%",
+					"+0.4%"
+				},
+				{
+					"3.0%",
+					"+0.5%"
+				},
+				{
+					"3.5%",
+					"+0.5%"
+				},
+				{
+					"4.0%",
+					"+0.5%"
+				},
+				{
+					"4.5%",
+					"+0.5%"
+				},
+				{
+					"5.0%"
+				}
+			}
+		}
+	}
+	pg.base.skill_data_template[802201] = {
+		desc_get = "",
+		name = "Cinders of Hope - Königsberg I",
+		id = 802201,
+		type = 1,
+		max_level = 1,
+		desc = "Every 12 times this ship fires her Main Guns: fires a special barrage.",
+		system_transform = {
+			[51] = 802205
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	}
+	pg.base.skill_data_template[802202] = {
+		desc_get = "",
+		name = "Cinders of Hope - Königsberg II",
+		id = 802202,
+		type = 1,
+		max_level = 1,
+		desc = "Every 8 times this ship fires her Main Guns: fires a special barrage.",
+		system_transform = {
+			[51] = 802207
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	}
+	pg.base.skill_data_template[802205] = {
+		desc_get = "",
+		name = "Cinders of Hope - Königsberg I",
+		id = 802205,
+		type = 1,
+		max_level = 1,
+		desc = "[Operation Siren]\nEvery 12 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Sirens or Boss fleets: increases this ship's DMG dealt by 2.0%.",
+		system_transform = {
+			[51] = 802205
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	}
+	pg.base.skill_data_template[802207] = {
+		desc_get = "",
+		name = "Cinders of Hope - Königsberg II",
+		id = 802207,
+		type = 1,
+		max_level = 1,
+		desc = "[Operation Siren]\nEvery 8 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Sirens or Boss fleets: increases this ship's DMG dealt by 5.0%.",
+		system_transform = {
+			[51] = 802207
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	}
 	pg.base.skill_data_template[802210] = {
 		desc_get = "",
 		name = "Leave it to Elbe!",
@@ -191990,6 +192624,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[1010140] = {
 		desc_get = "",
 		name = "Eagle's Tears+",
@@ -193378,8 +194014,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[1010340] = {
 		desc_get = "",
 		name = "Armored Carrier+",
@@ -205301,6 +205935,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[1011390] = {
 		desc_get = "",
 		name = "Silent Hunter+",
@@ -206932,8 +207568,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[1012910] = {
 		desc_get = "",
 		name = "Destroyer Division 6: Hibiki+",

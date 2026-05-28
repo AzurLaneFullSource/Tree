@@ -92,6 +92,8 @@ pg.pay_data_display.all = {
 	9015,
 	9016,
 	9017,
+	9018,
+	9019,
 	100,
 	101,
 	102,
@@ -188,6 +190,7 @@ pg.pay_data_display.all = {
 	1025,
 	1026,
 	1027,
+	1028,
 	1301,
 	2001,
 	2002,
@@ -11045,6 +11048,274 @@ pg.base.pay_data_display = {}
 			}
 		}
 	}
+	pg.base.pay_data_display[9018] = {
+		limit_group = 0,
+		name = "Swimsuit Lucky Bag 2026 B",
+		descrip_extra = "*The contents of the Lucky Bag will be sent to your in-game inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
+		type = 1,
+		second_text = "Many Rewards",
+		type_order = 2,
+		subject = "Swimsuit Lucky Bag 2026 B",
+		first_text = "Random Skin & Abundant Gems",
+		limit_arg = 1,
+		tip = "",
+		money = 2999,
+		tip_open = 0,
+		tag = 2,
+		id = 9018,
+		gem = 0,
+		name_display = "Swimsuit Lucky Bag 2026 B",
+		package_sort_id = 0,
+		limit_type = 2,
+		akashi_pick = 1,
+		extra_service = 3,
+		package_tag = "",
+		picture = "fudai36",
+		show_group = "",
+		skin_inquire_relation = 86228,
+		package_tag_open = 0,
+		id_str = "com.yostaren.azurlane.luckybag87",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains 1 random skin, 2026 Gems, and supplies.",
+		airijp_id = "com.yostaren.azurlane.luckybag87",
+		extra_service_item = {
+			{
+				2,
+				86228,
+				1
+			},
+			{
+				1,
+				14,
+				2026
+			},
+			{
+				2,
+				42076,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					5,
+					28
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					6,
+					11
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				42076,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81236,
+				1
+			}
+		},
+		first_icon = {
+			{
+				2,
+				86228,
+				1
+			},
+			{
+				1,
+				14,
+				2026
+			}
+		}
+	}
+	pg.base.pay_data_display[9019] = {
+		limit_group = 0,
+		name = "Swimsuit Lucky Bag 2025 B Rerun",
+		descrip_extra = "*The contents of the Lucky Bag will be sent to your in-game inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
+		type = 1,
+		second_text = "Many Rewards",
+		type_order = 2,
+		subject = "Swimsuit Lucky Bag 2025 B Rerun",
+		first_text = "Random Skin & Abundant Gems",
+		limit_arg = 1,
+		tip = "",
+		money = 2999,
+		tip_open = 0,
+		tag = 2,
+		id = 9019,
+		gem = 0,
+		name_display = "Swimsuit Lucky Bag 2025 B Rerun",
+		package_sort_id = 0,
+		limit_type = 2,
+		akashi_pick = 1,
+		extra_service = 3,
+		package_tag = "",
+		picture = "fudai25",
+		show_group = "",
+		skin_inquire_relation = 86214,
+		package_tag_open = 0,
+		id_str = "com.yostaren.azurlane.luckybag88",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains a random Swimsuit Lucky Bag 2025 A skin, 2025 Gems, and a large amount of supplies.",
+		airijp_id = "com.yostaren.azurlane.luckybag88",
+		extra_service_item = {
+			{
+				2,
+				86214,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			},
+			{
+				2,
+				42066,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					5,
+					28
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					6,
+					11
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				42066,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81214,
+				1
+			}
+		},
+		first_icon = {
+			{
+				2,
+				86214,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			}
+		}
+	}
 	pg.base.pay_data_display[100] = {
 		limit_group = 0,
 		name = "Nep's Lucky Bag ",
@@ -12160,6 +12431,8 @@ pg.base.pay_data_display = {}
 		limit_args = {},
 		drop_item = {}
 	}
+end)()
+;(function()
 	pg.base.pay_data_display[110] = {
 		limit_group = 0,
 		name = "Scherzo Lucky Box ",
@@ -12384,8 +12657,6 @@ pg.base.pay_data_display = {}
 		limit_args = {},
 		drop_item = {}
 	}
-end)()
-;(function()
 	pg.base.pay_data_display[112] = {
 		limit_group = 0,
 		name = "Yukata Lucky Bag",
@@ -21653,6 +21924,91 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
+	pg.base.pay_data_display[1028] = {
+		limit_group = 0,
+		name = "Fair Winds Cruise Pass (2026.6)",
+		descrip_extra = "You must complete certain missions to obtain these rewards.",
+		type = 0,
+		second_text = "Unlock Special Rewards",
+		type_order = 6,
+		subject = "Fair Winds Cruise Pass",
+		first_text = "",
+		first_icon = "",
+		limit_arg = 1,
+		money = 999,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		id = 1028,
+		name_display = "Fair Winds Cruise Pass",
+		limit_type = 2,
+		package_sort_id = 0,
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "battlepass_1",
+		extra_service = 4,
+		skin_inquire_relation = 0,
+		show_group = "",
+		id_str = "com.yostaren.azurlane.passport32",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Purchase to immediately gain 1,500 Progress Points, and also unlock additional Fair Winds Cruise rewards.",
+		package_tag_open = 0,
+		airijp_id = "com.yostaren.azurlane.passport32",
+		extra_service_item = {
+			{
+				1,
+				4029,
+				1500
+			},
+			{
+				8,
+				65117,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					6,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					7,
+					31
+				},
+				{
+					22,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				8,
+				59599,
+				1500
+			}
+		},
+		sub_display = {
+			7029,
+			1500
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	}
 	pg.base.pay_data_display[1301] = {
 		limit_group = 0,
 		name = "Black Friday Cruise Pass",
@@ -22720,6 +23076,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.pay_data_display[2015] = {
 		limit_group = 3,
 		name = "PR Construction Pack - Series 3",
@@ -22924,8 +23282,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.pay_data_display[2018] = {
 		limit_group = 3,
 		name = "PR Blueprint Pack - Series 3",

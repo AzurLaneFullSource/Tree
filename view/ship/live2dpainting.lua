@@ -1096,11 +1096,21 @@ function var0_0.enablePlayAction(arg0_48, arg1_48)
 end
 
 function var0_0.IgonreReactPos(arg0_49, arg1_49)
+	arg0_49.lockReact = arg1_49
+
 	arg0_49:setReactPos(arg1_49)
 end
 
 function var0_0.setReactPos(arg0_50, arg1_50)
 	if arg0_50.liveCom then
+		if arg0_50.lockReact then
+			if arg0_50.ignoreReact == arg0_50.lockReact then
+				return
+			end
+
+			arg1_50 = arg0_50.lockReact
+		end
+
 		arg0_50.ignoreReact = arg1_50
 
 		arg0_50.liveCom:IgonreReactPos(arg1_50)

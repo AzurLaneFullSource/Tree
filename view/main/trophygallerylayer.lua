@@ -45,6 +45,8 @@ function var0_0.init(arg0_4)
 	arg0_4._pageIndex = arg0_4.contextData.index or 1
 	arg0_4._hideExpire = false
 	arg0_4._trophyTFList = {}
+	arg0_4._trophyViewCache = {}
+	arg0_4._trophyMatCache = {}
 	arg0_4.cardItems = {}
 	arg0_4.cardList = arg0_4.rtScrollContent:GetComponent("LScrollRect")
 
@@ -59,243 +61,310 @@ function var0_0.init(arg0_4)
 	function arg0_4.cardList.onReturnItem(arg0_7, arg1_7)
 		arg0_4:onReturnCard(arg0_7, arg1_7)
 	end
+
+	arg0_4._loader = AutoLoader.New()
 end
 
-function var0_0.didEnter(arg0_8)
-	arg0_8:OverlayPanel(arg0_8._tf)
-	onButton(arg0_8, arg0_8._backBtn, function()
-		arg0_8:emit(var0_0.ON_CLOSE)
+function var0_0.checkTrophyVisible(arg0_8, arg1_8, arg2_8, arg3_8)
+	if arg1_8:GetTrophyPage() ~= arg2_8 then
+		return false
+	end
+
+	local var0_8 = false
+
+	if arg3_8 == "all" then
+		var0_8 = true
+	elseif arg3_8 == "claimed" then
+		var0_8 = arg1_8:getMaxClaimedTrophy() ~= nil
+	end
+
+	if arg2_8 == var0_0.PAGE_LIMITED and arg0_8._hideExpire and arg1_8:IsExpire() == 1 and not arg1_8:getProgressTrophy():isClaimed() then
+		var0_8 = false
+	end
+
+	return var0_8
+end
+
+function var0_0.ensureTrophyViewCache(arg0_9, arg1_9)
+	local var0_9 = arg0_9._trophyViewCache[arg1_9]
+
+	if var0_9 then
+		return var0_9
+	end
+
+	local var1_9 = cloneTplTo(arg0_9._trophyUpperTpl, arg0_9._trophyContainer)
+	local var2_9 = cloneTplTo(arg0_9._trophyLowerTpl, arg0_9._trophyContainer)
+	local var3_9 = TrophyView.New(var1_9)
+	local var4_9 = TrophyView.New(var2_9)
+
+	local function var5_9()
+		local var0_10 = arg0_9.trophyGroups[arg1_9]
+		local var1_10 = var0_10:getProgressTrophy()
+		local var2_10 = arg0_9._trophyTFList[arg1_9]
+
+		if not var2_10 then
+			return
+		end
+
+		if var1_10:canClaimed() and not var1_10:isClaimed() then
+			if not var2_10:IsPlaying() then
+				arg0_9:emit(TrophyGalleryMediator.ON_TROPHY_CLAIM, var1_10.id)
+			end
+		elseif not var2_10:IsPlaying() then
+			arg0_9:openTrophyDetail(var0_10, var1_10)
+		end
+	end
+
+	onButton(arg0_9, var1_9.transform:Find("frame"), var5_9)
+	onButton(arg0_9, var2_9.transform:Find("frame"), var5_9)
+	setActive(var1_9, false)
+	setActive(var2_9, false)
+
+	local var6_9 = {
+		upperGO = var1_9,
+		lowerGO = var2_9,
+		upperView = var3_9,
+		lowerView = var4_9
+	}
+
+	arg0_9._trophyViewCache[arg1_9] = var6_9
+
+	return var6_9
+end
+
+function var0_0.updateTrophyViewByFilter(arg0_11, arg1_11, arg2_11, arg3_11)
+	if arg3_11 == "all" then
+		arg1_11:UpdateTrophyGroup(arg2_11)
+	elseif arg3_11 == "claimed" then
+		arg1_11:ClaimForm(arg2_11)
+	elseif arg3_11 == "unclaim" then
+		arg1_11:ProgressingForm(arg2_11)
+	end
+end
+
+function var0_0.updateTrophyReminderMaterial(arg0_12, arg1_12)
+	local var0_12 = arg1_12:GetTrophyClaimTipsID()
+	local var1_12 = arg0_12._trophyMatCache[var0_12]
+
+	if var1_12 then
+		arg1_12:SetTrophyReminderMaterial(var1_12)
+
+		return
+	end
+
+	local var2_12 = "artresource/effect/xunzhang/materials/" .. var0_12
+
+	if checkABExist(var2_12) then
+		arg0_12._loader:LoadBundle(var2_12, function(arg0_13)
+			local var0_13 = arg0_13:LoadAssetSync(var0_12, typeof(Material), false, false)
+
+			arg0_12._trophyMatCache[var0_12] = var0_13
+
+			arg1_12:SetTrophyReminderMaterial(var0_13)
+		end)
+	end
+end
+
+function var0_0.didEnter(arg0_14)
+	arg0_14:OverlayPanel(arg0_14._tf)
+	onButton(arg0_14, arg0_14._backBtn, function()
+		arg0_14:emit(var0_0.ON_CLOSE)
 	end, SFX_CANCEL)
-	onButton(arg0_8, arg0_8._filterBtn, function()
-		arg0_8:onFilter()
+	onButton(arg0_14, arg0_14._filterBtn, function()
+		arg0_14:onFilter()
 	end, SFX_PANEL)
-	onButton(arg0_8, arg0_8._helpBtn, function()
+	onButton(arg0_14, arg0_14._helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.medal_help_tip.tip
 		})
 	end, SFX_PANEL)
-	onButton(arg0_8, arg0_8._hideExpireBtn, function()
-		arg0_8._hideExpire = not arg0_8._hideExpire
+	onButton(arg0_14, arg0_14._hideExpireBtn, function()
+		arg0_14._hideExpire = not arg0_14._hideExpire
 
-		setActive(arg0_8._hideExpireCheck, not arg0_8._hideExpire)
-		arg0_8:updateTrophyList()
+		setActive(arg0_14._hideExpireCheck, not arg0_14._hideExpire)
+		arg0_14:updateTrophyList()
 	end, SFX_PANEL)
-	triggerButton(arg0_8._hideExpireBtn)
+	triggerButton(arg0_14._hideExpireBtn)
 
-	for iter0_8, iter1_8 in ipairs(arg0_8._pageToggle) do
-		onButton(arg0_8, iter1_8, function()
-			arg0_8:updatePage(iter0_8)
+	for iter0_14, iter1_14 in ipairs(arg0_14._pageToggle) do
+		onButton(arg0_14, iter1_14, function()
+			arg0_14:updatePage(iter0_14)
 		end, SFX_PANEL)
 	end
 
-	pg.EasyRedDotMgr.GetInstance():RegisterRedDot(arg0_8.toggleLoveLetter:Find("tip"), {
+	pg.EasyRedDotMgr.GetInstance():RegisterRedDot(arg0_14.toggleLoveLetter:Find("tip"), {
 		"love_letter_level_up",
 		"love_letter_level_reward"
-	}, function(arg0_14)
-		local var0_14 = getProxy(LoveLetterProxy)
+	}, function(arg0_20)
+		local var0_20 = getProxy(LoveLetterProxy)
 
-		setActive(arg0_14, var0_14:IsTipLevelUp() or var0_14:IsTipAllLevelReward())
+		setActive(arg0_20, var0_20:IsTipLevelUp() or var0_20:IsTipAllLevelReward())
 	end)
-	pg.EasyRedDotMgr.GetInstance():RegisterRedDot(arg0_8.rtCountLevelPanel:Find("info/icon/tip"), {
+	pg.EasyRedDotMgr.GetInstance():RegisterRedDot(arg0_14.rtCountLevelPanel:Find("info/icon/tip"), {
 		"love_letter_level_up",
 		"love_letter_level_reward"
-	}, function(arg0_15)
-		setActive(arg0_15, getProxy(LoveLetterProxy):IsTipAllLevelReward())
+	}, function(arg0_21)
+		setActive(arg0_21, getProxy(LoveLetterProxy):IsTipAllLevelReward())
 	end)
 
-	arg0_8._filterIndex = 0
+	arg0_14._filterIndex = 0
 
-	triggerButton(arg0_8._filterBtn)
-	triggerButton(arg0_8._pageToggle[arg0_8._pageIndex])
-	arg0_8:updateTrophyCounter()
+	triggerButton(arg0_14._filterBtn)
+	triggerButton(arg0_14._pageToggle[arg0_14._pageIndex])
+	arg0_14:updateTrophyCounter()
 end
 
-function var0_0.updatePage(arg0_16, arg1_16)
-	for iter0_16, iter1_16 in ipairs(arg0_16._pageToggle) do
-		setActive(iter1_16:Find("selected"), iter0_16 == arg1_16)
-		setActive(iter1_16:Find("Image"), iter0_16 ~= arg1_16)
+function var0_0.updatePage(arg0_22, arg1_22)
+	for iter0_22, iter1_22 in ipairs(arg0_22._pageToggle) do
+		setActive(iter1_22:Find("selected"), iter0_22 == arg1_22)
+		setActive(iter1_22:Find("Image"), iter0_22 ~= arg1_22)
 	end
 
-	arg0_16._pageIndex = arg1_16
+	arg0_22._pageIndex = arg1_22
 
-	local var0_16 = arg1_16 == 3
+	local var0_22 = arg1_22 == 3
 
-	setActive(arg0_16._center, not var0_16)
-	setActive(arg0_16._topPanel:Find("filter"), not var0_16)
-	setActive(arg0_16.rtLoveLetterPanel, var0_16)
-	setActive(arg0_16.rtCountLevelPanel, var0_16)
-	setActive(arg0_16.rtCountLevelBg, var0_16)
+	setActive(arg0_22._center, not var0_22)
+	setActive(arg0_22._topPanel:Find("filter"), not var0_22)
+	setActive(arg0_22.rtLoveLetterPanel, var0_22)
+	setActive(arg0_22.rtCountLevelPanel, var0_22)
+	setActive(arg0_22.rtCountLevelBg, var0_22)
 
-	if var0_16 then
-		arg0_16:updateLoveLetterPage()
+	if var0_22 then
+		arg0_22:updateLoveLetterPage()
 	else
-		arg0_16:updateTrophyList()
+		arg0_22:updateTrophyList()
 	end
 
-	setActive(arg0_16._hideExpireBtn, arg1_16 == var0_0.PAGE_LIMITED)
+	setActive(arg0_22._hideExpireBtn, arg1_22 == var0_0.PAGE_LIMITED)
 end
 
-function var0_0.updateTrophyList(arg0_17)
-	arg0_17._trophyTFList = {}
+function var0_0.updateTrophyList(arg0_23)
+	arg0_23._trophyTFList = {}
 
-	removeAllChildren(arg0_17._trophyContainer)
+	for iter0_23, iter1_23 in pairs(arg0_23._trophyViewCache) do
+		setActive(iter1_23.upperGO, false)
+		setActive(iter1_23.lowerGO, false)
+	end
 
-	local var0_17 = var0_0.Filter[arg0_17._filterIndex]
-	local var1_17 = arg0_17._pageIndex
-	local var2_17 = 0
+	local var0_23 = var0_0.Filter[arg0_23._filterIndex]
+	local var1_23 = arg0_23._pageIndex
+	local var2_23 = 1
 
-	for iter0_17, iter1_17 in pairs(arg0_17.trophyGroups) do
-		if iter1_17:GetTrophyPage() == var1_17 then
-			local var3_17
+	for iter2_23, iter3_23 in pairs(arg0_23.trophyGroups) do
+		if arg0_23:checkTrophyVisible(iter3_23, var1_23, var0_23) then
+			local var3_23 = arg0_23:ensureTrophyViewCache(iter2_23)
+			local var4_23 = math.fmod(var2_23, 2) == 1
+			local var5_23 = var4_23 and var3_23.upperGO or var3_23.lowerGO
+			local var6_23 = var4_23 and var3_23.lowerGO or var3_23.upperGO
+			local var7_23 = var4_23 and var3_23.upperView or var3_23.lowerView
 
-			if var0_17 == "all" then
-				var3_17 = true
-			elseif var0_17 == "claimed" then
-				var3_17 = iter1_17:getMaxClaimedTrophy() ~= nil
-			end
+			setActive(var5_23, true)
+			setActive(var6_23, false)
+			var5_23.transform:SetSiblingIndex(var2_23 - 1)
+			arg0_23:updateTrophyViewByFilter(var7_23, iter3_23, var0_23)
+			arg0_23:updateTrophyReminderMaterial(var7_23)
 
-			if var1_17 == var0_0.PAGE_LIMITED and arg0_17._hideExpire and iter1_17:IsExpire() == 1 and not iter1_17:getProgressTrophy():isClaimed() then
-				var3_17 = false
-			end
-
-			if var3_17 then
-				local var4_17
-
-				if math.fmod(var2_17, 2) == 0 then
-					var4_17 = arg0_17._trophyUpperTpl
-				else
-					var4_17 = arg0_17._trophyLowerTpl
-				end
-
-				local var5_17 = cloneTplTo(var4_17, arg0_17._trophyContainer)
-				local var6_17 = TrophyView.New(var5_17)
-
-				if var0_17 == "all" then
-					var6_17:UpdateTrophyGroup(iter1_17)
-				elseif var0_17 == "claimed" then
-					var6_17:ClaimForm(iter1_17)
-				elseif var0_17 == "unclaim" then
-					var6_17:ProgressingForm(iter1_17)
-				end
-
-				local var7_17 = var6_17:GetTrophyClaimTipsID()
-
-				var6_17:SetTrophyReminder(Instantiate(arg0_17._reminderRes:Find(var7_17)))
-
-				arg0_17._trophyTFList[iter0_17] = var6_17
-				var2_17 = var2_17 + 1
-
-				onButton(arg0_17, var5_17.transform:Find("frame"), function()
-					local var0_18 = arg0_17.trophyGroups[iter0_17]
-					local var1_18 = var0_18:getProgressTrophy()
-
-					if var1_18:canClaimed() and not var1_18:isClaimed() then
-						if not var6_17:IsPlaying() then
-							arg0_17:emit(TrophyGalleryMediator.ON_TROPHY_CLAIM, var1_18.id)
-						end
-					elseif not var6_17:IsPlaying() then
-						arg0_17:openTrophyDetail(var0_18, var1_18)
-					end
-				end)
-			end
+			arg0_23._trophyTFList[iter2_23] = var7_23
+			var2_23 = var2_23 + 1
 		end
 	end
 end
 
-function var0_0.PlayTrophyClaim(arg0_19, arg1_19)
-	local var0_19 = arg0_19.trophyGroups[arg1_19]
-	local var1_19 = arg0_19._trophyTFList[arg1_19]
-	local var2_19 = Instantiate(arg0_19._reminderRes:Find("claim_fx"))
+function var0_0.PlayTrophyClaim(arg0_24, arg1_24)
+	local var0_24 = arg0_24.trophyGroups[arg1_24]
+	local var1_24 = arg0_24._trophyTFList[arg1_24]
+	local var2_24 = Instantiate(arg0_24._reminderRes:Find("claim_fx"))
 
-	var1_19:PlayClaimAnima(var0_19, var2_19, function()
-		arg0_19:updateTrophyByGroup(arg1_19)
-		arg0_19:updateTrophyCounter()
+	var1_24:PlayClaimAnima(var0_24, var2_24, function()
+		arg0_24:updateTrophyByGroup(arg1_24)
+		arg0_24:updateTrophyCounter()
 	end)
 end
 
-function var0_0.updateTrophyByGroup(arg0_21, arg1_21)
-	local var0_21 = arg0_21.trophyGroups[arg1_21]
+function var0_0.updateTrophyByGroup(arg0_26, arg1_26)
+	local var0_26 = arg0_26.trophyGroups[arg1_26]
 
-	arg0_21._trophyTFList[arg1_21]:UpdateTrophyGroup(var0_21)
+	arg0_26._trophyTFList[arg1_26]:UpdateTrophyGroup(var0_26)
 end
 
-function var0_0.openTrophyDetail(arg0_22, arg1_22, arg2_22)
-	arg0_22._trophyDetailPanel:SetTrophyGroup(arg1_22)
-	arg0_22._trophyDetailPanel:UpdateTrophy(arg2_22)
-	arg0_22._trophyDetailPanel:SetActive(true)
+function var0_0.openTrophyDetail(arg0_27, arg1_27, arg2_27)
+	arg0_27._trophyDetailPanel:SetTrophyGroup(arg1_27)
+	arg0_27._trophyDetailPanel:UpdateTrophy(arg2_27)
+	arg0_27._trophyDetailPanel:SetActive(true)
 end
 
-function var0_0.updateTrophyCounter(arg0_23)
-	local var0_23 = 0
+function var0_0.updateTrophyCounter(arg0_28)
+	local var0_28 = 0
 
-	for iter0_23, iter1_23 in pairs(arg0_23.trophyList) do
-		if iter1_23:isClaimed() and not iter1_23:isHide() then
-			var0_23 = var0_23 + 1
+	for iter0_28, iter1_28 in pairs(arg0_28.trophyList) do
+		if iter1_28:isClaimed() and not iter1_28:isHide() then
+			var0_28 = var0_28 + 1
 		end
 	end
 
-	setText(arg0_23._trophyCounter, var0_23)
+	setText(arg0_28._trophyCounter, var0_28)
 end
 
-function var0_0.onFilter(arg0_24)
-	arg0_24._filterIndex = arg0_24._filterIndex + 1
+function var0_0.onFilter(arg0_29)
+	arg0_29._filterIndex = arg0_29._filterIndex + 1
 
-	if arg0_24._filterIndex > #var0_0.Filter then
-		arg0_24._filterIndex = 1
+	if arg0_29._filterIndex > #var0_0.Filter then
+		arg0_29._filterIndex = 1
 	end
 
-	for iter0_24 = 1, #var0_0.Filter do
-		setActive(arg0_24._filterBtn:GetChild(iter0_24 - 1), iter0_24 == arg0_24._filterIndex)
+	for iter0_29 = 1, #var0_0.Filter do
+		setActive(arg0_29._filterBtn:GetChild(iter0_29 - 1), iter0_29 == arg0_29._filterIndex)
 	end
 
-	arg0_24:updateTrophyList()
+	arg0_29:updateTrophyList()
 end
 
-function var0_0.updateLoveLetterPage(arg0_25)
-	if not arg0_25.contextData.checkRalizeGift then
-		arg0_25.contextData.checkRalizeGift = true
+function var0_0.updateLoveLetterPage(arg0_30)
+	if not arg0_30.contextData.checkRalizeGift then
+		arg0_30.contextData.checkRalizeGift = true
 
 		if getProxy(LoveLetterProxy):IsTipRealizeGift() then
-			arg0_25:emit(TrophyGalleryMediator.OPEN_REALIZE_GIFT_LAYER)
+			arg0_30:emit(TrophyGalleryMediator.OPEN_REALIZE_GIFT_LAYER)
 		end
 	end
 
-	arg0_25.cardInfos = getProxy(LoveLetterProxy):GetDisplayGroupList()
+	arg0_30.cardInfos = getProxy(LoveLetterProxy):GetDisplayGroupList()
 
-	arg0_25.cardList:SetTotalCount(#arg0_25.cardInfos, -1)
+	arg0_30.cardList:SetTotalCount(#arg0_30.cardInfos, -1)
 
-	local var0_25 = getProxy(LoveLetterProxy)
-	local var1_25 = arg0_25.rtCountLevelPanel:Find("info")
+	local var0_30 = getProxy(LoveLetterProxy)
+	local var1_30 = arg0_30.rtCountLevelPanel:Find("info")
 
-	setText(var1_25:Find("word"), i18n("loveactivity_ui_10"))
+	setText(var1_30:Find("word"), i18n("loveactivity_ui_10"))
 
-	local var2_25 = var0_25:GetAllLevel()
+	local var2_30 = var0_30:GetAllLevel()
 
-	setText(var1_25:Find("count"), var2_25)
+	setText(var1_30:Find("count"), var2_30)
 
-	local var3_25, var4_25 = var0_25:GetAllLevelProgress()
+	local var3_30, var4_30 = var0_30:GetAllLevelProgress()
 
-	if var4_25 == 0 then
-		setSlider(var1_25:Find("Slider"), 0, 1, 1)
+	if var4_30 == 0 then
+		setSlider(var1_30:Find("Slider"), 0, 1, 1)
 	else
-		setSlider(var1_25:Find("Slider"), 0, var4_25, var3_25)
+		setSlider(var1_30:Find("Slider"), 0, var4_30, var3_30)
 	end
 
-	setText(var1_25:Find("Slider/Text"), var3_25 .. "/" .. var4_25)
+	setText(var1_30:Find("Slider/Text"), var3_30 .. "/" .. var4_30)
 
-	local var5_25 = var0_25:GetAllLevelNextAward()
+	local var5_30 = var0_30:GetAllLevelNextAward()
 
-	updateDrop(var1_25:Find("icon/mask/IconTpl"), var5_25[1])
-	onButton(arg0_25, var1_25:Find("icon/mask/IconTpl"), function()
-		arg0_25:emit(BaseUI.ON_DROP, drop[1])
+	updateDrop(var1_30:Find("icon/mask/IconTpl"), var5_30[1])
+	onButton(arg0_30, var1_30:Find("icon/mask/IconTpl"), function()
+		arg0_30:emit(BaseUI.ON_DROP, drop[1])
 	end, SFX_PANEL)
-	setActive(var1_25:Find("icon/got"), var4_25 == 0)
-	onButton(arg0_25, var1_25:Find("click"), function()
-		local var0_27 = getProxy(LoveLetterProxy):GetAllLevelReadyReward()
+	setActive(var1_30:Find("icon/got"), var4_30 == 0)
+	onButton(arg0_30, var1_30:Find("click"), function()
+		local var0_32 = getProxy(LoveLetterProxy):GetAllLevelReadyReward()
 
 		pg.NewStyleMsgboxMgr.GetInstance():Show(pg.NewStyleMsgboxMgr.TYPE_LOVE_LETTER_LEVEL_REWARD, {
-			btnList = #var0_27 > 0 and {
+			btnList = #var0_32 > 0 and {
 				{
 					type = pg.NewStyleMsgboxMgr.BUTTON_TYPE.cancel,
 					name = i18n("msgbox_text_cancel"),
@@ -305,7 +374,7 @@ function var0_0.updateLoveLetterPage(arg0_25)
 					type = pg.NewStyleMsgboxMgr.BUTTON_TYPE.confirm,
 					name = i18n("mail_get_oneclick"),
 					func = function()
-						arg0_25:emit(TrophyGalleryMediator.ON_GET_ALL_LOVE_LETTER_REWARD, var0_27)
+						arg0_30:emit(TrophyGalleryMediator.ON_GET_ALL_LOVE_LETTER_REWARD, var0_32)
 					end,
 					sound = SFX_CONFIRM
 				}
@@ -314,72 +383,73 @@ function var0_0.updateLoveLetterPage(arg0_25)
 	end, SFX_PANEL)
 end
 
-function var0_0.onInitCard(arg0_29, arg1_29)
-	local var0_29 = LoveLetterShipCard.New(arg1_29)
+function var0_0.onInitCard(arg0_34, arg1_34)
+	local var0_34 = LoveLetterShipCard.New(arg1_34)
 
-	onButton(arg0_29, var0_29.go, function()
-		if var0_29.shipGroup then
-			arg0_29:emit(TrophyGalleryMediator.OPEN_DISPLAY_WINDOW, var0_29.shipGroup.id)
+	onButton(arg0_34, var0_34.go, function()
+		if var0_34.shipGroup then
+			arg0_34:emit(TrophyGalleryMediator.OPEN_DISPLAY_WINDOW, var0_34.shipGroup.id)
 		end
 	end)
 
-	arg0_29.cardItems[arg1_29] = var0_29
+	arg0_34.cardItems[arg1_34] = var0_34
 end
 
-function var0_0.onUpdateCard(arg0_31, arg1_31, arg2_31)
-	local var0_31 = arg0_31.cardItems[arg2_31]
+function var0_0.onUpdateCard(arg0_36, arg1_36, arg2_36)
+	local var0_36 = arg0_36.cardItems[arg2_36]
 
-	if not var0_31 then
-		arg0_31:onInitCard(arg2_31)
+	if not var0_36 then
+		arg0_36:onInitCard(arg2_36)
 
-		var0_31 = arg0_31.cardItems[arg2_31]
+		var0_36 = arg0_36.cardItems[arg2_36]
 	end
 
-	local var1_31 = arg1_31 + 1
-	local var2_31 = arg0_31.cardInfos[var1_31]
+	local var1_36 = arg1_36 + 1
+	local var2_36 = arg0_36.cardInfos[var1_36]
 
-	var0_31:update(var2_31)
-	pg.EasyRedDotMgr.GetInstance():RegisterRedDot(arg2_31.transform:Find("content/pick_up"), {
+	var0_36:update(var2_36)
+	pg.EasyRedDotMgr.GetInstance():RegisterRedDot(arg2_36.transform:Find("content/pick_up"), {
 		"love_letter_level_up"
-	}, function(arg0_32)
-		local var0_32 = getProxy(LoveLetterProxy):GetGroupData(var2_31.id)
+	}, function(arg0_37)
+		local var0_37 = getProxy(LoveLetterProxy):GetGroupData(var2_36.id)
 
-		setActive(arg0_32, var0_32:GetDisplayLevel() < var0_32:GetMaxLevel() and var0_32:CanLevelUp())
+		setActive(arg0_37, var0_37:GetDisplayLevel() < var0_37:GetMaxLevel() and var0_37:CanLevelUp())
 	end)
 end
 
-function var0_0.onReturnCard(arg0_33, arg1_33, arg2_33)
-	if arg0_33.exited then
+function var0_0.onReturnCard(arg0_38, arg1_38, arg2_38)
+	if arg0_38.exited then
 		return
 	end
 
-	local var0_33 = arg0_33.cardItems[arg2_33]
+	local var0_38 = arg0_38.cardItems[arg2_38]
 
-	if var0_33 then
-		var0_33:clear()
+	if var0_38 then
+		var0_38:clear()
 	end
 
-	arg0_33.cardItems[arg2_33] = nil
+	arg0_38.cardItems[arg2_38] = nil
 end
 
-function var0_0.onBackPressed(arg0_34)
-	if arg0_34._trophyDetailPanel:IsActive() then
-		arg0_34._trophyDetailPanel:SetActive(false)
+function var0_0.onBackPressed(arg0_39)
+	if arg0_39._trophyDetailPanel:IsActive() then
+		arg0_39._trophyDetailPanel:SetActive(false)
 	else
-		var0_0.super.onBackPressed(arg0_34)
+		var0_0.super.onBackPressed(arg0_39)
 	end
 end
 
-function var0_0.willExit(arg0_35)
-	pg.EasyRedDotMgr.GetInstance():UnRegisterRedDot(arg0_35.toggleLoveLetter:Find("tip"))
-	pg.EasyRedDotMgr.GetInstance():UnRegisterRedDot(arg0_35.rtCountLevelPanel:Find("info/icon/tip"))
+function var0_0.willExit(arg0_40)
+	arg0_40._loader:Clear()
+	pg.EasyRedDotMgr.GetInstance():UnRegisterRedDot(arg0_40.toggleLoveLetter:Find("tip"))
+	pg.EasyRedDotMgr.GetInstance():UnRegisterRedDot(arg0_40.rtCountLevelPanel:Find("info/icon/tip"))
 
-	for iter0_35, iter1_35 in pairs(arg0_35.cardItems) do
-		pg.EasyRedDotMgr.GetInstance():UnRegisterRedDot(iter0_35.transform:Find("content/pick_up"))
+	for iter0_40, iter1_40 in pairs(arg0_40.cardItems) do
+		pg.EasyRedDotMgr.GetInstance():UnRegisterRedDot(iter0_40.transform:Find("content/pick_up"))
 	end
 
-	arg0_35:UnOverlayPanel(arg0_35._blurPanel, arg0_35._tf)
-	arg0_35._trophyDetailPanel:Dispose()
+	arg0_40:UnOverlayPanel(arg0_40._blurPanel, arg0_40._tf)
+	arg0_40._trophyDetailPanel:Dispose()
 end
 
 return var0_0

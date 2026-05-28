@@ -40,11 +40,13 @@ function var0_0.OnFirstFlush(arg0_3)
 		arg0_3.taskWindow:ExecuteAction("Show", arg0_3.activity)
 	end, SFX_PANEL)
 	onButton(arg0_3, arg0_3.btnStory, function()
-		arg0_3.scenario:Load()
-		arg0_3.scenario:SetActivity(arg0_3.activity)
-		arg0_3.scenario:UpdateStoryTask()
-		arg0_3.scenario:ActionInvoke("UpdateView")
-		arg0_3:ShowScenarioLayer(true)
+		if arg0_3.scenario then
+			arg0_3.scenario:Load()
+			arg0_3.scenario:SetActivity(arg0_3.activity)
+			arg0_3.scenario:UpdateStoryTask()
+			arg0_3.scenario:ActionInvoke("UpdateView")
+			arg0_3:ShowScenarioLayer(true)
+		end
 	end, SFX_PANEL)
 end
 
@@ -55,20 +57,30 @@ end
 function var0_0.ShowScenarioLayer(arg0_7, arg1_7)
 	if arg1_7 then
 		arg0_7.coreActivityUI:ActiveScenarioLayer(true)
-		arg0_7.scenario:ActionInvoke("Show")
+
+		if arg0_7.scenario then
+			arg0_7.scenario:ActionInvoke("Show")
+		end
 	else
-		arg0_7.scenario:Hide()
+		if arg0_7.scenario then
+			arg0_7.scenario:Hide()
+		end
+
 		arg0_7.coreActivityUI:ActiveScenarioLayer(false)
 	end
 end
 
 function var0_0.IsShowingPopWindow(arg0_8)
-	return arg0_8.scenario:isShowing()
+	if arg0_8.scenario then
+		return arg0_8.scenario:isShowing()
+	end
 end
 
 function var0_0.ClosePopWindow(arg0_9)
-	arg0_9.scenario:Hide()
-	arg0_9:ShowScenarioLayer(false)
+	if arg0_9.scenario then
+		arg0_9.scenario:Hide()
+		arg0_9:ShowScenarioLayer(false)
+	end
 end
 
 function var0_0.OnUpdateFlush(arg0_10)
@@ -142,11 +154,13 @@ function var0_0.OnDestroy(arg0_14)
 		arg0_14.taskWindow = nil
 	end
 
-	if arg0_14.scenario:isShowing() then
-		arg0_14.scenario:Hide()
-	end
+	if arg0_14.scenario then
+		if arg0_14.scenario:isShowing() then
+			arg0_14.scenario:Hide()
+		end
 
-	arg0_14.scenario:Destroy()
+		arg0_14.scenario:Destroy()
+	end
 end
 
 return var0_0

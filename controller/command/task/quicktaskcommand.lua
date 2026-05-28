@@ -86,42 +86,33 @@ function var0_0.execute(arg0_1, arg1_1)
 end
 
 function var0_0.OnQuickTaskComplete(arg0_7, arg1_7, arg2_7)
-	local var0_7 = getProxy(TaskProxy)
-
-	var0_7:removeSubmittingTask(arg1_7.id)
+	getProxy(TaskProxy):removeSubmittingTask(arg1_7.id)
 
 	if arg0_7.result == 0 then
-		local var1_7 = Item.QUICK_TASK_PASS_TICKET_ID
-		local var2_7 = arg1_7:getConfig("quick_finish")
+		local var0_7 = Item.QUICK_TASK_PASS_TICKET_ID
+		local var1_7 = arg1_7:getConfig("quick_finish")
 
-		getProxy(BagProxy):removeItemById(tonumber(var1_7), tonumber(var2_7))
+		getProxy(BagProxy):removeItemById(tonumber(var0_7), tonumber(var1_7))
 		QuickTaskCommand.AddGuildLivness(arg1_7)
 
-		local var3_7 = PlayerConst.addTranDrop(arg0_7.award_list, {
+		local var2_7 = PlayerConst.addTranDrop(arg0_7.award_list, {
 			taskId = arg1_7.id
 		})
 
-		if arg1_7:getConfig("type") ~= 8 then
-			var0_7:removeTask(arg1_7)
-		else
-			arg1_7.submitTime = 1
-
-			var0_7:updateTask(arg1_7)
-		end
-
+		SubmitTaskCommand.OnSubmitSuccess(arg1_7)
 		pg.TipsMgr.GetInstance():ShowTips(i18n("battlepass_task_quickfinish3"))
-		pg.m02:sendNotification(GAME.SUBMIT_TASK_DONE, var3_7, {
+		pg.m02:sendNotification(GAME.SUBMIT_TASK_DONE, var2_7, {
 			arg1_7.id
 		})
 
-		local var4_7 = getProxy(ActivityProxy)
-		local var5_7 = var4_7:getActivityByType(ActivityConst.ACTIVITY_TYPE_TASK_LIST_MONITOR)
+		local var3_7 = getProxy(ActivityProxy)
+		local var4_7 = var3_7:getActivityByType(ActivityConst.ACTIVITY_TYPE_TASK_LIST_MONITOR)
 
-		if var5_7 and not var5_7:isEnd() then
-			local var6_7 = var5_7:getConfig("config_data")[1] or {}
+		if var4_7 and not var4_7:isEnd() then
+			local var5_7 = var4_7:getConfig("config_data")[1] or {}
 
-			if table.contains(var6_7, arg1_7.id) then
-				var4_7:monitorTaskList(var5_7)
+			if table.contains(var5_7, arg1_7.id) then
+				var3_7:monitorTaskList(var4_7)
 			end
 		end
 

@@ -1198,6 +1198,9 @@ end
 function var0_0.createLive2D(arg0_109, arg1_109)
 	arg0_109.live2dRequestId = pg.Live2DMgr.GetInstance():GetLive2DModelAsync(arg1_109, function(arg0_110)
 		local var0_110 = arg0_110.transform
+
+		GetOrAddComponent(var0_110, typeof(DftAniEvent))
+
 		local var1_110 = arg0_109.targetActorTF:Find("live2d")
 
 		HotfixHelper.SetLayerRecursively(arg0_110, LayerMask.NameToLayer("UI"))
@@ -1243,6 +1246,21 @@ function var0_0.createLive2D(arg0_109, arg1_109)
 
 		if var6_110 and var6_110 ~= 0 then
 			var1_110:GetChild(0):GetComponent("CubismCriSrcMouthInput").Gain = var6_110
+		end
+
+		if arg1_109 == "mojiaduoer_4" then
+			arg0_109.l2dChar:AddParameterValue(arg0_109.l2dChar:GetCubismParameter("ParamAngleX1"), 3, CubismParameterBlendMode.Override)
+			arg0_109.l2dChar:AddParameterValue(arg0_109.l2dChar:GetCubismParameter("touch_drag45"), 7, CubismParameterBlendMode.Override)
+		end
+
+		local var8_110 = arg0_109.l2dChar:GetCubismParameter("l2d_hx")
+
+		if var8_110 then
+			if HXSet.isHx() then
+				arg0_109.l2dChar:AddParameterValue(var8_110, 1, CubismParameterBlendMode.Override)
+			else
+				arg0_109.l2dChar:AddParameterValue(var8_110, 0, CubismParameterBlendMode.Override)
+			end
 		end
 
 		if var7_110 and var7_110 ~= 0 then
