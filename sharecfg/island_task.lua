@@ -22092,7 +22092,7 @@ end)()
 		}
 	}
 	pg.base.island_task[90002003] = {
-		name = "Complete 1 Island Request.",
+		name = "Complete any Island Request.",
 		trigger_tips = 0,
 		reward_exp = 0,
 		type = 9,
@@ -22110,7 +22110,7 @@ end)()
 		complete_data = 0,
 		map_complete_tips = 0,
 		rec_perform = "",
-		task_desc = "Complete 1 Island Request.",
+		task_desc = "Complete any Island Request.",
 		series_name = "",
 		id = 90002003,
 		unlock_condition = {},
@@ -22153,7 +22153,7 @@ end)()
 		}
 	}
 	pg.base.island_task[90002004] = {
-		name = "Assign a task to any character.",
+		name = "Assign a character to a material production slot.",
 		trigger_tips = 0,
 		reward_exp = 0,
 		type = 9,
@@ -22171,7 +22171,7 @@ end)()
 		complete_data = 0,
 		map_complete_tips = 0,
 		rec_perform = "",
-		task_desc = "Assign a task to any character.",
+		task_desc = "Assign a character to a material production slot.",
 		series_name = "",
 		id = 90002004,
 		unlock_condition = {},
