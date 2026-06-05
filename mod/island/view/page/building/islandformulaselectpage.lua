@@ -338,7 +338,9 @@ function var0_0.CheckCanAddMaxTimes(arg0_28)
 		var1_28 = math.min(var1_28, math.floor(var5_28 / var6_28))
 	end
 
-	return (math.min(math.floor(arg0_28.selectedShip:GetCurrentEnergy() / arg0_28.formulaCfg.stamina_cost), var1_28))
+	local var7_28 = arg0_28:GetOneFormulaEnergyCost()
+
+	return (math.min(math.floor(arg0_28.selectedShip:GetCurrentEnergy() / var7_28), var1_28))
 end
 
 function var0_0.RefreshCanStart(arg0_29)
@@ -355,7 +357,7 @@ function var0_0.RefreshCanStart(arg0_29)
 	local function var1_29()
 		local var0_31 = arg0_29.addDelegateFormulaTimes and arg0_29.curSelectCount - arg0_29.addDelegateFormulaTimes or arg0_29.curSelectCount
 
-		if math.floor(arg0_29.formulaCfg.stamina_cost * (1 - IslandProductCostHelper.GetReducePercentInPlace(arg0_29.selectedShipId, arg0_29.placeId))) * var0_31 > arg0_29.selectedShip:GetCurrentEnergy() then
+		if arg0_29:GetOneFormulaEnergyCost() * var0_31 > arg0_29.selectedShip:GetCurrentEnergy() then
 			return false
 		end
 
@@ -557,7 +559,7 @@ end
 
 function var0_0.RefreshShipEnergy(arg0_40)
 	local var0_40 = arg0_40.addDelegateFormulaTimes and arg0_40.curSelectCount - arg0_40.addDelegateFormulaTimes or arg0_40.curSelectCount
-	local var1_40 = math.floor(arg0_40.formulaCfg.stamina_cost * (1 - IslandProductCostHelper.GetReducePercentInPlace(arg0_40.selectedShipId, arg0_40.placeId))) * var0_40
+	local var1_40 = arg0_40:GetOneFormulaEnergyCost() * var0_40
 
 	if arg0_40.selectedShipId == 1 then
 		var1_40 = 0
@@ -785,45 +787,49 @@ function var0_0.GetAttrGrowingValueByBuff(arg0_49, arg1_49, arg2_49)
 	return 0
 end
 
-function var0_0.OnHide(arg0_50)
-	arg0_50:UnBlurPanel()
+function var0_0.GetOneFormulaEnergyCost(arg0_50)
+	return math.floor(arg0_50.formulaCfg.stamina_cost * (1 - IslandProductCostHelper.GetReducePercentInPlace(arg0_50.selectedShipId, arg0_50.placeId)))
+end
 
-	if arg0_50.eneryTimer then
-		arg0_50.eneryTimer:Stop()
+function var0_0.OnHide(arg0_51)
+	arg0_51:UnBlurPanel()
+
+	if arg0_51.eneryTimer then
+		arg0_51.eneryTimer:Stop()
 	end
 end
 
-function var0_0.OnDisable(arg0_51)
-	arg0_51:OnHide()
-end
-
-function var0_0.OnDestroy(arg0_52)
+function var0_0.OnDisable(arg0_52)
 	arg0_52:OnHide()
 end
 
-function var0_0.Show(arg0_53, ...)
-	arg0_53:AddListeners()
-	arg0_53.islandUIController:Show(true)
-	arg0_53:OnShow(...)
+function var0_0.OnDestroy(arg0_53)
+	arg0_53:OnHide()
 end
 
-function var0_0.Hide(arg0_54, arg1_54, arg2_54)
-	local var0_54 = defaultValue(arg1_54, true)
+function var0_0.Show(arg0_54, ...)
+	arg0_54:AddListeners()
+	arg0_54.islandUIController:Show(true)
+	arg0_54:OnShow(...)
+end
 
-	local function var1_54()
-		arg0_54:ClosePage(arg0_54)
-		arg0_54:RemoveListeners()
-		arg0_54:OnHide()
+function var0_0.Hide(arg0_55, arg1_55, arg2_55)
+	local var0_55 = defaultValue(arg1_55, true)
 
-		if not arg2_54 then
-			arg0_54:OnExit()
+	local function var1_55()
+		arg0_55:ClosePage(arg0_55)
+		arg0_55:RemoveListeners()
+		arg0_55:OnHide()
+
+		if not arg2_55 then
+			arg0_55:OnExit()
 		end
 	end
 
-	if var0_54 then
-		arg0_54.islandUIController:Hide(true, var1_54)
+	if var0_55 then
+		arg0_55.islandUIController:Hide(true, var1_55)
 	else
-		var1_54()
+		var1_55()
 	end
 end
 

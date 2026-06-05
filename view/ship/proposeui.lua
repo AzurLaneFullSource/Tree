@@ -1104,7 +1104,9 @@ function var0_0.showStoryUI(arg0_95, arg1_95)
 
 			arg0_95.onWords = true
 
-			arg0_95:TypeWriter()
+			if arg1_95 and arg1_95 ~= "" then
+				arg0_95:TypeWriter()
+			end
 
 			arg0_95.initStory = true
 

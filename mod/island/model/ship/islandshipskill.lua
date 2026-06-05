@@ -107,19 +107,31 @@ function var0_0.IsEffectiveInRest(arg0_18, arg1_18)
 	end)
 end
 
-function var0_0.GetUpgradeMaterial(arg0_20)
-	local var0_20 = arg0_20:getConfig("material")
-	local var1_20 = {}
+function var0_0.IsAllEffectiveType(arg0_20)
+	return underscore.any(arg0_20:GetEffectIds(), function(arg0_21)
+		return pg.island_buff_template[arg0_21].buff_type == IslandBuffType.SHIP_ATTR
+	end)
+end
 
-	for iter0_20, iter1_20 in ipairs(var0_20[arg0_20.level] or {}) do
-		table.insert(var1_20, {
+function var0_0.IsPlaceDefaultEffectiveType(arg0_22)
+	return underscore.any(arg0_22:GetEffectIds(), function(arg0_23)
+		return pg.island_buff_template[arg0_23].buff_type == IslandBuffType.SHIP_POWER_RECOVER
+	end)
+end
+
+function var0_0.GetUpgradeMaterial(arg0_24)
+	local var0_24 = arg0_24:getConfig("material")
+	local var1_24 = {}
+
+	for iter0_24, iter1_24 in ipairs(var0_24[arg0_24.level] or {}) do
+		table.insert(var1_24, {
 			type = DROP_TYPE_ISLAND_ITEM,
-			id = iter1_20[1],
-			count = iter1_20[2]
+			id = iter1_24[1],
+			count = iter1_24[2]
 		})
 	end
 
-	return var1_20
+	return var1_24
 end
 
 return var0_0

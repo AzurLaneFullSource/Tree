@@ -302,318 +302,312 @@ function var0_0.ReturnOpUI(arg0_50, arg1_50)
 	arg0_50:GetPool(var11_0):ReturnObject(arg1_50)
 end
 
-function var0_0.BuildCommanderPart(arg0_51, arg1_51, arg2_51)
+function var0_0.BuildPreviewPart(arg0_51, arg1_51, arg2_51, arg3_51, arg4_51)
 	local var0_51 = {}
-	local var1_51
 
 	table.insert(var0_51, function(arg0_52)
-		local var0_52 = 0
-		local var1_52 = getProxy(IslandProxy):GetIsland():GetDressUpAgency()
-		local var2_52 = var1_52:IsNew()
-
-		local function var3_52()
-			var0_52 = var0_52 + 1
-
-			if var0_52 == #IslandShipDressHelperNew.CommanderCustom then
-				local var0_53 = IslandShipDressHelperNew.DressType.Hat
-				local var1_53 = var2_52 and IslandShipDressHelperNew.GetInitDressByType(var0_53) or var1_52:GetDressByType(var0_53)
-
-				if var1_53 ~= 0 then
-					local var2_53 = pg.island_dress_template[var1_53].sub_type - 1
-
-					GraphicsInterface.Instance:SetCharacterBlendShape(arg1_51, IslandShipDressHelperNew.ComponentType.Hair, var2_53, 100)
-				end
-
-				arg0_52()
-			end
+		local function var0_52(arg0_53)
+			return arg2_51[arg0_53] or 0
 		end
 
-		for iter0_52, iter1_52 in ipairs(IslandShipDressHelperNew.CommanderCustom) do
-			local var4_52 = var2_52 and IslandShipDressHelperNew.GetInitDressByType(iter1_52) or var1_52:GetDressByType(iter1_52)
-			local var5_52 = var1_52:GetCurrentColorByDressId(var4_52)
-
-			if var4_52 == 0 then
-				GraphicsInterface.Instance:SetCharacterComponentShow(arg1_51, IslandShipDressHelperNew.ComponentType.Headware, false, var3_52)
-			else
-				local var6_52 = pg.island_dress_template[var4_52]
-				local var7_52 = var6_52.model
-
-				if var5_52 == 0 then
-					GraphicsInterface.Instance:LoadCharacterComponent(arg1_51, var7_52, var3_52)
-				else
-					local var8_52 = pg.island_dress_colordiff_template[var5_52].model
-
-					GraphicsInterface.Instance:LoadCharacterComponentAndMaterial(arg1_51, var7_52, var8_52, var3_52)
-				end
-
-				if var6_52.face_clip ~= "" then
-					var1_51 = var6_52.face_clip
-				end
-			end
+		local function var1_52(arg0_54)
+			return arg3_51[arg0_54] or 0
 		end
+
+		IslandShipDressHelperNew.BuildCommanderCustomParts(arg1_51, var0_52, var1_52, arg0_52)
 	end)
-	seriesAsync(var0_51, function()
-		arg2_51(var1_51)
-	end)
+	seriesAsync(var0_51, arg4_51)
 end
 
-function var0_0.BuildVisterPart(arg0_55, arg1_55, arg2_55, arg3_55, arg4_55)
+function var0_0.BuildCommanderPart(arg0_55, arg1_55, arg2_55)
 	local var0_55 = {}
-	local var1_55
 
 	table.insert(var0_55, function(arg0_56)
-		local var0_56 = 0
-		local var1_56 = (arg3_55 and getProxy(IslandProxy):GetIsland() or getProxy(IslandProxy):GetSharedIsland()):GetVisitorAgency():GetPlayer(arg2_55)
+		local var0_56 = getProxy(IslandProxy):GetIsland():GetDressUpAgency()
+		local var1_56 = var0_56:IsNew()
 
-		if not var1_56 then
-			arg0_56()
+		local function var2_56(arg0_57)
+			return var1_56 and IslandShipDressHelperNew.GetInitDressByType(arg0_57) or var0_56:GetDressByType(arg0_57)
+		end
+
+		local function var3_56(arg0_58)
+			return var0_56:GetCurrentColorByDressId(arg0_58)
+		end
+
+		IslandShipDressHelperNew.BuildCommanderCustomParts(arg1_55, var2_56, var3_56, arg0_56)
+	end)
+	seriesAsync(var0_55, arg2_55)
+end
+
+function var0_0.BuildVisterPart(arg0_59, arg1_59, arg2_59, arg3_59, arg4_59)
+	local var0_59 = {}
+
+	table.insert(var0_59, function(arg0_60)
+		local var0_60 = (arg3_59 and getProxy(IslandProxy):GetIsland() or getProxy(IslandProxy):GetSharedIsland()):GetVisitorAgency():GetPlayer(arg2_59)
+
+		if not var0_60 then
+			arg0_60()
 
 			return
 		end
 
-		local function var2_56()
-			var0_56 = var0_56 + 1
-
-			if var0_56 == #IslandShipDressHelperNew.CommanderCustom then
-				local var0_57 = IslandShipDressHelperNew.DressType.Hat
-				local var1_57 = var1_56:GetDressByType(var0_57)
-
-				if var1_57 ~= 0 then
-					local var2_57 = pg.island_dress_template[var1_57].sub_type - 1
-
-					GraphicsInterface.Instance:SetCharacterBlendShape(arg1_55, IslandShipDressHelperNew.ComponentType.Hair, var2_57, 100)
-				end
-
-				arg0_56()
-			end
+		local function var1_60(arg0_61)
+			return var0_60:GetDressByType(arg0_61)
 		end
 
-		for iter0_56, iter1_56 in ipairs(IslandShipDressHelperNew.CommanderCustom) do
-			local var3_56 = var1_56:GetDressByType(iter1_56)
-			local var4_56 = var1_56:GetCurrentColorByDressId(var3_56)
-
-			if var3_56 == 0 then
-				GraphicsInterface.Instance:SetCharacterComponentShow(arg1_55, IslandShipDressHelperNew.ComponentType.Headware, false, var2_56)
-			else
-				local var5_56 = pg.island_dress_template[var3_56]
-				local var6_56 = var5_56.model
-
-				if var4_56 == 0 then
-					GraphicsInterface.Instance:LoadCharacterComponent(arg1_55, var6_56, var2_56)
-				else
-					local var7_56 = pg.island_dress_colordiff_template[var4_56].model
-
-					GraphicsInterface.Instance:LoadCharacterComponentAndMaterial(arg1_55, var6_56, var7_56, var2_56)
-				end
-
-				if var5_56.face_clip ~= "" then
-					var1_55 = var5_56.face_clip
-				end
-			end
+		local function var2_60(arg0_62)
+			return var0_60:GetCurrentColorByDressId(arg0_62)
 		end
+
+		IslandShipDressHelperNew.BuildCommanderCustomParts(arg1_59, var1_60, var2_60, arg0_60)
 	end)
-	seriesAsync(var0_55, function()
-		arg4_55(var1_55)
-	end)
+	seriesAsync(var0_59, arg4_59)
 end
 
-function var0_0.LoadAnimator(arg0_59, arg1_59, arg2_59, arg3_59, arg4_59)
-	local var0_59 = IslandAssetLoadDispatcher.Instance:Enqueue(arg3_59, "", typeof(RuntimeAnimatorController), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_60)
-		local var0_60 = GetOrAddComponent(arg1_59.transform, typeof(Animator))
+function var0_0.LoadAnimator(arg0_63, arg1_63, arg2_63, arg3_63, arg4_63, arg5_63)
+	local var0_63 = IslandAssetLoadDispatcher.Instance:Enqueue(arg3_63, "", typeof(RuntimeAnimatorController), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_64)
+		local var0_64 = GetOrAddComponent(arg1_63.transform, typeof(Animator))
 
-		var0_60.runtimeAnimatorController = arg0_60
-		arg2_59 = arg2_59 or "idle"
+		var0_64.runtimeAnimatorController = arg0_64
+		arg2_63 = arg2_63 or "idle"
 
-		var0_60:Play(arg2_59, 4)
-		arg4_59()
-	end), true, true)
+		var0_64:Play(arg2_63, 4)
 
-	table.insert(arg0_59.loadingIdList, var0_59)
-end
+		local var1_64 = arg5_63 and arg5_63 ~= 0 and pg.island_dress_template[arg5_63] or nil
+		local var2_64 = var1_64 and var1_64.special_animator or ""
 
-function var0_0.NestModel(arg0_61, arg1_61)
-	local var0_61 = arg1_61.name
-	local var1_61 = GameObject.New(var0_61)
+		if var2_64 == "" then
+			arg4_63()
 
-	setParent(arg1_61.transform, var1_61.transform, false)
+			return
+		end
 
-	arg1_61 = var1_61
+		local var3_64 = IslandAssetLoadDispatcher.Instance:Enqueue(var2_64, "", typeof(UnityEngine.RuntimeAnimatorController), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_65)
+			if not IsNil(arg1_63) then
+				var0_64.runtimeAnimatorController = arg0_65
+			end
 
-	return arg1_61
-end
-
-function var0_0.GetCommanderModel(arg0_62, arg1_62, arg2_62, arg3_62, arg4_62, arg5_62)
-	local var0_62 = {}
-	local var1_62
-
-	table.insert(var0_62, function(arg0_63)
-		local var0_63 = IslandAssetLoadDispatcher.Instance:Enqueue(arg1_62.model, "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_64)
-			var1_62 = Object.Instantiate(arg0_64)
-
-			arg0_63()
+			arg4_63()
 		end), true, true)
 
-		table.insert(arg0_62.loadingIdList, var0_63)
+		table.insert(arg0_63.loadingIdList, var3_64)
+	end), true, true)
+
+	table.insert(arg0_63.loadingIdList, var0_63)
+end
+
+function var0_0.NestModel(arg0_66, arg1_66)
+	local var0_66 = arg1_66.name
+	local var1_66 = GameObject.New(var0_66)
+
+	setParent(arg1_66.transform, var1_66.transform, false)
+
+	arg1_66 = var1_66
+
+	return arg1_66
+end
+
+function var0_0.GetPreviewModel(arg0_67, arg1_67, arg2_67, arg3_67, arg4_67)
+	local var0_67 = {}
+	local var1_67
+
+	table.insert(var0_67, function(arg0_68)
+		local var0_68 = IslandAssetLoadDispatcher.Instance:Enqueue(arg1_67.model, "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_69)
+			var1_67 = Object.Instantiate(arg0_69)
+
+			arg0_68()
+		end), true, true)
+
+		table.insert(arg0_67.loadingIdList, var0_68)
+	end)
+	table.insert(var0_67, function(arg0_70)
+		arg0_67:BuildPreviewPart(var1_67, arg3_67 or {}, arg4_67 or {}, arg0_70)
+	end)
+	table.insert(var0_67, function(arg0_71, arg1_71, arg2_71)
+		arg0_67:LoadAnimator(var1_67, arg1_71, arg1_67.animator, arg0_71, arg2_71)
+	end)
+	table.insert(var0_67, function(arg0_72)
+		var1_67 = arg0_67:NestModel(var1_67)
+
+		arg0_72()
+	end)
+	seriesAsync(var0_67, function()
+		arg2_67(var1_67)
+	end)
+end
+
+function var0_0.GetCommanderModel(arg0_74, arg1_74, arg2_74, arg3_74, arg4_74, arg5_74)
+	local var0_74 = {}
+	local var1_74
+
+	table.insert(var0_74, function(arg0_75)
+		local var0_75 = IslandAssetLoadDispatcher.Instance:Enqueue(arg1_74.model, "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_76)
+			var1_74 = Object.Instantiate(arg0_76)
+
+			arg0_75()
+		end), true, true)
+
+		table.insert(arg0_74.loadingIdList, var0_75)
 	end)
 
-	if arg3_62 then
-		table.insert(var0_62, function(arg0_65)
-			arg0_62:BuildVisterPart(var1_62, arg3_62, arg4_62, arg0_65)
+	if arg3_74 then
+		table.insert(var0_74, function(arg0_77)
+			arg0_74:BuildVisterPart(var1_74, arg3_74, arg4_74, arg0_77)
 		end)
 	else
-		table.insert(var0_62, function(arg0_66)
-			arg0_62:BuildCommanderPart(var1_62, arg0_66)
+		table.insert(var0_74, function(arg0_78)
+			arg0_74:BuildCommanderPart(var1_74, arg0_78)
 		end)
 	end
 
-	table.insert(var0_62, function(arg0_67, arg1_67)
-		arg0_62:LoadAnimator(var1_62, arg1_67, arg1_62.animator, arg0_67)
+	table.insert(var0_74, function(arg0_79, arg1_79, arg2_79)
+		arg0_74:LoadAnimator(var1_74, arg1_79, arg1_74.animator, arg0_79, arg2_79)
 	end)
-	table.insert(var0_62, function(arg0_68)
-		var1_62 = arg0_62:NestModel(var1_62)
+	table.insert(var0_74, function(arg0_80)
+		var1_74 = arg0_74:NestModel(var1_74)
 
-		arg0_68()
+		arg0_80()
 	end)
 
-	if arg5_62 and arg5_62 ~= "" then
-		table.insert(var0_62, function(arg0_69)
-			arg0_62:GetPool(var5_0):GetObject(arg5_62, typeof(NodeCanvas.BehaviourTrees.BehaviourTree), function(arg0_70)
-				GetOrAddComponent(var1_62, typeof(NodeCanvas.BehaviourTrees.BehaviourTreeOwner)).graph = arg0_70
+	if arg5_74 and arg5_74 ~= "" then
+		table.insert(var0_74, function(arg0_81)
+			arg0_74:GetPool(var5_0):GetObject(arg5_74, typeof(NodeCanvas.BehaviourTrees.BehaviourTree), function(arg0_82)
+				GetOrAddComponent(var1_74, typeof(NodeCanvas.BehaviourTrees.BehaviourTreeOwner)).graph = arg0_82
 
-				arg0_69()
+				arg0_81()
 			end)
 		end)
 	end
 
-	seriesAsync(var0_62, function()
-		arg2_62(var1_62)
+	seriesAsync(var0_74, function()
+		arg2_74(var1_74)
 	end)
 end
 
-function var0_0.ReturnCommanderModel(arg0_72, arg1_72, arg2_72)
-	if arg2_72 and arg2_72 ~= "" then
-		local var0_72 = arg0_72:GetPool(var5_0)
-		local var1_72 = GetOrAddComponent(arg1_72, typeof(NodeCanvas.BehaviourTrees.BehaviourTreeOwner))
-		local var2_72 = var1_72.graph
+function var0_0.ReturnCommanderModel(arg0_84, arg1_84, arg2_84)
+	if arg2_84 and arg2_84 ~= "" then
+		local var0_84 = arg0_84:GetPool(var5_0)
+		local var1_84 = GetOrAddComponent(arg1_84, typeof(NodeCanvas.BehaviourTrees.BehaviourTreeOwner))
+		local var2_84 = var1_84.graph
 
-		var0_72:ReturnObject(arg2_72, var2_72)
+		var0_84:ReturnObject(arg2_84, var2_84)
 
-		var1_72.graph = nil
+		var1_84.graph = nil
 	end
 
-	Object.Destroy(arg1_72)
+	Object.Destroy(arg1_84)
 end
 
-function var0_0.GetDelegateEffect(arg0_73, arg1_73, arg2_73)
-	arg0_73:GetPool(var10_0):GetObject(arg1_73, typeof(GameObject), arg2_73)
+function var0_0.GetDelegateEffect(arg0_85, arg1_85, arg2_85)
+	arg0_85:GetPool(var10_0):GetObject(arg1_85, typeof(GameObject), arg2_85)
 end
 
-function var0_0.ReturnDelegateEffect(arg0_74, arg1_74, arg2_74)
-	arg0_74:GetPool(var10_0):ReturnObject(arg1_74, arg2_74)
+function var0_0.ReturnDelegateEffect(arg0_86, arg1_86, arg2_86)
+	arg0_86:GetPool(var10_0):ReturnObject(arg1_86, arg2_86)
 end
 
-function var0_0.ClearDelegateEffect(arg0_75)
-	arg0_75:GetPool(var10_0):Clear()
+function var0_0.ClearDelegateEffect(arg0_87)
+	arg0_87:GetPool(var10_0):Clear()
 end
 
-function var0_0.GetFishRod(arg0_76, arg1_76, arg2_76, arg3_76)
-	local var0_76 = arg0_76:GetPool(var12_0)
-	local var1_76 = arg0_76:GetPool(var4_0)
-	local var2_76
+function var0_0.GetFishRod(arg0_88, arg1_88, arg2_88, arg3_88)
+	local var0_88 = arg0_88:GetPool(var12_0)
+	local var1_88 = arg0_88:GetPool(var4_0)
+	local var2_88
 
 	seriesAsync({
-		function(arg0_77)
-			var0_76:GetObject(arg1_76, typeof(GameObject), function(arg0_78)
-				var2_76 = arg0_78
+		function(arg0_89)
+			var0_88:GetObject(arg1_88, typeof(GameObject), function(arg0_90)
+				var2_88 = arg0_90
 
-				arg0_77()
+				arg0_89()
 			end)
 		end,
-		function(arg0_79)
-			var1_76:GetObject(arg2_76, typeof(RuntimeAnimatorController), function(arg0_80)
-				GetOrAddComponent(var2_76, typeof(Animator)).runtimeAnimatorController = arg0_80
+		function(arg0_91)
+			var1_88:GetObject(arg2_88, typeof(RuntimeAnimatorController), function(arg0_92)
+				GetOrAddComponent(var2_88, typeof(Animator)).runtimeAnimatorController = arg0_92
 
-				arg0_79()
+				arg0_91()
 			end)
 		end
 	}, function()
-		arg3_76(var2_76)
+		arg3_88(var2_88)
 	end)
 end
 
-function var0_0.ReturnFishRod(arg0_82, arg1_82, arg2_82, arg3_82)
-	local var0_82 = arg0_82:GetPool(var4_0)
-	local var1_82 = GetOrAddComponent(arg3_82, typeof(Animator)).runtimeAnimatorController
+function var0_0.ReturnFishRod(arg0_94, arg1_94, arg2_94, arg3_94)
+	local var0_94 = arg0_94:GetPool(var4_0)
+	local var1_94 = GetOrAddComponent(arg3_94, typeof(Animator)).runtimeAnimatorController
 
-	var0_82:ReturnObject(arg2_82, var1_82)
-	arg0_82:GetPool(var12_0):ReturnObject(arg1_82, arg3_82)
+	var0_94:ReturnObject(arg2_94, var1_94)
+	arg0_94:GetPool(var12_0):ReturnObject(arg1_94, arg3_94)
 end
 
-function var0_0.GetFish(arg0_83, arg1_83, arg2_83, arg3_83)
-	local var0_83 = arg0_83:GetPool(var13_0)
-	local var1_83 = arg0_83:GetPool(var4_0)
-	local var2_83
+function var0_0.GetFish(arg0_95, arg1_95, arg2_95, arg3_95)
+	local var0_95 = arg0_95:GetPool(var13_0)
+	local var1_95 = arg0_95:GetPool(var4_0)
+	local var2_95
 
 	seriesAsync({
-		function(arg0_84)
-			var0_83:GetObject(arg1_83, typeof(GameObject), function(arg0_85)
-				var2_83 = arg0_85
+		function(arg0_96)
+			var0_95:GetObject(arg1_95, typeof(GameObject), function(arg0_97)
+				var2_95 = arg0_97
 
-				arg0_84()
+				arg0_96()
 			end)
 		end,
-		function(arg0_86)
-			var1_83:GetObject(arg2_83, typeof(RuntimeAnimatorController), function(arg0_87)
-				GetOrAddComponent(var2_83, typeof(Animator)).runtimeAnimatorController = arg0_87
+		function(arg0_98)
+			var1_95:GetObject(arg2_95, typeof(RuntimeAnimatorController), function(arg0_99)
+				GetOrAddComponent(var2_95, typeof(Animator)).runtimeAnimatorController = arg0_99
 
-				arg0_86()
+				arg0_98()
 			end)
 		end
 	}, function()
-		arg3_83(var2_83)
+		arg3_95(var2_95)
 	end)
 end
 
-function var0_0.ReturnFish(arg0_89, arg1_89, arg2_89, arg3_89)
-	local var0_89 = arg0_89:GetPool(var4_0)
-	local var1_89 = GetOrAddComponent(arg3_89, typeof(Animator)).runtimeAnimatorController
+function var0_0.ReturnFish(arg0_101, arg1_101, arg2_101, arg3_101)
+	local var0_101 = arg0_101:GetPool(var4_0)
+	local var1_101 = GetOrAddComponent(arg3_101, typeof(Animator)).runtimeAnimatorController
 
-	var0_89:ReturnObject(arg2_89, var1_89)
-	arg0_89:GetPool(var13_0):ReturnObject(arg1_89, arg3_89)
+	var0_101:ReturnObject(arg2_101, var1_101)
+	arg0_101:GetPool(var13_0):ReturnObject(arg1_101, arg3_101)
 end
 
-function var0_0.GetUI(arg0_90, arg1_90, arg2_90)
-	arg0_90:GetPool(var14_0):GetObject("ui/" .. arg1_90, typeof(GameObject), arg2_90)
+function var0_0.GetUI(arg0_102, arg1_102, arg2_102)
+	arg0_102:GetPool(var14_0):GetObject("ui/" .. arg1_102, typeof(GameObject), arg2_102)
 end
 
-function var0_0.ReturnUI(arg0_91, arg1_91, arg2_91)
-	arg0_91:GetPool(var14_0):ReturnObject("ui/" .. arg1_91, arg2_91)
+function var0_0.ReturnUI(arg0_103, arg1_103, arg2_103)
+	arg0_103:GetPool(var14_0):ReturnObject("ui/" .. arg1_103, arg2_103)
 end
 
-function var0_0.GetFishingEffect(arg0_92, arg1_92, arg2_92)
-	arg0_92:GetPool(var15_0):GetObject(arg1_92, typeof(GameObject), arg2_92)
+function var0_0.GetFishingEffect(arg0_104, arg1_104, arg2_104)
+	arg0_104:GetPool(var15_0):GetObject(arg1_104, typeof(GameObject), arg2_104)
 end
 
-function var0_0.ReturnFishingEffect(arg0_93, arg1_93, arg2_93)
-	arg0_93:GetPool(var15_0):ReturnObject(arg1_93, arg2_93)
+function var0_0.ReturnFishingEffect(arg0_105, arg1_105, arg2_105)
+	arg0_105:GetPool(var15_0):ReturnObject(arg1_105, arg2_105)
 end
 
-function var0_0.ClearFishingEffect(arg0_94)
-	arg0_94:GetPool(var15_0):Clear()
+function var0_0.ClearFishingEffect(arg0_106)
+	arg0_106:GetPool(var15_0):Clear()
 end
 
-function var0_0.Dispose(arg0_95)
-	for iter0_95, iter1_95 in pairs(arg0_95.pools) do
-		iter1_95:Dispose()
+function var0_0.Dispose(arg0_107)
+	for iter0_107, iter1_107 in pairs(arg0_107.pools) do
+		iter1_107:Dispose()
 	end
 
-	arg0_95.pools = nil
+	arg0_107.pools = nil
 
-	for iter2_95, iter3_95 in ipairs(arg0_95.loadingIdList or {}) do
-		IslandAssetLoadDispatcher.Instance:Cancel(iter3_95)
+	for iter2_107, iter3_107 in ipairs(arg0_107.loadingIdList or {}) do
+		IslandAssetLoadDispatcher.Instance:Cancel(iter3_107)
 	end
 
-	arg0_95.loadingIdList = nil
+	arg0_107.loadingIdList = nil
 end
 
 return var0_0

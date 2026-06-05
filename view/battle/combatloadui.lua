@@ -31,11 +31,13 @@ function var0_0.preload(arg0_2, arg1_2)
 		end
 	end
 
-	arg0_2._preloadPicType = var0_2
-	arg0_2._preloadPicPath = var1_2
+	local var3_2 = HXSet.HxPath(var1_2)
 
-	if var1_2 then
-		LoadSpriteAsync(var1_2, function(arg0_3)
+	arg0_2._preloadPicType = var0_2
+	arg0_2._preloadPicPath = var3_2
+
+	if var3_2 then
+		LoadSpriteAsync(var3_2, function(arg0_3)
 			arg0_2._preloadPicSprite = arg0_3
 
 			arg1_2()

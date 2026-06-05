@@ -22,6 +22,7 @@ function var0_0.AddComponents(arg0_3, arg1_3, arg2_3)
 	var0_3.center = Vector3(0, 0.96, 0)
 
 	GetOrAddComponent(arg1_3, typeof(CharacterHandleController))
+	GetOrAddComponent(arg1_3, typeof(CharacterFootprintMgr))
 end
 
 function var0_0.LoadAsset(arg0_4, arg1_4, arg2_4)

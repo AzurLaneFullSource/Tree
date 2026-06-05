@@ -155,6 +155,7 @@ function var0_0.LoadCharacter(arg0_15, arg1_15, arg2_15)
 			end
 		end
 
+		GetOrAddComponent(arg0_15.role, typeof(CharacterFootprintMgr)):SetSpawnMode(1)
 		arg0_15:OnCharLoaded(var0_15.modelData)
 	end
 
@@ -171,88 +172,95 @@ function var0_0._LoadModel(arg0_17, arg1_17, arg2_17)
 			arg2_17(arg0_18, var0_17.personal_ani)
 			pg.UIMgr.GetInstance():LoadingOff()
 		end)
-	else
-		arg0_17:GetPoolMgr():GetCharacter(var0_17.model, var0_17.animator, function(arg0_19)
+	elseif arg0_17:IsPreviewScene() then
+		arg0_17:GetPoolMgr():GetPreviewModel(var0_17, function(arg0_19)
 			arg2_17(arg0_19, var0_17.personal_ani)
+			pg.UIMgr.GetInstance():LoadingOff()
+		end, arg0_17:GetDressByType(), arg0_17:GetColorByDressId())
+	else
+		arg0_17:GetPoolMgr():GetCharacter(var0_17.model, var0_17.animator, function(arg0_20)
+			arg2_17(arg0_20, var0_17.personal_ani)
 			pg.UIMgr.GetInstance():LoadingOff()
 		end)
 	end
 end
 
-function var0_0.UnloadCharacter(arg0_20, arg1_20)
-	if not arg1_20 then
+function var0_0.UnloadCharacter(arg0_21, arg1_21)
+	if not arg1_21 then
 		return
 	end
 
-	local var0_20 = arg1_20.modelData
-	local var1_20 = arg1_20.isCommander
-	local var2_20 = arg0_20:GetSmoothRotateObject():GetComponent(typeof(SmoothRotateObject))
+	local var0_21 = arg1_21.modelData
+	local var1_21 = arg1_21.isCommander
+	local var2_21 = arg0_21:GetSmoothRotateObject():GetComponent(typeof(SmoothRotateObject))
 
-	if var2_20 then
-		Object.Destroy(var2_20)
+	if var2_21 then
+		Object.Destroy(var2_21)
 
-		local var3_20
+		local var3_21
 	end
 
-	if arg0_20.role then
-		arg0_20.displayUnit:OnDetach()
-		pg.ViewUtils.SetLayer(arg0_20.role.transform, Layer.Default)
+	if arg0_21.role then
+		arg0_21.displayUnit:OnDetach()
+		pg.ViewUtils.SetLayer(arg0_21.role.transform, Layer.Default)
 
-		if arg0_20.isCommander then
-			arg0_20:GetPoolMgr():ReturnCommanderModel(arg0_20.role)
+		if arg0_21.isCommander then
+			arg0_21:GetPoolMgr():ReturnCommanderModel(arg0_21.role)
+		elseif arg0_21:IsPreviewScene() then
+			Object.Destroy(arg0_21.role)
 		else
-			arg0_20:GetPoolMgr():ReturnCharacter(var0_20.model, var0_20.animator, arg0_20.role)
+			arg0_21:GetPoolMgr():ReturnCharacter(var0_21.model, var0_21.animator, arg0_21.role)
 		end
 
-		arg0_20.role = nil
+		arg0_21.role = nil
 	end
 
-	if arg0_20.gcCounter >= 3 then
-		arg0_20.gcCounter = 0
+	if arg0_21.gcCounter >= 3 then
+		arg0_21.gcCounter = 0
 
 		IslandHelper.RunGC(true)
 	else
-		arg0_20.gcCounter = arg0_20.gcCounter + 1
+		arg0_21.gcCounter = arg0_21.gcCounter + 1
 	end
 end
 
-function var0_0.ClearCharacterContainer(arg0_21)
-	arg0_21:UnloadCharacter(arg0_21.loadData)
+function var0_0.ClearCharacterContainer(arg0_22)
+	arg0_22:UnloadCharacter(arg0_22.loadData)
 
-	arg0_21.loadData = nil
+	arg0_22.loadData = nil
 
-	if not IsNil(arg0_21.roleContainer) then
-		Object.Destroy(arg0_21.roleContainer.gameObject)
+	if not IsNil(arg0_22.roleContainer) then
+		Object.Destroy(arg0_22.roleContainer.gameObject)
 
-		arg0_21.roleContainer = nil
+		arg0_22.roleContainer = nil
 	end
 end
 
-function var0_0.UnLoadCharacterScene(arg0_22, arg1_22)
-	local var0_22 = "island/scenesres/scenes/character/map_shipmainui_scene"
+function var0_0.UnLoadCharacterScene(arg0_23, arg1_23)
+	local var0_23 = "island/scenesres/scenes/character/map_shipmainui_scene"
 
-	SceneOpMgr.Inst:UnloadSceneAsync(var0_22, "map_shipmainui", function()
-		if arg1_22 then
-			arg1_22()
+	SceneOpMgr.Inst:UnloadSceneAsync(var0_23, "map_shipmainui", function()
+		if arg1_23 then
+			arg1_23()
 		end
 	end)
 end
 
-function var0_0.ResetCameraMask(arg0_24)
-	local var0_24 = IslandCameraMgr.instance
+function var0_0.ResetCameraMask(arg0_25)
+	local var0_25 = IslandCameraMgr.instance
 
-	if IsNil(var0_24) then
-		var0_24 = CheatTavernCameraMgr.instance
+	if IsNil(var0_25) then
+		var0_25 = CheatTavernCameraMgr.instance
 	end
 
-	if arg0_24.defaultCullingMask and var0_24 then
-		local var1_24 = var0_24._mainCamera
+	if arg0_25.defaultCullingMask and var0_25 then
+		local var1_25 = var0_25._mainCamera
 
-		LuaHelper.ResetCamCullingMask(var1_24, arg0_24.defaultCullingMask)
+		LuaHelper.ResetCamCullingMask(var1_25, arg0_25.defaultCullingMask)
 	end
 end
 
-function var0_0.ActivityPlayerCamera(arg0_25)
+function var0_0.ActivityPlayerCamera(arg0_26)
 	if not IslandCameraMgr.instance then
 		return
 	end
@@ -260,53 +268,65 @@ function var0_0.ActivityPlayerCamera(arg0_25)
 	IslandCameraMgr.instance:ActiveVirtualCamera(IslandConst.FOLLOW_CAMERA_NAME)
 end
 
-function var0_0.CreateToolContainer(arg0_26)
-	arg0_26.toolContainer = GameObject.New("toolContainer").transform
+function var0_0.CreateToolContainer(arg0_27)
+	arg0_27.toolContainer = GameObject.New("toolContainer").transform
 
-	pg.ViewUtils.SetLayer(arg0_26.roleContainer, Layer.Default)
+	pg.ViewUtils.SetLayer(arg0_27.roleContainer, Layer.Default)
 end
 
-function var0_0.ClearToolContainer(arg0_27)
-	if not IsNil(arg0_27.toolContainer) then
-		Object.Destroy(arg0_27.toolContainer.gameObject)
+function var0_0.ClearToolContainer(arg0_28)
+	if not IsNil(arg0_28.toolContainer) then
+		Object.Destroy(arg0_28.toolContainer.gameObject)
 
-		arg0_27.toolContainer = nil
+		arg0_28.toolContainer = nil
 	end
 end
 
-function var0_0.OnClearItemAnimator(arg0_28)
-	arg0_28.displayUnit:OnClearItemAnimator()
+function var0_0.OnClearItemAnimator(arg0_29)
+	arg0_29.displayUnit:OnClearItemAnimator()
 end
 
-function var0_0.Hide(arg0_29)
-	var0_0.super.Hide(arg0_29)
-	arg0_29:ClearCharacterScene()
-end
-
-function var0_0.OnDisable(arg0_30)
+function var0_0.Hide(arg0_30)
+	var0_0.super.Hide(arg0_30)
 	arg0_30:ClearCharacterScene()
 end
 
-function var0_0.OnDestroy(arg0_31)
+function var0_0.OnDisable(arg0_31)
 	arg0_31:ClearCharacterScene()
-
-	for iter0_31, iter1_31 in pairs(arg0_31.cards or {}) do
-		iter1_31:Dispose()
-	end
-
-	arg0_31.cards = nil
 end
 
-function var0_0.GetActiveCamName(arg0_32)
+function var0_0.OnDestroy(arg0_32)
+	arg0_32:ClearCharacterScene()
+
+	for iter0_32, iter1_32 in pairs(arg0_32.cards or {}) do
+		iter1_32:Dispose()
+	end
+
+	arg0_32.cards = nil
+end
+
+function var0_0.GetActiveCamName(arg0_33)
 	return IslandConst.CHARA_CAMERA_NAME
 end
 
-function var0_0.GetSmoothRotateObject(arg0_33)
+function var0_0.GetSmoothRotateObject(arg0_34)
 	assert(false, "Write me")
 end
 
-function var0_0.OnCharLoaded(arg0_34)
+function var0_0.OnCharLoaded(arg0_35)
 	return
+end
+
+function var0_0.IsPreviewScene(arg0_36)
+	return false
+end
+
+function var0_0.GetDressByType(arg0_37)
+	return {}
+end
+
+function var0_0.GetColorByDressId(arg0_38)
+	return {}
 end
 
 return var0_0

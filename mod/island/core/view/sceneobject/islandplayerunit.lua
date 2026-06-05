@@ -70,6 +70,7 @@ function var3_0.OnAttach(arg0_1, arg1_1)
 	arg0_1:InitFarmCheckWorldObject()
 
 	arg0_1.objTfList = {}
+	arg0_1.toolIdMap = {}
 	arg0_1.islandid = arg0_1:GetView():GetIsland().id
 	arg0_1.isSelfIsland = getProxy(PlayerProxy):getRawData().id == arg0_1.islandid
 end
@@ -377,7 +378,11 @@ function var3_0.LoadInteractiveTool(arg0_26, arg1_26)
 		arg0_26.toolId = arg1_26
 	end
 
-	local var0_26 = arg0_26.objTfList[arg0_26.toolId]
+	arg0_26.currentToolId = IslandAnimationAttachmentHelper.ResolveId(arg0_26.animator, arg0_26.toolId)
+	arg0_26.toolIdMap[arg1_26] = arg0_26.currentToolId
+	arg0_26.toolIdMap[arg0_26.toolId] = arg0_26.currentToolId
+
+	local var0_26 = arg0_26.objTfList[arg0_26.currentToolId]
 
 	if var0_26 then
 		setActive(var0_26, true)
@@ -387,23 +392,25 @@ function var3_0.LoadInteractiveTool(arg0_26, arg1_26)
 		return
 	end
 
-	local var1_26 = pg.island_animation_attachments[arg0_26.toolId]
+	local var1_26 = pg.island_animation_attachments[arg0_26.currentToolId]
 	local var2_26 = LoadAny(var1_26.model, nil)
 	local var3_26 = Object.Instantiate(var2_26)
 
-	arg0_26.objTfList[arg0_26.toolId] = var3_26.transform
+	arg0_26.objTfList[arg0_26.currentToolId] = var3_26.transform
 
 	local var4_26 = LoadAny(var1_26.animator, nil, typeof(RuntimeAnimatorController))
 
-	GetOrAddComponent(arg0_26.objTfList[arg0_26.toolId], typeof(Animator)).runtimeAnimatorController = var4_26
+	GetOrAddComponent(arg0_26.objTfList[arg0_26.currentToolId], typeof(Animator)).runtimeAnimatorController = var4_26
 
-	setParent(arg0_26.objTfList[arg0_26.toolId], arg0_26._tf)
-	pg.ViewUtils.SetLayer(arg0_26.objTfList[arg0_26.toolId], Layer.UIHidden)
+	setParent(arg0_26.objTfList[arg0_26.currentToolId], arg0_26._tf)
+	pg.ViewUtils.SetLayer(arg0_26.objTfList[arg0_26.currentToolId], Layer.UIHidden)
 end
 
-function var3_0.UnLoadInteractiveTool(arg0_27)
-	if arg0_27.objTfList[arg0_27.toolId] then
-		setActive(arg0_27.objTfList[arg0_27.toolId], false)
+function var3_0.UnLoadInteractiveTool(arg0_27, arg1_27)
+	local var0_27 = arg0_27.toolIdMap[arg1_27] or arg0_27.currentToolId or IslandAnimationAttachmentHelper.ResolveId(arg0_27.animator, arg1_27)
+
+	if arg0_27.objTfList[var0_27] then
+		setActive(arg0_27.objTfList[var0_27], false)
 	end
 end
 
@@ -455,11 +462,19 @@ function var3_0.StateEnterHandle(arg0_32, arg1_32, arg2_32)
 end
 
 function var3_0.StateEnterFixHandle(arg0_33, arg1_33, arg2_33)
-	pg.ViewUtils.SetLayer(arg0_33.objTfList[arg0_33.toolId], Layer.Default)
+	local var0_33 = arg0_33.toolIdMap[arg2_33] or arg0_33.currentToolId
+
+	if arg1_33 == var10_0.LoadToolHandle and var0_33 and arg0_33.objTfList[var0_33] then
+		pg.ViewUtils.SetLayer(arg0_33.objTfList[var0_33], Layer.Default)
+	end
 end
 
 function var3_0.StateExitFixHandle(arg0_34, arg1_34, arg2_34)
-	pg.ViewUtils.SetLayer(arg0_34.objTfList[arg0_34.toolId], Layer.UIHidden)
+	local var0_34 = arg0_34.toolIdMap[arg2_34] or arg0_34.currentToolId
+
+	if arg1_34 == var10_0.LoadToolHandle and var0_34 and arg0_34.objTfList[var0_34] then
+		pg.ViewUtils.SetLayer(arg0_34.objTfList[var0_34], Layer.UIHidden)
+	end
 end
 
 function var3_0.StateExitHandle(arg0_35, arg1_35, arg2_35)

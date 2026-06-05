@@ -86,7 +86,9 @@ function var0_0.AddItems(arg0_1, arg1_1)
 
 	if #var23_1 > 0 then
 		for iter8_1, iter9_1 in ipairs(var23_1) do
-			table.insert(var16_1, iter9_1)
+			if pg.island_dress_template[iter9_1.id].is_hide ~= 1 then
+				table.insert(var16_1, iter9_1)
+			end
 		end
 	end
 

@@ -104,6 +104,7 @@ end
 function var0_0.AddListeners(arg0_9)
 	arg0_9:AddIslandListener(IslandVisitorAgency.VISITOR_ADD, arg0_9.OnPlayerAdd)
 	arg0_9:AddIslandListener(IslandVisitorAgency.VISITOR_EXIT, arg0_9.OnPlayerExit)
+	arg0_9:AddIslandListener(IslandDressUpAgency.MORPH_PLAYER_DRESS, arg0_9.OnPlayerMorphDress)
 	arg0_9:AddIslandListener(IslandDressUpAgency.CHANGE_PLAYER_DRESS, arg0_9.OnPlayerChangeDress)
 	arg0_9:AddIslandListener(IslandCharacterAgency.CHANGE_CHARACTER_DRESS, arg0_9.OnShipChangeDress)
 	arg0_9:AddIslandListener(IslandSyncMgr.ISLAND_SYNC_DATA_UPDATE, arg0_9.OnSyncDataUpdate)
@@ -157,6 +158,7 @@ end
 function var0_0.RemoveListeners(arg0_10)
 	arg0_10:RemoveIslandListener(IslandVisitorAgency.VISITOR_ADD, arg0_10.OnPlayerAdd)
 	arg0_10:RemoveIslandListener(IslandVisitorAgency.VISITOR_EXIT, arg0_10.OnPlayerExit)
+	arg0_10:RemoveIslandListener(IslandDressUpAgency.MORPH_PLAYER_DRESS, arg0_10.OnPlayerMorphDress)
 	arg0_10:RemoveIslandListener(IslandDressUpAgency.CHANGE_PLAYER_DRESS, arg0_10.OnPlayerChangeDress)
 	arg0_10:RemoveIslandListener(IslandCharacterAgency.CHANGE_CHARACTER_DRESS, arg0_10.OnShipChangeDress)
 	arg0_10:RemoveIslandListener(IslandSyncMgr.ISLAND_SYNC_DATA_UPDATE, arg0_10.OnSyncDataUpdate)
@@ -495,40 +497,19 @@ function var0_0.OnPlayerExit(arg0_42, arg1_42)
 	arg0_42.islandSyncMgr:OnVisitorExit(arg1_42.id)
 end
 
-function var0_0.OnPlayerChangeDress(arg0_43, arg1_43, arg2_43)
-	arg0_43:NotifiyCore(ISLAND_EVT.CHANGE_DRESS, arg1_43, arg2_43)
+function var0_0.OnPlayerMorphDress(arg0_43, ...)
+	arg0_43:NotifiyCore(ISLAND_EVT.MORPH_FORM_CHANGE, ...)
 end
 
-function var0_0.OnShipChangeDress(arg0_44, arg1_44, arg2_44, arg3_44, arg4_44)
-	arg0_44:NotifiyCore(ISLAND_EVT.CHANGE_CHARACTER_DRESS, arg1_44, arg2_44, arg3_44, arg4_44)
+function var0_0.OnPlayerChangeDress(arg0_44, arg1_44, arg2_44)
+	arg0_44:NotifiyCore(ISLAND_EVT.CHANGE_DRESS, arg1_44, arg2_44)
 end
 
-function var0_0.OnStartPlant(arg0_45, arg1_45)
-	local var0_45
-
-	for iter0_45, iter1_45 in ipairs(arg0_45.sceneData.productSystems) do
-		if iter1_45.id == arg1_45.build_id then
-			var0_45 = iter1_45
-
-			break
-		end
-	end
-
-	if not var0_45 then
-		return
-	end
-
-	local var1_45 = var0_45:GetUnitIdBySlotId(arg1_45.area_id)
-
-	arg0_45:NotifiyCore(ISLAND_EVT.RMOVE_UNIT, IslandConst.UNIT_LIST_OBJ, var1_45)
-
-	local var2_45 = var0_45:GenHandPlantUnitBySlotData(arg1_45.area_id, arg1_45.formula_id)
-
-	arg0_45:NotifiyCore(ISLAND_EVT.GEN_UNIT, var2_45)
-	arg0_45:NotifiyCore(ISLAND_EVT.UPDATE_HUD, var1_45)
+function var0_0.OnShipChangeDress(arg0_45, arg1_45, arg2_45, arg3_45, arg4_45)
+	arg0_45:NotifiyCore(ISLAND_EVT.CHANGE_CHARACTER_DRESS, arg1_45, arg2_45, arg3_45, arg4_45)
 end
 
-function var0_0.OnEndPlant(arg0_46, arg1_46)
+function var0_0.OnStartPlant(arg0_46, arg1_46)
 	local var0_46
 
 	for iter0_46, iter1_46 in ipairs(arg0_46.sceneData.productSystems) do
@@ -547,17 +528,17 @@ function var0_0.OnEndPlant(arg0_46, arg1_46)
 
 	arg0_46:NotifiyCore(ISLAND_EVT.RMOVE_UNIT, IslandConst.UNIT_LIST_OBJ, var1_46)
 
-	local var2_46 = var0_46:GenHandPlantUnitBySlotData(arg1_46.area_id)
+	local var2_46 = var0_46:GenHandPlantUnitBySlotData(arg1_46.area_id, arg1_46.formula_id)
 
 	arg0_46:NotifiyCore(ISLAND_EVT.GEN_UNIT, var2_46)
 	arg0_46:NotifiyCore(ISLAND_EVT.UPDATE_HUD, var1_46)
 end
 
-function var0_0.OnStartDelegation(arg0_47, arg1_47)
+function var0_0.OnEndPlant(arg0_47, arg1_47)
 	local var0_47
 
-	for iter0_47, iter1_47 in ipairs(arg0_47.sceneData.systemList) do
-		if isa(iter1_47, IslandCharacterSystemVO) and iter1_47.id == arg1_47.build_id then
+	for iter0_47, iter1_47 in ipairs(arg0_47.sceneData.productSystems) do
+		if iter1_47.id == arg1_47.build_id then
 			var0_47 = iter1_47
 
 			break
@@ -568,66 +549,17 @@ function var0_0.OnStartDelegation(arg0_47, arg1_47)
 		return
 	end
 
-	local var1_47
+	local var1_47 = var0_47:GetUnitIdBySlotId(arg1_47.area_id)
 
-	for iter2_47, iter3_47 in ipairs(arg0_47.sceneData.productSystems) do
-		if iter3_47.id == arg1_47.build_id then
-			var1_47 = iter3_47
+	arg0_47:NotifiyCore(ISLAND_EVT.RMOVE_UNIT, IslandConst.UNIT_LIST_OBJ, var1_47)
 
-			break
-		end
-	end
+	local var2_47 = var0_47:GenHandPlantUnitBySlotData(arg1_47.area_id)
 
-	if table.contains(IslandProductConst.PlantPlaceIdLists, arg1_47.build_id) then
-		local var2_47 = pg.island_production_slot[arg1_47.area_id]
-
-		for iter4_47, iter5_47 in ipairs(var2_47.exclusion_slot) do
-			local var3_47 = var1_47:GetUnitIdBySlotId(iter5_47)
-			local var4_47 = var1_47:GetUnitVOByUnitId(var3_47)
-
-			if var4_47 then
-				var4_47:ChangeSlotType(IslandProductConst.ProductSlotType.RoleDelegation)
-			end
-		end
-	end
-
-	local var5_47 = {}
-
-	if table.contains(IslandProductConst.havePerformPlace, arg1_47.build_id) then
-		local var6_47 = var1_47:GetDelegateUnitsByBuildIdAndSlotId(arg1_47.build_id, arg1_47.area_id, arg1_47.formula_id)
-
-		var5_47.commissionSlotId = var1_47:GetCommissionSlotId(arg1_47.area_id)
-		var5_47.unitIds = {}
-
-		for iter6_47, iter7_47 in ipairs(var6_47) do
-			table.insert(var5_47.unitIds, iter7_47.id)
-		end
-
-		for iter8_47, iter9_47 in ipairs(var6_47) do
-			arg0_47:NotifiyCore(ISLAND_EVT.GEN_UNIT, iter9_47)
-		end
-	end
-
-	local var7_47 = var1_47:GetDelegateEffectsByCommissonId(arg1_47.area_id)
-
-	if var7_47 then
-		local var8_47 = var1_47:GenUnitByDelegateEffectId(var7_47)
-
-		if var8_47 then
-			arg0_47:NotifiyCore(ISLAND_EVT.GEN_UNIT, var8_47)
-		end
-	end
-
-	local var9_47 = var0_47:GetUnit(arg1_47.ship_id, arg1_47.area_id, true)
-
-	if var9_47 then
-		arg0_47:NotifiyCore(ISLAND_EVT.GEN_UNIT, var9_47)
-	end
-
-	arg0_47:NotifiyCore(ISLAND_EVT.START_DEGATION, arg1_47, var5_47)
+	arg0_47:NotifiyCore(ISLAND_EVT.GEN_UNIT, var2_47)
+	arg0_47:NotifiyCore(ISLAND_EVT.UPDATE_HUD, var1_47)
 end
 
-function var0_0.OnEndDelegation(arg0_48, arg1_48)
+function var0_0.OnStartDelegation(arg0_48, arg1_48)
 	local var0_48
 
 	for iter0_48, iter1_48 in ipairs(arg0_48.sceneData.systemList) do
@@ -642,58 +574,66 @@ function var0_0.OnEndDelegation(arg0_48, arg1_48)
 		return
 	end
 
-	arg0_48:NotifiyCore(ISLAND_EVT.END_DEGATION, arg1_48)
-
-	local var1_48 = var0_48:GetUnitShipIdBySlotId(arg1_48.ship_id, arg1_48.area_id)
-
-	if var1_48 then
-		arg0_48:NotifiyCore(ISLAND_EVT.RMOVE_UNIT, IslandConst.UNIT_LIST_DELEGATION, var1_48)
-	end
-
-	local var2_48
+	local var1_48
 
 	for iter2_48, iter3_48 in ipairs(arg0_48.sceneData.productSystems) do
 		if iter3_48.id == arg1_48.build_id then
-			var2_48 = iter3_48
+			var1_48 = iter3_48
 
 			break
 		end
 	end
 
-	if table.contains(IslandProductConst.havePerformPlace, arg1_48.build_id) then
-		local var3_48 = var2_48:GetDelegatUnitsBySlotId(arg1_48.area_id)
-
-		for iter4_48, iter5_48 in ipairs(var3_48) do
-			arg0_48:NotifiyCore(ISLAND_EVT.RMOVE_UNIT, IslandConst.UNIT_LIST_DELEGATE_UNIT, iter5_48)
-		end
-	end
-
-	local var4_48 = var2_48:GetDelegateEffectsByCommissonId(arg1_48.area_id)
-
-	if var4_48 then
-		arg0_48:NotifiyCore(ISLAND_EVT.RMOVE_UNIT, IslandConst.UNIT_LIST_OBJ, var4_48)
-	end
-
-	if arg1_48.remainReward then
-		return
-	end
-
 	if table.contains(IslandProductConst.PlantPlaceIdLists, arg1_48.build_id) then
-		local var5_48 = pg.island_production_slot[arg1_48.area_id]
+		local var2_48 = pg.island_production_slot[arg1_48.area_id]
 
-		for iter6_48, iter7_48 in ipairs(var5_48.exclusion_slot) do
-			local var6_48 = var2_48:GetUnitIdBySlotId(iter7_48)
+		for iter4_48, iter5_48 in ipairs(var2_48.exclusion_slot) do
+			local var3_48 = var1_48:GetUnitIdBySlotId(iter5_48)
+			local var4_48 = var1_48:GetUnitVOByUnitId(var3_48)
 
-			arg0_48:NotifiyCore(ISLAND_EVT.RMOVE_UNIT, IslandConst.UNIT_LIST_OBJ, var6_48)
-
-			local var7_48 = var2_48:GenHandPlantUnitBySlotData(iter7_48)
-
-			arg0_48:NotifiyCore(ISLAND_EVT.GEN_UNIT, var7_48)
+			if var4_48 then
+				var4_48:ChangeSlotType(IslandProductConst.ProductSlotType.RoleDelegation)
+			end
 		end
 	end
+
+	local var5_48 = {}
+
+	if table.contains(IslandProductConst.havePerformPlace, arg1_48.build_id) then
+		local var6_48 = var1_48:GetDelegateUnitsByBuildIdAndSlotId(arg1_48.build_id, arg1_48.area_id, arg1_48.formula_id)
+
+		var5_48.commissionSlotId = var1_48:GetCommissionSlotId(arg1_48.area_id)
+		var5_48.unitIds = {}
+
+		for iter6_48, iter7_48 in ipairs(var6_48) do
+			table.insert(var5_48.unitIds, iter7_48.id)
+		end
+
+		for iter8_48, iter9_48 in ipairs(var6_48) do
+			arg0_48:NotifiyCore(ISLAND_EVT.GEN_UNIT, iter9_48)
+		end
+	end
+
+	local var7_48 = var1_48:GetDelegateEffectsByCommissonId(arg1_48.area_id)
+
+	if var7_48 then
+		local var8_48 = var1_48:GenUnitByDelegateEffectId(var7_48)
+
+		if var8_48 then
+			arg0_48:NotifiyCore(ISLAND_EVT.GEN_UNIT, var8_48)
+		end
+	end
+
+	local var9_48 = var0_48:GetUnit(arg1_48.ship_id, arg1_48.area_id, true)
+
+	if var9_48 then
+		arg0_48:NotifiyCore(ISLAND_EVT.GEN_UNIT, var9_48)
+	end
+
+	arg0_48:NotifiyCore(ISLAND_EVT.START_DEGATION, arg1_48, var5_48)
 end
 
-function var0_0.OnGetAllDelegationAward(arg0_49, arg1_49)
+function var0_0.OnEndDelegation(arg0_49, arg1_49)
 	local var0_49
 
 	for iter0_49, iter1_49 in ipairs(arg0_49.sceneData.systemList) do
@@ -708,36 +648,62 @@ function var0_0.OnGetAllDelegationAward(arg0_49, arg1_49)
 		return
 	end
 
-	local var1_49
+	arg0_49:NotifiyCore(ISLAND_EVT.END_DEGATION, arg1_49)
+
+	local var1_49 = var0_49:GetUnitShipIdBySlotId(arg1_49.ship_id, arg1_49.area_id)
+
+	if var1_49 then
+		arg0_49:NotifiyCore(ISLAND_EVT.RMOVE_UNIT, IslandConst.UNIT_LIST_DELEGATION, var1_49)
+	end
+
+	local var2_49
 
 	for iter2_49, iter3_49 in ipairs(arg0_49.sceneData.productSystems) do
 		if iter3_49.id == arg1_49.build_id then
-			var1_49 = iter3_49
+			var2_49 = iter3_49
 
 			break
 		end
 	end
 
-	if arg1_49.build_id == IslandProductConst.FarmlandPlaceId or arg1_49.build_id == IslandProductConst.OrchardPlaceId or arg1_49.build_id == IslandProductConst.GardenPlaceId then
-		local var2_49 = pg.island_production_slot[arg1_49.area_id]
+	if table.contains(IslandProductConst.havePerformPlace, arg1_49.build_id) then
+		local var3_49 = var2_49:GetDelegatUnitsBySlotId(arg1_49.area_id)
 
-		for iter4_49, iter5_49 in ipairs(var2_49.exclusion_slot) do
-			local var3_49 = var1_49:GetUnitIdBySlotId(iter5_49)
+		for iter4_49, iter5_49 in ipairs(var3_49) do
+			arg0_49:NotifiyCore(ISLAND_EVT.RMOVE_UNIT, IslandConst.UNIT_LIST_DELEGATE_UNIT, iter5_49)
+		end
+	end
 
-			arg0_49:NotifiyCore(ISLAND_EVT.RMOVE_UNIT, IslandConst.UNIT_LIST_OBJ, var3_49)
+	local var4_49 = var2_49:GetDelegateEffectsByCommissonId(arg1_49.area_id)
 
-			local var4_49 = var1_49:GenHandPlantUnitBySlotData(iter5_49)
+	if var4_49 then
+		arg0_49:NotifiyCore(ISLAND_EVT.RMOVE_UNIT, IslandConst.UNIT_LIST_OBJ, var4_49)
+	end
 
-			arg0_49:NotifiyCore(ISLAND_EVT.GEN_UNIT, var4_49)
+	if arg1_49.remainReward then
+		return
+	end
+
+	if table.contains(IslandProductConst.PlantPlaceIdLists, arg1_49.build_id) then
+		local var5_49 = pg.island_production_slot[arg1_49.area_id]
+
+		for iter6_49, iter7_49 in ipairs(var5_49.exclusion_slot) do
+			local var6_49 = var2_49:GetUnitIdBySlotId(iter7_49)
+
+			arg0_49:NotifiyCore(ISLAND_EVT.RMOVE_UNIT, IslandConst.UNIT_LIST_OBJ, var6_49)
+
+			local var7_49 = var2_49:GenHandPlantUnitBySlotData(iter7_49)
+
+			arg0_49:NotifiyCore(ISLAND_EVT.GEN_UNIT, var7_49)
 		end
 	end
 end
 
-function var0_0.OnChangeSlotModel(arg0_50, arg1_50)
+function var0_0.OnGetAllDelegationAward(arg0_50, arg1_50)
 	local var0_50
 
-	for iter0_50, iter1_50 in ipairs(arg0_50.sceneData.productSystems) do
-		if iter1_50.id == IslandProductConst.FarmlandPlaceId then
+	for iter0_50, iter1_50 in ipairs(arg0_50.sceneData.systemList) do
+		if isa(iter1_50, IslandCharacterSystemVO) and iter1_50.id == arg1_50.build_id then
 			var0_50 = iter1_50
 
 			break
@@ -748,20 +714,36 @@ function var0_0.OnChangeSlotModel(arg0_50, arg1_50)
 		return
 	end
 
-	arg0_50:NotifiyCore(ISLAND_EVT.RMOVE_UNIT, IslandConst.UNIT_LIST_OBJ, arg1_50.id)
+	local var1_50
 
-	local var1_50 = var0_50:GetUnitVOByUnitId(arg1_50.id)
+	for iter2_50, iter3_50 in ipairs(arg0_50.sceneData.productSystems) do
+		if iter3_50.id == arg1_50.build_id then
+			var1_50 = iter3_50
 
-	var1_50.modelId = arg1_50.modelId
+			break
+		end
+	end
 
-	arg0_50:NotifiyCore(ISLAND_EVT.GEN_UNIT, var1_50)
+	if arg1_50.build_id == IslandProductConst.FarmlandPlaceId or arg1_50.build_id == IslandProductConst.OrchardPlaceId or arg1_50.build_id == IslandProductConst.GardenPlaceId then
+		local var2_50 = pg.island_production_slot[arg1_50.area_id]
+
+		for iter4_50, iter5_50 in ipairs(var2_50.exclusion_slot) do
+			local var3_50 = var1_50:GetUnitIdBySlotId(iter5_50)
+
+			arg0_50:NotifiyCore(ISLAND_EVT.RMOVE_UNIT, IslandConst.UNIT_LIST_OBJ, var3_50)
+
+			local var4_50 = var1_50:GenHandPlantUnitBySlotData(iter5_50)
+
+			arg0_50:NotifiyCore(ISLAND_EVT.GEN_UNIT, var4_50)
+		end
+	end
 end
 
-function var0_0.OnStartHandCollect(arg0_51, arg1_51)
+function var0_0.OnChangeSlotModel(arg0_51, arg1_51)
 	local var0_51
 
 	for iter0_51, iter1_51 in ipairs(arg0_51.sceneData.productSystems) do
-		if iter1_51.id == arg1_51.build_id then
+		if iter1_51.id == IslandProductConst.FarmlandPlaceId then
 			var0_51 = iter1_51
 
 			break
@@ -772,13 +754,16 @@ function var0_0.OnStartHandCollect(arg0_51, arg1_51)
 		return
 	end
 
-	local var1_51 = var0_51:GetUnitIdBySlotId(arg1_51.area_id)
+	arg0_51:NotifiyCore(ISLAND_EVT.RMOVE_UNIT, IslandConst.UNIT_LIST_OBJ, arg1_51.id)
 
-	arg0_51:NotifiyCore(ISLAND_EVT.UPDATE_UNIT_HAND_COLLECT, var1_51)
-	arg0_51:NotifiyCore(ISLAND_EVT.UPDATE_HUD, var1_51)
+	local var1_51 = var0_51:GetUnitVOByUnitId(arg1_51.id)
+
+	var1_51.modelId = arg1_51.modelId
+
+	arg0_51:NotifiyCore(ISLAND_EVT.GEN_UNIT, var1_51)
 end
 
-function var0_0.OnHandPlantSlotChangeUnit(arg0_52, arg1_52)
+function var0_0.OnStartHandCollect(arg0_52, arg1_52)
 	local var0_52
 
 	for iter0_52, iter1_52 in ipairs(arg0_52.sceneData.productSystems) do
@@ -793,78 +778,75 @@ function var0_0.OnHandPlantSlotChangeUnit(arg0_52, arg1_52)
 		return
 	end
 
-	local var1_52 = var0_52:GetUnitIdBySlotId(arg1_52.slotId)
+	local var1_52 = var0_52:GetUnitIdBySlotId(arg1_52.area_id)
 
-	arg0_52:NotifiyCore(ISLAND_EVT.RMOVE_UNIT, IslandConst.UNIT_LIST_OBJ, var1_52)
-
-	local var2_52 = var0_52:GenHandPlantUnitBySlotData(arg1_52.slotId)
-
-	arg0_52:NotifiyCore(ISLAND_EVT.GEN_UNIT, var2_52)
+	arg0_52:NotifiyCore(ISLAND_EVT.UPDATE_UNIT_HAND_COLLECT, var1_52)
+	arg0_52:NotifiyCore(ISLAND_EVT.UPDATE_HUD, var1_52)
 end
 
-function var0_0.OnProductPlaceChangeUnit(arg0_53, arg1_53)
-	local var0_53 = arg1_53.build_id
-	local var1_53
+function var0_0.OnHandPlantSlotChangeUnit(arg0_53, arg1_53)
+	local var0_53
 
 	for iter0_53, iter1_53 in ipairs(arg0_53.sceneData.productSystems) do
-		if iter1_53.id == var0_53 then
-			var1_53 = iter1_53
+		if iter1_53.id == arg1_53.build_id then
+			var0_53 = iter1_53
 
 			break
 		end
 	end
 
-	if not var1_53 then
+	if not var0_53 then
 		return
 	end
 
-	local var2_53 = var1_53:GetPlaceModelId(false)
+	local var1_53 = var0_53:GetUnitIdBySlotId(arg1_53.slotId)
 
-	arg0_53:NotifiyCore(ISLAND_EVT.RMOVE_UNIT, IslandConst.UNIT_LIST_OBJ, var2_53)
+	arg0_53:NotifiyCore(ISLAND_EVT.RMOVE_UNIT, IslandConst.UNIT_LIST_OBJ, var1_53)
 
-	local var3_53 = var1_53:GetPlaceModelUnit(true)
+	local var2_53 = var0_53:GenHandPlantUnitBySlotData(arg1_53.slotId)
 
-	arg0_53:NotifiyCore(ISLAND_EVT.GEN_UNIT, var3_53)
+	arg0_53:NotifiyCore(ISLAND_EVT.GEN_UNIT, var2_53)
 end
 
-function var0_0.OnRemoveWildGatherDone(arg0_54, arg1_54)
-	arg0_54:NotifiyCore(ISLAND_EVT.RMOVE_UNIT, IslandConst.UNIT_LIST_OBJ, arg1_54.unitId)
-	arg0_54:NotifiyCore(ISLAND_EVT.LEAVE_UNIT, {
-		id = arg1_54.unitId
+function var0_0.OnProductPlaceChangeUnit(arg0_54, arg1_54)
+	local var0_54 = arg1_54.build_id
+	local var1_54
+
+	for iter0_54, iter1_54 in ipairs(arg0_54.sceneData.productSystems) do
+		if iter1_54.id == var0_54 then
+			var1_54 = iter1_54
+
+			break
+		end
+	end
+
+	if not var1_54 then
+		return
+	end
+
+	local var2_54 = var1_54:GetPlaceModelId(false)
+
+	arg0_54:NotifiyCore(ISLAND_EVT.RMOVE_UNIT, IslandConst.UNIT_LIST_OBJ, var2_54)
+
+	local var3_54 = var1_54:GetPlaceModelUnit(true)
+
+	arg0_54:NotifiyCore(ISLAND_EVT.GEN_UNIT, var3_54)
+end
+
+function var0_0.OnRemoveWildGatherDone(arg0_55, arg1_55)
+	arg0_55:NotifiyCore(ISLAND_EVT.RMOVE_UNIT, IslandConst.UNIT_LIST_OBJ, arg1_55.unitId)
+	arg0_55:NotifiyCore(ISLAND_EVT.LEAVE_UNIT, {
+		id = arg1_55.unitId
 	})
 end
 
-function var0_0.OnAddWildGatherDone(arg0_55, arg1_55)
-	local var0_55 = IslandDataConvertor.GenWildGatherUnit(arg1_55)
+function var0_0.OnAddWildGatherDone(arg0_56, arg1_56)
+	local var0_56 = IslandDataConvertor.GenWildGatherUnit(arg1_56)
 
-	arg0_55:NotifiyCore(ISLAND_EVT.GEN_UNIT, var0_55)
+	arg0_56:NotifiyCore(ISLAND_EVT.GEN_UNIT, var0_56)
 end
 
-function var0_0.OnCollectSlotUnitInit(arg0_56, arg1_56)
-	local var0_56 = arg1_56.slotId
-	local var1_56 = pg.island_production_slot[var0_56].place
-	local var2_56
-
-	for iter0_56, iter1_56 in ipairs(arg0_56.sceneData.productSystems) do
-		if iter1_56.id == var1_56 then
-			var2_56 = iter1_56
-
-			break
-		end
-	end
-
-	if not var2_56 then
-		return
-	end
-
-	local var3_56 = var2_56:InitHandCollectSlotBySlotId(var0_56)
-
-	if var3_56 then
-		arg0_56:NotifiyCore(ISLAND_EVT.GEN_UNIT, var3_56)
-	end
-end
-
-function var0_0.OnCollectSlotUnitUpdate(arg0_57, arg1_57)
+function var0_0.OnCollectSlotUnitInit(arg0_57, arg1_57)
 	local var0_57 = arg1_57.slotId
 	local var1_57 = pg.island_production_slot[var0_57].place
 	local var2_57
@@ -881,15 +863,14 @@ function var0_0.OnCollectSlotUnitUpdate(arg0_57, arg1_57)
 		return
 	end
 
-	local var3_57 = var2_57:GetUnitIdBySlotId(arg1_57.slotId)
+	local var3_57 = var2_57:InitHandCollectSlotBySlotId(var0_57)
 
 	if var3_57 then
-		arg0_57:NotifiyCore(ISLAND_EVT.UPDATE_UNIT_HAND_COLLECT, var3_57)
-		arg0_57:NotifiyCore(ISLAND_EVT.UPDATE_HUD, var3_57)
+		arg0_57:NotifiyCore(ISLAND_EVT.GEN_UNIT, var3_57)
 	end
 end
 
-function var0_0.OnCollectSloSlotUnitRemove(arg0_58, arg1_58)
+function var0_0.OnCollectSlotUnitUpdate(arg0_58, arg1_58)
 	local var0_58 = arg1_58.slotId
 	local var1_58 = pg.island_production_slot[var0_58].place
 	local var2_58
@@ -906,261 +887,260 @@ function var0_0.OnCollectSloSlotUnitRemove(arg0_58, arg1_58)
 		return
 	end
 
-	local var3_58 = var2_58:GetHandCollectSlotBySlotId(var0_58)
+	local var3_58 = var2_58:GetUnitIdBySlotId(arg1_58.slotId)
 
-	arg0_58:NotifiyCore(ISLAND_EVT.RMOVE_UNIT, IslandConst.UNIT_LIST_OBJ, var3_58)
+	if var3_58 then
+		arg0_58:NotifiyCore(ISLAND_EVT.UPDATE_UNIT_HAND_COLLECT, var3_58)
+		arg0_58:NotifiyCore(ISLAND_EVT.UPDATE_HUD, var3_58)
+	end
 end
 
-function var0_0.OnSyncDataUpdate(arg0_59, arg1_59)
-	arg0_59.islandSyncMgr:HandleSyncData(arg1_59)
-end
+function var0_0.OnCollectSloSlotUnitRemove(arg0_59, arg1_59)
+	local var0_59 = arg1_59.slotId
+	local var1_59 = pg.island_production_slot[var0_59].place
+	local var2_59
 
-function var0_0.OnSyncObjUpdate(arg0_60, arg1_60)
-	arg0_60.islandSyncMgr:HandleSyncObj(arg1_60)
-end
-
-function var0_0.Update(arg0_61)
-	arg0_61.playerInputManager:Update()
-	arg0_61.islandSyncMgr:Update()
-end
-
-function var0_0.OnDispose(arg0_62)
-	if arg0_62.playerInputManager then
-		arg0_62.playerInputManager:Dispose()
-
-		arg0_62.playerInputManager = nil
-	end
-
-	if arg0_62.islandSyncMgr then
-		arg0_62.islandSyncMgr:Dispose()
-
-		arg0_62.islandSyncMgr = nil
-	end
-
-	if arg0_62.strollAllocator then
-		arg0_62.strollAllocator:Dispose()
-
-		arg0_62.strollAllocator = nil
-	end
-
-	if arg0_62.visibilityAllocator then
-		arg0_62.visibilityAllocator:Dispose()
-
-		arg0_62.visibilityAllocator = nil
-	end
-
-	if arg0_62.giftAllocator then
-		arg0_62.giftAllocator:Dispose()
-
-		arg0_62.giftAllocator = nil
-	end
-
-	if arg0_62.timeDelayCreate then
-		arg0_62.timeDelayCreate:Dispose()
-
-		arg0_62.timeDelayCreate = nil
-	end
-
-	if arg0_62.activityNpcAllocator then
-		arg0_62.activityNpcAllocator:Dispose()
-
-		arg0_62.activityNpcAllocator = nil
-	end
-
-	arg0_62.__debouncers = nil
-end
-
-function var0_0.OnAnimalInit(arg0_63, arg1_63)
-	local var0_63
-
-	for iter0_63, iter1_63 in ipairs(arg0_63.sceneData.productSystems) do
-		if iter1_63.id == IslandProductConst.PasturePlaceId then
-			var0_63 = iter1_63
+	for iter0_59, iter1_59 in ipairs(arg0_59.sceneData.productSystems) do
+		if iter1_59.id == var1_59 then
+			var2_59 = iter1_59
 
 			break
 		end
 	end
 
-	if not var0_63 then
+	if not var2_59 then
 		return
 	end
 
-	local var1_63 = arg1_63.slotId
+	local var3_59 = var2_59:GetHandCollectSlotBySlotId(var0_59)
 
-	for iter2_63, iter3_63 in ipairs(arg1_63.aniList) do
-		local var2_63 = var0_63:GenAnimalByAnialConfig(iter3_63, var1_63)
-
-		arg0_63:NotifiyCore(ISLAND_EVT.GEN_UNIT, var2_63)
-	end
+	arg0_59:NotifiyCore(ISLAND_EVT.RMOVE_UNIT, IslandConst.UNIT_LIST_OBJ, var3_59)
 end
 
-function var0_0.OnSlotDelegateInit(arg0_64, arg1_64)
-	local var0_64 = arg1_64.slotId
-	local var1_64 = pg.island_production_slot[var0_64].place
-	local var2_64
+function var0_0.OnSyncDataUpdate(arg0_60, arg1_60)
+	arg0_60.islandSyncMgr:HandleSyncData(arg1_60)
+end
+
+function var0_0.OnSyncObjUpdate(arg0_61, arg1_61)
+	arg0_61.islandSyncMgr:HandleSyncObj(arg1_61)
+end
+
+function var0_0.Update(arg0_62)
+	arg0_62.playerInputManager:Update()
+	arg0_62.islandSyncMgr:Update()
+end
+
+function var0_0.OnDispose(arg0_63)
+	if arg0_63.playerInputManager then
+		arg0_63.playerInputManager:Dispose()
+
+		arg0_63.playerInputManager = nil
+	end
+
+	if arg0_63.islandSyncMgr then
+		arg0_63.islandSyncMgr:Dispose()
+
+		arg0_63.islandSyncMgr = nil
+	end
+
+	if arg0_63.strollAllocator then
+		arg0_63.strollAllocator:Dispose()
+
+		arg0_63.strollAllocator = nil
+	end
+
+	if arg0_63.visibilityAllocator then
+		arg0_63.visibilityAllocator:Dispose()
+
+		arg0_63.visibilityAllocator = nil
+	end
+
+	if arg0_63.giftAllocator then
+		arg0_63.giftAllocator:Dispose()
+
+		arg0_63.giftAllocator = nil
+	end
+
+	if arg0_63.timeDelayCreate then
+		arg0_63.timeDelayCreate:Dispose()
+
+		arg0_63.timeDelayCreate = nil
+	end
+
+	if arg0_63.activityNpcAllocator then
+		arg0_63.activityNpcAllocator:Dispose()
+
+		arg0_63.activityNpcAllocator = nil
+	end
+
+	arg0_63.__debouncers = nil
+end
+
+function var0_0.OnAnimalInit(arg0_64, arg1_64)
+	local var0_64
 
 	for iter0_64, iter1_64 in ipairs(arg0_64.sceneData.productSystems) do
-		if iter1_64.id == var1_64 then
-			var2_64 = iter1_64
+		if iter1_64.id == IslandProductConst.PasturePlaceId then
+			var0_64 = iter1_64
 
 			break
 		end
 	end
 
-	if not var2_64 then
+	if not var0_64 then
 		return
 	end
 
-	local var3_64 = var2_64:GetCommissionSlotId(var0_64)
-	local var4_64 = pg.island_production_commission[var3_64].unlockObjid
+	local var1_64 = arg1_64.slotId
 
-	if var4_64 ~= 0 then
-		arg0_64:NotifiyCore(ISLAND_EVT.RMOVE_UNIT, IslandConst.UNIT_LIST_OBJ, var4_64)
+	for iter2_64, iter3_64 in ipairs(arg1_64.aniList) do
+		local var2_64 = var0_64:GenAnimalByAnialConfig(iter3_64, var1_64)
+
+		arg0_64:NotifiyCore(ISLAND_EVT.GEN_UNIT, var2_64)
 	end
 end
 
-function var0_0.IsPlayerInTimeline(arg0_65)
-	return arg0_65.islandSyncMgr.player:InTimeline()
+function var0_0.OnSlotDelegateInit(arg0_65, arg1_65)
+	local var0_65 = arg1_65.slotId
+	local var1_65 = pg.island_production_slot[var0_65].place
+	local var2_65
+
+	for iter0_65, iter1_65 in ipairs(arg0_65.sceneData.productSystems) do
+		if iter1_65.id == var1_65 then
+			var2_65 = iter1_65
+
+			break
+		end
+	end
+
+	if not var2_65 then
+		return
+	end
+
+	local var3_65 = var2_65:GetCommissionSlotId(var0_65)
+	local var4_65 = pg.island_production_commission[var3_65].unlockObjid
+
+	if var4_65 ~= 0 then
+		arg0_65:NotifiyCore(ISLAND_EVT.RMOVE_UNIT, IslandConst.UNIT_LIST_OBJ, var4_65)
+	end
 end
 
-function var0_0.InitSyncMgr(arg0_66)
-	arg0_66.islandSyncMgr:Init(arg0_66.sceneData.unitList)
+function var0_0.IsPlayerInTimeline(arg0_66)
+	return arg0_66.islandSyncMgr.player:InTimeline()
 end
 
-function var0_0.SetVisitorSyncData(arg0_67, arg1_67, arg2_67)
-	arg0_67:NotifiyCore(ISLAND_EVT.SET_VISITOR_SYNC_DATA, arg1_67, arg2_67)
+function var0_0.InitSyncMgr(arg0_67)
+	arg0_67.islandSyncMgr:Init(arg0_67.sceneData.unitList)
 end
 
-function var0_0.WorldObjectInterAction(arg0_68, arg1_68, arg2_68, arg3_68)
-	arg3_68 = arg3_68 or 1
+function var0_0.SetVisitorSyncData(arg0_68, arg1_68, arg2_68)
+	arg0_68:NotifiyCore(ISLAND_EVT.SET_VISITOR_SYNC_DATA, arg1_68, arg2_68)
+end
 
-	local var0_68 = _.detect(arg0_68.sceneData.unitList, function(arg0_69)
-		return arg0_69.id == arg1_68
+function var0_0.WorldObjectInterAction(arg0_69, arg1_69, arg2_69, arg3_69)
+	arg3_69 = arg3_69 or 1
+
+	local var0_69 = _.detect(arg0_69.sceneData.unitList, function(arg0_70)
+		return arg0_70.id == arg1_69
 	end)
 
-	if not var0_68 or not var0_68:Interactable() then
+	if not var0_69 or not var0_69:Interactable() then
 		return
 	end
 
-	local var1_68 = var0_68:GetEmptySlot()
+	local var1_69 = var0_69:GetEmptySlot()
 
-	if not var1_68 then
+	if not var1_69 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("island_agora_no_interact_point"))
 
 		return
 	end
 
-	local function var2_68()
-		var1_68:Lock(arg2_68)
-		arg0_68:NotifiyCore(ISLAND_EVT.WORLD_OBJECT_START_INTERACTION, var0_68, var1_68, arg3_68)
+	local function var2_69()
+		var1_69:Lock(arg2_69)
+		arg0_69:NotifiyCore(ISLAND_EVT.WORLD_OBJECT_START_INTERACTION, var0_69, var1_69, arg3_69)
 	end
 
-	arg0_68.islandSyncMgr:TryControlUnit(IslandConst.SYNC_TYPE_UNIT_STATIC, arg1_68, var1_68.id, arg3_68, function(arg0_71)
-		if arg0_71 then
-			var2_68()
+	arg0_69.islandSyncMgr:TryControlUnit(IslandConst.SYNC_TYPE_UNIT_STATIC, arg1_69, var1_69.id, arg3_69, function(arg0_72)
+		if arg0_72 then
+			var2_69()
 		end
 	end)
 end
 
-function var0_0.WorldObjectInterActionSync(arg0_72, arg1_72, arg2_72, arg3_72, arg4_72)
-	arg3_72 = arg3_72 or 1
+function var0_0.WorldObjectInterActionSync(arg0_73, arg1_73, arg2_73, arg3_73, arg4_73)
+	arg3_73 = arg3_73 or 1
 
-	local var0_72 = _.detect(arg0_72.sceneData.unitList, function(arg0_73)
-		return arg0_73.id == arg1_72
+	local var0_73 = _.detect(arg0_73.sceneData.unitList, function(arg0_74)
+		return arg0_74.id == arg1_73
 	end)
 
-	if not var0_72 or not var0_72:Interactable() then
+	if not var0_73 or not var0_73:Interactable() then
 		return
 	end
 
-	local var1_72 = var0_72:GetSlotById(arg4_72)
+	local var1_73 = var0_73:GetSlotById(arg4_73)
 
-	var1_72:Lock(arg2_72)
-	arg0_72:NotifiyCore(ISLAND_EVT.WORLD_OBJECT_START_INTERACTION, var0_72, var1_72, arg3_72)
+	var1_73:Lock(arg2_73)
+	arg0_73:NotifiyCore(ISLAND_EVT.WORLD_OBJECT_START_INTERACTION, var0_73, var1_73, arg3_73)
 end
 
-function var0_0.WorldObjectInterActionEnd(arg0_74, arg1_74, arg2_74)
-	local var0_74 = _.detect(arg0_74.sceneData.unitList, function(arg0_75)
-		return arg0_75.id == arg1_74
+function var0_0.WorldObjectInterActionEnd(arg0_75, arg1_75, arg2_75)
+	local var0_75 = _.detect(arg0_75.sceneData.unitList, function(arg0_76)
+		return arg0_76.id == arg1_75
 	end)
 
-	if not var0_74 or not var0_74:Interactable() then
+	if not var0_75 or not var0_75:Interactable() then
 		return
 	end
 
-	local var1_74 = var0_74:GetUsingSlot(arg2_74)
+	local var1_75 = var0_75:GetUsingSlot(arg2_75)
 
-	local function var2_74()
-		local var0_76 = Clone(var1_74)
+	local function var2_75()
+		local var0_77 = Clone(var1_75)
 
-		var1_74:Release()
-		arg0_74:NotifiyCore(ISLAND_EVT.WORLD_OBJECT_END_INTERACTION, var0_74, var0_76)
+		var1_75:Release()
+		arg0_75:NotifiyCore(ISLAND_EVT.WORLD_OBJECT_END_INTERACTION, var0_75, var0_77)
 	end
 
-	arg0_74.islandSyncMgr:EndControlUnit(IslandConst.SYNC_TYPE_UNIT_STATIC, arg1_74, var1_74.id, function(arg0_77)
-		if arg0_77 then
-			var2_74()
+	arg0_75.islandSyncMgr:EndControlUnit(IslandConst.SYNC_TYPE_UNIT_STATIC, arg1_75, var1_75.id, function(arg0_78)
+		if arg0_78 then
+			var2_75()
 		end
 	end)
 end
 
-function var0_0.WorldObjectInterActionEndSync(arg0_78, arg1_78, arg2_78)
-	local var0_78 = _.detect(arg0_78.sceneData.unitList, function(arg0_79)
-		return arg0_79.id == arg1_78
+function var0_0.WorldObjectInterActionEndSync(arg0_79, arg1_79, arg2_79)
+	local var0_79 = _.detect(arg0_79.sceneData.unitList, function(arg0_80)
+		return arg0_80.id == arg1_79
 	end)
 
-	if not var0_78 or not var0_78:Interactable() then
+	if not var0_79 or not var0_79:Interactable() then
 		return
 	end
 
-	local var1_78 = var0_78:GetUsingSlot(arg2_78)
-	local var2_78 = Clone(var1_78)
+	local var1_79 = var0_79:GetUsingSlot(arg2_79)
+	local var2_79 = Clone(var1_79)
 
-	var1_78:Release()
-	arg0_78:NotifiyCore(ISLAND_EVT.WORLD_OBJECT_END_INTERACTION, var0_78, var2_78)
+	var1_79:Release()
+	arg0_79:NotifiyCore(ISLAND_EVT.WORLD_OBJECT_END_INTERACTION, var0_79, var2_79)
 end
 
-function var0_0.WorldObjectInitStatus(arg0_80, arg1_80, arg2_80)
-	local var0_80 = _.detect(arg0_80.sceneData.unitList, function(arg0_81)
-		return arg0_81.id == arg1_80
+function var0_0.WorldObjectInitStatus(arg0_81, arg1_81, arg2_81)
+	local var0_81 = _.detect(arg0_81.sceneData.unitList, function(arg0_82)
+		return arg0_82.id == arg1_81
 	end)
 
-	warning("init", arg1_80, arg2_80, var0_80)
+	warning("init", arg1_81, arg2_81, var0_81)
 
-	if not var0_80 or not var0_80:Interactable() then
+	if not var0_81 or not var0_81:Interactable() then
 		return
 	end
 
-	arg0_80:NotifiyCore(ISLAND_EVT.WORLD_OBJECT_INIT_STATUS, var0_80, arg2_80)
+	arg0_81:NotifiyCore(ISLAND_EVT.WORLD_OBJECT_INIT_STATUS, var0_81, arg2_81)
 end
 
-function var0_0.OnOpenRestaurant(arg0_82, arg1_82)
-	local var0_82 = arg1_82.restId
-	local var1_82 = arg1_82.postList
-	local var2_82
-
-	for iter0_82, iter1_82 in ipairs(arg0_82.sceneData.systemList) do
-		if isa(iter1_82, IslandManageSystemVO) and iter1_82.id == var0_82 then
-			var2_82 = iter1_82
-
-			break
-		end
-	end
-
-	if not var2_82 then
-		return
-	end
-
-	local var3_82 = var2_82:GetUnits(var1_82)
-
-	for iter2_82, iter3_82 in ipairs(var3_82) do
-		arg0_82:NotifiyCore(ISLAND_EVT.GEN_UNIT, iter3_82)
-	end
-
-	arg0_82:NotifiyCore(ISLAND_EVT.START_MANAGE, var2_82)
-end
-
-function var0_0.OnCloseRestaurant(arg0_83, arg1_83)
+function var0_0.OnOpenRestaurant(arg0_83, arg1_83)
 	local var0_83 = arg1_83.restId
 	local var1_83 = arg1_83.postList
 	local var2_83
@@ -1177,18 +1157,44 @@ function var0_0.OnCloseRestaurant(arg0_83, arg1_83)
 		return
 	end
 
-	arg0_83:NotifiyCore(ISLAND_EVT.END_MANAGE, var2_83)
-
 	local var3_83 = var2_83:GetUnits(var1_83)
 
 	for iter2_83, iter3_83 in ipairs(var3_83) do
-		arg0_83:NotifiyCore(ISLAND_EVT.RMOVE_UNIT, IslandConst.UNIT_LIST_MANAGE, iter3_83.id)
+		arg0_83:NotifiyCore(ISLAND_EVT.GEN_UNIT, iter3_83)
+	end
+
+	arg0_83:NotifiyCore(ISLAND_EVT.START_MANAGE, var2_83)
+end
+
+function var0_0.OnCloseRestaurant(arg0_84, arg1_84)
+	local var0_84 = arg1_84.restId
+	local var1_84 = arg1_84.postList
+	local var2_84
+
+	for iter0_84, iter1_84 in ipairs(arg0_84.sceneData.systemList) do
+		if isa(iter1_84, IslandManageSystemVO) and iter1_84.id == var0_84 then
+			var2_84 = iter1_84
+
+			break
+		end
+	end
+
+	if not var2_84 then
+		return
+	end
+
+	arg0_84:NotifiyCore(ISLAND_EVT.END_MANAGE, var2_84)
+
+	local var3_84 = var2_84:GetUnits(var1_84)
+
+	for iter2_84, iter3_84 in ipairs(var3_84) do
+		arg0_84:NotifiyCore(ISLAND_EVT.RMOVE_UNIT, IslandConst.UNIT_LIST_MANAGE, iter3_84.id)
 	end
 end
 
-function var0_0.OnSwitchMap(arg0_84)
-	if arg0_84.islandSyncMgr and arg0_84.islandSyncMgr:IsPlayerInTimeline() then
-		arg0_84:NotifiyCore(ISLAND_EVT.INIT_INTERACTION_OP_VIEW)
+function var0_0.OnSwitchMap(arg0_85)
+	if arg0_85.islandSyncMgr and arg0_85.islandSyncMgr:IsPlayerInTimeline() then
+		arg0_85:NotifiyCore(ISLAND_EVT.INIT_INTERACTION_OP_VIEW)
 	end
 end
 

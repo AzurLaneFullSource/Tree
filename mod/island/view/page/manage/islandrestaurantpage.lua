@@ -532,6 +532,8 @@ function var0_0.UpdateShipItem(arg0_43, arg1_43, arg2_43)
 
 		arg0_43:OpenPage(IslandShipSelectPage, {
 			showBenefits = true,
+			showType = IslandSelectShipCard.SHOW_TYPE.RESTAURANT,
+			restId = arg0_43.restId,
 			selectNum = #arg0_43.assistantsData,
 			selectedIds = Clone(arg0_43.selectedShipIds),
 			attrType = IslandShipAttr.MANAGE_KEY,

@@ -52,7 +52,7 @@ function var0_0.GetOrder(arg0_11)
 end
 
 function var0_0.GetGoodIds(arg0_12)
-	return arg0_12:getConfig("goods_id")
+	return type(arg0_12:getConfig("goods_id")) == "table" and arg0_12:getConfig("goods_id") or {}
 end
 
 function var0_0.IsNormalShop(arg0_13)
@@ -172,6 +172,7 @@ function var0_0.SortCommodities(arg0_23)
 		local var1_23 = arg0_23:GetCommodityById(iter1_23)
 
 		if var1_23 then
+			var1_23:SetCfgSortIdx(iter0_23)
 			table.insert(var0_23, var1_23)
 		end
 	end
@@ -204,19 +205,21 @@ function var0_0.UpdateCommodity(arg0_26, arg1_26, arg2_26)
 end
 
 function var0_0.GetBanners(arg0_27)
-	if arg0_27:GetShowType() ~= 1 then
+	if arg0_27:GetShowType() ~= IslandConst.SHOP_TYPE_RECOMMENDATION_5 and arg0_27:GetShowType() ~= IslandConst.SHOP_TYPE_RECOMMENDATION_1 then
 		return nil
 	end
 
 	local var0_27 = {}
 
-	for iter0_27, iter1_27 in ipairs(var1_0.get_id_list_by_shop_page_id[arg0_27.id]) do
+	for iter0_27, iter1_27 in ipairs(var1_0.get_id_list_by_shop_page_id[arg0_27.id] or {}) do
 		local var1_27 = var1_0[iter1_27]
 
 		if pg.TimeMgr.GetInstance():inTime(var1_27.time) then
 			table.insert(var0_27, var1_27)
 		end
 	end
+
+	return var0_27
 end
 
 function var0_0.IsInTime(arg0_28)

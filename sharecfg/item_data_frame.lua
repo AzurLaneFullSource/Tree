@@ -761,7 +761,7 @@ pg.base.item_data_frame = {}
 		gain_by = "",
 		id = 601,
 		time_second = 0,
-		desc = "<color=#A7A7AA>I scream, you scream, we all scream for ice cream.</color>\nObtained from the \"Manjuu Ice Cream\" event.",
+		desc = "<color=#A7A7AA>I scream, you scream, we all scream for ice cream.</color>\nObtained from the \"Manjuu Ice Cream\" event.\nPurchased from the Prize Shop",
 		scene = {}
 	}
 	pg.base.item_data_frame[602] = {

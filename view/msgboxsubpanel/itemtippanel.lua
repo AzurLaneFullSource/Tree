@@ -328,6 +328,7 @@ function var0_0.ConfigGoScene(arg0_15, arg1_15, arg2_15)
 			mediator = ItemInfoMediator,
 			viewComponent = ItemInfoLayer,
 			data = {
+				groupName = LayerWeightConst.GROUP_TOP,
 				drop = Drop.New({
 					type = DROP_TYPE_ITEM,
 					id = arg1_15.itemId

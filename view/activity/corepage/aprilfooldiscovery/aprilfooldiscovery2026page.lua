@@ -20,7 +20,7 @@ function var0_0.OnInit(arg0_1)
 	arg0_1.loader = AutoLoader.New()
 
 	for iter0_1 = 1, #var1_0 do
-		arg0_1.loader:GetSprite("UI/CoreActivity/AprilFoolDiscovery2026Page_atlas", string.sub(var1_0, iter0_1, iter0_1), arg0_1.items[iter0_1]:Find("Character"), true)
+		arg0_1.loader:GetSprite("UI/AprilFoolDiscovery2026Page_atlas", string.sub(var1_0, iter0_1, iter0_1), arg0_1.items[iter0_1]:Find("Character"), true)
 	end
 
 	arg0_1._funcsLink = {}

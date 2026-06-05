@@ -33,9 +33,10 @@ function var0_0.execute(arg0_1, arg1_1)
 			end
 
 			local var5_2 = var5_1:GetCharacterAgency():GetShipById(var1_2.ship_id)
-			local var6_2 = var5_2:GetCurrentEnergy() - var3_2.stamina_cost * var3_1
+			local var6_2 = math.floor(var3_2.stamina_cost * (1 - IslandProductCostHelper.GetReducePercentInPlace(var1_2.ship_id, var1_1)))
+			local var7_2 = var5_2:GetCurrentEnergy() - var6_2 * var3_1
 
-			var5_2:UpdateEnergy(var6_2)
+			var5_2:UpdateEnergy(var7_2)
 			var5_2:UpdateEnergyBeginRecoverTime(var1_2:GetFinishTime())
 			arg0_1:sendNotification(GAME.ISLAND_FINISH_DELEGATION_DONE, {
 				slotId = var2_1

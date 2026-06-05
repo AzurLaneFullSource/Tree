@@ -44,7 +44,8 @@ function var0_0.listNotificationInterests(arg0_4)
 		GAME.COMPOSITE_EQUIPMENT_DONE,
 		BagProxy.ITEM_UPDATED,
 		PlayerProxy.UPDATED,
-		EquipmentProxy.EQUIPMENT_UPDATED
+		EquipmentProxy.EQUIPMENT_UPDATED,
+		GAME.TOGGLE_ALL_DESIGN_EQUIPMENT
 	}
 end
 
@@ -67,6 +68,10 @@ function var0_0.handleNotification(arg0_5, arg1_5)
 		arg0_5.viewComponent:setPlayer(arg0_5.playerProxy:getData())
 	elseif var0_5 == EquipmentProxy.EQUIPMENT_UPDATED then
 		arg0_5.viewComponent:setCapacity(arg0_5.equipmentProxy:getCapacity())
+	elseif var0_5 == GAME.TOGGLE_ALL_DESIGN_EQUIPMENT then
+		arg0_5.contextData.isShowAllDesign = var1_5
+
+		arg0_5.viewComponent:filter(arg0_5.contextData.index or 1, true)
 	end
 end
 

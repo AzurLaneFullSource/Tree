@@ -55,8 +55,12 @@ function var0_0.init(arg0_2, ...)
 end
 
 function var0_0.SetColorTab(arg0_6, arg1_6)
-	for iter0_6 = 1, 5 do
-		setTextColor(arg0_6.tabs:Find(iter0_6 .. "/off/name"), Color.NewHex(arg1_6))
+	for iter0_6 = 0, arg0_6.tabs.childCount - 1 do
+		local var0_6 = arg0_6.tabs:GetChild(iter0_6):Find("off/name")
+
+		if var0_6 then
+			setTextColor(var0_6, Color.NewHex(arg1_6))
+		end
 	end
 end
 

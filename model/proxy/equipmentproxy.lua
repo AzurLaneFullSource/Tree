@@ -50,6 +50,8 @@ function var0_0.register(arg0_1)
 	arg0_1.weakTable = setmetatable({}, {
 		__mode = "v"
 	})
+	arg0_1.equipmentDesignObtainWays = {}
+	arg0_1.equipmentDesignObtainWayIndexed = false
 end
 
 function var0_0.getEquipmentSkins(arg0_5)
@@ -513,6 +515,150 @@ function var0_0.OnShipEquipsRemove(arg0_40, arg1_40, arg2_40, arg3_40)
 	arg1_40.shipPos = arg3_40
 
 	arg0_40.weakTable.equipsDict:RemoveEquipment(arg1_40)
+end
+
+function var0_0.BuildEquipmentDesignObtainWayIndex(arg0_41)
+	if arg0_41.equipmentDesignObtainWayIndexed then
+		return
+	end
+
+	local function var0_41(arg0_42)
+		return arg0_42 == DROP_TYPE_ITEM or arg0_42 == DROP_TYPE_VITEM
+	end
+
+	local var1_41 = {}
+
+	local function var2_41(arg0_43)
+		if var1_41[arg0_43] then
+			return var1_41[arg0_43]
+		end
+
+		local var0_43 = {}
+		local var1_43 = Item.getConfigData(arg0_43)
+
+		if var1_43 then
+			if var1_43.type == Item.DESIGN_TYPE then
+				table.insert(var0_43, arg0_43)
+			end
+
+			for iter0_43, iter1_43 in ipairs(var1_43.display_icon or {}) do
+				local var2_43 = iter1_43[1]
+				local var3_43 = iter1_43[2]
+
+				if var0_41(var2_43) then
+					local var4_43 = Item.getConfigData(var3_43)
+
+					if var4_43 and var4_43.type == Item.DESIGN_TYPE then
+						table.insert(var0_43, var3_43)
+					end
+				end
+			end
+		end
+
+		var1_41[arg0_43] = var0_43
+
+		return var0_43
+	end
+
+	local function var3_41(arg0_44)
+		arg0_41.equipmentDesignObtainWays[arg0_44] = arg0_41.equipmentDesignObtainWays[arg0_44] or {
+			{},
+			false,
+			false
+		}
+
+		return arg0_41.equipmentDesignObtainWays[arg0_44]
+	end
+
+	local function var4_41(arg0_45)
+		return arg0_45.act_id == 0 or arg0_45.act_id == 100001
+	end
+
+	for iter0_41, iter1_41 in ipairs(pg.chapter_template.all) do
+		local var5_41 = pg.chapter_template[iter1_41]
+
+		if var4_41(var5_41) then
+			local var6_41 = var5_41.awards or {}
+			local var7_41 = {}
+
+			for iter2_41, iter3_41 in ipairs(var6_41) do
+				local var8_41 = iter3_41[1]
+				local var9_41 = iter3_41[2]
+
+				if var0_41(var8_41) then
+					for iter4_41, iter5_41 in ipairs(var2_41(var9_41)) do
+						if not var7_41[iter5_41] then
+							table.insert(var3_41(iter5_41)[1], iter1_41)
+
+							var7_41[iter5_41] = true
+						end
+					end
+				end
+			end
+		end
+	end
+
+	for iter6_41, iter7_41 in ipairs(pg.technology_data_template.all) do
+		local var10_41 = pg.technology_data_template[iter7_41].drop_client or {}
+
+		for iter8_41, iter9_41 in ipairs(var10_41) do
+			local var11_41 = iter9_41[1]
+			local var12_41 = iter9_41[2]
+
+			if var0_41(var11_41) then
+				for iter10_41, iter11_41 in ipairs(var2_41(var12_41)) do
+					var3_41(iter11_41)[2] = true
+				end
+			end
+		end
+	end
+
+	local var13_41 = getProxy(ShopsProxy):getFragmentShop()
+
+	if var13_41 then
+		local var14_41 = var13_41:GetCommodities(designId)
+
+		for iter12_41, iter13_41 in ipairs(var14_41) do
+			for iter14_41, iter15_41 in ipairs(iter13_41:GetDropList()) do
+				local var15_41 = iter15_41.type
+				local var16_41 = iter15_41.id
+
+				if var15_41 == DROP_TYPE_ITEM then
+					local var17_41 = Item.getConfigData(var16_41)
+
+					if var17_41 and var17_41.type == Item.DESIGN_TYPE then
+						var3_41(var17_41.id)[3] = true
+					end
+				end
+			end
+		end
+	end
+
+	arg0_41.equipmentDesignObtainWayIndexed = true
+end
+
+function var0_0.ShouldShowEquipmentDesignObtainWay(arg0_46, arg1_46)
+	arg0_46:BuildEquipmentDesignObtainWayIndex()
+
+	local var0_46 = arg0_46.equipmentDesignObtainWays[arg1_46]
+
+	if not var0_46 then
+		return false
+	end
+
+	return #var0_46[1] > 0 or var0_46[2] or var0_46[3]
+end
+
+function var0_0.GetObtainWay4EquipmentDesign(arg0_47, arg1_47)
+	arg0_47:BuildEquipmentDesignObtainWayIndex()
+
+	arg0_47.equipmentDesignObtainWays[arg1_47] = arg0_47.equipmentDesignObtainWays[arg1_47] or {
+		{},
+		false,
+		false
+	}
+
+	return arg0_47.equipmentDesignObtainWays[arg1_47]
 end
 
 return var0_0

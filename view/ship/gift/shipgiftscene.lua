@@ -133,6 +133,8 @@ function var0_0.didEnter(arg0_4)
 end
 
 function var0_0.willExit(arg0_11)
+	arg0_11:StopPreVoice()
+
 	for iter0_11, iter1_11 in ipairs(arg0_11.eventList) do
 		arg0_11:disconnect(iter1_11)
 	end
@@ -266,157 +268,169 @@ function var0_0.OnGiftSuccess(arg0_18, arg1_18)
 	arg0_18.selectCnt = 0
 
 	arg0_18:RefreshUI()
+
+	local var5_18 = var1_18 == ShipGiftConst.GIFT_FAVORITE_STATE.HATE
+
+	eachChild(arg0_18.adapt:Find("VX"), function(arg0_21, arg1_21)
+		setActive(arg0_21, not var5_18)
+	end)
 	arg0_18.anim:Play("anim_ShipGiftUI_success")
 end
 
-function var0_0.displayShipWord(arg0_21, arg1_21, arg2_21)
-	if arg2_21 or not arg0_21.chatFlag then
-		arg0_21.chatFlag = true
-		arg0_21.chat.localScale = Vector3.zero
+function var0_0.displayShipWord(arg0_22, arg1_22, arg2_22)
+	if arg2_22 or not arg0_22.chatFlag then
+		arg0_22.chatFlag = true
+		arg0_22.chat.localScale = Vector3.zero
 
-		setActive(arg0_21.chat, true)
+		setActive(arg0_22.chat, true)
 
-		local var0_21 = arg0_21.shipVO:getCVIntimacy()
-		local var1_21, var2_21, var3_21 = ShipWordHelper.GetWordAndCV(arg0_21.shipVO:getSkinId(), arg1_21, nil, nil, var0_21)
+		local var0_22 = arg0_22.shipVO:getCVIntimacy()
+		local var1_22, var2_22, var3_22 = ShipWordHelper.GetWordAndCV(arg0_22.shipVO:getSkinId(), arg1_22, nil, nil, var0_22)
 
-		if var3_21 == "" then
-			if arg1_21 == "gift_dislike" then
-				var3_21 = arg0_21.shipVO:getName() .. i18n("gift_giving_dislike")
+		if var3_22 == "" then
+			if arg1_22 == "gift_dislike" then
+				var3_22 = arg0_22.shipVO:getName() .. i18n("gift_giving_dislike")
 			else
-				var3_21 = arg0_21.shipVO:getName() .. i18n("gift_giving_prefer")
+				var3_22 = arg0_22.shipVO:getName() .. i18n("gift_giving_prefer")
 			end
 		end
 
-		local var4_21 = arg0_21.chatText:GetComponent(typeof(Text))
+		local var4_22 = arg0_22.chatText:GetComponent(typeof(Text))
 
 		if PLATFORM_CODE ~= PLATFORM_US then
-			setText(arg0_21.chatText, SwitchSpecialChar(var3_21))
+			setText(arg0_22.chatText, SwitchSpecialChar(var3_22))
 		else
-			var4_21.fontSize = arg0_21.initfontSize
+			var4_22.fontSize = arg0_22.initfontSize
 
-			setTextEN(arg0_21.chatText, var3_21)
+			setTextEN(arg0_22.chatText, var3_22)
 
-			while var4_21.preferredHeight > arg0_21.initChatTextH do
-				var4_21.fontSize = var4_21.fontSize - 2
+			while var4_22.preferredHeight > arg0_22.initChatTextH do
+				var4_22.fontSize = var4_22.fontSize - 2
 
-				setTextEN(arg0_21.chatText, var3_21)
+				setTextEN(arg0_22.chatText, var3_22)
 
-				if var4_21.fontSize < 20 then
+				if var4_22.fontSize < 20 then
 					break
 				end
 			end
 		end
 
-		if #var4_21.text > CHAT_POP_STR_LEN then
-			var4_21.alignment = TextAnchor.MiddleLeft
+		if #var4_22.text > CHAT_POP_STR_LEN then
+			var4_22.alignment = TextAnchor.MiddleLeft
 		else
-			var4_21.alignment = TextAnchor.MiddleCenter
+			var4_22.alignment = TextAnchor.MiddleCenter
 		end
 
-		local var5_21 = var4_21.preferredHeight + 120
+		local var5_22 = var4_22.preferredHeight + 120
 
-		if var5_21 > arg0_21.initChatBgH then
-			arg0_21.chatBg.sizeDelta = Vector2.New(arg0_21.chatBg.sizeDelta.x, var5_21)
+		if var5_22 > arg0_22.initChatBgH then
+			arg0_22.chatBg.sizeDelta = Vector2.New(arg0_22.chatBg.sizeDelta.x, var5_22)
 		else
-			arg0_21.chatBg.sizeDelta = Vector2.New(arg0_21.chatBg.sizeDelta.x, arg0_21.initChatBgH)
+			arg0_22.chatBg.sizeDelta = Vector2.New(arg0_22.chatBg.sizeDelta.x, arg0_22.initChatBgH)
 		end
 
-		local var6_21 = var2_0
+		local var6_22 = var2_0
 
-		local function var7_21()
-			if arg0_21.chatFlag then
-				if arg0_21.chatani1Id then
-					LeanTween.cancel(arg0_21.chatani1Id)
+		local function var7_22()
+			if arg0_22.chatFlag then
+				if arg0_22.chatani1Id then
+					LeanTween.cancel(arg0_22.chatani1Id)
 				end
 
-				if arg0_21.chatani2Id then
-					LeanTween.cancel(arg0_21.chatani2Id)
+				if arg0_22.chatani2Id then
+					LeanTween.cancel(arg0_22.chatani2Id)
 				end
 			end
 
-			arg0_21.chatani1Id = LeanTween.scale(rtf(arg0_21.chat.gameObject), Vector3.New(1, 1, 1), var1_0):setEase(LeanTweenType.easeOutBack):setOnComplete(System.Action(function()
-				arg0_21.chatani2Id = LeanTween.scale(rtf(arg0_21.chat.gameObject), Vector3.New(0, 0, 1), var1_0):setEase(LeanTweenType.easeInBack):setDelay(var1_0 + var6_21):setOnComplete(System.Action(function()
-					arg0_21.chatFlag = nil
+			arg0_22.chatani1Id = LeanTween.scale(rtf(arg0_22.chat.gameObject), Vector3.New(1, 1, 1), var1_0):setEase(LeanTweenType.easeOutBack):setOnComplete(System.Action(function()
+				arg0_22.chatani2Id = LeanTween.scale(rtf(arg0_22.chat.gameObject), Vector3.New(0, 0, 1), var1_0):setEase(LeanTweenType.easeInBack):setDelay(var1_0 + var6_22):setOnComplete(System.Action(function()
+					arg0_22.chatFlag = nil
 				end)).uniqueId
 			end)).uniqueId
 		end
 
-		if var2_21 then
-			arg0_21:StopPreVoice()
-			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var2_21, function(arg0_25)
-				if arg0_25 then
-					var6_21 = arg0_25:GetLength() * 0.001
+		if var2_22 then
+			arg0_22:StopPreVoice()
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var2_22, function(arg0_26)
+				if arg0_26 then
+					var6_22 = arg0_26:GetLength() * 0.001
 				end
 
-				var7_21()
+				var7_22()
 			end)
 
-			arg0_21.preVoiceContent = var2_21
+			arg0_22.preVoiceContent = var2_22
 		else
-			var7_21()
+			var7_22()
 		end
 	end
 end
 
-function var0_0.ShowPanel(arg0_26)
-	arg0_26.anim:Play("anim_ShipGiftUI_success_re")
+function var0_0.StopPreVoice(arg0_27)
+	if arg0_27.preVoiceContent ~= nil then
+		pg.CriMgr.GetInstance():UnloadSoundEffect_V3(arg0_27.preVoiceContent)
+	end
 end
 
-function var0_0.PlayAddValueAnimation(arg0_27)
-	setActive(arg0_27.intimacyAddValueText, true)
+function var0_0.ShowPanel(arg0_28)
+	arg0_28.anim:Play("anim_ShipGiftUI_success_re")
+end
 
-	arg0_27.intimacyAddValueText.localPosition = Vector2(arg0_27.intimacyAddValuePos.x, arg0_27.intimacyAddValuePos.y)
+function var0_0.PlayAddValueAnimation(arg0_29)
+	setActive(arg0_29.intimacyAddValueText, true)
 
-	arg0_27:managedTween(LeanTween.moveY, nil, arg0_27.intimacyAddValueText, arg0_27.intimacyAddValuePos.y + 20, 0.35):setOnComplete(System.Action(function()
-		setActive(arg0_27.intimacyAddValueText, false)
+	arg0_29.intimacyAddValueText.localPosition = Vector2(arg0_29.intimacyAddValuePos.x, arg0_29.intimacyAddValuePos.y)
+
+	arg0_29:managedTween(LeanTween.moveY, nil, arg0_29.intimacyAddValueText, arg0_29.intimacyAddValuePos.y + 20, 0.35):setOnComplete(System.Action(function()
+		setActive(arg0_29.intimacyAddValueText, false)
 	end))
 end
 
-function var0_0.ClickBackGift(arg0_29)
-	arg0_29:StopWaitClickTimer()
-	arg0_29:StopAutoClickTimer()
-	arg0_29:ShowPanel()
-	ShipExpressionHelper.SetExpression(arg0_29.painting:GetChild(0), arg0_29.shipVO:getPainting())
+function var0_0.ClickBackGift(arg0_31)
+	arg0_31:StopWaitClickTimer()
+	arg0_31:StopAutoClickTimer()
+	arg0_31:ShowPanel()
+	ShipExpressionHelper.SetExpression(arg0_31.painting:GetChild(0), arg0_31.shipVO:getPainting())
 end
 
-function var0_0.StopWaitClickTimer(arg0_30)
-	if arg0_30.waitClickTimer then
-		arg0_30.waitClickTimer:Stop()
+function var0_0.StopWaitClickTimer(arg0_32)
+	if arg0_32.waitClickTimer then
+		arg0_32.waitClickTimer:Stop()
 
-		arg0_30.waitClickTimer = nil
+		arg0_32.waitClickTimer = nil
 	end
 end
 
-function var0_0.StopAutoClickTimer(arg0_31)
-	if arg0_31.autoClickTimer then
-		arg0_31.autoClickTimer:Stop()
+function var0_0.StopAutoClickTimer(arg0_33)
+	if arg0_33.autoClickTimer then
+		arg0_33.autoClickTimer:Stop()
 
-		arg0_31.autoClickTimer = nil
+		arg0_33.autoClickTimer = nil
 	end
 end
 
-function var0_0.OnSelectItem(arg0_32, arg1_32, arg2_32)
-	arg0_32.selectIndex = arg2_32
+function var0_0.OnSelectItem(arg0_34, arg1_34, arg2_34)
+	arg0_34.selectIndex = arg2_34
 
-	local var0_32 = arg0_32.giftList[arg2_32 + 1]
+	local var0_34 = arg0_34.giftList[arg2_34 + 1]
 
-	arg0_32.selectCnt = ShipGiftTools.GetNeedMinCnt(arg0_32.shipVO, var0_32)
+	arg0_34.selectCnt = ShipGiftTools.GetNeedMinCnt(arg0_34.shipVO, var0_34)
 
-	arg0_32:RefreshScroll()
+	arg0_34:RefreshScroll()
 end
 
-function var0_0.OnRefreshUseItemCnt(arg0_33, arg1_33, arg2_33)
-	arg0_33.selectCnt = arg2_33
+function var0_0.OnRefreshUseItemCnt(arg0_35, arg1_35, arg2_35)
+	arg0_35.selectCnt = arg2_35
 end
 
-function var0_0.onBackPressed(arg0_34)
-	if arg0_34.waitClickTimer then
-		arg0_34:ClickBackGift()
+function var0_0.onBackPressed(arg0_36)
+	if arg0_36.waitClickTimer then
+		arg0_36:ClickBackGift()
 
 		return
 	end
 
-	var0_0.super.onBackPressed(arg0_34)
+	var0_0.super.onBackPressed(arg0_36)
 end
 
 return var0_0

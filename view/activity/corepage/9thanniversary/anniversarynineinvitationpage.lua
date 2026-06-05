@@ -33,6 +33,16 @@ function var0_0.OnFirstFlush(arg0_3)
 end
 
 function var0_0.OnUpdateFlush(arg0_6)
+	for iter0_6 = 1, #arg0_6.taskGroup do
+		local var0_6 = arg0_6.taskProxy:getTaskVO(arg0_6.taskGroup[iter0_6])
+
+		if var0_6 and var0_6:getTaskStatus() == 1 then
+			arg0_6:emit(ActivityMediator.ON_TASK_SUBMIT, var0_6)
+
+			return
+		end
+	end
+
 	arg0_6:RefreshTaskState()
 	arg0_6:RefreshProgress()
 	arg0_6:RefreshButtons()

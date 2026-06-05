@@ -47,7 +47,6 @@ function var0_0.didEnter(arg0_2)
 	arg0_2.paintTf = findTF(arg0_2.ad, "paint")
 	arg0_2.spineContainer = findTF(arg0_2.ad, "paint/spinePainting")
 	arg0_2.l2dContainner = findTF(arg0_2.ad, "paint/live2d")
-	arg0_2.paintingContainer = findTF(arg0_2.ad, "paint")
 	arg0_2.paintingFitter = findTF(arg0_2.ad, "paint/fitter")
 	arg0_2.effectContainer = findTF(arg0_2.ad, "paint/effect")
 	arg0_2.flushAnimator = GetComponent(findTF(arg0_2.ad, "flush"), typeof(Animator))
@@ -56,6 +55,10 @@ function var0_0.didEnter(arg0_2)
 	arg0_2.btnDebug = findTF(arg0_2.ad, "btnDebug")
 	arg0_2.effectTf = findTF(arg0_2.ad, "effect")
 
+	print("init tf pos = " .. arg0_2._tf.anchoredPosition.x .. "," .. arg0_2._tf.anchoredPosition.y)
+	print("init ad pos = " .. arg0_2.ad.anchoredPosition.x .. "," .. arg0_2.ad.anchoredPosition.y)
+	print("init painting pos = " .. arg0_2.paintTf.anchoredPosition.x .. "," .. arg0_2.paintTf.anchoredPosition.y)
+	print("init l2dContainner pos = " .. arg0_2.l2dContainner.anchoredPosition.x .. "," .. arg0_2.l2dContainner.anchoredPosition.y)
 	onButton(arg0_2, arg0_2.btnClose, function()
 		if not arg0_2.loading then
 			arg0_2:closeView()
@@ -70,6 +73,13 @@ function var0_0.didEnter(arg0_2)
 			if not isActive(arg0_2.paintTf) then
 				SetActive(arg0_2.paintTf, true)
 			end
+
+			print("set tf pos = " .. arg0_2._tf.anchoredPosition.x .. "," .. arg0_2._tf.anchoredPosition.y)
+			print("set ad pos = " .. arg0_2.ad.anchoredPosition.x .. "," .. arg0_2.ad.anchoredPosition.y)
+			print("set painting pos = " .. arg0_2.paintTf.anchoredPosition.x .. "," .. arg0_2.paintTf.anchoredPosition.y)
+			print("set l2dContainner pos = " .. arg0_2.l2dContainner.anchoredPosition.x .. "," .. arg0_2.l2dContainner.anchoredPosition.y)
+			print("set painting pos = " .. arg0_2.triggerData.pos.x .. "," .. arg0_2.triggerData.pos.y)
+			print("set painting scale = " .. arg0_2.triggerData.scale)
 
 			arg0_2.paintTf.anchoredPosition = arg0_2.triggerData.pos
 			arg0_2.paintTf.localScale = Vector3(arg0_2.triggerData.scale, arg0_2.triggerData.scale, arg0_2.triggerData.scale)
@@ -172,7 +182,7 @@ function var0_0.movePaint(arg0_12, arg1_12)
 	local var1_12 = arg0_12.triggerData.move_time
 
 	if var0_12 and var1_12 then
-		LeanTween.moveLocal(go(arg0_12.paintingContainer), var0_12, var1_12):setOnComplete(System.Action(function()
+		LeanTween.moveLocal(go(arg0_12.paintTf), var0_12, var1_12):setOnComplete(System.Action(function()
 			if arg1_12 then
 				arg1_12()
 			end
@@ -234,7 +244,7 @@ function var0_0.loadShowPaint(arg0_14, arg1_14, arg2_14, arg3_14)
 
 		local var5_14 = var0_14:getPainting()
 
-		LoadPaintingPrefabAsync(arg0_14.paintingContainer, var5_14, var5_14, "mainNormal", function(arg0_17)
+		LoadPaintingPrefabAsync(arg0_14.paintTf, var5_14, var5_14, "mainNormal", function(arg0_17)
 			arg0_14.loading = false
 
 			local var0_17 = findTF(arg0_17, "shop_hx")
@@ -249,6 +259,9 @@ function var0_0.loadShowPaint(arg0_14, arg1_14, arg2_14, arg3_14)
 		if not isActive(arg0_14.paintTf) then
 			SetActive(arg0_14.paintTf, true)
 		end
+
+		print("set l2d painting pos = " .. arg0_14.paintTf.anchoredPosition.x .. "," .. arg0_14.paintTf.anchoredPosition.y)
+		print("set l2d l2dContainner pos = " .. arg0_14.l2dContainner.anchoredPosition.x .. "," .. arg0_14.l2dContainner.anchoredPosition.y)
 
 		local var6_14 = Live2DPainting.GenerateData({
 			ship = var0_14,
@@ -274,7 +287,7 @@ function var0_0.loadShowPaint(arg0_14, arg1_14, arg2_14, arg3_14)
 
 		local var7_14 = var0_14:getPainting()
 
-		LoadPaintingPrefabAsync(arg0_14.paintingContainer, var7_14, var7_14, "mainNormal", function()
+		LoadPaintingPrefabAsync(arg0_14.paintTf, var7_14, var7_14, "mainNormal", function()
 			arg0_14.loading = false
 		end)
 	end
@@ -331,8 +344,8 @@ function var0_0.willExit(arg0_25)
 	arg0_25.flushEevent:SetTriggerEvent(nil)
 	arg0_25.flushEevent:SetEndEvent(nil)
 
-	if LeanTween.isTweening(go(arg0_25.paintingContainer)) then
-		LeanTween.cancel(go(arg0_25.paintingContainer))
+	if LeanTween.isTweening(go(arg0_25.paintTf)) then
+		LeanTween.cancel(go(arg0_25.paintTf))
 	end
 
 	if arg0_25.live2dChar then

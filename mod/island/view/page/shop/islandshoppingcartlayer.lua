@@ -100,40 +100,45 @@ function var0_0.SetUp(arg0_7, arg1_7)
 			end
 		end
 	elseif arg1_7[1]:GetItems()[1][1] == DROP_TYPE_ISLAND_DRESS then
+		local var10_7 = arg1_7[1]:GetDisplayItems()
+
 		for iter3_7 = 1, 3 do
-			local var10_7 = arg0_7.commodityList:Find("commodity" .. iter3_7)
+			local var11_7 = arg0_7.commodityList:Find("commodity" .. iter3_7)
 
-			setActive(var10_7:Find("normal"), iter3_7 <= #arg1_7[1]:GetItems())
-			setActive(var10_7:Find("nothing"), iter3_7 > #arg1_7[1]:GetItems())
+			setActive(var11_7:Find("normal"), iter3_7 <= #var10_7)
+			setActive(var11_7:Find("nothing"), iter3_7 > #var10_7)
 
-			if iter3_7 <= #arg1_7[1]:GetItems() then
-				local var11_7 = arg1_7[1]:GetItems()[iter3_7][2]
-				local var12_7 = pg.island_dress_template[var11_7]
+			if iter3_7 <= #var10_7 then
+				local var12_7 = var10_7[iter3_7][2]
+				local var13_7 = pg.island_dress_template[var12_7]
 
-				GetImageSpriteFromAtlasAsync("island/IslandGoodsIcon/" .. var12_7.icon, "", var10_7:Find("normal/IslandItemTpl/icon_bg/icon"))
-				setText(var10_7:Find("normal/name"), var12_7.name)
-				setActive(var10_7:Find("normal/count"), false)
+				GetImageSpriteFromAtlasAsync(Drop.New({
+					type = DROP_TYPE_ISLAND_DRESS,
+					id = var12_7
+				}):getIcon(), "", var11_7:Find("normal/IslandItemTpl/icon_bg/icon"))
+				setText(var11_7:Find("normal/name"), var13_7.name)
+				setActive(var11_7:Find("normal/count"), false)
 
-				local var13_7 = 0
+				local var14_7 = 0
 
-				if var12_7.belongto == 1 then
-					var13_7 = getProxy(IslandProxy):GetIsland():GetDressUpAgency():CheckOwnDress(var11_7) and 1 or 0
-				elseif var12_7.belongto == 2 then
-					var13_7 = getProxy(IslandProxy):GetIsland():GetCharacterAgency():GetOwnDressCountByDressId(var11_7)
+				if var13_7.belongto == 1 then
+					var14_7 = getProxy(IslandProxy):GetIsland():GetDressUpAgency():CheckOwnDress(var12_7) and 1 or 0
+				elseif var13_7.belongto == 2 then
+					var14_7 = getProxy(IslandProxy):GetIsland():GetCharacterAgency():GetOwnDressCountByDressId(var12_7)
 				end
 
-				setText(var10_7:Find("normal/consumeNum"), var13_7)
-				setActive(var10_7:Find("normal/cost"), false)
-				setActive(var10_7:Find("normal/consumeIcon"), false)
-				setActive(var10_7:Find("normal/have"), true)
+				setText(var11_7:Find("normal/consumeNum"), var14_7)
+				setActive(var11_7:Find("normal/cost"), false)
+				setActive(var11_7:Find("normal/consumeIcon"), false)
+				setActive(var11_7:Find("normal/have"), true)
 			end
 		end
 
-		local var14_7 = arg1_7[1]:GetResourceConsume()
+		local var15_7 = arg1_7[1]:GetResourceConsume()
 
-		var0_7 = var14_7[1]
-		var1_7 = var14_7[2]
-		var2_7 = var14_7[3]
+		var0_7 = var15_7[1]
+		var1_7 = var15_7[2]
+		var2_7 = var15_7[3]
 	end
 
 	GetImageSpriteFromAtlasAsync(Drop.New({

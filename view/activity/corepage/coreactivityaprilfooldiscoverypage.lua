@@ -102,7 +102,7 @@ function var0_0.OnUpdateFlush(arg0_7)
 	local var2_7 = var0_7 and "activity_bg_aprilfool_final" or "activity_bg_aprilfool_discovery"
 
 	if var2_7 ~= arg0_7.bgName then
-		setImageSprite(arg0_7.bg, LoadSprite("ui/activityuipage/AprilFoolDiscoveryPage_atlas", var2_7))
+		setImageSprite(arg0_7.bg, LoadSprite("ui/AprilFoolDiscoveryPage_atlas", var2_7))
 
 		arg0_7.bg:GetComponent(typeof(Image)).enabled = true
 		arg0_7.bgName = var2_7
@@ -147,7 +147,7 @@ function var0_0.OnUpdateFlush(arg0_7)
 				})
 			end
 		end)
-		arg0_7.loader:GetSprite("UI/ActivityUIPage/AprilFoolDiscoveryPage_atlas", var1_0[var6_7], iter1_7:Find("state"))
+		arg0_7.loader:GetSprite("UI/AprilFoolDiscoveryPage_atlas", var1_0[var6_7], iter1_7:Find("state"))
 		setActive(iter1_7:Find("character"), var6_7 == 3)
 	end
 

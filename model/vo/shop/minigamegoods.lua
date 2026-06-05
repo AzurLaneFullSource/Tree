@@ -23,7 +23,10 @@ function var0_0.bindConfigTable(arg0_4)
 end
 
 function var0_0.CanPurchase(arg0_5)
-	if arg0_5:getConfig("drop_type") == DROP_TYPE_SKIN and getProxy(ShipSkinProxy):getSkinById(arg0_5:getConfig("goods")[1]) then
+	local var0_5 = arg0_5:GetDropInfo()
+	local var1_5 = var0_5:getOwnedLimit()
+
+	if var1_5 > 0 and var1_5 <= var0_5:getOwnedCount() then
 		return false
 	end
 

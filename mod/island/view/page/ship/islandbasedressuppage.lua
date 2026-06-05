@@ -115,6 +115,7 @@ function var0_0.LoadCharacter(arg0_16, arg1_16)
 		var3_17.rotationSpeed = pg.island_set.character_detail_camera_speed.key_value_int
 
 		arg0_16:OnCharLoaded()
+		GetOrAddComponent(arg0_16.role, typeof(CharacterFootprintMgr)):SetSpawnMode(1)
 	end)
 end
 

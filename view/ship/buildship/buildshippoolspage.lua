@@ -423,28 +423,29 @@ function var0_0.SwitchPool(arg0_38, arg1_38)
 		var8_38 = var0_38:getNoneActBuildActivityCfgByID(var7_38.id)
 	end
 
-	local var10_38 = LoadSprite(var8_38 and var8_38.bg or "loadingbg/bg_" .. var7_38.icon)
-	local var11_38 = var8_38 and var8_38.buildship_tip
+	local var10_38 = HXSet.HxPath(var8_38 and var8_38.bg or "loadingbg/bg_" .. var7_38.icon)
+	local var11_38 = LoadSprite(var10_38)
+	local var12_38 = var8_38 and var8_38.buildship_tip
 
-	arg0_38.tipSTxt:SetText(var11_38 and HXSet.hxLan(var11_38) or i18n("buildship_" .. var5_38 .. "_tip"))
+	arg0_38.tipSTxt:SetText(var12_38 and HXSet.hxLan(var12_38) or i18n("buildship_" .. var5_38 .. "_tip"))
 
-	arg0_38._tf:Find("gallery/bg"):GetComponent(typeof(Image)).sprite = var10_38
+	arg0_38._tf:Find("gallery/bg"):GetComponent(typeof(Image)).sprite = var11_38
 
-	local var12_38 = arg0_38._tf:Find("gallery/item_bg/item/Text")
-	local var13_38 = arg0_38._tf:Find("gallery/item_bg/gold/Text")
+	local var13_38 = arg0_38._tf:Find("gallery/item_bg/item/Text")
+	local var14_38 = arg0_38._tf:Find("gallery/item_bg/gold/Text")
 
-	setText(var12_38, var7_38.number_1)
-	setText(var13_38, var7_38.use_gold)
+	setText(var13_38, var7_38.number_1)
+	setText(var14_38, var7_38.use_gold)
 	arg0_38:UpdateBuildPoolExchange(arg1_38)
 	arg0_38:UpdateRegularBuildPoolExchange(arg1_38)
 	arg0_38:UpdateTicket()
 	arg0_38:UpdateTestBtn(arg1_38)
 	arg0_38:UpdateBuildPoolPaiting(arg1_38)
 
-	local var14_38 = {}
+	local var15_38 = {}
 
 	if arg1_38:getConfig("exchange_count") > 0 then
-		table.insert(var14_38, function(arg0_39)
+		table.insert(var15_38, function(arg0_39)
 			if getProxy(BuildShipProxy):getRegularExchangeCount() < pg.ship_data_create_exchange[REGULAR_BUILD_POOL_EXCHANGE_ID].exchange_request or PlayerPrefs.GetString("REGULAR_BUILD_MAX_TIP", "") == pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d") then
 				arg0_39()
 			else
@@ -471,7 +472,7 @@ function var0_0.SwitchPool(arg0_38, arg1_38)
 	end
 
 	onButton(arg0_38, arg0_38._tf:Find("gallery/start_btn"), function()
-		seriesAsync(var14_38, function()
+		seriesAsync(var15_38, function()
 			local var0_44 = arg0_38.useTicket and var0_38:getBuildFreeActivityByBuildId(arg0_38.pool.id) or nil
 
 			if arg0_38.useTicket and (not var0_44 or var0_44:isEnd()) then
@@ -548,7 +549,11 @@ function var0_0.UpdateBuildPoolPaiting(arg0_48, arg1_48)
 	if arg0_48.painting ~= var0_48 then
 		local function var3_48()
 			arg0_48.painting = var0_48
+
+			arg0_48:Hx4Channel()
 		end
+
+		arg0_48:RevertHxChannel()
 
 		if arg0_48.buildPainting then
 			setBuildPaintingPrefabAsync(arg0_48.patingTF, var0_48, "build", var3_48)
@@ -558,152 +563,187 @@ function var0_0.UpdateBuildPoolPaiting(arg0_48, arg1_48)
 	end
 end
 
-function var0_0.UpdateBuildPoolExchange(arg0_50, arg1_50)
-	local var0_50
-	local var1_50
-	local var2_50
+local function var3_0(arg0_50)
+	local var0_50 = arg0_50.patingTF:Find("fitter")
 
-	if arg1_50:IsActivity() then
-		local var3_50 = arg1_50:GetActivityId()
-		local var4_50 = pg.ship_data_create_exchange[var3_50]
+	if var0_50.childCount <= 0 then
+		return nil
+	end
 
-		if var4_50 then
-			var0_50 = var4_50.exchange_request
-			var1_50 = var4_50.exchange_available_times
-			var2_50 = var4_50.exchange_ship_id[1]
+	local var1_50 = var0_50:GetChild(0)
+
+	if IsNil(var1_50) then
+		return nil
+	end
+
+	local var2_50 = pg.SdkMgr.GetInstance():GetChannelUIDIncludeHarmony()
+
+	return (var1_50:Find("build_hx_ch" .. var2_50))
+end
+
+function var0_0.Hx4Channel(arg0_51)
+	local var0_51 = var3_0(arg0_51)
+
+	if not IsNil(var0_51) then
+		setActive(var0_51, HXSet.isHx())
+	end
+end
+
+function var0_0.RevertHxChannel(arg0_52)
+	local var0_52 = var3_0(arg0_52)
+
+	if not IsNil(var0_52) then
+		setActive(var0_52, false)
+	end
+end
+
+function var0_0.UpdateBuildPoolExchange(arg0_53, arg1_53)
+	local var0_53
+	local var1_53
+	local var2_53
+
+	if arg1_53:IsActivity() then
+		local var3_53 = arg1_53:GetActivityId()
+		local var4_53 = pg.ship_data_create_exchange[var3_53]
+
+		if var4_53 then
+			var0_53 = var4_53.exchange_request
+			var1_53 = var4_53.exchange_available_times
+			var2_53 = var4_53.exchange_ship_id[1]
 		end
 	end
 
-	local var5_50 = var0_50 and var0_50 > 0 and var1_50 and var1_50 > 0
+	local var5_53 = var0_53 and var0_53 > 0 and var1_53 and var1_53 > 0
 
-	if var5_50 then
-		local var6_50 = arg1_50:GetActivity()
-		local var7_50 = var6_50.data1
-		local var8_50 = var6_50.data2
-		local var9_50 = math.min(var1_50, var8_50 + 1) * var0_50
+	if var5_53 then
+		local var6_53 = arg1_53:GetActivity()
+		local var7_53 = var6_53.data1
+		local var8_53 = var6_53.data2
+		local var9_53 = math.min(var1_53, var8_53 + 1) * var0_53
 
-		arg0_50.buildPoolExchangeTxt.text = i18n("build_count_tip") .. "<color=#FFDF48>" .. var7_50 .. "</color>/" .. var9_50
+		arg0_53.buildPoolExchangeTxt.text = i18n("build_count_tip") .. "<color=#FFDF48>" .. var7_53 .. "</color>/" .. var9_53
 
-		local var10_50 = var8_50 < var1_50 and var9_50 <= var7_50
+		local var10_53 = var8_53 < var1_53 and var9_53 <= var7_53
 
-		setActive(arg0_50.buildPoolExchangeGetBtnMark, var10_50)
+		setActive(arg0_53.buildPoolExchangeGetBtnMark, var10_53)
 
-		arg0_50.buildPoolExchangeGetTxt.text = var8_50 .. "/" .. var1_50
+		arg0_53.buildPoolExchangeGetTxt.text = var8_53 .. "/" .. var1_53
 
-		local var11_50 = pg.ship_data_statistics[var2_50].name
+		local var11_53 = pg.ship_data_statistics[var2_53].name
 
-		arg0_50.buildPoolExchangeName.text = SwitchSpecialChar(var11_50, true)
+		arg0_53.buildPoolExchangeName.text = SwitchSpecialChar(var11_53, true)
 
-		local var12_50 = pg.ship_data_statistics[var2_50].rarity
+		local var12_53 = pg.ship_data_statistics[var2_53].rarity
 
-		eachChild(arg0_50.buildPoolExchangeTF:Find("bg"), function(arg0_51)
-			setActive(arg0_51, arg0_51.name == tostring(var12_50))
+		eachChild(arg0_53.buildPoolExchangeTF:Find("bg"), function(arg0_54)
+			setActive(arg0_54, arg0_54.name == tostring(var12_53))
 		end)
-		onButton(arg0_50, arg0_50.buildPoolExchangeTF, function()
-			if var10_50 then
-				arg0_50:emit(BuildShipMediator.ON_BUILDPOOL_EXCHANGE, var6_50.id)
+		onButton(arg0_53, arg0_53.buildPoolExchangeTF, function()
+			if var10_53 then
+				arg0_53:emit(BuildShipMediator.ON_BUILDPOOL_EXCHANGE, var6_53.id)
 			end
 		end, SFX_PANEL)
-		setGray(arg0_50.buildPoolExchangeGetBtn, not var10_50, true)
-		setButtonEnabled(arg0_50.buildPoolExchangeTF, var10_50)
+		setGray(arg0_53.buildPoolExchangeGetBtn, not var10_53, true)
+		setButtonEnabled(arg0_53.buildPoolExchangeTF, var10_53)
 	else
-		removeOnButton(arg0_50.buildPoolExchangeTF)
+		removeOnButton(arg0_53.buildPoolExchangeTF)
 	end
 
-	setActive(arg0_50.buildPoolExchangeTF, var5_50)
+	setActive(arg0_53.buildPoolExchangeTF, var5_53)
 end
 
-function var0_0.UpdateRegularBuildPoolExchange(arg0_53, arg1_53)
-	local var0_53 = arg1_53:getConfig("exchange_count") > 0
+function var0_0.UpdateRegularBuildPoolExchange(arg0_56, arg1_56)
+	local var0_56 = arg1_56:getConfig("exchange_count") > 0
 
-	setActive(arg0_53.rtRegularExchange, var0_53)
+	setActive(arg0_56.rtRegularExchange, var0_56)
 
-	if var0_53 then
-		local var1_53 = getProxy(BuildShipProxy):getRegularExchangeCount()
-		local var2_53 = pg.ship_data_create_exchange[REGULAR_BUILD_POOL_EXCHANGE_ID]
+	if var0_56 then
+		local var1_56 = getProxy(BuildShipProxy):getRegularExchangeCount()
+		local var2_56 = pg.ship_data_create_exchange[REGULAR_BUILD_POOL_EXCHANGE_ID]
 
-		setText(arg0_53.rtRegularExchange:Find("count/Text"), "<color=#FFDF48>" .. var1_53 .. "</color>/" .. var2_53.exchange_request)
-		setActive(arg0_53.rtRegularExchange:Find("show"), var1_53 < var2_53.exchange_request)
-		setActive(arg0_53.rtRegularExchange:Find("get"), var1_53 >= var2_53.exchange_request)
+		setText(arg0_56.rtRegularExchange:Find("count/Text"), "<color=#FFDF48>" .. var1_56 .. "</color>/" .. var2_56.exchange_request)
+		setActive(arg0_56.rtRegularExchange:Find("show"), var1_56 < var2_56.exchange_request)
+		setActive(arg0_56.rtRegularExchange:Find("get"), var1_56 >= var2_56.exchange_request)
 	end
 end
 
-function var0_0.UpdateTestBtn(arg0_54, arg1_54)
-	local var0_54 = false
+function var0_0.UpdateTestBtn(arg0_57, arg1_57)
+	local var0_57 = false
 
-	if PLATFORM_CODE ~= PLATFORM_JP and arg1_54:IsActivity() and not arg1_54:IsEnd() then
-		local var1_54 = arg1_54:GetStageId()
+	if PLATFORM_CODE ~= PLATFORM_JP and arg1_57:IsActivity() and not arg1_57:IsEnd() then
+		local var1_57 = arg1_57:GetStageId()
 
-		if var1_54 then
-			var0_54 = true
+		if var1_57 then
+			var0_57 = true
 
-			onButton(arg0_54, arg0_54.testBtn, function()
+			onButton(arg0_57, arg0_57.testBtn, function()
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("juese_tiyan"),
 					onYes = function()
-						arg0_54:emit(BuildShipMediator.SIMULATION_BATTLE, var1_54)
+						arg0_57:emit(BuildShipMediator.SIMULATION_BATTLE, var1_57)
 					end
 				})
 			end, SFX_PANEL)
 		end
 	end
 
-	setActive(arg0_54.testBtn, var0_54)
+	setActive(arg0_57.testBtn, var0_57)
 end
 
-function var0_0.AddActivityTimer(arg0_57, arg1_57)
-	arg0_57:RemoveActivityTimer(arg1_57)
+function var0_0.AddActivityTimer(arg0_60, arg1_60)
+	arg0_60:RemoveActivityTimer(arg1_60)
 
-	if arg1_57:IsActivity() then
-		local var0_57 = arg1_57:GetActivity()
+	if arg1_60:IsActivity() then
+		local var0_60 = arg1_60:GetActivity()
 
-		assert(var0_57)
+		assert(var0_60)
 
-		local var1_57 = var0_57.stopTime - pg.TimeMgr.GetInstance():GetServerTime()
+		local var1_60 = var0_60.stopTime - pg.TimeMgr.GetInstance():GetServerTime()
 
-		arg0_57.activityTimer[arg1_57.id] = Timer.New(function()
-			arg0_57:RemoveActivityTimer(arg1_57)
-			arg0_57:emit(BuildShipMediator.ON_UPDATE_ACT)
-		end, var1_57, 1)
+		arg0_60.activityTimer[arg1_60.id] = Timer.New(function()
+			arg0_60:RemoveActivityTimer(arg1_60)
+			arg0_60:emit(BuildShipMediator.ON_UPDATE_ACT)
+		end, var1_60, 1)
 
-		arg0_57.activityTimer[arg1_57.id]:Start()
+		arg0_60.activityTimer[arg1_60.id]:Start()
 	end
 end
 
-function var0_0.RemoveActivityTimer(arg0_59, arg1_59)
-	if arg0_59.activityTimer[arg1_59.id] then
-		arg0_59.activityTimer[arg1_59.id]:Stop()
+function var0_0.RemoveActivityTimer(arg0_62, arg1_62)
+	if arg0_62.activityTimer[arg1_62.id] then
+		arg0_62.activityTimer[arg1_62.id]:Stop()
 
-		arg0_59.activityTimer[arg1_59.id] = nil
+		arg0_62.activityTimer[arg1_62.id] = nil
 	end
 end
 
-function var0_0.RemoveAllTimer(arg0_60)
-	for iter0_60, iter1_60 in pairs(arg0_60.activityTimer) do
-		iter1_60:Stop()
+function var0_0.RemoveAllTimer(arg0_63)
+	for iter0_63, iter1_63 in pairs(arg0_63.activityTimer) do
+		iter1_63:Stop()
 	end
 
-	arg0_60.activityTimer = {}
+	arg0_63.activityTimer = {}
 
-	for iter2_60, iter3_60 in pairs(arg0_60.freeActTimer) do
-		iter3_60:Stop()
+	for iter2_63, iter3_63 in pairs(arg0_63.freeActTimer) do
+		iter3_63:Stop()
 	end
 
-	arg0_60.freeActTimer = {}
+	arg0_63.freeActTimer = {}
 end
 
-function var0_0.ShowOrHide(arg0_61, arg1_61)
-	if arg1_61 then
-		arg0_61:Show()
+function var0_0.ShowOrHide(arg0_64, arg1_64)
+	if arg1_64 then
+		arg0_64:Show()
 	else
-		arg0_61:Hide()
+		arg0_64:Hide()
 	end
 end
 
-function var0_0.OnDestroy(arg0_62)
-	arg0_62:RemoveAllTimer()
+function var0_0.OnDestroy(arg0_65)
+	arg0_65:RevertHxChannel()
+	arg0_65:RemoveAllTimer()
 
-	arg0_62.activityTimer = nil
+	arg0_65.activityTimer = nil
 end
 
 return var0_0

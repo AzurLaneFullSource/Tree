@@ -23,6 +23,7 @@ function var0_0.OnAttach(arg0_1, arg1_1)
 	end)
 
 	arg0_1.objTfList = {}
+	arg0_1.toolIdMap = {}
 
 	if arg0_1.behaviourTreeOwner then
 		local var0_1, var1_1 = arg0_1:GetDataVO():GetPersonality()
@@ -34,17 +35,17 @@ end
 
 function var0_0.StateEnterHandle(arg0_6, arg1_6, arg2_6)
 	if arg1_6 == var1_0.LoadToolHandle then
-		local var0_6 = arg0_6:GetToolId(arg2_6)
-
 		arg0_6:LoadInteractiveTool(arg2_6)
 	end
 end
 
 function var0_0.StateEnterFixHandle(arg0_7, arg1_7, arg2_7)
 	if arg1_7 == var1_0.LoadToolHandle then
-		local var0_7 = arg0_7:GetToolId(arg2_7)
+		local var0_7 = arg0_7.toolIdMap[arg2_7] or arg0_7.currentToolId or arg0_7:GetToolId(arg2_7)
 
-		pg.ViewUtils.SetLayer(arg0_7.objTfList[var0_7], Layer.Default)
+		if var0_7 and arg0_7.objTfList[var0_7] then
+			pg.ViewUtils.SetLayer(arg0_7.objTfList[var0_7], Layer.Default)
+		end
 	end
 end
 
@@ -61,41 +62,49 @@ function var0_0.GetToolId(arg0_9, arg1_9)
 end
 
 function var0_0.LoadInteractiveTool(arg0_10, arg1_10)
-	local var0_10 = arg0_10.objTfList[arg1_10]
+	local var0_10 = arg1_10
 
-	if var0_10 then
-		setActive(var0_10, true)
-		setParent(var0_10, arg0_10._tf)
-		pg.ViewUtils.SetLayer(var0_10, Layer.UIHidden)
+	arg1_10 = IslandAnimationAttachmentHelper.ResolveId(arg0_10:GetAnimator(), arg1_10)
+	arg0_10.currentToolId = arg1_10
+	arg0_10.toolIdMap[var0_10] = arg1_10
+
+	local var1_10 = arg0_10.objTfList[arg1_10]
+
+	if var1_10 then
+		setActive(var1_10, true)
+		setParent(var1_10, arg0_10._tf)
+		pg.ViewUtils.SetLayer(var1_10, Layer.UIHidden)
 
 		return
 	end
 
-	local var1_10 = pg.island_animation_attachments[arg1_10]
-	local var2_10 = var1_10.model
+	local var2_10 = pg.island_animation_attachments[arg1_10]
+	local var3_10 = var2_10.model
 
 	if arg1_10 == pg.island_set.island_manage_animation_extroversion.key_value_int or arg1_10 == pg.island_set.island_manage_animation_introverted.key_value_int then
-		local var3_10 = arg0_10.behaviourTreeOwner.graph.blackboard:GetVariable("systemId").value
+		local var4_10 = arg0_10.behaviourTreeOwner.graph.blackboard:GetVariable("systemId").value
 
-		if var3_10 ~= 0 then
-			var2_10 = pg.island_manage_restaurant[var3_10].performance_param
+		if var4_10 ~= 0 then
+			var3_10 = pg.island_manage_restaurant[var4_10].performance_param
 		end
 	end
 
-	local var4_10 = LoadAny(var2_10, nil)
-	local var5_10 = Object.Instantiate(var4_10)
+	local var5_10 = LoadAny(var3_10, nil)
+	local var6_10 = Object.Instantiate(var5_10)
 
-	arg0_10.objTfList[arg1_10] = var5_10.transform
+	arg0_10.objTfList[arg1_10] = var6_10.transform
 
-	local var6_10 = LoadAny(var1_10.animator, nil, typeof(RuntimeAnimatorController))
+	local var7_10 = LoadAny(var2_10.animator, nil, typeof(RuntimeAnimatorController))
 
-	GetOrAddComponent(arg0_10.objTfList[arg1_10], typeof(Animator)).runtimeAnimatorController = var6_10
+	GetOrAddComponent(arg0_10.objTfList[arg1_10], typeof(Animator)).runtimeAnimatorController = var7_10
 
 	setParent(arg0_10.objTfList[arg1_10], arg0_10._tf)
 	pg.ViewUtils.SetLayer(arg0_10.objTfList[arg1_10], Layer.UIHidden)
 end
 
 function var0_0.UnLoadInteractiveTool(arg0_11, arg1_11)
+	arg1_11 = arg0_11.toolIdMap[arg1_11] or IslandAnimationAttachmentHelper.ResolveId(arg0_11:GetAnimator(), arg1_11)
+
 	if arg0_11.objTfList[arg1_11] then
 		setActive(arg0_11.objTfList[arg1_11], false)
 	end

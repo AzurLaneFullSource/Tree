@@ -1,43 +1,43 @@
-_G.pg.base.bullet_template_2[72291] = {
+_G.pg.base.bullet_template_2[1212] = {
 	alert_fx = "",
-	ammo_type = 1,
+	ammo_type = 3,
 	antisub_enhancement = 0,
 	effect_type = 1,
-	hit_fx = "CAHit",
+	hit_fx = "pofang",
 	hit_sfx = "battle/hit",
-	id = 72291,
-	miss_fx = "ShellMissBig",
+	id = 1212,
+	miss_fx = "ShellMiss",
 	miss_sfx = "battle/sink",
-	modle_ID = "hudiezidan_blue",
+	modle_ID = "BulletJP",
 	out_bound = 0,
 	pierce_count = 0,
 	random_damage_rate = 0,
-	range = 150,
+	range = 50,
 	range_offset = 10,
 	type = 1,
-	velocity = 16,
+	velocity = 15,
 	damage_type = {
-		1,
-		1,
-		1,
+		1.2,
+		0.6,
+		0.6,
 	},
 	DMG_font = {
 		{
-			1,
-			1,
+			3,
+			1.2,
 		},
 		{
-			1,
-			1,
+			4,
+			0.8,
 		},
 		{
-			1,
-			1,
+			3,
+			0.8,
 		},
 	},
 	acceleration = {},
 	cld_box = {
-		5,
+		6,
 		2,
 		2,
 	},
@@ -47,9 +47,13 @@ _G.pg.base.bullet_template_2[72291] = {
 		0,
 	},
 	hit_type = {},
-	attach_buff = {},
-	extra_param = {
-		mirror = true,
+	attach_buff = {
+		{
+			buff_id = 311,
+			group_level = 1,
+			rant = 100,
+		},
 	},
+	extra_param = {},
 }
 

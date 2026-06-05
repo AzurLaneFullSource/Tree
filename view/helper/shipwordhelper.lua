@@ -30,6 +30,10 @@ var0_0.CVBattleKey = {
 	warcry = "warcry",
 	link7 = "link7"
 }
+var0_0.CVGiftKey = {
+	gift_prefer = "gift_prefer",
+	present_like = "present_like"
+}
 
 local var6_0 = false
 

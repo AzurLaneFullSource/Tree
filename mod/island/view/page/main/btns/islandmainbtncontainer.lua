@@ -50,55 +50,59 @@ function var0_0.InitBtns(arg0_2)
 	arg0_2:Flush()
 end
 
-function var0_0.OnUnlockSystem(arg0_5, arg1_5)
-	if table.contains(arg0_5.unlockIds, arg1_5) then
-		for iter0_5, iter1_5 in pairs(arg0_5.btns) do
-			iter1_5:UnlockCheck()
+function var0_0.OnTaskUpdate(arg0_5)
+	arg0_5.btns.season:TipCheck()
+end
+
+function var0_0.OnUnlockSystem(arg0_6, arg1_6)
+	if table.contains(arg0_6.unlockIds, arg1_6) then
+		for iter0_6, iter1_6 in pairs(arg0_6.btns) do
+			iter1_6:UnlockCheck()
 		end
 	end
 end
 
-function var0_0.OnTrackTaskChange(arg0_6)
-	local var0_6 = arg0_6.btns.map
-
-	if var0_6 and var0_6:IsUnlock() then
-		var0_6:TipCheck()
-	end
-end
-
-function var0_0.OnFinishDelegation(arg0_7)
-	local var0_7 = arg0_7.btns.technology
+function var0_0.OnTrackTaskChange(arg0_7)
+	local var0_7 = arg0_7.btns.map
 
 	if var0_7 and var0_7:IsUnlock() then
 		var0_7:TipCheck()
-		var0_7:StatusCheck()
 	end
 end
 
-function var0_0.OnUnlockTechnology(arg0_8)
+function var0_0.OnFinishDelegation(arg0_8)
 	local var0_8 = arg0_8.btns.technology
 
 	if var0_8 and var0_8:IsUnlock() then
+		var0_8:TipCheck()
 		var0_8:StatusCheck()
 	end
 end
 
-function var0_0.Flush(arg0_9)
-	for iter0_9, iter1_9 in pairs(arg0_9.btns) do
-		iter1_9:Flush()
+function var0_0.OnUnlockTechnology(arg0_9)
+	local var0_9 = arg0_9.btns.technology
+
+	if var0_9 and var0_9:IsUnlock() then
+		var0_9:StatusCheck()
 	end
 end
 
-function var0_0.ActiveOrDisactive(arg0_10, arg1_10)
-	setActive(arg0_10._tf, arg1_10)
+function var0_0.Flush(arg0_10)
+	for iter0_10, iter1_10 in pairs(arg0_10.btns) do
+		iter1_10:Flush()
+	end
 end
 
-function var0_0.Dispose(arg0_11)
-	for iter0_11, iter1_11 in pairs(arg0_11.btns) do
-		iter1_11:Dispose()
+function var0_0.ActiveOrDisactive(arg0_11, arg1_11)
+	setActive(arg0_11._tf, arg1_11)
+end
+
+function var0_0.Dispose(arg0_12)
+	for iter0_12, iter1_12 in pairs(arg0_12.btns) do
+		iter1_12:Dispose()
 	end
 
-	arg0_11.btns = nil
+	arg0_12.btns = nil
 end
 
 return var0_0
