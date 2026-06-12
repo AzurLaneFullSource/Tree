@@ -232,7 +232,7 @@ function var0_0.FlushShips(arg0_28)
 			local var2_29 = var0_29:getSkinId() == arg0_28.skin.id
 
 			setActive(var1_29.maskStatusOb, var2_29)
-			setText(var1_29.maskStatusOb:Find("Text"), "-  " .. i18n("index_CANTUSE") .. "  -")
+			setText(var1_29.maskStatusOb:Find("Text"), "-  " .. i18n("shop_skin_already_inuse") .. "  -")
 			setActive(arg2_29:Find("phantom_mark"), var0_29.phantomId > 0)
 			onToggle(arg0_28, var1_29.tr, function(arg0_30)
 				if var0_29:getSkinId() == arg0_28.skin.id then

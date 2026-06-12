@@ -52,7 +52,9 @@ function var0_0.SetUp(arg0_4)
 
 	for iter2_4, iter3_4 in ipairs(var0_4.ships) do
 		table.insert(var3_4, function(arg0_6)
-			arg0_4:AddShip(iter3_4)
+			local var0_6 = var0_4.popList[iter3_4.id] or {}
+
+			arg0_4:AddShip(iter3_4, var0_6[1] or 0, var0_6[2] or 0)
 			onNextTick(arg0_6)
 		end)
 	end
@@ -122,25 +124,21 @@ function var0_0.AddFurniture(arg0_10, arg1_10, arg2_10)
 	arg0_10:CheckChange()
 end
 
-function var0_0.AddShip(arg0_12, arg1_12)
+function var0_0.AddShip(arg0_12, arg1_12, arg2_12, arg3_12)
 	if not arg0_12.storey then
 		return
 	end
 
-	local var0_12 = arg0_12:DataToShip(arg1_12)
+	local var0_12 = arg0_12:DataToShip(arg1_12, arg2_12, arg3_12)
 
 	if arg1_12:IsDoubleSkin() then
 		var0_12:SetSide(1)
 
-		local var1_12 = arg0_12:DataToShip(arg1_12)
+		local var1_12 = arg0_12:DataToShip(arg1_12, 0, 0)
 
 		var1_12.id = var1_12.id + CourtYardConst.DOUBLE_SKIN_ADD
 
 		var1_12:SetSide(2)
-
-		var1_12.inimacy = 0
-		var1_12.coin = 0
-
 		arg0_12:CreateShip(var0_12)
 		arg0_12:CreateShip(var1_12)
 	else
@@ -498,11 +496,11 @@ function var0_0.DataToFurnitureVO(arg0_63, arg1_63)
 	end
 end
 
-function var0_0.DataToShip(arg0_64, arg1_64)
+function var0_0.DataToShip(arg0_64, arg1_64, arg2_64, arg3_64)
 	if arg0_64.system == CourtYardConst.SYSTEM_FEAST then
 		return CourtYardFeastShip.New(arg0_64, arg1_64)
 	else
-		return CourtYardShip.New(arg0_64, arg1_64)
+		return CourtYardShip.New(arg0_64, arg1_64, arg2_64, arg3_64)
 	end
 end
 

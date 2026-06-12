@@ -121,64 +121,156 @@ function var0_0.GetAsmrChatView(arg0_23)
 	return MainAsmrChatView.New(arg0_23._tf:Find("frame/bottom/asmr_chat"), arg0_23.event)
 end
 
-function var0_0.GetRedDots(arg0_24)
-	return {
-		RedDotNode.New(arg0_24._tf:Find("frame/bottom/taskButton/tip"), {
-			pg.RedDotMgr.TYPES.TASK
-		}),
-		MailRedDotNode.New(arg0_24._tf:Find("frame/right/mailButton")),
-		RedDotNode.New(arg0_24._tf:Find("frame/bottom/buildButton/tip"), {
-			pg.RedDotMgr.TYPES.BUILD
-		}),
-		RedDotNode.New(arg0_24._tf:Find("frame/bottom/guildButton/tip"), {
-			pg.RedDotMgr.TYPES.GUILD
-		}),
-		RedDotNode.New(arg0_24._tf:Find("frame/top/tip"), {
-			pg.RedDotMgr.TYPES.ATTIRE
-		}),
-		RedDotNode.New(arg0_24._tf:Find("frame/right/memoryButton/tip"), {
-			pg.RedDotMgr.TYPES.MEMORY_REVIEW
-		}),
-		RedDotNode.New(arg0_24._tf:Find("frame/right/collectionButton/tip"), {
-			pg.RedDotMgr.TYPES.COLLECTION
-		}),
-		RedDotNode.New(arg0_24._tf:Find("frame/right/friendButton/tip"), {
-			pg.RedDotMgr.TYPES.FRIEND
-		}),
-		RedDotNode.New(arg0_24._tf:Find("frame/left/commissionButton/tip"), {
-			pg.RedDotMgr.TYPES.COMMISSION
-		}),
-		SettingsRedDotNode.New(arg0_24._tf:Find("frame/right/settingButton/tip"), {
-			pg.RedDotMgr.TYPES.SETTTING
-		}),
-		RedDotNode.New(arg0_24._tf:Find("frame/right/noticeButton/tip"), {
-			pg.RedDotMgr.TYPES.SERVER
-		}),
-		RedDotNode.New(arg0_24._tf:Find("frame/bottom/technologyButton/tip"), {
-			pg.RedDotMgr.TYPES.BLUEPRINT
-		}),
-		RedDotNode.New(arg0_24._tf:Find("frame/right/combatBtn/tip"), {
-			pg.RedDotMgr.TYPES.EVENT
-		}),
-		RedDotNode.New(arg0_24._tf:Find("frame/bottom/liveButton/tip"), {
-			pg.RedDotMgr.TYPES.COURTYARD,
-			pg.RedDotMgr.TYPES.SCHOOL,
-			pg.RedDotMgr.TYPES.COMMANDER,
-			pg.RedDotMgr.TYPES.DORM3D_SHOP_TIMELIMIT,
-			pg.RedDotMgr.TYPES.EDUCATE_NEW_CHILD,
-			pg.RedDotMgr.TYPES.ISLAND_3D
-		})
-	}
+function var0_0.RegisterRedDots(arg0_24)
+	local var0_24 = pg.EasyRedDotMgr.GetInstance()
+	local var1_24 = {}
+
+	local function var2_24(arg0_25, arg1_25, arg2_25)
+		var0_24:RegisterRedDot(arg0_25, arg1_25, arg2_25)
+		table.insert(var1_24, arg0_25)
+	end
+
+	var2_24(arg0_24._tf:Find("frame/bottom/taskButton/tip"), {
+		"TASK"
+	}, function(arg0_26)
+		setActive(arg0_26, getProxy(TaskProxy):getCanReceiveCount() > 0 or getProxy(AvatarFrameProxy):getCanReceiveCount() > 0)
+	end)
+
+	local var3_24 = arg0_24._tf:Find("frame/right/mailButton")
+	local var4_24 = findTF(var3_24, "unread")
+	local var5_24 = findTF(var3_24, "read")
+	local var6_24 = findTF(var3_24, "attachmentLabel")
+	local var7_24 = findTF(var6_24, "attachmentCountText"):GetComponent(typeof(Text))
+	local var8_24 = getProxy(MailProxy)
+
+	if var8_24.total == math.clamp(var8_24.total, MAIL_COUNT_LIMIT * 0.9, MAIL_COUNT_LIMIT) then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("warning_mail_max_1", var8_24.total, MAIL_COUNT_LIMIT))
+	end
+
+	var2_24(var3_24, {
+		"MAIL"
+	}, function(arg0_27)
+		local var0_27 = getProxy(MailProxy):GetUnreadCount()
+		local var1_27 = 99
+
+		if var0_27 > 0 then
+			SetActive(var6_24, true)
+			SetActive(var5_24, false)
+			SetActive(var4_24, true)
+
+			arg0_27:GetComponent(typeof(Button)).targetGraphic = var4_24:GetComponent(typeof(Image))
+			var7_24.text = var1_27 < var0_27 and var1_27 .. "+" or tostring(var0_27)
+		else
+			SetActive(var5_24, true)
+			SetActive(var4_24, false)
+			SetActive(var6_24, false)
+
+			arg0_27:GetComponent(typeof(Button)).targetGraphic = var5_24:GetComponent(typeof(Image))
+		end
+	end)
+	var2_24(arg0_24._tf:Find("frame/bottom/buildButton/tip"), {
+		"BUILD"
+	}, function(arg0_28)
+		setActive(arg0_28, getProxy(BuildShipProxy):getFinishCount() > 0 or tobool(getProxy(ActivityProxy):IsShowFreeBuildMark(true)))
+	end)
+	var2_24(arg0_24._tf:Find("frame/bottom/guildButton/tip"), {
+		"GUILD"
+	}, function(arg0_29)
+		setActive(arg0_29, getProxy(GuildProxy):ShouldShowTip())
+	end)
+	var2_24(arg0_24._tf:Find("frame/top/tip"), {
+		"ATTIRE"
+	}, function(arg0_30)
+		setActive(arg0_30, getProxy(AttireProxy):IsShowRedDot() or getProxy(SettingsProxy):ShouldEducateCharTip() or getProxy(ActivityProxy):IsTipLoveLetterMail())
+	end)
+	var2_24(arg0_24._tf:Find("frame/right/memoryButton/tip"), {
+		"MEMORY_REVIEW"
+	}, function(arg0_31)
+		local var0_31 = getProxy(PlayerProxy):getRawData()
+		local var1_31 = var0_31 and _.any(pg.memory_group.all, function(arg0_32)
+			return PlayerPrefs.GetInt("MEMORY_GROUP_NOTIFICATION" .. var0_31.id .. " " .. arg0_32, 0) == 1
+		end)
+
+		if not var1_31 and getProxy(LoveLetterProxy):getRawData() and getProxy(LoveLetterProxy):IsTipUnlockLetter() then
+			var1_31 = true
+		end
+
+		setActive(arg0_31, tobool(var1_31))
+	end)
+	var2_24(arg0_24._tf:Find("frame/right/collectionButton/tip"), {
+		"COLLECTION"
+	}, function(arg0_33)
+		setActive(arg0_33, getProxy(CollectionProxy):hasFinish() or getProxy(AppreciateProxy):isGalleryHaveNewRes() or getProxy(AppreciateProxy):isMusicHaveNewRes() or getProxy(AppreciateProxy):isMangaHaveNewRes())
+	end)
+	var2_24(arg0_24._tf:Find("frame/right/friendButton/tip"), {
+		"FRIEND"
+	}, function(arg0_34)
+		setActive(arg0_34, getProxy(NotificationProxy):getRequestCount() > 0 or getProxy(FriendProxy):getNewMsgCount() > 0)
+	end)
+	var2_24(arg0_24._tf:Find("frame/left/commissionButton/tip"), {
+		"COMMISSION"
+	}, function(arg0_35)
+		setActive(arg0_35, getProxy(PlayerProxy):IsShowCommssionTip())
+	end)
+	var2_24(arg0_24._tf:Find("frame/right/settingButton/tip"), {
+		"SETTING"
+	}, function(arg0_36)
+		setActive(arg0_36, PlayerPrefs.GetInt("firstIntoOtherPanel", 0) == 0)
+	end)
+	var2_24(arg0_24._tf:Find("frame/right/noticeButton/tip"), {
+		"SERVER"
+	}, function(arg0_37)
+		local var0_37 = getProxy(ServerNoticeProxy):getServerNotices(false)
+
+		setActive(arg0_37, #var0_37 > 0 and getProxy(ServerNoticeProxy):hasNewNotice())
+	end)
+	var2_24(arg0_24._tf:Find("frame/bottom/technologyButton/tip"), {
+		"BLUEPRINT"
+	}, function(arg0_38)
+		setActive(arg0_38, getProxy(TechnologyProxy):IsShowTip())
+	end)
+	var2_24(arg0_24._tf:Find("frame/right/combatBtn/tip"), {
+		"EVENT"
+	}, function(arg0_39)
+		setActive(arg0_39, getProxy(EventProxy):hasFinishState() or LimitChallengeConst.IsShowRedPoint())
+	end)
+	var2_24(arg0_24._tf:Find("frame/bottom/liveButton/tip"), {
+		"COURTYARD",
+		"SCHOOL",
+		"COMMANDER",
+		"DORM3D_SHOP_TIMELIMIT",
+		"EDUCATE_NEW_CHILD",
+		"ISLAND_3D"
+	}, function(arg0_40)
+		local var0_40 = getProxy(PlayerProxy):getRawData()
+		local var1_40 = false
+
+		if var0_40.level >= 40 then
+			local var2_40 = getProxy(CommanderProxy):IsFinishAllBox()
+
+			if not LOCK_CATTERY then
+				var1_40 = var2_40 or getProxy(CommanderProxy):AnyCatteryExistOP() or getProxy(CommanderProxy):AnyCatteryCanUse()
+			else
+				var1_40 = var2_40
+			end
+		end
+
+		local var3_40 = pg.SystemOpenMgr.GetInstance():isOpenSystem(var0_40.level, "SelectDorm3DMediator")
+
+		setActive(arg0_40, getProxy(DormProxy):IsShowRedDot() or getProxy(NavalAcademyProxy):IsShowTip() or var1_40 or var3_40 and Dorm3dShopUI.ShouldShowAllTip() or NewEducateHelper.IsShowNewChildTip() or getProxy(SystemTipProxy):IsIslandRedDotTip())
+	end)
+
+	return var1_24
 end
 
-function var0_0.OnAsmrTurnning(arg0_25, arg1_25)
-	var0_0.super.OnAsmrTurnning(arg0_25, arg1_25)
-	setActive(findTF(arg0_25._tf, "top_bg"), not arg1_25)
-	setActive(findTF(arg0_25._tf, "bottom_bg"), not arg1_25)
-	setActive(findTF(arg0_25._tf, "bg"), not arg1_25)
+function var0_0.OnAsmrTurnning(arg0_41, arg1_41)
+	var0_0.super.OnAsmrTurnning(arg0_41, arg1_41)
+	setActive(findTF(arg0_41._tf, "top_bg"), not arg1_41)
+	setActive(findTF(arg0_41._tf, "bottom_bg"), not arg1_41)
+	setActive(findTF(arg0_41._tf, "bg"), not arg1_41)
 
-	GetOrAddComponent(findTF(arg0_25._tf, "frame"), typeof(CanvasGroup)).alpha = arg1_25 ~= true and 1 or 0
-	GetOrAddComponent(findTF(arg0_25._tf, "frame"), typeof(CanvasGroup)).interactable = arg1_25 ~= true and true or false
+	GetOrAddComponent(findTF(arg0_41._tf, "frame"), typeof(CanvasGroup)).alpha = arg1_41 ~= true and 1 or 0
+	GetOrAddComponent(findTF(arg0_41._tf, "frame"), typeof(CanvasGroup)).interactable = arg1_41 ~= true and true or false
 end
 
 return var0_0

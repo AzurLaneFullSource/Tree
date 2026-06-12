@@ -57,7 +57,14 @@ function var0_0.didEnter(arg0_4)
 	arg0_4._pageUtil:setMaxNum(var1_4)
 
 	if var1_4 >= 0 then
-		arg0_4.contextData.battleTimes = math.min(var1_4, arg0_4.contextData.battleTimes or 1)
+		local var2_4 = arg0_4.contextData.oilCost
+		local var3_4 = getProxy(PlayerProxy):getRawData().oil
+		local var4_4 = math.floor(var3_4 / var2_4)
+
+		warning(var2_4, var3_4, var4_4)
+
+		arg0_4.contextData.battleTimes = math.min(var1_4, var4_4)
+		arg0_4.contextData.battleTimes = math.max(arg0_4.contextData.battleTimes, 1)
 	end
 
 	arg0_4._pageUtil:setDefaultNum(arg0_4.contextData.battleTimes)

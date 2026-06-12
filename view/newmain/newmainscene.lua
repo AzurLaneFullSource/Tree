@@ -295,7 +295,10 @@ function var0_0.init(arg0_30)
 		arg0_30.liveAreaPage = MainLiveAreaPage.New(arg0_30._tf, arg0_30.event)
 	end
 
-	pg.redDotHelper = MainReddotView.New()
+	arg0_30.subMediator = MainReddotMediator.New()
+
+	pg.m02:registerMediator(arg0_30.subMediator)
+
 	arg0_30.sequenceView = MainSequenceView.New()
 	arg0_30.awakeSequenceView = MainAwakeSequenceView.New()
 	arg0_30.themes = {
@@ -347,7 +350,6 @@ function var0_0.didEnter(arg0_31)
 	arg0_31:bind(NewMainScene.EXIT_SILENT_VIEW, function()
 		arg0_31:ExitSilentView()
 		arg0_31:SetUpSilentChecker()
-		pg.redDotHelper:_Refresh()
 	end)
 	arg0_31:bind(NewMainScene.ON_SKIN_FREEUSAGE_DESC, function(arg0_38, arg1_38)
 		arg0_31.skinExperienceDisplayPage:ExecuteAction("Show", arg1_38)
@@ -578,7 +580,6 @@ function var0_0.Refresh(arg0_62)
 			arg0_62.effectView:Refresh(var0_64)
 			arg0_62.theme:Refresh(var0_64)
 			arg0_62:PlayBgm(var0_64)
-			pg.redDotHelper:Refresh()
 			arg0_64()
 		end,
 		function(arg0_65)
@@ -603,7 +604,6 @@ function var0_0.OnDisVisible(arg0_67)
 		arg0_67.theme:Disable()
 	end
 
-	pg.redDotHelper:Disable()
 	arg0_67.buffDescPage:Disable()
 	arg0_67.silentChecker:Disable()
 
@@ -716,9 +716,9 @@ function var0_0.willExit(arg0_73)
 
 	arg0_73.effectView = nil
 
-	pg.redDotHelper:Dispose()
+	pg.m02:removeMediator(arg0_73.subMediator.__cname)
 
-	pg.redDotHelper = nil
+	arg0_73.subMediator = nil
 
 	arg0_73.buffDescPage:Destroy()
 

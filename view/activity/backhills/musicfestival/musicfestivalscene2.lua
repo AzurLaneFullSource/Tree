@@ -44,16 +44,6 @@ function var0_0.init(arg0_2)
 	local var5_2 = var4_2 and var4_2.sortingOrder
 
 	arg0_2._map:GetComponent(typeof(UnityEngine.Canvas)).sortingOrder = var5_2 - 2
-
-	local var6_2 = GetComponent(arg0_2._map, "ItemList")
-
-	for iter2_2 = 1, 3 do
-		local var7_2 = var6_2.prefabItem[iter2_2 - 1]
-		local var8_2 = tf(Instantiate(var7_2))
-
-		setParent(var8_2, arg0_2._map)
-	end
-
 	arg0_2.loader = AutoLoader.New()
 end
 

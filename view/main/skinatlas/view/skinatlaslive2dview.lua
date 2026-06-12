@@ -64,7 +64,7 @@ function var0_0.OnClick(arg0_7)
 
 			var0_7 = var2_7[math.ceil(math.random(#var2_7))]
 		else
-			local var3_7 = arg0_7:GetIdleEvents()
+			local var3_7 = arg0_7:GetTouchEvent()
 
 			var0_7 = var3_7[math.floor(math.Random(0, #var3_7)) + 1]
 		end
@@ -79,42 +79,38 @@ function var0_0.GetTouchEvent(arg0_8, arg1_8)
 	return (var1_0.filterAssistantEvents(var1_0.getAssistantTouchEvents(arg1_8), arg0_8.ship:getSkinId(), 0))
 end
 
-function var0_0.GetIdleEvents(arg0_9)
-	return (var1_0.filterAssistantEvents(var1_0.IdleEvents, arg0_9.ship:getSkinId(), 0))
+function var0_0.GetEventConfig(arg0_9, arg1_9)
+	return pg.AssistantInfo.GetAssistantEvents(arg1_9)
 end
 
-function var0_0.GetEventConfig(arg0_10, arg1_10)
-	return var1_0.assistantEvents[arg1_10]
-end
-
-function var0_0.TriggerEvent(arg0_11, arg1_11)
-	if not arg1_11 then
+function var0_0.TriggerEvent(arg0_10, arg1_10)
+	if not arg1_10 then
 		return
 	end
 
-	local var0_11 = arg0_11:GetEventConfig(arg1_11)
+	local var0_10 = arg0_10:GetEventConfig(arg1_10)
 
-	local function var1_11()
+	local function var1_10()
 		return
 	end
 
-	local var2_11, var3_11, var4_11, var5_11, var6_11, var7_11 = ShipWordHelper.GetCvDataForShip(arg0_11.ship, var0_11.dialog)
+	local var2_10, var3_10, var4_10, var5_10, var6_10, var7_10 = ShipWordHelper.GetCvDataForShip(arg0_10.ship, var0_10.dialog)
 
-	if not var7_11 then
-		arg0_11.live2dChar:TriggerAction(var0_11.action)
-		var1_11()
+	if not var7_10 then
+		arg0_10.live2dChar:TriggerAction(var0_10.action)
+		var1_10()
 	else
-		arg0_11.live2dChar:TriggerAction(var0_11.action, nil, nil, var1_11)
+		arg0_10.live2dChar:TriggerAction(var0_10.action, nil, nil, var1_10)
 	end
 end
 
-function var0_0.Dispose(arg0_13)
-	pg.DelegateInfo.Dispose(arg0_13)
-	arg0_13.live2dChar:Dispose()
+function var0_0.Dispose(arg0_12)
+	pg.DelegateInfo.Dispose(arg0_12)
+	arg0_12.live2dChar:Dispose()
 
-	arg0_13.live2dChar = nil
+	arg0_12.live2dChar = nil
 
-	setActive(arg0_13.live2dContainer, false)
+	setActive(arg0_12.live2dContainer, false)
 end
 
 return var0_0

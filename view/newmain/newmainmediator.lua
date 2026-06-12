@@ -148,7 +148,7 @@ function var0_0.register(arg0_1)
 end
 
 function var0_0.listNotificationInterests(arg0_20)
-	local var0_20 = {
+	return {
 		GAME.REMOVE_LAYERS,
 		GAME.GET_GUILD_INFO_DONE,
 		GAME.GET_GUILD_CHAT_LIST_DONE,
@@ -194,23 +194,11 @@ function var0_0.listNotificationInterests(arg0_20)
 		MusicPlayer.NO_PLAY_MUSIC_NOTIFICATION,
 		GAME.REQ_NEW_INSTAGRAM_DATA_DONE
 	}
-
-	for iter0_20, iter1_20 in pairs(pg.redDotHelper:GetNotifyType()) do
-		for iter2_20, iter3_20 in pairs(iter1_20) do
-			if not table.contains(var0_20, iter3_20) then
-				table.insert(var0_20, iter3_20)
-			end
-		end
-	end
-
-	return var0_20
 end
 
 function var0_0.handleNotification(arg0_21, arg1_21)
 	local var0_21 = arg1_21:getName()
 	local var1_21 = arg1_21:getBody()
-
-	pg.redDotHelper:Notify(var0_21)
 
 	if var0_21 == GAME.ON_OPEN_INS_LAYER then
 		arg0_21.viewComponent:emit(var0_0.SKIP_INS)

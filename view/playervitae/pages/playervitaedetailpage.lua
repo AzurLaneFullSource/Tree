@@ -21,6 +21,7 @@ function var0_0.OnLoaded(arg0_3)
 	arg0_3.idTxt = arg0_3._tf:Find("info/uid"):GetComponent(typeof(Text))
 	arg0_3.levelTxt = arg0_3._tf:Find("info/level"):GetComponent(typeof(Text))
 	arg0_3.expTxt = arg0_3._tf:Find("info/exp"):GetComponent(typeof(Text))
+	arg0_3.copyBtn = arg0_3._tf:Find("info/copy")
 	arg0_3.statisticTpl = arg0_3._tf:Find("statistics/tpl")
 	arg0_3.shareBtn = arg0_3._tf:Find("btn_share")
 	arg0_3.attireBtn = arg0_3._tf:Find("btn_attire")
@@ -64,6 +65,10 @@ function var0_0.OnInit(arg0_6)
 
 		arg0_6.contextData.renamePage:ExecuteAction("Show", arg0_6.player)
 	end, SFX_PANEL)
+	onButton(arg0_6, arg0_6.copyBtn, function()
+		UniPasteBoard.SetClipBoardString(arg0_6.player.id)
+		pg.TipsMgr.GetInstance():ShowTips(i18n("friend_id_copy_ok"))
+	end, SFX_PANEL)
 	onButton(arg0_6, arg0_6.writeBtn, function()
 		activateInputField(arg0_6.inputField)
 	end, SFX_PANEL)
@@ -73,213 +78,213 @@ function var0_0.OnInit(arg0_6)
 	onButton(arg0_6, arg0_6.attireBtn, function()
 		arg0_6:emit(PlayerVitaeMediator.ON_ATTIRE)
 	end, SFX_PANEL)
-	setActive(arg0_6.attireBtnTip, underscore.any(getProxy(AttireProxy):needTip(), function(arg0_11)
-		return arg0_11 == true
+	setActive(arg0_6.attireBtnTip, underscore.any(getProxy(AttireProxy):needTip(), function(arg0_12)
+		return arg0_12 == true
 	end))
-	onInputEndEdit(arg0_6, arg0_6.inputField, function(arg0_12)
-		if wordVer(arg0_12) > 0 then
+	onInputEndEdit(arg0_6, arg0_6.inputField, function(arg0_13)
+		if wordVer(arg0_13) > 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("playerinfo_mask_word"))
 			activateInputField(arg0_6.inputField)
 
 			return
 		end
 
-		if not arg0_12 or arg0_6.manifesto == arg0_12 then
+		if not arg0_13 or arg0_6.manifesto == arg0_13 then
 			return
 		end
 
-		arg0_6.manifesto = arg0_12
+		arg0_6.manifesto = arg0_13
 
-		arg0_6:emit(PlayerVitaeMediator.CHANGE_MANIFESTO, arg0_12)
+		arg0_6:emit(PlayerVitaeMediator.CHANGE_MANIFESTO, arg0_13)
 	end)
 	arg0_6._tf:SetAsFirstSibling()
 end
 
-function var0_0.Show(arg0_13, arg1_13, arg2_13)
-	var0_0.super.Show(arg0_13)
+function var0_0.Show(arg0_14, arg1_14, arg2_14)
+	var0_0.super.Show(arg0_14)
 
-	arg0_13.player = arg1_13
+	arg0_14.player = arg1_14
 
-	arg0_13:UpdateMedals()
-	arg0_13:UpdatePower()
-	arg0_13:UpdateInfo()
-	arg0_13:UpdateStatistics()
+	arg0_14:UpdateMedals()
+	arg0_14:UpdatePower()
+	arg0_14:UpdateInfo()
+	arg0_14:UpdateStatistics()
 
-	if arg2_13 then
-		arg0_13:DoEnterAnimation()
+	if arg2_14 then
+		arg0_14:DoEnterAnimation()
 	end
 end
 
-function var0_0.DoEnterAnimation(arg0_14)
-	for iter0_14, iter1_14 in ipairs(arg0_14.animPanels) do
-		local var0_14 = iter1_14.localPosition.x
-		local var1_14 = iter0_14 * 0.05
-		local var2_14 = 0.2 + (iter0_14 - 1) * 0.05
+function var0_0.DoEnterAnimation(arg0_15)
+	for iter0_15, iter1_15 in ipairs(arg0_15.animPanels) do
+		local var0_15 = iter1_15.localPosition.x
+		local var1_15 = iter0_15 * 0.05
+		local var2_15 = 0.2 + (iter0_15 - 1) * 0.05
 
-		iter1_14.localPosition = Vector3(var0_14 + 800, iter1_14.localPosition.y, 0)
+		iter1_15.localPosition = Vector3(var0_15 + 800, iter1_15.localPosition.y, 0)
 
-		LeanTween.moveLocalX(iter1_14.gameObject, var0_14, var2_14):setDelay(var1_14):setEase(LeanTweenType.easeInOutSine)
+		LeanTween.moveLocalX(iter1_15.gameObject, var0_15, var2_15):setDelay(var1_15):setEase(LeanTweenType.easeInOutSine)
 	end
 end
 
-function var0_0.UpdateMedals(arg0_15)
-	local var0_15 = arg0_15.player.displayTrophyList
-	local var1_15 = math.min(5, #var0_15)
-	local var2_15 = 353
-	local var3_15 = 30
+function var0_0.UpdateMedals(arg0_16)
+	local var0_16 = arg0_16.player.displayTrophyList
+	local var1_16 = math.min(5, #var0_16)
+	local var2_16 = 353
+	local var3_16 = 30
 
-	UIItemList.StaticAlign(arg0_15.medalTpl.parent, arg0_15.medalTpl, var1_15, function(arg0_16, arg1_16, arg2_16)
-		arg1_16 = arg1_16 + 1
+	UIItemList.StaticAlign(arg0_16.medalTpl.parent, arg0_16.medalTpl, var1_16, function(arg0_17, arg1_17, arg2_17)
+		arg1_17 = arg1_17 + 1
 
-		if arg0_16 == UIItemList.EventUpdate then
-			local var0_16 = var0_15[arg1_16]
-			local var1_16 = var0_16 > 1000000000 and LoveLetterTrophy.New({
-				id = var0_16
+		if arg0_17 == UIItemList.EventUpdate then
+			local var0_17 = var0_16[arg1_17]
+			local var1_17 = var0_17 > 1000000000 and LoveLetterTrophy.New({
+				id = var0_17
 			}) or Trophy.New({
-				id = var0_16
+				id = var0_17
 			})
-			local var2_16 = arg2_16:Find("icon")
-			local var3_16 = arg2_16:Find("now")
-			local var4_16 = var1_16:isLoverLetter()
+			local var2_17 = arg2_17:Find("icon")
+			local var3_17 = arg2_17:Find("now")
+			local var4_17 = var1_17:isLoverLetter()
 
-			setActive(var2_16, not var4_16)
-			setActive(var3_16, var4_16)
+			setActive(var2_17, not var4_17)
+			setActive(var3_17, var4_17)
 
-			if var4_16 then
-				setLoveLetterMedal(var3_16:Find("medal"), var1_16, {
+			if var4_17 then
+				setLoveLetterMedal(var3_17:Find("medal"), var1_17, {
 					hideMark = true
 				})
 			else
-				LoadImageSpriteAsync("medal/s_" .. var1_16:getConfig("icon"), var2_16, true)
+				LoadImageSpriteAsync("medal/s_" .. var1_17:getConfig("icon"), var2_17, true)
 			end
 
-			local var5_16 = var2_15 - (arg1_16 - 1) * (var3_15 + arg2_16.sizeDelta.x)
+			local var5_17 = var2_16 - (arg1_17 - 1) * (var3_16 + arg2_17.sizeDelta.x)
 
-			arg2_16.anchoredPosition = Vector2(var5_16, arg2_16.anchoredPosition.y)
+			arg2_17.anchoredPosition = Vector2(var5_17, arg2_17.anchoredPosition.y)
 		end
 	end)
 end
 
-function var0_0.UpdatePower(arg0_17)
-	local var0_17 = getProxy(MilitaryExerciseProxy):RawGetSeasonInfo()
-	local var1_17 = SeasonInfo.getEmblem(var0_17.score, var0_17.rank)
+function var0_0.UpdatePower(arg0_18)
+	local var0_18 = getProxy(MilitaryExerciseProxy):RawGetSeasonInfo()
+	local var1_18 = SeasonInfo.getEmblem(var0_18.score, var0_18.rank)
 
-	LoadSpriteAsync("emblem/" .. var1_17, function(arg0_18)
-		arg0_17.emblemIcon.sprite = arg0_18
+	LoadSpriteAsync("emblem/" .. var1_18, function(arg0_19)
+		arg0_18.emblemIcon.sprite = arg0_19
 
-		arg0_17.emblemIcon:SetNativeSize()
+		arg0_18.emblemIcon:SetNativeSize()
 	end)
-	LoadSpriteAsync("emblem/n_" .. var1_17, function(arg0_19)
-		if arg0_17.exited then
+	LoadSpriteAsync("emblem/n_" .. var1_18, function(arg0_20)
+		if arg0_18.exited then
 			return
 		end
 
-		arg0_17.emblemTxt.sprite = arg0_19
+		arg0_18.emblemTxt.sprite = arg0_20
 
-		arg0_17.emblemTxt:SetNativeSize()
+		arg0_18.emblemTxt:SetNativeSize()
 	end)
 
-	local var2_17 = math.max(arg0_17.player.maxRank, 1)
-	local var3_17 = pg.arena_data_rank[math.min(var2_17, 14)]
+	local var2_18 = math.max(arg0_18.player.maxRank, 1)
+	local var3_18 = pg.arena_data_rank[math.min(var2_18, 14)]
 
-	arg0_17.highestEmblem.text = i18n("friend_resume_title_metal") .. var3_17.name
+	arg0_18.highestEmblem.text = i18n("friend_resume_title_metal") .. var3_18.name
 
-	getProxy(BayProxy):GetBayPowerRootedAsyn(function(arg0_20)
-		if arg0_17.exited then
+	getProxy(BayProxy):GetBayPowerRootedAsyn(function(arg0_21)
+		if arg0_18.exited then
 			return
 		end
 
-		arg0_17.powerTxt.text = math.floor(arg0_20)
+		arg0_18.powerTxt.text = math.floor(arg0_21)
 	end)
 
-	arg0_17.collectionTxt.text = getProxy(CollectionProxy):getCollectionRate() * 100 .. "%"
+	arg0_18.collectionTxt.text = getProxy(CollectionProxy):getCollectionRate() * 100 .. "%"
 end
 
-function var0_0.UpdateInfo(arg0_21)
-	arg0_21.nameTxt.text = arg0_21.player.name
-	arg0_21.idTxt.text = arg0_21.player.id
-	arg0_21.levelTxt.text = "LV." .. arg0_21.player.level
+function var0_0.UpdateInfo(arg0_22)
+	arg0_22.nameTxt.text = arg0_22.player.name
+	arg0_22.idTxt.text = arg0_22.player.id
+	arg0_22.levelTxt.text = "LV." .. arg0_22.player.level
 
-	local var0_21 = getConfigFromLevel1(pg.user_level, arg0_21.player.level).exp
+	local var0_22 = getConfigFromLevel1(pg.user_level, arg0_22.player.level).exp
 
-	arg0_21.expTxt.text = arg0_21.player.exp .. "/" .. var0_21
+	arg0_22.expTxt.text = arg0_22.player.exp .. "/" .. var0_22
 
-	local var1_21 = arg0_21.player:GetManifesto()
+	local var1_22 = arg0_22.player:GetManifesto()
 
-	setInputText(arg0_21.inputField, var1_21)
+	setInputText(arg0_22.inputField, var1_22)
 end
 
-function var0_0.UpdateStatistics(arg0_22)
-	local var0_22 = arg0_22:GetDisplayStatisticsData()
-	local var1_22 = 2
-	local var2_22 = Vector2(355, 25)
-	local var3_22 = arg0_22.statisticTpl.anchoredPosition
-	local var4_22 = arg0_22.statisticTpl.sizeDelta.x
+function var0_0.UpdateStatistics(arg0_23)
+	local var0_23 = arg0_23:GetDisplayStatisticsData()
+	local var1_23 = 2
+	local var2_23 = Vector2(355, 25)
+	local var3_23 = arg0_23.statisticTpl.anchoredPosition
+	local var4_23 = arg0_23.statisticTpl.sizeDelta.x
 
-	for iter0_22 = 1, #var0_22, var1_22 do
-		local var5_22 = var3_22.y - (iter0_22 - 1) * var2_22.y
+	for iter0_23 = 1, #var0_23, var1_23 do
+		local var5_23 = var3_23.y - (iter0_23 - 1) * var2_23.y
 
-		for iter1_22 = 1, var1_22 do
-			local var6_22 = iter1_22 == 1 and iter0_22 == 1 and arg0_22.statisticTpl or cloneTplTo(arg0_22.statisticTpl, arg0_22.statisticTpl.parent)
-			local var7_22 = var0_22[iter0_22 + (iter1_22 - 1)]
+		for iter1_23 = 1, var1_23 do
+			local var6_23 = iter1_23 == 1 and iter0_23 == 1 and arg0_23.statisticTpl or cloneTplTo(arg0_23.statisticTpl, arg0_23.statisticTpl.parent)
+			local var7_23 = var0_23[iter0_23 + (iter1_23 - 1)]
 
-			setText(var6_22, i18n(var7_22[1]))
-			setText(var6_22:Find("value"), var7_22[2])
+			setText(var6_23, i18n(var7_23[1]))
+			setText(var6_23:Find("value"), var7_23[2])
 
-			local var8_22 = var3_22.x + (iter1_22 - 1) * var2_22.x
+			local var8_23 = var3_23.x + (iter1_23 - 1) * var2_23.x
 
-			var6_22.anchoredPosition = Vector2(var8_22, var5_22)
+			var6_23.anchoredPosition = Vector2(var8_23, var5_23)
 		end
 	end
 end
 
-function var0_0.GetDisplayStatisticsData(arg0_23)
-	local var0_23 = arg0_23.player
-	local var1_23 = string.format("%0.1f", var0_23.winCount / math.max(var0_23.attackCount, 1) * 100) .. "%"
-	local var2_23 = string.format("%0.1f", var0_23.pvp_win_count / math.max(var0_23.pvp_attack_count, 1) * 100) .. "%"
+function var0_0.GetDisplayStatisticsData(arg0_24)
+	local var0_24 = arg0_24.player
+	local var1_24 = string.format("%0.1f", var0_24.winCount / math.max(var0_24.attackCount, 1) * 100) .. "%"
+	local var2_24 = string.format("%0.1f", var0_24.pvp_win_count / math.max(var0_24.pvp_attack_count, 1) * 100) .. "%"
 
 	return {
 		{
 			"friend_resume_ship_count",
-			var0_23.shipCount
+			var0_24.shipCount
 		},
 		{
 			"friend_event_count",
-			var0_23.collect_attack_count
+			var0_24.collect_attack_count
 		},
 		{
 			"friend_resume_attack_count",
-			var0_23.attackCount
+			var0_24.attackCount
 		},
 		{
 			"friend_resume_manoeuvre_count",
-			var0_23.pvp_attack_count
+			var0_24.pvp_attack_count
 		},
 		{
 			"friend_resume_attack_win_rate",
-			var1_23
+			var1_24
 		},
 		{
 			"friend_resume_manoeuvre_win_rate",
-			var2_23
+			var2_24
 		}
 	}
 end
 
-function var0_0.OnDestroy(arg0_24)
-	for iter0_24, iter1_24 in ipairs(arg0_24.animPanels) do
-		if LeanTween.isTweening(iter1_24.gameObject) then
-			LeanTween.cancel(iter1_24.gameObject)
+function var0_0.OnDestroy(arg0_25)
+	for iter0_25, iter1_25 in ipairs(arg0_25.animPanels) do
+		if LeanTween.isTweening(iter1_25.gameObject) then
+			LeanTween.cancel(iter1_25.gameObject)
 		end
 	end
 
-	eachChild(arg0_24.medalTpl.parent, function(arg0_25, arg1_25)
-		if arg0_25:Find("now/medal").childCount > 0 then
-			returnLoveLetterMedal(arg0_25:Find("now/medal"):GetChild(0))
+	eachChild(arg0_25.medalTpl.parent, function(arg0_26, arg1_26)
+		if arg0_26:Find("now/medal").childCount > 0 then
+			returnLoveLetterMedal(arg0_26:Find("now/medal"):GetChild(0))
 		end
 	end)
 
-	arg0_24.exited = true
+	arg0_25.exited = true
 end
 
 return var0_0

@@ -17,16 +17,22 @@ function var0_0.OnClick(arg0_4)
 end
 
 function var0_0.OnRegister(arg0_5)
-	arg0_5.redDot = EffectRedDotNode.New(arg0_5._tf, {
-		pg.RedDotMgr.TYPES.COMMANDER_MANUAL
-	})
+	arg0_5.redDotUI = arg0_5._tf:Find("tip")
 
-	pg.redDotHelper:AddNode(arg0_5.redDot)
+	pg.EasyRedDotMgr.GetInstance():RegisterRedDot(arg0_5.redDotUI, {
+		"COMMANDER_MANUAL"
+	}, function(arg0_6)
+		local var0_6, var1_6 = TechnologyConst.isTecActOn()
+
+		setActive(arg0_6, getProxy(CommanderManualProxy):ShouldShowTaskOrGuideTip() or var1_6)
+	end)
 end
 
-function var0_0.OnClear(arg0_6)
-	if arg0_6.redDot then
-		pg.redDotHelper:RemoveNode(arg0_6.redDot)
+function var0_0.OnClear(arg0_7)
+	if arg0_7.redDotUI then
+		pg.EasyRedDotMgr.GetInstance():UnRegisterRedDot(arg0_7.redDotUI)
+
+		arg0_7.redDotUI = nil
 	end
 end
 

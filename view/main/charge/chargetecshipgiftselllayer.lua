@@ -63,16 +63,7 @@ end
 
 function var0_0.findUI(arg0_7)
 	arg0_7.bg = arg0_7._tf:Find("BG")
-
-	local var0_7 = GetComponent(arg0_7._tf, "ItemList").prefabItem[0]
-	local var1_7 = Instantiate(var0_7)
-
 	arg0_7.itemTpl = arg0_7._tf:Find("ItemTpl")
-
-	local var2_7 = arg0_7.itemTpl:Find("Container")
-
-	setParent(var1_7, var2_7, false)
-
 	arg0_7.giftTpl = arg0_7._tf:Find("GiftTpl")
 	arg0_7.giftContainer = arg0_7._tf:Find("List")
 	arg0_7.giftUIItemList = UIItemList.New(arg0_7.giftContainer, arg0_7.giftTpl)

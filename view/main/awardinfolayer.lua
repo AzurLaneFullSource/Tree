@@ -78,7 +78,7 @@ function var0_0.init(arg0_2)
 
 	arg0_2.blinks = {}
 	arg0_2.tweenItems = {}
-	arg0_2.shipCardTpl = arg0_2._tf:GetComponent("ItemList").prefabItem[0]
+	arg0_2.shipCardTpl = arg0_2._tf:Find("ShipCardTpl")
 
 	arg0_2._tf:SetAsLastSibling()
 
@@ -255,7 +255,7 @@ function var0_0.displayAwards(arg0_24)
 		else
 			local var0_24 = cloneTplTo(arg0_24.shipTpl, arg0_24.container)
 
-			cloneTplTo(arg0_24.shipCardTpl, var0_24, "ship_tpl")
+			setActive(cloneTplTo(arg0_24.shipCardTpl, var0_24, "ship_tpl"), true)
 		end
 	end
 

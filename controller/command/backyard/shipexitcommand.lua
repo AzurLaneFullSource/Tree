@@ -8,29 +8,17 @@ function var0_0.execute(arg0_1, arg1_1)
 	local var4_1 = var3_1:getShipById(var2_1)
 	local var5_1 = var0_1.callback
 
-	if not var1_1:getShipById(var2_1) then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_no_ship_tip"))
-
-		return
-	end
-
 	pg.ConnectionMgr.GetInstance():Send(19004, {
 		ship_id = var2_1
 	}, 19005, function(arg0_2)
 		local var0_2 = 0
 
 		if arg0_2.result == 0 then
-			local var1_2 = var4_1.state
+			local var1_2 = var1_1:getRawData()
 
-			if var1_2 == Ship.STATE_REST then
-				-- block empty
-			elseif var1_2 == Ship.STATE_TRAIN then
-				var4_1.state_info_2 = var4_1:getTotalExp()
-			end
-
-			var4_1:updateStateInfo34(0, 0)
-			var1_1:exitYardById(var2_1)
-			var4_1:updateState(Ship.STATE_NORMAL)
+			var1_2:DeleteShip(var2_1)
+			var1_1:updateDrom(var1_2, BackYardConst.DORM_UPDATE_TYPE_SHIP)
+			arg0_1:sendNotification(DormProxy.SHIP_EXIT, var4_1)
 
 			var0_2 = arg0_2.exp
 

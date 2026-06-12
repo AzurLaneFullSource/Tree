@@ -102,3 +102,15 @@ function var1_0.onFinish(arg0_10, arg1_10, arg2_10, arg3_10)
 		var0_10.state = var1_0.State.Fail
 	end
 end
+
+function var1_0.CheckGroupUpdateTip(arg0_11)
+	local var0_11 = BundleWizard.Inst:GetGroupMgr(arg0_11)
+
+	var0_11:CheckD()
+
+	if var0_11.state == DownloadState.CheckToUpdate then
+		return false
+	else
+		return not GroupHelper.IsGroupVerLastest(arg0_11)
+	end
+end

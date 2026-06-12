@@ -21,9 +21,7 @@ function var0_0.OnRegister(arg0_5)
 end
 
 function var0_0.OnClear(arg0_6)
-	if arg0_6.redDot then
-		pg.redDotHelper:RemoveNode(arg0_6.redDot)
-	end
+	return
 end
 
 return var0_0

@@ -74,9 +74,9 @@ end
 function var0_0.GetMaxSel(arg0_9, arg1_9, arg2_9)
 	local var0_9 = 0
 
-	if arg2_9 == Ship.STATE_TRAIN then
+	if arg2_9 == DormShip.FLOOR_1 then
 		var0_9 = arg1_9.exp_pos
-	elseif arg2_9 == Ship.STATE_REST then
+	elseif arg2_9 == DormShip.FLOOR_2 then
 		var0_9 = arg1_9.rest_pos
 	end
 
@@ -89,10 +89,10 @@ function var0_0.GetSelectedShips(arg0_10, arg1_10, arg2_10, arg3_10)
 	local var2_10 = {}
 	local var3_10 = {}
 
-	for iter0_10, iter1_10 in ipairs(arg1_10.shipIds) do
-		local var4_10 = getProxy(BayProxy):RawGetShipById(iter1_10)
+	for iter0_10, iter1_10 in ipairs(arg1_10:GetShips()) do
+		local var4_10 = getProxy(BayProxy):RawGetShipById(iter1_10.id)
 
-		if var4_10.state == arg2_10 then
+		if iter1_10:IsSameFloor(arg2_10) then
 			table.insert(var1_10, var4_10.id)
 
 			if var4_10.id ~= var0_10 then
@@ -123,7 +123,7 @@ function var0_0.OnShip(arg0_11, arg1_11, arg2_11, arg3_11, arg4_11)
 end
 
 function var0_0.OnSelected(arg0_13, arg1_13, arg2_13, arg3_13, arg4_13)
-	local var0_13 = getProxy(DormProxy):getRawData():GetStateShipsById(arg1_13)
+	local var0_13 = getProxy(DormProxy):getRawData():GetDicBayShipOnFloor(arg1_13)
 
 	pg.UIMgr.GetInstance():LoadingOn()
 
@@ -159,7 +159,7 @@ function var0_0.OnSelected(arg0_13, arg1_13, arg2_13, arg3_13, arg4_13)
 
 	for iter2_13, iter3_13 in ipairs(arg3_13) do
 		if not var0_13[iter3_13] then
-			local var2_13 = arg1_13 == Ship.STATE_TRAIN and 1 or 2
+			local var2_13 = arg1_13
 
 			table.insert(arg0_13.contextData.shipIdToAdd, {
 				iter3_13,

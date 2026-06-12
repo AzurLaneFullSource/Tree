@@ -12,13 +12,13 @@ var0_0.STATE_STOP = 8
 var0_0.STATE_INTERACT = 9
 var0_0.STATE_CANCEL_INTERACT = 10
 
-function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1)
 	arg0_1.id = arg2_1.id
 	arg0_1.configId = arg2_1.configId
 	arg0_1.prefab = arg2_1:getPrefab()
 	arg0_1.attachments = arg2_1:getAttachmentPrefab()
-	arg0_1.inimacy = arg2_1.state_info_3 or 0
-	arg0_1.coin = arg2_1.state_info_4 or 0
+	arg0_1.inimacy = arg4_1 or 0
+	arg0_1.coin = arg3_1 or 0
 	arg0_1.skinId = arg2_1.skinId
 	arg0_1.groupId = arg2_1.groupId
 	arg0_1.config = pg.ship_data_statistics[arg0_1.configId]

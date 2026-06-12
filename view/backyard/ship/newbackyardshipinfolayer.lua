@@ -11,19 +11,19 @@ function var0_0.init(arg0_2)
 	arg0_2.closeBtn = arg0_2._tf:Find("frame/top/close")
 	arg0_2.mainPanel = arg0_2._tf:Find("frame")
 	arg0_2.toggles = {
-		[Ship.STATE_REST] = arg0_2._tf:Find("frame/top/rest"),
-		[Ship.STATE_TRAIN] = arg0_2._tf:Find("frame/top/train")
+		[DormShip.FLOOR_2] = arg0_2._tf:Find("frame/top/rest"),
+		[DormShip.FLOOR_1] = arg0_2._tf:Find("frame/top/train")
 	}
 	arg0_2.animations = {
-		[Ship.STATE_REST] = arg0_2._tf:Find("frame/top/rest"):GetComponent(typeof(Animation)),
-		[Ship.STATE_TRAIN] = arg0_2._tf:Find("frame/top/train"):GetComponent(typeof(Animation))
+		[DormShip.FLOOR_2] = arg0_2._tf:Find("frame/top/rest"):GetComponent(typeof(Animation)),
+		[DormShip.FLOOR_1] = arg0_2._tf:Find("frame/top/train"):GetComponent(typeof(Animation))
 	}
 	arg0_2.animationName = {
-		[Ship.STATE_REST] = {
+		[DormShip.FLOOR_2] = {
 			"anim_backyard_shipinfo_rest_Select",
 			"anim_backyard_shipinfo_rest_unSelect"
 		},
-		[Ship.STATE_TRAIN] = {
+		[DormShip.FLOOR_1] = {
 			"anim_backyard_shipinfo_train_Select",
 			"anim_backyard_shipinfo_train_unSelect"
 		}
@@ -83,10 +83,10 @@ function var0_0.didEnter(arg0_3)
 			return
 		end
 
-		local var0_7 = arg0_3.contextData.type or Ship.STATE_TRAIN
+		local var0_7 = arg0_3.contextData.type or DormShip.FLOOR_1
 		local var1_7 = {
-			Ship.STATE_TRAIN,
-			Ship.STATE_REST
+			DormShip.FLOOR_1,
+			DormShip.FLOOR_2
 		}
 
 		for iter0_7, iter1_7 in ipairs(var1_7) do
@@ -101,15 +101,15 @@ function var0_0.GetCardTypeCnt(arg0_8, arg1_8)
 	local var2_8 = 0
 	local var3_8 = 0
 
-	if arg1_8 == Ship.STATE_TRAIN then
+	if arg1_8 == DormShip.FLOOR_1 then
 		var1_8 = var0_8.exp_pos
 		var2_8 = var0_8:getConfig("training_ship_number")
-	elseif arg1_8 == Ship.STATE_REST then
+	elseif arg1_8 == DormShip.FLOOR_2 then
 		var1_8 = var0_8.rest_pos
 		var2_8 = var0_8:getConfig("fix_ship_number")
 	end
 
-	local var4_8 = var0_8:GetStateShipCnt(arg1_8)
+	local var4_8 = var0_8:GetFloorShipCnt(arg1_8)
 	local var5_8 = var1_8 - var4_8
 	local var6_8 = var2_8 - var1_8
 
@@ -129,9 +129,9 @@ function var0_0.SwitchToPage(arg0_9, arg1_9)
 
 	arg0_9:UpdateSlots()
 
-	if arg1_9 == Ship.STATE_TRAIN then
+	if arg1_9 == DormShip.FLOOR_1 then
 		arg0_9.descTxt.text = i18n("backyard_traning_tip")
-	elseif arg1_9 == Ship.STATE_REST then
+	elseif arg1_9 == DormShip.FLOOR_2 then
 		arg0_9.descTxt.text = i18n("backyard_rest_tip")
 	end
 end
@@ -139,7 +139,7 @@ end
 function var0_0.UpdateSlots(arg0_10)
 	local var0_10 = arg0_10.type
 	local var1_10 = arg0_10:GetCardTypeCnt(var0_10)
-	local var2_10 = getProxy(DormProxy):getRawData():GetStateShips(var0_10)
+	local var2_10 = getProxy(DormProxy):getRawData():GetBayShipOnFloor(var0_10)
 	local var3_10 = 0
 	local var4_10 = {}
 

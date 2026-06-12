@@ -155,6 +155,8 @@ function var0_0.clearNew(arg0_5)
 	for iter4_5, iter5_5 in pairs(arg0_5.data.combatUIStyles) do
 		iter5_5:clearNew()
 	end
+
+	pg.EasyRedDotMgr.GetInstance():TriggerMarks("ATTIRE")
 end
 
 function var0_0.getExpiredChaces(arg0_6)

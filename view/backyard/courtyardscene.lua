@@ -109,7 +109,7 @@ function var0_0.SwitchFloorDone(arg0_15)
 end
 
 function var0_0.ShowAddFoodTip(arg0_16)
-	if arg0_16.contextData.mode ~= CourtYardConst.SYSTEM_VISIT and arg0_16.dorm.food == 0 and not arg0_16.contextData.OpenShop and not pg.NewGuideMgr.GetInstance():IsBusy() and arg0_16.dorm:GetStateShipCnt(Ship.STATE_TRAIN) > 0 and (not arg0_16.contextData.fromMediatorName or arg0_16.contextData.fromMediatorName ~= "DockyardMediator" and arg0_16.contextData.fromMediatorName ~= "ShipMainMediator") and not arg0_16.contextData.skipToCharge then
+	if arg0_16.contextData.mode ~= CourtYardConst.SYSTEM_VISIT and arg0_16.dorm.food == 0 and not arg0_16.contextData.OpenShop and not pg.NewGuideMgr.GetInstance():IsBusy() and arg0_16.dorm:GetFloorShipCnt(DormShip.FLOOR_1) > 0 and (not arg0_16.contextData.fromMediatorName or arg0_16.contextData.fromMediatorName ~= "DockyardMediator" and arg0_16.contextData.fromMediatorName ~= "ShipMainMediator") and not arg0_16.contextData.skipToCharge then
 		arg0_16.emptyFoodPage:ExecuteAction("Flush")
 
 		arg0_16.contextData.fromMain = nil
@@ -221,7 +221,7 @@ function var0_0.willExit(arg0_27)
 		pg.m02:sendNotification(GAME.OPEN_ADD_EXP, 0)
 	end
 
-	getProxy(DormProxy):ClearNewFlag()
+	getProxy(DormProxy):getRawData():ClearNewFlag()
 end
 
 return var0_0

@@ -89,6 +89,15 @@ function var0_0.updateCrusingEntrance(arg0_8)
 		setActive(arg0_8.activityCrusingBtn, true)
 
 		local var1_8 = var0_8:GetCrusingInfo()
+		local var2_8 = var0_8.stopTime - pg.TimeMgr.GetInstance():GetServerTime()
+		local var3_8 = math.floor(var2_8 / 86400)
+
+		if var3_8 <= pg.gameset.world_cruise_due_days.key_value then
+			setActive(arg0_8.activityCrusingBtn:Find("LastDay"), true)
+			setText(arg0_8.activityCrusingBtn:Find("LastDay/text"), i18n("guild_left_supply_day", var3_8))
+		else
+			setActive(arg0_8.activityCrusingBtn:Find("LastDay"), false)
+		end
 
 		setText(arg0_8.activityCrusingBtn:Find("Text"), var1_8.phase .. "/" .. #var1_8.awardList)
 		setActive(arg0_8.activityCrusingBtn:Find("tip"), #var0_8:GetCrusingUnreceiveAward() > 0)

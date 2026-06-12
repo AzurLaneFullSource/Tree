@@ -11,88 +11,107 @@ end
 
 function var0_0.OnFirstFlush(arg0_2)
 	onButton(arg0_2, arg0_2.btnGo, function()
-		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.MALL_MAP)
+		arg0_2:emit(ActivityMediator.ON_ADD_SUBLAYER, Context.New({
+			mediator = MallAwardMediator,
+			viewComponent = MallAwardLayer,
+			data = {
+				awardHandledByParent = true,
+				onExit = function()
+					arg0_2:refreshRed()
+				end
+			}
+		}))
 	end, SFX_PANEL)
 	onButton(arg0_2, arg0_2.btnManual, function()
-		local var0_4 = Context.New({
+		local var0_5 = Context.New({
 			mediator = MedalAlbumTemplateMediator,
 			viewComponent = FujinBayMedalAlbumView
 		})
 
-		arg0_2:emit(ActivityMediator.ON_ADD_SUBLAYER, var0_4)
+		arg0_2:emit(ActivityMediator.ON_ADD_SUBLAYER, var0_5)
 	end, SFX_PANEL)
 	setText(arg0_2.Txtmanual, i18n("anniversary_nine_main_page"))
 	arg0_2:refreshRed()
 end
 
-function var0_0.OnUpdateFlush(arg0_5)
-	arg0_5:refreshRed()
+function var0_0.OnUpdateFlush(arg0_6)
+	arg0_6:refreshRed()
 end
 
-function var0_0.refreshRed(arg0_6)
-	setActive(arg0_6.redPoint, MallMapScene.IsEntranceTip())
+function var0_0.refreshRed(arg0_7)
+	setActive(arg0_7.redPoint, var0_0.IsMallAwardTip())
 
-	local var0_6, var1_6 = var0_0.GetFujinBayMedalTaskCount()
+	local var0_7, var1_7 = var0_0.GetFujinBayMedalTaskCount()
 
-	setActive(arg0_6.redMalPoint, var1_6 > 0)
+	setActive(arg0_7.redMalPoint, var1_7 > 0)
 end
 
-function var0_0.IsShowReminder(arg0_7)
+function var0_0.IsShowReminder(arg0_8)
 	return var0_0.IsTip()
 end
 
+function var0_0.IsMallAwardTip()
+	local var0_9 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_MALL)
+
+	if not var0_9 or var0_9:isEnd() then
+		return false
+	end
+
+	return MallAwardLayer.IsAwardTip() or MallAwardLayer.IsInputTip() or MallAwardLayer.IsTaskTip()
+end
+
 function var0_0.IsTip()
-	return MallMapScene.IsEntranceTip() or var0_0.IsFujinBayMedalTaskTip()
+	return var0_0.IsMallAwardTip() or var0_0.IsFujinBayMedalTaskTip()
 end
 
 function var0_0.IsFujinBayMedalTaskTip()
-	local var0_9, var1_9 = var0_0.GetFujinBayMedalTaskCount()
+	local var0_11, var1_11 = var0_0.GetFujinBayMedalTaskCount()
 
-	return var1_9 > 0
+	return var1_11 > 0
 end
 
 function var0_0.GetFujinBayMedalTaskCount()
-	local var0_10 = FujinBayMedalAlbumView.GROUP_ID
-	local var1_10 = pg.activity_medal_group[var0_10]
-	local var2_10 = var1_10 and var1_10.activity_link or {}
-	local var3_10
+	local var0_12 = FujinBayMedalAlbumView.GROUP_ID
+	local var1_12 = pg.activity_medal_group[var0_12]
+	local var2_12 = var1_12 and var1_12.activity_link or {}
+	local var3_12
 
-	for iter0_10, iter1_10 in ipairs(var2_10) do
-		local var4_10 = iter1_10[2]
-		local var5_10 = getProxy(ActivityProxy):getActivityById(var4_10)
+	for iter0_12, iter1_12 in ipairs(var2_12) do
+		local var4_12 = iter1_12[2]
+		local var5_12 = getProxy(ActivityProxy):getActivityById(var4_12)
 
-		if var5_10 and not var5_10:isEnd() then
-			var3_10 = iter1_10[3]
+		if var5_12 and not var5_12:isEnd() then
+			var3_12 = iter1_12[3]
 
 			break
 		end
 	end
 
-	if not var3_10 then
+	if not var3_12 then
 		return 0, 0, 0
 	end
 
-	local var6_10 = getProxy(TaskProxy)
-	local var7_10 = 0
-	local var8_10 = 0
-	local var9_10 = #var3_10
+	local var6_12 = getProxy(TaskProxy)
+	local var7_12 = 0
+	local var8_12 = 0
+	local var9_12 = #var3_12
 
-	for iter2_10, iter3_10 in ipairs(var3_10) do
-		local var10_10 = var6_10:getTaskById(iter3_10) or var6_10:getFinishTaskById(iter3_10)
+	for iter2_12, iter3_12 in ipairs(var3_12) do
+		local var10_12 = var6_12:getTaskById(iter3_12) or var6_12:getFinishTaskById(iter3_12)
 
-		if var10_10 then
-			local var11_10 = var10_10:getTaskStatus()
+		if var10_12 then
+			local var11_12 = var10_12:getTaskStatus()
 
-			if var11_10 == 1 then
-				var8_10 = var8_10 + 1
-				var7_10 = var7_10 + 1
-			elseif var11_10 == 2 then
-				var7_10 = var7_10 + 1
+			if var11_12 == 1 then
+				var8_12 = var8_12 + 1
+				var7_12 = var7_12 + 1
+			elseif var11_12 == 2 then
+				var7_12 = var7_12 + 1
 			end
 		end
 	end
 
-	return var7_10, var8_10, var9_10
+	return var7_12, var8_12, var9_12
 end
 
 return var0_0

@@ -1154,7 +1154,10 @@ function var0_0.InitSwitch()
 				var1_196.date = pg.TimeMgr.GetInstance():GetServerTime()
 			end
 
-			var0_196:AddFurniture(var1_196)
+			local var2_196 = var0_196:getRawData()
+
+			var2_196:AddFurniture(var1_196)
+			var0_196:updateDrom(var2_196, BackYardConst.DORM_UPDATE_TYPE_FURNITURE)
 		end,
 		[DROP_TYPE_SKIN] = function(arg0_197)
 			local var0_197 = getProxy(ShipSkinProxy)

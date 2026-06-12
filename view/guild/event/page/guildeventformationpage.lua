@@ -5,7 +5,7 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.tpl = arg0_2._go:GetComponent("ItemList").prefabItem[0]
+	arg0_2.tpl = arg0_2._tf:Find("ShipCardTpl")
 	arg0_2.closeBtn = arg0_2._tf:Find("frame/close")
 	arg0_2.sendBtn = arg0_2._tf:Find("frame/btn")
 	arg0_2.sendBtnGray = arg0_2._tf:Find("frame/btn/gray")
@@ -106,6 +106,7 @@ function var0_0.UpdateSlot(arg0_13, arg1_13, arg2_13, arg3_13)
 		if not var1_13 then
 			var1_13 = cloneTplTo(arg0_13.tpl, arg2_13)
 
+			setActive(var1_13, true)
 			var1_13:SetAsFirstSibling()
 		end
 

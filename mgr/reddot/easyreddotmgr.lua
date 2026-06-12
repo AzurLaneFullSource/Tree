@@ -50,7 +50,7 @@ function var0_0.TriggerMarks(arg0_4, ...)
 	for iter0_4, iter1_4 in ipairs({
 		...
 	}) do
-		for iter2_4, iter3_4 in pairs(arg0_4.markDic[iter1_4]) do
+		for iter2_4, iter3_4 in pairs(arg0_4.markDic[iter1_4] or {}) do
 			if IsNil(iter2_4) then
 				var0_4[iter2_4] = false
 			elseif iter3_4 then
@@ -63,7 +63,6 @@ function var0_0.TriggerMarks(arg0_4, ...)
 		if iter5_4 then
 			arg0_4.registerDic[iter4_4][2](iter4_4)
 		else
-			warning(iter4_4)
 			arg0_4:UnRegisterRedDot(iter4_4)
 		end
 	end

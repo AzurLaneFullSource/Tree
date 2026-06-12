@@ -411,6 +411,7 @@ function var0_0.init(arg0_6)
 	arg0_6.mailConfirmationSubView = MailConfirmationWindow.New(arg0_6._tf, arg0_6.event, arg0_6.contextData)
 	arg0_6.mailOverflowWindowSubView = MailOverflowWindow.New(arg0_6._tf, arg0_6.event, arg0_6.contextData)
 	arg0_6.mailStoreroomRewardSubView = MailRewardWindow.New(arg0_6._tf, arg0_6.event, arg0_6.contextData)
+	arg0_6.mailReDropWindowSubView = MailReDropWindow.New(arg0_6._tf, arg0_6.event, arg0_6.contextData)
 
 	setText(arg0_6.rtBtnLeftDeleteAll:Find("Text"), i18n("mail_deleteread_button"))
 	setText(arg0_6.rtBtnLeftManager:Find("Text"), i18n("mail_manage_button"))
@@ -929,6 +930,8 @@ function var0_0.onBackPressed(arg0_84)
 		arg0_84.mailOverflowWindowSubView:Hide()
 	elseif arg0_84.mailStoreroomRewardSubView:isShowing() then
 		arg0_84.mailStoreroomRewardSubView:Hide()
+	elseif arg0_84.mailReDropWindowSubView:isShowing() then
+		arg0_84.mailReDropWindowSubView:Hide()
 	else
 		triggerButton(arg0_84.rtAdapt:Find("CommonTitleAndBack/back_btn"))
 	end
@@ -940,6 +943,7 @@ function var0_0.willExit(arg0_85)
 	arg0_85.mailConfirmationSubView:Destroy()
 	arg0_85.mailOverflowWindowSubView:Destroy()
 	arg0_85.mailStoreroomRewardSubView:Destroy()
+	arg0_85.mailReDropWindowSubView:Destroy()
 end
 
 function var0_0.ShowDoubleConfiremationMsgBox(arg0_86, arg1_86)
@@ -947,6 +951,8 @@ function var0_0.ShowDoubleConfiremationMsgBox(arg0_86, arg1_86)
 		arg0_86.mailOverflowWindowSubView:ExecuteAction("Show", arg1_86)
 	elseif arg1_86.type == MailProxy.MailMessageBoxType.RewardStoreroom then
 		arg0_86.mailStoreroomRewardSubView:ExecuteAction("Show", arg1_86)
+	elseif arg1_86.type == MailProxy.MailMessageBoxType.ReDropConfirm then
+		arg0_86.mailReDropWindowSubView:ExecuteAction("Show", arg1_86)
 	else
 		arg0_86.mailConfirmationSubView:ExecuteAction("Show", arg1_86)
 	end

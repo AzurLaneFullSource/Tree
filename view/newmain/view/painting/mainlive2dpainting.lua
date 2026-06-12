@@ -27,9 +27,7 @@ end
 
 function var0_0.OnLoad(arg0_4, arg1_4)
 	if arg0_4.live2dChar then
-		arg0_4.live2dChar:Dispose()
-
-		arg0_4.live2dChar = nil
+		arg0_4:OnUnload()
 	end
 
 	local var0_4 = Live2DPainting.GenerateData({
@@ -53,7 +51,7 @@ function var0_0.OnLoad(arg0_4, arg1_4)
 
 		if arg0_4._initTriggerAction then
 			for iter0_5, iter1_5 in ipairs(arg0_4._initTriggerAction) do
-				local var0_5 = pg.AssistantInfo.assistantEvents[iter1_5].action
+				local var0_5 = pg.AssistantInfo.GetAssistantEvents(iter1_5).action
 
 				if arg0_4.live2dChar:checkActionExist(var0_5) then
 					arg0_4.live2dChar:TriggerAction(var0_5)

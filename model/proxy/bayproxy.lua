@@ -132,34 +132,37 @@ function var0_0.recoverAllShipEnergy(arg0_7)
 		end
 	end)
 
-	for iter0_7, iter1_7 in pairs(arg0_7.data) do
-		local var4_7 = iter1_7:getRecoverEnergyPoint()
-		local var5_7 = 0
-		local var6_7 = var0_7
+	local var4_7 = getProxy(DormProxy):getRawData()
 
-		if iter1_7.state == Ship.STATE_REST or iter1_7.state == Ship.STATE_TRAIN then
-			if iter1_7.state == Ship.STATE_TRAIN then
-				var5_7 = var5_7 + Ship.BACKYARD_1F_ENERGY_ADDITION
-			elseif iter1_7.state == Ship.STATE_REST then
-				var5_7 = var5_7 + Ship.BACKYARD_2F_ENERGY_ADDITION
+	for iter0_7, iter1_7 in pairs(arg0_7.data) do
+		local var5_7 = iter1_7:getRecoverEnergyPoint()
+		local var6_7 = 0
+		local var7_7 = var0_7
+		local var8_7, var9_7 = var4_7:InBackYard(iter1_7.id)
+
+		if var8_7 then
+			if var9_7 == DormShip.FLOOR_1 then
+				var6_7 = var6_7 + Ship.BACKYARD_1F_ENERGY_ADDITION
+			elseif var9_7 == DormShip.FLOOR_2 then
+				var6_7 = var6_7 + Ship.BACKYARD_2F_ENERGY_ADDITION
 			end
 
 			for iter2_7, iter3_7 in ipairs(BuffHelper.GetBackYardEnergyBuffs()) do
-				var5_7 = var5_7 + tonumber(iter3_7:getConfig("benefit_effect"))
+				var6_7 = var6_7 + tonumber(iter3_7:getConfig("benefit_effect"))
 			end
 
-			var6_7 = var1_7
+			var7_7 = var1_7
 		end
 
 		if var2_7[iter1_7.id] then
-			var5_7 = var5_7 + var2_7[iter1_7.id]
-			var6_7 = var1_7
+			var6_7 = var6_7 + var2_7[iter1_7.id]
+			var7_7 = var1_7
 		end
 
-		local var7_7 = math.max(math.min(var4_7, var6_7 - iter1_7:getEnergy()), 0)
-		local var8_7 = math.min(iter1_7:getEnergy() + var7_7 + var5_7, var1_7)
+		local var10_7 = math.max(math.min(var5_7, var7_7 - iter1_7:getEnergy()), 0)
+		local var11_7 = math.min(iter1_7:getEnergy() + var10_7 + var6_7, var1_7)
 
-		iter1_7:setEnergy(var8_7)
+		iter1_7:setEnergy(var11_7)
 		arg0_7:updateShip(iter1_7)
 	end
 end
@@ -923,6 +926,12 @@ function var0_0.getDelegationRecommendShips(arg0_70, arg1_70)
 	local var5_70 = arg0_70:getShipsByTypes(var1_70)
 
 	table.sort(var5_70, function(arg0_71, arg1_71)
+		local var0_71 = arg0_71.maxLevel == arg0_71.level
+
+		if var0_71 ~= (arg1_71.maxLevel == arg1_71.level) then
+			return var0_71
+		end
+
 		return arg0_71.level > arg1_71.level
 	end)
 

@@ -1,4 +1,4 @@
-local var0_0 = class("FeastDorm", import("model.vo.NewBackYard.Dorm"))
+local var0_0 = class("FeastDorm", import("model.vo.Dorm.Dorm"))
 
 var0_0.OP_RANDOM_SHIPS = 0
 var0_0.OP_ENTER = 1
@@ -113,7 +113,7 @@ function var0_0.GetPutFurnitureList(arg0_13, arg1_13)
 	return var0_13
 end
 
-function var0_0.GetPutShipList(arg0_14, arg1_14)
+function var0_0.GetBayShipOnFloor(arg0_14, arg1_14)
 	local var0_14 = {}
 
 	for iter0_14, iter1_14 in pairs(arg0_14.feastShips) do

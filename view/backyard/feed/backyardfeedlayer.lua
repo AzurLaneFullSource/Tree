@@ -96,7 +96,7 @@ function var0_0.InitCharChat(arg0_11, arg1_11)
 
 	arg0_11.chatTxt2.text = ""
 
-	if arg1_11:GetStateShipCnt(Ship.STATE_TRAIN) <= 0 then
+	if arg1_11:GetFloorShipCnt(DormShip.FLOOR_1) <= 0 then
 		arg0_11.chatTxt2.text = i18n("backyard_backyardGranaryLayer_noShip")
 	elseif arg1_11.food <= 0 then
 		arg0_11.chatTxt2.text = i18n("backyard_backyardGranaryLayer_word")

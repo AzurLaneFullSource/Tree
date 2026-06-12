@@ -55,16 +55,18 @@ function var0_0.execute(arg0_1, arg1_1)
 					count = 1,
 					id = var0_2[2]
 				})
+				local var5_2 = var3_2:getRawData()
 
-				var3_2:AddFurniture(var4_2)
+				var5_2:AddFurniture(var4_2)
+				var3_2:updateDrom(var5_2, BackYardConst.DORM_UPDATE_TYPE_FURNITURE)
 			end
 
-			local var5_2 = {}
+			local var6_2 = {}
 
-			table.insert(var5_2, Drop.Create(var0_2))
+			table.insert(var6_2, Drop.Create(var0_2))
 			arg0_1:sendNotification(GAME.COLLECT_GET_AWARD_DONE, {
 				id = var1_1,
-				items = var5_2
+				items = var6_2
 			})
 			pg.TipsMgr.GetInstance():ShowTips(i18n("word_takeOk"))
 		else

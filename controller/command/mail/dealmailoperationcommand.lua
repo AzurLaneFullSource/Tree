@@ -80,11 +80,12 @@ function var0_0.execute(arg0_1, arg1_1)
 		local var8_1 = {}
 
 		table.insert(var8_1, function(arg0_8, arg1_8)
-			local var0_8 = GetItemsOverflowDic(arg1_8)
-			local var1_8, var2_8 = CheckOverflow(var0_8, true)
+			local var0_8 = CheckEquipLimit(arg1_8)
+			local var1_8 = GetItemsOverflowDic(arg1_8)
+			local var2_8, var3_8 = CheckOverflow(var1_8, true)
 
-			if not var1_8 then
-				switch(var2_8, {
+			if not var2_8 then
+				switch(var3_8, {
 					gold = function()
 						pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title"))
 					end,
@@ -99,83 +100,109 @@ function var0_0.execute(arg0_1, arg1_1)
 					end
 				})
 			else
-				arg0_8(var2_8)
-			end
-		end)
-		table.insert(var8_1, function(arg0_13, arg1_13)
-			if arg1_13.isStoreOverflow then
-				table.insert(var8_1, function(arg0_14)
-					local var0_14, var1_14 = unpack(arg1_13.isStoreOverflow)
-					local var2_14 = {}
+				if var0_8 then
+					local var4_8 = {}
 
-					if var0_14 > 0 then
-						table.insert(var2_14, Drop.New({
-							type = DROP_TYPE_RESOURCE,
-							id = PlayerConst.ResGold,
-							count = var0_14
+					for iter0_8, iter1_8 in ipairs(var0_8) do
+						local var5_8 = iter1_8[1]
+						local var6_8 = iter1_8[2]
+
+						table.insert(var4_8, Drop.New({
+							type = DROP_TYPE_EQUIP,
+							id = var5_8,
+							count = var6_8
 						}))
 					end
 
-					if var1_14 > 0 then
-						table.insert(var2_14, Drop.New({
+					arg0_1:sendNotification(GAME.MAIL_DOUBLE_CONFIREMATION_MSGBOX, {
+						content = "mail_takeAttachment_error_equipment_overlimit",
+						type = MailProxy.MailMessageBoxType.ReDropConfirm,
+						onYes = function()
+							arg0_8(var3_8)
+						end,
+						dropList = var4_8
+					})
+
+					return
+				end
+
+				arg0_8(var3_8)
+			end
+		end)
+		table.insert(var8_1, function(arg0_14, arg1_14)
+			if arg1_14.isStoreOverflow then
+				table.insert(var8_1, function(arg0_15)
+					local var0_15, var1_15 = unpack(arg1_14.isStoreOverflow)
+					local var2_15 = {}
+
+					if var0_15 > 0 then
+						table.insert(var2_15, Drop.New({
+							type = DROP_TYPE_RESOURCE,
+							id = PlayerConst.ResGold,
+							count = var0_15
+						}))
+					end
+
+					if var1_15 > 0 then
+						table.insert(var2_15, Drop.New({
 							type = DROP_TYPE_RESOURCE,
 							id = PlayerConst.ResOil,
-							count = var1_14
+							count = var1_15
 						}))
 					end
 
 					arg0_1:sendNotification(GAME.MAIL_DOUBLE_CONFIREMATION_MSGBOX, {
 						type = MailProxy.MailMessageBoxType.OverflowConfirm,
 						content = i18n("mail_storeroom_max_1"),
-						onYes = arg0_14,
-						dropList = var2_14
+						onYes = arg0_15,
+						dropList = var2_15
 					})
 				end)
 			end
 
-			for iter0_13, iter1_13 in ipairs(arg1_13.isExpBookOverflow) do
-				table.insert(var8_1, function(arg0_15)
+			for iter0_14, iter1_14 in ipairs(arg1_14.isExpBookOverflow) do
+				table.insert(var8_1, function(arg0_16)
 					arg0_1:sendNotification(GAME.MAIL_DOUBLE_CONFIREMATION_MSGBOX, {
 						type = MailProxy.MailMessageBoxType.ShowTips,
-						content = i18n("player_expResource_mail_overflow", Item.getConfigData(iter1_13).name),
-						onYes = arg0_15
+						content = i18n("player_expResource_mail_overflow", Item.getConfigData(iter1_14).name),
+						onYes = arg0_16
 					})
 				end)
 			end
 
-			arg0_13()
+			arg0_14()
 		end)
 
 		if var2_1.type == "ids" then
-			table.insert(var7_1, function(arg0_16)
-				arg0_16(getProxy(MailProxy):GetMailsAttachments(var2_1.list), var2_1.list)
+			table.insert(var7_1, function(arg0_17)
+				arg0_17(getProxy(MailProxy):GetMailsAttachments(var2_1.list), var2_1.list)
 			end)
 		else
-			table.insert(var7_1, function(arg0_17)
-				var6_1("overflow", arg0_17)
+			table.insert(var7_1, function(arg0_18)
+				var6_1("overflow", arg0_18)
 			end)
-			table.insert(var7_1, function(arg0_18, arg1_18)
-				arg0_18(underscore.map(arg1_18.drop_list, function(arg0_19)
+			table.insert(var7_1, function(arg0_19, arg1_19)
+				arg0_19(underscore.map(arg1_19.drop_list, function(arg0_20)
 					return Drop.New({
-						type = arg0_19.type,
-						id = arg0_19.id,
-						count = arg0_19.number
+						type = arg0_20.type,
+						id = arg0_20.id,
+						count = arg0_20.number
 					})
-				end), arg1_18.mail_id_list)
+				end), arg1_19.mail_id_list)
 			end)
 		end
 
 		if not var4_1 then
-			table.insert(var7_1, function(arg0_20, arg1_20, arg2_20)
-				if #arg2_20 > 0 then
+			table.insert(var7_1, function(arg0_21, arg1_21, arg2_21)
+				if #arg2_21 > 0 then
 					arg0_1:sendNotification(GAME.MAIL_DOUBLE_CONFIREMATION_MSGBOX, {
 						type = MailProxy.MailMessageBoxType.ReceiveAward,
 						content = i18n("mail_take_all_mail_msgbox"),
 						onYes = function()
-							arg0_20(arg1_20)
+							arg0_21(arg1_21)
 						end,
-						items = arg1_20,
-						mailids = arg2_20
+						items = arg1_21,
+						mailids = arg2_21
 					})
 				else
 					arg0_1:sendNotification(GAME.MAIL_DOUBLE_CONFIREMATION_MSGBOX, {
@@ -186,25 +213,25 @@ function var0_0.execute(arg0_1, arg1_1)
 			end)
 		end
 
-		table.insert(var7_1, function(arg0_22, arg1_22)
-			if arg1_22 and #arg1_22 > 0 then
-				seriesAsyncExtend(var8_1, arg0_22, arg1_22)
+		table.insert(var7_1, function(arg0_23, arg1_23)
+			if arg1_23 and #arg1_23 > 0 then
+				seriesAsyncExtend(var8_1, arg0_23, arg1_23)
 			else
-				arg0_22()
+				arg0_23()
 			end
 		end)
 	end
 
-	table.insert(var7_1, function(arg0_23)
-		var6_1(var1_1, arg0_23)
+	table.insert(var7_1, function(arg0_24)
+		var6_1(var1_1, arg0_24)
 	end)
-	seriesAsync(var7_1, function(arg0_24)
-		local var0_24 = PlayerConst.addTranDrop(arg0_24.drop_list)
+	seriesAsync(var7_1, function(arg0_25)
+		local var0_25 = PlayerConst.addTranDrop(arg0_25.drop_list)
 
 		arg0_1:sendNotification(GAME.DEAL_MAIL_OPERATION_DONE, {
 			cmd = var1_1,
-			ids = underscore.rest(arg0_24.mail_id_list, 1),
-			items = var0_24,
+			ids = underscore.rest(arg0_25.mail_id_list, 1),
+			items = var0_25,
 			ignoreTips = var3_1
 		})
 	end)

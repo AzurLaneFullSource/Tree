@@ -32,6 +32,7 @@ function var0_0.register(arg0_1)
 				skin = arg3_3
 			},
 			onRemoved = function()
+				setActive(arg0_1.viewComponent.blurPanel, true)
 				setActive(arg0_1.viewComponent._tf, true)
 			end
 		}))

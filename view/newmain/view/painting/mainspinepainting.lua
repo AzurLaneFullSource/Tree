@@ -217,8 +217,8 @@ function var0_0.PrepareTriggerAction(arg0_15, arg1_15)
 	local var1_15 = false
 	local var2_15 = ""
 
-	if pg.AssistantInfo.assistantEvents[arg1_15] then
-		var0_15 = pg.AssistantInfo.assistantEvents[arg1_15].action
+	if pg.AssistantInfo.GetAssistantEvents(arg1_15) then
+		var0_15 = pg.AssistantInfo.GetAssistantEvents(arg1_15).action
 		var1_15 = arg0_15.spinePainting:getAnimationExist(var0_15)
 		var2_15 = arg0_15.spinePainting:getIdleName()
 	end
@@ -235,8 +235,8 @@ end
 function var0_0.GetEventExit(arg0_17, arg1_17)
 	local var0_17 = false
 
-	if pg.AssistantInfo.assistantEvents[arg1_17] then
-		local var1_17 = pg.AssistantInfo.assistantEvents[arg1_17].action
+	if pg.AssistantInfo.GetAssistantEvents(arg1_17) then
+		local var1_17 = pg.AssistantInfo.GetAssistantEvents(arg1_17).action
 
 		var0_17 = arg0_17.spinePainting:getAnimationExist(var1_17)
 	end

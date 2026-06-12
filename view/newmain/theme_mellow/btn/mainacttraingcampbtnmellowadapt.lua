@@ -5,12 +5,24 @@ function var0_0.GetContainer(arg0_1)
 end
 
 function var0_0.OnRegister(arg0_2)
-	arg0_2.redDot = RedDotNode.New(arg0_2._tf:Find("tip"), {
-		pg.RedDotMgr.TYPES.COMMANDER_MANUAL
-	})
+	arg0_2.redDotUI = arg0_2._tf:Find("tip")
 
-	pg.redDotHelper:AddNode(arg0_2.redDot)
+	pg.EasyRedDotMgr.GetInstance():RegisterRedDot(arg0_2.redDotUI, {
+		"COMMANDER_MANUAL"
+	}, function(arg0_3)
+		local var0_3, var1_3 = TechnologyConst.isTecActOn()
+
+		setActive(arg0_3, getProxy(CommanderManualProxy):ShouldShowTaskOrGuideTip() or var1_3)
+	end)
 	arg0_2._tf:SetAsFirstSibling()
+end
+
+function var0_0.OnClear(arg0_4)
+	if arg0_4.redDotUI then
+		pg.EasyRedDotMgr.GetInstance():UnRegisterRedDot(arg0_4.redDotUI)
+
+		arg0_4.redDotUI = nil
+	end
 end
 
 return var0_0

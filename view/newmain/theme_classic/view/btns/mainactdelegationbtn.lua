@@ -27,16 +27,20 @@ function var0_0.OnInit(arg0_5)
 end
 
 function var0_0.OnRegister(arg0_6)
-	arg0_6.redDot = RedDotNode.New(arg0_6._tf:Find("tip"), {
-		pg.RedDotMgr.TYPES.RYZA_TASK
-	})
+	arg0_6.redDotUI = arg0_6._tf:Find("tip")
 
-	pg.redDotHelper:AddNode(arg0_6.redDot)
+	pg.EasyRedDotMgr.GetInstance():RegisterRedDot(arg0_6.redDotUI, {
+		"RYZA_TASK"
+	}, function(arg0_7)
+		setActive(arg0_7, getProxy(ActivityTaskProxy):getActTaskTip(ActivityConst.RYZA_TASK))
+	end)
 end
 
-function var0_0.OnClear(arg0_7)
-	if arg0_7.redDot then
-		pg.redDotHelper:RemoveNode(arg0_7.redDot)
+function var0_0.OnClear(arg0_8)
+	if arg0_8.redDotUI then
+		pg.EasyRedDotMgr.GetInstance():UnRegisterRedDot(arg0_8.redDotUI)
+
+		arg0_8.redDotUI = nil
 	end
 end
 

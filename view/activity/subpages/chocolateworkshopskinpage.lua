@@ -84,7 +84,6 @@ function var0_0.OnInit(arg0_1)
 		}
 	}
 	arg0_1.aniContainerTF = arg0_1.bg:Find("AniContainer")
-	arg0_1.tplList = GetComponent(arg0_1._tf, "ItemList").prefabItem:ToTable()
 	arg0_1.sdName = arg0_1.sdNameList[math.random(#arg0_1.sdNameList)]
 	arg0_1.animChar = nil
 
@@ -172,13 +171,13 @@ function var0_0.OnUpdateFlush(arg0_12)
 	end
 
 	eachChild(arg0_12.aniContainerTF, function(arg0_13)
-		Destroy(arg0_13)
+		setActive(arg0_13, false)
 	end)
 
 	if var2_12 == 0 then
-		SetParent(Instantiate(arg0_12.tplList[1]), arg0_12.aniContainerTF, false)
+		setActive(arg0_12.aniContainerTF:Find("choco_factory_rest"), true)
 	else
-		SetParent(Instantiate(arg0_12.tplList[2]), arg0_12.aniContainerTF, false)
+		setActive(arg0_12.aniContainerTF:Find("choco_factory_working"), true)
 	end
 end
 

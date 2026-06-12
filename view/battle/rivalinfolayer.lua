@@ -17,7 +17,7 @@ function var0_0.didEnter(arg0_3)
 		arg0_3:emit(var0_0.ON_CLOSE)
 	end)
 
-	arg0_3.shipCardTpl = arg0_3._tf:GetComponent("ItemList").prefabItem[0]
+	arg0_3.shipCardTpl = arg0_3._tf:Find("ShipCardTpl")
 	arg0_3.startBtn = findTF(arg0_3._tf, "ships_container/start_btn")
 
 	setActive(arg0_3.startBtn, false)
@@ -88,6 +88,8 @@ function var0_0.initRivalInfo(arg0_8)
 
 	local function var5_8(arg0_12, arg1_12, arg2_12, arg3_12)
 		local var0_12 = cloneTplTo(arg0_8.shipCardTpl, arg2_12)
+
+		setActive(var0_12, true)
 
 		var0_12.localScale = Vector3(1.1, 1.1, 1)
 

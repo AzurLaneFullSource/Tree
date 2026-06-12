@@ -40,21 +40,33 @@ function var0_0.handleNotification(arg0_7, arg1_7)
 	local var1_7 = arg1_7:getBody()
 
 	if var0_7 == GAME.ACT_NEW_PT_DONE then
-		arg0_7.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_7.awards, function()
+		if arg0_7:IsAwardHandledByParent() then
 			arg0_7.viewComponent:UpdateView()
-		end)
+		else
+			arg0_7.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_7.awards, function()
+				arg0_7.viewComponent:UpdateView()
+			end)
+		end
 	elseif var0_7 == GAME.ACTIVITY_MALL_OP_DONE then
 		if var1_7.cmd == ActivityMallOPCommand.CMD.INPUT_GOLD then
 			arg0_7.viewComponent:UpdateView()
 		end
 	elseif var0_7 == GAME.SUBMIT_TASK_AWARD_DOWN then
-		arg0_7.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_7.awards, function()
+		if arg0_7:IsAwardHandledByParent() then
 			arg0_7.viewComponent:UpdateView()
-		end)
+		else
+			arg0_7.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_7.awards, function()
+				arg0_7.viewComponent:UpdateView()
+			end)
+		end
 	end
 end
 
-function var0_0.remove(arg0_10)
+function var0_0.IsAwardHandledByParent(arg0_10)
+	return arg0_10.contextData and arg0_10.contextData.awardHandledByParent
+end
+
+function var0_0.remove(arg0_11)
 	return
 end
 
