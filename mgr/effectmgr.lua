@@ -13,21 +13,23 @@ function var1_0.Ctor(arg0_1)
 	})
 
 	function arg0_1.commonEffectEvent(arg0_2)
+		if arg0_2 == nil or IsNil(arg0_2) then
+			return
+		end
+
 		local var0_2 = arg0_1.effectCbMap[arg0_2]
 
 		if var0_2 == nil then
-			var0_1:DestroyOb(arg0_2)
-
 			return
 		end
+
+		arg0_1.effectCbMap[arg0_2] = nil
 
 		local var1_2 = var0_2[2]
 
 		if var1_2 ~= nil then
 			var1_2(arg0_2)
 		end
-
-		arg0_1.effectCbMap[arg0_2] = nil
 
 		if var0_2[1] then
 			var0_1:DestroyOb(arg0_2)

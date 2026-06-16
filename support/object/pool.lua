@@ -65,14 +65,24 @@ function var2_0.GetObject(arg0_7)
 			var1_7 = arg0_7.usedEnd.Next
 		end
 
-		arg0_7.usedEnd = var1_7
-		var0_7 = var1_7.Data
-		arg0_7.map[var0_7] = var1_7
+		while var1_7 do
+			var0_7 = var1_7.Data
 
-		LuaHelper.ResetTF(var0_7.transform)
+			if var0_7 and not IsNil(var0_7) and var0_7.transform and not IsNil(var0_7.transform) then
+				arg0_7.usedEnd = var1_7
+				arg0_7.map[var0_7] = var1_7
 
-		if not arg0_7.keepActive and arg0_7.parentActive then
-			var0_7:SetActive(true)
+				LuaHelper.ResetTF(var0_7.transform)
+
+				if not arg0_7.keepActive and arg0_7.parentActive then
+					var0_7:SetActive(true)
+				end
+
+				break
+			end
+
+			arg0_7.map[var0_7] = nil
+			var1_7 = var1_7.Next, arg0_7.list:Remove(var1_7)
 		end
 	else
 		var0_7 = Object.Instantiate(arg0_7.template)
@@ -110,8 +120,6 @@ function var2_0.Recycle(arg0_9, arg1_9)
 	local var0_9 = arg0_9.map[arg1_9]
 
 	if var0_9 == nil then
-		var1_0.Destroy(arg1_9)
-
 		return
 	end
 
@@ -140,8 +148,14 @@ function var2_0.Recycle(arg0_9, arg1_9)
 end
 
 function var2_0.AllRecycle(arg0_10)
+	local var0_10 = {}
+
 	for iter0_10, iter1_10 in pairs(arg0_10.map) do
-		arg0_10:Recycle(iter0_10)
+		table.insert(var0_10, iter0_10)
+	end
+
+	for iter2_10, iter3_10 in ipairs(var0_10) do
+		arg0_10:Recycle(iter3_10)
 	end
 end
 

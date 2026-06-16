@@ -252,7 +252,7 @@ function var0_0.TriggerNextEventAuto(arg0_27)
 
 	arg0_27.timer = Timer.New(function()
 		arg0_27:OnTimerTriggerEvent()
-	end, 5, 1, true)
+	end, 30, 1, true)
 
 	arg0_27.timer:Start()
 end

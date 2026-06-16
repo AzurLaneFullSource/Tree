@@ -78,25 +78,36 @@ function var0_0.RawGetCVKey(arg0_4)
 	return var1_0[arg0_4].voice
 end
 
-function var0_0.GetExpression(arg0_5, arg1_5)
-	local var0_5 = var3_0[arg0_5]
-	local var1_5 = ""
+function var0_0.GetMainSceneWordCnt(arg0_5, arg1_5)
+	local var0_5 = var1_0[arg0_5]
+	local var1_5 = 0
 
-	if string.find(arg1_5, ShipWordHelper.WORD_TYPE_MAIN) then
-		local var2_5 = string.split(arg1_5, "_")
-		local var3_5 = tonumber(var2_5[2] or "1")
-		local var4_5 = var0_5[ShipWordHelper.WORD_TYPE_MAIN] or ""
-
-		var1_5 = string.split(var4_5, "|")[var3_5] or ""
-
-		if var1_5 == "0" or var1_5 == "nil" then
-			var1_5 = ""
-		end
-	else
-		var1_5 = var0_5[arg1_5] or ""
+	if var0_5 and var0_5[ShipWordHelper.WORD_TYPE_MAIN] and var0_5[ShipWordHelper.WORD_TYPE_MAIN] ~= "" then
+		var1_5 = #string.split(var0_5[ShipWordHelper.WORD_TYPE_MAIN], "|")
 	end
 
 	return var1_5
+end
+
+function var0_0.GetExpression(arg0_6, arg1_6)
+	local var0_6 = var3_0[arg0_6]
+	local var1_6 = ""
+
+	if string.find(arg1_6, ShipWordHelper.WORD_TYPE_MAIN) then
+		local var2_6 = string.split(arg1_6, "_")
+		local var3_6 = tonumber(var2_6[2] or "1")
+		local var4_6 = var0_6[ShipWordHelper.WORD_TYPE_MAIN] or ""
+
+		var1_6 = string.split(var4_6, "|")[var3_6] or ""
+
+		if var1_6 == "0" or var1_6 == "nil" then
+			var1_6 = ""
+		end
+	else
+		var1_6 = var0_6[arg1_6] or ""
+	end
+
+	return var1_6
 end
 
 return var0_0
