@@ -55,10 +55,10 @@ function var0_0.didEnter(arg0_2)
 	arg0_2.btnDebug = findTF(arg0_2.ad, "btnDebug")
 	arg0_2.effectTf = findTF(arg0_2.ad, "effect")
 
-	print("init tf pos = " .. arg0_2._tf.anchoredPosition.x .. "," .. arg0_2._tf.anchoredPosition.y)
-	print("init ad pos = " .. arg0_2.ad.anchoredPosition.x .. "," .. arg0_2.ad.anchoredPosition.y)
-	print("init painting pos = " .. arg0_2.paintTf.anchoredPosition.x .. "," .. arg0_2.paintTf.anchoredPosition.y)
-	print("init l2dContainner pos = " .. arg0_2.l2dContainner.anchoredPosition.x .. "," .. arg0_2.l2dContainner.anchoredPosition.y)
+	warning("init tf pos = " .. arg0_2._tf.anchoredPosition.x .. "," .. arg0_2._tf.anchoredPosition.y)
+	warning("init ad pos = " .. arg0_2.ad.anchoredPosition.x .. "," .. arg0_2.ad.anchoredPosition.y)
+	warning("init painting pos = " .. arg0_2.paintTf.anchoredPosition.x .. "," .. arg0_2.paintTf.anchoredPosition.y)
+	warning("init l2dContainner pos = " .. arg0_2.l2dContainner.anchoredPosition.x .. "," .. arg0_2.l2dContainner.anchoredPosition.y)
 	onButton(arg0_2, arg0_2.btnClose, function()
 		if not arg0_2.loading then
 			arg0_2:closeView()
@@ -74,12 +74,12 @@ function var0_0.didEnter(arg0_2)
 				SetActive(arg0_2.paintTf, true)
 			end
 
-			print("set tf pos = " .. arg0_2._tf.anchoredPosition.x .. "," .. arg0_2._tf.anchoredPosition.y)
-			print("set ad pos = " .. arg0_2.ad.anchoredPosition.x .. "," .. arg0_2.ad.anchoredPosition.y)
-			print("set painting pos = " .. arg0_2.paintTf.anchoredPosition.x .. "," .. arg0_2.paintTf.anchoredPosition.y)
-			print("set l2dContainner pos = " .. arg0_2.l2dContainner.anchoredPosition.x .. "," .. arg0_2.l2dContainner.anchoredPosition.y)
-			print("set painting pos = " .. arg0_2.triggerData.pos.x .. "," .. arg0_2.triggerData.pos.y)
-			print("set painting scale = " .. arg0_2.triggerData.scale)
+			warning("set tf pos = " .. arg0_2._tf.anchoredPosition.x .. "," .. arg0_2._tf.anchoredPosition.y)
+			warning("set ad pos = " .. arg0_2.ad.anchoredPosition.x .. "," .. arg0_2.ad.anchoredPosition.y)
+			warning("set painting pos = " .. arg0_2.paintTf.anchoredPosition.x .. "," .. arg0_2.paintTf.anchoredPosition.y)
+			warning("set l2dContainner pos = " .. arg0_2.l2dContainner.anchoredPosition.x .. "," .. arg0_2.l2dContainner.anchoredPosition.y)
+			warning("set painting pos = " .. arg0_2.triggerData.pos.x .. "," .. arg0_2.triggerData.pos.y)
+			warning("set painting scale = " .. arg0_2.triggerData.scale)
 
 			arg0_2.paintTf.anchoredPosition = arg0_2.triggerData.pos
 			arg0_2.paintTf.localScale = Vector3(arg0_2.triggerData.scale, arg0_2.triggerData.scale, arg0_2.triggerData.scale)
@@ -260,8 +260,8 @@ function var0_0.loadShowPaint(arg0_14, arg1_14, arg2_14, arg3_14)
 			SetActive(arg0_14.paintTf, true)
 		end
 
-		print("set l2d painting pos = " .. arg0_14.paintTf.anchoredPosition.x .. "," .. arg0_14.paintTf.anchoredPosition.y)
-		print("set l2d l2dContainner pos = " .. arg0_14.l2dContainner.anchoredPosition.x .. "," .. arg0_14.l2dContainner.anchoredPosition.y)
+		warning("set l2d painting pos = " .. arg0_14.paintTf.anchoredPosition.x .. "," .. arg0_14.paintTf.anchoredPosition.y)
+		warning("set l2d l2dContainner pos = " .. arg0_14.l2dContainner.anchoredPosition.x .. "," .. arg0_14.l2dContainner.anchoredPosition.y)
 
 		local var6_14 = Live2DPainting.GenerateData({
 			ship = var0_14,

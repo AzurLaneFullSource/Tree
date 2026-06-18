@@ -4049,7 +4049,7 @@ function updateEquipUpgradeInfo(arg0_276, arg1_276, arg2_276)
 	end
 end
 
-function setCanvasOverrideSorting(arg0_277, arg1_277)
+function SetCanvasOverrideSorting(arg0_277, arg1_277)
 	local var0_277 = arg0_277.parent
 
 	arg0_277:SetParent(pg.LayerWeightMgr.GetInstance().uiOrigin, false)
@@ -4067,253 +4067,268 @@ function setCanvasOverrideSorting(arg0_277, arg1_277)
 	arg0_277:SetParent(var0_277, false)
 end
 
-function createNewGameObject(arg0_278, arg1_278)
-	local var0_278 = GameObject.New()
+function SetTFLayerOrder(arg0_278, arg1_278)
+	local var0_278 = {}
+	local var1_278 = arg0_278:GetComponentsInChildren(typeof(Renderer), true):ToTable()
 
-	if arg0_278 then
-		var0_278.name = "model"
-	end
+	table.insertto(var0_278, var1_278)
 
-	var0_278.layer = arg1_278 or Layer.UI
+	local var2_278 = arg0_278:GetComponentsInChildren(typeof(Canvas), true):ToTable()
 
-	return GetOrAddComponent(var0_278, "RectTransform")
-end
+	table.insertto(var0_278, var2_278)
 
-function CreateShell(arg0_279)
-	if type(arg0_279) ~= "table" and type(arg0_279) ~= "userdata" then
-		return arg0_279
-	end
-
-	local var0_279 = setmetatable({
-		__index = arg0_279
-	}, arg0_279)
-
-	return setmetatable({}, var0_279)
-end
-
-function CameraFittingSettin(arg0_280)
-	local var0_280 = GetComponent(arg0_280, typeof(Camera))
-	local var1_280 = 1.77777777777778
-	local var2_280 = Screen.width / Screen.height
-
-	if var2_280 < var1_280 then
-		local var3_280 = var2_280 / var1_280
-
-		var0_280.rect = var0_0.Rect.New(0, (1 - var3_280) / 2, 1, var3_280)
+	for iter0_278, iter1_278 in ipairs(var0_278) do
+		iter1_278.sortingOrder = arg1_278
 	end
 end
 
-function SwitchSpecialChar(arg0_281, arg1_281)
+function createNewGameObject(arg0_279, arg1_279)
+	local var0_279 = GameObject.New()
+
+	if arg0_279 then
+		var0_279.name = "model"
+	end
+
+	var0_279.layer = arg1_279 or Layer.UI
+
+	return GetOrAddComponent(var0_279, "RectTransform")
+end
+
+function CreateShell(arg0_280)
+	if type(arg0_280) ~= "table" and type(arg0_280) ~= "userdata" then
+		return arg0_280
+	end
+
+	local var0_280 = setmetatable({
+		__index = arg0_280
+	}, arg0_280)
+
+	return setmetatable({}, var0_280)
+end
+
+function CameraFittingSettin(arg0_281)
+	local var0_281 = GetComponent(arg0_281, typeof(Camera))
+	local var1_281 = 1.77777777777778
+	local var2_281 = Screen.width / Screen.height
+
+	if var2_281 < var1_281 then
+		local var3_281 = var2_281 / var1_281
+
+		var0_281.rect = var0_0.Rect.New(0, (1 - var3_281) / 2, 1, var3_281)
+	end
+end
+
+function SwitchSpecialChar(arg0_282, arg1_282)
 	if PLATFORM_CODE ~= PLATFORM_US then
-		arg0_281 = arg0_281:gsub(" ", " ")
-		arg0_281 = arg0_281:gsub("\t", "    ")
+		arg0_282 = arg0_282:gsub(" ", " ")
+		arg0_282 = arg0_282:gsub("\t", "    ")
 	end
 
-	if not arg1_281 then
-		arg0_281 = arg0_281:gsub("\n", " ")
+	if not arg1_282 then
+		arg0_282 = arg0_282:gsub("\n", " ")
 	end
 
-	return arg0_281
+	return arg0_282
 end
 
-function AfterCheck(arg0_282, arg1_282)
-	local var0_282 = {}
-
-	for iter0_282, iter1_282 in ipairs(arg0_282) do
-		var0_282[iter0_282] = iter1_282[1]()
-	end
-
-	arg1_282()
-
-	for iter2_282, iter3_282 in ipairs(arg0_282) do
-		if var0_282[iter2_282] ~= iter3_282[1]() then
-			iter3_282[2]()
-		end
-
-		var0_282[iter2_282] = iter3_282[1]()
-	end
-end
-
-function CompareFuncs(arg0_283, arg1_283)
+function AfterCheck(arg0_283, arg1_283)
 	local var0_283 = {}
 
-	local function var1_283(arg0_284, arg1_284)
-		var0_283[arg0_284] = var0_283[arg0_284] or {}
-		var0_283[arg0_284][arg1_284] = var0_283[arg0_284][arg1_284] or arg0_283[arg0_284](arg1_284)
-
-		return var0_283[arg0_284][arg1_284]
+	for iter0_283, iter1_283 in ipairs(arg0_283) do
+		var0_283[iter0_283] = iter1_283[1]()
 	end
 
-	return function(arg0_285, arg1_285)
-		local var0_285 = 1
+	arg1_283()
 
-		while var0_285 <= #arg0_283 do
-			local var1_285 = var1_283(var0_285, arg0_285)
-			local var2_285 = var1_283(var0_285, arg1_285)
+	for iter2_283, iter3_283 in ipairs(arg0_283) do
+		if var0_283[iter2_283] ~= iter3_283[1]() then
+			iter3_283[2]()
+		end
 
-			if var1_285 == var2_285 then
-				var0_285 = var0_285 + 1
+		var0_283[iter2_283] = iter3_283[1]()
+	end
+end
+
+function CompareFuncs(arg0_284, arg1_284)
+	local var0_284 = {}
+
+	local function var1_284(arg0_285, arg1_285)
+		var0_284[arg0_285] = var0_284[arg0_285] or {}
+		var0_284[arg0_285][arg1_285] = var0_284[arg0_285][arg1_285] or arg0_284[arg0_285](arg1_285)
+
+		return var0_284[arg0_285][arg1_285]
+	end
+
+	return function(arg0_286, arg1_286)
+		local var0_286 = 1
+
+		while var0_286 <= #arg0_284 do
+			local var1_286 = var1_284(var0_286, arg0_286)
+			local var2_286 = var1_284(var0_286, arg1_286)
+
+			if var1_286 == var2_286 then
+				var0_286 = var0_286 + 1
 			else
-				return var1_285 < var2_285
+				return var1_286 < var2_286
 			end
 		end
 
-		return tobool(arg1_283)
+		return tobool(arg1_284)
 	end
 end
 
-function DropResultIntegration(arg0_286)
-	local var0_286 = {}
-	local var1_286 = 1
+function DropResultIntegration(arg0_287)
+	local var0_287 = {}
+	local var1_287 = 1
 
-	while var1_286 <= #arg0_286 do
-		local var2_286 = arg0_286[var1_286].type
-		local var3_286 = arg0_286[var1_286].id
+	while var1_287 <= #arg0_287 do
+		local var2_287 = arg0_287[var1_287].type
+		local var3_287 = arg0_287[var1_287].id
 
-		var0_286[var2_286] = var0_286[var2_286] or {}
+		var0_287[var2_287] = var0_287[var2_287] or {}
 
-		if var0_286[var2_286][var3_286] then
-			local var4_286 = arg0_286[var0_286[var2_286][var3_286]]
-			local var5_286 = table.remove(arg0_286, var1_286)
+		if var0_287[var2_287][var3_287] then
+			local var4_287 = arg0_287[var0_287[var2_287][var3_287]]
+			local var5_287 = table.remove(arg0_287, var1_287)
 
-			var4_286.count = var4_286.count + var5_286.count
+			var4_287.count = var4_287.count + var5_287.count
 		else
-			var0_286[var2_286][var3_286] = var1_286
-			var1_286 = var1_286 + 1
+			var0_287[var2_287][var3_287] = var1_287
+			var1_287 = var1_287 + 1
 		end
 	end
 
-	local var6_286 = {
-		function(arg0_287)
-			local var0_287 = arg0_287.type
-			local var1_287 = arg0_287.id
+	local var6_287 = {
+		function(arg0_288)
+			local var0_288 = arg0_288.type
+			local var1_288 = arg0_288.id
 
-			if var0_287 == DROP_TYPE_SHIP then
+			if var0_288 == DROP_TYPE_SHIP then
 				return 1
-			elseif var0_287 == DROP_TYPE_RESOURCE then
-				if var1_287 == 1 then
+			elseif var0_288 == DROP_TYPE_RESOURCE then
+				if var1_288 == 1 then
 					return 2
 				else
 					return 3
 				end
-			elseif var0_287 == DROP_TYPE_ITEM then
-				if var1_287 == 59010 then
+			elseif var0_288 == DROP_TYPE_ITEM then
+				if var1_288 == 59010 then
 					return 4
-				elseif var1_287 == 59900 then
+				elseif var1_288 == 59900 then
 					return 5
 				else
-					local var2_287 = Item.getConfigData(var1_287)
-					local var3_287 = var2_287 and var2_287.type or 0
+					local var2_288 = Item.getConfigData(var1_288)
+					local var3_288 = var2_288 and var2_288.type or 0
 
-					if var3_287 == 9 then
+					if var3_288 == 9 then
 						return 6
-					elseif var3_287 == 5 then
+					elseif var3_288 == 5 then
 						return 7
-					elseif var3_287 == 4 then
+					elseif var3_288 == 4 then
 						return 8
-					elseif var3_287 == 7 then
+					elseif var3_288 == 7 then
 						return 9
 					end
 				end
-			elseif var0_287 == DROP_TYPE_VITEM and var1_287 == 59011 then
+			elseif var0_288 == DROP_TYPE_VITEM and var1_288 == 59011 then
 				return 4
 			end
 
 			return 100
 		end,
-		function(arg0_288)
-			local var0_288
+		function(arg0_289)
+			local var0_289
 
-			if arg0_288.type == DROP_TYPE_SHIP then
-				var0_288 = pg.ship_data_statistics[arg0_288.id]
-			elseif arg0_288.type == DROP_TYPE_ITEM then
-				var0_288 = Item.getConfigData(arg0_288.id)
+			if arg0_289.type == DROP_TYPE_SHIP then
+				var0_289 = pg.ship_data_statistics[arg0_289.id]
+			elseif arg0_289.type == DROP_TYPE_ITEM then
+				var0_289 = Item.getConfigData(arg0_289.id)
 			end
 
-			return (var0_288 and var0_288.rarity or 0) * -1
+			return (var0_289 and var0_289.rarity or 0) * -1
 		end,
-		function(arg0_289)
-			return arg0_289.id
+		function(arg0_290)
+			return arg0_290.id
 		end
 	}
 
-	table.sort(arg0_286, CompareFuncs(var6_286))
+	table.sort(arg0_287, CompareFuncs(var6_287))
 end
 
 local function var24_0()
-	local var0_290 = {}
-	local var1_290 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var0_291 = {}
+	local var1_291 = pg.TimeMgr.GetInstance():GetServerTime()
 
-	for iter0_290, iter1_290 in ipairs(pg.login.all) do
-		if pg.login[iter1_290].date ~= "stop" then
-			local var2_290, var3_290 = parseTimeConfig(pg.login[iter1_290].date)
+	for iter0_291, iter1_291 in ipairs(pg.login.all) do
+		if pg.login[iter1_291].date ~= "stop" then
+			local var2_291, var3_291 = parseTimeConfig(pg.login[iter1_291].date)
 
-			assert(not var3_290)
+			assert(not var3_291)
 
-			if pg.TimeMgr.GetInstance():inTime(var2_290, var1_290) then
-				table.insert(var0_290, iter1_290)
+			if pg.TimeMgr.GetInstance():inTime(var2_291, var1_291) then
+				table.insert(var0_291, iter1_291)
 			end
 		end
 	end
 
-	local function var4_290(arg0_291)
-		local var0_291 = pg.login[arg0_291].effective_channel
+	local function var4_291(arg0_292)
+		local var0_292 = pg.login[arg0_292].effective_channel
 
-		if type(var0_291) == "table" then
-			return var0_291
+		if type(var0_292) == "table" then
+			return var0_292
 		end
 
-		if not var0_291 or var0_291 <= 0 then
+		if not var0_292 or var0_292 <= 0 then
 			return {}
 		end
 
 		return {
-			var0_291
+			var0_292
 		}
 	end
 
-	local var5_290 = {}
+	local var5_291 = {}
 
 	if PLATFORM_CODE == PLATFORM_CH then
-		local var6_290 = pg.SdkMgr.GetInstance():GetChannelUIDIncludeHarmony()
+		local var6_291 = pg.SdkMgr.GetInstance():GetChannelUIDIncludeHarmony()
 
-		for iter2_290, iter3_290 in ipairs(var0_290) do
-			local var7_290 = var4_290(iter3_290)
+		for iter2_291, iter3_291 in ipairs(var0_291) do
+			local var7_291 = var4_291(iter3_291)
 
-			if _.any(var7_290, function(arg0_292)
-				return arg0_292 == var6_290
-			end) or #var7_290 == 0 then
-				table.insert(var5_290, iter3_290)
+			if _.any(var7_291, function(arg0_293)
+				return arg0_293 == var6_291
+			end) or #var7_291 == 0 then
+				table.insert(var5_291, iter3_291)
 			end
 		end
 	else
-		for iter4_290, iter5_290 in ipairs(var0_290) do
-			if #var4_290(iter5_290) == 0 then
-				table.insert(var5_290, iter5_290)
+		for iter4_291, iter5_291 in ipairs(var0_291) do
+			if #var4_291(iter5_291) == 0 then
+				table.insert(var5_291, iter5_291)
 			end
 		end
 	end
 
-	if #var5_290 <= 0 then
+	if #var5_291 <= 0 then
 		return 1
 	end
 
-	if #var5_290 == 1 then
-		return var5_290[1]
+	if #var5_291 == 1 then
+		return var5_291[1]
 	end
 
-	table.sort(var5_290, function(arg0_293, arg1_293)
-		local var0_293 = var4_290(arg0_293)
-		local var1_293 = var4_290(arg1_293)
+	table.sort(var5_291, function(arg0_294, arg1_294)
+		local var0_294 = var4_291(arg0_294)
+		local var1_294 = var4_291(arg1_294)
 
-		if #var0_293 == #var1_293 then
-			return arg1_293 < arg0_293
+		if #var0_294 == #var1_294 then
+			return arg1_294 < arg0_294
 		else
-			return #var0_293 > #var1_293
+			return #var0_294 > #var1_294
 		end
 	end)
 
-	return var5_290[1]
+	return var5_291[1]
 end
 
 function getLoginConfig()
@@ -4321,75 +4336,75 @@ function getLoginConfig()
 		return false, "login", "", false, ""
 	end
 
-	local var0_294 = pg.TimeMgr.GetInstance():GetServerTime()
-	local var1_294 = var24_0()
-	local var2_294 = pg.login[var1_294].login_static
+	local var0_295 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var1_295 = var24_0()
+	local var2_295 = pg.login[var1_295].login_static
 
-	var2_294 = var2_294 ~= "" and var2_294 or "login"
+	var2_295 = var2_295 ~= "" and var2_295 or "login"
 
-	local var3_294 = pg.login[var1_294].login_cri
-	local var4_294 = var3_294 ~= "" and true or false
-	local var5_294 = pg.login[var1_294].op_play == 1 and true or false
-	local var6_294 = noEmptyStr(pg.login[var1_294].op_time)
-	local var7_294 = ""
+	local var3_295 = pg.login[var1_295].login_cri
+	local var4_295 = var3_295 ~= "" and true or false
+	local var5_295 = pg.login[var1_295].op_play == 1 and true or false
+	local var6_295 = noEmptyStr(pg.login[var1_295].op_time)
+	local var7_295 = ""
 
-	if not var6_294 or var6_294 == "stop" then
-		var5_294 = false
+	if not var6_295 or var6_295 == "stop" then
+		var5_295 = false
 	else
-		local var8_294, var9_294 = parseTimeConfig(pg.login[var1_294].date)
+		local var8_295, var9_295 = parseTimeConfig(pg.login[var1_295].date)
 
-		assert(not var9_294)
+		assert(not var9_295)
 
-		var7_294 = table.concat(var8_294[2][1])
+		var7_295 = table.concat(var8_295[2][1])
 
-		if not pg.TimeMgr.GetInstance():inTime(var8_294, var0_294) then
-			var5_294 = false
+		if not pg.TimeMgr.GetInstance():inTime(var8_295, var0_295) then
+			var5_295 = false
 		end
 	end
 
-	return var4_294, var4_294 and var3_294 or var2_294, pg.login[var1_294].bgm, var5_294, var7_294
+	return var4_295, var4_295 and var3_295 or var2_295, pg.login[var1_295].bgm, var5_295, var7_295
 end
 
-function setIntimacyIcon(arg0_295, arg1_295, arg2_295)
-	local var0_295 = {}
-	local var1_295
+function setIntimacyIcon(arg0_296, arg1_296, arg2_296)
+	local var0_296 = {}
+	local var1_296
 
 	seriesAsync({
-		function(arg0_296)
-			if arg0_295.childCount > 0 then
-				var1_295 = arg0_295:GetChild(0)
+		function(arg0_297)
+			if arg0_296.childCount > 0 then
+				var1_296 = arg0_296:GetChild(0)
 
-				arg0_296()
+				arg0_297()
 			else
-				LoadAndInstantiateAsync("template", "intimacytpl", function(arg0_297)
-					if arg0_295.childCount == 0 then
-						var1_295 = tf(arg0_297)
+				LoadAndInstantiateAsync("template", "intimacytpl", function(arg0_298)
+					if arg0_296.childCount == 0 then
+						var1_296 = tf(arg0_298)
 
-						setParent(var1_295, arg0_295)
-						arg0_296()
+						setParent(var1_296, arg0_296)
+						arg0_297()
 					end
 				end)
 			end
 		end,
-		function(arg0_298)
-			setImageAlpha(var1_295, arg2_295 and 0 or 1)
-			eachChild(var1_295, function(arg0_299)
-				setActive(arg0_299, false)
+		function(arg0_299)
+			setImageAlpha(var1_296, arg2_296 and 0 or 1)
+			eachChild(var1_296, function(arg0_300)
+				setActive(arg0_300, false)
 			end)
 
-			if arg2_295 then
-				local var0_298 = var1_295:Find(arg2_295 .. "(Clone)")
+			if arg2_296 then
+				local var0_299 = var1_296:Find(arg2_296 .. "(Clone)")
 
-				if not var0_298 then
-					LoadAndInstantiateAsync("ui", arg2_295, function(arg0_300)
-						setParent(arg0_300, var1_295)
-						setActive(arg0_300, true)
+				if not var0_299 then
+					LoadAndInstantiateAsync("ui", arg2_296, function(arg0_301)
+						setParent(arg0_301, var1_296)
+						setActive(arg0_301, true)
 					end)
 				else
-					setActive(var0_298, true)
+					setActive(var0_299, true)
 				end
-			elseif arg1_295 then
-				setImageSprite(var1_295, GetSpriteFromAtlas("energy", arg1_295), true)
+			elseif arg1_296 then
+				setImageSprite(var1_296, GetSpriteFromAtlas("energy", arg1_296), true)
 			else
 				assert(false, "param error")
 			end
@@ -4412,71 +4427,71 @@ function removeWorld()
 	var25_0 = nil
 end
 
-function switch(arg0_303, arg1_303, arg2_303, ...)
-	while type(arg1_303[arg0_303]) ~= "function" do
-		if arg1_303[arg0_303] == nil then
-			return existCall(arg2_303, ...)
+function switch(arg0_304, arg1_304, arg2_304, ...)
+	while type(arg1_304[arg0_304]) ~= "function" do
+		if arg1_304[arg0_304] == nil then
+			return existCall(arg2_304, ...)
 		else
-			arg0_303 = arg1_303[arg0_303]
+			arg0_304 = arg1_304[arg0_304]
 		end
 	end
 
-	return arg1_303[arg0_303](...)
+	return arg1_304[arg0_304](...)
 end
 
-function parseTimeConfig(arg0_304)
-	if type(arg0_304[1]) == "table" then
-		return arg0_304[2], arg0_304[1]
+function parseTimeConfig(arg0_305)
+	if type(arg0_305[1]) == "table" then
+		return arg0_305[2], arg0_305[1]
 	else
-		return arg0_304
+		return arg0_305
 	end
 end
 
 local var26_0 = {
-	__add = function(arg0_305, arg1_305)
-		return NewPos(arg0_305.x + arg1_305.x, arg0_305.y + arg1_305.y)
+	__add = function(arg0_306, arg1_306)
+		return NewPos(arg0_306.x + arg1_306.x, arg0_306.y + arg1_306.y)
 	end,
-	__sub = function(arg0_306, arg1_306)
-		return NewPos(arg0_306.x - arg1_306.x, arg0_306.y - arg1_306.y)
+	__sub = function(arg0_307, arg1_307)
+		return NewPos(arg0_307.x - arg1_307.x, arg0_307.y - arg1_307.y)
 	end,
-	__mul = function(arg0_307, arg1_307)
-		if type(arg1_307) == "number" then
-			return NewPos(arg0_307.x * arg1_307, arg0_307.y * arg1_307)
+	__mul = function(arg0_308, arg1_308)
+		if type(arg1_308) == "number" then
+			return NewPos(arg0_308.x * arg1_308, arg0_308.y * arg1_308)
 		else
-			return NewPos(arg0_307.x * arg1_307.x, arg0_307.y * arg1_307.y)
+			return NewPos(arg0_308.x * arg1_308.x, arg0_308.y * arg1_308.y)
 		end
 	end,
-	__eq = function(arg0_308, arg1_308)
-		return arg0_308.x == arg1_308.x and arg0_308.y == arg1_308.y
+	__eq = function(arg0_309, arg1_309)
+		return arg0_309.x == arg1_309.x and arg0_309.y == arg1_309.y
 	end,
-	__tostring = function(arg0_309)
-		return arg0_309.x .. "_" .. arg0_309.y
+	__tostring = function(arg0_310)
+		return arg0_310.x .. "_" .. arg0_310.y
 	end
 }
 
-function NewPos(arg0_310, arg1_310)
-	assert(arg0_310 and arg1_310)
+function NewPos(arg0_311, arg1_311)
+	assert(arg0_311 and arg1_311)
 
-	local var0_310 = setmetatable({
-		x = arg0_310,
-		y = arg1_310
+	local var0_311 = setmetatable({
+		x = arg0_311,
+		y = arg1_311
 	}, var26_0)
 
-	function var0_310.SqrMagnitude(arg0_311)
-		return arg0_311.x * arg0_311.x + arg0_311.y * arg0_311.y
+	function var0_311.SqrMagnitude(arg0_312)
+		return arg0_312.x * arg0_312.x + arg0_312.y * arg0_312.y
 	end
 
-	function var0_310.Normalize(arg0_312)
-		local var0_312 = arg0_312:SqrMagnitude()
+	function var0_311.Normalize(arg0_313)
+		local var0_313 = arg0_313:SqrMagnitude()
 
-		if var0_312 > 1e-05 then
-			return arg0_312 * (1 / math.sqrt(var0_312))
+		if var0_313 > 1e-05 then
+			return arg0_313 * (1 / math.sqrt(var0_313))
 		else
 			return NewPos(0, 0)
 		end
 	end
 
-	return var0_310
+	return var0_311
 end
 
 local var27_0
@@ -4487,99 +4502,99 @@ function Timekeeping()
 	var27_0 = Time.realtimeSinceStartup
 end
 
-function GetRomanDigit(arg0_314)
-	return (string.char(226, 133, 160 + (arg0_314 - 1)))
+function GetRomanDigit(arg0_315)
+	return (string.char(226, 133, 160 + (arg0_315 - 1)))
 end
 
-function GetRomanDigitPlus(arg0_315)
-	if arg0_315 > 0 and arg0_315 <= 10 then
-		return GetRomanDigit(arg0_315)
+function GetRomanDigitPlus(arg0_316)
+	if arg0_316 > 0 and arg0_316 <= 10 then
+		return GetRomanDigit(arg0_316)
 	else
-		return switch(arg0_315, {
+		return switch(arg0_316, {
 			[11] = function()
 				return "XI"
 			end
 		}, function()
-			return arg0_315
+			return arg0_316
 		end)
 	end
 end
 
-function quickPlayAnimator(arg0_318, arg1_318)
-	arg0_318:GetComponent(typeof(Animator)):Play(arg1_318, -1, 0)
+function quickPlayAnimator(arg0_319, arg1_319)
+	arg0_319:GetComponent(typeof(Animator)):Play(arg1_319, -1, 0)
 end
 
-function quickCheckAndPlayAnimator(arg0_319, arg1_319)
-	local var0_319 = arg0_319:GetComponent(typeof(Animator))
+function quickCheckAndPlayAnimator(arg0_320, arg1_320)
+	local var0_320 = arg0_320:GetComponent(typeof(Animator))
 
-	var0_319.enabled = true
+	var0_320.enabled = true
 
-	local var1_319 = Animator.StringToHash(arg1_319)
+	local var1_320 = Animator.StringToHash(arg1_320)
 
-	if var0_319:HasState(0, var1_319) then
-		var0_319:Play(arg1_319, -1, 0)
+	if var0_320:HasState(0, var1_320) then
+		var0_320:Play(arg1_320, -1, 0)
 	end
 end
 
-function quickPlayAnimation(arg0_320, arg1_320)
-	local var0_320 = arg0_320:GetComponent(typeof(Animation))
+function quickPlayAnimation(arg0_321, arg1_321)
+	local var0_321 = arg0_321:GetComponent(typeof(Animation))
 
-	var0_320:Stop()
-	var0_320:Play(arg1_320)
+	var0_321:Stop()
+	var0_321:Play(arg1_321)
 end
 
-function getSurveyUrl(arg0_321)
-	local var0_321 = pg.survey_data_template[arg0_321]
-	local var1_321
+function getSurveyUrl(arg0_322)
+	local var0_322 = pg.survey_data_template[arg0_322]
+	local var1_322
 
 	if not IsUnityEditor then
 		if PLATFORM_CODE == PLATFORM_CH then
-			local var2_321 = getProxy(UserProxy):GetCacheGatewayInServerLogined()
+			local var2_322 = getProxy(UserProxy):GetCacheGatewayInServerLogined()
 
-			if var2_321 == PLATFORM_ANDROID then
+			if var2_322 == PLATFORM_ANDROID then
 				if LuaHelper.GetCHPackageType() == PACKAGE_TYPE_BILI then
-					var1_321 = var0_321.main_url
+					var1_322 = var0_322.main_url
 				else
-					var1_321 = var0_321.uo_url
+					var1_322 = var0_322.uo_url
 				end
-			elseif var2_321 == PLATFORM_IPHONEPLAYER then
-				var1_321 = var0_321.ios_url
+			elseif var2_322 == PLATFORM_IPHONEPLAYER then
+				var1_322 = var0_322.ios_url
 			end
 		elseif PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_KR then
-			var1_321 = var0_321.main_url
+			var1_322 = var0_322.main_url
 		end
 	else
-		var1_321 = var0_321.main_url
+		var1_322 = var0_322.main_url
 	end
 
-	local var3_321 = getProxy(PlayerProxy):getRawData().id
-	local var4_321 = getProxy(UserProxy):getRawData().arg2 or ""
-	local var5_321
-	local var6_321 = PLATFORM == PLATFORM_ANDROID and 1 or PLATFORM == PLATFORM_IPHONEPLAYER and 2 or 3
-	local var7_321 = getProxy(UserProxy):getRawData()
-	local var8_321 = getProxy(ServerProxy):getRawData()[var7_321 and var7_321.server or 0]
-	local var9_321 = var8_321 and var8_321.id or ""
-	local var10_321 = getProxy(PlayerProxy):getRawData().level
-	local var11_321 = var3_321 .. "_" .. arg0_321
-	local var12_321 = var1_321
-	local var13_321 = {
-		var3_321,
-		var4_321,
-		var6_321,
-		var9_321,
-		var10_321,
-		var11_321
+	local var3_322 = getProxy(PlayerProxy):getRawData().id
+	local var4_322 = getProxy(UserProxy):getRawData().arg2 or ""
+	local var5_322
+	local var6_322 = PLATFORM == PLATFORM_ANDROID and 1 or PLATFORM == PLATFORM_IPHONEPLAYER and 2 or 3
+	local var7_322 = getProxy(UserProxy):getRawData()
+	local var8_322 = getProxy(ServerProxy):getRawData()[var7_322 and var7_322.server or 0]
+	local var9_322 = var8_322 and var8_322.id or ""
+	local var10_322 = getProxy(PlayerProxy):getRawData().level
+	local var11_322 = var3_322 .. "_" .. arg0_322
+	local var12_322 = var1_322
+	local var13_322 = {
+		var3_322,
+		var4_322,
+		var6_322,
+		var9_322,
+		var10_322,
+		var11_322
 	}
 
-	if var12_321 then
-		for iter0_321, iter1_321 in ipairs(var13_321) do
-			var12_321 = string.gsub(var12_321, "$" .. iter0_321, tostring(iter1_321))
+	if var12_322 then
+		for iter0_322, iter1_322 in ipairs(var13_322) do
+			var12_322 = string.gsub(var12_322, "$" .. iter0_322, tostring(iter1_322))
 		end
 	end
 
-	originalPrint("survey url", tostring(var12_321))
+	originalPrint("survey url", tostring(var12_322))
 
-	return var12_321
+	return var12_322
 end
 
 function GetMoneySymbol()
@@ -4598,42 +4613,42 @@ function GetMoneySymbol()
 	return ""
 end
 
-function FilterVarchar(arg0_323)
-	assert(type(arg0_323) == "string" or type(arg0_323) == "table")
+function FilterVarchar(arg0_324)
+	assert(type(arg0_324) == "string" or type(arg0_324) == "table")
 
-	if arg0_323 == "" then
+	if arg0_324 == "" then
 		return nil
 	end
 
-	return arg0_323
+	return arg0_324
 end
 
-function getGameset(arg0_324)
-	local var0_324 = pg.gameset[arg0_324]
-
-	assert(var0_324)
-
-	return {
-		var0_324.key_value,
-		var0_324.description
-	}
-end
-
-function getDorm3dGameset(arg0_325)
-	local var0_325 = pg.dorm3d_set[arg0_325]
+function getGameset(arg0_325)
+	local var0_325 = pg.gameset[arg0_325]
 
 	assert(var0_325)
 
 	return {
-		var0_325.key_value_int,
-		var0_325.key_value_varchar
+		var0_325.key_value,
+		var0_325.description
 	}
 end
 
-function GetItemsOverflowDic(arg0_326)
-	arg0_326 = arg0_326 or {}
+function getDorm3dGameset(arg0_326)
+	local var0_326 = pg.dorm3d_set[arg0_326]
 
-	local var0_326 = {
+	assert(var0_326)
+
+	return {
+		var0_326.key_value_int,
+		var0_326.key_value_varchar
+	}
+end
+
+function GetItemsOverflowDic(arg0_327)
+	arg0_327 = arg0_327 or {}
+
+	local var0_327 = {
 		[DROP_TYPE_ITEM] = {},
 		[DROP_TYPE_RESOURCE] = {},
 		[DROP_TYPE_EQUIP] = 0,
@@ -4641,139 +4656,139 @@ function GetItemsOverflowDic(arg0_326)
 		[DROP_TYPE_WORLD_ITEM] = 0
 	}
 
-	while #arg0_326 > 0 do
-		local var1_326 = table.remove(arg0_326)
+	while #arg0_327 > 0 do
+		local var1_327 = table.remove(arg0_327)
 
-		switch(var1_326.type, {
+		switch(var1_327.type, {
 			[DROP_TYPE_ITEM] = function()
-				if var1_326:getConfig("open_directly") == 1 then
-					for iter0_327, iter1_327 in ipairs(var1_326:getConfig("display_icon")) do
-						local var0_327 = Drop.Create(iter1_327)
+				if var1_327:getConfig("open_directly") == 1 then
+					for iter0_328, iter1_328 in ipairs(var1_327:getConfig("display_icon")) do
+						local var0_328 = Drop.Create(iter1_328)
 
-						var0_327.count = var0_327.count * var1_326.count
+						var0_328.count = var0_328.count * var1_327.count
 
-						table.insert(arg0_326, var0_327)
+						table.insert(arg0_327, var0_328)
 					end
-				elseif var1_326:getSubClass():IsShipExpType() then
-					var0_326[var1_326.type][var1_326.id] = defaultValue(var0_326[var1_326.type][var1_326.id], 0) + var1_326.count
+				elseif var1_327:getSubClass():IsShipExpType() then
+					var0_327[var1_327.type][var1_327.id] = defaultValue(var0_327[var1_327.type][var1_327.id], 0) + var1_327.count
 				end
 			end,
 			[DROP_TYPE_RESOURCE] = function()
-				var0_326[var1_326.type][var1_326.id] = defaultValue(var0_326[var1_326.type][var1_326.id], 0) + var1_326.count
+				var0_327[var1_327.type][var1_327.id] = defaultValue(var0_327[var1_327.type][var1_327.id], 0) + var1_327.count
 			end,
 			[DROP_TYPE_EQUIP] = function()
-				var0_326[var1_326.type] = var0_326[var1_326.type] + var1_326.count
+				var0_327[var1_327.type] = var0_327[var1_327.type] + var1_327.count
 			end,
 			[DROP_TYPE_SHIP] = function()
-				var0_326[var1_326.type] = var0_326[var1_326.type] + var1_326.count
+				var0_327[var1_327.type] = var0_327[var1_327.type] + var1_327.count
 			end,
 			[DROP_TYPE_WORLD_ITEM] = function()
-				var0_326[var1_326.type] = var0_326[var1_326.type] + var1_326.count
+				var0_327[var1_327.type] = var0_327[var1_327.type] + var1_327.count
 			end
 		})
 	end
 
-	return var0_326
+	return var0_327
 end
 
-function CheckOverflow(arg0_332, arg1_332)
-	local var0_332 = {}
-	local var1_332 = arg0_332[DROP_TYPE_RESOURCE][PlayerConst.ResGold] or 0
-	local var2_332 = arg0_332[DROP_TYPE_RESOURCE][PlayerConst.ResOil] or 0
-	local var3_332 = arg0_332[DROP_TYPE_EQUIP]
-	local var4_332 = arg0_332[DROP_TYPE_SHIP]
-	local var5_332 = getProxy(PlayerProxy):getRawData()
-	local var6_332 = false
+function CheckOverflow(arg0_333, arg1_333)
+	local var0_333 = {}
+	local var1_333 = arg0_333[DROP_TYPE_RESOURCE][PlayerConst.ResGold] or 0
+	local var2_333 = arg0_333[DROP_TYPE_RESOURCE][PlayerConst.ResOil] or 0
+	local var3_333 = arg0_333[DROP_TYPE_EQUIP]
+	local var4_333 = arg0_333[DROP_TYPE_SHIP]
+	local var5_333 = getProxy(PlayerProxy):getRawData()
+	local var6_333 = false
 
-	if arg1_332 then
-		local var7_332 = var5_332:OverStore(PlayerConst.ResStoreGold, var1_332)
-		local var8_332 = var5_332:OverStore(PlayerConst.ResStoreOil, var2_332)
+	if arg1_333 then
+		local var7_333 = var5_333:OverStore(PlayerConst.ResStoreGold, var1_333)
+		local var8_333 = var5_333:OverStore(PlayerConst.ResStoreOil, var2_333)
 
-		if var7_332 > 0 or var8_332 > 0 then
-			var0_332.isStoreOverflow = {
-				var7_332,
-				var8_332
+		if var7_333 > 0 or var8_333 > 0 then
+			var0_333.isStoreOverflow = {
+				var7_333,
+				var8_333
 			}
 		end
 	else
-		if var1_332 > 0 and var5_332:GoldMax(var1_332) then
+		if var1_333 > 0 and var5_333:GoldMax(var1_333) then
 			return false, "gold"
 		end
 
-		if var2_332 > 0 and var5_332:OilMax(var2_332) then
+		if var2_333 > 0 and var5_333:OilMax(var2_333) then
 			return false, "oil"
 		end
 	end
 
-	var0_332.isExpBookOverflow = {}
+	var0_333.isExpBookOverflow = {}
 
-	for iter0_332, iter1_332 in pairs(arg0_332[DROP_TYPE_ITEM]) do
-		local var9_332 = Item.getConfigData(iter0_332)
+	for iter0_333, iter1_333 in pairs(arg0_333[DROP_TYPE_ITEM]) do
+		local var9_333 = Item.getConfigData(iter0_333)
 
-		if getProxy(BagProxy):getItemCountById(iter0_332) + iter1_332 > var9_332.max_num then
-			table.insert(var0_332.isExpBookOverflow, iter0_332)
+		if getProxy(BagProxy):getItemCountById(iter0_333) + iter1_333 > var9_333.max_num then
+			table.insert(var0_333.isExpBookOverflow, iter0_333)
 		end
 	end
 
-	local var10_332 = getProxy(EquipmentProxy):getCapacity()
+	local var10_333 = getProxy(EquipmentProxy):getCapacity()
 
-	if var3_332 > 0 and var10_332 >= var5_332:getMaxEquipmentBag() then
+	if var3_333 > 0 and var10_333 >= var5_333:getMaxEquipmentBag() then
 		return false, "equip"
 	end
 
-	local var11_332 = getProxy(BayProxy):getShipCount()
+	local var11_333 = getProxy(BayProxy):getShipCount()
 
-	if var4_332 > 0 and var4_332 + var11_332 > var5_332:getMaxShipBag() then
+	if var4_333 > 0 and var4_333 + var11_333 > var5_333:getMaxShipBag() then
 		return false, "ship"
 	end
 
-	return true, var0_332
+	return true, var0_333
 end
 
-function CheckEquipLimit(arg0_333)
-	local var0_333 = {}
+function CheckEquipLimit(arg0_334)
+	local var0_334 = {}
 
-	for iter0_333, iter1_333 in pairs(arg0_333) do
-		if iter1_333.type == DROP_TYPE_EQUIP then
-			local var1_333 = iter1_333:getConfig("group")
+	for iter0_334, iter1_334 in pairs(arg0_334) do
+		if iter1_334.type == DROP_TYPE_EQUIP then
+			local var1_334 = iter1_334:getConfig("group")
 
-			if pg.equip_data_limit[var1_333] then
-				var0_333[var1_333] = defaultValue(var0_333[var1_333], 0) + iter1_333.count
+			if pg.equip_data_limit[var1_334] then
+				var0_334[var1_334] = defaultValue(var0_334[var1_334], 0) + iter1_334.count
 			end
 		end
 	end
 
-	local var2_333 = {}
+	local var2_334 = {}
 
-	for iter2_333, iter3_333 in pairs(var0_333) do
-		local var3_333 = pg.equip_data_limit[iter2_333]
-		local var4_333 = pg.equip_data_template.get_id_list_by_group[iter2_333]
-		local var5_333 = underscore.reduce(var4_333, 0, function(arg0_334, arg1_334)
-			local var0_334 = getProxy(EquipmentProxy):getEquipmentById(arg1_334)
+	for iter2_334, iter3_334 in pairs(var0_334) do
+		local var3_334 = pg.equip_data_limit[iter2_334]
+		local var4_334 = pg.equip_data_template.get_id_list_by_group[iter2_334]
+		local var5_334 = underscore.reduce(var4_334, 0, function(arg0_335, arg1_335)
+			local var0_335 = getProxy(EquipmentProxy):getEquipmentById(arg1_335)
 
-			return arg0_334 + (var0_334 and var0_334.count or 0) + getProxy(BayProxy):GetEquipCountInShips(arg1_334)
+			return arg0_335 + (var0_335 and var0_335.count or 0) + getProxy(BayProxy):GetEquipCountInShips(arg1_335)
 		end)
 
-		if var5_333 + iter3_333 > var3_333.max then
-			table.insert(var2_333, {
-				iter2_333,
-				var5_333 + iter3_333 - var3_333.max
+		if var5_334 + iter3_334 > var3_334.max then
+			table.insert(var2_334, {
+				iter2_334,
+				var5_334 + iter3_334 - var3_334.max
 			})
 		end
 	end
 
-	if #var2_333 == 0 then
+	if #var2_334 == 0 then
 		return false
 	end
 
-	return var2_333
+	return var2_334
 end
 
-function CheckShipExpOverflow(arg0_335)
-	local var0_335 = getProxy(BagProxy)
+function CheckShipExpOverflow(arg0_336)
+	local var0_336 = getProxy(BagProxy)
 
-	for iter0_335, iter1_335 in pairs(arg0_335[DROP_TYPE_ITEM]) do
-		if var0_335:getItemCountById(iter0_335) + iter1_335 > Item.getConfigData(iter0_335).max_num then
+	for iter0_336, iter1_336 in pairs(arg0_336[DROP_TYPE_ITEM]) do
+		if var0_336:getItemCountById(iter0_336) + iter1_336 > Item.getConfigData(iter0_336).max_num then
 			return false
 		end
 	end
@@ -4789,26 +4804,26 @@ local var28_0 = {
 	[13] = "item_type13_tip2"
 }
 
-function RegisterDetailButton(arg0_336, arg1_336, arg2_336)
-	Drop.Change(arg2_336)
-	switch(arg2_336.type, {
+function RegisterDetailButton(arg0_337, arg1_337, arg2_337)
+	Drop.Change(arg2_337)
+	switch(arg2_337.type, {
 		[DROP_TYPE_ITEM] = function()
-			if arg2_336:getConfig("type") == Item.SKIN_ASSIGNED_TYPE then
-				local var0_337 = Item.getConfigData(arg2_336.id).usage_arg
-				local var1_337 = var0_337[3]
+			if arg2_337:getConfig("type") == Item.SKIN_ASSIGNED_TYPE then
+				local var0_338 = Item.getConfigData(arg2_337.id).usage_arg
+				local var1_338 = var0_338[3]
 
-				if Item.InTimeLimitSkinAssigned(arg2_336.id) then
-					var1_337 = table.mergeArray(var0_337[2], var1_337, true)
+				if Item.InTimeLimitSkinAssigned(arg2_337.id) then
+					var1_338 = table.mergeArray(var0_338[2], var1_338, true)
 				end
 
-				local var2_337 = {}
+				local var2_338 = {}
 
-				for iter0_337, iter1_337 in ipairs(var0_337[2]) do
-					var2_337[iter1_337] = true
+				for iter0_338, iter1_338 in ipairs(var0_338[2]) do
+					var2_338[iter1_338] = true
 				end
 
-				onButton(arg0_336, arg1_336, function()
-					arg0_336:closeView()
+				onButton(arg0_337, arg1_337, function()
+					arg0_337:closeView()
 					pg.m02:sendNotification(GAME.LOAD_LAYERS, {
 						parentContext = getProxy(ContextProxy):getCurrentContext(),
 						context = Context.New({
@@ -4816,128 +4831,128 @@ function RegisterDetailButton(arg0_336, arg1_336, arg2_336)
 							mediator = NewSkinAtlasMediator,
 							data = {
 								mode = SelectSkinLayer.MODE_VIEW,
-								itemId = arg2_336.id,
-								selectableSkinList = underscore.map(var1_337, function(arg0_339)
+								itemId = arg2_337.id,
+								selectableSkinList = underscore.map(var1_338, function(arg0_340)
 									return SelectableSkin.New({
-										id = arg0_339,
-										isTimeLimit = var2_337[arg0_339] or false
+										id = arg0_340,
+										isTimeLimit = var2_338[arg0_340] or false
 									})
 								end)
 							}
 						})
 					})
 				end, SFX_PANEL)
-				setActive(arg1_336, true)
+				setActive(arg1_337, true)
 			else
-				local var3_337 = getProxy(TechnologyProxy):getItemCanUnlockBluePrint(arg2_336.id) and "tech" or arg2_336:getConfig("type")
+				local var3_338 = getProxy(TechnologyProxy):getItemCanUnlockBluePrint(arg2_337.id) and "tech" or arg2_337:getConfig("type")
 
-				if var28_0[var3_337] then
-					local var4_337 = {
+				if var28_0[var3_338] then
+					local var4_338 = {
 						item2Row = true,
-						content = i18n(var28_0[var3_337]),
-						itemList = underscore.map(arg2_336:getConfig("display_icon"), function(arg0_340)
-							return Drop.Create(arg0_340)
+						content = i18n(var28_0[var3_338]),
+						itemList = underscore.map(arg2_337:getConfig("display_icon"), function(arg0_341)
+							return Drop.Create(arg0_341)
 						end)
 					}
 
-					if var3_337 == 11 then
-						onButton(arg0_336, arg1_336, function()
-							arg0_336:emit(BaseUI.ON_DROP_LIST_OWN, var4_337)
+					if var3_338 == 11 then
+						onButton(arg0_337, arg1_337, function()
+							arg0_337:emit(BaseUI.ON_DROP_LIST_OWN, var4_338)
 						end, SFX_PANEL)
 					else
-						onButton(arg0_336, arg1_336, function()
-							arg0_336:emit(BaseUI.ON_DROP_LIST, var4_337)
+						onButton(arg0_337, arg1_337, function()
+							arg0_337:emit(BaseUI.ON_DROP_LIST, var4_338)
 						end, SFX_PANEL)
 					end
 				end
 
-				setActive(arg1_336, tobool(var28_0[var3_337]))
+				setActive(arg1_337, tobool(var28_0[var3_338]))
 			end
 		end,
 		[DROP_TYPE_EQUIP] = function()
-			onButton(arg0_336, arg1_336, function()
-				arg0_336:emit(BaseUI.ON_DROP, arg2_336)
+			onButton(arg0_337, arg1_337, function()
+				arg0_337:emit(BaseUI.ON_DROP, arg2_337)
 			end, SFX_PANEL)
-			setActive(arg1_336, true)
+			setActive(arg1_337, true)
 		end,
 		[DROP_TYPE_SPWEAPON] = function()
-			onButton(arg0_336, arg1_336, function()
-				arg0_336:emit(BaseUI.ON_DROP, arg2_336)
+			onButton(arg0_337, arg1_337, function()
+				arg0_337:emit(BaseUI.ON_DROP, arg2_337)
 			end, SFX_PANEL)
-			setActive(arg1_336, true)
+			setActive(arg1_337, true)
 		end
 	}, function()
-		setActive(arg1_336, false)
+		setActive(arg1_337, false)
 	end)
 end
 
-function RegisterNewStyleDetailButton(arg0_348, arg1_348, arg2_348)
-	Drop.Change(arg2_348)
-	switch(arg2_348.type, {
+function RegisterNewStyleDetailButton(arg0_349, arg1_349, arg2_349)
+	Drop.Change(arg2_349)
+	switch(arg2_349.type, {
 		[DROP_TYPE_ITEM] = function()
-			local var0_349 = getProxy(TechnologyProxy):getItemCanUnlockBluePrint(arg2_348.id) and "tech" or arg2_348:getConfig("type")
+			local var0_350 = getProxy(TechnologyProxy):getItemCanUnlockBluePrint(arg2_349.id) and "tech" or arg2_349:getConfig("type")
 
-			if var28_0[var0_349] then
-				local var1_349 = {
+			if var28_0[var0_350] then
+				local var1_350 = {
 					useDeepShow = true,
-					showOwn = var0_349 == 11,
-					content = i18n(var28_0[var0_349]),
-					itemList = underscore.map(arg2_348:getConfig("display_icon"), function(arg0_350)
-						return Drop.Create(arg0_350)
+					showOwn = var0_350 == 11,
+					content = i18n(var28_0[var0_350]),
+					itemList = underscore.map(arg2_349:getConfig("display_icon"), function(arg0_351)
+						return Drop.Create(arg0_351)
 					end)
 				}
 
-				onButton(arg0_348, arg1_348, function()
-					arg0_348:emit(BaseUI.ON_NEW_STYLE_ITEMS, var1_349)
+				onButton(arg0_349, arg1_349, function()
+					arg0_349:emit(BaseUI.ON_NEW_STYLE_ITEMS, var1_350)
 				end, SFX_PANEL)
 			end
 
-			setActive(arg1_348, tobool(var28_0[var0_349]))
+			setActive(arg1_349, tobool(var28_0[var0_350]))
 		end
 	}, function()
-		setActive(arg1_348, false)
+		setActive(arg1_349, false)
 	end)
 end
 
-function UpdateOwnDisplay(arg0_353, arg1_353)
-	local var0_353, var1_353 = arg1_353:getOwnedCount()
+function UpdateOwnDisplay(arg0_354, arg1_354)
+	local var0_354, var1_354 = arg1_354:getOwnedCount()
 
-	setActive(arg0_353, var1_353 and var0_353 > 0)
+	setActive(arg0_354, var1_354 and var0_354 > 0)
 
-	if var1_353 and var0_353 > 0 then
-		setText(arg0_353:Find("label"), i18n("word_own1"))
-		setText(arg0_353:Find("Text"), var0_353)
+	if var1_354 and var0_354 > 0 then
+		setText(arg0_354:Find("label"), i18n("word_own1"))
+		setText(arg0_354:Find("Text"), var0_354)
 	end
 end
 
-function Damp(arg0_354, arg1_354, arg2_354)
-	arg1_354 = Mathf.Max(1, arg1_354)
+function Damp(arg0_355, arg1_355, arg2_355)
+	arg1_355 = Mathf.Max(1, arg1_355)
 
-	local var0_354 = Mathf.Epsilon
+	local var0_355 = Mathf.Epsilon
 
-	if arg1_354 < var0_354 or var0_354 > Mathf.Abs(arg0_354) then
-		return arg0_354
+	if arg1_355 < var0_355 or var0_355 > Mathf.Abs(arg0_355) then
+		return arg0_355
 	end
 
-	if arg2_354 < var0_354 then
+	if arg2_355 < var0_355 then
 		return 0
 	end
 
-	local var1_354 = -4.605170186
+	local var1_355 = -4.605170186
 
-	return arg0_354 * (1 - Mathf.Exp(var1_354 * arg2_354 / arg1_354))
+	return arg0_355 * (1 - Mathf.Exp(var1_355 * arg2_355 / arg1_355))
 end
 
-function checkCullResume(arg0_355, arg1_355)
-	if arg1_355 or not ReflectionHelp.RefCallMethodEx(typeof("UnityEngine.CanvasRenderer"), "GetMaterial", GetComponent(arg0_355, "CanvasRenderer"), {
+function checkCullResume(arg0_356, arg1_356)
+	if arg1_356 or not ReflectionHelp.RefCallMethodEx(typeof("UnityEngine.CanvasRenderer"), "GetMaterial", GetComponent(arg0_356, "CanvasRenderer"), {
 		typeof("System.Int32")
 	}, {
 		0
 	}) then
-		local var0_355 = arg0_355:GetComponentsInChildren(typeof(var0_0.UI.Graphic)):ToTable()
+		local var0_356 = arg0_356:GetComponentsInChildren(typeof(var0_0.UI.Graphic)):ToTable()
 
-		for iter0_355, iter1_355 in ipairs(var0_355) do
-			iter1_355:SetVerticesDirty()
+		for iter0_356, iter1_356 in ipairs(var0_356) do
+			iter1_356:SetVerticesDirty()
 		end
 
 		return false
@@ -4946,92 +4961,92 @@ function checkCullResume(arg0_355, arg1_355)
 	return true
 end
 
-function parseEquipCode(arg0_356)
-	local var0_356 = {}
+function parseEquipCode(arg0_357)
+	local var0_357 = {}
 
-	if arg0_356 and arg0_356 ~= "" then
-		local var1_356 = base64.dec(arg0_356)
+	if arg0_357 and arg0_357 ~= "" then
+		local var1_357 = base64.dec(arg0_357)
 
-		var0_356 = string.split(var1_356, "/")
-		var0_356[5], var0_356[6] = unpack(string.split(var0_356[5], "\\"))
+		var0_357 = string.split(var1_357, "/")
+		var0_357[5], var0_357[6] = unpack(string.split(var0_357[5], "\\"))
 
-		if #var0_356 < 6 or arg0_356 ~= base64.enc(table.concat({
-			table.concat(underscore.first(var0_356, 5), "/"),
-			var0_356[6]
+		if #var0_357 < 6 or arg0_357 ~= base64.enc(table.concat({
+			table.concat(underscore.first(var0_357, 5), "/"),
+			var0_357[6]
 		}, "\\")) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("equipcode_illegal"))
 
-			var0_356 = {}
+			var0_357 = {}
 		end
 	end
 
-	for iter0_356 = 1, 6 do
-		var0_356[iter0_356] = var0_356[iter0_356] and tonumber(var0_356[iter0_356], 32) or 0
+	for iter0_357 = 1, 6 do
+		var0_357[iter0_357] = var0_357[iter0_357] and tonumber(var0_357[iter0_357], 32) or 0
 	end
 
-	return var0_356
+	return var0_357
 end
 
-function buildEquipCode(arg0_357)
-	local var0_357 = underscore.map(arg0_357:getAllEquipments(), function(arg0_358)
-		return ConversionBase(32, arg0_358 and arg0_358.id or 0)
+function buildEquipCode(arg0_358)
+	local var0_358 = underscore.map(arg0_358:getAllEquipments(), function(arg0_359)
+		return ConversionBase(32, arg0_359 and arg0_359.id or 0)
 	end)
-	local var1_357 = {
-		table.concat(var0_357, "/"),
-		ConversionBase(32, checkExist(arg0_357:GetSpWeapon(), {
+	local var1_358 = {
+		table.concat(var0_358, "/"),
+		ConversionBase(32, checkExist(arg0_358:GetSpWeapon(), {
 			"id"
 		}) or 0)
 	}
 
-	return base64.enc(table.concat(var1_357, "\\"))
+	return base64.enc(table.concat(var1_358, "\\"))
 end
 
-function setDirectorSpeed(arg0_359, arg1_359)
-	GetComponent(arg0_359, typeof(TimelineSpeed)):SetTimelineSpeed(arg1_359)
+function setDirectorSpeed(arg0_360, arg1_360)
+	GetComponent(arg0_360, typeof(TimelineSpeed)):SetTimelineSpeed(arg1_360)
 end
 
-function setDefaultZeroMetatable(arg0_360)
-	return setmetatable(arg0_360, {
-		__index = function(arg0_361, arg1_361)
-			if rawget(arg0_361, arg1_361) == nil then
-				arg0_361[arg1_361] = 0
+function setDefaultZeroMetatable(arg0_361)
+	return setmetatable(arg0_361, {
+		__index = function(arg0_362, arg1_362)
+			if rawget(arg0_362, arg1_362) == nil then
+				arg0_362[arg1_362] = 0
 			end
 
-			return arg0_361[arg1_361]
+			return arg0_362[arg1_362]
 		end
 	})
 end
 
-function checkABExist(arg0_362)
+function checkABExist(arg0_363)
 	if EDITOR_TOOL then
-		return ResourceMgr.Inst:AssetExist(arg0_362)
+		return ResourceMgr.Inst:AssetExist(arg0_363)
 	else
-		return PathMgr.FileExists(PathMgr.getAssetBundle(arg0_362))
+		return PathMgr.FileExists(PathMgr.getAssetBundle(arg0_363))
 	end
 end
 
-function compareNumber(arg0_363, arg1_363, arg2_363)
-	return switch(arg1_363, {
+function compareNumber(arg0_364, arg1_364, arg2_364)
+	return switch(arg1_364, {
 		[">"] = function()
-			return arg0_363 > arg2_363
+			return arg0_364 > arg2_364
 		end,
 		[">="] = function()
-			return arg0_363 >= arg2_363
+			return arg0_364 >= arg2_364
 		end,
 		["="] = function()
-			return arg0_363 == arg2_363
+			return arg0_364 == arg2_364
 		end,
 		["<"] = function()
-			return arg0_363 < arg2_363
+			return arg0_364 < arg2_364
 		end,
 		["<="] = function()
-			return arg0_363 <= arg2_363
+			return arg0_364 <= arg2_364
 		end
 	})
 end
 
-function ArabicToRoman(arg0_369)
-	local var0_369 = {
+function ArabicToRoman(arg0_370)
+	local var0_370 = {
 		{
 			1000,
 			"M"
@@ -5086,94 +5101,94 @@ function ArabicToRoman(arg0_369)
 		}
 	}
 
-	local function var1_369(arg0_370, arg1_370)
-		return select(2, arg0_370:gsub(arg1_370, ""))
+	local function var1_370(arg0_371, arg1_371)
+		return select(2, arg0_371:gsub(arg1_371, ""))
 	end
 
-	local var2_369 = ""
+	local var2_370 = ""
 
-	while arg0_369 > 0 do
-		for iter0_369, iter1_369 in pairs(var0_369) do
-			local var3_369 = iter1_369[2]
-			local var4_369 = iter1_369[1]
+	while arg0_370 > 0 do
+		for iter0_370, iter1_370 in pairs(var0_370) do
+			local var3_370 = iter1_370[2]
+			local var4_370 = iter1_370[1]
 
-			while var4_369 <= arg0_369 do
-				var2_369 = var2_369 .. var3_369
-				arg0_369 = arg0_369 - var4_369
+			while var4_370 <= arg0_370 do
+				var2_370 = var2_370 .. var3_370
+				arg0_370 = arg0_370 - var4_370
 			end
 		end
 	end
 
-	if arg0_369 > 10000 then
-		local var5_369 = var1_369(var2_369, "M")
+	if arg0_370 > 10000 then
+		local var5_370 = var1_370(var2_370, "M")
 
-		var2_369 = "M*" .. var5_369 .. " " .. var2_369
+		var2_370 = "M*" .. var5_370 .. " " .. var2_370
 	end
 
-	return var2_369
+	return var2_370
 end
 
-function stringInset(arg0_371, ...)
-	for iter0_371, iter1_371 in ipairs({
+function stringInset(arg0_372, ...)
+	for iter0_372, iter1_372 in ipairs({
 		...
 	}) do
-		arg0_371 = string.gsub(arg0_371, "$" .. iter0_371, iter1_371)
+		arg0_372 = string.gsub(arg0_372, "$" .. iter0_372, iter1_372)
 	end
 
-	return arg0_371
+	return arg0_372
 end
 
-function StringStartsWith(arg0_372, arg1_372)
-	return string.sub(arg0_372, 1, string.len(arg1_372)) == arg1_372
+function StringStartsWith(arg0_373, arg1_373)
+	return string.sub(arg0_373, 1, string.len(arg1_373)) == arg1_373
 end
 
-function addSubLayer(arg0_373, arg1_373, arg2_373, arg3_373, arg4_373)
-	if arg2_373 then
-		while arg1_373.parent do
-			arg1_373 = arg1_373.parent
+function addSubLayer(arg0_374, arg1_374, arg2_374, arg3_374, arg4_374)
+	if arg2_374 then
+		while arg1_374.parent do
+			arg1_374 = arg1_374.parent
 		end
 	end
 
-	local var0_373 = {
-		parentContext = arg1_373,
-		context = arg0_373,
-		callback = arg3_373
+	local var0_374 = {
+		parentContext = arg1_374,
+		context = arg0_374,
+		callback = arg3_374
 	}
 
-	var0_373 = arg4_373 and table.merge(var0_373, arg4_373) or var0_373
+	var0_374 = arg4_374 and table.merge(var0_374, arg4_374) or var0_374
 
-	pg.m02:sendNotification(GAME.LOAD_LAYERS, var0_373)
+	pg.m02:sendNotification(GAME.LOAD_LAYERS, var0_374)
 end
 
-function PackIntToString(arg0_374, arg1_374)
-	return tostring(arg0_374) .. "," .. tostring(arg1_374)
+function PackIntToString(arg0_375, arg1_375)
+	return tostring(arg0_375) .. "," .. tostring(arg1_375)
 end
 
-function UnpackIntFromString(arg0_375)
-	local var0_375, var1_375 = string.match(arg0_375, "(%-?%d+),(%-?%d+)")
+function UnpackIntFromString(arg0_376)
+	local var0_376, var1_376 = string.match(arg0_376, "(%-?%d+),(%-?%d+)")
 
-	return tonumber(var0_375), tonumber(var1_375)
+	return tonumber(var0_376), tonumber(var1_376)
 end
 
-function getRandomIdxByWeights(arg0_376)
-	local var0_376 = 0
+function getRandomIdxByWeights(arg0_377)
+	local var0_377 = 0
 
-	for iter0_376, iter1_376 in ipairs(arg0_376) do
-		var0_376 = var0_376 + iter1_376
+	for iter0_377, iter1_377 in ipairs(arg0_377) do
+		var0_377 = var0_377 + iter1_377
 	end
 
-	assert(var0_376 ~= 0, "总权重为0")
+	assert(var0_377 ~= 0, "总权重为0")
 
-	local var1_376 = math.random(1, var0_376)
-	local var2_376 = 0
+	local var1_377 = math.random(1, var0_377)
+	local var2_377 = 0
 
-	for iter2_376, iter3_376 in ipairs(arg0_376) do
-		var2_376 = var2_376 + iter3_376
+	for iter2_377, iter3_377 in ipairs(arg0_377) do
+		var2_377 = var2_377 + iter3_377
 
-		if var1_376 <= var2_376 then
-			return iter2_376
+		if var1_377 <= var2_377 then
+			return iter2_377
 		end
 	end
 
-	return #arg0_376
+	return #arg0_377
 end

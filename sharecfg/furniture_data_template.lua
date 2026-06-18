@@ -21779,7 +21779,7 @@ end)()
 	pg.base.furniture_data_template[283] = {
 		effect = "",
 		name = "Mont-Saint-Michel Miniature",
-		gain_by = "Interlude of Illusions",
+		gain_by = "Event: Interlude of Illusions; Ltd. Core Shop",
 		type = 7,
 		dir = 0,
 		dorm_id = 0,

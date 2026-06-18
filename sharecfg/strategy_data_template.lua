@@ -3488,7 +3488,7 @@ end)()
 		id = 200931,
 		icon = "200908",
 		buff_type = 0,
-		desc = "The battle will initiate in challenge mode if a ship in your fleet has the Enigmata \"D\" equipped when the battle starts. This will increase the difficulty, but also increase the score you gain.\n\n- Challenge Mode Details -\n· Enemies deal significantly more DMG. As time passes, the DMG taken by enemies gradually increases.\n· The skills \"Quick Takeoff\" and \"Fiercer When Cornered\" are rendered ineffective.",
+		desc = "The battle will initiate in challenge mode if your fleet has the Enigmata \"D\" equipped when the battle starts. This will increase the difficulty, but also increase the score you gain.\n\n- Challenge Mode Details -\nEnemy DMG dealt is <color=#ffc038>significantly increased</color>. Some enemy shells cannot be nullified by airstrikes or shields.\nThe hitbox of your Vanguard fleet is <color=#92fc63>limited to only the frontmost ship, and the size of the hitbox is also significantly reduced</color>.\nWhen your ship is hit, it will become invulnerable for a short period of time.\n\nThe following gear or skills are rendered ineffective:\n[Fiercer When Cornered], [Operation Rainbow], [Eleventh Hour], [I Will Not Yield!].",
 		arg = {}
 	}
 	pg.base.strategy_data_template[200932] = {

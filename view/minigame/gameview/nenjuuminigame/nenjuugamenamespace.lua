@@ -35,7 +35,7 @@ local var1_0 = {
 			arg0_8.size = arg1_8.size or NewPos(1, 1)
 			arg0_8.canHide = arg1_8.hide
 
-			setCanvasOverrideSorting(arg0_8._tf, true)
+			SetCanvasOverrideSorting(arg0_8._tf, true)
 			arg0_8:UpdatePos(arg1_8.pos - NewPos(0, arg0_8:GetSize().y - 1))
 
 			arg0_8.realPos = arg1_8.realPos or arg0_8.pos

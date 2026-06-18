@@ -38,13 +38,12 @@ function var0_0.execute(arg0_1, arg1_1)
 
 		local var6_2 = getProxy(ShopsProxy)
 
+		var6_2.refreshChargeList = false
+
 		var6_2:setChargedList(var0_2)
 		var6_2:setFirstChargeList(var2_2)
 		var6_2:setNormalList(var3_2)
 		var6_2:setNormalGroupList(var5_2)
-
-		var6_2.refreshChargeList = false
-
 		arg0_1:sendNotification(GAME.GET_CHARGE_LIST_DONE, {
 			chargedList = var0_2,
 			firstChargeIds = var2_2,

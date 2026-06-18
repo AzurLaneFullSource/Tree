@@ -112,6 +112,11 @@ function var0_0.UpdateButtons(arg0_9)
 
 	local var0_9, var1_9 = arg0_9.contextData.map:isActivity()
 	local var2_9 = arg0_9.contextData.map:isRemaster()
+
+	if var2_9 then
+		arg0_9.sceneParent:updateRemasterInfo()
+	end
+
 	local var3_9 = arg0_9.contextData.displayMode == var0_0.DISPLAY.BATTLE
 
 	setActive(arg0_9.sceneParent.actExchangeShopBtn, not ActivityConst.HIDE_PT_PANELS and var3_9 and not var2_9 and var1_9 and arg0_9.sceneParent:IsActShopActive())
@@ -122,6 +127,8 @@ function var0_0.UpdateButtons(arg0_9)
 	arg0_9.sceneParent:updatePtActivity(underscore.detect(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_RANK), function(arg0_10)
 		return arg0_10:getConfig("config_id") == var5_9
 	end))
+	setActive(arg0_9.sceneParent.rightChapter:Find("event_btns/tickets"), var2_9)
+	arg0_9.sceneParent:updateRemasterTicket()
 	setActive(arg0_9.sceneParent.ptTotal, not ActivityConst.HIDE_PT_PANELS and not var2_9 and var1_9 and arg0_9.sceneParent.ptActivity and not arg0_9.sceneParent.ptActivity:isEnd() and var3_9)
 end
 
@@ -304,43 +311,56 @@ function var0_0.SetDisplayMode(arg0_25, arg1_25)
 end
 
 function var0_0.UpdateView(arg0_26)
-	local var0_26 = string.split(arg0_26.contextData.map:getConfig("name"), "||")
+	local var0_26 = arg0_26.contextData.map
+	local var1_26 = string.split(var0_26:getConfig("name"), "||")
 
 	if arg0_26.contextData.displayMode == var0_0.DISPLAY.STORY then
-		var0_26 = string.split(var0_26[1], "·")
+		var1_26 = string.split(var1_26[1], "·")
 
-		setText(arg0_26.sceneParent.chapterName, var0_26[1] .. i18n("levelscene_title_story"))
+		setText(arg0_26.sceneParent.chapterName, var1_26[1] .. i18n("levelscene_title_story"))
 	else
-		setText(arg0_26.sceneParent.chapterName, var0_26[1])
+		setText(arg0_26.sceneParent.chapterName, var1_26[1])
 	end
 
-	local var1_26 = arg0_26.contextData.map:getMapTitleNumber()
+	local var2_26 = var0_26:getMapTitleNumber()
 
-	arg0_26.sceneParent.loader:GetSpriteQuiet("chapterno", "chapter" .. var1_26, arg0_26.sceneParent.chapterNoTitle, true)
+	arg0_26.sceneParent.loader:GetSpriteQuiet("chapterno", "chapter" .. var2_26, arg0_26.sceneParent.chapterNoTitle, true)
 
 	arg0_26.contextData.displayMode = arg0_26.contextData.displayMode or var0_0.DISPLAY.BATTLE
 
 	var0_0.super.UpdateView(arg0_26)
 
-	local var2_26 = arg0_26.contextData.displayMode == var0_0.DISPLAY.BATTLE
+	local var3_26 = arg0_26.contextData.displayMode == var0_0.DISPLAY.BATTLE
 
-	setActive(arg0_26._tf:Find("Battle"), var2_26)
-	setActive(arg0_26._tf:Find("Story"), not var2_26)
+	setActive(arg0_26._tf:Find("Battle"), var3_26)
+	setActive(arg0_26._tf:Find("Story"), not var3_26)
 
-	local var3_26 = getProxy(ChapterProxy):IsActivitySPChapterActive(arg0_26.contextData.map:getConfig("on_activity")) and SettingsProxy.IsShowActivityMapSPTip()
+	local var4_26 = getProxy(ChapterProxy):IsActivitySPChapterActive(var0_26:getConfig("on_activity")) and SettingsProxy.IsShowActivityMapSPTip()
 
 	setActive(arg0_26.battleLayer:Find("Mask/Story/BattleTip"), false)
-	setActive(arg0_26.storyLayer:Find("Battle/BattleTip"), var3_26)
+	setActive(arg0_26.storyLayer:Find("Battle/BattleTip"), var4_26)
 
-	local var4_26 = arg0_26.battleLayer:Find("Mask"):GetComponent(typeof(RectMask2D))
+	local var5_26 = arg0_26.battleLayer:Find("Mask"):GetComponent(typeof(RectMask2D))
 
 	if type(arg0_26.spStoryIDs) ~= "table" or #arg0_26.spStoryIDs == 0 then
-		var4_26.enabled = true
+		local var6_26 = var0_26:isRemaster()
+
+		if var6_26 then
+			setActive(arg0_26.battleLayer:Find("Mask"), false)
+
+			local var7_26, var8_26 = var0_26:isActivity()
+			local var9_26 = var0_26:isSkirmish()
+			local var10_26 = var0_26:isEscort()
+
+			setActive(arg0_26.sceneParent.remasterBtn, OPEN_REMASTER and (var6_26 or not var7_26 and not var10_26 and not var9_26))
+		else
+			var5_26.enabled = true
+		end
 	end
 
 	arg0_26:UpdateStoryTask()
 
-	if var2_26 then
+	if var3_26 then
 		arg0_26:UpdateBonusPtIconPath()
 		arg0_26:UpdateBattle()
 		arg0_26.sceneParent:SwitchMapBG(arg0_26.contextData.map)
@@ -1386,7 +1406,7 @@ function var0_0.PlayStory(arg0_66, arg1_66, arg2_66, arg3_66)
 end
 
 function var0_0.UpdateStoryTask(arg0_69)
-	local var0_69 = arg0_69.activity:getConfig("config_client").task_id
+	local var0_69 = arg0_69.activity and arg0_69.activity:getConfig("config_client").task_id
 
 	if not var0_69 then
 		return

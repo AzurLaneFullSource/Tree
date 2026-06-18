@@ -206389,47 +206389,7 @@ end)()
 			}
 		},
 		desc_add = {
-			{
-				{
-					"1.0%",
-					"+1.0%"
-				},
-				{
-					"2.0%",
-					"+1.0%"
-				},
-				{
-					"3.0%",
-					"+1.0%"
-				},
-				{
-					"4.0%",
-					"+1.0%"
-				},
-				{
-					"5.0%",
-					"+1.0%"
-				},
-				{
-					"6.0%",
-					"+1.0%"
-				},
-				{
-					"7.0%",
-					"+1.0%"
-				},
-				{
-					"8.0%",
-					"+1.0%"
-				},
-				{
-					"9.0%",
-					"+1.0%"
-				},
-				{
-					"10.0%"
-				}
-			},
+			cc,
 			{
 				{
 					"5.0%",
@@ -209086,7 +209046,7 @@ end)()
 		id = 1018300,
 		type = 3,
 		max_level = 10,
-		desc = "Every 10s: activates a $4 Steelflash Judgment special attack (DMG is based on the skill's level). Every $1s: fires a special barrage that ignores enemy shields and heals this ship for 20.0% of the DMG dealt (barrage DMG is based on the skill's level). At the start of battle, increases this ship's FP and EVA by $2 and RLD by $3 until the end of the battle. Whenever an allied flagship launches an airstrike or fires a Main Gun salvo: activates a $4 Burstfire Judgment special attack (DMG is based on the skill's level; 5s cooldown between activations).",
+		desc = "Every 10s: activates a $4 Steelflash Judgment special attack (DMG is based on the skill's level). Every $1s: fires a special barrage that ignores enemy shields and heals this ship for 20.0% of the DMG dealt (barrage DMG is based on the skill's level). When this ship sinks an enemy: increases this ship's FP and EVA by $2 and RLD by $3 until the end of the battle. Whenever an allied flagship launches an airstrike or fires a Main Gun salvo: activates a $4 Burstfire Judgment special attack (DMG is based on the skill's level; 5s cooldown between activations).",
 		system_transform = {},
 		world_death_mark = {
 			1
