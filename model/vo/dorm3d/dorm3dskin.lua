@@ -93,4 +93,8 @@ function var0_0.GetModelName(arg0_18)
 	return arg0_18:getConfig("model_id")
 end
 
+function var0_0.IsShow(arg0_19)
+	return arg0_19:getConfig("is_show_change_skin") == 1
+end
+
 return var0_0

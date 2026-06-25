@@ -28,6 +28,8 @@ function var0_0.Hide(arg0_5)
 end
 
 function var0_0.Dispose(arg0_6)
+	arg0_6:cleanManagedTween()
+	arg0_6:disposeEvent()
 	pg.DelegateInfo.Dispose(arg0_6)
 end
 

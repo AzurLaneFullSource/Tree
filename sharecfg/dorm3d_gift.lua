@@ -17,7 +17,9 @@ pg.dorm3d_gift.all = {
 	1051702,
 	3070701,
 	3070702,
-	4990501
+	4990501,
+	7990201,
+	7990261
 }
 pg.dorm3d_gift.get_id_list_by_ship_group_id = {
 	[0] = {
@@ -48,6 +50,10 @@ pg.dorm3d_gift.get_id_list_by_ship_group_id = {
 	},
 	[49905] = {
 		4990501
+	},
+	[79902] = {
+		7990201,
+		7990261
 	}
 }
 pg.base = pg.base or {}
@@ -57,12 +63,14 @@ pg.base.dorm3d_gift = {}
 	pg.base.dorm3d_gift[1021001] = {
 		name = "Bunny Plushie",
 		display = "A pink stuffed bunny with a scarf. It's made of soft materials that make you want to hug it all day.",
-		rarity = 2,
+		time = "always",
 		unlock_dialogue_id = 0,
+		rarity = 2,
+		id = 1021001,
 		shop_id = "",
 		ship_group_id = 0,
 		favor_trigger_id = 1009,
-		id = 1021001,
+		hide_if_not_owned = 0,
 		icon = "dorm3dicon/3Ddrom_everyone_CommonGift3",
 		reply_dialogue_id = {
 			{
@@ -88,6 +96,10 @@ pg.base.dorm3d_gift = {}
 			{
 				49905,
 				140301
+			},
+			{
+				79902,
+				210301
 			}
 		},
 		unlock_tips = {},
@@ -127,18 +139,26 @@ pg.base.dorm3d_gift = {}
 				{
 					"banner_aijier"
 				}
+			},
+			{
+				79902,
+				{
+					"banner_naximofu"
+				}
 			}
 		}
 	}
 	pg.base.dorm3d_gift[1021002] = {
-		ship_group_id = 0,
-		display = "This bouquet exudes a rich, captivating aroma. Both the roses and the other red flowers are practically dripping with emotion and romance.",
-		rarity = 3,
-		unlock_dialogue_id = 0,
-		id = 1021002,
-		icon = "dorm3dicon/3Ddrom_everyone_CommonGift2",
 		name = "Romantic's Bouquet",
+		display = "This bouquet exudes a rich, captivating aroma. Both the roses and the other red flowers are practically dripping with emotion and romance.",
+		time = "always",
+		unlock_dialogue_id = 0,
+		rarity = 3,
+		id = 1021002,
+		ship_group_id = 0,
 		favor_trigger_id = 1010,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_everyone_CommonGift2",
 		reply_dialogue_id = {
 			{
 				20220,
@@ -163,6 +183,10 @@ pg.base.dorm3d_gift = {}
 			{
 				49905,
 				140302
+			},
+			{
+				79902,
+				210302
 			}
 		},
 		shop_id = {
@@ -209,18 +233,26 @@ pg.base.dorm3d_gift = {}
 				{
 					"banner_aijier"
 				}
+			},
+			{
+				79902,
+				{
+					"banner_naximofu"
+				}
 			}
 		}
 	}
 	pg.base.dorm3d_gift[1021003] = {
-		ship_group_id = 0,
-		display = "A meticulously wrapped box containing slices of delicious cake. You can eat them yourself, or you can gift them and make someone's day.",
-		rarity = 4,
-		unlock_dialogue_id = 0,
-		id = 1021003,
-		icon = "dorm3dicon/3Ddrom_everyone_CommonGift1",
 		name = "Cake Gift Box",
+		display = "A meticulously wrapped box containing slices of delicious cake. You can eat them yourself, or you can gift them and make someone's day.",
+		time = "always",
+		unlock_dialogue_id = 0,
+		rarity = 4,
+		id = 1021003,
+		ship_group_id = 0,
 		favor_trigger_id = 1019,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_everyone_CommonGift1",
 		reply_dialogue_id = {
 			{
 				20220,
@@ -245,6 +277,10 @@ pg.base.dorm3d_gift = {}
 			{
 				49905,
 				140303
+			},
+			{
+				79902,
+				210303
 			}
 		},
 		shop_id = {
@@ -288,18 +324,26 @@ pg.base.dorm3d_gift = {}
 				{
 					"banner_aijier"
 				}
+			},
+			{
+				79902,
+				{
+					"banner_naximofu"
+				}
 			}
 		}
 	}
 	pg.base.dorm3d_gift[2022001] = {
-		ship_group_id = 20220,
-		display = "A toolbox of must-have items for cleaning and tidying up both at home and at the workplace. It's built with durable and resilient materials to protect the tools inside from damage.",
-		rarity = 4,
-		unlock_dialogue_id = 10060,
-		id = 2022001,
-		icon = "dorm3dicon/3Ddrom_tianlangxing_FancyGift2",
 		name = "Cleaning Supplies\nToolbox",
+		display = "A toolbox of must-have items for cleaning and tidying up both at home and at the workplace. It's built with durable and resilient materials to protect the tools inside from damage.",
+		time = "always",
+		unlock_dialogue_id = 10060,
+		rarity = 4,
+		id = 2022001,
+		ship_group_id = 20220,
 		favor_trigger_id = 1004,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_tianlangxing_FancyGift2",
 		reply_dialogue_id = {
 			{
 				20220,
@@ -322,14 +366,16 @@ pg.base.dorm3d_gift = {}
 		}
 	}
 	pg.base.dorm3d_gift[2022002] = {
-		ship_group_id = 20220,
-		display = "A classy, elegant tea set from the Royal Islands.\nIts blue and white design feels both refreshing and relaxing, bringing grace to your teatime.",
-		rarity = 4,
-		unlock_dialogue_id = 10070,
-		id = 2022002,
-		icon = "dorm3dicon/3Ddrom_tianlangxing_FancyGift1",
 		name = "Royal Tea Set",
+		display = "A classy, elegant tea set from the Royal Islands.\nIts blue and white design feels both refreshing and relaxing, bringing grace to your teatime.",
+		time = "always",
+		unlock_dialogue_id = 10070,
+		rarity = 4,
+		id = 2022002,
+		ship_group_id = 20220,
 		favor_trigger_id = 1004,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_tianlangxing_FancyGift1",
 		reply_dialogue_id = {
 			{
 				20220,
@@ -352,14 +398,16 @@ pg.base.dorm3d_gift = {}
 		}
 	}
 	pg.base.dorm3d_gift[2022003] = {
-		ship_group_id = 20220,
-		display = "This book explains in detail the knowledge, skills, and mindset that a perfect maid must have, using examples and thought-out theory.\nIt urges the reader to carry the spirit of maidly service with them even in daily life.",
-		rarity = 4,
-		unlock_dialogue_id = 10080,
-		id = 2022003,
-		icon = "dorm3dicon/3Ddrom_tianlangxing_FancyGift4",
 		name = "The Perfect Maid's\nGuidebook",
+		display = "This book explains in detail the knowledge, skills, and mindset that a perfect maid must have, using examples and thought-out theory.\nIt urges the reader to carry the spirit of maidly service with them even in daily life.",
+		time = "always",
+		unlock_dialogue_id = 10080,
+		rarity = 4,
+		id = 2022003,
+		ship_group_id = 20220,
 		favor_trigger_id = 1004,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_tianlangxing_FancyGift4",
 		reply_dialogue_id = {
 			{
 				20220,
@@ -382,14 +430,16 @@ pg.base.dorm3d_gift = {}
 		}
 	}
 	pg.base.dorm3d_gift[3022101] = {
-		ship_group_id = 30221,
-		display = "A simple design with a simple color scheme. Easy and comfortable to wear. \nThey fit perfectly around the heel and welcome your feet every time you put them on.",
-		rarity = 4,
-		unlock_dialogue_id = 29991,
-		id = 3022101,
-		icon = "dorm3dicon/3Ddrom_nengdai_FancyGift1",
 		name = "Sincere Loafers",
+		display = "A simple design with a simple color scheme. Easy and comfortable to wear. \nThey fit perfectly around the heel and welcome your feet every time you put them on.",
+		time = "always",
+		unlock_dialogue_id = 29991,
+		rarity = 4,
+		id = 3022101,
+		ship_group_id = 30221,
 		favor_trigger_id = 1004,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_nengdai_FancyGift1",
 		reply_dialogue_id = {
 			{
 				30221,
@@ -412,14 +462,16 @@ pg.base.dorm3d_gift = {}
 		}
 	}
 	pg.base.dorm3d_gift[3022102] = {
-		ship_group_id = 30221,
-		display = "Relieve your stress, soothe your mind, and feel your body's energy return to you!",
-		rarity = 4,
-		unlock_dialogue_id = 20530,
-		id = 3022102,
-		icon = "dorm3dicon/3Ddrom_nengdai_FancyGift2",
 		name = "Foot Massager",
+		display = "Relieve your stress, soothe your mind, and feel your body's energy return to you!",
+		time = "always",
+		unlock_dialogue_id = 20530,
+		rarity = 4,
+		id = 3022102,
+		ship_group_id = 30221,
 		favor_trigger_id = 1004,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_nengdai_FancyGift2",
 		reply_dialogue_id = {
 			{
 				30221,
@@ -442,14 +494,16 @@ pg.base.dorm3d_gift = {}
 		}
 	}
 	pg.base.dorm3d_gift[1990301] = {
-		ship_group_id = 19903,
-		display = "An adorably colored canvas that seems to capture all of Anchorage's world within. Every line reflects her innocence.",
-		rarity = 4,
-		unlock_dialogue_id = 30510,
-		id = 1990301,
-		icon = "dorm3dicon/3Ddrom_ankeleiqi_FancyGift1",
 		name = "Heart in Crayon",
+		display = "An adorably colored canvas that seems to capture all of Anchorage's world within. Every line reflects her innocence.",
+		time = "always",
+		unlock_dialogue_id = 30510,
+		rarity = 4,
+		id = 1990301,
+		ship_group_id = 19903,
 		favor_trigger_id = 1004,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_ankeleiqi_FancyGift1",
 		reply_dialogue_id = {
 			{
 				19903,
@@ -472,14 +526,16 @@ pg.base.dorm3d_gift = {}
 		}
 	}
 	pg.base.dorm3d_gift[1990302] = {
-		ship_group_id = 19903,
-		display = "A union of wavy ribbons and a wooden frame – a point where color and inspiration converge. Her creativity blooms with a burst of joy.",
-		rarity = 4,
-		unlock_dialogue_id = 30550,
-		id = 1990302,
-		icon = "dorm3dicon/3Ddrom_ankeleiqi_FancyGift2",
 		name = "Elegant Frame",
+		display = "A union of wavy ribbons and a wooden frame – a point where color and inspiration converge. Her creativity blooms with a burst of joy.",
+		time = "always",
+		unlock_dialogue_id = 30550,
+		rarity = 4,
+		id = 1990302,
+		ship_group_id = 19903,
 		favor_trigger_id = 1004,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_ankeleiqi_FancyGift2",
 		reply_dialogue_id = {
 			{
 				19903,
@@ -502,14 +558,16 @@ pg.base.dorm3d_gift = {}
 		}
 	}
 	pg.base.dorm3d_gift[1051701] = {
-		ship_group_id = 10517,
-		display = "The transparent glass jar is full of shiny, colorful candy. When you open the lid, you smell the sweet scent of bliss.",
-		rarity = 4,
-		unlock_dialogue_id = 110541,
-		id = 1051701,
-		icon = "dorm3dicon/3Ddrom_xinzexi_CommonFurniture4",
 		name = "Crystal Candy",
+		display = "The transparent glass jar is full of shiny, colorful candy. When you open the lid, you smell the sweet scent of bliss.",
+		time = "always",
+		unlock_dialogue_id = 110541,
+		rarity = 4,
+		id = 1051701,
+		ship_group_id = 10517,
 		favor_trigger_id = 1004,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_xinzexi_CommonFurniture4",
 		reply_dialogue_id = {
 			{
 				10517,
@@ -532,14 +590,16 @@ pg.base.dorm3d_gift = {}
 		}
 	}
 	pg.base.dorm3d_gift[1051702] = {
-		ship_group_id = 10517,
-		display = "With RGB lighting and precise haptic feedback, it's the perfect controller for everything – from casual fun to fierce competition!",
-		rarity = 4,
-		unlock_dialogue_id = 110551,
-		id = 1051702,
-		icon = "dorm3dicon/3Ddrom_xinzexi_PremiumGift2",
 		name = "Gamepad",
+		display = "With RGB lighting and precise haptic feedback, it's the perfect controller for everything – from casual fun to fierce competition!",
+		time = "always",
+		unlock_dialogue_id = 110551,
+		rarity = 4,
+		id = 1051702,
+		ship_group_id = 10517,
 		favor_trigger_id = 1004,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_xinzexi_PremiumGift2",
 		reply_dialogue_id = {
 			{
 				10517,
@@ -562,14 +622,16 @@ pg.base.dorm3d_gift = {}
 		}
 	}
 	pg.base.dorm3d_gift[3070701] = {
-		ship_group_id = 30707,
-		display = "Handcuffs with a heart charm between them, simple yet profound. The cool touch of metal conveys a loving bond like nothing else.",
-		rarity = 4,
-		unlock_dialogue_id = 120541,
-		id = 3070701,
-		icon = "dorm3dicon/3Ddrom_dafeng_FancyGift1",
 		name = "Love Enshackled",
+		display = "Handcuffs with a heart charm between them, simple yet profound. The cool touch of metal conveys a loving bond like nothing else.",
+		time = "always",
+		unlock_dialogue_id = 120541,
+		rarity = 4,
+		id = 3070701,
+		ship_group_id = 30707,
 		favor_trigger_id = 1004,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_dafeng_FancyGift1",
 		reply_dialogue_id = {
 			{
 				30707,
@@ -592,14 +654,16 @@ pg.base.dorm3d_gift = {}
 		}
 	}
 	pg.base.dorm3d_gift[3070702] = {
-		ship_group_id = 30707,
-		display = "The crimson tails unfurl like the sunset, black butterflies tied in a knot of affection. What awaits your fingertips is a wellspring of love that cannot be hidden beneath the warmth.",
-		rarity = 4,
-		unlock_dialogue_id = 120551,
-		id = 3070702,
-		icon = "dorm3dicon/3Ddrom_dafeng_FancyGift2",
 		name = "Scarlet Invite",
+		display = "The crimson tails unfurl like the sunset, black butterflies tied in a knot of affection. What awaits your fingertips is a wellspring of love that cannot be hidden beneath the warmth.",
+		time = "always",
+		unlock_dialogue_id = 120551,
+		rarity = 4,
+		id = 3070702,
+		ship_group_id = 30707,
 		favor_trigger_id = 1004,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_dafeng_FancyGift2",
 		reply_dialogue_id = {
 			{
 				30707,
@@ -622,14 +686,16 @@ pg.base.dorm3d_gift = {}
 		}
 	}
 	pg.base.dorm3d_gift[4990501] = {
-		ship_group_id = 49905,
-		display = "A lovely, elegant glass resembling a rosebud beneath the dawnlight.\nWithin its curves, the memories of two people tenderly intermingle and coalesce.",
-		rarity = 4,
-		unlock_dialogue_id = 140541,
-		id = 4990501,
-		icon = "dorm3dicon/3Ddrom_aijier_FancyGift1",
 		name = "Tulip Glass",
+		display = "A lovely, elegant glass resembling a rosebud beneath the dawnlight.\nWithin its curves, the memories of two people tenderly intermingle and coalesce.",
+		time = "always",
+		unlock_dialogue_id = 140541,
+		rarity = 4,
+		id = 4990501,
+		ship_group_id = 49905,
 		favor_trigger_id = 1004,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_aijier_FancyGift1",
 		reply_dialogue_id = {
 			{
 				49905,
@@ -647,6 +713,91 @@ pg.base.dorm3d_gift = {}
 				49905,
 				{
 					"banner_gift4990501"
+				}
+			}
+		}
+	}
+	pg.base.dorm3d_gift[7990201] = {
+		name = "Instinct Instructor",
+		display = "A toy known as the \"Instinct Instructor\" that uses a fish plushie to capture the trainee's gaze.\nAs it arcs through the air, it tempts the trainee, aiming to draw out their purest instincts.",
+		time = "always",
+		unlock_dialogue_id = 210541,
+		rarity = 4,
+		id = 7990201,
+		ship_group_id = 79902,
+		favor_trigger_id = 1004,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_naximofu_FancyGift1",
+		reply_dialogue_id = {
+			{
+				79902,
+				210304
+			}
+		},
+		shop_id = {
+			260701
+		},
+		unlock_tips = {
+			4
+		},
+		unlock_banners = {
+			{
+				79902,
+				{
+					"banner_gift7990201"
+				}
+			}
+		}
+	}
+	pg.base.dorm3d_gift[7990261] = {
+		name = "Deep Sea Fish Body Pillow",
+		display = "A soft and cuddly body pillow inspired by the joys of deep-sea fishing.\nPerfect for napping, or simply daydreaming.",
+		rarity = 4,
+		unlock_dialogue_id = 0,
+		id = 7990261,
+		ship_group_id = 79902,
+		favor_trigger_id = 1099,
+		hide_if_not_owned = 1,
+		icon = "dorm3dicon/3Ddrom_naximofu_FancyGift9",
+		reply_dialogue_id = {
+			{
+				79902,
+				210302
+			}
+		},
+		shop_id = {},
+		unlock_tips = {},
+		unlock_banners = {
+			{
+				79902,
+				{
+					"banner_naximofu"
+				}
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					6,
+					25
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					7,
+					16
+				},
+				{
+					23,
+					59,
+					59
 				}
 			}
 		}

@@ -247,6 +247,9 @@ function temp()
 		},
 		敌 = {
 			this = true
+		},
+		惧 = {
+			this = true
 		}
 	}
 end

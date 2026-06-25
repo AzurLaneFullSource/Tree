@@ -76,7 +76,7 @@ function var0_0.init(arg0_2)
 		[var0_0.PAGE_DOCK] = CommanderCatDockPage.New(arg0_2.pageContainer, arg0_2.event, arg0_2.contextData)
 	}
 	arg0_2.detailPage = CommanderDetailPage.New(arg0_2.pageContainer, arg0_2.event, arg0_2.contextData)
-	arg0_2.contextData.msgBox = CommanderMsgBoxPage.New(arg0_2._tf, arg0_2.event)
+	arg0_2.contextData.msgBox = CommanderMsgBoxPage.New(pg.UIMgr.GetInstance().OverlayMain, arg0_2.event)
 	arg0_2.contextData.treePanel = CommanderTreePage.New(pg.UIMgr.GetInstance().OverlayMain, arg0_2.event)
 	arg0_2.commanderPaintingUtil = CommanderPaintingUtil.New(arg0_2.paintingTF)
 	arg0_2.resources = {

@@ -22,7 +22,10 @@ pg.livingarea_cover.all = {
 	101203,
 	101401,
 	101402,
-	101403
+	101403,
+	102101,
+	102102,
+	102103
 }
 pg.base = pg.base or {}
 pg.base.livingarea_cover = {}
@@ -253,6 +256,42 @@ pg.base.livingarea_cover = {}
 		desc = "Unlocks the Bedside Invitation wallpaper for the port.",
 		unlock_text = "Reach Ägir Intimacy Lv. 10",
 		daytime_res = "101403_bg_day",
+		icon = "Props/drom3d_camera1003",
+		get_tips = "You obtained an Intimacy wallpaper."
+	}
+	pg.base.livingarea_cover[102101] = {
+		rarity = 3,
+		name = "Nestled Warmth",
+		nighttime_res = "102101_bg_night",
+		id = 102101,
+		icon_res = "102101_icon",
+		desc = "Unlocks the Nestled Warmth wallpaper for the port.",
+		unlock_text = "Reach Admiral Nakhimov Intimacy Lv. 2",
+		daytime_res = "102101_bg_day",
+		icon = "Props/drom3d_camera1003",
+		get_tips = "You obtained an Intimacy wallpaper."
+	}
+	pg.base.livingarea_cover[102102] = {
+		rarity = 3,
+		name = "Shared Slumber",
+		nighttime_res = "102102_bg_night",
+		id = 102102,
+		icon_res = "102102_icon",
+		desc = "Unlocks the Shared Slumber wallpaper for the port.",
+		unlock_text = "Reach Admiral Nakhimov Intimacy Lv. 7",
+		daytime_res = "102102_bg_day",
+		icon = "Props/drom3d_camera1003",
+		get_tips = "You obtained an Intimacy wallpaper."
+	}
+	pg.base.livingarea_cover[102103] = {
+		rarity = 3,
+		name = "Intimate Work",
+		nighttime_res = "102103_bg_night",
+		id = 102103,
+		icon_res = "102103_icon",
+		desc = "Unlocks the Intimate Work wallpaper for the port.",
+		unlock_text = "Reach Admiral Nakhimov Intimacy Lv. 10",
+		daytime_res = "102103_bg_day",
 		icon = "Props/drom3d_camera1003",
 		get_tips = "You obtained an Intimacy wallpaper."
 	}

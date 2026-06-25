@@ -43,6 +43,7 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.didEnter(arg0_2)
+	arg0_2._tf.sizeDelta = Vector2(Screen.width, Screen.height)
 	arg0_2.ad = findTF(arg0_2._tf, "ad")
 	arg0_2.paintTf = findTF(arg0_2.ad, "paint")
 	arg0_2.spineContainer = findTF(arg0_2.ad, "paint/spinePainting")
@@ -55,6 +56,7 @@ function var0_0.didEnter(arg0_2)
 	arg0_2.btnDebug = findTF(arg0_2.ad, "btnDebug")
 	arg0_2.effectTf = findTF(arg0_2.ad, "effect")
 
+	warning("init tf parent pos = " .. arg0_2._tf.parent.position.x .. "," .. arg0_2._tf.parent.position.y)
 	warning("init tf pos = " .. arg0_2._tf.anchoredPosition.x .. "," .. arg0_2._tf.anchoredPosition.y)
 	warning("init ad pos = " .. arg0_2.ad.anchoredPosition.x .. "," .. arg0_2.ad.anchoredPosition.y)
 	warning("init painting pos = " .. arg0_2.paintTf.anchoredPosition.x .. "," .. arg0_2.paintTf.anchoredPosition.y)
@@ -213,7 +215,7 @@ function var0_0.loadShowPaint(arg0_14, arg1_14, arg2_14, arg3_14)
 		})
 
 		arg0_14.spinePainting = SpinePainting.New(var4_14, function(arg0_15)
-			local var0_15 = arg0_15:GetSpineTrasform():GetComponent(typeof(ItemList)).prefabItem:ToTable()
+			local var0_15 = arg0_15:GetSpineTransform():GetComponent(typeof(ItemList)).prefabItem:ToTable()
 
 			for iter0_15, iter1_15 in ipairs(var0_15) do
 				local var1_15 = GetComponent(iter1_15, typeof(Canvas))

@@ -43,7 +43,10 @@ function var0_0.GetDefaultSystemClasses()
 	return {
 		SlideExtraSystem,
 		Dorm3dStockingMgr,
-		TeleportSystem
+		TeleportSystem,
+		RoomIKSystem,
+		RoomTouchSystem,
+		AimIKSystem
 	}
 end
 

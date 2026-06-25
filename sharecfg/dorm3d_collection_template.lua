@@ -189,7 +189,42 @@ pg.dorm3d_collection_template.all = {
 	1422,
 	1423,
 	1424,
-	1425
+	1425,
+	2101,
+	2102,
+	2103,
+	2104,
+	2105,
+	2106,
+	2107,
+	2108,
+	2109,
+	2110,
+	2111,
+	2112,
+	2113,
+	2114,
+	2115,
+	2116,
+	2117,
+	2118,
+	2119,
+	2120,
+	2121,
+	2122,
+	2123,
+	2124,
+	2125,
+	2601,
+	2602,
+	2603,
+	2604,
+	2605,
+	2606,
+	2607,
+	2608,
+	2609,
+	2610
 }
 pg.dorm3d_collection_template.get_id_list_by_room_id = {
 	{
@@ -393,6 +428,45 @@ pg.dorm3d_collection_template.get_id_list_by_room_id = {
 		1607,
 		1608,
 		1609
+	},
+	[21] = {
+		2101,
+		2102,
+		2103,
+		2104,
+		2105,
+		2106,
+		2107,
+		2108,
+		2109,
+		2110,
+		2111,
+		2112,
+		2113,
+		2114,
+		2115,
+		2116,
+		2117,
+		2118,
+		2119,
+		2120,
+		2121,
+		2122,
+		2123,
+		2124,
+		2125
+	},
+	[26] = {
+		2601,
+		2602,
+		2603,
+		2604,
+		2605,
+		2606,
+		2607,
+		2608,
+		2609,
+		2610
 	}
 }
 pg.base = pg.base or {}
@@ -4269,6 +4343,703 @@ end)()
 		},
 		vfx_prefab = {
 			"fbx/litmap_01/pre_db_decoration21/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2101] = {
+		text = "dorm3d_naximofu_chair",
+		name = "Model Rocket",
+		award = 0,
+		time = 0,
+		id = 2101,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item1",
+		desc = "A complex model rocket. It adds a Sci-Fi vibe to the room.",
+		model = {
+			"fbx/litmap_03/day/pre_db_decoration32"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_decoration32/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2102] = {
+		text = "dorm3d_naximofu_chair",
+		name = "Round Porcelains",
+		award = 0,
+		time = 0,
+		id = 2102,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item2",
+		desc = "Orange and yellow porcelain vessels. They're bright and glossy, helping each other stand out when placed together.",
+		model = {
+			"fbx/litmap_03/day/pre_db_ceram29"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_ceram29/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2103] = {
+		text = "dorm3d_naximofu_chair",
+		name = "Glass Wine Bottle",
+		award = 0,
+		time = 2,
+		id = 2103,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item3",
+		desc = "This minimalist wine bottle that provides a view of the \"nectar of life\" within.",
+		model = {
+			"fbx/litmap_03/night/pre_db_drink18"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/night/pre_db_drink18/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2104] = {
+		text = "dorm3d_naximofu_chair",
+		name = "Retro TV Set",
+		award = 0,
+		time = 0,
+		id = 2104,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item4",
+		desc = "A sturdy-looking retro television complete with knobs and buttons. You find it oddly nostalgic.",
+		model = {
+			"fbx/litmap_03/day/pre_db_electrical25"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_electrical25/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2105] = {
+		text = "dorm3d_naximofu_bed",
+		name = "Soft Towel",
+		award = 0,
+		time = 2,
+		id = 2105,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item5",
+		desc = "A bath towel that feels nice against the skin. It offers excellent absorbance.",
+		model = {
+			"fbx/litmap_03/night/pre_db_towel02_01"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/night/pre_db_towel02_01/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2106] = {
+		text = "dorm3d_naximofu_bed",
+		name = "Two-Tier Cabinet",
+		award = 0,
+		time = 0,
+		id = 2106,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item6",
+		desc = "This simple but practical cabinet features shelves that slide out smoothly, making it perfect for storing everyday essentials.",
+		model = {
+			"fbx/litmap_03/day/pre_db_cupboard42"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_cupboard42/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2107] = {
+		text = "dorm3d_naximofu_bed",
+		name = "Cat-Eared Chair",
+		award = 0,
+		time = 0,
+		id = 2107,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item7",
+		desc = "A cushion is stuffed into a frame that is shaped like a cat head. It's plenty comfortable and cute to boot.",
+		model = {
+			"fbx/litmap_03/day/pre_db_chair30"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_chair30/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2108] = {
+		text = "dorm3d_naximofu_bed",
+		name = "Vinyl Record",
+		award = 0,
+		time = 0,
+		id = 2108,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item8",
+		desc = "A classic vinyl record with distinct grooves on the surface. When placed in the record player, it plays a smooth melody.",
+		model = {
+			"fbx/litmap_03/day/pre_db_decoration30"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_decoration30/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2109] = {
+		text = "dorm3d_naximofu_bed",
+		name = "Hanging Pompom",
+		award = 0,
+		time = 0,
+		id = 2109,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item9",
+		desc = "A little pompom that hangs by a string. When touched, it sways slightly, making for the perfect feline stress relief.",
+		model = {
+			"fbx/litmap_03/day/pre_db_toy18_7"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_toy18_7/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2110] = {
+		text = "dorm3d_naximofu_bed",
+		name = "Tissue Box",
+		award = 0,
+		time = 0,
+		id = 2110,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item10",
+		desc = "A cute, cat-shaped tissue box. Even grabbing a tissue can be fun!",
+		model = {
+			"fbx/litmap_03/day/pre_db_plasticbox03"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_plasticbox03/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2111] = {
+		text = "dorm3d_naximofu_chair",
+		name = "Orange Light",
+		award = 0,
+		time = 0,
+		id = 2111,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item11",
+		desc = "This wall light is encased in an orange shade. When turned on, it casts a soft glow that brings warmth to the space.",
+		model = {
+			"fbx/litmap_03/day/pre_db_walllamp02"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_walllamp02/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2112] = {
+		text = "dorm3d_naximofu_chair",
+		name = "Potted Plant 1",
+		award = 0,
+		time = 0,
+		id = 2112,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item12",
+		desc = "A decorative plant displayed in a classic ceramic pot. Its verdant leaves naturally add a touch of life to the room.",
+		model = {
+			"fbx/litmap_03/day/pre_db_flowerpot26_1"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_flowerpot26_1/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2113] = {
+		text = "dorm3d_naximofu_chair",
+		name = "Cardboard Scratching Board",
+		award = 0,
+		time = 0,
+		id = 2113,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item13",
+		desc = "A scratching board made of cardboard. Little claw marks can be seen on the surface.",
+		model = {
+			"fbx/litmap_03/day/pre_db_toy17_1"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_toy17_1/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2114] = {
+		text = "dorm3d_naximofu_chair",
+		name = "Hanging TV",
+		award = 0,
+		time = 0,
+		id = 2114,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item14",
+		desc = "A TV hangs from the ceiling, allowing one to lie down, relax, and enjoy.",
+		model = {
+			"fbx/litmap_03/day/pre_db_electrical27"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_electrical27/vfx_wupintishi01"
+		}
+	}
+end)()
+;(function()
+	pg.base.dorm3d_collection_template[2115] = {
+		text = "dorm3d_naximofu_chair",
+		name = "Pile of Books",
+		award = 0,
+		time = 0,
+		id = 2115,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item15",
+		desc = "Books are casually piled up, revealing traces of a certain someone's recent reading habits.",
+		model = {
+			"fbx/litmap_03/day/pre_db_book30_1"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_book30_1/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2116] = {
+		text = "dorm3d_naximofu_chair",
+		name = "Kitty Dining Set",
+		award = 0,
+		time = 0,
+		id = 2116,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item16",
+		desc = "Little ceramic bowls, simple and practical. One is for food, while the other is for water.",
+		model = {
+			"fbx/litmap_03/day/pre_db_tableware55"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_tableware55/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2117] = {
+		text = "dorm3d_naximofu_bed",
+		name = "Desk Lamp",
+		award = 0,
+		time = 2,
+		id = 2117,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item17",
+		desc = "Despite its compact size, this lamp casts a soft, steady glow upon the table.",
+		model = {
+			"fbx/litmap_03/night/pre_db_desklamp07_on"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/night/pre_db_desklamp07_on/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2118] = {
+		text = "dorm3d_naximofu_bed",
+		name = "High-Tech Light",
+		award = 0,
+		time = 2,
+		id = 2118,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item18",
+		desc = "A light with a pendant-like design. It illuminates every inch of the space below.",
+		model = {
+			"fbx/litmap_03/night/pre_db_chandelier28_on"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/night/pre_db_chandelier28_on/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2119] = {
+		text = "dorm3d_naximofu_chair",
+		name = "Low Cabinet",
+		award = 0,
+		time = 0,
+		id = 2119,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item19",
+		desc = "A low-profile storage cabinet that quietly stores everyday items.",
+		model = {
+			"fbx/litmap_03/day/pre_db_cupboard40"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_cupboard40/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2120] = {
+		text = "dorm3d_naximofu_chair",
+		name = "Elevator Button",
+		award = 0,
+		time = 0,
+		id = 2120,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item20",
+		desc = "A button sits on the side of the room, practically begging you to press it and see what happens.",
+		model = {
+			"fbx/litmap_03/day/pre_db_naximofu_button01"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_naximofu_button01/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2121] = {
+		text = "dorm3d_naximofu_chair",
+		name = "Table & Stools",
+		award = 0,
+		time = 0,
+		id = 2121,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item21",
+		desc = "A round table flanked by two stools. It's the perfect height for a relaxing afternoon break.",
+		model = {
+			"fbx/litmap_03/day/pre_db_naximofu_table02_01"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_naximofu_table02_01/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2122] = {
+		text = "dorm3d_naximofu_bed",
+		name = "Rectangular Speaker",
+		award = 0,
+		time = 0,
+		id = 2122,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item22",
+		desc = "This wireless speaker lets you play your favorite tunes any time you want.",
+		model = {
+			"fbx/litmap_03/day/pre_db_electrical21_01"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_electrical21_01/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2123] = {
+		text = "dorm3d_naximofu_chair",
+		name = "Potted Plant 2",
+		award = 0,
+		time = 0,
+		id = 2123,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item23",
+		desc = "A decorative plant displayed in a classic ceramic pot. Its verdant leaves naturally add a touch of life to the room.",
+		model = {
+			"fbx/litmap_03/day/pre_db_flowerpot26"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_flowerpot26/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2124] = {
+		text = "dorm3d_naximofu_bed",
+		name = "Record Player",
+		award = 0,
+		time = 0,
+		id = 2124,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item24",
+		desc = "An avant-garde standing record player that combines modern aesthetics with nostalgic sounds.",
+		model = {
+			"fbx/litmap_03/day/pre_db_decoration31"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_decoration31/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2125] = {
+		text = "dorm3d_naximofu_chair",
+		name = "Fluffy Cat Bed",
+		award = 0,
+		time = 0,
+		id = 2125,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item25",
+		desc = "A cat bed with a cushion laid inside. Once you're in there, you'll never want to leave.",
+		model = {
+			"fbx/litmap_03/day/pre_db_bed06_1"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_bed06_1/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2601] = {
+		text = "dorm3d_collection_carwash",
+		name = "HDTV",
+		award = 0,
+		time = 0,
+		id = 2601,
+		room_id = 26,
+		icon = "3Ddrom_carwash_item1",
+		desc = "A flat-screen, high-definition television. Its crisp image enhances immersion, while the slim design saves space.",
+		model = {
+			"fbx/litmap_05/pre_db_appliances09"
+		},
+		unlock = {},
+		vfx_prefab = {
+			"fbx/litmap_05/pre_db_appliances09/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2602] = {
+		text = "dorm3d_collection_carwash",
+		name = "Street Skateboard",
+		award = 0,
+		time = 0,
+		id = 2602,
+		room_id = 26,
+		icon = "3Ddrom_carwash_item2",
+		desc = "A custom street skateboard that boasts a stable ride and smooth carving. Perfect for transportation and recreation!",
+		model = {
+			"fbx/litmap_05/pre_db_sportinggoods08_02"
+		},
+		unlock = {},
+		vfx_prefab = {
+			"fbx/litmap_05/pre_db_sportinggoods08_02/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2603] = {
+		text = "dorm3d_collection_carwash",
+		name = "Espresso Machine",
+		award = 0,
+		time = 0,
+		id = 2603,
+		room_id = 26,
+		icon = "3Ddrom_carwash_item3",
+		desc = "A coffee machine that can brew at lightning speed and pour two cups at once, for the caffeine addict on a tight schedule.",
+		model = {
+			"fbx/litmap_05/pre_db_electrical23_group_01"
+		},
+		unlock = {},
+		vfx_prefab = {
+			"fbx/litmap_05/pre_db_electrical23_group_01/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2604] = {
+		text = "dorm3d_collection_carwash",
+		name = "Distinguished Trophies",
+		award = 0,
+		time = 0,
+		id = 2604,
+		room_id = 26,
+		icon = "3Ddrom_carwash_item4",
+		desc = "Trophies won in racing tournaments, proof of one's skill on the track.",
+		model = {
+			"fbx/litmap_05/pre_db_decoration33c_02"
+		},
+		unlock = {},
+		vfx_prefab = {
+			"fbx/litmap_05/pre_db_decoration33c_02/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2605] = {
+		text = "dorm3d_collection_carwash",
+		name = "Wine Set",
+		award = 0,
+		time = 0,
+		id = 2605,
+		room_id = 26,
+		icon = "3Ddrom_carwash_item5",
+		desc = "The perfect wine set, ready for an impromptu taste-test at any time.",
+		model = {
+			"fbx/litmap_05/pre_db_tableware56_group_1"
+		},
+		unlock = {},
+		vfx_prefab = {
+			"fbx/litmap_05/pre_db_tableware56_group_1/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2606] = {
+		text = "dorm3d_collection_carwash",
+		name = "Championship Trophy",
+		award = 0,
+		time = 0,
+		id = 2606,
+		room_id = 26,
+		icon = "3Ddrom_carwash_item6",
+		desc = "A golden championship trophy awarded only to elite drivers who have taken victory in the highest caliber of races.",
+		model = {
+			"fbx/litmap_05/pre_db_decoration34"
+		},
+		unlock = {},
+		vfx_prefab = {
+			"fbx/litmap_05/pre_db_decoration34/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2607] = {
+		text = "dorm3d_collection_carwash",
+		name = "Reaction Instructor",
+		award = 0,
+		time = 0,
+		id = 2607,
+		room_id = 26,
+		icon = "3Ddrom_carwash_item7",
+		desc = "A game that tests the player's reaction time, efficiently training hand-eye coordination.",
+		model = {
+			"no_bake/pre_db_entertainment01"
+		},
+		unlock = {},
+		vfx_prefab = {
+			"no_bake/pre_db_entertainment01/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2608] = {
+		text = "dorm3d_collection_carwash",
+		name = "Racing Simulator",
+		award = 0,
+		time = 0,
+		id = 2608,
+		room_id = 26,
+		icon = "3Ddrom_carwash_item8",
+		desc = "A racing simulator that offers a realistic driving experience. It's perfect for training off the track.",
+		model = {
+			"no_bake/pre_db_cw_racingsim01"
+		},
+		unlock = {},
+		vfx_prefab = {
+			"no_bake/pre_db_cw_racingsim01/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2609] = {
+		text = "dorm3d_collection_carwash",
+		name = "Professional Racer Suit",
+		award = 0,
+		time = 0,
+		id = 2609,
+		room_id = 26,
+		icon = "3Ddrom_carwash_item9",
+		desc = "A professional racing suit essential for any serious driver. Made from flame-resistant materials, it is built to withstand intense friction and heavy impacts.",
+		model = {
+			"fbx/litmap_05/pre_db_cloth12_1"
+		},
+		unlock = {},
+		vfx_prefab = {
+			"fbx/litmap_05/pre_db_cloth12_1/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2610] = {
+		text = "dorm3d_collection_carwash",
+		name = "Car Cleaning Set",
+		award = 0,
+		time = 0,
+		id = 2610,
+		room_id = 26,
+		icon = "3Ddrom_carwash_item10",
+		desc = "Commonly used cleaning tools for racing pit stops. They're easy to use and deliver first-rate results.",
+		model = {
+			"fbx/litmap_05/pre_db_electrical16"
+		},
+		unlock = {},
+		vfx_prefab = {
+			"fbx/litmap_05/pre_db_electrical16/vfx_wupintishi01"
 		}
 	}
 end)()

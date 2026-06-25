@@ -1183,6 +1183,10 @@ function var0_0.setSurveyState(arg0_116, arg1_116)
 
 	if var0_116 and not var0_116:isEnd() then
 		arg0_116.surveyState = arg1_116
+
+		if arg1_116 > 0 then
+			arg0_116:sendNotification(GAME.SURVEY_DONE, var0_116)
+		end
 	end
 end
 

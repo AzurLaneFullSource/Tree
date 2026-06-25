@@ -39,16 +39,13 @@ function var0_0.InitHint(arg0_7)
 		if arg0_7.time <= 0 then
 			arg0_7.time = var0_0.TIP_WAIT_TIME
 
-			setActive(arg0_7.tipTF, false)
-			setActive(arg0_7.clickTF, false)
-		else
-			arg0_7.time = arg0_7.time - 0.1
-
 			if isActive(arg0_7.tipTF) == false then
 				setActive(arg0_7.tipTF, true)
 				setActive(arg0_7.clickTF, true)
 				arg0_7:FlushHint()
 			end
+		else
+			arg0_7.time = arg0_7.time - 0.1
 		end
 	end, 0.1, -1)
 end

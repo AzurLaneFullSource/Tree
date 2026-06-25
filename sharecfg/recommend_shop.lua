@@ -56,7 +56,7 @@ pg.base.recommend_shop = {}
 		}
 	}
 	pg.base.recommend_shop[5] = {
-		shop_id = 95,
+		shop_id = 168,
 		shop_type = 1,
 		id = 5,
 		pic = "",
@@ -64,9 +64,9 @@ pg.base.recommend_shop = {}
 		time = {
 			{
 				{
-					2025,
-					7,
-					17
+					2026,
+					6,
+					25
 				},
 				{
 					0,
@@ -76,9 +76,9 @@ pg.base.recommend_shop = {}
 			},
 			{
 				{
-					2025,
-					8,
-					13
+					2026,
+					7,
+					8
 				},
 				{
 					23,

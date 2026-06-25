@@ -322,7 +322,7 @@ function var0_0.SetStockingStatus(arg0_28, arg1_28)
 	warning(">>>>>>>>>>> enter stocking mode <<<<<<<<<<", arg1_28)
 	seriesAsync({
 		function(arg0_29)
-			arg0_28:Func("SetIKState", false, arg0_29, {
+			arg0_28:Emit(RoomIKSystem.SET_IK_STATE, false, arg0_29, {
 				ignoreResetExtraItem = true
 			})
 		end,
@@ -372,8 +372,8 @@ function var0_0.ExitStockingStatus(arg0_33)
 			arg0_33:Func("ResetSceneItemAnimators")
 			arg0_33:Func("ResetTempHideSceneItems", arg0_33.ladyEnv)
 			arg0_33:Func("RevertCameraOrbit")
-			arg0_33:Func("SwitchIKConfig", arg0_33.ladyEnv, arg0_33.cacheIkStatus)
-			arg0_33:Func("SetIKState", true)
+			arg0_33:Emit(RoomIKSystem.SET_IK_CONFIG, arg0_33.ladyEnv, arg0_33.cacheIkStatus)
+			arg0_33:Emit(RoomIKSystem.SET_IK_STATE, true)
 			arg0_35()
 		end
 	})

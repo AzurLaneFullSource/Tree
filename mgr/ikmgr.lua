@@ -39,7 +39,7 @@ function var0_0.UnregisterEnv(arg0_7)
 	arg0_7.onIKLayerDrag = nil
 	arg0_7.onIKLayerAction = nil
 
-	arg0_7:ResetActiveIKs()
+	arg0_7:ExitIKStatus()
 
 	arg0_7.ladyIKRoot = nil
 	arg0_7.ladyBoneMaps = nil
@@ -108,9 +108,11 @@ function var0_0.SetIKStatus(arg0_13, arg1_13)
 end
 
 function var0_0.ExitIKStatus(arg0_18)
-	arg0_18:ResetActiveIKs()
+	arg0_18:ResetAllIKLayers()
 
 	arg0_18.readyIKLayers = nil
+	arg0_18.ikHandler = nil
+	arg0_18.ikRevertHandler = nil
 
 	table.clear(arg0_18.activeIKLayers)
 	table.clear(arg0_18.cacheIKInfos)
@@ -407,109 +409,171 @@ function var0_0.ResetIK(arg0_32, arg1_32)
 	end
 end
 
-function var0_0.ResetActiveIKs(arg0_35)
-	table.insertto(arg0_35.activeIKLayers, _.keys(arg0_35.holdingStatus))
-	table.clear(arg0_35.holdingStatus)
-	_.each(arg0_35.activeIKLayers, function(arg0_36)
+function var0_0.ResetIKLayers(arg0_35, arg1_35)
+	local var0_35 = {}
+
+	_.each(arg1_35 or {}, function(arg0_36)
+		if not arg0_36 or var0_35[arg0_36] then
+			return
+		end
+
+		var0_35[arg0_36] = true
+
 		local var0_36 = arg0_36:GetControllerPath()
-		local var1_36 = arg0_35.ladyIKRoot:Find(var0_36):GetComponent(typeof(RootMotion.FinalIK.IKExecutionOrder))
+		local var1_36 = arg0_35.ladyIKRoot and arg0_35.ladyIKRoot:Find(var0_36)
 
-		setActive(var1_36, false)
+		if var1_36 and not IsNil(var1_36) then
+			setActive(var1_36, false)
+		end
 
-		local var2_36 = arg0_35.cacheIKInfos[arg0_36].solvers
-		local var3_36 = arg0_35.cacheIKInfos[arg0_36].weights
+		local var2_36 = arg0_35.cacheIKInfos[arg0_36]
 
-		table.Foreach(var2_36, function(arg0_37, arg1_37)
-			arg1_37.IKPositionWeight = var3_36[arg0_37]
-		end)
+		if var2_36 then
+			local var3_36 = var2_36.solvers
+			local var4_36 = var2_36.weights
+
+			table.Foreach(var3_36, function(arg0_37, arg1_37)
+				arg1_37.IKPositionWeight = var4_36[arg0_37]
+			end)
+		end
 	end)
-	table.clear(arg0_35.activeIKLayers)
+end
 
-	if arg0_35.moveTimer then
-		arg0_35.moveTimer:Stop()
+function var0_0.ResetAllIKLayers(arg0_38)
+	local var0_38 = {}
 
-		arg0_35.moveTimer = nil
+	local function var1_38(arg0_39)
+		if not arg0_39 then
+			return
+		end
+
+		table.insert(var0_38, arg0_39)
+	end
+
+	_.each(arg0_38.readyIKLayers or {}, var1_38)
+	_.each(arg0_38.activeIKLayers or {}, var1_38)
+	_.each(_.keys(arg0_38.holdingStatus), var1_38)
+
+	if arg0_38.ikHandler then
+		var1_38(arg0_38.ikHandler.ikData)
+	end
+
+	arg0_38:ResetIKLayers(var0_38)
+	table.clear(arg0_38.activeIKLayers)
+	table.clear(arg0_38.holdingStatus)
+
+	arg0_38.ikHandler = nil
+	arg0_38.ikRevertHandler = nil
+
+	if arg0_38.moveTimer then
+		arg0_38.moveTimer:Stop()
+
+		arg0_38.moveTimer = nil
 	end
 end
 
-function var0_0.PlayIKAction(arg0_38, arg1_38)
-	warning("Trigger IK", arg1_38.ikData:GetControllerPath())
+function var0_0.ResetActiveIKs(arg0_40)
+	table.insertto(arg0_40.activeIKLayers, _.keys(arg0_40.holdingStatus))
+	table.clear(arg0_40.holdingStatus)
+	arg0_40:ResetIKLayers(arg0_40.activeIKLayers)
+	table.clear(arg0_40.activeIKLayers)
+
+	if arg0_40.moveTimer then
+		arg0_40.moveTimer:Stop()
+
+		arg0_40.moveTimer = nil
+	end
+end
+
+function var0_0.PlayIKAction(arg0_41, arg1_41)
+	warning("Trigger IK", arg1_41.ikData:GetControllerPath())
 	seriesAsync({
-		function(arg0_39)
-			table.insertto(arg0_38.activeIKLayers, _.keys(arg0_38.holdingStatus))
-			table.clear(arg0_38.holdingStatus)
-			arg0_38:PlayIKRevert(arg1_38.ikData:GetActionRevertTime(), arg0_39)
+		function(arg0_42)
+			table.insertto(arg0_41.activeIKLayers, _.keys(arg0_41.holdingStatus))
+			table.clear(arg0_41.holdingStatus)
+			arg0_41:PlayIKRevert(arg1_41.ikData:GetActionRevertTime(), arg0_42)
 		end,
-		function(arg0_40)
-			existCall(arg0_38.onIKLayerAction, arg1_38)
+		function(arg0_43)
+			existCall(arg0_41.onIKLayerAction, arg1_41)
 		end
 	})
 end
 
-function var0_0.PlayIKMove(arg0_41, arg1_41, arg2_41, arg3_41, arg4_41, arg5_41, arg6_41)
-	local var0_41 = _.detect(arg0_41.readyIKLayers, function(arg0_42)
-		return arg0_42:GetTriggerName() == arg2_41
+function var0_0.PlayIKMove(arg0_44, arg1_44, arg2_44, arg3_44, arg4_44, arg5_44, arg6_44)
+	if arg0_44.moveTimer then
+		arg0_44.moveTimer:Stop()
+
+		arg0_44.moveTimer = nil
+	end
+
+	arg0_44.ikRevertHandler = nil
+
+	local var0_44 = _.detect(arg0_44.readyIKLayers, function(arg0_45)
+		return arg0_45:GetTriggerName() == arg2_44
 	end)
 
-	if not var0_41 then
+	if not var0_44 then
+		existCall(arg6_44)
+
 		return
 	end
 
-	warning("PLAY IKMOVE", var0_41:GetControllerPath())
-	arg0_41:OnDragBegin(arg2_41, arg1_41, true)
+	warning("PLAY IKMOVE", var0_44:GetControllerPath())
+	arg0_44:OnDragBegin(arg2_44, arg1_44, true)
 
-	if not arg0_41.ikHandler then
+	if not arg0_44.ikHandler then
+		existCall(arg6_44)
+
 		return
 	end
 
-	local var1_41 = Time.time + arg5_41
-	local var2_41 = arg1_41
-	local var3_41 = arg0_41.ikHandler.originScreenPosition + arg0_41.ikHandler.rect:NormalizedToPoint(arg3_41) * arg4_41
+	local var1_44 = Time.time + arg5_44
+	local var2_44 = arg1_44
+	local var3_44 = arg0_44.ikHandler.originScreenPosition + arg0_44.ikHandler.rect:NormalizedToPoint(arg3_44) * arg4_44
 
-	local function var4_41()
-		if not arg0_41.ikHandler or Time.time > var1_41 then
-			arg0_41:ReleaseDrag()
-			arg0_41.moveTimer:Stop()
+	local function var4_44()
+		if not arg0_44.ikHandler or Time.time > var1_44 then
+			arg0_44:ReleaseDrag()
 
-			arg0_41.moveTimer = nil
+			if arg0_44.moveTimer then
+				arg0_44.moveTimer:Stop()
 
-			existCall(arg6_41)
+				arg0_44.moveTimer = nil
+			end
+
+			existCall(arg6_44)
 
 			return
 		end
 
-		local var0_43 = math.max(0, var1_41 - Time.time) / arg5_41
-		local var1_43 = Vector2.Lerp(var3_41, var2_41, var0_43)
-		local var2_43 = pg.UIMgr.GetInstance().uiCamera:Find("Canvas").rect
-		local var3_43 = Vector2.New(var1_43.x / var2_43.width * Screen.width, var1_43.y / var2_43.height * Screen.height)
+		local var0_46 = math.max(0, var1_44 - Time.time) / arg5_44
+		local var1_46 = Vector2.Lerp(var3_44, var2_44, var0_46)
+		local var2_46 = pg.UIMgr.GetInstance().uiCamera:Find("Canvas").rect
+		local var3_46 = Vector2.New(var1_46.x / var2_46.width * Screen.width, var1_46.y / var2_46.height * Screen.height)
 
-		arg0_41:HandleBodyDrag(var3_43)
+		arg0_44:HandleBodyDrag(var3_46)
 	end
 
-	if arg0_41.moveTimer then
-		arg0_41.moveTimer:Stop()
-	end
+	arg0_44.moveTimer = FrameTimer.New(var4_44, 1, -1)
 
-	arg0_41.moveTimer = FrameTimer.New(var4_41, 1, -1)
-
-	arg0_41.moveTimer:Start()
-	var4_41()
+	arg0_44.moveTimer:Start()
+	var4_44()
 end
 
-function var0_0.TransformMesh(arg0_44)
-	local var0_44 = arg0_44.sharedMesh
-	local var1_44 = {}
-	local var2_44 = arg0_44.transform:TransformPoint(var0_44.vertices[0])
-	local var3_44 = arg0_44.transform:TransformPoint(var0_44.vertices[1])
-	local var4_44 = arg0_44.transform:TransformPoint(var0_44.vertices[2])
+function var0_0.TransformMesh(arg0_47)
+	local var0_47 = arg0_47.sharedMesh
+	local var1_47 = {}
+	local var2_47 = arg0_47.transform:TransformPoint(var0_47.vertices[0])
+	local var3_47 = arg0_47.transform:TransformPoint(var0_47.vertices[1])
+	local var4_47 = arg0_47.transform:TransformPoint(var0_47.vertices[2])
 
-	var1_44.horizontal = var3_44 - var2_44
-	var1_44.verticle = var4_44 - var2_44
-	var1_44.origin = var2_44
+	var1_47.horizontal = var3_47 - var2_47
+	var1_47.verticle = var4_47 - var2_47
+	var1_47.origin = var2_47
 
-	return var1_44
+	return var1_47
 end
 
-function var0_0.GetPostionByRatio(arg0_45, arg1_45)
-	return arg0_45.horizontal * arg1_45.x + arg0_45.verticle * arg1_45.y + arg0_45.origin
+function var0_0.GetPostionByRatio(arg0_48, arg1_48)
+	return arg0_48.horizontal * arg1_48.x + arg0_48.verticle * arg1_48.y + arg0_48.origin
 end

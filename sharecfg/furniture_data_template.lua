@@ -195,6 +195,7 @@ pg.furniture_data_template.all = {
 	336,
 	337,
 	338,
+	339,
 	100002,
 	100003,
 	100004,
@@ -3548,7 +3549,24 @@ pg.furniture_data_template.all = {
 	338113,
 	338114,
 	338115,
-	338116
+	338116,
+	339001,
+	339002,
+	339101,
+	339102,
+	339103,
+	339104,
+	339105,
+	339106,
+	339107,
+	339108,
+	339109,
+	339110,
+	339111,
+	339112,
+	339113,
+	339114,
+	339115
 }
 pg.furniture_data_template.get_id_list_by_themeId = {
 	[0] = {
@@ -3741,6 +3759,7 @@ pg.furniture_data_template.get_id_list_by_themeId = {
 		336,
 		337,
 		338,
+		339,
 		100002,
 		100003,
 		100004,
@@ -7345,6 +7364,25 @@ pg.furniture_data_template.get_id_list_by_themeId = {
 		338114,
 		338115,
 		338116
+	},
+	[139] = {
+		339001,
+		339002,
+		339101,
+		339102,
+		339103,
+		339104,
+		339105,
+		339106,
+		339107,
+		339108,
+		339109,
+		339110,
+		339111,
+		339112,
+		339113,
+		339114,
+		339115
 	}
 }
 pg.furniture_data_template.get_id_list_by_tag = {
@@ -9611,7 +9649,21 @@ pg.furniture_data_template.get_id_list_by_tag = {
 		338112,
 		338113,
 		338114,
-		338115
+		338115,
+		339101,
+		339102,
+		339103,
+		339104,
+		339105,
+		339106,
+		339107,
+		339108,
+		339109,
+		339110,
+		339111,
+		339112,
+		339113,
+		339114
 	},
 	{
 		1108,
@@ -9901,7 +9953,8 @@ pg.furniture_data_template.get_id_list_by_tag = {
 		335002,
 		336002,
 		337002,
-		338002
+		338002,
+		339002
 	},
 	{
 		1001,
@@ -10027,7 +10080,8 @@ pg.furniture_data_template.get_id_list_by_tag = {
 		335001,
 		336001,
 		337001,
-		338001
+		338001,
+		339001
 	},
 	{
 		1301,
@@ -10829,7 +10883,8 @@ pg.furniture_data_template.get_id_list_by_tag = {
 		334123,
 		335119,
 		336115,
-		338116
+		338116,
+		339115
 	},
 	{
 		106,
@@ -10907,7 +10962,8 @@ pg.furniture_data_template.get_id_list_by_tag = {
 		332,
 		333,
 		335,
-		338
+		338,
+		339
 	}
 }
 pg.furniture_data_template.get_id_list_by_type = {
@@ -11036,7 +11092,8 @@ pg.furniture_data_template.get_id_list_by_type = {
 		335002,
 		336002,
 		337002,
-		338002
+		338002,
+		339002
 	},
 	{
 		120,
@@ -13300,7 +13357,21 @@ pg.furniture_data_template.get_id_list_by_type = {
 		338111,
 		338113,
 		338115,
-		338116
+		338116,
+		339101,
+		339102,
+		339104,
+		339105,
+		339106,
+		339107,
+		339108,
+		339109,
+		339110,
+		339111,
+		339112,
+		339113,
+		339114,
+		339115
 	},
 	{
 		1108,
@@ -13590,7 +13661,8 @@ pg.furniture_data_template.get_id_list_by_type = {
 		335001,
 		336001,
 		337001,
-		338001
+		338001,
+		339001
 	},
 	{
 		1101,
@@ -13754,7 +13826,8 @@ pg.furniture_data_template.get_id_list_by_type = {
 		331110,
 		333106,
 		334104,
-		335103
+		335103,
+		339103
 	},
 	{
 		1301,
@@ -14300,6 +14373,7 @@ pg.furniture_data_template.get_id_list_by_type = {
 		335,
 		336,
 		338,
+		339,
 		100002,
 		100004,
 		100005,
@@ -24057,6 +24131,50 @@ end)()
 		},
 		interAction_group = {}
 	}
+	pg.base.furniture_data_template[339] = {
+		effect = "",
+		name = "Miniature Surprising Circus",
+		gain_by = "Miracle by Midnight",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 1,
+		count = 1,
+		describe = "No stage is too small for our dazzling performers! Let the show begin! Awarded to Commanders who participated in the \"Miracle by Midnight\" event.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 0,
+		icon = "maxituanxunzhangicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 5,
+		tag = 8,
+		comfortable = 0,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 339,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		spine = {
+			{
+				"maxituanxunzhang",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
 	pg.base.furniture_data_template[100002] = {
 		can_rotate = 0,
 		name = "Air Pump of Friendship",
@@ -24774,6 +24892,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[100010] = {
 		effect = "",
 		name = "Soothing Cat Paw",
@@ -24824,8 +24944,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[100011] = {
 		effect = "",
 		name = "Weather Projector (Winter)",
@@ -29150,7 +29268,7 @@ end)()
 	}
 	pg.base.furniture_data_template[100080] = {
 		gain_by = "",
-		name = "童趣摇篮",
+		name = "Child's Soothing Cradle",
 		count = 1,
 		type = 7,
 		dir = 0,
@@ -29165,7 +29283,7 @@ end)()
 		icon = "yaolingchuangicon",
 		deblocking = 1,
 		level = 1,
-		describe = "温馨童趣的梦境世界，限时开启~",
+		describe = "Step into a heartwarming and childlike world of wonder.",
 		rarity = 4,
 		can_rotate = 0,
 		tag = 6,
@@ -29368,7 +29486,7 @@ end)()
 	}
 	pg.base.furniture_data_template[100086] = {
 		gain_by = "",
-		name = "惊喜独轮车",
+		name = "Fantastic Unicycle",
 		count = 1,
 		type = 11,
 		dir = 0,
@@ -29383,7 +29501,7 @@ end)()
 		icon = "caiqiuduluncheicon",
 		deblocking = 1,
 		level = 1,
-		describe = "表演抛球也是惊喜的一部分~",
+		describe = "What's more fantastic than juggling on a unicycle?",
 		rarity = 4,
 		can_rotate = 0,
 		tag = 6,
@@ -31115,6 +31233,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[1304] = {
 		effect = "",
 		name = "Blackboard",
@@ -31153,8 +31273,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[1305] = {
 		effect = "",
 		name = "Closed Door",
@@ -35253,6 +35371,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[7101] = {
 		effect = "",
 		name = "Squishy Mat",
@@ -35291,8 +35411,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[7102] = {
 		effect = "",
 		name = "Beach Mat",
@@ -39730,6 +39848,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[11120] = {
 		effect = "",
 		name = "White Fence",
@@ -39768,8 +39888,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[11121] = {
 		effect = "",
 		name = "Cup Cake",
@@ -44077,6 +44195,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[16001] = {
 		effect = "",
 		name = "Christmas Flooring",
@@ -44112,8 +44232,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[16002] = {
 		effect = "",
 		name = "Christmas Wallpaper",
@@ -49001,6 +49119,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[19111] = {
 		effect = "",
 		name = "Elevated Passageway",
@@ -49053,8 +49173,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[19112] = {
 		effect = "",
 		name = "Good Luck Bonsai",
@@ -53647,6 +53765,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[23107] = {
 		effect = "",
 		name = "Potted Sunflowers",
@@ -53685,8 +53805,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[23108] = {
 		effect = "",
 		name = "Castle Slide",
@@ -58549,6 +58667,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[28116] = {
 		effect = "",
 		name = "Forest Banner",
@@ -58607,8 +58727,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[28117] = {
 		effect = "",
 		name = "Stone Flowerbed",
@@ -63349,6 +63467,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[33101] = {
 		effect = "",
 		name = "Tatami Tile",
@@ -63387,8 +63507,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[33102] = {
 		effect = "",
 		name = "Chair w/ Folding Screen",
@@ -67854,6 +67972,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[38107] = {
 		effect = "",
 		name = "Living Room Carpet",
@@ -67892,8 +68012,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[38108] = {
 		effect = "",
 		name = "Chocoblock Tiles",
@@ -72167,6 +72285,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[41101] = {
 		effect = "",
 		name = "Bulletin Board",
@@ -72205,8 +72325,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[41102] = {
 		effect = "",
 		name = "Lime Teacup",
@@ -76782,6 +76900,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[44118] = {
 		effect = "",
 		name = "Rainy Bench",
@@ -76833,8 +76953,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[44119] = {
 		effect = "",
 		name = "Manjuu with Big Leaf",
@@ -81021,6 +81139,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[47105] = {
 		effect = "",
 		name = "Baseball Carpet",
@@ -81059,8 +81179,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[47106] = {
 		effect = "",
 		name = "Home Plate Carpet",
@@ -85258,6 +85376,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[50109] = {
 		effect = "",
 		name = "Directional Sign",
@@ -85296,8 +85416,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[50110] = {
 		effect = "",
 		name = "A Number of Signs",
@@ -89739,6 +89857,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[55114] = {
 		effect = "",
 		name = "Stuffed Ankimo",
@@ -89777,8 +89897,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[55115] = {
 		effect = "",
 		name = "Hologamer Chair",
@@ -94060,6 +94178,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[59108] = {
 		effect = "",
 		name = "Dreamy Balloons",
@@ -94098,8 +94218,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[59109] = {
 		effect = "",
 		name = "Aeroplane Chess",
@@ -98459,6 +98577,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[63104] = {
 		effect = "",
 		name = "Pizza Cake",
@@ -98497,8 +98617,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[63105] = {
 		effect = "",
 		name = "Pizzeria Fence",
@@ -102939,6 +103057,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[69112] = {
 		effect = "",
 		name = "Model Skeleton",
@@ -102977,8 +103097,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[69113] = {
 		effect = "",
 		name = "Infirmary Reception",
@@ -107628,6 +107746,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[73103] = {
 		effect = "",
 		name = "Manjuu Grandmaster",
@@ -107680,8 +107800,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[73104] = {
 		effect = "",
 		name = "Cozy Christmas Telescope",
@@ -111968,6 +112086,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[77102] = {
 		effect = "",
 		name = "Wonderland Express",
@@ -112020,8 +112140,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[77103] = {
 		effect = "",
 		name = "Seesaw",
@@ -116351,6 +116469,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[81117] = {
 		effect = "",
 		name = "Classroom Globe",
@@ -116389,8 +116509,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[81118] = {
 		effect = "",
 		name = "Classroom Bookcase",
@@ -120858,6 +120976,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[84189] = {
 		gain_by = "",
 		name = "Full Power Gridknight Manjuu-Suit",
@@ -120944,8 +121064,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[84301] = {
 		effect = "",
 		name = "\"Epic Battle\" Painting",
@@ -125059,6 +125177,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[89002] = {
 		icon = "qiangbicn2icon",
 		name = "Empery Chic Wallpaper",
@@ -125094,8 +125214,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[89101] = {
 		effect = "",
 		name = "Empery Chic Tea Table",
@@ -129165,6 +129283,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[92307] = {
 		effect = "",
 		name = "Black-and-White Poster",
@@ -129203,8 +129323,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[92308] = {
 		effect = "",
 		name = "Fast Food Entry Door",
@@ -133424,6 +133542,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[96104] = {
 		effect = "",
 		name = "Manjuu Lounge Chair 2",
@@ -133475,8 +133595,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[96105] = {
 		effect = "",
 		name = "Beach Cabin Tea Table",
@@ -137867,6 +137985,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[99117] = {
 		effect = "",
 		name = "Tatami-style Bed",
@@ -137938,8 +138058,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[99120] = {
 		effect = "",
 		name = "Bathhouse Clothing Rack",
@@ -142714,6 +142832,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[302129] = {
 		effect = "",
 		name = "Palais Chef's Corner",
@@ -142758,8 +142878,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[302130] = {
 		gain_by = "",
 		name = "宴会桌(活动场景用家具)",
@@ -147156,6 +147274,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[306104] = {
 		effect = "",
 		name = "Pink Planet Bunny Statue",
@@ -147194,8 +147314,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[306105] = {
 		effect = "",
 		name = "Blue Planet Bunny Statue",
@@ -151915,6 +152033,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[311001] = {
 		icon = "dibanyoicon",
 		name = "Cruise Ship Flooring",
@@ -151950,8 +152070,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[311002] = {
 		icon = "qiangbiyoicon",
 		name = "Cruise Ship Wallpaper",
@@ -156795,6 +156913,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[316114] = {
 		gain_by = "",
 		name = "Princessy Control Console",
@@ -156864,8 +156984,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[316115] = {
 		effect = "",
 		name = "Peke Sofa",
@@ -161508,6 +161626,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[320303] = {
 		effect = "",
 		name = "Med Station Window 2",
@@ -161546,8 +161666,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[320304] = {
 		effect = "",
 		name = "Med Station Window 3",
@@ -166101,6 +166219,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[326102] = {
 		effect = "",
 		name = "Material Box",
@@ -166139,8 +166259,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[326103] = {
 		effect = "",
 		name = "Forge",
@@ -170702,6 +170820,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[331107] = {
 		effect = "",
 		name = "Airship Potted Plant",
@@ -170740,8 +170860,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[331108] = {
 		effect = "",
 		name = "Airship Bunk Bed",
@@ -175508,6 +175626,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[336107] = {
 		effect = "",
 		name = "Command Center Monitors",
@@ -175556,8 +175676,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[336108] = {
 		effect = "",
 		name = "Hologramjuu",
@@ -177622,6 +177740,829 @@ end)()
 				"chuzucheshh",
 				"normal"
 			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[339001] = {
+		icon = "dibanmxticon",
+		name = "Circus Flooring",
+		gain_by = "",
+		type = 4,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "mxt/dibanmxt",
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 139,
+		size = "",
+		spine_extra = "",
+		level = 1,
+		describe = "Come one, come all! Laughs and thrills alike await you at the Surprising Circus!",
+		rarity = 4,
+		advice = 0,
+		tag = 4,
+		spine_action_replace = "",
+		belong = 0,
+		deblocking = 1,
+		canputon = 0,
+		comfortable = 4,
+		id = 339001,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[339002] = {
+		icon = "qiangbimxticon",
+		name = "Circus Wallpaper",
+		gain_by = "",
+		type = 1,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "mxt/qiangbimxt",
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 139,
+		size = "",
+		spine_extra = "",
+		level = 5,
+		describe = "Come one, come all! Laughs and thrills alike await you at the Surprising Circus!",
+		rarity = 4,
+		advice = 0,
+		tag = 3,
+		spine_action_replace = "",
+		belong = 0,
+		deblocking = 1,
+		canputon = 0,
+		comfortable = 4,
+		id = 339002,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[339101] = {
+		effect = "",
+		name = "Circus Target Board",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Hit the star to win a prize!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 139,
+		icon = "bazimxticon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 139,
+		canputon = 0,
+		id = 339101,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"bazimxt",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[339102] = {
+		effect = "",
+		name = "Circus Backdrop",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "mxt/beijingbanmxt",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "A brightly colored backdrop board that brings the joy of the circus to any space.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 139,
+		icon = "beijingbanmxticon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 2,
+		canputon = 0,
+		id = 339102,
+		can_rotate = 0,
+		size = {
+			10,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[339103] = {
+		effect = "",
+		name = "Circus Round Rug",
+		gain_by = "",
+		type = 5,
+		dir = 0,
+		dorm_id = 0,
+		picture = "mxt/ditanmxt",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Roll out the rug! The main character is about to make an entrance!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 139,
+		icon = "ditanmxticon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 3,
+		canputon = 0,
+		id = 339103,
+		can_rotate = 0,
+		size = {
+			16,
+			16
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[339104] = {
+		effect = "",
+		name = "Manjuu Circus Performer",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "A professional circus performer who lives for the applause!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 139,
+		icon = "huangjipiqiuicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 339104,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"huangjipiqiumxt",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[339105] = {
+		effect = "",
+		name = "Circus Cannon",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Kaboom! Here you go, your popcorn's ready!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 139,
+		icon = "huopaomxticon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 339105,
+		can_rotate = 0,
+		size = {
+			4,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"huopaomxt",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[339106] = {
+		effect = "",
+		name = "Ring of Fire",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Are you brave enough to leap through the ring of fire?",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 139,
+		icon = "huoquanmxticon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 339106,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"huoquanmxt",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[339107] = {
+		effect = "",
+		name = "Magician's Stage Prop",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "What will come out next?",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 139,
+		icon = "moshumaomxticon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 339107,
+		can_rotate = 0,
+		size = {
+			2,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"moshumaomxt",
+				"normal",
+				{
+					"action1",
+					false,
+					{
+						"action2",
+						"action3"
+					}
+				}
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[339108] = {
+		effect = "",
+		name = "Manjuu-in-the-Box",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Peep peep! Did I scare you?",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 139,
+		icon = "xiaochouhemxticon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 339108,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"xiaochouhemxt",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[339109] = {
+		effect = "",
+		name = "Circus Booth",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "mxt/zhangpengmxt",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Interested in some snacks or souvenirs?",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 139,
+		icon = "zhangpengmxticon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 3,
+		canputon = 0,
+		id = 339109,
+		can_rotate = 0,
+		size = {
+			3,
+			8
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[339110] = {
+		effect = "",
+		name = "Circus Elephant Slide",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "mxt/zhezhixianghuatimxt",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "It toots every time someone slides down!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 139,
+		icon = "zhezhixianghuatimxticon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 3,
+		canputon = 0,
+		id = 339110,
+		can_rotate = 0,
+		size = {
+			5,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[339111] = {
+		effect = "",
+		name = "Circus Fence",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 2,
+		describe = "Ensures that no guest gets lost!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 139,
+		icon = "zhibanweilanmxticon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		tag = 1,
+		comfortable = 1,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 339111,
+		can_rotate = 0,
+		size = {
+			1,
+			6
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"zhibanweilanmxt",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[339112] = {
+		gain_by = "",
+		name = "Circus Tightrope",
+		count = 1,
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "",
+		comfortable = 3,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 139,
+		icon = "zougangsimxticon",
+		deblocking = 1,
+		level = 1,
+		describe = "A thrilling show that displays the pinnacle of balance and precision!",
+		rarity = 3,
+		can_rotate = 0,
+		tag = 1,
+		spine_action_replace = "",
+		belong = 1,
+		spine_extra = "",
+		canputon = 0,
+		id = 339112,
+		advice = 0,
+		size = {
+			8,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"zougangsimxtB",
+				"normal"
+			},
+			{
+				"zougangsimxtT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"walk2",
+						nil,
+						"walk"
+					}
+				},
+				{
+					nil,
+					1,
+					{
+						"walk1",
+						"walk",
+						false,
+						true
+					}
+				},
+				{
+					0
+				},
+				{
+					{
+						"walk2",
+						"walk3"
+					}
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			-1
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[339113] = {
+		effect = "",
+		name = "Playing Card Bench 1",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "mxt/zuoyi1mxt",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Looks like a flimsy piece of cardboard, but is surprisingly sturdy.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 139,
+		icon = "zuoyi1mxticon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 339113,
+		can_rotate = 0,
+		size = {
+			2,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-29.7,
+					62.5
+				},
+				{
+					-1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[339114] = {
+		effect = "",
+		name = "Playing Card Bench 2",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "mxt/zuoyi2mxt",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Looks like a flimsy piece of cardboard, but is surprisingly sturdy.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 139,
+		icon = "zuoyi2mxticon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 339114,
+		can_rotate = 0,
+		size = {
+			2,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-63.3,
+					66.9
+				},
+				{
+					-1,
+					1
+				},
+				"mxt/zuoyi2mxt_using"
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[339115] = {
+		gain_by = "",
+		name = "Circus Box of Surprises",
+		count = 1,
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "",
+		comfortable = 4,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 139,
+		icon = "jingxilihemxticon",
+		deblocking = 1,
+		level = 1,
+		describe = "So surprising that it might just blow your mind!",
+		rarity = 4,
+		can_rotate = 0,
+		tag = 7,
+		spine_action_replace = "",
+		belong = 1,
+		spine_extra = "",
+		canputon = 0,
+		id = 339115,
+		advice = 0,
+		size = {
+			4,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"jingxilihemxtB",
+				"normal"
+			},
+			{
+				"jingxilihemxtT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"tuozhuai2"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					0
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			1
 		},
 		interAction_group = {}
 	}

@@ -249,7 +249,7 @@ function var0_0.Show(arg0_24, arg1_24, arg2_24)
 		local var0_25 = var2_24 and Dorm3dShopUI.ShouldShowAllTip()
 		local var1_25 = var2_24 and Dorm3dFurniture.IsTimelimitShopTip()
 
-		setActive(arg0_24._dormBtn:Find("tip"), var0_25)
+		setActive(arg0_24._dormBtn:Find("tip"), var0_25 or getProxy(ApartmentProxy):HasGiftExpireSoon())
 		setActive(arg0_24._dormBtn:Find("tagFurniture"), var1_25)
 	end)()
 

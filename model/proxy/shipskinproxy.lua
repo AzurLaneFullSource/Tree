@@ -71,7 +71,8 @@ function var0_0.register(arg0_3)
 					range = {
 						iter5_4.start_time,
 						iter5_4.stop_time
-					}
+					},
+					order = iter5_4.sort_order
 				}
 
 				arg0_3:CheckConfigOverwrite(var0_4, iter5_4.id, arg0_3.forbiddenSkinOverwriteList[iter5_4.id])
@@ -116,6 +117,10 @@ function var0_0.AddConfigOverwrite(arg0_8, arg1_8, arg2_8)
 				return "stop"
 			end
 		})
+
+		if arg2_8.order >= 0 then
+			pg.shop_template[arg1_8].order = arg2_8.order
+		end
 	end
 end
 
@@ -123,6 +128,7 @@ function var0_0.RemoveConfigOverwrite(arg0_12, arg1_12)
 	if arg0_12.overwriteFlag[arg1_12] then
 		arg0_12.overwriteFlag[arg1_12] = nil
 		pg.shop_template[arg1_12].time = nil
+		pg.shop_template[arg1_12].order = nil
 	end
 end
 

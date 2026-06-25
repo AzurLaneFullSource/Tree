@@ -268,6 +268,7 @@ pg.memory_group.all = {
 	366,
 	367,
 	368,
+	369,
 	501,
 	502,
 	503,
@@ -7143,6 +7144,28 @@ end)()
 			5221
 		}
 	}
+	pg.base.memory_group[369] = {
+		ship_group = 0,
+		group_id = "",
+		type = 2,
+		link_event = 50651,
+		title = "Miracle by Midnight",
+		auto_unlock = "",
+		subtype = 2,
+		id = 369,
+		icon = "title_event",
+		memories = {
+			5241,
+			5242,
+			5243,
+			5244,
+			5245,
+			5246,
+			5247,
+			5248,
+			5249
+		}
+	}
 	pg.base.memory_group[501] = {
 		ship_group = 31201,
 		group_id = "",
@@ -7924,6 +7947,8 @@ end)()
 			10000
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_group[537] = {
 		ship_group = 20208,
 		subtype = 0,
@@ -7946,8 +7971,6 @@ end)()
 			10000
 		}
 	}
-end)()
-;(function()
 	pg.base.memory_group[538] = {
 		ship_group = 20220,
 		subtype = 0,

@@ -1118,7 +1118,8 @@ function var0_0.isShow(arg0_101)
 		end)
 	elseif arg0_101:getConfig("type") == ActivityConst.ACTIVITY_TYPE_TASK_RYZA and table.contains({
 		ActivityConst.DORM_SIGN_ID,
-		ActivityConst.DORM_SIGN_ID_2
+		ActivityConst.DORM_SIGN_ID_2,
+		ActivityConst.DORM_SIGN_ID_3
 	}, arg0_101:getConfig("id")) then
 		return #getProxy(ActivityProxy):getActivityById(arg0_101:getConfig("id")):getConfig("config_data") ~= #getProxy(ActivityTaskProxy):getFinishTaskById(arg0_101:getConfig("id"))
 	end

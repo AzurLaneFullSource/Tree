@@ -135,6 +135,7 @@ function var0_0.Update(arg0_8, arg1_8)
 	if arg1_8 == nil or arg1_8 == WorldMapFleet.EventUpdateShipOrder then
 		arg0_8:LoadModel(WorldConst.ModelSpine, var0_8:GetPrefab(), nil, true, function()
 			arg0_8.model:SetParent(arg0_8.transform:Find("ship"), false)
+			arg0_8:ModelOrderChanged()
 		end)
 	end
 
@@ -147,118 +148,124 @@ function var0_0.Update(arg0_8, arg1_8)
 	end
 end
 
-function var0_0.UpdateActive(arg0_11, arg1_11)
-	if arg0_11.active ~= arg1_11 then
-		arg0_11.active = arg1_11
-
-		setActive(arg0_11.transform, arg0_11.active)
+function var0_0.ModelOrderChanged(arg0_11)
+	if arg0_11.spineRole and arg0_11.modelOrder then
+		arg0_11.spineRole:SetSortLayer(arg0_11.modelOrder - 2)
 	end
 end
 
-function var0_0.UpdateSelected(arg0_12, arg1_12)
-	if arg0_12.selected ~= arg1_12 then
-		arg0_12.selected = arg1_12
+function var0_0.UpdateActive(arg0_12, arg1_12)
+	if arg0_12.active ~= arg1_12 then
+		arg0_12.active = arg1_12
 
-		setActive(arg0_12.rtArrow, arg0_12.selected)
-		arg0_12:DispatchEvent(var0_0.EventUpdateSelected)
+		setActive(arg0_12.transform, arg0_12.active)
 	end
 end
 
-function var0_0.UpdateSubmarineSupport(arg0_13)
-	local var0_13 = nowWorld()
-	local var1_13 = var0_13:IsSubmarineSupporting()
+function var0_0.UpdateSelected(arg0_13, arg1_13)
+	if arg0_13.selected ~= arg1_13 then
+		arg0_13.selected = arg1_13
 
-	setActive(arg0_13.rtSub, var1_13)
-
-	if var1_13 then
-		setGray(arg0_13.rtSub, not var0_13:GetSubAidFlag(), false)
+		setActive(arg0_13.rtArrow, arg0_13.selected)
+		arg0_13:DispatchEvent(var0_0.EventUpdateSelected)
 	end
 end
 
-function var0_0.UpdateAttaches(arg0_14)
-	local var0_14 = arg0_14.fleet:GetBuffFxList()
+function var0_0.UpdateSubmarineSupport(arg0_14)
+	local var0_14 = nowWorld()
+	local var1_14 = var0_14:IsSubmarineSupporting()
 
-	for iter0_14 = #var0_14 + 1, #arg0_14.attaches do
-		arg0_14.attaches[iter0_14]:Unload()
-	end
+	setActive(arg0_14.rtSub, var1_14)
 
-	for iter1_14 = #arg0_14.attaches + 1, #var0_14 do
-		local var1_14 = WPool:Get(WSMapEffect)
-
-		var1_14.transform = createNewGameObject("mapEffect")
-
-		var1_14.transform:SetParent(arg0_14.rtFx, false)
-
-		var1_14.modelOrder = arg0_14.modelOrder
-
-		table.insert(arg0_14.attaches, var1_14)
-	end
-
-	for iter2_14 = 1, #var0_14 do
-		local var2_14 = arg0_14.attaches[iter2_14]
-
-		var2_14:Setup(WorldConst.GetBuffEffect(var0_14[iter2_14]))
-		var2_14:Load()
+	if var1_14 then
+		setGray(arg0_14.rtSub, not var0_14:GetSubAidFlag(), false)
 	end
 end
 
-function var0_0.ClearAttaches(arg0_15)
-	local var0_15 = _.map(arg0_15.attaches, function(arg0_16)
-		return arg0_16.transform
+function var0_0.UpdateAttaches(arg0_15)
+	local var0_15 = arg0_15.fleet:GetBuffFxList()
+
+	for iter0_15 = #var0_15 + 1, #arg0_15.attaches do
+		arg0_15.attaches[iter0_15]:Unload()
+	end
+
+	for iter1_15 = #arg0_15.attaches + 1, #var0_15 do
+		local var1_15 = WPool:Get(WSMapEffect)
+
+		var1_15.transform = createNewGameObject("mapEffect")
+
+		var1_15.transform:SetParent(arg0_15.rtFx, false)
+
+		var1_15.modelOrder = arg0_15.modelOrder
+
+		table.insert(arg0_15.attaches, var1_15)
+	end
+
+	for iter2_15 = 1, #var0_15 do
+		local var2_15 = arg0_15.attaches[iter2_15]
+
+		var2_15:Setup(WorldConst.GetBuffEffect(var0_15[iter2_15]))
+		var2_15:Load()
+	end
+end
+
+function var0_0.ClearAttaches(arg0_16)
+	local var0_16 = _.map(arg0_16.attaches, function(arg0_17)
+		return arg0_17.transform
 	end)
 
-	WPool:ReturnArray(arg0_15.attaches)
+	WPool:ReturnArray(arg0_16.attaches)
 
-	for iter0_15, iter1_15 in ipairs(var0_15) do
-		Destroy(iter1_15)
+	for iter0_16, iter1_16 in ipairs(var0_16) do
+		Destroy(iter1_16)
 	end
 
-	arg0_15.attaches = {}
+	arg0_16.attaches = {}
 end
 
-function var0_0.UpdateDamageLevel(arg0_17)
-	local var0_17 = arg0_17.fleet.damageLevel
+function var0_0.UpdateDamageLevel(arg0_18)
+	local var0_18 = arg0_18.fleet.damageLevel
 
-	setActive(arg0_17.rtDamage, var0_17 > 0)
+	setActive(arg0_18.rtDamage, var0_18 > 0)
 
-	for iter0_17 = 1, #WorldConst.DamageBuffList do
-		setActive(arg0_17.rtDamage:Find(iter0_17), var0_17 == iter0_17)
+	for iter0_18 = 1, #WorldConst.DamageBuffList do
+		setActive(arg0_18.rtDamage:Find(iter0_18), var0_18 == iter0_18)
 	end
 end
 
-function var0_0.PlusMoveTurn(arg0_18)
-	arg0_18.moveTurnCount = arg0_18.moveTurnCount + 1
+function var0_0.PlusMoveTurn(arg0_19)
+	arg0_19.moveTurnCount = arg0_19.moveTurnCount + 1
 
-	setText(arg0_18.rtMoveTurn:Find("Text"), arg0_18.moveTurnCount)
-	setActive(arg0_18.rtMoveTurn, arg0_18.moveTurnCount > 0)
+	setText(arg0_19.rtMoveTurn:Find("Text"), arg0_19.moveTurnCount)
+	setActive(arg0_19.rtMoveTurn, arg0_19.moveTurnCount > 0)
 end
 
-function var0_0.ClearMoveTurn(arg0_19)
-	arg0_19.moveTurnCount = 0
+function var0_0.ClearMoveTurn(arg0_20)
+	arg0_20.moveTurnCount = 0
 
-	setActive(arg0_19.rtMoveTurn, false)
+	setActive(arg0_20.rtMoveTurn, false)
 end
 
-function var0_0.DisplayHealth(arg0_20)
-	arg0_20:ClearHealthTimer()
-	setActive(arg0_20.rtHealth, true)
+function var0_0.DisplayHealth(arg0_21)
+	arg0_21:ClearHealthTimer()
+	setActive(arg0_21.rtHealth, true)
 
-	arg0_20.timerHealth = Timer.New(function()
-		setActive(arg0_20.rtHealth, false)
+	arg0_21.timerHealth = Timer.New(function()
+		setActive(arg0_21.rtHealth, false)
 
-		arg0_20.timerHealth = nil
+		arg0_21.timerHealth = nil
 	end, 2)
 
-	arg0_20.timerHealth:Start()
+	arg0_21.timerHealth:Start()
 end
 
-function var0_0.ClearHealthTimer(arg0_22)
-	if arg0_22.timerHealth then
-		arg0_22.timerHealth:Stop()
+function var0_0.ClearHealthTimer(arg0_23)
+	if arg0_23.timerHealth then
+		arg0_23.timerHealth:Stop()
 
-		arg0_22.timerHealth = nil
+		arg0_23.timerHealth = nil
 
-		setActive(arg0_22.rtHealth, false)
+		setActive(arg0_23.rtHealth, false)
 	end
 end
 
