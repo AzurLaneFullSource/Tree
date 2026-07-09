@@ -262,6 +262,10 @@ pg.pay_data_display.all = {
 	2079,
 	2080,
 	2081,
+	2088,
+	2089,
+	2090,
+	2091,
 	5011,
 	5012,
 	5013,
@@ -28256,6 +28260,273 @@ end)()
 			{
 				2,
 				40081,
+				1
+			}
+		}
+	}
+	pg.base.pay_data_display[2088] = {
+		limit_group = 6,
+		name = "PR Construction Pack - Series 6",
+		descrip_extra = "",
+		type = 0,
+		second_text = "+Blueprints",
+		type_order = 0,
+		subject = "PR Construction Pack - Series 6",
+		first_text = "Development Ship",
+		limit_arg = 0,
+		tip = "",
+		money = 1599,
+		tip_open = 0,
+		tag = 2,
+		id = 2088,
+		gem = 0,
+		name_display = "PR Construction Pack - Series 6",
+		package_sort_id = 3,
+		limit_type = 3,
+		time = "always",
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "tech6_display",
+		extra_service = 3,
+		skin_inquire_relation = 0,
+		show_group = "tech",
+		id_str = "",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains one PR Voucher - Series 6 and 343 General Blueprints - Series 6.",
+		package_tag_open = 0,
+		airijp_id = "",
+		extra_service_item = {
+			{
+				2,
+				40145,
+				1
+			},
+			{
+				2,
+				42050,
+				343
+			}
+		},
+		display = {
+			{
+				2,
+				42050,
+				343
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {
+			{
+				"level",
+				30
+			}
+		},
+		drop_item = {},
+		first_icon = {
+			{
+				2,
+				40145,
+				1
+			}
+		}
+	}
+	pg.base.pay_data_display[2089] = {
+		limit_group = 6,
+		name = "PR Voucher & Blueprint Bundle - Series 6",
+		descrip_extra = "If you've already built all Series 6 PRs, the contents will be exchanged for other items. Tap the icon to view the item table.",
+		type = 0,
+		second_text = "",
+		type_order = 0,
+		subject = "PR Voucher & Blueprint Bundle - Series 6",
+		first_text = "",
+		first_icon = "",
+		limit_arg = 1,
+		money = 1599,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		id = 2089,
+		name_display = "PR Voucher & Blueprint \n         Bundle - Series 6",
+		limit_type = 3,
+		time = "always",
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "tech6_promotion",
+		package_sort_id = 3,
+		skin_inquire_relation = 0,
+		extra_service = 3,
+		id_str = "com.yostaren.azurlane.pack45",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains:",
+		show_group = "tech",
+		package_tag_open = 0,
+		airijp_id = "com.yostaren.azurlane.pack45",
+		extra_service_item = {
+			{
+				2,
+				40145,
+				1
+			},
+			{
+				2,
+				42050,
+				343
+			}
+		},
+		display = {
+			{
+				2,
+				40145,
+				1
+			},
+			{
+				2,
+				42050,
+				343
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {
+			{
+				"level",
+				30
+			}
+		},
+		drop_item = {
+			{
+				2,
+				40086,
+				1
+			}
+		}
+	}
+	pg.base.pay_data_display[2090] = {
+		limit_group = 6,
+		name = "PR Voucher Pack - Series 6",
+		descrip_extra = "If you've already built all Series 6 PRs, the contents will be exchanged for other items. Tap the icon to view the item table.",
+		type = 0,
+		second_text = "",
+		type_order = 0,
+		subject = "PR Voucher Pack - Series 6",
+		first_text = "",
+		first_icon = "",
+		limit_arg = 2,
+		money = 999,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		id = 2090,
+		name_display = "PR Voucher Pack - Series 6",
+		limit_type = 3,
+		time = "always",
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "tech6_normal",
+		package_sort_id = 3,
+		skin_inquire_relation = 0,
+		extra_service = 3,
+		id_str = "com.yostaren.azurlane.pack43",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains:",
+		show_group = "tech",
+		package_tag_open = 0,
+		airijp_id = "com.yostaren.azurlane.pack43",
+		extra_service_item = {
+			{
+				2,
+				40145,
+				1
+			}
+		},
+		display = {
+			{
+				2,
+				40145,
+				1
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {
+			{
+				"level",
+				30
+			}
+		},
+		drop_item = {
+			{
+				2,
+				40087,
+				1
+			}
+		}
+	}
+	pg.base.pay_data_display[2091] = {
+		limit_group = 6,
+		name = "PR Blueprint Pack - Series 6",
+		descrip_extra = "Purchase to obtain 343 General Blueprint - Series 6.",
+		type = 0,
+		second_text = "",
+		type_order = 0,
+		subject = "PR Blueprint Pack - Series 6",
+		first_text = "",
+		first_icon = "",
+		limit_arg = 3,
+		money = 699,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		id = 2091,
+		name_display = "PR Blueprint Pack - Series 6",
+		limit_type = 3,
+		time = "always",
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "tech6_promotion",
+		package_sort_id = 3,
+		skin_inquire_relation = 0,
+		extra_service = 3,
+		id_str = "com.yostaren.azurlane.pack44",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains:",
+		show_group = "tech",
+		package_tag_open = 0,
+		airijp_id = "com.yostaren.azurlane.pack44",
+		extra_service_item = {
+			{
+				2,
+				42050,
+				343
+			}
+		},
+		display = {
+			{
+				2,
+				42050,
+				343
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {
+			{
+				"level",
+				30
+			}
+		},
+		drop_item = {
+			{
+				2,
+				40088,
 				1
 			}
 		}

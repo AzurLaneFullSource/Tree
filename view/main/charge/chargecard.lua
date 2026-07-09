@@ -154,7 +154,7 @@ function var0_0.updateCharge(arg0_4, arg1_4, arg2_4, arg3_4)
 	end
 
 	local var11_4 = arg1_4:getConfig("limit_type")
-	local var12_4 = arg1_4.buyCount
+	local var12_4 = arg1_4:getBuyCount()
 	local var13_4 = arg1_4:getLimitCount()
 
 	if var11_4 == 2 then
@@ -209,7 +209,7 @@ function var0_0.updateGemItem(arg0_9, arg1_9, arg2_9)
 	setText(arg0_9.limitText, "")
 
 	local var0_9 = arg1_9:getLimitCount()
-	local var1_9 = arg1_9.buyCount or 0
+	local var1_9 = arg1_9:getBuyCount()
 
 	if var0_9 > 0 then
 		setText(arg0_9.limitText, i18n("charge_limit_all", var0_9 - var1_9, var0_9))

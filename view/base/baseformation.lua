@@ -271,7 +271,6 @@ function var0_0.LoadAllCharacter(arg0_23)
 				local var0_33 = SpineRole.New(arg0_23._shipVOs[iter1_32])
 
 				var0_33:Load(function()
-					var0_33:SetSortLayer(10)
 					var0_23(var0_33, iter1_32, arg1_32, iter0_32)
 					arg0_33()
 				end, nil, var0_33.ORBIT_KEY_UI)

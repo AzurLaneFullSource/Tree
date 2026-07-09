@@ -45,11 +45,13 @@ function var0_0.execute(arg0_1, arg1_1)
 		cost_type = var2_1
 	}, 16206, function(arg0_2)
 		if arg0_2.ret == 0 then
-			var3_1:UnlockCryptolalia(var1_1)
-			var3_1:consume({
+			local var0_2 = getProxy(PlayerProxy):getData()
+
+			var0_2:UnlockCryptolalia(var1_1)
+			var0_2:consume({
 				[id2res(var6_1.id)] = var6_1.count
 			})
-			getProxy(PlayerProxy):updatePlayer(var3_1)
+			getProxy(PlayerProxy):updatePlayer(var0_2)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("cryptolalia_exchange_success"))
 			arg0_1:sendNotification(GAME.UNLOCK_CRYPTOLALIA_DONE, {
 				id = var1_1

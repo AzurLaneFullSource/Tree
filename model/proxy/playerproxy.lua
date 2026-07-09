@@ -157,9 +157,11 @@ function var0_0.UpdatePlayerRes(arg0_15, arg1_15)
 		end
 	end
 
-	arg0_15.data:addResources(var0_15)
-	arg0_15.data:consume(var1_15)
-	arg0_15:updatePlayer(arg0_15.data)
+	local var3_15 = arg0_15.data:clone()
+
+	var3_15:addResources(var0_15)
+	var3_15:consume(var1_15)
+	arg0_15:updatePlayer(var3_15)
 end
 
 function var0_0.updatePlayerMedalDisplay(arg0_16, arg1_16)

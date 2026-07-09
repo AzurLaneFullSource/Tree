@@ -24,9 +24,10 @@ end
 
 function var0_0.listNotificationInterests(arg0_5)
 	return {
+		ActivityProxy.ACTIVITY_ADDED,
+		ActivityProxy.ACTIVITY_UPDATED,
 		ActivityProxy.ACTIVITY_OPERATION_DONE,
 		GAME.MEMORYBOOK_UNLOCK_DONE,
-		GAME.ACTIVITY_OPERATION_DONE,
 		ActivityProxy.ACTIVITY_SHOW_AWARDS
 	}
 end

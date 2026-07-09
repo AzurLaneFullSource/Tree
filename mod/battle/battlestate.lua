@@ -324,6 +324,12 @@ function var2_0.ExitBattle(arg0_28)
 end
 
 function var2_0.Stop(arg0_29, arg1_29)
+	if arg0_29:GetBattleType() == SYSTEM_TEST then
+		InDebugBattleLoop = nil
+
+		pg.TipsMgr.GetInstance():ShowTips("interrupt")
+	end
+
 	arg0_29:disableCommon()
 	arg0_29._baseUI:exitBattle(arg1_29)
 end

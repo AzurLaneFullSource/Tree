@@ -4577,7 +4577,7 @@ end)()
 		}
 	}
 	pg.base.dorm3d_collection_template[2112] = {
-		text = "dorm3d_naximofu_chair",
+		text = "dorm3d_naximofu_bed",
 		name = "Potted Plant 1",
 		award = 0,
 		time = 0,

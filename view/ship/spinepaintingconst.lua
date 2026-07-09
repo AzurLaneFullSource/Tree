@@ -1832,6 +1832,15 @@ var0_0.ship_drag_datas = {
 				}
 			}
 		}
+	},
+	makesi = {
+		hx_idle = "normal_hx",
+		multiple_face = {},
+		hit_area = {},
+		drag_data = {
+			type = var0_0.drag_type_normal,
+			config_client = {}
+		}
 	}
 }
 var0_0.ship_effect_action_able = {

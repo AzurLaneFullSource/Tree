@@ -214,9 +214,7 @@ function var0_0.confirm(arg0_17, arg1_17)
 	elseif arg1_17:isActGiftPackage() then
 		local var11_17 = arg1_17:getBindActivity()
 
-		arg0_17:emit(NewShopMainMediator.OPEN_LAYER, ChargeActGiftLayer, ChargeActGiftMediator, {
-			actId = var11_17.id
-		})
+		arg0_17:emit(NewShopMainMediator.OPEN_GIFT_ACT_LAYER, var11_17.id)
 	else
 		local var12_17 = {}
 		local var13_17 = arg1_17:getConfig("effect_args")

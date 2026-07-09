@@ -223,6 +223,7 @@ function var0_0.ExitRushBossSystem(arg0_13, arg1_13, arg2_13)
 			actId = var1_13,
 			seriesData = var2_13,
 			win = var3_13,
+			OnClose = arg2_13.callback,
 			isAutoFight = arg0_13.contextData.isAutoFight
 		}
 	}), true)

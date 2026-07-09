@@ -799,6 +799,12 @@ function var0_0.updateMod(arg0_75)
 		return
 	end
 
+	local var0_75 = arg0_75.contextData.shipBluePrintVO
+
+	if not var0_75 or not var0_75:isUnlock() or not var0_75:isFetched() then
+		return
+	end
+
 	arg0_75:updateModPanel()
 	arg0_75:updateModAdditionPanel()
 end

@@ -7,9 +7,11 @@ function var0_0.execute(arg0_1, arg1_1)
 		local var0_2 = getProxy(ChapterProxy).remasterInfo
 
 		for iter0_2, iter1_2 in ipairs(arg0_2.remap_count_list) do
-			if var0_2[iter1_2.chapter_id][iter1_2.pos] then
-				var0_2[iter1_2.chapter_id][iter1_2.pos].count = iter1_2.count
-				var0_2[iter1_2.chapter_id][iter1_2.pos].receive = iter1_2.flag > 0
+			local var1_2 = iter1_2.act_id or 0
+
+			if var0_2[var1_2] and var0_2[var1_2][iter1_2.chapter_id] and var0_2[var1_2][iter1_2.chapter_id][iter1_2.pos] then
+				var0_2[var1_2][iter1_2.chapter_id][iter1_2.pos].count = iter1_2.count
+				var0_2[var1_2][iter1_2.chapter_id][iter1_2.pos].receive = iter1_2.flag > 0
 			end
 		end
 

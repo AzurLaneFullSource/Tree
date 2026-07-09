@@ -96,106 +96,110 @@ function var0_0.getKey(arg0_21)
 	return arg0_21.id .. "_" .. arg0_21.type
 end
 
-function var0_0.updateBuyCount(arg0_22, arg1_22)
-	arg0_22.buyCount = arg1_22
+function var0_0.getBuyCount(arg0_22)
+	return arg0_22.buyCount or 0
 end
 
-function var0_0.updateGroupCount(arg0_23, arg1_23)
-	arg0_23.groupCount = arg1_23
+function var0_0.updateBuyCount(arg0_23, arg1_23)
+	arg0_23.buyCount = arg1_23
 end
 
-function var0_0.firstPayDouble(arg0_24)
+function var0_0.updateGroupCount(arg0_24, arg1_24)
+	arg0_24.groupCount = arg1_24
+end
+
+function var0_0.firstPayDouble(arg0_25)
 	return false
 end
 
-function var0_0.inTime(arg0_25)
-	if arg0_25.type == Goods.TYPE_NEW_SERVER then
-		local var0_25 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_NEWSERVER_GIFT)
+function var0_0.inTime(arg0_26)
+	if arg0_26.type == Goods.TYPE_NEW_SERVER then
+		local var0_26 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_NEWSERVER_GIFT)
 
-		if var0_25 and not var0_25:isEnd() then
-			return true, var0_25.stopTime - pg.TimeMgr.GetInstance():GetServerTime()
+		if var0_26 and not var0_26:isEnd() then
+			return true, var0_26.stopTime - pg.TimeMgr.GetInstance():GetServerTime()
 		else
 			return false
 		end
 	end
 
-	local var1_25 = arg0_25:getConfig("time")
+	local var1_26 = arg0_26:getConfig("time")
 
-	if not var1_25 then
+	if not var1_26 then
 		return true
 	end
 
-	if type(var1_25) == "string" then
-		return var1_25 == "always"
+	if type(var1_26) == "string" then
+		return var1_26 == "always"
 	else
-		local var2_25, var3_25 = arg0_25:getTimeStamp()
+		local var2_26, var3_26 = arg0_26:getTimeStamp()
 
-		if var2_25 and var3_25 then
-			local var4_25 = pg.TimeMgr.GetInstance():GetServerTime()
+		if var2_26 and var3_26 then
+			local var4_26 = pg.TimeMgr.GetInstance():GetServerTime()
 
-			return var2_25 <= var4_25 and var4_25 <= var3_25, var3_25 - var4_25
+			return var2_26 <= var4_26 and var4_26 <= var3_26, var3_26 - var4_26
 		else
 			return true
 		end
 	end
 end
 
-function var0_0.getTimeStamp(arg0_26)
-	local var0_26 = arg0_26:getConfig("time")
+function var0_0.getTimeStamp(arg0_27)
+	local var0_27 = arg0_27:getConfig("time")
 
-	if var0_26 and type(var0_26) == "table" then
-		local var1_26
-		local var2_26
+	if var0_27 and type(var0_27) == "table" then
+		local var1_27
+		local var2_27
 
-		if #var0_26 > 0 then
-			local var3_26 = var0_26[1][1][1] .. "-" .. var0_26[1][1][2] .. "-" .. var0_26[1][1][3] .. " " .. var0_26[1][2][1] .. ":" .. var0_26[1][2][2] .. ":" .. var0_26[1][2][3]
+		if #var0_27 > 0 then
+			local var3_27 = var0_27[1][1][1] .. "-" .. var0_27[1][1][2] .. "-" .. var0_27[1][1][3] .. " " .. var0_27[1][2][1] .. ":" .. var0_27[1][2][2] .. ":" .. var0_27[1][2][3]
 
-			var1_26 = pg.TimeMgr.GetInstance():ParseTimeEx(var3_26, nil, true)
+			var1_27 = pg.TimeMgr.GetInstance():ParseTimeEx(var3_27, nil, true)
 		end
 
-		if #var0_26 > 1 then
-			local var4_26 = var0_26[2][1][1] .. "-" .. var0_26[2][1][2] .. "-" .. var0_26[2][1][3] .. " " .. var0_26[2][2][1] .. ":" .. var0_26[2][2][2] .. ":" .. var0_26[2][2][3]
+		if #var0_27 > 1 then
+			local var4_27 = var0_27[2][1][1] .. "-" .. var0_27[2][1][2] .. "-" .. var0_27[2][1][3] .. " " .. var0_27[2][2][1] .. ":" .. var0_27[2][2][2] .. ":" .. var0_27[2][2][3]
 
-			var2_26 = pg.TimeMgr.GetInstance():ParseTimeEx(var4_26, nil, true)
+			var2_27 = pg.TimeMgr.GetInstance():ParseTimeEx(var4_27, nil, true)
 		end
 
-		if var1_26 and var2_26 then
-			return var1_26, var2_26
+		if var1_27 and var2_27 then
+			return var1_27, var2_27
 		end
 	end
 end
 
-function var0_0.calDayLeft(arg0_27)
-	local var0_27, var1_27 = arg0_27:inTime()
+function var0_0.calDayLeft(arg0_28)
+	local var0_28, var1_28 = arg0_28:inTime()
 
-	if var0_27 and var1_27 and var1_27 > 0 then
-		local var2_27 = pg.TimeMgr.GetInstance():parseTimeFrom(var1_27)
+	if var0_28 and var1_28 and var1_28 > 0 then
+		local var2_28 = pg.TimeMgr.GetInstance():parseTimeFrom(var1_28)
 
-		return var0_27, var2_27 + 1
+		return var0_28, var2_28 + 1
 	end
 end
 
-function var0_0.GetGiftList(arg0_28)
+function var0_0.GetGiftList(arg0_29)
 	return {}
 end
 
-function var0_0.GetName(arg0_29)
+function var0_0.GetName(arg0_30)
 	assert(false, "overwrite me !!!!")
 end
 
-function var0_0.IsGroupLimit(arg0_30)
+function var0_0.IsGroupLimit(arg0_31)
 	assert(false, "overwrite me !!!!")
 end
 
-function var0_0.CanUseVoucherType(arg0_31)
+function var0_0.CanUseVoucherType(arg0_32)
 	return false
 end
 
-function var0_0.ExistExclusiveDiscountItem(arg0_32)
+function var0_0.ExistExclusiveDiscountItem(arg0_33)
 	return false
 end
 
-function var0_0.StaticCanUseVoucherType(arg0_33, arg1_33)
+function var0_0.StaticCanUseVoucherType(arg0_34, arg1_34)
 	return false
 end
 

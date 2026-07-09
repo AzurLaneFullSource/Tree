@@ -142,27 +142,26 @@ function var0_0.OnShootLogic(arg0_16, arg1_16)
 		end) then
 			arg0_16:GenerateDecalAtScreenCenter(arg0_16.selectedCarDecalType, var2_16)
 		end
-	end
 
-	for iter2_16, iter3_16 in ipairs(var6_16) do
-		local var12_16 = CarWashConst.GetStainsConfig(iter3_16.decalType)
+		for iter2_16, iter3_16 in ipairs(var6_16) do
+			local var12_16 = CarWashConst.GetStainsConfig(iter3_16.decalType)
 
-		if var12_16 then
-			local var13_16 = 0
-			local var14_16 = arg0_16.currentGunType == var12_16.targetGunType
-			local var15_16 = var12_16.coverDecal and _.any(var6_16, function(arg0_19)
-				return arg0_19.decalType == var12_16.coverDecal
-			end)
-			local var16_16 = var13_16 + (var14_16 and var12_16.fadePerSec or 0) + (var14_16 and var15_16 and var12_16.coverBuff or 0)
+			if var12_16 then
+				local var13_16 = 0
+				local var14_16 = arg0_16.currentGunType == var12_16.targetGunType
+				local var15_16 = var12_16.coverDecal and _.any(var6_16, function(arg0_19)
+					return arg0_19.decalType == var12_16.coverDecal
+				end)
+				local var16_16 = var13_16 + (var14_16 and var12_16.fadePerSec or 0) + (var14_16 and var15_16 and var12_16.coverBuff or 0)
 
-			if var16_16 > 0 then
-				iter3_16:SetAlpha(iter3_16.Alpha - var16_16 * var0_0.ON_SHOOT_INTERVAL)
-				warning(string.format("Decal %s alpha: %f", iter3_16.name, iter3_16.Alpha))
-			end
+				if var16_16 > 0 then
+					iter3_16:SetAlpha(iter3_16.Alpha - var16_16 * var0_0.ON_SHOOT_INTERVAL)
+				end
 
-			if iter3_16.Alpha <= 0 then
-				StaticDecalSpawner.Despawn(iter3_16)
-				arg0_16:Emit(CarWashGameFlowSystem.DECREASE_STAINS_COUNT, 1)
+				if iter3_16.Alpha <= 0 then
+					StaticDecalSpawner.Despawn(iter3_16)
+					arg0_16:Emit(CarWashGameFlowSystem.DECREASE_STAINS_COUNT, 1)
+				end
 			end
 		end
 	end
@@ -179,8 +178,6 @@ function var0_0.GetCapsuleColliderRadius(arg0_21, arg1_21)
 	if var0_21 then
 		var1_21 = var0_21.radius * 2 - 0.01
 	end
-
-	warning("CapsuleCollider not found on characterTf: " .. arg1_21.name .. "use default radius")
 
 	return math.min(var1_21, CarWashConst.DEFAULT_LADY_DECAL_SIZE)
 end

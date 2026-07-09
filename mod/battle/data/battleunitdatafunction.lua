@@ -812,9 +812,9 @@ function var33_0.AuxBoost(arg0_49)
 end
 
 function var33_0.GetSLGStrategyBuffByCombatBuffID(arg0_50)
-	for iter0_50, iter1_50 in pairs(var32_0) do
-		if iter1_50.buff_id == arg0_50 then
-			return iter1_50
+	for iter0_50, iter1_50 in ipairs(var32_0.all) do
+		if iter1_50 == arg0_50 then
+			return var32_0[arg0_50]
 		end
 	end
 end

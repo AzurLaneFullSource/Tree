@@ -5,7 +5,7 @@ function var0_0.GetEventName(arg0_1)
 end
 
 function var0_0.GetActivity(arg0_2)
-	local var0_2 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_BOSSRUSH)
+	local var0_2 = getProxy(ActivityProxy):GetBossRushActivities(false)
 
 	return (_.detect(var0_2, function(arg0_3)
 		return not arg0_3:isEnd()

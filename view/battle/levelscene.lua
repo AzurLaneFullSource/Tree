@@ -1359,36 +1359,26 @@ function var0_0.updateRemasterInfo(arg0_94)
 	end
 
 	local var0_94 = getProxy(ChapterProxy)
-	local var1_94
-	local var2_94 = arg0_94.contextData.map:getRemaster()
+	local var1_94 = arg0_94.contextData.map:getRemaster()
+	local var2_94 = BossRushChapterRemasterHelper.ChapterAwardInfo(var1_94)
 
-	if var2_94 and #pg.re_map_template[var2_94].drop_gain > 0 then
-		for iter0_94, iter1_94 in ipairs(pg.re_map_template[var2_94].drop_gain) do
-			if #iter1_94 > 0 and var0_94.remasterInfo[iter1_94[1]][iter0_94].receive == false then
-				var1_94 = {
-					iter0_94,
-					iter1_94
-				}
+	setActive(arg0_94.remasterAwardBtn, var2_94)
 
-				break
-			end
-		end
-	end
+	if var2_94 then
+		local var3_94 = var2_94[1]
+		local var4_94, var5_94, var6_94, var7_94, var8_94 = unpack(var2_94[2])
+		local var9_94 = var2_94[3]
+		local var10_94 = var0_94:getRemasterInfo(var9_94, var4_94, var3_94)
 
-	setActive(arg0_94.remasterAwardBtn, var1_94)
-
-	if var1_94 then
-		local var3_94 = var1_94[1]
-		local var4_94, var5_94, var6_94, var7_94 = unpack(var1_94[2])
-		local var8_94 = var0_94.remasterInfo[var4_94][var3_94]
-
-		setText(arg0_94.remasterAwardBtn:Find("Text"), var8_94.count .. "/" .. var7_94)
+		setText(arg0_94.remasterAwardBtn:Find("Text"), var10_94.count .. "/" .. var7_94)
 		updateDrop(arg0_94.remasterAwardBtn:Find("IconTpl"), {
 			type = var5_94,
 			id = var6_94
 		})
-		setActive(arg0_94.remasterAwardBtn:Find("tip"), var7_94 <= var8_94.count)
+		setActive(arg0_94.remasterAwardBtn:Find("tip"), var7_94 <= var10_94.count)
 		onButton(arg0_94, arg0_94.remasterAwardBtn, function()
+			local var0_95 = BossRushChapterRemasterHelper.GetAwardName(var9_94, var4_94)
+
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				hideYes = true,
 				hideNo = true,
@@ -1398,11 +1388,17 @@ function var0_0.updateRemasterInfo(arg0_94)
 					id = var6_94
 				},
 				remaster = {
-					word = i18n("level_remaster_tip4", pg.chapter_template[var4_94].chapter_name),
-					number = var8_94.count .. "/" .. var7_94,
-					btn_text = i18n(var8_94.count < var7_94 and "level_remaster_tip2" or "level_remaster_tip3"),
+					word = i18n("level_remaster_tip4", var0_95),
+					number = var10_94.count .. "/" .. var7_94,
+					btn_text = i18n(var10_94.count < var7_94 and "level_remaster_tip2" or "level_remaster_tip3"),
 					btn_call = function()
-						if var8_94.count < var7_94 then
+						if var10_94.count < var7_94 then
+							if var9_94 and var9_94 > 0 then
+								arg0_94:emit(LevelMediator2.ON_BOSSRUSH_REMASTER_ACTIVITY, var9_94)
+
+								return
+							end
+
 							local var0_96 = pg.chapter_template[var4_94].map
 							local var1_96, var2_96 = var0_94:getMapById(var0_96):isUnlock()
 
@@ -1412,7 +1408,7 @@ function var0_0.updateRemasterInfo(arg0_94)
 								arg0_94:ShowSelectedMap(var0_96)
 							end
 						else
-							arg0_94:emit(LevelMediator2.ON_CHAPTER_REMASTER_AWARD, var4_94, var3_94)
+							arg0_94:emit(LevelMediator2.ON_CHAPTER_REMASTER_AWARD, var4_94, var3_94, var9_94)
 						end
 					end
 				}

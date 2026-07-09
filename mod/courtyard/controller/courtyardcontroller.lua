@@ -443,7 +443,7 @@ function var0_0.OnApplicationPaused(arg0_58)
 end
 
 function var0_0.OnOpenLayerOrCloseLayer(arg0_59, arg1_59, arg2_59)
-	if not arg2_59 or not arg0_59.storey then
+	if not arg0_59.storey then
 		return
 	end
 

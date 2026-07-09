@@ -355,7 +355,7 @@ function var0_0.register(arg0_1)
 			arg0_1.viewComponent:updateEntrances()
 		end
 
-		local var0_46 = getProxy(ActivityPermanentProxy):getDoingActivity()
+		local var0_46 = getProxy(ActivityPermanentProxy):getDoingActivity(ActivityPermanentProxy.TYPE_NORMAL_ACTIVITY)
 
 		if var0_46 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("activity_permanent_tips3"))
@@ -371,7 +371,7 @@ function var0_0.register(arg0_1)
 		end
 	end)
 	arg0_1:bind(var0_0.FINISH_ACTIVITY_PERMANENT, function(arg0_47)
-		local var0_47 = getProxy(ActivityPermanentProxy):getDoingActivity()
+		local var0_47 = getProxy(ActivityPermanentProxy):getDoingActivity(ActivityPermanentProxy.TYPE_NORMAL_ACTIVITY)
 
 		assert(var0_47:canPermanentFinish(), "error permanent activity finish")
 		arg0_1:sendNotification(GAME.ACTIVITY_PERMANENT_FINISH, {
@@ -645,10 +645,18 @@ function var0_0.initNotificationHandleDic(arg0_61)
 		[GAME.ACTIVITY_PERMANENT_START_DONE] = function(arg0_87, arg1_87)
 			local var0_87 = arg1_87:getBody()
 
+			if not getProxy(ActivityPermanentProxy):IsNormalActivityId(var0_87.id) then
+				return
+			end
+
 			arg0_87.viewComponent:verifyTabs(var0_87.id)
 		end,
 		[GAME.ACTIVITY_PERMANENT_FINISH_DONE] = function(arg0_88, arg1_88)
 			local var0_88 = arg1_88:getBody()
+
+			if not getProxy(ActivityPermanentProxy):IsNormalActivityId(var0_88.activity_id) then
+				return
+			end
 
 			arg0_88.viewComponent:emit(ActivityMediator.ACTIVITY_PERMANENT, var0_88.activity_id)
 		end,

@@ -110,54 +110,80 @@ function var0_0.ShowHolyLight(arg0_6, arg1_6, arg2_6)
 	end)
 end
 
-function var0_0.GetHolyLightScreenShotInfo(arg0_9)
-	local var0_9 = {}
-	local var1_9 = {}
+function var0_0.SetModelHolyLightActive(arg0_9, arg1_9, arg2_9)
+	if not HXSet.isHx() then
+		return false
+	end
 
-	for iter0_9 = 0, arg0_9.childCount - 1 do
-		local var2_9 = arg0_9:GetChild(iter0_9).gameObject
+	if not arg0_9 or IsNil(arg0_9) or not arg1_9 or IsNil(arg1_9) then
+		return false
+	end
 
-		if isActive(var2_9) then
-			local var3_9, var4_9, var5_9 = var2_9:GetComponent(typeof(HolyLightController)):GetScreenShotInfo(nil, nil)
+	local var0_9 = false
 
-			if var3_9 then
-				table.insert(var0_9, var4_9)
-				table.insert(var1_9, var5_9)
+	for iter0_9 = 0, arg1_9.childCount - 1 do
+		local var1_9 = arg1_9:GetChild(iter0_9)
+		local var2_9 = var1_9:GetComponent(typeof(HolyLightController))
+		local var3_9 = var2_9 and var2_9.targetBone
+
+		if var3_9 and not IsNil(var3_9) and var3_9:IsChildOf(arg0_9) then
+			setActive(var1_9, arg2_9)
+
+			var0_9 = true
+		end
+	end
+
+	return var0_9
+end
+
+function var0_0.GetHolyLightScreenShotInfo(arg0_10)
+	local var0_10 = {}
+	local var1_10 = {}
+
+	for iter0_10 = 0, arg0_10.childCount - 1 do
+		local var2_10 = arg0_10:GetChild(iter0_10).gameObject
+
+		if isActive(var2_10) then
+			local var3_10, var4_10, var5_10 = var2_10:GetComponent(typeof(HolyLightController)):GetScreenShotInfo(nil, nil)
+
+			if var3_10 then
+				table.insert(var0_10, var4_10)
+				table.insert(var1_10, var5_10)
 			end
 		end
 	end
 
-	return var1_9, var0_9
+	return var1_10, var0_10
 end
 
-function var0_0.HideCharacterPart(arg0_10, arg1_10, arg2_10)
-	local var0_10 = var0_0.GetSkinIdByModelName(arg0_10.name)
+function var0_0.HideCharacterPart(arg0_11, arg1_11, arg2_11)
+	local var0_11 = var0_0.GetSkinIdByModelName(arg0_11.name)
 
-	warning("HideCharacterPart skinId", var0_10)
+	warning("HideCharacterPart skinId", var0_11)
 
-	if not var0_10 then
+	if not var0_11 then
 		return
 	end
 
-	local var1_10 = Dorm3dSkin.New({
-		configId = var0_10
+	local var1_11 = Dorm3dSkin.New({
+		configId = var0_11
 	})
 
-	if arg2_10 and not var1_10:ShouldApplyHiddenPartInTimeline() then
+	if arg2_11 and not var1_11:ShouldApplyHiddenPartInTimeline() then
 		return
 	end
 
-	local var2_10 = var1_10:GetGroupId()
+	local var2_11 = var1_11:GetGroupId()
 
-	arg1_10 = arg1_10 or getProxy(ApartmentProxy):getApartment(var2_10):GetHiddenParts(var0_10)
+	arg1_11 = arg1_11 or getProxy(ApartmentProxy):getApartment(var2_11):GetHiddenParts(var0_11)
 
-	local var3_10, var4_10 = var1_10:GetActiveAndHiddenPartNames(arg1_10)
+	local var3_11, var4_11 = var1_11:GetActiveAndHiddenPartNames(arg1_11)
 
-	_.each(var3_10, function(arg0_11)
-		setActive(arg0_10:Find(arg0_11), true)
+	_.each(var3_11, function(arg0_12)
+		setActive(arg0_11:Find(arg0_12), true)
 	end)
-	_.each(var4_10, function(arg0_12)
-		setActive(arg0_10:Find(arg0_12), false)
+	_.each(var4_11, function(arg0_13)
+		setActive(arg0_11:Find(arg0_13), false)
 	end)
 end
 

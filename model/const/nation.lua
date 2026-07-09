@@ -12,6 +12,7 @@ var0_0.FF = 8
 var0_0.MNF = 9
 var0_0.FR = 10
 var0_0.NL = 11
+var0_0.LDP = 12
 var0_0.MOT = 96
 var0_0.META = 97
 var0_0.BURIN = 98
@@ -43,6 +44,7 @@ function var0_0.Nation2Print(arg0_3)
 			"mnf",
 			"ff",
 			"nl",
+			"ldp",
 			[96] = "mot",
 			[113] = "um",
 			[104] = "um",
@@ -77,6 +79,7 @@ function var0_0.Nation2Side(arg0_4)
 			"Jp",
 			"West",
 			"Cn",
+			"West",
 			"West",
 			"West",
 			"West",
@@ -122,6 +125,7 @@ function var0_0.Nation2BG(arg0_5)
 			"bg/bg_church",
 			"bg/bg_church",
 			"bg/bg_church",
+			"bg/bg_church",
 			[113] = "bg/bg_church",
 			[96] = "bg/bg_church",
 			[104] = "bg/bg_church",
@@ -161,6 +165,7 @@ function var0_0.Nation2Name(arg0_6)
 			i18n("word_shipNation_weixi"),
 			i18n("word_shipNation_yuanwei"),
 			i18n("word_shipNation_yujinwangguo"),
+			i18n("word_shipNation_jinghuanlianmeng"),
 			[96] = i18n("word_shipNation_mot"),
 			[97] = i18n("word_shipNation_meta"),
 			[98] = i18n("word_shipNation_other"),
@@ -200,6 +205,7 @@ function var0_0.Nation2facionName(arg0_7)
 			i18n("guild_faction_cszz"),
 			i18n("guild_faction_blhx"),
 			i18n("guild_faction_unknown"),
+			i18n("guild_faction_blhx"),
 			[96] = i18n("guild_faction_unknown"),
 			[97] = i18n("guild_faction_meta"),
 			[98] = i18n("guild_faction_unknown"),

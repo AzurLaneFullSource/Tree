@@ -219,6 +219,10 @@ function var0_0.getInitFlag(arg0_17)
 end
 
 function var0_0.getNormalIdleName(arg0_18)
+	if HXSet.isHx() and arg0_18.shipDragData and arg0_18.shipDragData.hx_idle then
+		return arg0_18.shipDragData.hx_idle
+	end
+
 	return "normal"
 end
 

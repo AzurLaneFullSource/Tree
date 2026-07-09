@@ -288,7 +288,7 @@ function var0_0.buildRemasterMaps(arg0_17)
 
 	local var0_17 = {}
 
-	_.each(pg.re_map_template.all, function(arg0_18)
+	_.each(BossRushChapterRemasterHelper.GetAllNonActivityIds(), function(arg0_18)
 		local var0_18 = pg.re_map_template[arg0_18]
 
 		_.each(var0_18.config_data, function(arg0_19)
@@ -310,7 +310,7 @@ function var0_0.buildRemasterMaps(arg0_17)
 end
 
 function var0_0.IsChapterInRemaster(arg0_20, arg1_20)
-	return _.detect(pg.re_map_template.all, function(arg0_21)
+	return _.detect(BossRushChapterRemasterHelper.GetAllNonActivityIds(), function(arg0_21)
 		local var0_21 = pg.re_map_template[arg0_21]
 
 		return _.any(var0_21.config_data, function(arg0_22)
@@ -1163,49 +1163,53 @@ function var0_0.updateRemasterTicketsNum(arg0_103, arg1_103)
 	arg0_103.remasterTickets = arg1_103
 end
 
-function var0_0.resetDailyCount(arg0_104)
-	arg0_104.remasterDailyCount = 0
+function var0_0.getRemasterTicketCost(arg0_104)
+	return 5
 end
 
-function var0_0.updateDailyCount(arg0_105)
-	arg0_105.remasterDailyCount = arg0_105.remasterDailyCount + pg.gameset.reactivity_ticket_daily.key_value
+function var0_0.resetDailyCount(arg0_105)
+	arg0_105.remasterDailyCount = 0
 end
 
-function var0_0.GetSkipPrecombat(arg0_106)
-	if arg0_106.skipPrecombat == nil then
-		arg0_106.skipPrecombat = PlayerPrefs.GetInt("chapter_skip_precombat", 0)
+function var0_0.updateDailyCount(arg0_106)
+	arg0_106.remasterDailyCount = arg0_106.remasterDailyCount + pg.gameset.reactivity_ticket_daily.key_value
+end
+
+function var0_0.GetSkipPrecombat(arg0_107)
+	if arg0_107.skipPrecombat == nil then
+		arg0_107.skipPrecombat = PlayerPrefs.GetInt("chapter_skip_precombat", 0)
 	end
 
-	return arg0_106.skipPrecombat > 0
+	return arg0_107.skipPrecombat > 0
 end
 
-function var0_0.UpdateSkipPrecombat(arg0_107, arg1_107)
-	arg1_107 = tobool(arg1_107) and 1 or 0
+function var0_0.UpdateSkipPrecombat(arg0_108, arg1_108)
+	arg1_108 = tobool(arg1_108) and 1 or 0
 
-	if arg1_107 ~= arg0_107:GetSkipPrecombat() then
-		PlayerPrefs.SetInt("chapter_skip_precombat", arg1_107)
+	if arg1_108 ~= arg0_108:GetSkipPrecombat() then
+		PlayerPrefs.SetInt("chapter_skip_precombat", arg1_108)
 
-		arg0_107.skipPrecombat = arg1_107
+		arg0_108.skipPrecombat = arg1_108
 
-		arg0_107:sendNotification(var0_0.CHAPTER_SKIP_PRECOMBAT_UPDATED, arg1_107)
+		arg0_108:sendNotification(var0_0.CHAPTER_SKIP_PRECOMBAT_UPDATED, arg1_108)
 	end
 end
 
-function var0_0.GetChapterAutoFlag(arg0_108, arg1_108)
-	return arg0_108:GetExtendChapterData(arg1_108, "AutoFightFlag")
+function var0_0.GetChapterAutoFlag(arg0_109, arg1_109)
+	return arg0_109:GetExtendChapterData(arg1_109, "AutoFightFlag")
 end
 
-function var0_0.SetChapterAutoFlag(arg0_109, arg1_109, arg2_109, arg3_109)
-	arg2_109 = tobool(arg2_109)
+function var0_0.SetChapterAutoFlag(arg0_110, arg1_110, arg2_110, arg3_110)
+	arg2_110 = tobool(arg2_110)
 
-	if arg2_109 == (arg0_109:GetChapterAutoFlag(arg1_109) == 1) then
+	if arg2_110 == (arg0_110:GetChapterAutoFlag(arg1_110) == 1) then
 		return
 	end
 
-	arg0_109:SetExtendChapterData(arg1_109, "AutoFightFlag", arg2_109 and 1 or 0)
+	arg0_110:SetExtendChapterData(arg1_110, "AutoFightFlag", arg2_110 and 1 or 0)
 
-	if arg2_109 then
-		arg0_109:UpdateSkipPrecombat(true)
+	if arg2_110 then
+		arg0_110:UpdateSkipPrecombat(true)
 
 		if AutoBotCommand.autoBotSatisfied() then
 			PlayerPrefs.SetInt("autoBotIsAcitve" .. AutoBotCommand.GetAutoBotMark(), 1)
@@ -1224,7 +1228,7 @@ function var0_0.SetChapterAutoFlag(arg0_109, arg1_109, arg2_109, arg3_109)
 			end
 		end
 	else
-		arg0_109:StopContinuousOperation(SYSTEM_SCENARIO, arg3_109)
+		arg0_110:StopContinuousOperation(SYSTEM_SCENARIO, arg3_110)
 		pg.BrightnessMgr.GetInstance():SetScreenNeverSleep(false)
 
 		if not LOCK_BATTERY_SAVEMODE then
@@ -1233,22 +1237,22 @@ function var0_0.SetChapterAutoFlag(arg0_109, arg1_109, arg2_109, arg3_109)
 		end
 	end
 
-	arg0_109.facade:sendNotification(var0_0.CHAPTER_AUTO_FIGHT_FLAG_UPDATED, arg2_109 and 1 or 0)
-	arg0_109.facade:sendNotification(PlayerResUI.CHANGE_TOUCH_ABLE, not arg2_109)
+	arg0_110.facade:sendNotification(var0_0.CHAPTER_AUTO_FIGHT_FLAG_UPDATED, arg2_110 and 1 or 0)
+	arg0_110.facade:sendNotification(PlayerResUI.CHANGE_TOUCH_ABLE, not arg2_110)
 end
 
-function var0_0.StopAutoFight(arg0_110, arg1_110)
-	local var0_110 = arg0_110:getActiveChapter(true)
+function var0_0.StopAutoFight(arg0_111, arg1_111)
+	local var0_111 = arg0_111:getActiveChapter(true)
 
-	if not var0_110 then
+	if not var0_111 then
 		return
 	end
 
-	arg0_110:SetChapterAutoFlag(var0_110.id, false, arg1_110)
+	arg0_111:SetChapterAutoFlag(var0_111.id, false, arg1_111)
 end
 
-function var0_0.FinishAutoFight(arg0_111, arg1_111)
-	if arg0_111:GetChapterAutoFlag(arg1_111) == 1 then
+function var0_0.FinishAutoFight(arg0_112, arg1_112)
+	if arg0_112:GetChapterAutoFlag(arg1_112) == 1 then
 		pg.BrightnessMgr.GetInstance():SetScreenNeverSleep(false)
 
 		if not LOCK_BATTERY_SAVEMODE then
@@ -1256,81 +1260,111 @@ function var0_0.FinishAutoFight(arg0_111, arg1_111)
 			getProxy(SettingsProxy):RestoreFrameRate()
 		end
 
-		arg0_111.facade:sendNotification(PlayerResUI.CHANGE_TOUCH_ABLE, true)
+		arg0_112.facade:sendNotification(PlayerResUI.CHANGE_TOUCH_ABLE, true)
 	end
 
-	local var0_111 = arg0_111:GetExtendChapter(arg1_111)
+	local var0_112 = arg0_112:GetExtendChapter(arg1_112)
 
-	arg0_111:RemoveExtendChapter(arg1_111)
+	arg0_112:RemoveExtendChapter(arg1_112)
 
-	return var0_111
+	return var0_112
 end
 
-function var0_0.buildRemasterInfo(arg0_112)
-	arg0_112.remasterInfo = {}
+function var0_0.buildRemasterInfo(arg0_113)
+	arg0_113.remasterInfo = {}
 
-	for iter0_112, iter1_112 in ipairs(pg.re_map_template.all) do
-		for iter2_112, iter3_112 in ipairs(pg.re_map_template[iter1_112].drop_gain) do
-			if #iter3_112 > 0 then
-				local var0_112, var1_112, var2_112, var3_112 = unpack(iter3_112)
+	for iter0_113, iter1_113 in ipairs(pg.re_map_template.all) do
+		local var0_113 = pg.re_map_template[iter1_113]
+		local var1_113 = var0_113.activity_id or 0
 
-				arg0_112.remasterInfo[var0_112] = defaultValue(arg0_112.remasterInfo[var0_112], {})
-				arg0_112.remasterInfo[var0_112][iter2_112] = {
+		for iter2_113, iter3_113 in ipairs(var0_113.drop_gain) do
+			if #iter3_113 > 0 then
+				local var2_113, var3_113, var4_113, var5_113 = unpack(iter3_113)
+
+				arg0_113.remasterInfo[var1_113] = defaultValue(arg0_113.remasterInfo[var1_113], {})
+				arg0_113.remasterInfo[var1_113][var2_113] = defaultValue(arg0_113.remasterInfo[var1_113][var2_113], {})
+				arg0_113.remasterInfo[var1_113][var2_113][iter2_113] = {
 					count = 0,
 					receive = false,
-					max = var3_112
+					max = var5_113
 				}
 			end
 		end
 	end
 end
 
-function var0_0.checkRemasterInfomation(arg0_113)
-	if not arg0_113.checkRemaster then
-		arg0_113.checkRemaster = true
+function var0_0.checkRemasterInfomation(arg0_114)
+	if not arg0_114.checkRemaster then
+		arg0_114.checkRemaster = true
 
-		arg0_113:sendNotification(GAME.CHAPTER_REMASTER_INFO_REQUEST)
+		arg0_114:sendNotification(GAME.CHAPTER_REMASTER_INFO_REQUEST)
 	end
 end
 
-function var0_0.addRemasterPassCount(arg0_114, arg1_114)
-	if not arg0_114.remasterInfo[arg1_114] then
+function var0_0.getRemasterInfo(arg0_115, arg1_115, arg2_115, arg3_115)
+	arg1_115 = arg1_115 or 0
+
+	local var0_115 = arg0_115.remasterInfo and arg0_115.remasterInfo[arg1_115]
+
+	if not var0_115 then
+		return nil
+	end
+
+	local var1_115 = var0_115[arg2_115]
+
+	if not var1_115 then
+		return nil
+	end
+
+	if arg3_115 then
+		return var1_115[arg3_115]
+	end
+
+	return var1_115
+end
+
+function var0_0.addRemasterPassCount(arg0_116, arg1_116, arg2_116)
+	local var0_116 = arg0_116:getRemasterInfo(arg2_116, arg1_116)
+
+	if not var0_116 then
 		return
 	end
 
-	local var0_114
+	local var1_116
 
-	for iter0_114, iter1_114 in pairs(arg0_114.remasterInfo[arg1_114]) do
-		if iter1_114.count < iter1_114.max then
-			iter1_114.count = iter1_114.count + 1
-			var0_114 = true
+	for iter0_116, iter1_116 in pairs(var0_116) do
+		if iter1_116.count < iter1_116.max then
+			iter1_116.count = iter1_116.count + 1
+			var1_116 = true
 		end
 	end
 
-	if var0_114 then
-		arg0_114:sendNotification(var0_0.CHAPTER_REMASTER_INFO_UPDATED)
+	if var1_116 then
+		arg0_116:sendNotification(var0_0.CHAPTER_REMASTER_INFO_UPDATED)
 	end
 end
 
-function var0_0.markRemasterPassReceive(arg0_115, arg1_115, arg2_115)
-	local var0_115 = arg0_115.remasterInfo[arg1_115][arg2_115]
+function var0_0.markRemasterPassReceive(arg0_117, arg1_117, arg2_117, arg3_117)
+	local var0_117 = arg0_117:getRemasterInfo(arg3_117, arg1_117, arg2_117)
 
-	if not arg0_115.remasterInfo[arg1_115][arg2_115] then
+	if not var0_117 then
 		return
 	end
 
-	if not var0_115.receive then
-		var0_115.receive = true
+	if not var0_117.receive then
+		var0_117.receive = true
 
-		arg0_115:sendNotification(var0_0.CHAPTER_REMASTER_INFO_UPDATED)
+		arg0_117:sendNotification(var0_0.CHAPTER_REMASTER_INFO_UPDATED)
 	end
 end
 
-function var0_0.anyRemasterAwardCanReceive(arg0_116)
-	for iter0_116, iter1_116 in pairs(arg0_116.remasterInfo) do
-		for iter2_116, iter3_116 in pairs(iter1_116) do
-			if not iter3_116.receive and iter3_116.count >= iter3_116.max then
-				return true
+function var0_0.anyRemasterAwardCanReceive(arg0_118)
+	for iter0_118, iter1_118 in pairs(arg0_118.remasterInfo) do
+		for iter2_118, iter3_118 in pairs(iter1_118) do
+			for iter4_118, iter5_118 in pairs(iter3_118) do
+				if not iter5_118.receive and iter5_118.count >= iter5_118.max then
+					return true
+				end
 			end
 		end
 	end
@@ -1338,128 +1372,128 @@ function var0_0.anyRemasterAwardCanReceive(arg0_116)
 	return false
 end
 
-function var0_0.AddActBossRewards(arg0_117, arg1_117)
-	arg0_117.actBossItems = arg0_117.actBossItems or {}
+function var0_0.AddActBossRewards(arg0_119, arg1_119)
+	arg0_119.actBossItems = arg0_119.actBossItems or {}
 
-	table.insertto(arg0_117.actBossItems, arg1_117)
+	table.insertto(arg0_119.actBossItems, arg1_119)
 end
 
-function var0_0.PopActBossRewards(arg0_118)
-	local var0_118 = arg0_118.actBossItems or {}
+function var0_0.PopActBossRewards(arg0_120)
+	local var0_120 = arg0_120.actBossItems or {}
 
-	arg0_118.actBossItems = nil
-
-	return var0_118
-end
-
-function var0_0.AddBossSingleRewards(arg0_119, arg1_119)
-	arg0_119.bossSingleItems = arg0_119.bossSingleItems or {}
-
-	table.insertto(arg0_119.bossSingleItems, arg1_119)
-end
-
-function var0_0.PopBossSingleRewards(arg0_120)
-	local var0_120 = arg0_120.bossSingleItems or {}
-
-	arg0_120.bossSingleItems = nil
+	arg0_120.actBossItems = nil
 
 	return var0_120
 end
 
-function var0_0.WriteBackOnExitBattleResult(arg0_121)
-	local var0_121 = arg0_121:getActiveChapter()
+function var0_0.AddBossSingleRewards(arg0_121, arg1_121)
+	arg0_121.bossSingleItems = arg0_121.bossSingleItems or {}
 
-	if var0_121 then
-		if var0_121:existOni() then
-			var0_121:clearSubmarineFleet()
-			arg0_121:updateChapter(var0_121)
-		elseif var0_121:isPlayingWithBombEnemy() then
-			var0_121.fleets = {
-				var0_121.fleet
+	table.insertto(arg0_121.bossSingleItems, arg1_121)
+end
+
+function var0_0.PopBossSingleRewards(arg0_122)
+	local var0_122 = arg0_122.bossSingleItems or {}
+
+	arg0_122.bossSingleItems = nil
+
+	return var0_122
+end
+
+function var0_0.WriteBackOnExitBattleResult(arg0_123)
+	local var0_123 = arg0_123:getActiveChapter()
+
+	if var0_123 then
+		if var0_123:existOni() then
+			var0_123:clearSubmarineFleet()
+			arg0_123:updateChapter(var0_123)
+		elseif var0_123:isPlayingWithBombEnemy() then
+			var0_123.fleets = {
+				var0_123.fleet
 			}
-			var0_121.findex = 1
+			var0_123.findex = 1
 
-			arg0_121:updateChapter(var0_121)
+			arg0_123:updateChapter(var0_123)
 		end
 	end
 end
 
-function var0_0.GetContinuousData(arg0_122, arg1_122)
-	return arg0_122.continuousData[arg1_122]
+function var0_0.GetContinuousData(arg0_124, arg1_124)
+	return arg0_124.continuousData[arg1_124]
 end
 
-function var0_0.InitContinuousTime(arg0_123, arg1_123, arg2_123)
-	local var0_123 = ContinuousOperationRuntimeData.New({
-		system = arg1_123,
-		totalBattleTime = arg2_123,
-		battleTime = arg2_123
+function var0_0.InitContinuousTime(arg0_125, arg1_125, arg2_125)
+	local var0_125 = ContinuousOperationRuntimeData.New({
+		system = arg1_125,
+		totalBattleTime = arg2_125,
+		battleTime = arg2_125
 	})
 
-	arg0_123.continuousData[arg1_123] = var0_123
+	arg0_125.continuousData[arg1_125] = var0_125
 end
 
-function var0_0.StopContinuousOperation(arg0_124, arg1_124, arg2_124)
-	local var0_124 = arg0_124:GetContinuousData(arg1_124)
+function var0_0.StopContinuousOperation(arg0_126, arg1_126, arg2_126)
+	local var0_126 = arg0_126:GetContinuousData(arg1_126)
 
-	if not var0_124 or not var0_124:IsActive() then
+	if not var0_126 or not var0_126:IsActive() then
 		return
 	end
 
-	if arg2_124 == ChapterConst.AUTOFIGHT_STOP_REASON.MANUAL and arg1_124 == SYSTEM_SCENARIO then
+	if arg2_126 == ChapterConst.AUTOFIGHT_STOP_REASON.MANUAL and arg1_126 == SYSTEM_SCENARIO then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("multiple_sorties_stop"))
 	end
 
-	var0_124:Stop(arg2_124)
+	var0_126:Stop(arg2_126)
 end
 
-function var0_0.PopContinuousData(arg0_125, arg1_125)
-	local var0_125 = arg0_125.continuousData[arg1_125]
+function var0_0.PopContinuousData(arg0_127, arg1_127)
+	local var0_127 = arg0_127.continuousData[arg1_127]
 
-	arg0_125.continuousData[arg1_125] = nil
+	arg0_127.continuousData[arg1_127] = nil
 
-	return var0_125
+	return var0_127
 end
 
-function var0_0.SetLastFleetIndex(arg0_126, arg1_126, arg2_126)
-	if arg2_126 and arg0_126.lastFleetIndex then
+function var0_0.SetLastFleetIndex(arg0_128, arg1_128, arg2_128)
+	if arg2_128 and arg0_128.lastFleetIndex then
 		return
 	end
 
-	arg0_126.lastFleetIndex = arg1_126
+	arg0_128.lastFleetIndex = arg1_128
 end
 
-function var0_0.GetLastFleetIndex(arg0_127)
-	return arg0_127.lastFleetIndex
+function var0_0.GetLastFleetIndex(arg0_129)
+	return arg0_129.lastFleetIndex
 end
 
-function var0_0.RemoveEliteFleetCommander(arg0_128, arg1_128)
-	local var0_128 = {}
+function var0_0.RemoveEliteFleetCommander(arg0_130, arg1_130)
+	local var0_130 = {}
 
-	for iter0_128, iter1_128 in ipairs(arg1_128) do
-		var0_128[iter1_128] = true
+	for iter0_130, iter1_130 in ipairs(arg1_130) do
+		var0_130[iter1_130] = true
 	end
 
-	local var1_128 = {}
+	local var1_130 = {}
 
-	for iter2_128, iter3_128 in pairs(arg0_128.mapEliteFleetCache) do
-		for iter4_128, iter5_128 in pairs(iter3_128) do
-			for iter6_128, iter7_128 in ipairs(iter5_128) do
-				for iter8_128, iter9_128 in ipairs(iter7_128[TeamType.FormCommander]) do
-					if var0_128[iter9_128] then
-						iter7_128[TeamType.FormCommander][iter8_128] = 0
-						var1_128[iter2_128] = true
+	for iter2_130, iter3_130 in pairs(arg0_130.mapEliteFleetCache) do
+		for iter4_130, iter5_130 in pairs(iter3_130) do
+			for iter6_130, iter7_130 in ipairs(iter5_130) do
+				for iter8_130, iter9_130 in ipairs(iter7_130[TeamType.FormCommander]) do
+					if var0_130[iter9_130] then
+						iter7_130[TeamType.FormCommander][iter8_130] = 0
+						var1_130[iter2_130] = true
 					end
 				end
 			end
 		end
 	end
 
-	for iter10_128, iter11_128 in pairs(arg0_128.data) do
-		local var2_128 = iter11_128:getConfig("formation")
+	for iter10_130, iter11_130 in pairs(arg0_130.data) do
+		local var2_130 = iter11_130:getConfig("formation")
 
-		if var1_128[var2_128] then
-			iter11_128:setEliteFleetList(Clone(arg0_128.mapEliteFleetCache[var2_128]))
-			arg0_128:updateChapter(iter11_128)
+		if var1_130[var2_130] then
+			iter11_130:setEliteFleetList(Clone(arg0_130.mapEliteFleetCache[var2_130]))
+			arg0_130:updateChapter(iter11_130)
 		end
 	end
 end

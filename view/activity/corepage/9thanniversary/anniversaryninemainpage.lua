@@ -10,50 +10,64 @@ function var0_0.OnInit(arg0_1)
 end
 
 function var0_0.OnFirstFlush(arg0_2)
-	onButton(arg0_2, arg0_2.btnGo, function()
-		arg0_2:emit(ActivityMediator.ON_ADD_SUBLAYER, Context.New({
-			mediator = MallAwardMediator,
-			viewComponent = MallAwardLayer,
-			data = {
-				awardHandledByParent = true,
-				onExit = function()
-					arg0_2:refreshRed()
-				end
-			}
-		}))
-	end, SFX_PANEL)
+	if arg0_2:GetMallActOpen() then
+		onButton(arg0_2, arg0_2.btnGo, function()
+			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.MALL_MAP)
+		end, SFX_PANEL)
+	else
+		onButton(arg0_2, arg0_2.btnGo, function()
+			arg0_2:emit(ActivityMediator.ON_ADD_SUBLAYER, Context.New({
+				mediator = MallAwardMediator,
+				viewComponent = MallAwardLayer,
+				data = {
+					awardHandledByParent = true,
+					onExit = function()
+						arg0_2:refreshRed()
+					end
+				}
+			}))
+		end, SFX_PANEL)
+	end
+
 	onButton(arg0_2, arg0_2.btnManual, function()
-		local var0_5 = Context.New({
+		local var0_6 = Context.New({
 			mediator = MedalAlbumTemplateMediator,
 			viewComponent = FujinBayMedalAlbumView
 		})
 
-		arg0_2:emit(ActivityMediator.ON_ADD_SUBLAYER, var0_5)
+		arg0_2:emit(ActivityMediator.ON_ADD_SUBLAYER, var0_6)
 	end, SFX_PANEL)
 	setText(arg0_2.Txtmanual, i18n("anniversary_nine_main_page"))
 	arg0_2:refreshRed()
 end
 
-function var0_0.OnUpdateFlush(arg0_6)
-	arg0_6:refreshRed()
+function var0_0.GetMallActOpen(arg0_7)
+	local var0_7 = arg0_7.coreActivityUI:GetActivityIdByPageClass("AnniversaryNineGamePage")
+	local var1_7 = var0_7 and getProxy(ActivityProxy):getActivityById(var0_7)
+
+	return var1_7 ~= nil and not var1_7:isEnd()
 end
 
-function var0_0.refreshRed(arg0_7)
-	setActive(arg0_7.redPoint, var0_0.IsMallAwardTip())
-
-	local var0_7, var1_7 = var0_0.GetFujinBayMedalTaskCount()
-
-	setActive(arg0_7.redMalPoint, var1_7 > 0)
+function var0_0.OnUpdateFlush(arg0_8)
+	arg0_8:refreshRed()
 end
 
-function var0_0.IsShowReminder(arg0_8)
+function var0_0.refreshRed(arg0_9)
+	setActive(arg0_9.redPoint, var0_0.IsMallAwardTip())
+
+	local var0_9, var1_9 = var0_0.GetFujinBayMedalTaskCount()
+
+	setActive(arg0_9.redMalPoint, var1_9 > 0)
+end
+
+function var0_0.IsShowReminder(arg0_10)
 	return var0_0.IsTip()
 end
 
 function var0_0.IsMallAwardTip()
-	local var0_9 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_MALL)
+	local var0_11 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_MALL)
 
-	if not var0_9 or var0_9:isEnd() then
+	if not var0_11 or var0_11:isEnd() then
 		return false
 	end
 
@@ -65,53 +79,53 @@ function var0_0.IsTip()
 end
 
 function var0_0.IsFujinBayMedalTaskTip()
-	local var0_11, var1_11 = var0_0.GetFujinBayMedalTaskCount()
+	local var0_13, var1_13 = var0_0.GetFujinBayMedalTaskCount()
 
-	return var1_11 > 0
+	return var1_13 > 0
 end
 
 function var0_0.GetFujinBayMedalTaskCount()
-	local var0_12 = FujinBayMedalAlbumView.GROUP_ID
-	local var1_12 = pg.activity_medal_group[var0_12]
-	local var2_12 = var1_12 and var1_12.activity_link or {}
-	local var3_12
+	local var0_14 = FujinBayMedalAlbumView.GROUP_ID
+	local var1_14 = pg.activity_medal_group[var0_14]
+	local var2_14 = var1_14 and var1_14.activity_link or {}
+	local var3_14
 
-	for iter0_12, iter1_12 in ipairs(var2_12) do
-		local var4_12 = iter1_12[2]
-		local var5_12 = getProxy(ActivityProxy):getActivityById(var4_12)
+	for iter0_14, iter1_14 in ipairs(var2_14) do
+		local var4_14 = iter1_14[2]
+		local var5_14 = getProxy(ActivityProxy):getActivityById(var4_14)
 
-		if var5_12 and not var5_12:isEnd() then
-			var3_12 = iter1_12[3]
+		if var5_14 and not var5_14:isEnd() then
+			var3_14 = iter1_14[3]
 
 			break
 		end
 	end
 
-	if not var3_12 then
+	if not var3_14 then
 		return 0, 0, 0
 	end
 
-	local var6_12 = getProxy(TaskProxy)
-	local var7_12 = 0
-	local var8_12 = 0
-	local var9_12 = #var3_12
+	local var6_14 = getProxy(TaskProxy)
+	local var7_14 = 0
+	local var8_14 = 0
+	local var9_14 = #var3_14
 
-	for iter2_12, iter3_12 in ipairs(var3_12) do
-		local var10_12 = var6_12:getTaskById(iter3_12) or var6_12:getFinishTaskById(iter3_12)
+	for iter2_14, iter3_14 in ipairs(var3_14) do
+		local var10_14 = var6_14:getTaskById(iter3_14) or var6_14:getFinishTaskById(iter3_14)
 
-		if var10_12 then
-			local var11_12 = var10_12:getTaskStatus()
+		if var10_14 then
+			local var11_14 = var10_14:getTaskStatus()
 
-			if var11_12 == 1 then
-				var8_12 = var8_12 + 1
-				var7_12 = var7_12 + 1
-			elseif var11_12 == 2 then
-				var7_12 = var7_12 + 1
+			if var11_14 == 1 then
+				var8_14 = var8_14 + 1
+				var7_14 = var7_14 + 1
+			elseif var11_14 == 2 then
+				var7_14 = var7_14 + 1
 			end
 		end
 	end
 
-	return var7_12, var8_12, var9_12
+	return var7_14, var8_14, var9_14
 end
 
 return var0_0

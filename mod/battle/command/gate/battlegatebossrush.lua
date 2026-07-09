@@ -164,47 +164,42 @@ function var0_0.GetPreloadList(arg0_8)
 	local var6_8 = getProxy(ActivityProxy):getActivityById(arg0_8.actId):GetSeriesData()
 	local var7_8 = var6_8:GetStaegLevel() + 1
 	local var8_8 = var6_8:GetFleetIds()
-	local var9_8 = var8_8[var7_8]
-	local var10_8 = var8_8[#var8_8]
-
-	if var6_8:GetMode() == BossRushSeriesData.MODE.SINGLE then
-		var9_8 = var8_8[1]
-	end
-
-	local var11_8 = var4_8:getActivityFleets()[arg0_8.actId]
-	local var12_8 = var11_8[var9_8]
-	local var13_8 = var11_8[var10_8]
-
-	if var12_8 then
-		local var14_8 = var12_8:GetRawShipIds()
-
-		for iter0_8, iter1_8 in ipairs(var14_8) do
-			table.insert(var0_8, var5_8:getShipById(iter1_8))
-		end
-
-		var1_8 = var12_8:buildBattleBuffList()
-	end
+	local var9_8 = var6_8:GetMode()
+	local var10_8, var11_8 = var6_8:GetStageFleets(var9_8, var7_8)
+	local var12_8 = var4_8:getActivityFleets()[arg0_8.actId]
+	local var13_8 = var12_8[var10_8]
+	local var14_8 = var12_8[var11_8]
 
 	if var13_8 then
 		local var15_8 = var13_8:GetRawShipIds()
 
-		for iter2_8, iter3_8 in ipairs(var15_8) do
+		for iter0_8, iter1_8 in ipairs(var15_8) do
+			table.insert(var0_8, var5_8:getShipById(iter1_8))
+		end
+
+		var1_8 = var13_8:buildBattleBuffList()
+	end
+
+	if var14_8 then
+		local var16_8 = var14_8:GetRawShipIds()
+
+		for iter2_8, iter3_8 in ipairs(var16_8) do
 			table.insert(var0_8, var5_8:getShipById(iter3_8))
 		end
 
-		for iter4_8, iter5_8 in ipairs(var13_8:buildBattleBuffList()) do
+		for iter4_8, iter5_8 in ipairs(var14_8:buildBattleBuffList()) do
 			table.insert(var1_8, iter5_8)
 		end
 	end
 
-	local var16_8, var17_8 = var3_8.GetPlayerShipResource(var0_8, arg0_8.system)
-	local var18_8 = var3_8.GetCommanderBuffRes(var1_8)
+	local var17_8, var18_8 = var3_8.GetPlayerShipResource(var0_8, arg0_8.system)
+	local var19_8 = var3_8.GetCommanderBuffRes(var1_8)
 
-	for iter6_8, iter7_8 in ipairs(var18_8) do
-		table.insert(var16_8, iter7_8)
+	for iter6_8, iter7_8 in ipairs(var19_8) do
+		table.insert(var17_8, iter7_8)
 	end
 
-	return var16_8, var17_8
+	return var17_8, var18_8
 end
 
 return var0_0

@@ -269,7 +269,7 @@ function var0_0.GetRearChaptersOfRemaster(arg0_29)
 	end
 
 	local var0_29 = getProxy(ChapterProxy)
-	local var1_29 = _.reduce(pg.re_map_template[arg0_29].config_data, {}, function(arg0_30, arg1_30)
+	local var1_29 = _.reduce(BossRushChapterRemasterHelper.GetChapterIds(arg0_29), {}, function(arg0_30, arg1_30)
 		local var0_30 = var0_29:getChapterById(arg1_30, true):getConfig("map")
 		local var1_30 = var0_29:getMapById(var0_30):getConfig("type")
 

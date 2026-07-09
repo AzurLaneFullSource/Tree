@@ -522,6 +522,10 @@ end
 function var0_0.willExit(arg0_38)
 	arg0_38:UnOverlayPanel(arg0_38._tf)
 	arg0_38.loader:Clear()
+
+	if arg0_38.contextData.OnClose then
+		arg0_38.contextData.OnClose()
+	end
 end
 
 return var0_0

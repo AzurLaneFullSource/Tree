@@ -816,6 +816,7 @@ function var0_0.handleNotification(arg0_30, arg1_30)
 				actId = var3_30,
 				seriesData = var4_30,
 				win = var5_30,
+				OnClose = var1_30.callback,
 				isAutoFight = arg0_30.contextData.isAutoFight
 			}
 		}), true)

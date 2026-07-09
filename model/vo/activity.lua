@@ -332,6 +332,15 @@ function var0_0.readyToAchieve(arg0_25)
 				end
 			end
 
+			if arg0_29:getConfig("config_client") and arg0_29:getConfig("config_client").link_act then
+				local var11_29 = arg0_29:getConfig("config_client").link_act
+				local var12_29 = getProxy(ActivityProxy):getActivityById(var11_29)
+
+				if var12_29 and var12_29:readyToAchieve() then
+					return true
+				end
+			end
+
 			return false
 		end,
 		[ActivityConst.ACTIVITY_TYPE_TASK_LIST] = function(...)
@@ -974,6 +983,7 @@ function var0_0.IsShowTipById(arg0_88)
 		[ActivityConst.SENRANKAGURA_TRAIN_ACT_ID] = SenrankaguraTrainScene.IsShowRed,
 		[ActivityConst.DORM_SIGN_ID] = DormSignPage.IsShowRed,
 		[ActivityConst.DORM_SIGN_ID_2] = DormSignTwoPage.IsShowRed,
+		[ActivityConst.DORM_SIGN_ID_3] = DormSignThirdPage.IsShowRed,
 		[ActivityConst.ISLAND_SIGN_ID] = IslandSignPage.IsShowRed,
 		[ActivityConst.GOASTSTORYACTIVITY_ID] = GhostSkinPageLayer.IsShowRed,
 		[ActivityConst.YUMIA_BASE_ACT_ID] = YoumiyaStrongholdLayer.ShouldShowTip,
@@ -1196,7 +1206,7 @@ function var0_0.getNotificationMsg(arg0_114)
 	local var0_114 = arg0_114:getConfig("type")
 	local var1_114 = ActivityProxy.ACTIVITY_SHOW_AWARDS
 
-	if var0_114 == ActivityConst.ACTIVITY_TYPE_SHOP or var0_114 == ActivityConst.ACTIVITY_TYPE_SKIN_FAKE_PACKAGE then
+	if var0_114 == ActivityConst.ACTIVITY_TYPE_SHOP or var0_114 == ActivityConst.ACTIVITY_TYPE_SKIN_FAKE_PACKAGE or var0_114 == ActivityConst.ACTIVITY_TYPE_TIMES_FAKE_PACKAGE then
 		var1_114 = ActivityProxy.ACTIVITY_SHOP_SHOW_AWARDS
 	elseif var0_114 == ActivityConst.ACTIVITY_TYPE_LOTTERY then
 		var1_114 = ActivityProxy.ACTIVITY_LOTTERY_SHOW_AWARDS

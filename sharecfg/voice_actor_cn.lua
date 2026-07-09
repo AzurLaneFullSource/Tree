@@ -1986,4 +1986,16 @@ end)()
 		code = 511,
 		actor_name = "Aika Wakuno"
 	}
+	pg.base.voice_actor_CN[512] = {
+		code = 512,
+		actor_name = "Nao Ojika"
+	}
+	pg.base.voice_actor_CN[513] = {
+		code = 513,
+		actor_name = "Chiyuki Miura"
+	}
+	pg.base.voice_actor_CN[514] = {
+		code = 514,
+		actor_name = "Mio Hoshitani"
+	}
 end)()

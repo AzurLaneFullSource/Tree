@@ -10,6 +10,7 @@ var0_0.ResGoldField = 7
 var0_0.ResGuildCoin = 8
 var0_0.ResBlueprintFragment = 9
 var0_0.ResClassField = 10
+var0_0.ResFreeDiamond = 14
 var0_0.ResStoreGold = 16
 var0_0.ResStoreOil = 17
 var0_0.ResIslandGold = 18

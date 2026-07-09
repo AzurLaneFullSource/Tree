@@ -23,7 +23,7 @@ function var0_0.register(arg0_1)
 			MainRandomFlagShipSequence.ForceRandom()
 		elseif arg2_2 == "$ force gc" then
 			gcAll(true)
-		elseif arg2_2:match("$ rndskin print %d+") and Application.isEditor then
+		elseif arg2_2:match("%$ rndskin print %d+") and Application.isEditor then
 			local var0_2 = string.gmatch(arg2_2, "%d+")
 
 			MainRandomFlagShipSequence.CalcRatio(tonumber(var0_2()), function(arg0_3)
@@ -36,7 +36,9 @@ function var0_0.register(arg0_1)
 
 				getProxy(ChatProxy):addNewMsg(ChatMsg.New(ChatConst.ChannelWorld, var0_3))
 			end)
-		elseif arg2_2:match("^$ (%S+)") then
+		elseif arg2_2:match("^%$ battletest") then
+			arg0_1:sendNotification(NewMainMediator.DEBUG_BATTLE_LOOP, arg2_2)
+		elseif arg2_2:match("^%$ %S+") then
 			local var1_2 = {}
 
 			for iter0_2, iter1_2 in arg2_2:gmatch("%s+(%S+)") do

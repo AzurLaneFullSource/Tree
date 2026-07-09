@@ -170,23 +170,24 @@ function var0_0.GetShipConfigIDListByPoolList(arg0_14)
 	return var0_14
 end
 
-function var0_0.GetActID2MemoryMap()
+function var0_0.GetLightPoolBlueDestroyerShipConfigIDList(arg0_15, arg1_15, arg2_15)
+	arg0_15 = arg0_15 or 2
+	arg1_15 = arg1_15 or 3
+	arg2_15 = arg2_15 or 1
+
 	local var0_15 = {}
 
-	for iter0_15, iter1_15 in ipairs(pg.memory_group.all) do
-		local var1_15 = pg.memory_group[iter1_15]
-		local var2_15 = var1_15.link_event
-		local var3_15 = var1_15.memories
+	if type(arg0_15) ~= "number" or type(arg1_15) ~= "number" or type(arg2_15) ~= "number" or type(pg.ship_data_create) ~= "table" or type(pg.ship_data_statistics) ~= "table" then
+		return var0_15
+	end
 
-		if var2_15 and var2_15 > 0 then
-			if not var0_15[var2_15] then
-				var0_15[var2_15] = {}
-			end
+	for iter0_15, iter1_15 in pairs(pg.ship_data_create) do
+		if type(iter0_15) == "number" and type(iter1_15) == "table" then
+			local var1_15 = iter1_15[arg0_15]
+			local var2_15 = pg.ship_data_statistics[iter0_15]
 
-			for iter2_15, iter3_15 in ipairs(var3_15) do
-				if not table.contains(var0_15[var2_15], iter3_15) then
-					table.insert(var0_15[var2_15], iter3_15)
-				end
+			if type(var1_15) == "number" and var1_15 > 0 and type(var2_15) == "table" and var2_15.rarity == arg1_15 and var2_15.type == arg2_15 then
+				table.insert(var0_15, iter0_15)
 			end
 		end
 	end
@@ -194,286 +195,314 @@ function var0_0.GetActID2MemoryMap()
 	return var0_15
 end
 
-function var0_0.GetActPoolShipConfigIDList()
-	local var0_16 = var0_0.GetActPoolIndexList()
+function var0_0.GetActID2MemoryMap()
+	local var0_16 = {}
 
-	return var0_0.GetShipConfigIDListByPoolList(var0_16)
-end
+	for iter0_16, iter1_16 in ipairs(pg.memory_group.all) do
+		local var1_16 = pg.memory_group[iter1_16]
+		local var2_16 = var1_16.link_event
+		local var3_16 = var1_16.memories
 
-function var0_0.GetConstPoolShipConfigIDList()
-	local var0_17 = var0_0.GetConstPoolIndexList()
+		if var2_16 and var2_16 > 0 then
+			if not var0_16[var2_16] then
+				var0_16[var2_16] = {}
+			end
 
-	return var0_0.GetShipConfigIDListByPoolList(var0_17)
-end
-
-function var0_0.GetCreateExchangeShipConfigIDList()
-	local var0_18 = {}
-	local var1_18 = {
-		10,
-		11
-	}
-
-	for iter0_18, iter1_18 in ipairs(var1_18) do
-		local var2_18 = var0_0.GetBuildActIDList()
-
-		for iter2_18, iter3_18 in ipairs(var2_18) do
-			if pg.ship_data_create_exchange[iter3_18] then
-				for iter4_18, iter5_18 in ipairs(pg.ship_data_create_exchange[iter3_18].exchange_ship_id) do
-					if not table.contains(var0_18, iter5_18) then
-						table.insert(var0_18, iter5_18)
-					end
+			for iter2_16, iter3_16 in ipairs(var3_16) do
+				if not table.contains(var0_16[var2_16], iter3_16) then
+					table.insert(var0_16[var2_16], iter3_16)
 				end
 			end
 		end
 	end
 
-	return var0_18
+	return var0_16
 end
 
-function var0_0.GetNPCShipConfigIDList()
+function var0_0.GetActPoolShipConfigIDList()
+	local var0_17 = var0_0.GetActPoolIndexList()
+
+	return var0_0.GetShipConfigIDListByPoolList(var0_17)
+end
+
+function var0_0.GetConstPoolShipConfigIDList()
+	local var0_18 = var0_0.GetConstPoolIndexList()
+
+	return var0_0.GetShipConfigIDListByPoolList(var0_18)
+end
+
+function var0_0.GetCreateExchangeShipConfigIDList()
 	local var0_19 = {}
+	local var1_19 = {
+		10,
+		11
+	}
 
-	for iter0_19, iter1_19 in ipairs(getGameset("act_npc_ship_id")[2]) do
-		if var0_0.IsActMatchTime(iter1_19) then
-			local var1_19 = pg.activity_template[iter1_19].config_data[1]
-			local var2_19 = pg.task_data_template[var1_19].award_display[1][2]
+	for iter0_19, iter1_19 in ipairs(var1_19) do
+		local var2_19 = var0_0.GetBuildActIDList()
 
-			table.insert(var0_19, var2_19)
+		for iter2_19, iter3_19 in ipairs(var2_19) do
+			if pg.ship_data_create_exchange[iter3_19] then
+				for iter4_19, iter5_19 in ipairs(pg.ship_data_create_exchange[iter3_19].exchange_ship_id) do
+					if not table.contains(var0_19, iter5_19) then
+						table.insert(var0_19, iter5_19)
+					end
+				end
+			end
 		end
 	end
 
 	return var0_19
 end
 
-function var0_0.GetSkinIDFromNormalShopID(arg0_20)
-	local var0_20 = pg.shop_template[arg0_20].effect_args
+function var0_0.GetNPCShipConfigIDList()
+	local var0_20 = {}
 
-	assert(#var0_20 == 1, "shop_template的effect_args字段,元素个数大于1,ID:", arg0_20)
+	for iter0_20, iter1_20 in ipairs(getGameset("act_npc_ship_id")[2]) do
+		if var0_0.IsActMatchTime(iter1_20) then
+			local var1_20 = pg.activity_template[iter1_20].config_data[1]
+			local var2_20 = pg.task_data_template[var1_20].award_display[1][2]
 
-	return var0_20[1]
+			table.insert(var0_20, var2_20)
+		end
+	end
+
+	return var0_20
+end
+
+function var0_0.GetSkinIDFromNormalShopID(arg0_21)
+	local var0_21 = pg.shop_template[arg0_21].effect_args
+
+	assert(#var0_21 == 1, "shop_template的effect_args字段,元素个数大于1,ID:", arg0_21)
+
+	return var0_21[1]
 end
 
 function var0_0.GetNormalShopSkinIDList()
-	local var0_21 = {}
+	local var0_22 = {}
 
-	for iter0_21, iter1_21 in ipairs(pg.shop_template.get_id_list_by_genre[ShopArgs.SkinShop]) do
-		if var0_0.IsNormalShopMatch(iter1_21) then
-			local var1_21 = var0_0.GetSkinIDFromNormalShopID(iter1_21)
+	for iter0_22, iter1_22 in ipairs(pg.shop_template.get_id_list_by_genre[ShopArgs.SkinShop]) do
+		if var0_0.IsNormalShopMatch(iter1_22) then
+			local var1_22 = var0_0.GetSkinIDFromNormalShopID(iter1_22)
 
-			if not table.contains(var0_21, var1_21) then
-				table.insert(var0_21, var1_21)
+			if not table.contains(var0_22, var1_22) then
+				table.insert(var0_22, var1_22)
 			end
 
-			if ShipSkin.IsChangeSkin(var1_21) then
-				local var2_21 = ShipSkin.GetAllChangeSkinIds(var1_21)
+			if ShipSkin.IsChangeSkin(var1_22) then
+				local var2_22 = ShipSkin.GetAllChangeSkinIds(var1_22)
 
-				for iter2_21, iter3_21 in ipairs(var2_21) do
-					if not table.contains(var0_21, iter3_21) then
-						table.insert(var0_21, iter3_21)
+				for iter2_22, iter3_22 in ipairs(var2_22) do
+					if not table.contains(var0_22, iter3_22) then
+						table.insert(var0_22, iter3_22)
 					end
 				end
 			end
 		end
 	end
 
-	warning("普通商店皮肤个数" .. #var0_21)
+	warning("普通商店皮肤个数" .. #var0_22)
 
-	return var0_21
+	return var0_22
 end
 
-function var0_0.GetSkinIDFromActShopID(arg0_22)
-	return pg.activity_shop_extra[arg0_22].commodity_id
+function var0_0.GetSkinIDFromActShopID(arg0_23)
+	return pg.activity_shop_extra[arg0_23].commodity_id
 end
 
 function var0_0.GetActShopSkinIDList()
-	local var0_23 = {}
+	local var0_24 = {}
 
-	for iter0_23, iter1_23 in ipairs(pg.activity_shop_extra.get_id_list_by_commodity_type[DROP_TYPE_SKIN]) do
-		if var0_0.IsActShopMatch(iter1_23) then
-			local var1_23 = var0_0.GetSkinIDFromActShopID(iter1_23)
+	for iter0_24, iter1_24 in ipairs(pg.activity_shop_extra.get_id_list_by_commodity_type[DROP_TYPE_SKIN]) do
+		if var0_0.IsActShopMatch(iter1_24) then
+			local var1_24 = var0_0.GetSkinIDFromActShopID(iter1_24)
 
-			if not table.contains(var0_23, var1_23) then
-				table.insert(var0_23, var1_23)
+			if not table.contains(var0_24, var1_24) then
+				table.insert(var0_24, var1_24)
 			end
 
-			if ShipSkin.IsChangeSkin(var1_23) then
-				local var2_23 = ShipSkin.GetAllChangeSkinIds(var1_23)
+			if ShipSkin.IsChangeSkin(var1_24) then
+				local var2_24 = ShipSkin.GetAllChangeSkinIds(var1_24)
 
-				for iter2_23, iter3_23 in ipairs(var2_23) do
-					if not table.contains(var0_23, iter3_23) then
-						table.insert(var0_23, iter3_23)
+				for iter2_24, iter3_24 in ipairs(var2_24) do
+					if not table.contains(var0_24, iter3_24) then
+						table.insert(var0_24, iter3_24)
 					end
 				end
 			end
 		end
 	end
 
-	warning("活动商店皮肤个数" .. #var0_23)
+	warning("活动商店皮肤个数" .. #var0_24)
 
-	return var0_23
+	return var0_24
 end
 
-local function var1_0(arg0_24, arg1_24)
-	arg1_24 = string.lower(arg1_24)
+local function var1_0(arg0_25, arg1_25)
+	arg1_25 = string.lower(arg1_25)
 
-	local var0_24 = pg.painting_filte_map[arg1_24].res_list
+	local var0_25 = pg.painting_filte_map[arg1_25].res_list
 
-	for iter0_24, iter1_24 in ipairs(var0_24) do
-		if not table.contains(arg0_24, iter1_24) then
-			table.insert(arg0_24, iter1_24)
+	for iter0_25, iter1_25 in ipairs(var0_25) do
+		if not table.contains(arg0_25, iter1_25) then
+			table.insert(arg0_25, iter1_25)
 		end
 	end
 end
 
-local function var2_0(arg0_25, arg1_25)
-	local var0_25 = ShipGroup.getDefaultSkin(arg1_25).painting
+local function var2_0(arg0_26, arg1_26)
+	local var0_26 = ShipGroup.getDefaultSkin(arg1_26).painting
 
-	var1_0(arg0_25, var0_25)
+	var1_0(arg0_26, var0_26)
 end
 
-local function var3_0(arg0_26, arg1_26)
-	local var0_26 = {
-		configId = arg1_26
+local function var3_0(arg0_27, arg1_27)
+	local var0_27 = {
+		configId = arg1_27
 	}
-	local var1_26 = Ship.getGroupId(var0_26)
+	local var1_27 = Ship.getGroupId(var0_27)
 
-	var2_0(arg0_26, var1_26)
+	var2_0(arg0_27, var1_27)
 end
 
-local function var4_0(arg0_27, arg1_27)
-	local var0_27 = pg.ship_skin_template[arg1_27].painting
+local function var4_0(arg0_28, arg1_28)
+	local var0_28 = pg.ship_skin_template[arg1_28].painting
 
-	var1_0(arg0_27, var0_27)
+	var1_0(arg0_28, var0_28)
 end
 
 function SpecialFilteForChange()
-	local var0_28 = {}
+	local var0_29 = {}
 
-	local function var1_28(arg0_29)
-		for iter0_29, iter1_29 in ipairs(arg0_29) do
-			var3_0(var0_28, iter1_29)
+	local function var1_29(arg0_30)
+		for iter0_30, iter1_30 in ipairs(arg0_30) do
+			var3_0(var0_29, iter1_30)
 		end
 	end
 
-	local function var2_28(arg0_30)
-		for iter0_30, iter1_30 in ipairs(arg0_30) do
-			var4_0(var0_28, iter1_30)
+	local function var2_29(arg0_31)
+		for iter0_31, iter1_31 in ipairs(arg0_31) do
+			var4_0(var0_29, iter1_31)
 		end
 	end
 
 	if pg.painting_filte_config.current_act_pool == 1 then
-		local var3_28 = PaintingfilteConst.GetActPoolShipConfigIDList()
+		local var3_29 = PaintingfilteConst.GetActPoolShipConfigIDList()
 
-		var1_28(var3_28)
+		var1_29(var3_29)
 	end
 
-	local var4_28 = PaintingfilteConst.GetConstPoolShipConfigIDList()
+	local var4_29 = PaintingfilteConst.GetConstPoolShipConfigIDList()
 
-	var1_28(var4_28)
+	var1_29(var4_29)
 
-	local var5_28 = PaintingfilteConst.GetNPCShipConfigIDList()
+	local var5_29 = PaintingfilteConst.GetLightPoolBlueDestroyerShipConfigIDList()
 
-	var1_28(var5_28)
+	var1_29(var5_29)
 
-	local var6_28 = PaintingfilteConst.GetCreateExchangeShipConfigIDList()
+	local var6_29 = PaintingfilteConst.GetNPCShipConfigIDList()
 
-	var1_28(var6_28)
+	var1_29(var6_29)
+
+	local var7_29 = PaintingfilteConst.GetCreateExchangeShipConfigIDList()
+
+	var1_29(var7_29)
 
 	if pg.painting_filte_config.current_sale_skin == 1 then
-		local var7_28 = PaintingfilteConst.GetNormalShopSkinIDList()
+		local var8_29 = PaintingfilteConst.GetNormalShopSkinIDList()
 
-		warning("normalShopSkinIDList:" .. #var7_28)
-		var2_28(var7_28)
+		warning("normalShopSkinIDList:" .. #var8_29)
+		var2_29(var8_29)
 
-		local var8_28 = PaintingfilteConst.GetActShopSkinIDList()
+		local var9_29 = PaintingfilteConst.GetActShopSkinIDList()
 
-		warning("actShopSkinIDList:" .. #var8_28)
-		var2_28(var8_28)
+		warning("actShopSkinIDList:" .. #var9_29)
+		var2_29(var9_29)
 	end
 
-	for iter0_28, iter1_28 in ipairs(pg.secretary_special_ship.all) do
-		local var9_28 = pg.secretary_special_ship[iter1_28].prefab
+	for iter0_29, iter1_29 in ipairs(pg.secretary_special_ship.all) do
+		local var10_29 = pg.secretary_special_ship[iter1_29].prefab
 
-		var1_0(var0_28, var9_28)
+		var1_0(var0_29, var10_29)
 	end
 
-	return table.concat(var0_28, ";")
+	return table.concat(var0_29, ";")
 end
 
 function SpecialFilteForConst()
-	local var0_31 = {}
+	local var0_32 = {}
 
-	local function var1_31(arg0_32)
-		for iter0_32, iter1_32 in ipairs(arg0_32) do
-			var2_0(var0_31, iter1_32)
-		end
-	end
-
-	local function var2_31(arg0_33)
+	local function var1_32(arg0_33)
 		for iter0_33, iter1_33 in ipairs(arg0_33) do
-			var4_0(var0_31, iter1_33)
+			var2_0(var0_32, iter1_33)
 		end
 	end
 
-	local var3_31 = pg.painting_filte_config.skin_id_list
+	local function var2_32(arg0_34)
+		for iter0_34, iter1_34 in ipairs(arg0_34) do
+			var4_0(var0_32, iter1_34)
+		end
+	end
 
-	var2_31(var3_31)
+	local var3_32 = pg.painting_filte_config.skin_id_list
 
-	return table.concat(var0_31, ";")
+	var2_32(var3_32)
+
+	return table.concat(var0_32, ";")
 end
 
-function SpecialFilterForWorldStory(arg0_34)
-	local var0_34 = arg0_34:ToTable()
+function SpecialFilterForWorldStory(arg0_35)
+	local var0_35 = arg0_35:ToTable()
 
-	return pg.NewStoryMgr.GetInstance():GetStoryPaintingsByNameList(var0_34)
+	return pg.NewStoryMgr.GetInstance():GetStoryPaintingsByNameList(var0_35)
 end
 
 function SpecialFilteForActStory()
-	local var0_35 = PaintingfilteConst.GetActID2MemoryMap()
-	local var1_35 = PaintingfilteConst.GetfilteTime()
-	local var2_35 = {}
+	local var0_36 = PaintingfilteConst.GetActID2MemoryMap()
+	local var1_36 = PaintingfilteConst.GetfilteTime()
+	local var2_36 = {}
 
-	for iter0_35, iter1_35 in ipairs(pg.activity_template.all) do
-		if var0_35[iter1_35] and PaintingfilteConst.IsActMatchTime(iter1_35) then
-			for iter2_35, iter3_35 in ipairs(var0_35[iter1_35]) do
-				table.insert(var2_35, iter3_35)
+	for iter0_36, iter1_36 in ipairs(pg.activity_template.all) do
+		if var0_36[iter1_36] and PaintingfilteConst.IsActMatchTime(iter1_36) then
+			for iter2_36, iter3_36 in ipairs(var0_36[iter1_36]) do
+				table.insert(var2_36, iter3_36)
 			end
 		end
 	end
 
-	local var3_35 = {}
+	local var3_36 = {}
 
-	for iter4_35, iter5_35 in ipairs(var2_35) do
-		local var4_35 = pg.memory_template[iter5_35]
+	for iter4_36, iter5_36 in ipairs(var2_36) do
+		local var4_36 = pg.memory_template[iter5_36]
 
-		for iter6_35, iter7_35 in ipairs(var4_35.unlock_pre) do
-			table.insert(var3_35, iter7_35)
+		for iter6_36, iter7_36 in ipairs(var4_36.unlock_pre) do
+			table.insert(var3_36, iter7_36)
 		end
 	end
 
-	return pg.NewStoryMgr.GetInstance():GetStoryPaintingsByNameList(var3_35)
+	return pg.NewStoryMgr.GetInstance():GetStoryPaintingsByNameList(var3_36)
 end
 
 function SpecialFilteForShopSkinPrefab()
-	local var0_36 = {}
+	local var0_37 = {}
 
-	for iter0_36, iter1_36 in ipairs(pg.activity_template.all) do
-		local var1_36 = pg.activity_template[iter1_36]
+	for iter0_37, iter1_37 in ipairs(pg.activity_template.all) do
+		local var1_37 = pg.activity_template[iter1_37]
 
-		if PaintingfilteConst.IsActMatchTime(iter1_36) and var1_36.config_client and type(var1_36.config_client) == "table" and var1_36.config_client.painting then
-			if type(var1_36.config_client.painting) == "string" then
-				table.insert(var0_36, var1_36.config_client.painting)
+		if PaintingfilteConst.IsActMatchTime(iter1_37) and var1_37.config_client and type(var1_37.config_client) == "table" and var1_37.config_client.painting then
+			if type(var1_37.config_client.painting) == "string" then
+				table.insert(var0_37, var1_37.config_client.painting)
 			end
 
-			if type(var1_36.config_client.painting) == "table" then
-				for iter2_36, iter3_36 in ipairs(var1_36.config_client.painting) do
-					table.insert(var0_36, iter3_36)
+			if type(var1_37.config_client.painting) == "table" then
+				for iter2_37, iter3_37 in ipairs(var1_37.config_client.painting) do
+					table.insert(var0_37, iter3_37)
 				end
 			end
 		end
 	end
 
-	return table.concat(var0_36, ";")
+	return table.concat(var0_37, ";")
 end
 
 PLATFORM_CH = 1
@@ -482,16 +511,16 @@ PLATFORM_KR = 3
 PLATFORM_US = 4
 PLATFORM_CHT = 5
 
-function SetPlatform(arg0_37)
-	if arg0_37 == "zh" then
+function SetPlatform(arg0_38)
+	if arg0_38 == "zh" then
 		PLATFORM_CODE = PLATFORM_CH
-	elseif arg0_37 == "jp" then
+	elseif arg0_38 == "jp" then
 		PLATFORM_CODE = PLATFORM_JP
-	elseif arg0_37 == "us" then
+	elseif arg0_38 == "us" then
 		PLATFORM_CODE = PLATFORM_US
-	elseif arg0_37 == "tw" then
+	elseif arg0_38 == "tw" then
 		PLATFORM_CODE = PLATFORM_CHT
-	elseif arg0_37 == "kr" then
+	elseif arg0_38 == "kr" then
 		PLATFORM_CODE = PLATFORM_KR
 	else
 		return false

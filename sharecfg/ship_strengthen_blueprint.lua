@@ -1412,7 +1412,157 @@ pg.ship_strengthen_blueprint.all = {
 	4227,
 	4228,
 	4229,
-	4230
+	4230,
+	4301,
+	4302,
+	4303,
+	4304,
+	4305,
+	4306,
+	4307,
+	4308,
+	4309,
+	4310,
+	4311,
+	4312,
+	4313,
+	4314,
+	4315,
+	4316,
+	4317,
+	4318,
+	4319,
+	4320,
+	4321,
+	4322,
+	4323,
+	4324,
+	4325,
+	4326,
+	4327,
+	4328,
+	4329,
+	4330,
+	4401,
+	4402,
+	4403,
+	4404,
+	4405,
+	4406,
+	4407,
+	4408,
+	4409,
+	4410,
+	4411,
+	4412,
+	4413,
+	4414,
+	4415,
+	4416,
+	4417,
+	4418,
+	4419,
+	4420,
+	4421,
+	4422,
+	4423,
+	4424,
+	4425,
+	4426,
+	4427,
+	4428,
+	4429,
+	4430,
+	4501,
+	4502,
+	4503,
+	4504,
+	4505,
+	4506,
+	4507,
+	4508,
+	4509,
+	4510,
+	4511,
+	4512,
+	4513,
+	4514,
+	4515,
+	4516,
+	4517,
+	4518,
+	4519,
+	4520,
+	4521,
+	4522,
+	4523,
+	4524,
+	4525,
+	4526,
+	4527,
+	4528,
+	4529,
+	4530,
+	4601,
+	4602,
+	4603,
+	4604,
+	4605,
+	4606,
+	4607,
+	4608,
+	4609,
+	4610,
+	4611,
+	4612,
+	4613,
+	4614,
+	4615,
+	4616,
+	4617,
+	4618,
+	4619,
+	4620,
+	4621,
+	4622,
+	4623,
+	4624,
+	4625,
+	4626,
+	4627,
+	4628,
+	4629,
+	4630,
+	4701,
+	4702,
+	4703,
+	4704,
+	4705,
+	4706,
+	4707,
+	4708,
+	4709,
+	4710,
+	4711,
+	4712,
+	4713,
+	4714,
+	4715,
+	4716,
+	4717,
+	4718,
+	4719,
+	4720,
+	4721,
+	4722,
+	4723,
+	4724,
+	4725,
+	4726,
+	4727,
+	4728,
+	4729,
+	4730
 }
 pg.base = pg.base or {}
 pg.base.ship_strengthen_blueprint = {}
@@ -40666,6 +40816,4149 @@ end)()
 		extra_desc = {
 			"Improves Siren Killer",
 			"Bombing Raid Lv. 4",
+			"Main gun efficiency +15%"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4301] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		lv = 1,
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "Unlocks playback for: Log in, Return to port, Biography",
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4301,
+		need_exp = 20,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			102,
+			76,
+			0,
+			0,
+			46
+		},
+		effect_dialog = {
+			"login",
+			"home",
+			"profile"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4302] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 2,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4302,
+		need_exp = 20,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			102,
+			76,
+			0,
+			0,
+			46
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4303] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 3,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4303,
+		need_exp = 20,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			102,
+			76,
+			0,
+			0,
+			46
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4304] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 4,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4304,
+		need_exp = 20,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			102,
+			76,
+			0,
+			0,
+			46
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4305] = {
+		lv = 5,
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "HP +364|AA +15|Main gun efficiency +5%|Unlocks playback for: Main screen 1, Flagship fight, Mission reminder",
+		extra_desc = "",
+		effect_skill = "",
+		effect_base = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4305,
+		need_exp = 50,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			102,
+			76,
+			0,
+			0,
+			46
+		},
+		effect_attr = {
+			{
+				"durability",
+				364
+			},
+			{
+				"antiaircraft",
+				15
+			}
+		},
+		effect_equipment_proficiency = {
+			1,
+			0.05
+		},
+		effect_dialog = {
+			"main1",
+			"battle",
+			"mission"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4306] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 6,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4306,
+		need_exp = 40,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			204,
+			152,
+			0,
+			0,
+			92
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4307] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 7,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4307,
+		need_exp = 40,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			204,
+			152,
+			0,
+			0,
+			92
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4308] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 8,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4308,
+		need_exp = 40,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			204,
+			152,
+			0,
+			0,
+			92
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4309] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 9,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4309,
+		need_exp = 40,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			204,
+			152,
+			0,
+			0,
+			92
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4310] = {
+		effect_skill = "",
+		lv = 10,
+		effect_breakout = 299062,
+		need_lv = 10,
+		effect_desc = "Limit Breaks to 4 Stars|Unlocks playback for: Main screen 2, Victory, Defeat",
+		effect_equipment_proficiency = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4310,
+		need_exp = 80,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			204,
+			152,
+			0,
+			0,
+			92
+		},
+		effect_dialog = {
+			"main2",
+			"win_mvp",
+			"lose"
+		},
+		extra_desc = {
+			"Learns Siren Killer",
+			"Main gun base +1"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4311] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 11,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4311,
+		need_exp = 60,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			306,
+			228,
+			0,
+			0,
+			138
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4312] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 12,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4312,
+		need_exp = 60,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			306,
+			228,
+			0,
+			0,
+			138
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4313] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 13,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4313,
+		need_exp = 60,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			306,
+			228,
+			0,
+			0,
+			138
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4314] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 14,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4314,
+		need_exp = 60,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			306,
+			228,
+			0,
+			0,
+			138
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4315] = {
+		lv = 15,
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "HP +728|AA +31|Anti-air gun efficiency +10%|Unlocks playback for: Main screen 3, Normal touch, Mission complete",
+		extra_desc = "",
+		effect_skill = "",
+		effect_base = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4315,
+		need_exp = 120,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			306,
+			228,
+			0,
+			0,
+			138
+		},
+		effect_attr = {
+			{
+				"durability",
+				728
+			},
+			{
+				"antiaircraft",
+				31
+			}
+		},
+		effect_equipment_proficiency = {
+			3,
+			0.1
+		},
+		effect_dialog = {
+			"main3",
+			"touch",
+			"mission_complete"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4316] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 16,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4316,
+		need_exp = 100,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			408,
+			304,
+			0,
+			0,
+			184
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4317] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 17,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4317,
+		need_exp = 100,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			408,
+			304,
+			0,
+			0,
+			184
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4318] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 18,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4318,
+		need_exp = 100,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			408,
+			304,
+			0,
+			0,
+			184
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4319] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 19,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4319,
+		need_exp = 100,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			408,
+			304,
+			0,
+			0,
+			184
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4320] = {
+		effect_skill = "",
+		lv = 20,
+		effect_breakout = 299063,
+		need_lv = 30,
+		effect_desc = "Limit Breaks to 5 Stars|Unlocks playback for: Skills, Mail reminder, Commission complete",
+		effect_equipment_proficiency = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4320,
+		need_exp = 200,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			408,
+			304,
+			0,
+			0,
+			184
+		},
+		effect_dialog = {
+			"skill",
+			"mail",
+			"expedition"
+		},
+		extra_desc = {
+			"Improves Siren Killer",
+			"Secondary gun base +1",
+			"Main gun efficiency +10%"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4321] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 21,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4321,
+		need_exp = 150,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			510,
+			380,
+			0,
+			0,
+			230
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4322] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 22,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4322,
+		need_exp = 150,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			510,
+			380,
+			0,
+			0,
+			230
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4323] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 23,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4323,
+		need_exp = 150,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			510,
+			380,
+			0,
+			0,
+			230
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4324] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 24,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4324,
+		need_exp = 150,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			510,
+			380,
+			0,
+			0,
+			230
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4325] = {
+		effect_equipment_proficiency = "",
+		lv = 25,
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "HP +1091|AA +46|Unlocks playback for: Low HP",
+		extra_desc = "",
+		effect_skill = "",
+		effect_base = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4325,
+		need_exp = 300,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			510,
+			380,
+			0,
+			0,
+			230
+		},
+		effect_attr = {
+			{
+				"durability",
+				1091
+			},
+			{
+				"antiaircraft",
+				46
+			}
+		},
+		effect_dialog = {
+			"touch2",
+			"hp_warning"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4326] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 26,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4326,
+		need_exp = 200,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			510,
+			380,
+			0,
+			0,
+			230
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4327] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 27,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4327,
+		need_exp = 200,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			510,
+			380,
+			0,
+			0,
+			230
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4328] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 28,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4328,
+		need_exp = 200,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			510,
+			380,
+			0,
+			0,
+			230
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4329] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 29,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4329,
+		need_exp = 200,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			510,
+			380,
+			0,
+			0,
+			230
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4330] = {
+		effect_skill = "",
+		effect_dialog = "",
+		lv = 30,
+		effect_breakout = 299064,
+		need_lv = 70,
+		effect_desc = "Limit Breaks to 6 Stars",
+		effect_equipment_proficiency = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4330,
+		need_exp = 400,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			510,
+			380,
+			0,
+			0,
+			230
+		},
+		extra_desc = {
+			"Improves Siren Killer",
+			"Main gun base +1",
+			"Main gun efficiency +15%"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4401] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		lv = 1,
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "Unlocks playback for: Log in, Return to port, Biography",
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4401,
+		need_exp = 20,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			53,
+			122,
+			0,
+			0,
+			46
+		},
+		effect_dialog = {
+			"login",
+			"home",
+			"profile"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4402] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 2,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4402,
+		need_exp = 20,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			53,
+			122,
+			0,
+			0,
+			46
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4403] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 3,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4403,
+		need_exp = 20,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			53,
+			122,
+			0,
+			0,
+			46
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4404] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 4,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4404,
+		need_exp = 20,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			53,
+			122,
+			0,
+			0,
+			46
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4405] = {
+		effect_equipment_proficiency = "",
+		lv = 5,
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "HP +254|AA +23|Torpedo base +1|Unlocks playback for: Main screen 1, Flagship fight, Mission reminder",
+		extra_desc = "",
+		effect_skill = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4405,
+		need_exp = 50,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			53,
+			122,
+			0,
+			0,
+			46
+		},
+		effect_attr = {
+			{
+				"durability",
+				254
+			},
+			{
+				"antiaircraft",
+				23
+			}
+		},
+		effect_base = {
+			1,
+			2,
+			1
+		},
+		effect_dialog = {
+			"main1",
+			"battle",
+			"mission"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4406] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 6,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4406,
+		need_exp = 40,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			106,
+			244,
+			0,
+			0,
+			92
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4407] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 7,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4407,
+		need_exp = 40,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			106,
+			244,
+			0,
+			0,
+			92
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4408] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 8,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4408,
+		need_exp = 40,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			106,
+			244,
+			0,
+			0,
+			92
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4409] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 9,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4409,
+		need_exp = 40,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			106,
+			244,
+			0,
+			0,
+			92
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4410] = {
+		effect_skill = "",
+		lv = 10,
+		effect_breakout = 399082,
+		need_lv = 10,
+		effect_desc = "Limit Breaks to 4 Stars|Unlocks playback for: Main screen 2, Victory, Defeat",
+		effect_equipment_proficiency = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4410,
+		need_exp = 80,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			106,
+			244,
+			0,
+			0,
+			92
+		},
+		effect_dialog = {
+			"main2",
+			"win_mvp",
+			"lose"
+		},
+		extra_desc = {
+			"Learns Siren Killer",
+			"Unlocks All Out Assault",
+			"Torpedo charges reload simultaneously",
+			"Torpedo efficiency +5%"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4411] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 11,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4411,
+		need_exp = 60,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			159,
+			366,
+			0,
+			0,
+			138
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4412] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 12,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4412,
+		need_exp = 60,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			159,
+			366,
+			0,
+			0,
+			138
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4413] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 13,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4413,
+		need_exp = 60,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			159,
+			366,
+			0,
+			0,
+			138
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4414] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 14,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4414,
+		need_exp = 60,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			159,
+			366,
+			0,
+			0,
+			138
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4415] = {
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "HP +507|AA +46|Torpedo preload +1|Main gun efficiency +10%|Unlocks playback for: Main screen 3, Normal touch, Mission complete",
+		extra_desc = "",
+		effect_skill = "",
+		effect_base = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4415,
+		need_exp = 120,
+		lv = 15,
+		change_skill = "",
+		effect = {
+			159,
+			366,
+			0,
+			0,
+			138
+		},
+		effect_attr = {
+			{
+				"durability",
+				507
+			},
+			{
+				"antiaircraft",
+				46
+			}
+		},
+		effect_equipment_proficiency = {
+			1,
+			0.1
+		},
+		effect_preload = {
+			0,
+			1,
+			0
+		},
+		effect_dialog = {
+			"main3",
+			"touch",
+			"mission_complete"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4416] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 16,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4416,
+		need_exp = 100,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			212,
+			488,
+			0,
+			0,
+			184
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4417] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 17,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4417,
+		need_exp = 100,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			212,
+			488,
+			0,
+			0,
+			184
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4418] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 18,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4418,
+		need_exp = 100,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			212,
+			488,
+			0,
+			0,
+			184
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4419] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 19,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4419,
+		need_exp = 100,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			212,
+			488,
+			0,
+			0,
+			184
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4420] = {
+		effect_skill = "",
+		lv = 20,
+		effect_breakout = 399083,
+		need_lv = 30,
+		effect_desc = "Limit Breaks to 5 Stars|Main gun base +1|Unlocks playback for: Skills, Mail reminder, Commission complete",
+		effect_equipment_proficiency = "",
+		effect_attr = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4420,
+		need_exp = 200,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			212,
+			488,
+			0,
+			0,
+			184
+		},
+		effect_base = {
+			2,
+			2,
+			1
+		},
+		effect_dialog = {
+			"skill",
+			"mail",
+			"expedition"
+		},
+		extra_desc = {
+			"Improves Siren Killer",
+			"Torpedo efficiency +10%",
+			"Main gun efficiency +10%"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4421] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 21,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4421,
+		need_exp = 150,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			265,
+			610,
+			0,
+			0,
+			230
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4422] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 22,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4422,
+		need_exp = 150,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			265,
+			610,
+			0,
+			0,
+			230
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4423] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 23,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4423,
+		need_exp = 150,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			265,
+			610,
+			0,
+			0,
+			230
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4424] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 24,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4424,
+		need_exp = 150,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			265,
+			610,
+			0,
+			0,
+			230
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4425] = {
+		lv = 25,
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "HP +761|AA +70|Anti-air gun efficiency +10%|Unlocks playback for: Low HP",
+		extra_desc = "",
+		effect_skill = "",
+		effect_base = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4425,
+		need_exp = 300,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			265,
+			610,
+			0,
+			0,
+			230
+		},
+		effect_attr = {
+			{
+				"durability",
+				761
+			},
+			{
+				"antiaircraft",
+				70
+			}
+		},
+		effect_equipment_proficiency = {
+			3,
+			0.1
+		},
+		effect_dialog = {
+			"touch2",
+			"hp_warning"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4426] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 26,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4426,
+		need_exp = 200,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			265,
+			610,
+			0,
+			0,
+			230
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4427] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 27,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4427,
+		need_exp = 200,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			265,
+			610,
+			0,
+			0,
+			230
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4428] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 28,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4428,
+		need_exp = 200,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			265,
+			610,
+			0,
+			0,
+			230
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4429] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 29,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4429,
+		need_exp = 200,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			265,
+			610,
+			0,
+			0,
+			230
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4430] = {
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 399084,
+		need_lv = 70,
+		effect_desc = "Limit Breaks to 6 Stars|Torpedo preload +1",
+		effect_equipment_proficiency = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4430,
+		need_exp = 400,
+		lv = 30,
+		change_skill = "",
+		effect = {
+			265,
+			610,
+			0,
+			0,
+			230
+		},
+		effect_preload = {
+			0,
+			2,
+			0
+		},
+		extra_desc = {
+			"Improves Siren Killer",
+			"Improves All Out Assault",
+			"Torpedo efficiency +15%"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4501] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		lv = 1,
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "Unlocks playback for: Log in, Return to port, Biography",
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4501,
+		need_exp = 30,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			142,
+			36
+		},
+		effect_dialog = {
+			"login",
+			"home",
+			"profile"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4502] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 2,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4502,
+		need_exp = 30,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			142,
+			36
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4503] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 3,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4503,
+		need_exp = 30,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			142,
+			36
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4504] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 4,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4504,
+		need_exp = 30,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			142,
+			36
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4505] = {
+		effect_equipment_proficiency = "",
+		lv = 5,
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "HP +373|AA +14|All dive bombers +1|All torpedo bombers +1|Unlocks playback for: Main screen 1, Flagship fight, Mission reminder",
+		extra_desc = "",
+		effect_skill = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4505,
+		need_exp = 80,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			142,
+			36
+		},
+		effect_attr = {
+			{
+				"durability",
+				373
+			},
+			{
+				"antiaircraft",
+				14
+			}
+		},
+		effect_base = {
+			1,
+			2,
+			2
+		},
+		effect_dialog = {
+			"main1",
+			"battle",
+			"mission"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4506] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 6,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4506,
+		need_exp = 60,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			284,
+			72
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4507] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 7,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4507,
+		need_exp = 60,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			284,
+			72
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4508] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 8,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4508,
+		need_exp = 60,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			284,
+			72
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4509] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 9,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4509,
+		need_exp = 60,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			284,
+			72
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4510] = {
+		effect_skill = "",
+		lv = 10,
+		effect_breakout = 499112,
+		need_lv = 10,
+		effect_desc = "Limit Breaks to 4 Stars|Unlocks playback for: Main screen 2, Victory, Defeat",
+		effect_equipment_proficiency = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4510,
+		need_exp = 120,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			284,
+			72
+		},
+		effect_dialog = {
+			"main2",
+			"win_mvp",
+			"lose"
+		},
+		extra_desc = {
+			"Learns Siren Killer",
+			"Dive bomber efficiency +5%",
+			"Torpedo bomber efficiency +5%"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4511] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 11,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4511,
+		need_exp = 90,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			426,
+			108
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4512] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 12,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4512,
+		need_exp = 90,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			426,
+			108
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4513] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 13,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4513,
+		need_exp = 90,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			426,
+			108
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4514] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 14,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4514,
+		need_exp = 90,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			426,
+			108
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4515] = {
+		lv = 15,
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "HP +747|AA +28|All fighters +1|Dive bomber efficiency +10%|Unlocks playback for: Main screen 3, Normal touch, Mission complete",
+		extra_desc = "",
+		effect_skill = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4515,
+		need_exp = 180,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			426,
+			108
+		},
+		effect_attr = {
+			{
+				"durability",
+				747
+			},
+			{
+				"antiaircraft",
+				28
+			}
+		},
+		effect_equipment_proficiency = {
+			2,
+			0.1
+		},
+		effect_base = {
+			2,
+			2,
+			2
+		},
+		effect_dialog = {
+			"main3",
+			"touch",
+			"mission_complete"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4516] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 16,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4516,
+		need_exp = 150,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			568,
+			144
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4517] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 17,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4517,
+		need_exp = 150,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			568,
+			144
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4518] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 18,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4518,
+		need_exp = 150,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			568,
+			144
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4519] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 19,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4519,
+		need_exp = 150,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			568,
+			144
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4520] = {
+		effect_skill = "",
+		lv = 20,
+		effect_breakout = 499113,
+		need_lv = 30,
+		effect_desc = "Limit Breaks to 5 Stars|Unlocks playback for: Skills, Mail reminder, Commission complete",
+		effect_equipment_proficiency = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4520,
+		need_exp = 300,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			568,
+			144
+		},
+		effect_dialog = {
+			"skill",
+			"mail",
+			"expedition"
+		},
+		extra_desc = {
+			"Improves Siren Killer",
+			"Hangar capacity +1",
+			"Fighter efficiency +10%",
+			"Can equip Torpedo Bombers in the Dive Bomber slot"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4521] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 21,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4521,
+		need_exp = 220,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			710,
+			180
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4522] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 22,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4522,
+		need_exp = 220,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			710,
+			180
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4523] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 23,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4523,
+		need_exp = 220,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			710,
+			180
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4524] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 24,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4524,
+		need_exp = 220,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			710,
+			180
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4525] = {
+		lv = 25,
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "HP +1120|AA +41|Torpedo bomber efficiency +10%|All aircraft +1|Unlocks playback for: Low HP",
+		extra_desc = "",
+		effect_skill = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4525,
+		need_exp = 450,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			710,
+			180
+		},
+		effect_attr = {
+			{
+				"durability",
+				1120
+			},
+			{
+				"antiaircraft",
+				41
+			}
+		},
+		effect_equipment_proficiency = {
+			3,
+			0.1
+		},
+		effect_base = {
+			3,
+			3,
+			3
+		},
+		effect_dialog = {
+			"touch2",
+			"hp_warning"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4526] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 26,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4526,
+		need_exp = 300,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			710,
+			180
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4527] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 27,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4527,
+		need_exp = 300,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			710,
+			180
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4528] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 28,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4528,
+		need_exp = 300,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			710,
+			180
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4529] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 29,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4529,
+		need_exp = 300,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			710,
+			180
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4530] = {
+		effect_skill = "",
+		effect_dialog = "",
+		lv = 30,
+		effect_breakout = 499114,
+		need_lv = 70,
+		effect_desc = "Limit Breaks to 6 Stars",
+		effect_equipment_proficiency = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4530,
+		need_exp = 600,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			710,
+			180
+		},
+		extra_desc = {
+			"Improves Siren Killer",
+			"Aircraft efficiency +5%",
+			"Can equip Fighters in the Torpedo Bomber slot"
+		}
+	}
+end)()
+;(function()
+	pg.base.ship_strengthen_blueprint[4601] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		lv = 1,
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "Unlocks playback for: Log in, Return to port, Biography",
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4601,
+		need_exp = 20,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			38,
+			128,
+			0,
+			0,
+			59
+		},
+		effect_dialog = {
+			"login",
+			"home",
+			"profile"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4602] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 2,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4602,
+		need_exp = 20,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			38,
+			128,
+			0,
+			0,
+			59
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4603] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 3,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4603,
+		need_exp = 20,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			38,
+			128,
+			0,
+			0,
+			59
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4604] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 4,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4604,
+		need_exp = 20,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			38,
+			128,
+			0,
+			0,
+			59
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4605] = {
+		effect_equipment_proficiency = "",
+		lv = 5,
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "HP +104|AA +8|Torpedo base +1|Unlocks playback for: Main screen 1, Flagship fight, Mission reminder",
+		extra_desc = "",
+		effect_skill = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4605,
+		need_exp = 50,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			38,
+			128,
+			0,
+			0,
+			59
+		},
+		effect_attr = {
+			{
+				"durability",
+				104
+			},
+			{
+				"antiaircraft",
+				8
+			}
+		},
+		effect_base = {
+			1,
+			2,
+			1
+		},
+		effect_dialog = {
+			"main1",
+			"battle",
+			"mission"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4606] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 6,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4606,
+		need_exp = 40,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			76,
+			256,
+			0,
+			0,
+			118
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4607] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 7,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4607,
+		need_exp = 40,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			76,
+			256,
+			0,
+			0,
+			118
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4608] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 8,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4608,
+		need_exp = 40,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			76,
+			256,
+			0,
+			0,
+			118
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4609] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 9,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4609,
+		need_exp = 40,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			76,
+			256,
+			0,
+			0,
+			118
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4610] = {
+		effect_skill = "",
+		lv = 10,
+		effect_breakout = 899052,
+		need_lv = 10,
+		effect_desc = "Limit Breaks to 4 Stars|Unlocks playback for: Main screen 2, Victory, Defeat",
+		effect_equipment_proficiency = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4610,
+		need_exp = 80,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			76,
+			256,
+			0,
+			0,
+			118
+		},
+		effect_dialog = {
+			"main2",
+			"win_mvp",
+			"lose"
+		},
+		extra_desc = {
+			"Learns Siren Killer",
+			"Unlocks All Out Assault",
+			"Main gun efficiency +5%"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4611] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 11,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4611,
+		need_exp = 60,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			114,
+			384,
+			0,
+			0,
+			177
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4612] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 12,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4612,
+		need_exp = 60,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			114,
+			384,
+			0,
+			0,
+			177
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4613] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 13,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4613,
+		need_exp = 60,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			114,
+			384,
+			0,
+			0,
+			177
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4614] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 14,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4614,
+		need_exp = 60,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			114,
+			384,
+			0,
+			0,
+			177
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4615] = {
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "HP +207|AA +15|Torpedo efficiency +10%|Torpedo preload +1|Unlocks playback for: Main screen 3, Normal touch, Mission complete",
+		extra_desc = "",
+		effect_skill = "",
+		effect_base = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4615,
+		need_exp = 120,
+		lv = 15,
+		change_skill = "",
+		effect = {
+			114,
+			384,
+			0,
+			0,
+			177
+		},
+		effect_attr = {
+			{
+				"durability",
+				207
+			},
+			{
+				"antiaircraft",
+				15
+			}
+		},
+		effect_equipment_proficiency = {
+			2,
+			0.1
+		},
+		effect_preload = {
+			0,
+			1,
+			0
+		},
+		effect_dialog = {
+			"main3",
+			"touch",
+			"mission_complete"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4616] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 16,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4616,
+		need_exp = 100,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			152,
+			512,
+			0,
+			0,
+			236
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4617] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 17,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4617,
+		need_exp = 100,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			152,
+			512,
+			0,
+			0,
+			236
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4618] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 18,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4618,
+		need_exp = 100,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			152,
+			512,
+			0,
+			0,
+			236
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4619] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 19,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4619,
+		need_exp = 100,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			152,
+			512,
+			0,
+			0,
+			236
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4620] = {
+		effect_skill = "",
+		lv = 20,
+		effect_breakout = 899053,
+		need_lv = 30,
+		effect_desc = "Limit Breaks to 5 Stars|Unlocks playback for: Skills, Mail reminder, Commission complete",
+		effect_equipment_proficiency = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4620,
+		need_exp = 200,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			152,
+			512,
+			0,
+			0,
+			236
+		},
+		effect_dialog = {
+			"skill",
+			"mail",
+			"expedition"
+		},
+		extra_desc = {
+			"Improves Siren Killer",
+			"Anti-air gun efficiency +10%"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4621] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 21,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4621,
+		need_exp = 150,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			190,
+			640,
+			0,
+			0,
+			295
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4622] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 22,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4622,
+		need_exp = 150,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			190,
+			640,
+			0,
+			0,
+			295
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4623] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 23,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4623,
+		need_exp = 150,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			190,
+			640,
+			0,
+			0,
+			295
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4624] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 24,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4624,
+		need_exp = 150,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			190,
+			640,
+			0,
+			0,
+			295
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4625] = {
+		effect_equipment_proficiency = "",
+		lv = 25,
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "HP +311|AA +23|Unlocks playback for: Low HP",
+		extra_desc = "",
+		effect_skill = "",
+		effect_base = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4625,
+		need_exp = 300,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			190,
+			640,
+			0,
+			0,
+			295
+		},
+		effect_attr = {
+			{
+				"durability",
+				311
+			},
+			{
+				"antiaircraft",
+				23
+			}
+		},
+		effect_dialog = {
+			"touch2",
+			"hp_warning"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4626] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 26,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4626,
+		need_exp = 200,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			190,
+			640,
+			0,
+			0,
+			295
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4627] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 27,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4627,
+		need_exp = 200,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			190,
+			640,
+			0,
+			0,
+			295
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4628] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 28,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4628,
+		need_exp = 200,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			190,
+			640,
+			0,
+			0,
+			295
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4629] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 29,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4629,
+		need_exp = 200,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			190,
+			640,
+			0,
+			0,
+			295
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4630] = {
+		effect_skill = "",
+		effect_dialog = "",
+		lv = 30,
+		effect_breakout = 899054,
+		need_lv = 70,
+		effect_desc = "Limit Breaks to 6 Stars",
+		effect_equipment_proficiency = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4630,
+		need_exp = 400,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			190,
+			640,
+			0,
+			0,
+			295
+		},
+		extra_desc = {
+			"Improves Siren Killer",
+			"Improves All Out Assault",
+			"All weapons' efficiency +5%",
+			"Stats gained from auxiliary gear +30%"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4701] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		lv = 1,
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "Unlocks playback for: Log in, Return to port, Biography",
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4701,
+		need_exp = 30,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			124,
+			0,
+			0,
+			0,
+			48
+		},
+		effect_dialog = {
+			"login",
+			"home",
+			"profile"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4702] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 2,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4702,
+		need_exp = 30,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			124,
+			0,
+			0,
+			0,
+			48
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4703] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 3,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4703,
+		need_exp = 30,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			124,
+			0,
+			0,
+			0,
+			48
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4704] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 4,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4704,
+		need_exp = 30,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			124,
+			0,
+			0,
+			0,
+			48
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4705] = {
+		lv = 5,
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "HP +387|AA +20|Main gun efficiency +5%|Secondary gun base +1|Unlocks playback for: Main screen 1, Flagship fight, Mission reminder",
+		extra_desc = "",
+		effect_skill = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4705,
+		need_exp = 80,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			124,
+			0,
+			0,
+			0,
+			48
+		},
+		effect_attr = {
+			{
+				"durability",
+				387
+			},
+			{
+				"antiaircraft",
+				20
+			}
+		},
+		effect_equipment_proficiency = {
+			1,
+			0.05
+		},
+		effect_base = {
+			1,
+			2,
+			1
+		},
+		effect_dialog = {
+			"main1",
+			"battle",
+			"mission"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4706] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 6,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4706,
+		need_exp = 60,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			248,
+			0,
+			0,
+			0,
+			96
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4707] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 7,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4707,
+		need_exp = 60,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			248,
+			0,
+			0,
+			0,
+			96
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4708] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 8,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4708,
+		need_exp = 60,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			248,
+			0,
+			0,
+			0,
+			96
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4709] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 1,
+		effect_desc = "",
+		lv = 9,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4709,
+		need_exp = 60,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			248,
+			0,
+			0,
+			0,
+			96
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4710] = {
+		effect_skill = "",
+		lv = 10,
+		effect_breakout = 1299012,
+		need_lv = 10,
+		effect_desc = "Limit Breaks to 4 Stars|Main gun efficiency +5%|Unlocks playback for: Main screen 2, Victory, Defeat",
+		effect_equipment_proficiency = "",
+		effect_attr = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4710,
+		need_exp = 120,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			248,
+			0,
+			0,
+			0,
+			96
+		},
+		effect_base = {
+			1,
+			2,
+			1
+		},
+		effect_dialog = {
+			"main2",
+			"win_mvp",
+			"lose"
+		},
+		extra_desc = {
+			"Learns Siren Killer",
+			"Main gun base +1"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4711] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 11,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4711,
+		need_exp = 90,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			372,
+			0,
+			0,
+			0,
+			144
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4712] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 12,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4712,
+		need_exp = 90,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			372,
+			0,
+			0,
+			0,
+			144
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4713] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 13,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4713,
+		need_exp = 90,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			372,
+			0,
+			0,
+			0,
+			144
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4714] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 14,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4714,
+		need_exp = 90,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			372,
+			0,
+			0,
+			0,
+			144
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4715] = {
+		lv = 15,
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "HP +773|AA +40|Secondary gun efficiency +10%|Unlocks playback for: Main screen 3, Normal touch, Mission complete",
+		extra_desc = "",
+		effect_skill = "",
+		effect_base = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4715,
+		need_exp = 180,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			372,
+			0,
+			0,
+			0,
+			144
+		},
+		effect_attr = {
+			{
+				"durability",
+				773
+			},
+			{
+				"antiaircraft",
+				40
+			}
+		},
+		effect_equipment_proficiency = {
+			2,
+			0.1
+		},
+		effect_dialog = {
+			"main3",
+			"touch",
+			"mission_complete"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4716] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 16,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4716,
+		need_exp = 150,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			496,
+			0,
+			0,
+			0,
+			192
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4717] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 17,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4717,
+		need_exp = 150,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			496,
+			0,
+			0,
+			0,
+			192
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4718] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 18,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4718,
+		need_exp = 150,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			496,
+			0,
+			0,
+			0,
+			192
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4719] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 10,
+		effect_desc = "",
+		lv = 19,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4719,
+		need_exp = 150,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			496,
+			0,
+			0,
+			0,
+			192
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4720] = {
+		effect_skill = "",
+		lv = 20,
+		effect_breakout = 1299013,
+		need_lv = 30,
+		effect_desc = "Limit Breaks to 5 Stars|Secondary gun base +1|Unlocks playback for: Skills, Mail reminder, Commission complete",
+		effect_equipment_proficiency = "",
+		effect_attr = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4720,
+		need_exp = 300,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			496,
+			0,
+			0,
+			0,
+			192
+		},
+		effect_base = {
+			2,
+			3,
+			1
+		},
+		effect_dialog = {
+			"skill",
+			"mail",
+			"expedition"
+		},
+		extra_desc = {
+			"Improves Siren Killer",
+			"Salvo capacity +1",
+			"Main gun efficiency +10%"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4721] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 21,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4721,
+		need_exp = 220,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			620,
+			0,
+			0,
+			0,
+			240
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4722] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 22,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4722,
+		need_exp = 220,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			620,
+			0,
+			0,
+			0,
+			240
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4723] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 23,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4723,
+		need_exp = 220,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			620,
+			0,
+			0,
+			0,
+			240
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4724] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 24,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4724,
+		need_exp = 220,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			620,
+			0,
+			0,
+			0,
+			240
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4725] = {
+		lv = 25,
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "HP +1160|AA +61|Main gun efficiency +5%|Unlocks playback for: Low HP",
+		extra_desc = "",
+		effect_skill = "",
+		effect_base = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4725,
+		need_exp = 450,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			620,
+			0,
+			0,
+			0,
+			240
+		},
+		effect_attr = {
+			{
+				"durability",
+				1160
+			},
+			{
+				"antiaircraft",
+				61
+			}
+		},
+		effect_equipment_proficiency = {
+			1,
+			0.05
+		},
+		effect_dialog = {
+			"touch2",
+			"hp_warning"
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4726] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 26,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4726,
+		need_exp = 300,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			620,
+			0,
+			0,
+			0,
+			240
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4727] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 27,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4727,
+		need_exp = 300,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			620,
+			0,
+			0,
+			0,
+			240
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4728] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 28,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4728,
+		need_exp = 300,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			620,
+			0,
+			0,
+			0,
+			240
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4729] = {
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		effect_breakout = 0,
+		need_lv = 30,
+		effect_desc = "",
+		lv = 29,
+		extra_desc = "",
+		effect_attr = "",
+		effect_base = "",
+		special = 0,
+		effect_skin = 0,
+		id = 4729,
+		need_exp = 300,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			620,
+			0,
+			0,
+			0,
+			240
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4730] = {
+		effect_skill = "",
+		lv = 30,
+		effect_breakout = 1299014,
+		need_lv = 70,
+		effect_desc = "Limit Breaks to 6 Stars|Main gun base +1",
+		effect_equipment_proficiency = "",
+		effect_attr = "",
+		effect_dialog = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4730,
+		need_exp = 600,
+		effect_preload = "",
+		change_skill = "",
+		effect = {
+			620,
+			0,
+			0,
+			0,
+			240
+		},
+		effect_base = {
+			2,
+			3,
+			1
+		},
+		extra_desc = {
+			"Improves Siren Killer",
 			"Main gun efficiency +15%"
 		}
 	}

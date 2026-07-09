@@ -42,15 +42,19 @@ function var0_0.register(arg0_1)
 		arg0_1:sendNotification(GAME.SUBMIT_TASK, arg1_6.id)
 	end)
 
-	local var0_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSSRUSH)
+	local var0_1 = arg0_1.contextData.activityID
 
-	arg0_1.viewComponent:SetActivity(var0_1)
+	assert(var0_1, "activityID is required by BossRushVerZenkerMediator")
 
-	local var1_1 = var0_1:GetConfigClientSetting("PTID")
-	local var2_1 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_BUFF)
+	local var1_1 = getProxy(ActivityProxy):getActivityById(var0_1)
 
-	for iter0_1, iter1_1 in ipairs(var2_1) do
-		if iter1_1:getDataConfig("pt") == var1_1 then
+	arg0_1.viewComponent:SetActivity(var1_1)
+
+	local var2_1 = var1_1:GetConfigClientSetting("PTID")
+	local var3_1 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_BUFF)
+
+	for iter0_1, iter1_1 in ipairs(var3_1) do
+		if iter1_1:getDataConfig("pt") == var2_1 then
 			arg0_1.viewComponent:SetPtActivity(iter1_1)
 
 			break
