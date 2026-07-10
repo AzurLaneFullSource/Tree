@@ -293,7 +293,7 @@ function var0_0.UpdateItems(arg0_19, arg1_19)
 				color = Color(0, 0, 0, 0.6)
 			})
 			setActive(arg2_20:Find("got"), var0_20.got)
-			setActive(arg2_20:Find("icon_bg/special"), var0_20.special)
+			setActive(arg2_20:Find("special"), var0_20.special)
 		end
 	end)
 end
