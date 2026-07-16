@@ -94,6 +94,8 @@ function var0_0.init(arg0_7)
 	setText(var1_7:Find("lock/Text"), i18n("cruise_shop_no_open"))
 
 	arg0_7.contextData.windowForCharge = WorldCruiseChargePage.New(arg0_7._tf, arg0_7.event)
+
+	arg0_7:Hx4Channel()
 end
 
 function var0_0.didEnter(arg0_11)
@@ -231,6 +233,20 @@ function var0_0.willExit(arg0_27)
 		iter1_27:Destroy()
 
 		iter1_27 = nil
+	end
+end
+
+local function var2_0(arg0_28)
+	local var0_28 = pg.SdkMgr.GetInstance():GetChannelUIDIncludeHarmony()
+
+	return (arg0_28._tf:Find("bg/bg_1/hx_ch" .. var0_28))
+end
+
+function var0_0.Hx4Channel(arg0_29)
+	local var0_29 = var2_0(arg0_29)
+
+	if not IsNil(var0_29) then
+		setActive(var0_29, HXSet.isHx())
 	end
 end
 

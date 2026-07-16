@@ -1410,6 +1410,11 @@ function var0_0.LoadSpinePainting(arg0_79, arg1_79)
 		local var0_80 = arg0_80._tf:Find("shop_hx")
 
 		arg0_79:CheckShowShopHx(var0_80)
+
+		local var1_80 = pg.SdkMgr.GetInstance():GetChannelUIDIncludeHarmony()
+		local var2_80 = arg0_80._tf:Find("shop_hx_ch" .. var1_80)
+
+		arg0_79:CheckShowShopHx(var2_80)
 		pg.UIMgr.GetInstance():LoadingOff()
 	end)
 end
