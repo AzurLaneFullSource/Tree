@@ -1,5 +1,7 @@
 local var0_0 = class("MainBaseActivityBtn")
 
+var0_0.UPDATED_TIP = "MainBaseActivityBtn::UPDATED_TIP"
+
 function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1)
 	arg0_1.tpl = arg1_1
 

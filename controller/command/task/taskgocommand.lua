@@ -76,6 +76,16 @@ function var0_0.execute(arg0_1, arg1_1)
 			end)
 		elseif var2_1[1] == "MINI_GAME" and var2_1[2] then
 			arg0_1:sendNotification(GAME.GO_MINI_GAME, var2_1[2])
+		elseif var2_1[2] and var2_1[2].unlockActivityID then
+			local var6_1 = getProxy(ActivityProxy):getActivityById(var2_1[2].unlockActivityID)
+
+			if var6_1 and not var6_1:isEnd() then
+				arg0_1:sendNotification(GAME.GO_SCENE, SCENE[var2_1[1]], var2_1[2])
+			else
+				pg.TipsMgr.GetInstance():ShowTips(i18n("challenge_end_tip"))
+
+				return
+			end
 		else
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE[var2_1[1]], var2_1[2])
 		end
@@ -87,44 +97,44 @@ function var0_0.execute(arg0_1, arg1_1)
 		return
 	end
 
-	local var6_1 = var0_1:getConfig("sub_type")
-	local var7_1 = var1_1:getActiveChapter()
-	local var8_1 = {
-		chapterId = var7_1 and var7_1.id,
-		mapIdx = var7_1 and var7_1:getConfig("map")
+	local var7_1 = var0_1:getConfig("sub_type")
+	local var8_1 = var1_1:getActiveChapter()
+	local var9_1 = {
+		chapterId = var8_1 and var8_1.id,
+		mapIdx = var8_1 and var8_1:getConfig("map")
 	}
-	local var9_1 = math.modf(var6_1 / 10)
-	local var10_1 = math.fmod(var6_1, 10)
+	local var10_1 = math.modf(var7_1 / 10)
+	local var11_1 = math.fmod(var7_1, 10)
 
-	if var9_1 == 0 then
-		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var8_1)
-	elseif var9_1 == 1 then
-		if var10_1 == 9 then
+	if var10_1 == 0 then
+		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var9_1)
+	elseif var10_1 == 1 then
+		if var11_1 == 9 then
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.DAILYLEVEL)
 		else
-			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var8_1)
+			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var9_1)
 		end
-	elseif var9_1 == 2 then
-		if var10_1 == 6 then
+	elseif var10_1 == 2 then
+		if var11_1 == 6 then
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.DAILYLEVEL)
-		elseif var10_1 == 7 then
+		elseif var11_1 == 7 then
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.MILITARYEXERCISE)
-		elseif var10_1 == 8 then
-			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var8_1)
-		elseif var10_1 == 9 then
-			local var11_1 = tonumber(var0_1:getConfig("target_id"))
+		elseif var11_1 == 8 then
+			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var9_1)
+		elseif var11_1 == 9 then
+			local var12_1 = tonumber(var0_1:getConfig("target_id"))
 
 			arg0_1:sendNotification(GAME.BEGIN_STAGE, {
 				system = SYSTEM_PERFORM,
-				stageId = tonumber(var11_1)
+				stageId = tonumber(var12_1)
 			})
 		else
-			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var8_1)
+			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var9_1)
 		end
-	elseif var9_1 == 3 then
-		if var10_1 == 0 then
+	elseif var10_1 == 3 then
+		if var11_1 == 0 then
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.GETBOAT)
-		elseif var10_1 == 1 then
+		elseif var11_1 == 1 then
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
 				blockLock = true,
 				mode = DockyardScene.MODE_DESTROY,
@@ -135,7 +145,7 @@ function var0_0.execute(arg0_1, arg1_1)
 					isActivityNpc = true
 				})
 			})
-		elseif var10_1 == 7 then
+		elseif var11_1 == 7 then
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.NAVALACADEMYSCENE, {
 				warp = NavalAcademyScene.WARP_TO_TACTIC
 			})
@@ -144,12 +154,12 @@ function var0_0.execute(arg0_1, arg1_1)
 				mode = DockyardScene.MODE_OVERVIEW
 			})
 		end
-	elseif var9_1 == 4 then
-		if var10_1 == 2 then
+	elseif var10_1 == 4 then
+		if var11_1 == 2 then
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.EQUIPSCENE, {
 				warp = StoreHouseConst.WARP_TO_DESIGN
 			})
-		elseif var10_1 == 3 then
+		elseif var11_1 == 3 then
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
 				mode = DockyardScene.MODE_OVERVIEW
 			})
@@ -158,36 +168,36 @@ function var0_0.execute(arg0_1, arg1_1)
 				warp = StoreHouseConst.WARP_TO_WEAPON
 			})
 		end
-	elseif var9_1 == 5 then
-		if var10_1 == 0 or var10_1 == 1 then
+	elseif var10_1 == 5 then
+		if var11_1 == 0 or var11_1 == 1 then
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.EQUIPSCENE, {
 				warp = StoreHouseConst.WARP_TO_MATERIAL
 			})
 		end
-	elseif var9_1 == 6 then
+	elseif var10_1 == 6 then
 		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.COURTYARD)
-	elseif var9_1 == 7 then
-		local var12_1
+	elseif var10_1 == 7 then
+		local var13_1
 
-		if var10_1 == 1 then
-			var12_1 = NavalAcademyScene.WARP_TO_TACTIC
+		if var11_1 == 1 then
+			var13_1 = NavalAcademyScene.WARP_TO_TACTIC
 		end
 
 		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.NAVALACADEMYSCENE, {
-			warp = var12_1
+			warp = var13_1
 		})
-	elseif var9_1 == 8 then
-		if var10_1 == 0 then
+	elseif var10_1 == 8 then
+		if var11_1 == 0 then
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.EVENT)
-		elseif var10_1 == 1 then
+		elseif var11_1 == 1 then
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.NAVALACADEMYSCENE)
 		end
-	elseif var9_1 == 9 then
-		if var10_1 == 2 then
+	elseif var10_1 == 9 then
+		if var11_1 == 2 then
 			arg0_1:sendNotification(TaskMediator.TASK_FILTER, "weekly")
 		end
-	elseif var9_1 == 10 then
-		if var10_1 == 4 or var10_1 == 5 then
+	elseif var10_1 == 10 then
+		if var11_1 == 4 or var11_1 == 5 then
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.MAINUI, {
 				subContext = Context.New({
 					viewComponent = InstagramLayer,
@@ -198,54 +208,54 @@ function var0_0.execute(arg0_1, arg1_1)
 				})
 			})
 		end
-	elseif var9_1 == 11 then
-		if var10_1 == 0 then
+	elseif var10_1 == 11 then
+		if var11_1 == 0 then
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.TECHNOLOGY)
 		end
-	elseif var9_1 == 12 then
-		if var10_1 == 0 then
+	elseif var10_1 == 12 then
+		if var11_1 == 0 then
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.SHOP, {
 				warp = NewShopsScene.TYPE_SHAM_SHOP
 			})
-		elseif var10_1 == 1 then
-			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var8_1)
-		elseif var10_1 == 2 then
+		elseif var11_1 == 1 then
+			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var9_1)
+		elseif var11_1 == 2 then
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.SHOP, {
 				warp = NewShopsScene.TYPE_SHOP_STREET
 			})
 		end
-	elseif var9_1 == 13 then
-		if var10_1 == 0 then
-			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var8_1)
+	elseif var10_1 == 13 then
+		if var11_1 == 0 then
+			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var9_1)
 		end
-	elseif var9_1 == 14 then
-		if var10_1 == 0 then
+	elseif var10_1 == 14 then
+		if var11_1 == 0 then
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.DAILYLEVEL)
 		end
-	elseif var9_1 == 15 then
-		if var10_1 == 1 then
+	elseif var10_1 == 15 then
+		if var11_1 == 1 then
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.SHOP, {
 				warp = NewShopsScene.TYPE_GUILD
 			})
-		elseif var10_1 == 0 then
+		elseif var11_1 == 0 then
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.SHOP)
 		end
-	elseif var9_1 == 17 then
-		if var10_1 == 0 then
+	elseif var10_1 == 17 then
+		if var11_1 == 0 then
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.COMMANDERCAT, {
 				fleetType = CommanderCatScene.FLEET_TYPE_COMMON
 			})
 		end
-	elseif var9_1 == 18 then
-		if var10_1 == 2 then
-			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var8_1)
+	elseif var10_1 == 18 then
+		if var11_1 == 2 then
+			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var9_1)
 		end
-	elseif var9_1 == 30 then
-		if var10_1 == 4 then
+	elseif var10_1 == 30 then
+		if var11_1 == 4 then
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.WORLD)
 		end
-	elseif var9_1 == 40 then
-		if var10_1 == 2 then
+	elseif var10_1 == 40 then
+		if var11_1 == 2 then
 			if getProxy(GuildProxy):getData() then
 				arg0_1:sendNotification(GAME.GO_SCENE, SCENE.GUILD, {
 					page = "office"
@@ -254,40 +264,40 @@ function var0_0.execute(arg0_1, arg1_1)
 				arg0_1:sendNotification(GAME.GO_SCENE, SCENE.PUBLIC_GUILD)
 			end
 		end
-	elseif var9_1 == 41 then
-		if var10_1 == 7 then
+	elseif var10_1 == 41 then
+		if var11_1 == 7 then
 			pg.m02:sendNotification(GAME.GO_MINI_GAME, 56)
 		end
-	elseif var9_1 == 43 then
-		if var10_1 == 0 or var10_1 == 1 then
+	elseif var10_1 == 43 then
+		if var11_1 == 0 or var11_1 == 1 then
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.FEAST)
-		elseif var10_1 == 2 or var10_1 == 3 then
+		elseif var11_1 == 2 or var11_1 == 3 then
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.FEAST, {
 				page = 1
 			})
-		elseif var10_1 == 4 then
+		elseif var11_1 == 4 then
 			pg.m02:sendNotification(GAME.GO_MINI_GAME, 56)
 		end
-	elseif var9_1 == 100 then
-		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var8_1)
-	elseif var9_1 == 101 then
-		if var10_1 == 3 then
-			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var8_1)
-		elseif var10_1 == 5 or var10_1 == 8 then
+	elseif var10_1 == 100 then
+		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var9_1)
+	elseif var10_1 == 101 then
+		if var11_1 == 3 then
+			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var9_1)
+		elseif var11_1 == 5 or var11_1 == 8 then
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
 				mode = DockyardScene.MODE_OVERVIEW
 			})
 		end
-	elseif var9_1 == 102 then
-		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var8_1)
-	elseif var9_1 == 200 then
-		if var10_1 == 1 or var10_1 == 2 then
+	elseif var10_1 == 102 then
+		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var9_1)
+	elseif var10_1 == 200 then
+		if var11_1 == 1 or var11_1 == 2 then
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.BIANDUI)
 		end
-	elseif var9_1 == 201 then
-		if var10_1 == 0 then
+	elseif var10_1 == 201 then
+		if var11_1 == 0 then
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.COURTYARD)
-		elseif var10_1 == 1 then
+		elseif var11_1 == 1 then
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.MAINUI)
 		end
 	end

@@ -76,6 +76,7 @@ end
 function var0_0.OnFirstFlush(arg0_8)
 	arg0_8:FlushSignInAct()
 	arg0_8:FlushTargetPtAct()
+	arg0_8:Hx4Channel()
 end
 
 function var0_0.FlushTargetPtAct(arg0_9)
@@ -192,6 +193,20 @@ end
 
 function var0_0.UpdateTargetPtAct(arg0_18)
 	arg0_18:FlushTargetPtAct()
+end
+
+local function var1_0(arg0_19)
+	local var0_19 = pg.SdkMgr.GetInstance():GetChannelUIDIncludeHarmony()
+
+	return (arg0_19._tf:Find("AD/rw_mask/rw_1/hx_ch" .. var0_19))
+end
+
+function var0_0.Hx4Channel(arg0_20)
+	local var0_20 = var1_0(arg0_20)
+
+	if not IsNil(var0_20) then
+		setActive(var0_20, HXSet.isHx())
+	end
 end
 
 return var0_0

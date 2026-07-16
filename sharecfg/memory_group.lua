@@ -269,6 +269,7 @@ pg.memory_group.all = {
 	367,
 	368,
 	369,
+	370,
 	501,
 	502,
 	503,
@@ -7167,6 +7168,22 @@ end)()
 			5249
 		}
 	}
+	pg.base.memory_group[370] = {
+		ship_group = 0,
+		group_id = "",
+		type = 2,
+		link_event = 50841,
+		title = "An Android's Journey",
+		auto_unlock = "",
+		subtype = 2,
+		id = 370,
+		icon = "title_event",
+		memories = {
+			5261,
+			5262,
+			5263
+		}
+	}
 	pg.base.memory_group[501] = {
 		ship_group = 31201,
 		group_id = "",
@@ -7926,6 +7943,8 @@ end)()
 			10000
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_group[536] = {
 		ship_group = 10310,
 		subtype = 0,
@@ -7948,8 +7967,6 @@ end)()
 			10000
 		}
 	}
-end)()
-;(function()
 	pg.base.memory_group[537] = {
 		ship_group = 20208,
 		subtype = 0,

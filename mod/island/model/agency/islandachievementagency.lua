@@ -116,109 +116,129 @@ function var0_0.GetGotGroupMaxStageList(arg0_7)
 	return underscore.values(var2_7)
 end
 
-function var0_0.GetGroup(arg0_8, arg1_8)
-	return arg0_8.groupDic[arg1_8]
+function var0_0.UpdataAchLv(arg0_8, arg1_8)
+	local var0_8 = {}
+	local var1_8 = arg0_8:GetGotGroupMaxStageList()
+	local var2_8 = {}
+
+	for iter0_8, iter1_8 in ipairs(var1_8) do
+		var2_8[pg.island_achievement[iter1_8].group] = iter1_8
+	end
+
+	for iter2_8, iter3_8 in ipairs(arg1_8) do
+		local var3_8 = pg.island_achievement[iter3_8]
+
+		table.insert(var0_8, var2_8[var3_8.group])
+	end
+
+	local var4_8
+
+	return var0_8
 end
 
-function var0_0.IsCanGet(arg0_9, arg1_9)
-	if arg1_9:GetStatus() == IslandAchievement.STATUS.GOT then
+function var0_0.GetGroup(arg0_9, arg1_9)
+	return arg0_9.groupDic[arg1_9]
+end
+
+function var0_0.IsCanGet(arg0_10, arg1_10)
+	if arg1_10:GetStatus() == IslandAchievement.STATUS.GOT then
 		return
 	end
 
-	local var0_9 = arg1_9:GetType()
-	local var1_9 = arg1_9:GetParam()
-	local var2_9 = arg1_9:GetNum()
-
-	if not arg0_9.recordDic[var0_9] then
-		return false
-	end
-
-	local var3_9 = arg0_9.recordDic[var0_9][var1_9]
-
-	return var3_9 and var2_9 <= var3_9
-end
-
-function var0_0.GetCurProgress(arg0_10, arg1_10)
 	local var0_10 = arg1_10:GetType()
 	local var1_10 = arg1_10:GetParam()
 	local var2_10 = arg1_10:GetNum()
 
 	if not arg0_10.recordDic[var0_10] then
+		return false
+	end
+
+	local var3_10 = arg0_10.recordDic[var0_10][var1_10]
+
+	return var3_10 and var2_10 <= var3_10
+end
+
+function var0_0.GetCurProgress(arg0_11, arg1_11)
+	local var0_11 = arg1_11:GetType()
+	local var1_11 = arg1_11:GetParam()
+	local var2_11 = arg1_11:GetNum()
+
+	if not arg0_11.recordDic[var0_11] then
 		return 0
 	end
 
-	return arg0_10.recordDic[var0_10][var1_10] or 0
+	return arg0_11.recordDic[var0_11][var1_11] or 0
 end
 
-function var0_0.GetTotalCnt(arg0_11)
-	local var0_11 = 0
+function var0_0.GetTotalCnt(arg0_12)
+	local var0_12 = 0
 
-	for iter0_11, iter1_11 in pairs(arg0_11.groupDic) do
-		var0_11 = underscore.reduce(iter1_11:GetSortAchvList(), var0_11, function(arg0_12, arg1_12)
-			return arg0_12 + (arg1_12:IsHideType() and (arg0_11:IsCanGet(arg1_12) and 1 or 0) or 1)
+	for iter0_12, iter1_12 in pairs(arg0_12.groupDic) do
+		var0_12 = underscore.reduce(iter1_12:GetSortAchvList(), var0_12, function(arg0_13, arg1_13)
+			return arg0_13 + (arg1_13:IsHideType() and (arg0_12:IsCanGet(arg1_13) and 1 or 0) or 1)
 		end)
 	end
 
-	return var0_11
+	return var0_12
 end
 
-function var0_0.CheckRecordExist(arg0_13, arg1_13, arg2_13)
-	return arg0_13.recordDic[arg1_13] and arg0_13.recordDic[arg1_13][arg2_13]
+function var0_0.CheckRecordExist(arg0_14, arg1_14, arg2_14)
+	return arg0_14.recordDic[arg1_14] and arg0_14.recordDic[arg1_14][arg2_14]
 end
 
-function var0_0.UpdateRecord(arg0_14, arg1_14, arg2_14, arg3_14)
-	if not arg0_14.recordDic[arg1_14] then
-		arg0_14.recordDic[arg1_14] = {}
-	end
-
-	if not arg0_14.recordDic[arg1_14][arg2_14] then
-		local var0_14 = 0
-	end
-
-	arg0_14.recordDic[arg1_14][arg2_14] = arg3_14
-
-	arg0_14:CheckAchvStatus(arg1_14, arg2_14)
-end
-
-function var0_0.UpdateRecordWithAdd(arg0_15, arg1_15, arg2_15, arg3_15)
+function var0_0.UpdateRecord(arg0_15, arg1_15, arg2_15, arg3_15)
 	if not arg0_15.recordDic[arg1_15] then
 		arg0_15.recordDic[arg1_15] = {}
 	end
 
-	local var0_15 = arg0_15.recordDic[arg1_15][arg2_15] or 0
+	if not arg0_15.recordDic[arg1_15][arg2_15] then
+		local var0_15 = 0
+	end
 
-	arg0_15.recordDic[arg1_15][arg2_15] = var0_15 + arg3_15
+	arg0_15.recordDic[arg1_15][arg2_15] = arg3_15
 
 	arg0_15:CheckAchvStatus(arg1_15, arg2_15)
 end
 
-function var0_0.CheckAchvStatus(arg0_16, arg1_16, arg2_16)
-	if not arg0_16.achvDic[arg1_16] or not arg0_16.achvDic[arg1_16][arg2_16] then
+function var0_0.UpdateRecordWithAdd(arg0_16, arg1_16, arg2_16, arg3_16)
+	if not arg0_16.recordDic[arg1_16] then
+		arg0_16.recordDic[arg1_16] = {}
+	end
+
+	local var0_16 = arg0_16.recordDic[arg1_16][arg2_16] or 0
+
+	arg0_16.recordDic[arg1_16][arg2_16] = var0_16 + arg3_16
+
+	arg0_16:CheckAchvStatus(arg1_16, arg2_16)
+end
+
+function var0_0.CheckAchvStatus(arg0_17, arg1_17, arg2_17)
+	if not arg0_17.achvDic[arg1_17] or not arg0_17.achvDic[arg1_17][arg2_17] then
 		return
 	end
 
-	for iter0_16, iter1_16 in ipairs(arg0_16.achvDic[arg1_16][arg2_16]) do
-		if iter1_16:GetStatus() == IslandAchievement.STATUS.NORMAL and arg0_16:IsCanGet(iter1_16) then
-			iter1_16:SetStatus(IslandAchievement.STATUS.GET)
-			arg0_16:DispatchEvent(var0_0.NEW_CAN_GET, iter1_16)
+	for iter0_17, iter1_17 in ipairs(arg0_17.achvDic[arg1_17][arg2_17]) do
+		if iter1_17:GetStatus() == IslandAchievement.STATUS.NORMAL and arg0_17:IsCanGet(iter1_17) then
+			iter1_17:SetStatus(IslandAchievement.STATUS.GET)
+			arg0_17:DispatchEvent(var0_0.NEW_CAN_GET, iter1_17)
 		end
 	end
 end
 
-function var0_0.AddGotIds(arg0_17, arg1_17)
-	for iter0_17, iter1_17 in ipairs(arg1_17) do
-		table.insert(arg0_17.gotList, iter1_17)
+function var0_0.AddGotIds(arg0_18, arg1_18)
+	for iter0_18, iter1_18 in ipairs(arg1_18) do
+		table.insert(arg0_18.gotList, iter1_18)
 
-		local var0_17 = pg.island_achievement[iter1_17].group
+		local var0_18 = pg.island_achievement[iter1_18].group
 
-		arg0_17.groupDic[var0_17]:SetGotTagById(iter1_17)
+		arg0_18.groupDic[var0_18]:SetGotTagById(iter1_18)
 	end
 end
 
-function var0_0.IsTip(arg0_18)
-	for iter0_18, iter1_18 in pairs(arg0_18.groupDic) do
-		for iter2_18, iter3_18 in ipairs(iter1_18:GetSortAchvList()) do
-			if iter3_18:GetStatus() == IslandAchievement.STATUS.GET then
+function var0_0.IsTip(arg0_19)
+	for iter0_19, iter1_19 in pairs(arg0_19.groupDic) do
+		for iter2_19, iter3_19 in ipairs(iter1_19:GetSortAchvList()) do
+			if iter3_19:GetStatus() == IslandAchievement.STATUS.GET then
 				return true
 			end
 		end

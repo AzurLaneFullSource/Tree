@@ -27,16 +27,16 @@ end
 
 function var0_0.CommonInit(arg0_4)
 	arg0_4.eventTriggers = {}
-	arg0_4._startBtn = arg0_4._tf:Find("right/start")
-	arg0_4._costContainer = arg0_4._tf:Find("right/start/cost_container")
+	arg0_4._startBtn = arg0_4.rtAdapt:Find("right/start")
+	arg0_4._costContainer = arg0_4.rtAdapt:Find("right/start/cost_container")
 	arg0_4._popup = arg0_4._costContainer:Find("popup")
 	arg0_4._costText = arg0_4._popup:Find("Text")
 	arg0_4._moveLayer = arg0_4._tf:Find("moveLayer")
 
-	local var0_4 = arg0_4._tf:Find("middle")
+	local var0_4 = arg0_4.rtAdapt:Find("middle")
 
-	arg0_4._autoToggle = arg0_4._tf:Find("auto_toggle")
-	arg0_4._autoSubToggle = arg0_4._tf:Find("sub_toggle_container/sub_toggle")
+	arg0_4._autoToggle = arg0_4.rtAdapt:Find("auto_toggle")
+	arg0_4._autoSubToggle = arg0_4.rtAdapt:Find("sub_toggle_container/sub_toggle")
 	arg0_4._fleetInfo = var0_4:Find("fleet_info")
 	arg0_4._fleetNameText = var0_4:Find("fleet_info/fleet_name/Text")
 	arg0_4._fleetNumText = var0_4:Find("fleet_info/fleet_number")
@@ -61,34 +61,34 @@ function var0_0.CommonInit(arg0_4)
 		arg0_4._gridTFs[TeamType.Submarine][iter0_4] = arg0_4._gridFrame:Find("submarine_" .. iter0_4)
 	end
 
-	arg0_4._nextPage = arg0_4._tf:Find("middle/nextPage")
-	arg0_4._prevPage = arg0_4._tf:Find("middle/prevPage")
+	arg0_4._nextPage = arg0_4.rtAdapt:Find("middle/nextPage")
+	arg0_4._prevPage = arg0_4.rtAdapt:Find("middle/prevPage")
 	arg0_4._heroContainer = var0_4:Find("HeroContainer")
 	arg0_4._checkBtn = var0_4:Find("checkBtn")
 	arg0_4._blurPanel = arg0_4._tf:Find("blur_panel")
 	arg0_4.topPanel = arg0_4._blurPanel:Find("top")
 	arg0_4.topPanelBg = arg0_4._blurPanel:Find("top_bg")
 	arg0_4._backBtn = arg0_4.topPanel:Find("back_btn")
-	arg0_4._spoilsContainer = arg0_4._tf:Find("right/infomation/atlasloot/spoils/items/items_container")
-	arg0_4._item = arg0_4._tf:Find("right/infomation/atlasloot/spoils/items/item_tpl")
+	arg0_4._spoilsContainer = arg0_4.rtAdapt:Find("right/infomation/atlasloot/spoils/items/items_container")
+	arg0_4._item = arg0_4.rtAdapt:Find("right/infomation/atlasloot/spoils/items/item_tpl")
 
 	SetActive(arg0_4._item, false)
 
-	arg0_4._goals = arg0_4._tf:Find("right/infomation/target/goal")
+	arg0_4._goals = arg0_4.rtAdapt:Find("right/infomation/target/goal")
 	arg0_4._heroInfo = arg0_4:getTpl("heroInfo")
 	arg0_4._starTpl = arg0_4:getTpl("star_tpl")
 
-	setText(findTF(arg0_4._tf, "middle/gear_score/vanguard/line/Image/Text1"), i18n("pre_combat_vanguard"))
-	setText(findTF(arg0_4._tf, "middle/gear_score/main/line/Image/Text1"), i18n("pre_combat_main"))
-	setText(findTF(arg0_4._tf, "middle/gear_score/submarine/line/Image/text1"), i18n("pre_combat_submarine"))
+	setText(findTF(arg0_4.rtAdapt, "middle/gear_score/vanguard/line/Image/Text1"), i18n("pre_combat_vanguard"))
+	setText(findTF(arg0_4.rtAdapt, "middle/gear_score/main/line/Image/Text1"), i18n("pre_combat_main"))
+	setText(findTF(arg0_4.rtAdapt, "middle/gear_score/submarine/line/Image/text1"), i18n("pre_combat_submarine"))
 	setText(arg0_4._costContainer:Find("title"), i18n("pre_combat_consume"))
-	setText(findTF(arg0_4._tf, "right/infomation/target/title/GameObject"), i18n("pre_combat_targets"))
-	setText(findTF(arg0_4._tf, "right/infomation/atlasloot/atlasloot/title/GameObject"), i18n("pre_combat_atlasloot"))
+	setText(findTF(arg0_4.rtAdapt, "right/infomation/target/title/GameObject"), i18n("pre_combat_targets"))
+	setText(findTF(arg0_4.rtAdapt, "right/infomation/atlasloot/atlasloot/title/GameObject"), i18n("pre_combat_atlasloot"))
 	setText(arg0_4._startBtn:Find("text"), i18n("pre_combat_start"))
 	setText(arg0_4._startBtn:Find("text_en"), i18n("pre_combat_start_en"))
 
-	arg0_4._middle = arg0_4._tf:Find("middle")
-	arg0_4._right = arg0_4._tf:Find("right")
+	arg0_4._middle = arg0_4.rtAdapt:Find("middle")
+	arg0_4._right = arg0_4.rtAdapt:Find("right")
 
 	setAnchoredPosition(arg0_4._middle, {
 		x = -840
@@ -104,7 +104,7 @@ function var0_0.CommonInit(arg0_4)
 	end
 
 	arg0_4._costTip = arg0_4._startBtn:Find("cost_container/popup/tip")
-	arg0_4._continuousBtn = arg0_4._tf:Find("right/multiple")
+	arg0_4._continuousBtn = arg0_4.rtAdapt:Find("right/multiple")
 
 	setText(arg0_4._continuousBtn:Find("text"), i18n("multiple_sorties_title"))
 	setText(arg0_4._continuousBtn:Find("text_en"), i18n("multiple_sorties_title_eng"))

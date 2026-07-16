@@ -262,6 +262,9 @@ pg.pay_data_display.all = {
 	2079,
 	2080,
 	2081,
+	2085,
+	2086,
+	2087,
 	2088,
 	2089,
 	2090,
@@ -28107,7 +28110,7 @@ end)()
 		id_str = "com.yostaren.azurlane.pack41",
 		first_pay_double = 0,
 		extra_gem = 0,
-		descrip = "Contains the Battle UI - Gilded Reverie theme and 1000 Coins.",
+		descrip = "Contains the Battle UI - Gilded Reverie theme and 1,000 Coins.",
 		package_tag_open = 0,
 		airijp_id = "com.yostaren.azurlane.pack41",
 		extra_service_item = {
@@ -28200,7 +28203,7 @@ end)()
 		id_str = "com.yostaren.azurlane.pack42",
 		first_pay_double = 0,
 		extra_gem = 0,
-		descrip = "Contains the Battle UI - Gilded Reverie theme and 3060 Gems.",
+		descrip = "Contains the Battle UI - Gilded Reverie theme and 3,060 Gems.",
 		package_tag_open = 0,
 		airijp_id = "com.yostaren.azurlane.pack42",
 		extra_service_item = {
@@ -28260,6 +28263,269 @@ end)()
 			{
 				2,
 				40081,
+				1
+			}
+		}
+	}
+	pg.base.pay_data_display[2085] = {
+		limit_group = 110,
+		name = "Battle UI Pack – YoRHa",
+		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
+		type = 0,
+		second_text = "",
+		type_order = 4,
+		subject = "Battle UI Pack – YoRHa",
+		first_text = "",
+		first_icon = "",
+		limit_arg = 0,
+		money = 1199,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		id = 2085,
+		name_display = "Battle UI Pack – YoRHa",
+		limit_type = 5,
+		package_sort_id = 0,
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "ui10",
+		extra_service = 3,
+		skin_inquire_relation = 0,
+		show_group = "uigift",
+		id_str = "",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains a new combat UI theme.",
+		package_tag_open = 0,
+		airijp_id = "",
+		extra_service_item = {
+			{
+				31,
+				209,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					7,
+					16
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					7,
+					29
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				31,
+				209,
+				1
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	}
+	pg.base.pay_data_display[2086] = {
+		limit_group = 110,
+		name = "Battle UI Pack – YoRHa (Basic)",
+		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
+		type = 0,
+		second_text = "",
+		type_order = 4,
+		subject = "Battle UI Pack – YoRHa (Basic)",
+		first_text = "",
+		first_icon = "",
+		limit_arg = 1,
+		money = 1199,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		id = 2086,
+		name_display = "Battle UI Pack – YoRHa (Basic)",
+		limit_type = 5,
+		package_sort_id = 0,
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "ui10",
+		extra_service = 3,
+		skin_inquire_relation = 0,
+		show_group = "uigift",
+		id_str = "com.yostaren.azurlane.pack46",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains the Battle UI - YoRHa theme and 1,000 Coins.",
+		package_tag_open = 0,
+		airijp_id = "com.yostaren.azurlane.pack46",
+		extra_service_item = {
+			{
+				31,
+				209,
+				1
+			},
+			{
+				1,
+				1,
+				1000
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					7,
+					16
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					7,
+					29
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				31,
+				209,
+				1
+			},
+			{
+				1,
+				1,
+				1000
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40084,
+				1
+			}
+		}
+	}
+	pg.base.pay_data_display[2087] = {
+		limit_group = 110,
+		name = "Battle UI Pack – YoRHa (Premium)",
+		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
+		type = 0,
+		second_text = "",
+		type_order = 4,
+		subject = "Battle UI Pack – YoRHa (Premium)",
+		first_text = "",
+		first_icon = "",
+		limit_arg = 1,
+		money = 3699,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		id = 2087,
+		name_display = "Battle UI Pack – YoRHa (Premium)",
+		limit_type = 5,
+		package_sort_id = 0,
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "ui10",
+		extra_service = 3,
+		skin_inquire_relation = 0,
+		show_group = "uigift",
+		id_str = "com.yostaren.azurlane.pack47",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains the Battle UI - YoRHa theme and 3,060 Gems.",
+		package_tag_open = 0,
+		airijp_id = "com.yostaren.azurlane.pack47",
+		extra_service_item = {
+			{
+				31,
+				209,
+				1
+			},
+			{
+				1,
+				14,
+				3060
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					7,
+					16
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					7,
+					29
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				31,
+				209,
+				1
+			},
+			{
+				1,
+				14,
+				3060
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40085,
 				1
 			}
 		}

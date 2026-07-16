@@ -805,7 +805,7 @@ function var0_0.ShouldShowBattleTip(arg0_73)
 		if var4_73 and not var1_73 then
 			local var6_73 = var4_73:IsParticipant()
 
-			var1_73 = var6_73 and var4_73:AnyMissionFirstFleetCanFroamtion() or var2_73(var4_73) or not var6_73 and not var4_73:IsLimitedJoin()
+			var1_73 = var6_73 and var4_73:AnyMissionCanFormation() or var2_73(var4_73) or not var6_73 and not var4_73:IsLimitedJoin()
 		end
 	end
 

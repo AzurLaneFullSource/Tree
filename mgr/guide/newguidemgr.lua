@@ -55,6 +55,7 @@ function var0_0.Init(arg0_4, arg1_4)
 		arg0_4.uiFinder = GuideUIFinder.New(arg0_4._tf)
 		arg0_4.uiDuplicator = GuideUIDuplicator.New(arg0_4._tf:Find("target"))
 		arg0_4.uiLoader = GuideUILoader.New(arg0_4._tf:Find("target"))
+		arg0_4.uiFloatCollctor = GuideUIFloatCollector.New(arg0_4._tf:Find("target"))
 		arg0_4.dialogueWindows = {
 			[GuideStep.DIALOGUE_BLUE] = arg0_4._tf:Find("windows/window_1")
 		}
@@ -198,15 +199,12 @@ function var0_0.Stop(arg0_19)
 		arg0_19.uiFinder:Clear()
 		arg0_19.uiDuplicator:Clear()
 		arg0_19.uiLoader:Clear()
+		arg0_19.uiFloatCollctor:Clear()
 		arg0_19:Clear()
 	end
 end
 
 function var0_0.NextStep(arg0_20)
-	if not IsUnityEditor then
-		return
-	end
-
 	if arg0_20.state == var4_0 and arg0_20.player then
 		arg0_20.player:NextOne()
 	end
@@ -282,6 +280,7 @@ function var0_0.Exit(arg0_30)
 	arg0_30.uiFinder:Clear()
 	arg0_30.uiDuplicator:Clear()
 	arg0_30.uiLoader:Clear()
+	arg0_30.uiFloatCollctor:Clear()
 
 	arg0_30.state = var7_0
 end

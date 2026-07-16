@@ -217,7 +217,9 @@ function var0_0.verifyTabs(arg0_29, arg1_29)
 	local var1_29 = var0_29:getConfig("is_show")
 	local var2_29 = arg0_29.tabs:Find(tostring(var1_29))
 
-	triggerToggle(var2_29, true)
+	if var2_29 then
+		triggerToggle(var2_29, true)
+	end
 end
 
 function var0_0.GetActiveActivity(arg0_30)

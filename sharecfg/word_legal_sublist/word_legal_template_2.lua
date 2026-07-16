@@ -7,207 +7,6 @@ var0_0.word_legal_template_2 = {}
 local var1_0 = var0_0.word_legal_template_2
 
 function temp()
-	var1_0.J = {
-		e = {
-			n = {
-				k = {
-					i = {
-						n = {
-							s = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			r = {
-				s = {
-					e = {
-						y = {
-							this = true
-						}
-					}
-				},
-				v = {
-					i = {
-						s = {
-							this = true
-						}
-					}
-				}
-			},
-			a = {
-				n = {
-					n = {
-						e = {
-							[" "] = {
-								d = {
-									["'"] = {
-										A = {
-											r = {
-												c = {
-													this = true
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					[" "] = {
-						B = {
-							a = {
-								r = {
-									t = {
-										this = true
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		},
-		u = {
-			n = {
-				e = {
-					a = {
-						u = {
-							this = true,
-							[" "] = {
-								R = {
-									e = {
-										t = {
-											r = {
-												o = {
-													f = {
-														i = {
-															t = {
-																this = true
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				},
-				o = {
-					this = true
-				},
-				y = {
-					o = {
-						u = {
-							this = true,
-							[" "] = {
-								M = {
-									E = {
-										T = {
-											A = {
-												this = true
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			},
-			p = {
-				i = {
-					t = {
-						e = {
-							r = {
-								this = true
-							}
-						}
-					}
-				}
-			}
-		},
-		a = {
-			v = {
-				e = {
-					l = {
-						i = {
-							n = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			n = {
-				u = {
-					s = {
-						this = true
-					}
-				}
-			},
-			m = {
-				a = {
-					i = {
-						c = {
-							a = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			d = {
-				e = {
-					this = true
-				}
-			}
-		},
-		i = {
-			n = {
-				t = {
-					s = {
-						u = {
-							u = {
-								this = true,
-								[" "] = {
-									M = {
-										E = {
-											T = {
-												A = {
-													this = true
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		},
-		o = {
-			f = {
-				f = {
-					r = {
-						e = {
-							this = true
-						}
-					}
-				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
 	var1_0.N = {
 		i = {
 			c = {
@@ -2851,6 +2650,16 @@ function temp()
 					}
 				}
 			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0["2"] = {
+		B = {
+			this = true
 		}
 	}
 end

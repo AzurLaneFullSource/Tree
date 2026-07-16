@@ -5,17 +5,20 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.bgCg = arg1_1:Find("BG"):GetComponent(typeof(CanvasGroup))
 	arg0_1.windowContainer = arg1_1:Find("windows")
 	arg0_1.charContainer = arg1_1:Find("char")
+	arg0_1.maskTr = arg1_1:Find("mask")
 	arg0_1.dialogueWindows = pg.NewGuideMgr.GetInstance().dialogueWindows
 	arg0_1.counsellors = pg.NewGuideMgr.GetInstance().counsellors
 	arg0_1.uiFinder = pg.NewGuideMgr.GetInstance().uiFinder
 	arg0_1.uiDuplicator = pg.NewGuideMgr.GetInstance().uiDuplicator
 	arg0_1.uiLoader = pg.NewGuideMgr.GetInstance().uiLoader
+	arg0_1.uiFloatCollctor = pg.NewGuideMgr.GetInstance().uiFloatCollctor
 	arg0_1.root = arg1_1:Find("target")
 end
 
 function var0_0.Execute(arg0_2, arg1_2, arg2_2)
 	seriesAsync({
 		function(arg0_3)
+			arg0_2:UpdateCanClickMask(arg1_2)
 			arg0_2:HideDialogueWindows()
 			arg0_2:UpdateStyle(arg1_2)
 			arg0_2:DoDelay(arg1_2, arg0_3)
@@ -48,322 +51,318 @@ function var0_0.Execute(arg0_2, arg1_2, arg2_2)
 	}, arg2_2)
 end
 
-function var0_0.CheckBaseUI(arg0_12, arg1_12, arg2_12)
-	if not arg1_12:ShouldCheckBaseUI() then
-		arg2_12()
+function var0_0.UpdateCanClickMask(arg0_12, arg1_12)
+	setActive(arg0_12.maskTr, not arg1_12:CanClick())
+end
+
+function var0_0.CheckBaseUI(arg0_13, arg1_13, arg2_13)
+	if not arg1_13:ShouldCheckBaseUI() then
+		arg2_13()
 
 		return
 	end
 
-	arg0_12:SearchUI(arg1_12:GetBaseUI(), function(arg0_13)
-		if not arg0_13 then
+	arg0_13:SearchUI(arg1_13:GetBaseUI(), function(arg0_14)
+		if not arg0_14 then
 			pg.NewGuideMgr.GetInstance():Stop()
 
 			return
 		end
 
-		arg2_12()
+		arg2_13()
 	end)
 end
 
-local function var1_0(arg0_14, arg1_14)
-	local var0_14 = arg0_14:GetComponent(typeof(Image))
+local function var1_0(arg0_15, arg1_15)
+	local var0_15 = arg0_15:GetComponent(typeof(Image))
 
-	return not (IsNil(var0_14.sprite) or arg1_14 and var0_14.sprite.name == arg1_14)
+	return not (IsNil(var0_15.sprite) or arg1_15 and var0_15.sprite.name == arg1_15)
 end
 
-function var0_0.CheckSprite(arg0_15, arg1_15, arg2_15)
-	if not arg1_15:ShouldCheckSpriteUI() then
-		arg2_15()
+function var0_0.CheckSprite(arg0_16, arg1_16, arg2_16)
+	if not arg1_16:ShouldCheckSpriteUI() then
+		arg2_16()
 
 		return
 	end
 
-	local var0_15 = arg1_15:GetSpriteUI()
+	local var0_16 = arg1_16:GetSpriteUI()
 
-	arg0_15:SearchUI(var0_15, function(arg0_16)
-		if not arg0_16 then
+	arg0_16:SearchUI(var0_16, function(arg0_17)
+		if not arg0_17 then
 			pg.NewGuideMgr.GetInstance():Stop()
 
 			return
 		end
 
-		local var0_16 = var0_15.childPath and arg0_16:Find(var0_15.childPath) or arg0_16
+		local var0_17 = var0_16.childPath and arg0_17:Find(var0_16.childPath) or arg0_17
 
-		arg0_15:ClearSpriteTimer()
+		arg0_16:ClearSpriteTimer()
 
-		local var1_16 = 0
-		local var2_16 = 10
+		local var1_17 = 0
+		local var2_17 = 10
 
-		arg0_15.spriteTimer = Timer.New(function()
-			var1_16 = var1_16 + 1
+		arg0_16.spriteTimer = Timer.New(function()
+			var1_17 = var1_17 + 1
 
-			if var1_16 == var2_16 then
-				arg0_15:ClearSpriteTimer()
+			if var1_17 == var2_17 then
+				arg0_16:ClearSpriteTimer()
 
 				return
 			end
 
-			if var1_0(var0_16, var0_15.defaultName) then
-				arg0_15:ClearSpriteTimer()
-				arg2_15()
+			if var1_0(var0_17, var0_16.defaultName) then
+				arg0_16:ClearSpriteTimer()
+				arg2_16()
 			end
 		end, 0.5, -1)
 
-		arg0_15.spriteTimer:Start()
+		arg0_16.spriteTimer:Start()
 	end)
 end
 
-function var0_0.ClearSpriteTimer(arg0_18)
-	if arg0_18.spriteTimer then
-		arg0_18.spriteTimer:Stop()
+function var0_0.ClearSpriteTimer(arg0_19)
+	if arg0_19.spriteTimer then
+		arg0_19.spriteTimer:Stop()
 
-		arg0_18.spriteTimer = nil
+		arg0_19.spriteTimer = nil
 	end
 end
 
-function var0_0.UpdateStyle(arg0_19, arg1_19)
-	arg0_19.bgCg.alpha = arg1_19:GetAlpha()
+function var0_0.UpdateStyle(arg0_20, arg1_20)
+	arg0_20.bgCg.alpha = arg1_20:GetAlpha()
 end
 
-function var0_0.DoDelay(arg0_20, arg1_20, arg2_20)
-	local var0_20 = arg1_20:GetDelay()
+function var0_0.DoDelay(arg0_21, arg1_21, arg2_21)
+	local var0_21 = arg1_21:GetDelay()
 
-	if var0_20 <= 0 then
-		arg2_20()
+	if var0_21 <= 0 then
+		arg2_21()
 
 		return
 	end
 
-	arg0_20.delayTimer = Timer.New(arg2_20, var0_20, 1)
+	arg0_21.delayTimer = Timer.New(arg2_21, var0_21, 1)
 
-	arg0_20.delayTimer:Start()
+	arg0_21.delayTimer:Start()
 end
 
-function var0_0.OnSceneEnter(arg0_21)
-	if arg0_21.waitSceneData and pg.NewGuideMgr.GetInstance():ExistScene(arg0_21.waitSceneData.sceneName) then
-		arg0_21:ClearWaitUntilSceneTimer()
-		arg0_21.waitSceneData.callback()
+function var0_0.OnSceneEnter(arg0_22)
+	if arg0_22.waitSceneData and pg.NewGuideMgr.GetInstance():ExistScene(arg0_22.waitSceneData.sceneName) then
+		arg0_22:ClearWaitUntilSceneTimer()
+		arg0_22.waitSceneData.callback()
 
-		arg0_21.waitSceneData = nil
+		arg0_22.waitSceneData = nil
 	end
 end
 
-function var0_0.WaitUntilSceneEnter(arg0_22, arg1_22, arg2_22)
-	if not arg1_22:ShouldWaitScene() then
-		arg2_22()
+function var0_0.WaitUntilSceneEnter(arg0_23, arg1_23, arg2_23)
+	if not arg1_23:ShouldWaitScene() then
+		arg2_23()
 
 		return
 	end
 
-	arg0_22:ClearWaitUntilSceneTimer()
+	arg0_23:ClearWaitUntilSceneTimer()
 
-	local var0_22 = arg1_22:GetWaitScene()
+	local var0_23 = arg1_23:GetWaitScene()
 
-	if pg.NewGuideMgr.GetInstance():ExistScene(var0_22) then
-		arg2_22()
+	if pg.NewGuideMgr.GetInstance():ExistScene(var0_23) then
+		arg2_23()
 	else
-		arg0_22.waitSceneData = {
-			sceneName = var0_22,
-			callback = arg2_22
+		arg0_23.waitSceneData = {
+			sceneName = var0_23,
+			callback = arg2_23
 		}
 
-		arg0_22:AddWaitUntilSceneTimer()
+		arg0_23:AddWaitUntilSceneTimer()
 	end
 end
 
-function var0_0.AddWaitUntilSceneTimer(arg0_23)
-	arg0_23.waitUntilSceneTimer = Timer.New(function()
-		arg0_23:ClearWaitUntilSceneTimer()
+function var0_0.AddWaitUntilSceneTimer(arg0_24)
+	arg0_24.waitUntilSceneTimer = Timer.New(function()
+		arg0_24:ClearWaitUntilSceneTimer()
 		pg.NewGuideMgr.GetInstance():Stop()
 	end, 10, 1)
 
-	arg0_23.waitUntilSceneTimer:Start()
+	arg0_24.waitUntilSceneTimer:Start()
 end
 
-function var0_0.ClearWaitUntilSceneTimer(arg0_25)
-	if arg0_25.waitUntilSceneTimer then
-		arg0_25.waitUntilSceneTimer:Stop()
+function var0_0.ClearWaitUntilSceneTimer(arg0_26)
+	if arg0_26.waitUntilSceneTimer then
+		arg0_26.waitUntilSceneTimer:Stop()
 
-		arg0_25.waitUntilSceneTimer = nil
+		arg0_26.waitUntilSceneTimer = nil
 	end
 end
 
-function var0_0.ShowDialogueWindow(arg0_26, arg1_26, arg2_26)
-	if not arg1_26:ShouldShowDialogue() then
-		arg0_26:HideDialogueWindows()
-		arg2_26()
+function var0_0.ShowDialogueWindow(arg0_27, arg1_27, arg2_27)
+	if not arg1_27:ShouldShowDialogue() then
+		arg0_27:HideDialogueWindows()
+		arg2_27()
 
 		return
 	end
 
-	local var0_26 = {}
-	local var1_26 = arg1_26:GetDialogueType()
+	local var0_27 = {}
+	local var1_27 = arg1_27:GetDialogueType()
 
-	if not arg0_26.dialogueWindows[var1_26] then
-		table.insert(var0_26, function(arg0_27)
-			arg0_26:LoadDialogueWindow(var1_26, arg0_27)
+	if not arg0_27.dialogueWindows[var1_27] then
+		table.insert(var0_27, function(arg0_28)
+			arg0_27:LoadDialogueWindow(var1_27, arg0_28)
 		end)
 	end
 
-	table.insert(var0_26, function(arg0_28)
-		local var0_28 = arg0_26.dialogueWindows[var1_26]
+	table.insert(var0_27, function(arg0_29)
+		local var0_29 = arg0_27.dialogueWindows[var1_27]
 
-		arg0_26:UpdateDialogue(arg1_26, var0_28, arg0_28)
+		arg0_27:UpdateDialogue(arg1_27, var0_29, arg0_29)
 	end)
-	seriesAsync(var0_26, arg2_26)
+	seriesAsync(var0_27, arg2_27)
 end
 
-function var0_0.UpdateDialogue(arg0_29, arg1_29, arg2_29, arg3_29)
-	arg0_29:ActiveDialogueWindow(arg2_29)
+function var0_0.UpdateDialogue(arg0_30, arg1_30, arg2_30, arg3_30)
+	arg0_30:ActiveDialogueWindow(arg2_30)
 
-	local var0_29 = arg1_29:GetStyleData()
+	local var0_30 = arg1_30:GetStyleData()
 
-	setText(arg2_29:Find("content"), var0_29.text)
+	setText(arg2_30:Find("content"), var0_30.text)
 
-	arg2_29.localScale = var0_29.scale
-	arg2_29.localPosition = var0_29.position
-	arg2_29:Find("content").localScale = var0_29.scale
+	arg2_30.localScale = var0_30.scale
+	arg2_30.localPosition = var0_30.position
+	arg2_30:Find("content").localScale = var0_30.scale
 
-	local var1_29 = arg2_29:Find("hand")
+	local var1_30 = arg2_30:Find("hand")
 
-	if not IsNil(var1_29) then
-		var1_29.localPosition = var0_29.handPosition
-		var1_29.eulerAngles = var0_29.handAngle
+	if not IsNil(var1_30) then
+		var1_30.localPosition = var0_30.handPosition
+		var1_30.eulerAngles = var0_30.handAngle
 	end
 
-	local var2_29 = var0_29.counsellor
+	local var2_30 = var0_30.counsellor
 
-	if var2_29 then
+	if var2_30 then
 		seriesAsync({
-			function(arg0_30)
-				arg0_29:LoadCounsellor(var2_29.name, arg0_30)
-			end,
 			function(arg0_31)
-				local var0_31 = arg0_29.counsellors[var2_29.name]
+				arg0_30:LoadCounsellor(var2_30.name, arg0_31)
+			end,
+			function(arg0_32)
+				local var0_32 = arg0_30.counsellors[var2_30.name]
 
-				setActive(var0_31, true)
+				setActive(var0_32, true)
 
-				var0_31.localPosition = arg2_29.localPosition + Vector3(var2_29.position.x, var2_29.position.y, 0)
-				var0_31.localScale = Vector3(var2_29.scale.x, var2_29.scale.y, 1)
+				var0_32.localPosition = arg2_30.localPosition + Vector3(var2_30.position.x, var2_30.position.y, 0)
+				var0_32.localScale = Vector3(var2_30.scale.x, var2_30.scale.y, 1)
 
-				arg0_31()
+				arg0_32()
 			end
-		}, arg3_29)
+		}, arg3_30)
 	else
-		for iter0_29, iter1_29 in pairs(arg0_29.counsellors) do
-			setActive(iter1_29, false)
+		for iter0_30, iter1_30 in pairs(arg0_30.counsellors) do
+			setActive(iter1_30, false)
 		end
 
-		arg3_29()
+		arg3_30()
 	end
 end
 
-function var0_0.LoadCounsellor(arg0_32, arg1_32, arg2_32)
-	if not arg0_32.counsellors[arg1_32] then
-		LoadAnyAsync("guideitem/" .. arg1_32, "", nil, function(arg0_33)
-			if IsNil(arg0_33) then
+function var0_0.LoadCounsellor(arg0_33, arg1_33, arg2_33)
+	if not arg0_33.counsellors[arg1_33] then
+		LoadAnyAsync("guideitem/" .. arg1_33, "", nil, function(arg0_34)
+			if IsNil(arg0_34) then
 				return
 			end
 
-			local var0_33 = Object.Instantiate(arg0_33, arg0_32.charContainer)
+			local var0_34 = Object.Instantiate(arg0_34, arg0_33.charContainer)
 
-			arg0_32.counsellors[arg1_32] = var0_33.transform
+			arg0_33.counsellors[arg1_33] = var0_34.transform
 
-			arg2_32()
+			arg2_33()
 		end)
 	else
-		arg2_32()
+		arg2_33()
 	end
 end
 
-function var0_0.LoadDialogueWindow(arg0_34, arg1_34, arg2_34)
-	LoadAnyAsync("guideitem/window_" .. arg1_34, "", nil, function(arg0_35)
-		if IsNil(arg0_35) then
+function var0_0.LoadDialogueWindow(arg0_35, arg1_35, arg2_35)
+	LoadAnyAsync("guideitem/window_" .. arg1_35, "", nil, function(arg0_36)
+		if IsNil(arg0_36) then
 			return
 		end
 
-		local var0_35 = Object.Instantiate(arg0_35, arg0_34.windowContainer)
+		local var0_36 = Object.Instantiate(arg0_36, arg0_35.windowContainer)
 
-		arg0_34.dialogueWindows[arg1_34] = var0_35.transform
+		arg0_35.dialogueWindows[arg1_35] = var0_36.transform
 
-		if arg2_34 then
-			arg2_34()
+		if arg2_35 then
+			arg2_35()
 		end
 	end)
 end
 
-function var0_0.ActiveDialogueWindow(arg0_36, arg1_36)
-	for iter0_36, iter1_36 in pairs(arg0_36.dialogueWindows) do
-		setActive(iter1_36, iter1_36 == arg1_36)
-	end
-end
-
-function var0_0.HideDialogueWindows(arg0_37)
+function var0_0.ActiveDialogueWindow(arg0_37, arg1_37)
 	for iter0_37, iter1_37 in pairs(arg0_37.dialogueWindows) do
-		setActive(iter1_37, false)
+		setActive(iter1_37, iter1_37 == arg1_37)
 	end
 end
 
-local function var2_0(arg0_38, arg1_38, arg2_38, arg3_38)
-	if arg3_38.type == GuideStep.HIGH_TYPE_GAMEOBJECT then
-		arg0_38.uiDuplicator:Duplicate(arg2_38, {
+function var0_0.HideDialogueWindows(arg0_38)
+	for iter0_38, iter1_38 in pairs(arg0_38.dialogueWindows) do
+		setActive(iter1_38, false)
+	end
+end
+
+local function var2_0(arg0_39, arg1_39, arg2_39, arg3_39)
+	if arg3_39.type == GuideStep.HIGH_TYPE_GAMEOBJECT then
+		arg0_39.uiDuplicator:Duplicate(arg2_39, {
 			clearAllEvent = true
 		})
-	elseif arg3_38.type == GuideStep.HIGH_TYPE_LINE then
-		local var0_38 = arg2_38.rect
-		local var1_38 = arg0_38._tf:InverseTransformPoint(arg2_38.position)
+	elseif arg3_39.type == GuideStep.HIGH_TYPE_LINE then
+		local var0_39 = arg2_39.rect
+		local var1_39 = arg0_39._tf:InverseTransformPoint(arg2_39.position)
 
-		arg0_38.uiLoader:LoadHighLightArea({
-			position = Vector3(var1_38.x, var1_38.y, 0) + Vector3(var0_38.x, var0_38.y, 0),
-			size = Vector2(var0_38.width, var0_38.height),
-			length = arg1_38:GetHighlightLength(),
-			name = arg1_38:GetHighlightName()
+		arg0_39.uiLoader:LoadHighLightArea({
+			position = Vector3(var1_39.x, var1_39.y, 0) + Vector3(var0_39.x, var0_39.y, 0),
+			size = Vector2(var0_39.width, var0_39.height),
+			length = arg1_39:GetHighlightLength(),
+			name = arg1_39:GetHighlightName()
 		})
+	elseif arg3_39.type == GuideStep.HIGH_TYPE_FLOAT then
+		arg0_39.uiFloatCollctor:SetFloat(arg2_39)
 	end
 end
 
-function var0_0.UpdateHighLight(arg0_39, arg1_39, arg2_39)
-	local var0_39 = arg1_39:GetHighLightTarget()
+function var0_0.UpdateHighLight(arg0_40, arg1_40, arg2_40)
+	local var0_40 = arg1_40:GetHighLightTarget()
 
-	if #var0_39 <= 0 then
-		arg2_39()
+	if #var0_40 <= 0 then
+		arg2_40()
 
 		return
 	end
 
-	local var1_39 = {}
+	local var1_40 = {}
 
-	for iter0_39, iter1_39 in ipairs(var0_39) do
-		table.insert(var1_39, function(arg0_40)
-			arg0_39:SearchUI(iter1_39, function(arg0_41)
-				if not arg0_41 then
+	for iter0_40, iter1_40 in ipairs(var0_40) do
+		table.insert(var1_40, function(arg0_41)
+			arg0_40:SearchUI(iter1_40, function(arg0_42)
+				if not arg0_42 then
 					pg.NewGuideMgr.GetInstance():Stop()
 
 					return
 				end
 
-				var2_0(arg0_39, arg1_39, arg0_41, iter1_39)
-				arg0_40()
+				var2_0(arg0_40, arg1_40, arg0_42, iter1_40)
+				arg0_41()
 			end)
 		end)
 	end
 
-	parallelAsync(var1_39, arg2_39)
+	parallelAsync(var1_40, arg2_40)
 end
 
-function var0_0.SearchUI(arg0_42, arg1_42, arg2_42)
-	arg0_42.uiFinder:Search({
-		path = arg1_42.path,
-		delay = arg1_42.delay,
-		childIndex = arg1_42.pathIndex,
-		conditionData = arg1_42.conditionData,
-		callback = arg2_42
-	})
-end
-
-function var0_0.SearchWithoutDelay(arg0_43, arg1_43, arg2_43)
-	arg0_43.uiFinder:SearchWithoutDelay({
+function var0_0.SearchUI(arg0_43, arg1_43, arg2_43)
+	arg0_43.uiFinder:Search({
 		path = arg1_43.path,
 		delay = arg1_43.delay,
 		childIndex = arg1_43.pathIndex,
@@ -372,62 +371,74 @@ function var0_0.SearchWithoutDelay(arg0_43, arg1_43, arg2_43)
 	})
 end
 
-function var0_0.RegisterEvent(arg0_44, arg1_44, arg2_44)
-	if arg1_44:ExistTrigger() then
-		removeOnButton(arg0_44._tf)
-		arg2_44()
+function var0_0.SearchWithoutDelay(arg0_44, arg1_44, arg2_44)
+	arg0_44.uiFinder:SearchWithoutDelay({
+		path = arg1_44.path,
+		delay = arg1_44.delay,
+		childIndex = arg1_44.pathIndex,
+		conditionData = arg1_44.conditionData,
+		callback = arg2_44
+	})
+end
+
+function var0_0.RegisterEvent(arg0_45, arg1_45, arg2_45)
+	if arg1_45:ExistTrigger() then
+		removeOnButton(arg0_45._tf)
+		arg2_45()
 
 		return
 	end
 
-	onButton(pg.NewGuideMgr.GetInstance(), arg0_44._tf, function()
-		if arg1_44:ShouldGoScene() then
-			pg.m02:sendNotification(GAME.GO_SCENE, SCENE[arg1_44.sceneName])
-			arg2_44()
-		elseif arg1_44:ShouldTriggerOtherTarget() then
-			arg0_44:SearchUI(arg1_44:GetOtherTriggerTarget(), function(arg0_46)
-				triggerButton(arg0_46)
-				arg2_44()
+	onButton(pg.NewGuideMgr.GetInstance(), arg0_45._tf, function()
+		if arg1_45:ShouldGoScene() then
+			pg.m02:sendNotification(GAME.GO_SCENE, SCENE[arg1_45.sceneName])
+			arg2_45()
+		elseif arg1_45:ShouldTriggerOtherTarget() then
+			arg0_45:SearchUI(arg1_45:GetOtherTriggerTarget(), function(arg0_47)
+				triggerButton(arg0_47)
+				arg2_45()
 			end)
 		else
-			arg2_44()
+			arg2_45()
 		end
 	end, SFX_PANEL)
 end
 
-function var0_0.NextOne(arg0_47)
-	triggerButton(arg0_47._tf)
+function var0_0.NextOne(arg0_48)
+	triggerButton(arg0_48._tf)
 end
 
-function var0_0.HideCounsellors(arg0_48)
-	for iter0_48, iter1_48 in pairs(arg0_48.counsellors) do
-		setActive(iter1_48, false)
+function var0_0.HideCounsellors(arg0_49)
+	for iter0_49, iter1_49 in pairs(arg0_49.counsellors) do
+		setActive(iter1_49, false)
 	end
 end
 
-function var0_0.Clear(arg0_49)
-	arg0_49:HideCounsellors()
-	arg0_49:HideDialogueWindows()
-	arg0_49:ClearSpriteTimer()
-	removeOnButton(arg0_49._tf)
-	arg0_49:OnClear()
+function var0_0.Clear(arg0_50)
+	arg0_50:HideCounsellors()
+	arg0_50:HideDialogueWindows()
+	arg0_50:ClearSpriteTimer()
+	setActive(arg0_50.maskTr, false)
+	removeOnButton(arg0_50._tf)
+	arg0_50:OnClear()
 
-	if arg0_49.delayTimer then
-		arg0_49.delayTimer:Stop()
+	if arg0_50.delayTimer then
+		arg0_50.delayTimer:Stop()
 
-		arg0_49.delayTimer = nil
+		arg0_50.delayTimer = nil
 	end
 
-	arg0_49.uiFinder:Clear()
-	arg0_49.uiDuplicator:Clear()
-	arg0_49.uiLoader:Clear()
+	arg0_50.uiFinder:Clear()
+	arg0_50.uiDuplicator:Clear()
+	arg0_50.uiLoader:Clear()
+	arg0_50.uiFloatCollctor:Clear()
 end
 
-function var0_0.OnExecution(arg0_50, arg1_50, arg2_50)
-	arg2_50()
+function var0_0.OnExecution(arg0_51, arg1_51, arg2_51)
+	arg2_51()
 end
 
-function var0_0.OnClear(arg0_51)
+function var0_0.OnClear(arg0_52)
 	return
 end
 

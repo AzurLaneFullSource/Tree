@@ -73,28 +73,34 @@ function var1_0.MakeAimBiasBar(arg0_7, arg1_7)
 	arg1_7:AddAimBiasBar(var0_7)
 end
 
-function var1_0.MakeChargeArea(arg0_8, arg1_8)
-	local var0_8 = arg0_8:GetSceneMediator():InstantiateCharacterComponent(arg0_8.CHARGE_AREA_NAME)
+function var1_0.MakeShieldBar(arg0_8, arg1_8)
+	local var0_8 = arg1_8._HPBarTf:Find("shieldBar")
 
-	var0_8.transform.localEulerAngles = Vector3(60, 0, 0)
-
-	arg1_8:AddChargeArea(var0_8)
+	arg1_8:AddShieldBar(var0_8)
 end
 
-function var1_0.MakeTorpedoTrack(arg0_9, arg1_9)
-	local var0_9 = arg0_9:GetFXPool():GetFX("SquareAlert", arg1_9:GetTf())
+function var1_0.MakeChargeArea(arg0_9, arg1_9)
+	local var0_9 = arg0_9:GetSceneMediator():InstantiateCharacterComponent(arg0_9.CHARGE_AREA_NAME)
 
-	arg1_9:AddTorpedoTrack(var0_9)
+	var0_9.transform.localEulerAngles = Vector3(60, 0, 0)
+
+	arg1_9:AddChargeArea(var0_9)
 end
 
-function var1_0.RemoveCharacter(arg0_10, arg1_10, arg2_10)
-	local var0_10 = arg0_10:GetSceneMediator()
+function var1_0.MakeTorpedoTrack(arg0_10, arg1_10)
+	local var0_10 = arg0_10:GetFXPool():GetFX("SquareAlert", arg1_10:GetTf())
 
-	if arg2_10 and arg2_10 ~= var0_0.Battle.BattleConst.UnitDeathReason.KILLED then
+	arg1_10:AddTorpedoTrack(var0_10)
+end
+
+function var1_0.RemoveCharacter(arg0_11, arg1_11, arg2_11)
+	local var0_11 = arg0_11:GetSceneMediator()
+
+	if arg2_11 and arg2_11 ~= var0_0.Battle.BattleConst.UnitDeathReason.KILLED then
 		-- block empty
 	else
 		var0_0.Battle.BattleCameraUtil.GetInstance():StartShake(pg.shake_template[var0_0.Battle.BattleConst.ShakeType.UNIT_DIE])
 	end
 
-	var1_0.super.RemoveCharacter(arg0_10, arg1_10, arg2_10)
+	var1_0.super.RemoveCharacter(arg0_11, arg1_11, arg2_11)
 end

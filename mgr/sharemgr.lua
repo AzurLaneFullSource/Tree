@@ -27,6 +27,7 @@ var1_0.TypeBossRushEX = 18
 var1_0.TypeTWCelebrationShare = 5000
 var1_0.TypeCardTower = 17
 var1_0.TypeDorm3dPhoto = 19
+var1_0.AuctionGame = 20
 var1_0.PANEL_TYPE_BLACK = 1
 var1_0.PANEL_TYPE_PINK = 2
 var1_0.ANCHORS_TYPE = {

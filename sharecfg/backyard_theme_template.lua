@@ -128,7 +128,8 @@ pg.backyard_theme_template.all = {
 	136,
 	137,
 	138,
-	139
+	139,
+	140
 }
 pg.base = pg.base or {}
 pg.base.backyard_theme_template = {}
@@ -5544,6 +5545,30 @@ end)()
 			339112,
 			339113,
 			339114
+		}
+	}
+	pg.base.backyard_theme_template[140] = {
+		Cfg_1 = 5,
+		name = "Bunker Cabin",
+		hot = 1,
+		is_view = 1,
+		id = 140,
+		comfortable = 0,
+		Cfg_2 = 8,
+		desc = "Step into this in-orbit Bunker-themed living quarters. In this monochromatic, inorganic space, a moment of respite awaits.",
+		discount_time = "",
+		discount = 0,
+		new = 1,
+		icon = "nierthemeicon",
+		deblocking = 1,
+		order = 140,
+		ids = {
+			340001,
+			340002,
+			340101,
+			340102,
+			340103,
+			340104
 		}
 	}
 end)()

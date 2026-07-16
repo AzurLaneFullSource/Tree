@@ -484,7 +484,7 @@ function var6_0.UpdateGameLoadData(arg0_47, arg1_47)
 
 	arg0_47.gameLoadData:UpdateData(arg1_47)
 
-	if var0_47 then
+	if var0_47 and arg0_47.roomData then
 		arg0_47.roomData.roomState = PlayRoomConst.PLAY_ROOM_STATE.PLAYING
 
 		arg0_47:ExitMatchReadyRoom()

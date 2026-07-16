@@ -665,4 +665,80 @@ function var0_0.BuildCheaterTavernResult(arg0_71, arg1_71, arg2_71, arg3_71, arg
 	}, {})
 end
 
+function var0_0.BuildAuctionEnter()
+	return var3_0(50001, {}, {})
+end
+
+function var0_0.BuildAuctionHelp()
+	return var3_0(50002, {}, {})
+end
+
+function var0_0.BuildPreorder(arg0_74, arg1_74)
+	return var3_0(50003, {
+		arg0_74,
+		arg1_74
+	}, {})
+end
+
+function var0_0.BuildNameCard(arg0_75, arg1_75)
+	return var3_0(50004, {
+		arg0_75,
+		arg1_75
+	}, {})
+end
+
+function var0_0.BuildAuctionSettlement(arg0_76, arg1_76, arg2_76, arg3_76, arg4_76, arg5_76)
+	return var3_0(50005, {
+		arg1_76,
+		arg2_76,
+		arg3_76,
+		arg4_76,
+		arg5_76
+	}, {
+		arg0_76
+	})
+end
+
+function var0_0.BuildAuctionMatching(arg0_77, arg1_77, arg2_77)
+	return var3_0(50006, {
+		arg0_77,
+		arg1_77,
+		arg2_77
+	}, {})
+end
+
+function var0_0.BuildAuctionChooseEvent(arg0_78, arg1_78, arg2_78, arg3_78)
+	return var3_0(50007, {
+		arg0_78,
+		arg1_78,
+		arg2_78,
+		arg3_78
+	}, {})
+end
+
+function var0_0.BuildAuctionBid(arg0_79, arg1_79, arg2_79, arg3_79, arg4_79)
+	return var3_0(50008, {
+		arg0_79,
+		arg1_79,
+		arg2_79,
+		arg3_79,
+		arg4_79
+	}, {})
+end
+
+function var0_0.BuildAuctionFinish(arg0_80, arg1_80, arg2_80)
+	return var3_0(50009, {
+		arg0_80,
+		arg1_80,
+		arg2_80
+	}, {})
+end
+
+function var0_0.BuildAuctionExit(arg0_81, arg1_81)
+	return var3_0(50010, {
+		arg0_81,
+		arg1_81
+	}, {})
+end
+
 return var0_0

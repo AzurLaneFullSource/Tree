@@ -67,20 +67,7 @@ function var0_0.execute(arg0_1, arg1_1)
 			end
 
 			SubmitTaskCommand.AddGuildLivness(var1_2)
-
-			if var1_2:getConfig("type") == Task.TYPE_REFLUX then
-				getProxy(RefluxProxy):addPtAfterSubTasks({
-					var1_2
-				})
-			end
-
-			if var1_2:getConfig("type") ~= 8 then
-				var6_1:removeTask(var1_2)
-			else
-				var1_2.submitTime = 1
-
-				var6_1:updateTask(var1_2)
-			end
+			SubmitTaskCommand.CheckTaskType(var1_2)
 
 			local var10_2 = getProxy(ActivityProxy)
 			local var11_2 = var10_2:getActivityByType(ActivityConst.ACTIVITY_TYPE_TASK_LIST_MONITOR)

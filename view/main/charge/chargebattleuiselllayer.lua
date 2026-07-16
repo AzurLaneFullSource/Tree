@@ -102,6 +102,8 @@ function var0_0.UpdateClick(arg0_10)
 end
 
 function var0_0.updateGiftWindow(arg0_12)
+	setText(arg0_12.buyNormalBtn:Find("Price/BuyText"), i18n("word_buy"))
+	setText(arg0_12.buyNormalBtn:Find("Price/content/Text"), arg0_12.normalGoodVO:getConfig("money"))
 	onButton(arg0_12, arg0_12.buyNormalBtn, function()
 		pg.m02:sendNotification(GAME.CHARGE_OPERATION, {
 			shopId = arg0_12.normalGoodVO.id
@@ -109,6 +111,8 @@ function var0_0.updateGiftWindow(arg0_12)
 		arg0_12:ClearPreviewer()
 		arg0_12:closeView()
 	end, SFX_PANEL)
+	setText(arg0_12.buySpecialBtn:Find("Price/BuyText"), i18n("word_buy"))
+	setText(arg0_12.buySpecialBtn:Find("Price/content/Text"), arg0_12.specailGoodVO:getConfig("money"))
 	onButton(arg0_12, arg0_12.buySpecialBtn, function()
 		pg.m02:sendNotification(GAME.CHARGE_OPERATION, {
 			shopId = arg0_12.specailGoodVO.id

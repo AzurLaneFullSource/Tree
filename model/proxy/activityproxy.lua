@@ -16,6 +16,7 @@ var0_0.ACTIVITY_SHOW_LOTTERY_AWARD_RESULT = "ActivityProxy ACTIVITY_SHOW_LOTTERY
 var0_0.ACTIVITY_SHOW_RED_PACKET_AWARDS = "ActivityProxy ACTIVITY_SHOW_RED_PACKET_AWARDS"
 var0_0.ACTIVITY_SHOW_SHAKE_BEADS_RESULT = "ActivityProxy ACTIVITY_SHOW_SHAKE_BEADS_RESULT"
 var0_0.ACTIVITY_EXCHANGE_RESOURCES = "ActivityProxy ACTIVITY_EXCHANGE_RESOURCES"
+var0_0.UPDATED_TIP = "ActivityProxy UPDATED_TIP"
 var0_0.ACTIVITY_PT_ID = 110
 
 function var0_0.register(arg0_1)
@@ -1284,18 +1285,6 @@ function var0_0.GetBossActivityByChapterId(arg0_130, arg1_130)
 end
 
 function var0_0.GetFakeGiftPackActivity(arg0_131, arg1_131)
-	arg0_131.skinCommodityActDic = arg0_131.skinCommodityActDic or {}
-
-	if arg0_131.skinCommodityActDic[arg1_131.id] then
-		local var0_131 = arg0_131.skinCommodityActDic[arg1_131.id]
-
-		if not var0_131:isEnd() then
-			return var0_131
-		end
-
-		arg0_131.skinCommodityActDic[arg1_131.id] = nil
-	end
-
 	for iter0_131, iter1_131 in ipairs(arg0_131:getActivitiesByTypes({
 		ActivityConst.ACTIVITY_TYPE_SKIN_FAKE_PACKAGE,
 		ActivityConst.ACTIVITY_TYPE_TIMES_FAKE_PACKAGE
@@ -1318,8 +1307,6 @@ function var0_0.GetFakeGiftPackActivity(arg0_131, arg1_131)
 		}, function()
 			return
 		end) then
-			arg0_131.skinCommodityActDic[arg1_131.id] = iter1_131
-
 			return iter1_131
 		end
 	end

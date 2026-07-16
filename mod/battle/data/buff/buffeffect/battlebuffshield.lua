@@ -20,7 +20,9 @@ function var1_0.SetArgs(arg0_3, arg1_3, arg2_3)
 
 	arg0_3._number = var0_3.number or 0
 	arg0_3._maxHPRatio = var0_3.maxHPRatio or 0
+	arg0_3._curretHPRatio = var0_3.currentHPRatio or 0
 	arg0_3._casterMaxHPRatio = var0_3.casterMaxHPRatio or 0
+	arg0_3._casterCurrentHPRatio = var0_3.casterCurretnHPRatio or 0
 	arg0_3._shield = arg0_3:CalcNumber(arg1_3)
 end
 
@@ -29,7 +31,7 @@ function var1_0.onStack(arg0_4, arg1_4, arg2_4)
 end
 
 function var1_0.onTakeDamage(arg0_5, arg1_5, arg2_5, arg3_5)
-	if arg0_5:damageCheck(arg3_5) then
+	if not arg3_5.ignoreShield and arg0_5:damageCheck(arg3_5) then
 		local var0_5 = arg3_5.damage
 
 		arg0_5._shield = arg0_5._shield - var0_5
@@ -47,7 +49,7 @@ end
 function var1_0.CalcNumber(arg0_6, arg1_6)
 	local var0_6, var1_6 = arg1_6:GetHP()
 	local var2_6, var3_6 = arg0_6._caster:GetHP()
-	local var4_6 = var1_6 * arg0_6._maxHPRatio + arg0_6._number + arg0_6._casterMaxHPRatio * var3_6
+	local var4_6 = var1_6 * arg0_6._maxHPRatio + arg0_6._casterMaxHPRatio * var3_6 + arg0_6._number + var0_6 * arg0_6._curretHPRatio + var2_6 * arg0_6._casterCurrentHPRatio
 
 	return math.max(0, math.floor(var4_6))
 end

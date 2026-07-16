@@ -40,7 +40,9 @@ function var0_0.OnInit(arg0_5)
 		arg0_5:Hide()
 	end, SFX_PANEL)
 	onButton(arg0_5, arg0_5.confirmBtn, function()
-		arg0_5:emit(IslandSelfCardMediator.SET_CARD_ACHVS, arg0_5.selectedIds)
+		local var0_8 = getProxy(IslandProxy):GetIsland():GetAchievementAgency():UpdataAchLv(arg0_5.selectedIds)
+
+		arg0_5:emit(IslandSelfCardMediator.SET_CARD_ACHVS, var0_8)
 	end, SFX_PANEL)
 
 	arg0_5.cards = {}
@@ -88,37 +90,41 @@ function var0_0.OnUpdateItem(arg0_10, arg1_10, arg2_10)
 	end, SFX_PANEL)
 end
 
-function var0_0.Show(arg0_12, arg1_12, arg2_12)
-	var0_0.super.Show(arg0_12)
-
-	arg0_12.ids = arg1_12
-	arg0_12.selectedIds = arg2_12
-
-	arg0_12.scrollRect:SetTotalCount(#arg0_12.ids, -1)
-	setActive(arg0_12.emptyTF, #arg0_12.ids == 0)
-	arg0_12:UpdateTitle()
-	pg.UIMgr.GetInstance():BlurPanel(arg0_12._tf)
+function var0_0.GetNewSelectedIds(arg0_12, arg1_12)
+	local var0_12 = {}
 end
 
-function var0_0.UpdateTitle(arg0_13)
-	arg0_13.titleTxt.text = i18n("island_card_choose_achievement", #arg0_13.selectedIds)
+function var0_0.Show(arg0_13, arg1_13, arg2_13)
+	var0_0.super.Show(arg0_13)
+
+	arg0_13.ids = arg1_13
+	arg0_13.selectedIds = arg2_13
+
+	arg0_13.scrollRect:SetTotalCount(#arg0_13.ids, -1)
+	setActive(arg0_13.emptyTF, #arg0_13.ids == 0)
+	arg0_13:UpdateTitle()
+	pg.UIMgr.GetInstance():BlurPanel(arg0_13._tf)
 end
 
-function var0_0.Hide(arg0_14)
-	var0_0.super.Hide(arg0_14)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_14._tf, arg0_14._parentTf)
+function var0_0.UpdateTitle(arg0_14)
+	arg0_14.titleTxt.text = i18n("island_card_choose_achievement", #arg0_14.selectedIds)
 end
 
-function var0_0.OnDestroy(arg0_15)
-	ClearLScrollrect(arg0_15.scrollRect)
+function var0_0.Hide(arg0_15)
+	var0_0.super.Hide(arg0_15)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_15._tf, arg0_15._parentTf)
+end
 
-	for iter0_15, iter1_15 in pairs(arg0_15.cards) do
-		iter1_15:Dispose()
+function var0_0.OnDestroy(arg0_16)
+	ClearLScrollrect(arg0_16.scrollRect)
+
+	for iter0_16, iter1_16 in pairs(arg0_16.cards) do
+		iter1_16:Dispose()
 	end
 
-	arg0_15.cards = {}
+	arg0_16.cards = {}
 
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_15._tf, arg0_15._parentTf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_16._tf, arg0_16._parentTf)
 end
 
 return var0_0

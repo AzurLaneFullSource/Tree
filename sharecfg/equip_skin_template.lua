@@ -1398,6 +1398,16 @@ pg.equip_skin_template.all = {
 	1526,
 	1527,
 	1528,
+	1529,
+	1530,
+	1531,
+	1532,
+	1533,
+	1534,
+	1535,
+	1536,
+	1537,
+	1538,
 	2001,
 	2002,
 	2003,
@@ -58865,6 +58875,498 @@ end)()
 			54014
 		}
 	}
+	pg.base.equip_skin_template[1529] = {
+		hit_sfx = "",
+		name = "Combat Visor (Equipment)",
+		orbit_rotate_ui = "",
+		type = 1,
+		preview_hit_distance = 0,
+		bullet_name = "",
+		themeid = 86,
+		orbit_combat = "shebei_yanzhao",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = false,
+		desc = "Its appearance is modeled after the tactical visors used by androids in battle.",
+		orbit_combat_anima_change = "",
+		icon = "98641",
+		orbit_ui = "shebei_yanzhaoui",
+		mirror = 0,
+		miss_sfx = "",
+		rarity = 4,
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		id = 1529,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			10
+		},
+		weapon_ids = {
+			101,
+			101
+		},
+		double_char_bone = {
+			1,
+			0,
+			1
+		},
+		orbit_combat_bound = {
+			"face",
+			{
+				0.02,
+				-0.25,
+				-0.91
+			}
+		},
+		orbit_ui_bound = {
+			"face",
+			{
+				10.7,
+				-11.1
+			}
+		},
+		orbit_hidden_action = {
+			"sleep",
+			"wash"
+		}
+	}
+	pg.base.equip_skin_template[1530] = {
+		hit_sfx = "",
+		name = "Tactical Support Unit (Equipment)",
+		orbit_rotate_ui = "",
+		type = 1,
+		preview_hit_distance = 0,
+		bullet_name = "",
+		themeid = 86,
+		orbit_combat = "shebei_fuzhuji",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = false,
+		desc = "Its appearance is modeled after POD devices.",
+		orbit_combat_anima_change = "",
+		icon = "98642",
+		orbit_ui = "shebei_fuzhujiui",
+		mirror = 0,
+		miss_sfx = "",
+		rarity = 4,
+		orbit_ui_back = 1,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		id = 1530,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			10
+		},
+		weapon_ids = {
+			101,
+			101
+		},
+		double_char_bone = {
+			1,
+			0,
+			1
+		},
+		orbit_combat_bound = {
+			"face",
+			{
+				0.65,
+				-0.34,
+				-0.91
+			}
+		},
+		orbit_ui_bound = {
+			"face",
+			{
+				61.17,
+				-52.25
+			}
+		},
+		orbit_hidden_action = {
+			"sleep",
+			"wash"
+		}
+	}
+	pg.base.equip_skin_template[1531] = {
+		hit_sfx = "",
+		name = "Virtuous Contract (Equipment)",
+		orbit_rotate_ui = "",
+		type = 1,
+		preview_hit_distance = 0,
+		bullet_name = "",
+		themeid = 86,
+		orbit_combat = "shebei_baizhiqiyue",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = false,
+		desc = "Its appearance is modeled after the Virtuous Contract.",
+		orbit_combat_anima_change = "",
+		icon = "98643",
+		orbit_ui = "shebei_baizhiqiyueui",
+		mirror = 0,
+		miss_sfx = "",
+		rarity = 4,
+		orbit_ui_back = 1,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		id = 1531,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			10
+		},
+		weapon_ids = {
+			101,
+			101
+		},
+		double_char_bone = {
+			1,
+			0,
+			1
+		},
+		orbit_combat_bound = {
+			"face",
+			{
+				-0.304,
+				-1.7,
+				-0.91
+			}
+		},
+		orbit_ui_bound = {
+			"face",
+			{
+				-10.11,
+				-147
+			}
+		},
+		orbit_hidden_action = {
+			"sleep",
+			"wash"
+		}
+	}
+	pg.base.equip_skin_template[1532] = {
+		hit_sfx = "",
+		name = "Type-4O Sword (Equipment)",
+		orbit_rotate_ui = "",
+		type = 1,
+		preview_hit_distance = 0,
+		bullet_name = "",
+		themeid = 86,
+		orbit_combat = "shebei_silingshi",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = false,
+		desc = "Its appearance is modeled after the Type-4O Sword.",
+		orbit_combat_anima_change = "",
+		icon = "98644",
+		orbit_ui = "shebei_silingshiui",
+		mirror = 0,
+		miss_sfx = "",
+		rarity = 4,
+		orbit_ui_back = 1,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		id = 1532,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			10
+		},
+		weapon_ids = {
+			101,
+			101
+		},
+		double_char_bone = {
+			1,
+			0,
+			1
+		},
+		orbit_combat_bound = {
+			"face",
+			{
+				-0.35,
+				-1.32,
+				-0.91
+			}
+		},
+		orbit_ui_bound = {
+			"face",
+			{
+				-10.11,
+				-147
+			}
+		},
+		orbit_hidden_action = {
+			"sleep",
+			"wash"
+		}
+	}
+	pg.base.equip_skin_template[1533] = {
+		hit_sfx = "",
+		name = "Hack Burst",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		orbit_rotate_ui = "",
+		themeid = 86,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "98611",
+		desc = "Its appearance is inspired by the projectiles seen in high-intensity battles inside the firewall.",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "zidan_nier_squarebullet",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		id = 1533,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			1,
+			2,
+			3
+		},
+		weapon_ids = {
+			101,
+			101
+		}
+	}
+end)()
+;(function()
+	pg.base.equip_skin_template[1534] = {
+		hit_sfx = "",
+		name = "Double Burst",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		orbit_rotate_ui = "",
+		themeid = 86,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "98612",
+		desc = "Its appearance is inspired by the projectiles seen in high-intensity battles inside the firewall.",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "zidan_nier_circlebullet",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		id = 1534,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			1,
+			2,
+			3
+		},
+		weapon_ids = {
+			101,
+			101
+		}
+	}
+	pg.base.equip_skin_template[1535] = {
+		hit_sfx = "",
+		name = "Iron Pipe Torpedo",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		orbit_rotate_ui = "",
+		themeid = 86,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "98621",
+		desc = "Its appearance is modeled after the humble iron pipe.",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "yulei_nier_irontube",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		id = 1535,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			5,
+			13
+		},
+		weapon_ids = {
+			107,
+			107
+		}
+	}
+	pg.base.equip_skin_template[1536] = {
+		hit_sfx = "",
+		name = "Dragoon Lance Torpedo",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		orbit_rotate_ui = "",
+		themeid = 86,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "98622",
+		desc = "Its appearance is modeled after a dragoon lance.",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "yulei_nier_dragonspear",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		id = 1536,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			5,
+			13
+		},
+		weapon_ids = {
+			107,
+			107
+		}
+	}
+	pg.base.equip_skin_template[1537] = {
+		hit_sfx = "",
+		name = "Machine Lifeform Shell",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		orbit_rotate_ui = "",
+		themeid = 86,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "98613",
+		desc = "A projectile resembling the head of a machine lifeform.",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "paodan_nier_robothead",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		id = 1537,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			4,
+			11
+		},
+		weapon_ids = {
+			24000,
+			24000,
+			24000
+		}
+	}
+	pg.base.equip_skin_template[1538] = {
+		hit_sfx = "",
+		name = "Type-3 Fists Shell",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		orbit_rotate_ui = "",
+		themeid = 86,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "98614",
+		desc = "Its appearance is modeled after an old-fashioned boxing glove.",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "paodan_nier_fist",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		id = 1538,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			4,
+			11
+		},
+		weapon_ids = {
+			24000,
+			24000,
+			24000
+		}
+	}
 	pg.base.equip_skin_template[2001] = {
 		hit_sfx = "",
 		name = "Shooting Star Torpedo",
@@ -59110,8 +59612,6 @@ end)()
 			"wash"
 		}
 	}
-end)()
-;(function()
 	pg.base.equip_skin_template[2006] = {
 		hit_sfx = "",
 		name = "Gemini Shell",
@@ -63137,6 +63637,8 @@ end)()
 			24000
 		}
 	}
+end)()
+;(function()
 	pg.base.equip_skin_template[2100] = {
 		hit_sfx = "",
 		name = "Ring of Antinomy",
@@ -63609,8 +64111,6 @@ end)()
 			101
 		}
 	}
-end)()
-;(function()
 	pg.base.equip_skin_template[2110] = {
 		hit_sfx = "",
 		name = "Smudged Shadow Torpedo",

@@ -764,6 +764,8 @@ pg.ship_data_group.all = {
 	10154,
 	10155,
 	10156,
+	10171,
+	10172,
 	20001,
 	20002,
 	20003,
@@ -3481,6 +3483,12 @@ pg.ship_data_group.get_id_list_by_group_type = {
 	},
 	[1150006] = {
 		10156
+	},
+	[1170001] = {
+		10171
+	},
+	[1170002] = {
+		10172
 	}
 }
 pg.ship_data_group.get_id_list_by_handbook_type = {
@@ -4246,7 +4254,9 @@ pg.ship_data_group.get_id_list_by_handbook_type = {
 		10153,
 		10154,
 		10155,
-		10156
+		10156,
+		10171,
+		10172
 	},
 	{
 		20001,
@@ -36820,6 +36830,70 @@ end)()
 			}
 		}
 	}
+	pg.base.ship_data_group[10171] = {
+		type = 3,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 117,
+		trans_skin = 0,
+		handbook_type = 1,
+		index_id = 10171,
+		code = 10171,
+		group_type = 1170001,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"B",
+			"E",
+			"E",
+			"B",
+			"B",
+			"A"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: An Android's Journey",
+				{
+					""
+				},
+				0
+			}
+		}
+	}
+	pg.base.ship_data_group[10172] = {
+		type = 2,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 117,
+		trans_skin = 0,
+		handbook_type = 1,
+		index_id = 10172,
+		code = 10172,
+		group_type = 1170002,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"B",
+			"E",
+			"E",
+			"B",
+			"B",
+			"A"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: An Android's Journey",
+				{
+					""
+				},
+				0
+			}
+		}
+	}
 	pg.base.ship_data_group[20001] = {
 		type = 2,
 		redirect_id = 101,
@@ -38154,6 +38228,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.ship_data_group[20038] = {
 		type = 5,
 		redirect_id = 101,
@@ -38224,8 +38300,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.ship_data_group[20041] = {
 		type = 2,
 		redirect_id = 101,

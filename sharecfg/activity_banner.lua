@@ -26,16 +26,16 @@ pg.activity_banner.all = {
 pg.activity_banner.get_id_list_by_type = {
 	[2] = {
 		1,
+		2,
 		3,
+		4,
 		5,
 		6,
-		7,
 		8,
 		9
 	},
 	[3] = {
-		2,
-		4
+		7
 	},
 	[9] = {
 		90,
@@ -75,7 +75,7 @@ pg.base.activity_banner = {}
 				{
 					2026,
 					7,
-					9
+					16
 				},
 				{
 					0,
@@ -87,7 +87,7 @@ pg.base.activity_banner = {}
 				{
 					2026,
 					7,
-					15
+					29
 				},
 				{
 					23,
@@ -98,52 +98,13 @@ pg.base.activity_banner = {}
 		}
 	}
 	pg.base.activity_banner[2] = {
-		param = "51063",
-		time = "stop",
-		type = 3,
 		id = 2,
-		pic = "temp2"
-	}
-	pg.base.activity_banner[3] = {
-		id = 3,
-		pic = "temp3",
-		time = "stop",
+		pic = "temp2",
 		type = 2,
 		param = {
-			"scene get boat",
+			"scene core activity",
 			{
-				projectName = "new",
-				page = 1
-			}
-		}
-	}
-	pg.base.activity_banner[4] = {
-		param = "51033",
-		time = "stop",
-		type = 3,
-		id = 4,
-		pic = "temp4"
-	}
-	pg.base.activity_banner[5] = {
-		id = 5,
-		pic = "temp5",
-		time = "stop",
-		type = 2,
-		param = {
-			"scene charge",
-			{
-				wrap = 2
-			}
-		}
-	}
-	pg.base.activity_banner[6] = {
-		id = 6,
-		pic = "temp6",
-		type = 2,
-		param = {
-			"shipblueprint",
-			{
-				shipGroupId = 29906
+				coreName = "NieRAutomataCoreActivityUI"
 			}
 		},
 		time = {
@@ -151,7 +112,7 @@ pg.base.activity_banner = {}
 				{
 					2026,
 					7,
-					9
+					16
 				},
 				{
 					0,
@@ -163,7 +124,7 @@ pg.base.activity_banner = {}
 				{
 					2026,
 					7,
-					15
+					29
 				},
 				{
 					23,
@@ -173,9 +134,9 @@ pg.base.activity_banner = {}
 			}
 		}
 	}
-	pg.base.activity_banner[7] = {
-		id = 7,
-		pic = "temp7",
+	pg.base.activity_banner[3] = {
+		id = 3,
+		pic = "temp3",
 		type = 2,
 		param = {
 			"scene charge",
@@ -188,7 +149,7 @@ pg.base.activity_banner = {}
 				{
 					2026,
 					7,
-					9
+					16
 				},
 				{
 					0,
@@ -200,7 +161,7 @@ pg.base.activity_banner = {}
 				{
 					2026,
 					7,
-					15
+					29
 				},
 				{
 					23,
@@ -210,23 +171,19 @@ pg.base.activity_banner = {}
 			}
 		}
 	}
-	pg.base.activity_banner[8] = {
-		id = 8,
-		pic = "temp8",
+	pg.base.activity_banner[4] = {
+		id = 4,
+		pic = "temp4",
 		type = 2,
 		param = {
-			"scene equip",
-			{
-				designPage = 2,
-				warp = "WARP_TO_DESIGN"
-			}
+			"scene court yard"
 		},
 		time = {
 			{
 				{
 					2026,
 					7,
-					9
+					16
 				},
 				{
 					0,
@@ -238,13 +195,83 @@ pg.base.activity_banner = {}
 				{
 					2026,
 					7,
-					15
+					29
 				},
 				{
 					23,
 					59,
 					59
 				}
+			}
+		}
+	}
+	pg.base.activity_banner[5] = {
+		id = 5,
+		pic = "temp5",
+		type = 2,
+		param = {
+			"scene core activity",
+			{
+				id = 50844,
+				coreName = "NieRAutomataCoreActivityUI"
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					7,
+					16
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					7,
+					22
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.activity_banner[6] = {
+		id = 6,
+		pic = "temp6",
+		time = "stop",
+		type = 2,
+		param = {
+			"shipblueprint",
+			{
+				shipGroupId = 29906
+			}
+		}
+	}
+	pg.base.activity_banner[7] = {
+		param = "51063",
+		time = "stop",
+		type = 3,
+		id = 7,
+		pic = "temp7"
+	}
+	pg.base.activity_banner[8] = {
+		id = 8,
+		pic = "temp8",
+		time = "stop",
+		type = 2,
+		param = {
+			"scene equip",
+			{
+				designPage = 2,
+				warp = "WARP_TO_DESIGN"
 			}
 		}
 	}
@@ -253,18 +280,14 @@ pg.base.activity_banner = {}
 		pic = "temp9",
 		type = 2,
 		param = {
-			"scene level",
-			{
-				open_remaster = true,
-				isSP = true
-			}
+			"dorm 3d select"
 		},
 		time = {
 			{
 				{
 					2026,
 					7,
-					9
+					16
 				},
 				{
 					0,
@@ -276,7 +299,7 @@ pg.base.activity_banner = {}
 				{
 					2026,
 					7,
-					15
+					22
 				},
 				{
 					23,

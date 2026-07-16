@@ -697,23 +697,29 @@ function var0_0.GameLogout(arg0_74)
 	arg0_74:ExitSilentView()
 end
 
-function var0_0.onBackPressed(arg0_75)
+function var0_0.OnPlayerUpdated(arg0_75)
+	if arg0_75.theme and arg0_75.theme:GetLoaded() then
+		arg0_75.theme:OnPlayerUpdated()
+	end
+end
+
+function var0_0.onBackPressed(arg0_76)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 
-	if arg0_75.silentView and arg0_75.silentView:isShowing() then
-		arg0_75:ExitSilentView()
+	if arg0_76.silentView and arg0_76.silentView:isShowing() then
+		arg0_76:ExitSilentView()
 
 		return
 	end
 
-	if arg0_75.liveAreaPage and arg0_75.liveAreaPage:GetLoaded() and arg0_75.liveAreaPage:isShowing() then
-		arg0_75.liveAreaPage:Hide()
+	if arg0_76.liveAreaPage and arg0_76.liveAreaPage:GetLoaded() and arg0_76.liveAreaPage:isShowing() then
+		arg0_76.liveAreaPage:Hide()
 
 		return
 	end
 
-	if arg0_75.calibrationPage and arg0_75.calibrationPage:GetLoaded() and arg0_75.calibrationPage:isShowing() then
-		triggerButton(arg0_75.calibrationPage._parentTf)
+	if arg0_76.calibrationPage and arg0_76.calibrationPage:GetLoaded() and arg0_76.calibrationPage:isShowing() then
+		triggerButton(arg0_76.calibrationPage._parentTf)
 
 		return
 	end
@@ -722,62 +728,62 @@ function var0_0.onBackPressed(arg0_75)
 	pg.PushNotificationMgr.GetInstance():PushAll()
 end
 
-function var0_0.willExit(arg0_76)
-	arg0_76.bgView:Dispose()
+function var0_0.willExit(arg0_77)
+	arg0_77.bgView:Dispose()
 
-	arg0_76.bgView = nil
+	arg0_77.bgView = nil
 
-	arg0_76:UnloadTheme()
+	arg0_77:UnloadTheme()
 
-	if arg0_76.calibrationPage then
-		arg0_76.calibrationPage:Destroy()
+	if arg0_77.calibrationPage then
+		arg0_77.calibrationPage:Destroy()
 
-		arg0_76.calibrationPage = nil
+		arg0_77.calibrationPage = nil
 	end
 
-	if arg0_76.silentView then
-		arg0_76.silentView:Destroy()
+	if arg0_77.silentView then
+		arg0_77.silentView:Destroy()
 
-		arg0_76.silentView = nil
+		arg0_77.silentView = nil
 	end
 
-	arg0_76.paintingView:Dispose()
+	arg0_77.paintingView:Dispose()
 
-	arg0_76.paintingView = nil
+	arg0_77.paintingView = nil
 
-	arg0_76.liveAreaPage:Destroy()
+	arg0_77.liveAreaPage:Destroy()
 
-	arg0_76.liveAreaPage = nil
+	arg0_77.liveAreaPage = nil
 
-	arg0_76.sequenceView:Dispose()
+	arg0_77.sequenceView:Dispose()
 
-	arg0_76.sequenceView = nil
+	arg0_77.sequenceView = nil
 
-	arg0_76.awakeSequenceView:Dispose()
+	arg0_77.awakeSequenceView:Dispose()
 
-	arg0_76.awakeSequenceView = nil
+	arg0_77.awakeSequenceView = nil
 
-	arg0_76.effectView:Dispose()
+	arg0_77.effectView:Dispose()
 
-	arg0_76.effectView = nil
+	arg0_77.effectView = nil
 
-	pg.m02:removeMediator(arg0_76.subMediator.__cname)
+	pg.m02:removeMediator(arg0_77.subMediator.__cname)
 
-	arg0_76.subMediator = nil
+	arg0_77.subMediator = nil
 
-	arg0_76.buffDescPage:Destroy()
+	arg0_77.buffDescPage:Destroy()
 
-	arg0_76.buffDescPage = nil
+	arg0_77.buffDescPage = nil
 
-	arg0_76.silentChecker:Dispose()
+	arg0_77.silentChecker:Dispose()
 
-	arg0_76.silentChecker = nil
+	arg0_77.silentChecker = nil
 
-	arg0_76.skinExperienceDisplayPage:Destroy()
+	arg0_77.skinExperienceDisplayPage:Destroy()
 
-	arg0_76.skinExperienceDisplayPage = nil
+	arg0_77.skinExperienceDisplayPage = nil
 
-	arg0_76:RevertSleepTimeout()
+	arg0_77:RevertSleepTimeout()
 end
 
 return var0_0
