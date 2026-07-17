@@ -118,122 +118,170 @@ function var0_0.GetTypewriterSpeed(arg0_11)
 	return var0_11 and var0_11 or 0.1
 end
 
-function var0_0.Playwriter(arg0_12)
-	local var0_12 = {}
+function var0_0.InvalidateWriter(arg0_12)
+	arg0_12.writerToken = (arg0_12.writerToken or 0) + 1
 
-	if not arg0_12.finishAll then
-		table.insert(var0_12, function(arg0_13)
-			local var0_13 = arg0_12.desc1
-			local var1_13 = GetOrAddComponent(var0_13, typeof(Typewriter))
+	if arg0_12.desc1 then
+		GetOrAddComponent(arg0_12.desc1, typeof(Typewriter)).endFunc = nil
+	end
 
-			function var1_13.endFunc()
-				arg0_13()
+	if arg0_12.desc2 then
+		GetOrAddComponent(arg0_12.desc2, typeof(Typewriter)).endFunc = nil
+	end
+end
+
+function var0_0.Playwriter(arg0_13)
+	arg0_13:InvalidateWriter()
+
+	local var0_13 = arg0_13.writerToken
+
+	local function var1_13()
+		return arg0_13.writerToken == var0_13 and arg0_13._go and isActive(arg0_13._go)
+	end
+
+	local var2_13 = {}
+
+	if not arg0_13.finishAll then
+		table.insert(var2_13, function(arg0_15)
+			if not var1_13() then
+				return
 			end
 
-			var1_13:setSpeed(arg0_12:GetTypewriterSpeed())
-			var1_13:Play()
+			local var0_15 = arg0_13.desc1
+			local var1_15 = GetOrAddComponent(var0_15, typeof(Typewriter))
+
+			function var1_15.endFunc()
+				if not var1_13() then
+					return
+				end
+
+				arg0_15()
+			end
+
+			var1_15:setSpeed(arg0_13:GetTypewriterSpeed())
+			var1_15:Play()
 		end)
 	else
-		local var1_12, var2_12, var3_12 = arg0_12.ptData:GetLevelProgress()
+		local var3_13, var4_13, var5_13 = arg0_13.ptData:GetLevelProgress()
 
-		table.insert(var0_12, function(arg0_15)
-			local var0_15 = arg0_12.activity:getConfig("config_client").story
-			local var1_15 = checkExist(var0_15, {
-				var1_12
+		table.insert(var2_13, function(arg0_17)
+			local var0_17 = arg0_13.activity:getConfig("config_client").story
+			local var1_17 = checkExist(var0_17, {
+				var3_13
 			}, {
 				1
 			})
 
-			if var1_15 and not pg.NewStoryMgr.GetInstance():IsPlayed(var1_15) then
-				pg.NewStoryMgr.GetInstance():Play(var1_15, function()
-					arg0_15()
+			if var1_17 and not pg.NewStoryMgr.GetInstance():IsPlayed(var1_17) then
+				pg.NewStoryMgr.GetInstance():Play(var1_17, function()
+					if not var1_13() then
+						return
+					end
+
+					arg0_17()
 				end)
 			else
-				arg0_15()
+				arg0_17()
 			end
 		end)
 	end
 
-	table.insert(var0_12, function(arg0_17)
-		local var0_17 = arg0_12.desc2
-
-		setActive(arg0_12.desc2, true)
-
-		local var1_17 = GetOrAddComponent(var0_17, typeof(Typewriter))
-
-		function var1_17.endFunc()
-			arg0_17()
+	table.insert(var2_13, function(arg0_19)
+		if not var1_13() then
+			return
 		end
 
-		var1_17:setSpeed(arg0_12:GetTypewriterSpeed())
-		var1_17:Play()
+		local var0_19 = arg0_13.desc2
+
+		setActive(arg0_13.desc2, true)
+
+		local var1_19 = GetOrAddComponent(var0_19, typeof(Typewriter))
+
+		function var1_19.endFunc()
+			if not var1_13() then
+				return
+			end
+
+			arg0_19()
+		end
+
+		var1_19:setSpeed(arg0_13:GetTypewriterSpeed())
+		var1_19:Play()
 	end)
-	seriesAsync(var0_12, callback)
+	seriesAsync(var2_13)
 end
 
-function var0_0.OnFirstFlush(arg0_19)
-	arg0_19:LocalInit()
-	arg0_19:LocalFresh()
-	arg0_19:InitBtn()
-	arg0_19:Hx4Channel()
+function var0_0.OnFirstFlush(arg0_21)
+	arg0_21:LocalInit()
+	arg0_21:LocalFresh()
+	arg0_21:InitBtn()
+	arg0_21:Hx4Channel()
 end
 
-function var0_0.OnUpdateFlush(arg0_20)
-	local var0_20 = arg0_20.ptData:getTargetLevel()
-	local var1_20, var2_20, var3_20 = arg0_20.ptData:GetLevelProgress()
+function var0_0.OnUpdateFlush(arg0_22)
+	local var0_22 = arg0_22.ptData:getTargetLevel()
+	local var1_22, var2_22, var3_22 = arg0_22.ptData:GetLevelProgress()
 
-	setText(arg0_20.nowday, string.format("%s", var1_20))
-	setText(arg0_20.aimday, string.format("/%s", var2_20))
-	arg0_20:LocalFresh()
+	setText(arg0_22.nowday, string.format("%s", var1_22))
+	setText(arg0_22.aimday, string.format("/%s", var2_22))
+	arg0_22:LocalFresh()
 
-	local var4_20, var5_20, var6_20 = arg0_20.ptData:GetResProgress()
+	local var4_22, var5_22, var6_22 = arg0_22.ptData:GetResProgress()
 
-	setText(arg0_20.progressStep, string.format("%s<color=#ffffff33>/%s</color>", var6_20 >= 1 and setColorStr(var4_20, COLOR_GREEN) or var4_20, var5_20))
-	setSlider(arg0_20.slider, 0, 1, var6_20)
+	setText(arg0_22.progressStep, string.format("%s<color=#ffffff33>/%s</color>", var6_22 >= 1 and setColorStr(var4_22, COLOR_GREEN) or var4_22, var5_22))
+	setSlider(arg0_22.slider, 0, 1, var6_22)
 
-	local var7_20 = arg0_20.ptData:CanGetAward()
-	local var8_20 = arg0_20.ptData:CanGetNextAward()
-	local var9_20 = arg0_20.ptData:CanGetMorePt()
+	local var7_22 = arg0_22.ptData:CanGetAward()
+	local var8_22 = arg0_22.ptData:CanGetNextAward()
+	local var9_22 = arg0_22.ptData:CanGetMorePt()
 
-	setActive(arg0_20.battleBtn, var9_20 and not var7_20 and var8_20)
-	setActive(arg0_20.getBtn, var7_20)
-	setActive(arg0_20.gotBtn, not var8_20)
+	setActive(arg0_22.battleBtn, var9_22 and not var7_22 and var8_22)
+	setActive(arg0_22.getBtn, var7_22)
+	setActive(arg0_22.gotBtn, not var8_22)
 
-	local var10_20 = arg0_20.ptData:GetAward()
+	local var10_22 = arg0_22.ptData:GetAward()
 
-	updateDrop(arg0_20.awardTF, var10_20)
-	onButton(arg0_20, arg0_20.awardTF, function()
-		arg0_20:emit(BaseUI.ON_DROP, var10_20)
+	updateDrop(arg0_22.awardTF, var10_22)
+	onButton(arg0_22, arg0_22.awardTF, function()
+		arg0_22:emit(BaseUI.ON_DROP, var10_22)
 	end, SFX_PANEL)
 end
 
-function var0_0.OnDestroy(arg0_22)
+function var0_0.OnDestroy(arg0_24)
 	return
 end
 
-function var0_0.GetWorldPtData(arg0_23, arg1_23)
-	if arg1_23 <= pg.TimeMgr.GetInstance():GetServerTime() - (ActivityMainScene.Data2Time or 0) then
+function var0_0.GetWorldPtData(arg0_25, arg1_25)
+	if arg1_25 <= pg.TimeMgr.GetInstance():GetServerTime() - (ActivityMainScene.Data2Time or 0) then
 		ActivityMainScene.Data2Time = pg.TimeMgr.GetInstance():GetServerTime()
 
-		arg0_23:emit(ActivityMediator.EVENT_PT_OPERATION, {
+		arg0_25:emit(ActivityMediator.EVENT_PT_OPERATION, {
 			cmd = 2,
-			activity_id = arg0_23.ptData:GetId()
+			activity_id = arg0_25.ptData:GetId()
 		})
 	end
 end
 
-local function var1_0(arg0_24)
-	local var0_24 = pg.SdkMgr.GetInstance():GetChannelUIDIncludeHarmony()
+local function var1_0(arg0_26)
+	local var0_26 = pg.SdkMgr.GetInstance():GetChannelUIDIncludeHarmony()
 
-	return (arg0_24._tf:Find("rw/hx_ch" .. var0_24))
+	return (arg0_26._tf:Find("rw/hx_ch" .. var0_26))
 end
 
-function var0_0.Hx4Channel(arg0_25)
-	local var0_25 = var1_0(arg0_25)
+function var0_0.Hx4Channel(arg0_27)
+	local var0_27 = var1_0(arg0_27)
 
-	if not IsNil(var0_25) then
-		setActive(var0_25, HXSet.isHx())
+	if not IsNil(var0_27) then
+		setActive(var0_27, HXSet.isHx())
 	end
+end
+
+function var0_0.OnHideFlush(arg0_28)
+	arg0_28:InvalidateWriter()
+end
+
+function var0_0.OnDestroy(arg0_29)
+	arg0_29:InvalidateWriter()
 end
 
 return var0_0
