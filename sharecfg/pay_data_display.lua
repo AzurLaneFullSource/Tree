@@ -163,6 +163,7 @@ pg.pay_data_display.all = {
 	166,
 	167,
 	168,
+	169,
 	1000,
 	1001,
 	1002,
@@ -19686,6 +19687,140 @@ end)()
 			}
 		}
 	}
+	pg.base.pay_data_display[169] = {
+		limit_group = 0,
+		name = "Loving Care Lucky Box",
+		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
+		type = 1,
+		second_text = "Many Rewards",
+		type_order = 2,
+		subject = "Loving Care Lucky Box",
+		first_text = "Random Skin & Abundant Gems",
+		limit_arg = 1,
+		tip = "",
+		money = 2999,
+		tip_open = 0,
+		tag = 2,
+		id = 169,
+		gem = 0,
+		name_display = "Loving Care Lucky Box",
+		package_sort_id = 0,
+		limit_type = 2,
+		akashi_pick = 1,
+		extra_service = 3,
+		package_tag = "",
+		picture = "fudai103",
+		show_group = "",
+		skin_inquire_relation = 86424,
+		package_tag_open = 0,
+		id_str = "com.yostaren.azurlane.luckybag90",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains a random character outfit and a large amount of supplies ",
+		airijp_id = "com.yostaren.azurlane.luckybag90",
+		extra_service_item = {
+			{
+				2,
+				86424,
+				1
+			},
+			{
+				1,
+				14,
+				2026
+			},
+			{
+				2,
+				42086,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					7,
+					23
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					5
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				42086,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81443,
+				1
+			}
+		},
+		first_icon = {
+			{
+				2,
+				86424,
+				1
+			},
+			{
+				1,
+				14,
+				2026
+			}
+		}
+	}
 	pg.base.pay_data_display[1000] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass",
@@ -22982,6 +23117,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.pay_data_display[2011] = {
 		limit_group = 0,
 		name = "Skill Book Pack",
@@ -23100,8 +23237,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.pay_data_display[2014] = {
 		limit_group = 0,
 		name = "Skill Book Pack",

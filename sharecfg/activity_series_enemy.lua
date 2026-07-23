@@ -35,6 +35,11 @@ pg.activity_series_enemy.all = {
 	5003,
 	5004,
 	5005,
+	6001,
+	6002,
+	6003,
+	6004,
+	6005,
 	1001001,
 	1001002,
 	1001003
@@ -2372,6 +2377,333 @@ pg.base.activity_series_enemy = {}
 			{
 				"gaoxiong_7",
 				3
+			}
+		},
+		defeat_story = {},
+		defeat_story_count = {},
+		use_oil_limit = {
+			0,
+			0
+		},
+		ex_count = {
+			8000,
+			20,
+			0.2,
+			1000,
+			0.8
+		}
+	}
+	pg.base.activity_series_enemy[6001] = {
+		pre_chapter = 0,
+		name = "Private Hospital Room",
+		chapter_name = "Easy",
+		type = 1,
+		pos_x = "0",
+		count = 0,
+		additional_awards_display = "",
+		pos_y = "0",
+		whether_singlefight = 0,
+		collection_group_id = 104,
+		ex_count = "",
+		oil = 0,
+		profiles = "An ordinary private hospital room. The lighting is soft, and the bed is neat and clean. Yet the door remains locked.",
+		id = 6001,
+		limitation = {},
+		expedition_id = {
+			2049101
+		},
+		boss_icon = {
+			{
+				"sali_2",
+				3
+			}
+		},
+		pass_awards_display = {
+			{
+				1,
+				736,
+				40
+			},
+			{
+				2,
+				200821,
+				0
+			},
+			{
+				2,
+				59001,
+				0
+			},
+			{
+				2,
+				54012,
+				0
+			}
+		},
+		defeat_story = {},
+		defeat_story_count = {},
+		use_oil_limit = {
+			0,
+			0
+		}
+	}
+	pg.base.activity_series_enemy[6002] = {
+		pre_chapter = 6001,
+		name = "ICU Ward",
+		chapter_name = "Normal",
+		type = 1,
+		pos_x = "0",
+		count = 0,
+		collection_group_id = 105,
+		pos_y = "0",
+		whether_singlefight = 1,
+		id = 6002,
+		ex_count = "",
+		oil = 0,
+		profiles = "A treatment area for critically ill patients. Unauthorized entry is prohibited.",
+		limitation = {},
+		expedition_id = {
+			2049201,
+			2049202
+		},
+		boss_icon = {
+			{
+				"sali_2",
+				3
+			},
+			{
+				"gelifen_2",
+				1
+			}
+		},
+		pass_awards_display = {
+			{
+				1,
+				736,
+				140
+			},
+			{
+				2,
+				200822,
+				0
+			},
+			{
+				2,
+				59001,
+				0
+			},
+			{
+				2,
+				54017,
+				0
+			}
+		},
+		additional_awards_display = {
+			{
+				1,
+				736,
+				25
+			},
+			{
+				1,
+				1,
+				0
+			}
+		},
+		defeat_story = {},
+		defeat_story_count = {},
+		use_oil_limit = {
+			0,
+			0
+		}
+	}
+	pg.base.activity_series_enemy[6003] = {
+		pre_chapter = 6002,
+		name = "Nurses' Station",
+		chapter_name = "Hard",
+		type = 1,
+		pos_x = "0",
+		count = 0,
+		collection_group_id = 106,
+		pos_y = "0",
+		whether_singlefight = 1,
+		id = 6003,
+		ex_count = "",
+		oil = 0,
+		profiles = "The place where nurses spend their day. Extremely dangerous.",
+		limitation = {},
+		expedition_id = {
+			2049301,
+			2049302,
+			2049303
+		},
+		boss_icon = {
+			{
+				"gelifen_2",
+				1
+			},
+			{
+				"z11_3",
+				1
+			},
+			{
+				"pulimaosi_3",
+				2
+			}
+		},
+		pass_awards_display = {
+			{
+				1,
+				736,
+				360
+			},
+			{
+				2,
+				200823,
+				0
+			},
+			{
+				2,
+				59001,
+				0
+			},
+			{
+				2,
+				54017,
+				0
+			}
+		},
+		additional_awards_display = {
+			{
+				1,
+				736,
+				60
+			},
+			{
+				1,
+				1,
+				0
+			}
+		},
+		defeat_story = {},
+		defeat_story_count = {},
+		use_oil_limit = {
+			25,
+			16
+		}
+	}
+	pg.base.activity_series_enemy[6004] = {
+		pre_chapter = 6003,
+		name = "Underground Area",
+		chapter_name = "S.P",
+		type = 2,
+		pos_x = "0",
+		count = 1,
+		additional_awards_display = "",
+		pos_y = "0",
+		whether_singlefight = 0,
+		collection_group_id = 107,
+		ex_count = "",
+		oil = 0,
+		profiles = "The underground section of the White Night Manor. Many secrets are buried directly beneath the main ward.",
+		id = 6004,
+		limitation = {},
+		expedition_id = {
+			2049401,
+			2049402,
+			2049403,
+			2049404
+		},
+		boss_icon = {
+			{
+				"z11_3",
+				1
+			},
+			{
+				"pulimaosi_3",
+				2
+			},
+			{
+				"gelifen_2",
+				1
+			},
+			{
+				"gangyishawa_3",
+				24
+			}
+		},
+		pass_awards_display = {
+			{
+				1,
+				736,
+				800
+			},
+			{
+				2,
+				200824,
+				0
+			},
+			{
+				2,
+				59001,
+				0
+			},
+			{
+				2,
+				54016,
+				0
+			}
+		},
+		defeat_story = {},
+		defeat_story_count = {},
+		use_oil_limit = {
+			40,
+			16
+		}
+	}
+	pg.base.activity_series_enemy[6005] = {
+		pre_chapter = 6004,
+		name = "Heliport",
+		chapter_name = "E.X",
+		type = 3,
+		pos_x = "0",
+		count = 0,
+		additional_awards_display = "",
+		pos_y = "0",
+		whether_singlefight = 0,
+		collection_group_id = 0,
+		pass_awards_display = "",
+		oil = 0,
+		profiles = "The White Night Manor is located in a remote area with very few transportation options. As such, helicopters are the obvious choice.",
+		id = 6005,
+		limitation = {},
+		expedition_id = {
+			2049501,
+			2049502,
+			2049503,
+			2049504,
+			2049505
+		},
+		boss_icon = {
+			{
+				"z11_3",
+				1
+			},
+			{
+				"pulimaosi_3",
+				2
+			},
+			{
+				"z11_3",
+				1
+			},
+			{
+				"gangyishawa_3",
+				24
+			},
+			{
+				"huali_2",
+				2
 			}
 		},
 		defeat_story = {},

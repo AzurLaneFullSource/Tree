@@ -126,7 +126,7 @@ function var0_0.UpdateMapVO(arg0_12, arg1_12)
 		local var2_12 = arg0_12.storyHolder:Find(tostring(iter1_12)) or cloneTplTo(arg0_12.storyNodeTpl, arg0_12.storyHolder, iter1_12)
 		local var3_12 = arg0_12.storyNodesDict[iter1_12]:getConfigTable()
 
-		setAnchoredPosition(var2_12, {
+		setLocalPosition(var2_12, {
 			x = 1920 * tonumber(var3_12.pos_x),
 			y = 1080 * tonumber(var3_12.pos_y)
 		})
@@ -273,9 +273,10 @@ end
 function var0_0.UpdateMapItem(arg0_25, arg1_25, arg2_25)
 	local var0_25 = arg2_25:getConfigTable()
 
-	setAnchoredPosition(arg1_25, {
-		x = arg0_25.mapWidth * var0_25.pos_x,
-		y = arg0_25.mapHeight * var0_25.pos_y
+	warning(1920 * var0_25.pos_x, 1080 * var0_25.pos_y)
+	setLocalPosition(arg1_25, {
+		x = 1920 * var0_25.pos_x,
+		y = 1080 * var0_25.pos_y
 	})
 
 	local var1_25 = findTF(arg1_25, "main")

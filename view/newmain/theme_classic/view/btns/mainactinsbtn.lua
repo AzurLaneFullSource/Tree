@@ -16,19 +16,26 @@ function var0_0.OnClick(arg0_4)
 	arg0_4.event:emit(NewMainMediator.SKIP_INS)
 end
 
-function var0_0.OnInit(arg0_5)
-	arg0_5.animator = arg0_5._tf:Find("icon"):GetComponent(typeof(Animator))
+function var0_0.OnRegister(arg0_5)
+	arg0_5.initX = getAnchoredPosition(arg0_5._tf).x
+end
 
-	local var0_5 = getProxy(InstagramProxy):ShouldShowTip() or getProxy(InstagramChatProxy):ShouldShowTip() or getProxy(InstagramProxy):ShouldShowTip()
+function var0_0.OnInit(arg0_6)
+	arg0_6.animator = arg0_6._tf:Find("icon"):GetComponent(typeof(Animator))
 
-	arg0_5.animator.enabled = var0_5
+	local var0_6 = getProxy(InstagramProxy):ShouldShowTip() or getProxy(InstagramChatProxy):ShouldShowTip() or getProxy(InstagramProxy):ShouldShowTip()
 
-	setActive(arg0_5._tf:Find("Tip"), var0_5)
+	arg0_6.animator.enabled = var0_6
 
-	arg0_5._tf.localScale = arg0_5.isScale and Vector3(0.85, 0.85, 1) or Vector3(1, 1, 1)
+	setActive(arg0_6._tf:Find("Tip"), var0_6)
 
-	setAnchoredPosition(arg0_5._tf, {
-		y = arg0_5.isScale and -950 or -752.5
+	arg0_6._tf.localScale = arg0_6.isScale and Vector3(0.85, 0.85, 1) or Vector3(1, 1, 1)
+
+	local var1_6 = arg0_6.isOverflow and arg0_6.initX - 200 or arg0_6.initX
+
+	setAnchoredPosition(arg0_6._tf, {
+		x = var1_6,
+		y = arg0_6.isScale and -950 or -752.5
 	})
 end
 

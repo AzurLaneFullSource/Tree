@@ -431,8 +431,8 @@ function var0_0.GetAssessRankIdx(arg0_66)
 	local var2_66 = arg0_66:GetAttrSum()
 	local var3_66 = pg.child2_target[var0_66].attr_sum_level
 
-	for iter0_66, iter1_66 in ipairs(var3_66) do
-		if var2_66 >= iter1_66[1] * var1_66 and var2_66 <= iter1_66[2] * var1_66 then
+	for iter0_66 = #var3_66, 1, -1 do
+		if var2_66 >= var3_66[iter0_66] * var1_66 then
 			return iter0_66
 		end
 	end

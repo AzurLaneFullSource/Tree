@@ -353,16 +353,6 @@ end
 temp()
 
 function temp()
-	var1_0.A = {
-		["2"] = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
 	var1_0.侌 = {
 		this = {
 			this = true

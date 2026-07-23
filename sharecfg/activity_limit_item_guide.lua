@@ -181,7 +181,11 @@ pg.activity_limit_item_guide.all = {
 	207,
 	208,
 	209,
-	210
+	210,
+	211,
+	212,
+	213,
+	214
 }
 pg.activity_limit_item_guide.get_id_list_by_activity = {
 	[4937] = {
@@ -380,6 +384,12 @@ pg.activity_limit_item_guide.get_id_list_by_activity = {
 		208,
 		209,
 		210
+	},
+	[51079] = {
+		211,
+		212,
+		213,
+		214
 	}
 }
 pg.base = pg.base or {}
@@ -3699,6 +3709,74 @@ end)()
 				3,
 				50845,
 				"An Android's Journey - Challenge Stage Clear Reward"
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[211] = {
+		id = 211,
+		activity = 51079,
+		count = 1,
+		type = 5,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 342,
+		order = 0,
+		link_params = {
+			{
+				3,
+				51073,
+				"Authentic Horror Story: Escape from White Night Manor! - Escape Room Supply Station event reward."
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[212] = {
+		id = 212,
+		activity = 51079,
+		count = 1,
+		type = 9,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 3084,
+		order = 0,
+		link_params = {
+			{
+				3,
+				51073,
+				"Authentic Horror Story: Escape from White Night Manor! - Clear story mode."
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[213] = {
+		id = 213,
+		activity = 51079,
+		count = 4,
+		type = 4,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 201151,
+		order = 0,
+		link_params = {
+			{
+				3,
+				51073,
+				"Authentic Horror Story: Escape from White Night Manor! - Escape Room Supply Station event reward."
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[214] = {
+		id = 214,
+		activity = 51079,
+		count = 1,
+		type = 1,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 735,
+		order = 0,
+		link_params = {
+			{
+				3,
+				51073,
+				"Authentic Horror Story: Escape from White Night Manor! - Complete the medal set (via the top-right corner of the event page)."
 			}
 		}
 	}

@@ -166,4 +166,18 @@ function var0_0.GetXiaQiMatchsIndex(arg0_7, arg1_7)
 	return var1_7
 end
 
+function var0_0.CustomSmoothValue(arg0_8, arg1_8, arg2_8, arg3_8, arg4_8)
+	if arg2_8 == nil or arg2_8 <= 0 then
+		return arg1_8, 0
+	end
+
+	arg3_8 = arg3_8 or 0
+	arg4_8 = arg4_8 or Time.deltaTime
+	arg3_8 = math.min(math.max(arg3_8 + arg4_8, 0), arg2_8)
+
+	local var0_8 = arg3_8 / arg2_8
+
+	return arg0_8 + (arg1_8 - arg0_8) * var0_8, arg3_8
+end
+
 return var0_0

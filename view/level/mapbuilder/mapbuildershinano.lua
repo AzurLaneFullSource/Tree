@@ -357,9 +357,9 @@ end
 function var0_0.UpdateMapItem(arg0_29, arg1_29, arg2_29)
 	local var0_29 = arg2_29:getConfigTable()
 
-	setAnchoredPosition(arg1_29, {
-		x = arg0_29.mapWidth * var0_29.pos_x,
-		y = arg0_29.mapHeight * var0_29.pos_y
+	setLocalPosition(arg1_29, {
+		x = 1920 * var0_29.pos_x,
+		y = 1080 * var0_29.pos_y
 	})
 
 	local var1_29 = findTF(arg1_29, "main")

@@ -9,13 +9,10 @@ local var1_0 = {
 	"vocal",
 	"interaction",
 	"bgm",
-	"bgmsingle"
+	"bgmsingle",
+	"bgmvolume"
 }
 local var2_0 = {
-	"button",
-	"interaction"
-}
-local var3_0 = {
 	button = {
 		sheet_name = "se-SkinButton"
 	},
@@ -35,15 +32,19 @@ local var3_0 = {
 		loop = false,
 		sheet_name = "se-skin",
 		bgm = true
+	},
+	bgmvolume = {
+		change_volume = true,
+		sheet_name = ""
 	}
 }
 
 var0_0.COMMON_XIAQI_RESULT = "xiaqi_result"
 
-local var4_0
-local var5_0 = 5
-local var6_0 = 3
-local var7_0 = 0.3
+local var3_0
+local var4_0 = 5
+local var5_0 = 3
+local var6_0 = 0.3
 
 var0_0.DRAG_TIME_ACTION = 1
 var0_0.DRAG_CLICK_ACTION = 2
@@ -78,7 +79,7 @@ var0_0.NOTICE_ACTION_LIST = {
 	var0_0.ON_ACTION_DRAG_TRIGGER
 }
 
-local var8_0 = {
+local var7_0 = {
 	[var0_0.ON_ACTION_PLAY] = "动作播放 1",
 	[var0_0.ON_ACTION_DRAG_CLICK] = "动作点击 2",
 	[var0_0.ON_ACTION_CHANGE_IDLE] = "改变idle 3",
@@ -102,7 +103,7 @@ var0_0.relation_type_drag_y = 102
 var0_0.relation_type_action_index = 103
 var0_0.relation_type_idle = 104
 
-local var9_0 = {
+local var8_0 = {
 	CubismParameterBlendMode.Override,
 	CubismParameterBlendMode.Additive,
 	CubismParameterBlendMode.Multiply
@@ -187,7 +188,7 @@ function var0_0.GenerateData(arg0_1)
 	return var0_1
 end
 
-local function var10_0(arg0_7)
+local function var9_0(arg0_7)
 	local var0_7 = arg0_7.live2dData:GetShipSkinConfig()
 	local var1_7 = var0_7.lip_sync_gain
 	local var2_7 = var0_7.lip_smoothing
@@ -201,7 +202,7 @@ local function var10_0(arg0_7)
 	end
 end
 
-local function var11_0(arg0_8)
+local function var10_0(arg0_8)
 	local var0_8 = arg0_8.live2dData:GetShipSkinConfig().l2d_para_range
 
 	if var0_8 ~= nil and type(var0_8) == "table" then
@@ -211,11 +212,11 @@ local function var11_0(arg0_8)
 	end
 end
 
-local function var12_0(arg0_9)
+local function var11_0(arg0_9)
 	return not arg0_9._readlyToStop
 end
 
-local function var13_0(arg0_10, arg1_10)
+local function var12_0(arg0_10, arg1_10)
 	if not arg1_10 or arg1_10 == "" then
 		return false
 	end
@@ -254,15 +255,15 @@ local function var13_0(arg0_10, arg1_10)
 		return false
 	end
 
-	if not var12_0(arg0_10) then
+	if not var11_0(arg0_10) then
 		return false
 	end
 
 	return true
 end
 
-local function var14_0(arg0_11, arg1_11, arg2_11)
-	if not var13_0(arg0_11, arg1_11) then
+local function var13_0(arg0_11, arg1_11, arg2_11)
+	if not var12_0(arg0_11, arg1_11) then
 		return false
 	end
 
@@ -279,7 +280,7 @@ local function var14_0(arg0_11, arg1_11, arg2_11)
 	end
 
 	if not arg0_11.isPlaying or arg2_11 then
-		local var1_11 = var4_0.action2Id[arg1_11]
+		local var1_11 = var3_0.action2Id[arg1_11]
 
 		if var1_11 then
 			arg0_11.playActionName = arg1_11
@@ -311,19 +312,19 @@ local function var14_0(arg0_11, arg1_11, arg2_11)
 	return false
 end
 
-local function var15_0(arg0_12, arg1_12)
+local function var14_0(arg0_12, arg1_12)
 	arg0_12.liveCom:SetCenterPart("Drawables/TouchHead", Vector3.zero)
 
 	arg0_12.liveCom.DampingTime = 0.3
 end
 
-local function var16_0(arg0_13, arg1_13, arg2_13)
+local function var15_0(arg0_13, arg1_13, arg2_13)
 	if table.contains(Live2DPainting.NOTICE_ACTION_LIST, arg1_13) then
 		arg0_13:onListenerHandle(arg1_13, arg2_13)
 	end
 end
 
-local function var17_0(arg0_14, arg1_14, arg2_14)
+local function var16_0(arg0_14, arg1_14, arg2_14)
 	if arg1_14 == Live2DPainting.EVENT_ACTION_APPLY then
 		local var0_14 = arg2_14.id
 		local var1_14 = arg2_14.action
@@ -333,7 +334,7 @@ local function var17_0(arg0_14, arg1_14, arg2_14)
 		local var5_14 = arg2_14.focus
 		local var6_14 = arg2_14.react
 		local var7_14 = var4_14.idle_focus
-		local var8_14 = var12_0(arg0_14)
+		local var8_14 = var11_0(arg0_14)
 		local var9_14
 		local var10_14 = false
 
@@ -352,7 +353,7 @@ local function var17_0(arg0_14, arg1_14, arg2_14)
 				arg0_14:changeIdleIndex(var4_14.idle and var4_14.idle or 0)
 			end
 
-			var9_14 = var14_0(arg0_14, var1_14, var5_14 or false)
+			var9_14 = var13_0(arg0_14, var1_14, var5_14 or false)
 
 			if var9_14 then
 				print("id = " .. var0_14 .. " 触发成功")
@@ -394,7 +395,7 @@ local function var17_0(arg0_14, arg1_14, arg2_14)
 			arg2_14.callback()
 		end
 	elseif arg1_14 == Live2DPainting.EVENT_ADD_PARAMETER_COM then
-		arg0_14.liveCom:AddParameterValue(arg2_14.com, arg2_14.start, var9_0[arg2_14.mode])
+		arg0_14.liveCom:AddParameterValue(arg2_14.com, arg2_14.start, var8_0[arg2_14.mode])
 	elseif arg1_14 == Live2DPainting.EVENT_REMOVE_PARAMETER_COM then
 		arg0_14.liveCom:removeParameterValue(arg2_14.com)
 	elseif arg1_14 == Live2DPainting.EVENT_CHANGE_IDLE_INDEX then
@@ -479,7 +480,7 @@ function var0_0.getDragCommonData(arg0_18, arg1_18)
 	return
 end
 
-local function var18_0(arg0_19, arg1_19)
+local function var17_0(arg0_19, arg1_19)
 	if not arg0_19._l2dCharEnable then
 		return
 	end
@@ -543,7 +544,7 @@ local function var18_0(arg0_19, arg1_19)
 		if arg0_19.drags[iter2_19].parameterName == "ParamBGM_loop" then
 			local var10_19 = arg0_19.drags[iter2_19]:getParameterTarget()
 
-			pg.CriMgr.GetInstance():ChangeBgmVolume(var10_19)
+			pg.CriMgr.GetInstance():ChangePaintingBgmVolume(var10_19)
 		end
 	end
 
@@ -564,13 +565,13 @@ local function var18_0(arg0_19, arg1_19)
 	end
 end
 
-local function var19_0(arg0_20)
+local function var18_0(arg0_20)
 	arg0_20.drags = {}
 	arg0_20.dragParts = {}
 	arg0_20.dragCommonData = {}
 
-	for iter0_20 = 1, #var4_0.assistantTouchParts do
-		table.insert(arg0_20.dragParts, var4_0.assistantTouchParts[iter0_20])
+	for iter0_20 = 1, #var3_0.assistantTouchParts do
+		table.insert(arg0_20.dragParts, var3_0.assistantTouchParts[iter0_20])
 	end
 
 	arg0_20._l2dCharEnable = true
@@ -591,10 +592,10 @@ local function var19_0(arg0_20)
 
 			var2_20:setParameterCom(var3_20)
 			var2_20:setEventCallback(function(arg0_21, arg1_21)
-				var17_0(arg0_20, arg0_21, arg1_21)
 				var16_0(arg0_20, arg0_21, arg1_21)
+				var15_0(arg0_20, arg0_21, arg1_21)
 			end)
-			arg0_20.liveCom:AddParameterValue(var2_20.parameterName, var2_20.startValue, var9_0[var2_20.mode])
+			arg0_20.liveCom:AddParameterValue(var2_20.parameterName, var2_20.startValue, var8_0[var2_20.mode])
 
 			if var1_20.relation_parameter and var1_20.relation_parameter.list then
 				local var4_20 = var1_20.relation_parameter.list
@@ -607,7 +608,7 @@ local function var19_0(arg0_20)
 
 						local var6_20 = iter4_20.mode or var1_20.mode
 
-						arg0_20.liveCom:AddParameterValue(iter4_20.name, iter4_20.start or var2_20.startValue or 0, var9_0[var6_20])
+						arg0_20.liveCom:AddParameterValue(iter4_20.name, iter4_20.start or var2_20.startValue or 0, var8_0[var6_20])
 					end
 				end
 			end
@@ -739,7 +740,7 @@ function var0_0.changeTriggerFlag(arg0_33, arg1_33)
 	arg0_33.useEventTriggerFlag = arg1_33
 end
 
-local function var20_0(arg0_34, arg1_34)
+local function var19_0(arg0_34, arg1_34)
 	arg0_34._go = arg1_34
 	arg0_34._tf = tf(arg1_34)
 
@@ -750,9 +751,9 @@ local function var20_0(arg0_34, arg1_34)
 	arg0_34._tf.localPosition = arg0_34.live2dData.position
 	arg0_34.liveCom = arg1_34:GetComponent(typeof(Live2dChar))
 	arg0_34._animator = arg1_34:GetComponent(typeof(Animator))
+	arg0_34.cubismModelCom = arg1_34:GetComponent(typeof(CubismModel))
 	arg0_34.loadSheets = {}
 	arg0_34.playingSheetInfo = {}
-	arg0_34.cubismModelCom = arg1_34:GetComponent(typeof(CubismModel))
 	arg0_34.animationClipNames = {}
 
 	if arg0_34._animator and arg0_34._animator.runtimeAnimatorController then
@@ -763,9 +764,7 @@ local function var20_0(arg0_34, arg1_34)
 		end
 	end
 
-	local var1_34 = var4_0.action2Id.idle
-
-	arg0_34.liveCom:SetReactMotions(var4_0.idleActions)
+	arg0_34.liveCom:SetReactMotions(var3_0.idleActions)
 
 	function arg0_34.liveCom.FinishAction(arg0_35)
 		arg0_34:live2dActionChange(false)
@@ -797,42 +796,56 @@ local function var20_0(arg0_34, arg1_34)
 		local var0_37 = string.split(arg0_37.stringParameter, "_")
 
 		if table.contains(var1_0, var0_37[1]) then
-			local var1_37 = arg0_34.live2dData.ship:getSkinId()
-			local var2_37
+			local var1_37 = var2_0[var0_37[1]]
+			local var2_37 = arg0_34.live2dData.ship:getSkinId()
 			local var3_37
-			local var4_37 = var3_0[var0_37[1]]
+			local var4_37
 			local var5_37 = false
 			local var6_37 = 100
+			local var7_37 = not tobool(var1_37.cv_voice)
+			local var8_37 = var1_37.change_volume and var1_37.change_volume or false
 
-			if var4_37.cv_voice then
-				var2_37 = pg.CriMgr.GetCVBankName(ShipWordHelper.RawGetCVKey(var1_37))
+			if var1_37.cv_voice then
+				var3_37 = pg.CriMgr.GetCVBankName(ShipWordHelper.RawGetCVKey(var2_37))
 
-				local var7_37 = pg.ship_skin_template[var1_37].group_index
+				local var9_37 = pg.ship_skin_template[var2_37].group_index
 
-				var3_37 = "vocal_" .. var0_37[2] .. "_" .. var7_37
-			elseif var4_37.bgm then
-				var2_37 = var4_37.sheet_name
-				var3_37 = "skin-" .. pg.ship_skin_template[var1_37].ship_group .. "_" .. var0_37[2]
+				var4_37 = "vocal_" .. var0_37[2] .. "_" .. var9_37
+			elseif var1_37.bgm then
+				var3_37 = var1_37.sheet_name
+				var4_37 = "skin-" .. pg.ship_skin_template[var2_37].ship_group .. "_" .. var0_37[2]
 				var6_37 = var0_37[3] and tonumber(var0_37[3]) / 100 or 1
 			else
-				var2_37 = var4_37.sheet_name
-				var5_37 = var4_37.loop
-				var3_37 = var1_37 .. "_" .. var0_37[2]
+				var3_37 = var1_37.sheet_name
+				var5_37 = var1_37.loop
+				var4_37 = var2_37 .. "_" .. var0_37[2]
 			end
 
-			if var4_37.cv_voice then
-				local var8_37 = table.contains(var2_0, var0_37[1])
+			if var3_37 and var3_37 ~= "" and var4_37 and var4_37 ~= "" then
+				if var1_37.bgm then
+					local var10_37 = arg0_34.liveCom:GetCubismParameter("ParamBGM_loop")
+					local var11_37 = var10_37 and var10_37.Value or 1
 
-				arg0_34:playL2dVoice(var2_37, var3_37, var8_37)
-			elseif var4_37.bgm then
-				local var9_37 = arg0_34.liveCom:GetCubismParameter("ParamBGM_loop")
-				local var10_37 = var9_37 and var9_37.Value or 1
+					pg.CriMgr.GetInstance():PlayPaintingBgm(var3_37, var4_37, var5_37, var6_37, var11_37)
+				else
+					arg0_34:playL2dVoice(var3_37, var4_37, var7_37)
+				end
+			end
 
-				pg.CriMgr.GetInstance():PlayPaintingBgm(var2_37, var3_37, var5_37, var6_37, var10_37)
+			if var8_37 then
+				local var12_37 = tonumber(var0_37[2]) / 100
+
+				if var12_37 and var12_37 >= 0 then
+					local var13_37 = var12_37 * pg.CriMgr.GetInstance():getBGMVolume()
+
+					pg.CriMgr.GetInstance():changeBGMVolume(var13_37)
+
+					arg0_34.changeBgmVolume = true
+				end
 			end
 		end
 	end)
-	arg0_34.liveCom:SetTouchParts(var4_0.assistantTouchParts)
+	arg0_34.liveCom:SetTouchParts(var3_0.assistantTouchParts)
 
 	if not arg0_34._physics then
 		arg0_34._physics = GetComponent(arg0_34._tf, "CubismPhysicsController")
@@ -844,28 +857,28 @@ local function var20_0(arg0_34, arg1_34)
 	end
 
 	if arg0_34.live2dData.l2dDragRate and #arg0_34.live2dData.l2dDragRate > 0 then
-		arg0_34.liveCom.DragRateX = arg0_34.live2dData.l2dDragRate[1] * var5_0
-		arg0_34.liveCom.DragRateY = arg0_34.live2dData.l2dDragRate[2] * var6_0
-		arg0_34.liveCom.DampingTime = arg0_34.live2dData.l2dDragRate[3] * var7_0
+		arg0_34.liveCom.DragRateX = arg0_34.live2dData.l2dDragRate[1] * var4_0
+		arg0_34.liveCom.DragRateY = arg0_34.live2dData.l2dDragRate[2] * var5_0
+		arg0_34.liveCom.DampingTime = arg0_34.live2dData.l2dDragRate[3] * var6_0
 	end
 
+	var9_0(arg0_34)
 	var10_0(arg0_34)
-	var11_0(arg0_34)
-	var15_0(arg0_34)
+	var14_0(arg0_34)
 	arg0_34:setEnableActions({})
 	arg0_34:setIgnoreActions({})
 	arg0_34:changeIdleIndex(0)
 
 	if arg0_34.live2dData.shipL2dId and #arg0_34.live2dData.shipL2dId > 0 then
-		var19_0(arg0_34)
+		var18_0(arg0_34)
 		arg0_34:loadLive2dData()
 
 		arg0_34.timer = Timer.New(function()
-			var18_0(arg0_34)
+			var17_0(arg0_34)
 		end, 0.0333333333333333, -1)
 
 		arg0_34.timer:Start()
-		var18_0(arg0_34)
+		var17_0(arg0_34)
 	end
 
 	arg0_34.state = var0_0.STATE_INITED
@@ -890,16 +903,16 @@ local function var20_0(arg0_34, arg1_34)
 
 	if arg0_34.delayChangeParamater and #arg0_34.delayChangeParamater > 0 then
 		for iter2_34 = 1, #arg0_34.delayChangeParamater do
-			local var2_34 = arg0_34.delayChangeParamater[iter2_34]
+			local var1_34 = arg0_34.delayChangeParamater[iter2_34]
 
-			arg0_34:changeParamaterValue(var2_34[1], var2_34[2])
+			arg0_34:changeParamaterValue(var1_34[1], var1_34[2])
 		end
 
 		arg0_34.delayChangeParamater = nil
 	end
 
 	arg0_34:offsetL2dPositonDelay(0.3, 6)
-	var14_0(arg0_34, "idle", true)
+	var13_0(arg0_34, "idle", true)
 	Live2DPainting.SetL2dSortingLayer(arg1_34, LayerWeightConst.L2D_DEFAULT_LAYER)
 end
 
@@ -907,13 +920,13 @@ function var0_0.UpdateL2dBgmVolume(arg0_39)
 	local var0_39 = arg0_39.liveCom:GetCubismParameter("ParamBGM_loop")
 	local var1_39 = var0_39 and var0_39.Value or 1
 
-	pg.CriMgr.GetInstance():ChangeBgmVolume(var1_39)
+	pg.CriMgr.GetInstance():ChangePaintingBgmVolume(var1_39)
 end
 
 function var0_0.Ctor(arg0_40, arg1_40, arg2_40)
 	arg0_40.state = var0_0.STATE_LOADING
 	arg0_40.live2dData = arg1_40
-	var4_0 = pg.AssistantInfo
+	var3_0 = pg.AssistantInfo
 
 	assert(not arg0_40.live2dData:isEmpty())
 
@@ -922,7 +935,7 @@ function var0_0.Ctor(arg0_40, arg1_40, arg2_40)
 	local function var0_40(arg0_41)
 		if arg0_41 then
 			if arg0_40.state == var0_0.STATE_LOADING then
-				var20_0(arg0_40, arg0_41)
+				var19_0(arg0_40, arg0_41)
 
 				if arg2_40 then
 					arg2_40(arg0_40)
@@ -953,7 +966,7 @@ function var0_0.SetVisible(arg0_42, arg1_42)
 		end
 
 		arg0_42:setReactPos(false)
-		var18_0(arg0_42, true)
+		var17_0(arg0_42, true)
 
 		if Live2dConst.GetLive2dDirty(arg0_42.live2dData.ship:getSkinId(), arg0_42.live2dData.ship.id, true) then
 			arg0_42:resetL2dData()
@@ -969,13 +982,13 @@ function var0_0.SetVisible(arg0_42, arg1_42)
 			arg0_42:offsetL2dPositonDelay(0.3, 5, function()
 				return
 			end)
-			var14_0(arg0_42, "idle", true)
+			var13_0(arg0_42, "idle", true)
 		end)
 	else
 		arg0_42:setReactPos(true)
 		arg0_42:saveLive2dData()
 		arg0_42:changeIdleIndex(0)
-		var14_0(arg0_42, "idle", true)
+		var13_0(arg0_42, "idle", true)
 
 		arg0_42._readlyToStop = true
 	end
@@ -1086,13 +1099,13 @@ function var0_0.saveLive2dData(arg0_46)
 end
 
 function var0_0.changeActionIdle(arg0_47)
-	local var0_47 = var4_0.idleActions[math.ceil(math.random(#var4_0.idleActions))]
+	local var0_47 = var3_0.idleActions[math.ceil(math.random(#var3_0.idleActions))]
 
-	var14_0(arg0_47, "idle", true)
+	var13_0(arg0_47, "idle", true)
 end
 
 function var0_0.enablePlayAction(arg0_48, arg1_48)
-	return var13_0(arg0_48, arg1_48)
+	return var12_0(arg0_48, arg1_48)
 end
 
 function var0_0.IgonreReactPos(arg0_49, arg1_49)
@@ -1176,7 +1189,7 @@ end
 function var0_0.TriggerAction(arg0_58, arg1_58, arg2_58, arg3_58, arg4_58)
 	arg0_58:CheckStopDrag()
 
-	local var0_58 = var14_0(arg0_58, arg1_58, arg3_58)
+	local var0_58 = var13_0(arg0_58, arg1_58, arg3_58)
 
 	if var0_58 then
 		arg0_58.finishActionCB = arg2_58
@@ -1264,7 +1277,7 @@ function var0_0.resetL2dData(arg0_66)
 	arg0_66:ResetL2dData()
 	arg0_66:changeIdleIndex(0)
 	arg0_66:loadLive2dData()
-	var14_0(arg0_66, "idle", true)
+	var13_0(arg0_66, "idle", true)
 end
 
 function var0_0.applyActiveData(arg0_67, arg1_67)
@@ -1439,7 +1452,7 @@ function var0_0.changeParamaterValue(arg0_77, arg1_77, arg2_77)
 			return
 		end
 
-		arg0_77.liveCom:AddParameterValue(var0_77, arg2_77, var9_0[1])
+		arg0_77.liveCom:AddParameterValue(var0_77, arg2_77, var8_0[1])
 	else
 		if not arg0_77.delayChangeParamater then
 			arg0_77.delayChangeParamater = {}
@@ -1531,6 +1544,10 @@ function var0_0.Dispose(arg0_83)
 		LeanTween.cancel(go(arg0_83._tf))
 	end
 
+	if arg0_83.changeBgmVolume then
+		pg.CriMgr.GetInstance():changeBGMVolume(pg.CriMgr.GetInstance():getBGMVolume())
+	end
+
 	arg0_83:saveLive2dData()
 
 	arg0_83._readlyToStop = false
@@ -1593,8 +1610,6 @@ function var0_0.clearMaskTexture(arg0_84, arg1_84)
 			for iter0_84 = 0, var2_84.Length - 1 do
 				var2_84[iter0_84]:Release()
 			end
-
-			var1_84.RenderTextureCount = 0
 		end
 	end
 end

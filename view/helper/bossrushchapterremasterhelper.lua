@@ -157,128 +157,170 @@ function var0_0.MarkMemoryGroupNotification(arg0_9)
 	PlayerPrefs.Save()
 end
 
-function var0_0.UnlockMemoryGroupStoriesAndShowMsgBox(arg0_10, arg1_10)
-	local var0_10 = var0_0.UnlockMemoryGroupStories(arg0_10)
+function var0_0.IsAllStoriesPlayed(arg0_10)
+	local var0_10 = arg0_10 and pg.memory_group[arg0_10]
 
-	if #var0_10 <= 0 then
+	if not var0_10 then
 		return false
 	end
 
-	var0_0.ShowUnlockMemoryMsgBox(arg0_10, var0_10, function()
+	local var1_10 = var0_10.memories
+
+	if not var1_10 then
+		return true
+	end
+
+	local var2_10 = pg.NewStoryMgr.GetInstance()
+	local var3_10 = var2_10:GetPlayedList()
+	local var4_10 = pg.memory_template
+
+	for iter0_10 = 1, #var1_10 do
+		local var5_10 = var4_10[var1_10[iter0_10]]
+		local var6_10 = var5_10 and var5_10.story
+
+		if var6_10 and var6_10 ~= "" then
+			local var7_10, var8_10 = var2_10:StoryName2StoryId(var6_10)
+
+			if var7_10 and var7_10 > 0 and not var3_10[var7_10] then
+				return false
+			end
+
+			if var8_10 and var8_10 > 0 and not var3_10[var8_10] then
+				return false
+			end
+		end
+	end
+
+	return true
+end
+
+function var0_0.UnlockMemoryGroupStoriesAndShowMsgBox(arg0_11, arg1_11)
+	local var0_11 = var0_0.IsAllStoriesPlayed(arg0_11)
+	local var1_11 = var0_0.UnlockMemoryGroupStories(arg0_11)
+
+	if #var1_11 <= 0 then
+		return false
+	end
+
+	if var0_11 then
+		return false
+	end
+
+	var0_0.ShowUnlockMemoryMsgBox(arg0_11, var1_11, function()
 		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.WORLD_COLLECTION, {
 			page = WorldMediaCollectionScene.PAGE_MEMORTY,
-			memoryGroup = arg0_10
+			memoryGroup = arg0_11
 		})
 	end, function()
-		var0_0.MarkMemoryGroupNotification(arg0_10)
+		var0_0.MarkMemoryGroupNotification(arg0_11)
 
-		if arg1_10 then
-			arg1_10(var0_10)
+		if arg1_11 then
+			arg1_11(var1_11)
 		end
 	end)
 
 	return true
 end
 
-function var0_0.GetPermanentActivityTicketCost(arg0_13, arg1_13)
-	if not arg0_13 or not arg1_13 or not pg.activity_task_permanent[arg0_13] then
+function var0_0.GetPermanentActivityTicketCost(arg0_14, arg1_14)
+	if not arg0_14 or not arg1_14 or not pg.activity_task_permanent[arg0_14] then
 		return 0
 	end
 
-	local var0_13 = var0_0.GetRemasterByActivityId(arg0_13)
+	local var0_14 = var0_0.GetRemasterByActivityId(arg0_14)
 
-	if not var0_13 then
+	if not var0_14 then
 		return 0
 	end
 
-	for iter0_13, iter1_13 in ipairs(var0_13.config_data or {}) do
-		if iter1_13 == arg1_13 then
-			return var0_13.tickets[iter0_13] or 0
+	for iter0_14, iter1_14 in ipairs(var0_14.config_data or {}) do
+		if iter1_14 == arg1_14 then
+			return var0_14.tickets[iter0_14] or 0
 		end
 	end
 
 	return 0
 end
 
-function var0_0.GetChapterIds(arg0_14)
-	if var0_0.IsRemasterByActivity(arg0_14) then
+function var0_0.GetChapterIds(arg0_15)
+	if var0_0.IsRemasterByActivity(arg0_15) then
 		return {}
 	else
-		local var0_14 = pg.re_map_template[arg0_14]
+		local var0_15 = pg.re_map_template[arg0_15]
 
-		return var0_14 and var0_14.config_data or {}
+		return var0_15 and var0_15.config_data or {}
 	end
 end
 
 function var0_0.GetAllNonActivityIds()
-	local var0_15 = {}
+	local var0_16 = {}
 
-	_.each(pg.re_map_template.all, function(arg0_16)
-		if not var0_0.IsRemasterByActivity(arg0_16) then
-			table.insert(var0_15, arg0_16)
+	_.each(pg.re_map_template.all, function(arg0_17)
+		if not var0_0.IsRemasterByActivity(arg0_17) then
+			table.insert(var0_16, arg0_17)
 		end
 	end)
 
-	return var0_15
+	return var0_16
 end
 
-function var0_0.GetProgress(arg0_17)
-	if not arg0_17 then
+function var0_0.GetProgress(arg0_18)
+	if not arg0_18 then
 		return 0
 	end
 
-	if var0_0.IsRemasterByActivity(arg0_17) then
-		local var0_17 = pg.re_map_template[arg0_17]
-		local var1_17 = var0_17 and getProxy(ActivityProxy):getActivityById(var0_17.activity_id)
+	if var0_0.IsRemasterByActivity(arg0_18) then
+		local var0_18 = pg.re_map_template[arg0_18]
+		local var1_18 = var0_18 and getProxy(ActivityProxy):getActivityById(var0_18.activity_id)
 
-		if not var1_17 then
+		if not var1_18 then
 			return 0
 		end
 
-		local var2_17 = 0
+		local var2_18 = 0
 
-		for iter0_17, iter1_17 in ipairs(var0_17.config_data) do
-			if var1_17:HasPassSeries(iter1_17) then
-				var2_17 = math.max(var2_17, var0_17.chapter_progress[iter0_17])
+		for iter0_18, iter1_18 in ipairs(var0_18.config_data) do
+			if var1_18:HasPassSeries(iter1_18) then
+				var2_18 = math.max(var2_18, var0_18.chapter_progress[iter0_18])
 			end
 		end
 
-		return var2_17
+		return var2_18
 	else
-		local var3_17 = getProxy(ChapterProxy)
-		local var4_17 = pg.re_map_template[arg0_17]
-		local var5_17 = 0
+		local var3_18 = getProxy(ChapterProxy)
+		local var4_18 = pg.re_map_template[arg0_18]
+		local var5_18 = 0
 
-		for iter2_17, iter3_17 in ipairs(var4_17.config_data) do
-			if var3_17:getChapterById(iter3_17):isClear() then
-				var5_17 = math.max(var5_17, var4_17.chapter_progress[iter2_17])
+		for iter2_18, iter3_18 in ipairs(var4_18.config_data) do
+			if var3_18:getChapterById(iter3_18):isClear() then
+				var5_18 = math.max(var5_18, var4_18.chapter_progress[iter2_18])
 			end
 		end
 
-		return var5_17
+		return var5_18
 	end
 end
 
-function var0_0.ChapterAwardInfo(arg0_18, arg1_18)
-	if not arg0_18 then
+function var0_0.ChapterAwardInfo(arg0_19, arg1_19)
+	if not arg0_19 then
 		return nil
 	end
 
-	local var0_18
-	local var1_18 = getProxy(ChapterProxy)
-	local var2_18 = pg.re_map_template[arg0_18]
+	local var0_19
+	local var1_19 = getProxy(ChapterProxy)
+	local var2_19 = pg.re_map_template[arg0_19]
 
-	arg1_18 = arg1_18 or var2_18.activity_id or 0
+	arg1_19 = arg1_19 or var2_19.activity_id or 0
 
-	if arg0_18 and #var2_18.drop_gain > 0 then
-		for iter0_18, iter1_18 in ipairs(var2_18.drop_gain) do
-			local var3_18 = #iter1_18 > 0 and var1_18:getRemasterInfo(arg1_18, iter1_18[1], iter0_18)
+	if arg0_19 and #var2_19.drop_gain > 0 then
+		for iter0_19, iter1_19 in ipairs(var2_19.drop_gain) do
+			local var3_19 = #iter1_19 > 0 and var1_19:getRemasterInfo(arg1_19, iter1_19[1], iter0_19)
 
-			if var3_18 and var3_18.receive == false then
-				var0_18 = {
-					iter0_18,
-					iter1_18,
-					arg1_18
+			if var3_19 and var3_19.receive == false then
+				var0_19 = {
+					iter0_19,
+					iter1_19,
+					arg1_19
 				}
 
 				break
@@ -286,25 +328,25 @@ function var0_0.ChapterAwardInfo(arg0_18, arg1_18)
 		end
 	end
 
-	return var0_18
+	return var0_19
 end
 
-function var0_0.ExistCanGetAward(arg0_19, arg1_19)
-	if not arg0_19 then
+function var0_0.ExistCanGetAward(arg0_20, arg1_20)
+	if not arg0_20 then
 		return false
 	end
 
-	local var0_19 = getProxy(ChapterProxy)
-	local var1_19 = pg.re_map_template[arg0_19]
+	local var0_20 = getProxy(ChapterProxy)
+	local var1_20 = pg.re_map_template[arg0_20]
 
-	arg1_19 = arg1_19 or var1_19.activity_id or 0
+	arg1_20 = arg1_20 or var1_20.activity_id or 0
 
-	for iter0_19, iter1_19 in ipairs(var1_19.drop_gain) do
-		if #iter1_19 > 0 then
-			local var2_19, var3_19, var4_19, var5_19 = unpack(iter1_19)
-			local var6_19 = var0_19:getRemasterInfo(arg1_19, var2_19, iter0_19)
+	for iter0_20, iter1_20 in ipairs(var1_20.drop_gain) do
+		if #iter1_20 > 0 then
+			local var2_20, var3_20, var4_20, var5_20 = unpack(iter1_20)
+			local var6_20 = var0_20:getRemasterInfo(arg1_20, var2_20, iter0_20)
 
-			if var6_19 and not var6_19.receive and var5_19 <= var6_19.count then
+			if var6_20 and not var6_20.receive and var5_20 <= var6_20.count then
 				return true
 			end
 		end
@@ -313,14 +355,14 @@ function var0_0.ExistCanGetAward(arg0_19, arg1_19)
 	return false
 end
 
-function var0_0.GetAwardName(arg0_20, arg1_20)
-	if arg0_20 and arg0_20 > 0 then
-		local var0_20 = pg.activity_series_enemy and pg.activity_series_enemy[arg1_20] or pg.extraenemy_series_template and pg.extraenemy_series_template[arg1_20]
+function var0_0.GetAwardName(arg0_21, arg1_21)
+	if arg0_21 and arg0_21 > 0 then
+		local var0_21 = pg.activity_series_enemy and pg.activity_series_enemy[arg1_21] or pg.extraenemy_series_template and pg.extraenemy_series_template[arg1_21]
 
-		return var0_20 and (var0_20.name or var0_20.chapter_name2 or var0_20.chapter_name) or ""
+		return var0_21 and (var0_21.name or var0_21.chapter_name2 or var0_21.chapter_name) or ""
 	end
 
-	return pg.chapter_template[arg1_20].chapter_name
+	return pg.chapter_template[arg1_21].chapter_name
 end
 
 return var0_0

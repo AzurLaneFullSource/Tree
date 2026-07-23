@@ -131,7 +131,8 @@ pg.medal_template.all = {
 	200151,
 	200161,
 	200171,
-	200181
+	200181,
+	200191
 }
 pg.base = pg.base or {}
 pg.base.medal_template = {}
@@ -2959,5 +2960,26 @@ end)()
 		id = 200181,
 		target_num = 8,
 		target_id = "50659"
+	}
+	pg.base.medal_template[200191] = {
+		explain1 = "Authentic Horror Story: Escape from White Night Manor!",
+		name = "Authentic Horror Story Medal",
+		explain2 = "Event",
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "A faint light lingers, a door remains closed. Within the depths of this abandoned hospital, a secret lies. In this place where horror and mystery intertwine, uncover the path to freedom!\n– Welcome to White Night Manor~",
+		next = 0,
+		icon = "9191",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9191",
+		condition = "Collect 8 stickers in Authentic Horror Story: Escape from White Night Manor!.",
+		rank = 1,
+		id = 200191,
+		target_num = 8,
+		target_id = "51078"
 	}
 end)()

@@ -68,7 +68,7 @@ function var0_0.Show(arg0_7, arg1_7)
 	local var2_7 = #arg1_7.skipable_list
 
 	if var2_7 > 1 then
-		setSizeDelta(arg0_7.window, Vector2(716, 391 + 50 * (var2_7 - 1)))
+		arg0_7:setWindowSize(var2_7 - 1)
 	end
 
 	UIItemList.StaticAlign(arg0_7.list, arg0_7.tpl, var2_7, function(arg0_8, arg1_8, arg2_8)
@@ -98,10 +98,14 @@ function var0_0.Show(arg0_7, arg1_7)
 	end)
 end
 
-function var0_0.Hide(arg0_10)
-	if arg0_10:isShowing() then
-		var0_0.super.Hide(arg0_10)
-		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_10._tf, arg0_10._parentTf)
+function var0_0.setWindowSize(arg0_10, arg1_10)
+	setSizeDelta(arg0_10.window, Vector2(716, 391 + 50 * arg1_10))
+end
+
+function var0_0.Hide(arg0_11)
+	if arg0_11:isShowing() then
+		var0_0.super.Hide(arg0_11)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_11._tf, arg0_11._parentTf)
 	end
 end
 

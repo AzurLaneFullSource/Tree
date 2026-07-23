@@ -179,7 +179,7 @@ function var1_0.PlayPaintingBgm(arg0_17, arg1_17, arg2_17, arg3_17, arg4_17, arg
 	end
 end
 
-function var1_0.ChangeBgmVolume(arg0_19, arg1_19)
+function var1_0.ChangePaintingBgmVolume(arg0_19, arg1_19)
 	if arg0_19._paintingBgmVolumeRate and arg0_19._paintingBgmVolumeRate == arg1_19 then
 		return
 	end
@@ -476,124 +476,128 @@ function var1_0.setBGMVolume(arg0_66, arg1_66)
 	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_BGM, arg1_66)
 end
 
-function var1_0.getSEVolume(arg0_67)
+function var1_0.changeBGMVolume(arg0_67, arg1_67)
+	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_BGM, arg1_67)
+end
+
+function var1_0.getSEVolume(arg0_68)
 	return PlayerPrefs.GetFloat("se_vol", DEFAULT_SEVOLUME)
 end
 
-function var1_0.setSEVolume(arg0_68, arg1_68)
-	PlayerPrefs.SetFloat("se_vol", arg1_68)
-	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_SE, arg1_68)
+function var1_0.setSEVolume(arg0_69, arg1_69)
+	PlayerPrefs.SetFloat("se_vol", arg1_69)
+	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_SE, arg1_69)
 end
 
-function var1_0.MuteAllVolume(arg0_69)
+function var1_0.MuteAllVolume(arg0_70)
 	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_CV, 0)
 	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_Mute_Other_CV, 0)
 	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_BGM, 0)
 	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_SE, 0)
 end
 
-function var1_0.ResetAllVolume(arg0_70)
-	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_CV, arg0_70:getCVVolume())
-	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_Mute_Other_CV, arg0_70:getCVVolume())
-	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_BGM, arg0_70:getBGMVolume())
-	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_SE, arg0_70:getSEVolume())
+function var1_0.ResetAllVolume(arg0_71)
+	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_CV, arg0_71:getCVVolume())
+	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_Mute_Other_CV, arg0_71:getCVVolume())
+	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_BGM, arg0_71:getBGMVolume())
+	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_SE, arg0_71:getSEVolume())
 end
 
-function var1_0.InitBgmCfg(arg0_71, arg1_71)
-	arg0_71.isDefaultBGM = false
+function var1_0.InitBgmCfg(arg0_72, arg1_72)
+	arg0_72.isDefaultBGM = false
 
 	if OPEN_SPECIAL_IP_BGM and PLATFORM_CODE == PLATFORM_US then
 		if Application.isEditor then
-			if arg1_71 then
-				arg1_71()
+			if arg1_72 then
+				arg1_72()
 			end
 
 			return
 		end
 
-		local var0_71 = {
+		local var0_72 = {
 			"Malaysia",
 			"Indonesia"
 		}
-		local var1_71 = "https://pro.ip-api.com/json/?key=TShzQlq7O9KuthI"
-		local var2_71 = ""
+		local var1_72 = "https://pro.ip-api.com/json/?key=TShzQlq7O9KuthI"
+		local var2_72 = ""
 
-		local function var3_71(arg0_72)
-			local var0_72 = "\"country\":\""
-			local var1_72 = "\","
-			local var2_72, var3_72 = string.find(arg0_72, var0_72)
+		local function var3_72(arg0_73)
+			local var0_73 = "\"country\":\""
+			local var1_73 = "\","
+			local var2_73, var3_73 = string.find(arg0_73, var0_73)
 
-			if var3_72 then
-				arg0_72 = string.sub(arg0_72, var3_72 + 1)
+			if var3_73 then
+				arg0_73 = string.sub(arg0_73, var3_73 + 1)
 			end
 
-			local var4_72 = string.find(arg0_72, var1_72)
+			local var4_73 = string.find(arg0_73, var1_73)
 
-			if var4_72 then
-				arg0_72 = string.sub(arg0_72, 1, var4_72 - 1)
+			if var4_73 then
+				arg0_73 = string.sub(arg0_73, 1, var4_73 - 1)
 			end
 
-			return arg0_72
+			return arg0_73
 		end
 
-		local function var4_71(arg0_73)
-			local var0_73 = false
+		local function var4_72(arg0_74)
+			local var0_74 = false
 
-			for iter0_73, iter1_73 in ipairs(var0_71) do
-				if iter1_73 == arg0_73 then
-					var0_73 = true
+			for iter0_74, iter1_74 in ipairs(var0_72) do
+				if iter1_74 == arg0_74 then
+					var0_74 = true
 				end
 			end
 
-			return var0_73
+			return var0_74
 		end
 
-		VersionMgr.Inst:WebRequest(var1_71, function(arg0_74, arg1_74)
-			local var0_74 = var3_71(arg1_74)
+		VersionMgr.Inst:WebRequest(var1_72, function(arg0_75, arg1_75)
+			local var0_75 = var3_72(arg1_75)
 
-			originalPrint("content: " .. arg1_74)
-			originalPrint("country is: " .. var0_74)
+			originalPrint("content: " .. arg1_75)
+			originalPrint("country is: " .. var0_75)
 
-			arg0_71.isDefaultBGM = var4_71(var0_74)
+			arg0_72.isDefaultBGM = var4_72(var0_75)
 
-			originalPrint("IP limit: " .. tostring(arg0_71.isDefaultBGM))
+			originalPrint("IP limit: " .. tostring(arg0_72.isDefaultBGM))
 
-			if arg1_71 then
-				arg1_71()
+			if arg1_72 then
+				arg1_72()
 			end
 		end)
-	elseif arg1_71 then
-		arg1_71()
+	elseif arg1_72 then
+		arg1_72()
 	end
 end
 
-function var1_0.IsDefaultBGM(arg0_75)
-	return arg0_75.isDefaultBGM
+function var1_0.IsDefaultBGM(arg0_76)
+	return arg0_76.isDefaultBGM
 end
 
-function var1_0.getAtomSource(arg0_76, arg1_76)
-	return GetComponent(GameObject.Find("CRIWARE/" .. arg1_76), "CriAtomSource")
+function var1_0.getAtomSource(arg0_77, arg1_77)
+	return GetComponent(GameObject.Find("CRIWARE/" .. arg1_77), "CriAtomSource")
 end
 
-function var1_0.GetCueInfo(arg0_77, arg1_77, arg2_77, arg3_77, arg4_77)
-	arg0_77:LoadCueSheet(arg1_77, function(arg0_78)
-		if not arg0_78 then
+function var1_0.GetCueInfo(arg0_78, arg1_78, arg2_78, arg3_78, arg4_78)
+	arg0_78:LoadCueSheet(arg1_78, function(arg0_79)
+		if not arg0_79 then
 			warning("加载CueSheet失败")
 
 			return
 		end
 
-		local var0_78 = arg0_77.criInst:GetCueInfo(arg1_77, arg2_77)
+		local var0_79 = arg0_78.criInst:GetCueInfo(arg1_78, arg2_78)
 
-		arg3_77(var0_78)
+		arg3_78(var0_79)
 
-		if not arg4_77 then
-			arg0_77:UnloadCueSheet(arg1_77)
+		if not arg4_78 then
+			arg0_78:UnloadCueSheet(arg1_78)
 		end
 	end)
 end
 
-function var1_0.SetBgmWaveAnalyzerOnCapture(arg0_79, arg1_79, arg2_79)
-	arg0_79.bgmWaveAnalyzer.OnCaptureL = arg1_79
-	arg0_79.bgmWaveAnalyzer.OnCaptureR = arg2_79
+function var1_0.SetBgmWaveAnalyzerOnCapture(arg0_80, arg1_80, arg2_80)
+	arg0_80.bgmWaveAnalyzer.OnCaptureL = arg1_80
+	arg0_80.bgmWaveAnalyzer.OnCaptureR = arg2_80
 end
