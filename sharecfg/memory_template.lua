@@ -78978,7 +78978,7 @@ end)()
 		story = "TEBIEJINGPAISHIKE1",
 		type = 1,
 		mask = "bg/bg_memory",
-		title = "特别竞拍时刻",
+		title = "Top Bidder",
 		condition = "Start the event.",
 		number = 0,
 		task = 0,
