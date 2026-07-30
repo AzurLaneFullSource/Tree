@@ -1,7 +1,17 @@
 local var0_0 = class("MainEquipmentChangeSequence")
 
 function var0_0.Execute(arg0_1, arg1_1)
-	local var0_1 = ItemShowPanel.ConfigData
+	local var0_1 = {
+		equipID = 908601,
+		isOpen = false,
+		title = "equipment_info_change_tip",
+		icon_new = "equips/50860",
+		icon_old = "equips/50860",
+		name_new = "equipment_info_change_name_b",
+		tip_old = "equipment_info_change_text_before",
+		tip_new = "equipment_info_change_text_after",
+		name_old = "equipment_info_change_name_a"
+	}
 
 	if not var0_1.isOpen then
 		arg1_1()
@@ -23,6 +33,7 @@ function var0_0.Execute(arg0_1, arg1_1)
 			hideClose = true,
 			type = MSGBOX_TYPE_JUST_FOR_SHOW,
 			title = pg.MsgboxMgr.TITLE_INFORMATION,
+			configData = var0_1,
 			onClose = var2_1,
 			onYes = var2_1
 		})

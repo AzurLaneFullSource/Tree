@@ -100,6 +100,10 @@ pg.ship_meta_breakout.all = {
 	9702122,
 	9702123,
 	9702124,
+	9702131,
+	9702132,
+	9702133,
+	9702134,
 	9703011,
 	9703012,
 	9703013,
@@ -1769,6 +1773,71 @@ pg.base.ship_meta_breakout = {}
 		pre_id = 9702123,
 		weapon_ids = {}
 	}
+	pg.base.ship_meta_breakout[9702131] = {
+		breakout_view = "Unlock Cinders of Hope - Nürnberg/All weapons' efficiency +2%",
+		gold = 500,
+		breakout_id = 9702132,
+		repair = 0,
+		item2 = 21060,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9702131,
+		item1 = 21063,
+		pre_id = 0,
+		weapon_ids = {
+			80671
+		}
+	}
+	pg.base.ship_meta_breakout[9702132] = {
+		breakout_view = "Torpedo base +1/Torpedo preload +1/All weapons' efficiency +3%",
+		gold = 1500,
+		breakout_id = 9702133,
+		repair = 0,
+		item2 = 21060,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9702132,
+		item1 = 21063,
+		pre_id = 9702131,
+		weapon_ids = {
+			106,
+			106
+		}
+	}
+	pg.base.ship_meta_breakout[9702133] = {
+		breakout_view = "Improve Cinders of Hope - Nürnberg/All weapons' efficiency +5%",
+		gold = 2500,
+		breakout_id = 9702134,
+		repair = 0,
+		item2 = 21060,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9702133,
+		item1 = 21063,
+		pre_id = 9702132,
+		weapon_ids = {
+			80672
+		}
+	}
+	pg.base.ship_meta_breakout[9702134] = {
+		breakout_view = "None",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21060,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9702134,
+		item1 = 21063,
+		pre_id = 9702133,
+		weapon_ids = {}
+	}
+end)()
+;(function()
 	pg.base.ship_meta_breakout[9703011] = {
 		breakout_view = "Unlock Flickering Light – Trento/Main gun efficiency +5%",
 		gold = 500,
@@ -1832,8 +1901,6 @@ pg.base.ship_meta_breakout = {}
 		pre_id = 9703013,
 		weapon_ids = {}
 	}
-end)()
-;(function()
 	pg.base.ship_meta_breakout[9703021] = {
 		breakout_view = "Unlock Cinders of Hope – Algérie/Main Gun efficiency +5%",
 		gold = 1000,
@@ -3421,6 +3488,8 @@ end)()
 		pre_id = 9706033,
 		weapon_ids = {}
 	}
+end)()
+;(function()
 	pg.base.ship_meta_breakout[9706041] = {
 		breakout_view = "Unlock Smoldering Core - Houshou/All Fighters +1/Aircraft efficiency +3%",
 		gold = 500,
@@ -3490,8 +3559,6 @@ end)()
 		pre_id = 9706043,
 		weapon_ids = {}
 	}
-end)()
-;(function()
 	pg.base.ship_meta_breakout[9706051] = {
 		breakout_view = "Unlock Cinders of Hope - Elbe/All Dive Bombers +1/Fighter efficiency +5%",
 		gold = 1000,

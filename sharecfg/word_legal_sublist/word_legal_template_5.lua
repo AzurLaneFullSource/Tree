@@ -451,7 +451,18 @@ function temp()
 		},
 		伦 = {
 			堡 = {
-				this = true
+				this = true,
+				· = {
+					M = {
+						E = {
+							T = {
+								A = {
+									this = true
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}

@@ -143,7 +143,7 @@ function PrintTable(arg0_13)
 			if type(iter1_14) == "table" then
 				table.insert(var0_14, string.format("%s[%s] = %s", arg1_14 .. "  ", iter0_14, var1_13(iter1_14, arg1_14 .. "  ")))
 			else
-				table.insert(var0_14, string.format("%s[%s] = %s", arg1_14 .. "  ", iter0_14, iter1_14))
+				table.insert(var0_14, string.format("%s[%s] = %s", arg1_14 .. "  ", iter0_14, tostring(iter1_14)))
 			end
 		end
 

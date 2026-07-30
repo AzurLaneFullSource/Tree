@@ -85,6 +85,24 @@ function var0_0.didEnter(arg0_5)
 			return
 		end
 
+		local var0_6 = var0_5:GetType() == BossRushSeriesData.TYPE.SP
+		local var1_6 = true
+
+		if var0_6 then
+			local var2_6 = getProxy(ActivityProxy):getActivityById(var0_5.actId)
+			local var3_6 = var2_6:GetActiveSeriesIds()
+			local var4_6 = table.getIndex(var3_6, function(arg0_8)
+				return arg0_8 == var0_5.id
+			end)
+			local var5_6 = var2_6:GetUsedBonus()[var4_6] or 0
+
+			if not (var0_5:GetMaxBonusCount() - var5_6 > 0) then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("series_enemy_SP_error"))
+
+				return
+			end
+		end
+
 		arg0_5:emit(BossRushFleetSelectMediator.ON_PRECOMBAT)
 	end, SFX_UI_WEIGHANCHOR_GO)
 	onButton(arg0_5, arg0_5.sonarRangeContainer, function()
@@ -105,16 +123,16 @@ function var0_0.didEnter(arg0_5)
 	setActive(arg0_5.modeToggles[1].parent, var1_5)
 
 	if var1_5 then
-		table.Foreach(arg0_5.modeToggles, function(arg0_11, arg1_11)
-			triggerToggle(arg1_11, arg0_11 == arg0_5.contextData.mode)
-		end)
 		table.Foreach(arg0_5.modeToggles, function(arg0_12, arg1_12)
-			onToggle(arg0_5, arg1_12, function(arg0_13)
-				if not arg0_13 then
+			triggerToggle(arg1_12, arg0_12 == arg0_5.contextData.mode)
+		end)
+		table.Foreach(arg0_5.modeToggles, function(arg0_13, arg1_13)
+			onToggle(arg0_5, arg1_13, function(arg0_14)
+				if not arg0_14 then
 					return
 				end
 
-				arg0_5:emit(BossRushFleetSelectMediator.ON_SWITCH_MODE, arg0_12)
+				arg0_5:emit(BossRushFleetSelectMediator.ON_SWITCH_MODE, arg0_13)
 				arg0_5:updateToggles()
 				triggerToggle(arg0_5.fleetIndexToggles[arg0_5.contextData.fleetIndex], true)
 			end, SFX_PANEL)
@@ -124,27 +142,27 @@ function var0_0.didEnter(arg0_5)
 	local var2_5 = arg0_5._tf:Find("Panel/Fleet/Indexes")
 	local var3_5 = var2_5.childCount
 
-	UIItemList.StaticAlign(var2_5, var2_5:GetChild(0), var3_5, function(arg0_14, arg1_14, arg2_14)
-		arg1_14 = arg1_14 + 1
+	UIItemList.StaticAlign(var2_5, var2_5:GetChild(0), var3_5, function(arg0_15, arg1_15, arg2_15)
+		arg1_15 = arg1_15 + 1
 
-		if arg0_14 == UIItemList.EventUpdate then
-			if arg1_14 < var3_5 then
-				setText(arg2_14:Find("Text"), i18n("series_enemy_fleet_prefix", GetRomanDigit(arg1_14)))
+		if arg0_15 == UIItemList.EventUpdate then
+			if arg1_15 < var3_5 then
+				setText(arg2_15:Find("Text"), i18n("series_enemy_fleet_prefix", GetRomanDigit(arg1_15)))
 			else
-				setText(arg2_14:Find("Text"), i18n("formationScene_use_oil_limit_submarine"))
+				setText(arg2_15:Find("Text"), i18n("formationScene_use_oil_limit_submarine"))
 			end
 
-			onToggle(arg0_5, arg2_14, function(arg0_15)
-				setActive(arg2_14:Find("Selected"), arg0_15)
+			onToggle(arg0_5, arg2_15, function(arg0_16)
+				setActive(arg2_15:Find("Selected"), arg0_16)
 
-				local var0_15, var1_15 = arg0_5:GetTextColor()
+				local var0_16, var1_16 = arg0_5:GetTextColor()
 
-				setTextColor(arg2_14:Find("Text"), arg0_15 and var0_15 or var1_15)
+				setTextColor(arg2_15:Find("Text"), arg0_16 and var0_16 or var1_16)
 
-				if arg0_15 then
-					local var2_15 = arg0_5.contextData.fleets
+				if arg0_16 then
+					local var2_16 = arg0_5.contextData.fleets
 
-					arg0_5.contextData.fleetIndex = var2_15[arg1_14] and arg1_14 or #var2_15
+					arg0_5.contextData.fleetIndex = var2_16[arg1_15] and arg1_15 or #var2_16
 
 					arg0_5:updateEliteFleets()
 				end
@@ -159,40 +177,40 @@ function var0_0.didEnter(arg0_5)
 	local var5_5 = var0_5:GetBossIcons()
 	local var6_5 = arg0_5._tf:Find("Panel/Info/Boss")
 
-	UIItemList.StaticAlign(var6_5, var6_5:GetChild(0), #var4_5, function(arg0_16, arg1_16, arg2_16)
-		if arg0_16 ~= UIItemList.EventUpdate then
+	UIItemList.StaticAlign(var6_5, var6_5:GetChild(0), #var4_5, function(arg0_17, arg1_17, arg2_17)
+		if arg0_17 ~= UIItemList.EventUpdate then
 			return
 		end
 
-		local var0_16 = var4_5[arg1_16 + 1]
-		local var1_16 = var5_5[arg1_16 + 1][1]
-		local var2_16 = pg.expedition_data_template[var0_16].level
-		local var3_16 = arg2_16:Find("shiptpl")
-		local var4_16 = findTF(var3_16, "icon_bg")
-		local var5_16 = findTF(var3_16, "icon_bg/frame")
+		local var0_17 = var4_5[arg1_17 + 1]
+		local var1_17 = var5_5[arg1_17 + 1][1]
+		local var2_17 = pg.expedition_data_template[var0_17].level
+		local var3_17 = arg2_17:Find("shiptpl")
+		local var4_17 = findTF(var3_17, "icon_bg")
+		local var5_17 = findTF(var3_17, "icon_bg/frame")
 
-		SetCompomentEnabled(var4_16, "Image", false)
-		SetCompomentEnabled(var5_16, "Image", false)
-		setActive(arg2_16:Find("shiptpl/icon_bg/lv"), false)
+		SetCompomentEnabled(var4_17, "Image", false)
+		SetCompomentEnabled(var5_17, "Image", false)
+		setActive(arg2_17:Find("shiptpl/icon_bg/lv"), false)
 
-		local var6_16 = arg2_16:Find("shiptpl/icon_bg/icon")
+		local var6_17 = arg2_17:Find("shiptpl/icon_bg/icon")
 
-		GetImageSpriteFromAtlasAsync("SquareIcon/" .. var1_16, "", var6_16)
+		GetImageSpriteFromAtlasAsync("SquareIcon/" .. var1_17, "", var6_17)
 
-		local var7_16 = findTF(var3_16, "ship_type")
+		local var7_17 = findTF(var3_17, "ship_type")
 
-		if var7_16 then
-			setActive(var7_16, true)
-			setImageSprite(var7_16, GetSpriteFromAtlas("shiptype", shipType2print(var5_5[arg1_16 + 1][2])))
+		if var7_17 then
+			setActive(var7_17, true)
+			setImageSprite(var7_17, GetSpriteFromAtlas("shiptype", shipType2print(var5_5[arg1_17 + 1][2])))
 		end
 	end)
 
-	local function var7_5(arg0_17)
-		if type(arg0_17) ~= "table" then
+	local function var7_5(arg0_18)
+		if type(arg0_18) ~= "table" then
 			return {}
 		end
 
-		return arg0_17
+		return arg0_18
 	end
 
 	local var8_5 = var0_5:GetType() == BossRushSeriesData.TYPE.EXTRA
@@ -204,34 +222,34 @@ function var0_0.didEnter(arg0_5)
 		local var9_5 = arg0_5._tf:Find("Panel/Reward/Normal/Base/Items")
 		local var10_5 = var7_5(var0_5:GetPassAwards())
 
-		UIItemList.StaticAlign(var9_5, var9_5:GetChild(0), #var10_5, function(arg0_18, arg1_18, arg2_18)
-			if arg0_18 ~= UIItemList.EventUpdate then
+		UIItemList.StaticAlign(var9_5, var9_5:GetChild(0), #var10_5, function(arg0_19, arg1_19, arg2_19)
+			if arg0_19 ~= UIItemList.EventUpdate then
 				return
 			end
 
-			local var0_18 = var10_5[arg1_18 + 1]
-			local var1_18 = Drop.Create(var0_18)
+			local var0_19 = var10_5[arg1_19 + 1]
+			local var1_19 = Drop.Create(var0_19)
 
-			updateDrop(arg2_18, var1_18)
-			onButton(arg0_5, arg2_18, function()
-				arg0_5:ShowDropDetail(var1_18)
+			updateDrop(arg2_19, var1_19)
+			onButton(arg0_5, arg2_19, function()
+				arg0_5:ShowDropDetail(var1_19)
 			end, SFX_PANEL)
 		end)
 
 		local var11_5 = arg0_5.extraAwardTF:Find("Items")
 		local var12_5 = var7_5(var0_5:GetAdditionalAwards())
 
-		UIItemList.StaticAlign(var11_5, var11_5:GetChild(0), #var12_5, function(arg0_20, arg1_20, arg2_20)
-			if arg0_20 ~= UIItemList.EventUpdate then
+		UIItemList.StaticAlign(var11_5, var11_5:GetChild(0), #var12_5, function(arg0_21, arg1_21, arg2_21)
+			if arg0_21 ~= UIItemList.EventUpdate then
 				return
 			end
 
-			local var0_20 = var12_5[arg1_20 + 1]
-			local var1_20 = Drop.Create(var0_20)
+			local var0_21 = var12_5[arg1_21 + 1]
+			local var1_21 = Drop.Create(var0_21)
 
-			updateDrop(arg2_20, var1_20)
-			onButton(arg0_5, arg2_20, function()
-				arg0_5:ShowDropDetail(var1_20)
+			updateDrop(arg2_21, var1_21)
+			onButton(arg0_5, arg2_21, function()
+				arg0_5:ShowDropDetail(var1_21)
 			end, SFX_PANEL)
 		end)
 	else
@@ -249,296 +267,296 @@ local var1_0 = {
 	[99] = true
 }
 
-function var0_0.ShowDropDetail(arg0_22, arg1_22)
-	local var0_22 = Item.getConfigData(arg1_22.id)
+function var0_0.ShowDropDetail(arg0_23, arg1_23)
+	local var0_23 = Item.getConfigData(arg1_23.id)
 
-	if var0_22 and var1_0[var0_22.type] then
-		local var1_22 = var0_22.display_icon
-		local var2_22 = {}
+	if var0_23 and var1_0[var0_23.type] then
+		local var1_23 = var0_23.display_icon
+		local var2_23 = {}
 
-		for iter0_22, iter1_22 in ipairs(var1_22) do
-			local var3_22 = iter1_22[1]
-			local var4_22 = iter1_22[2]
+		for iter0_23, iter1_23 in ipairs(var1_23) do
+			local var3_23 = iter1_23[1]
+			local var4_23 = iter1_23[2]
 
-			var2_22[#var2_22 + 1] = {
+			var2_23[#var2_23 + 1] = {
 				hideName = true,
-				type = var3_22,
-				id = var4_22
+				type = var3_23,
+				id = var4_23
 			}
 		end
 
-		arg0_22:emit(var0_0.ON_DROP_LIST, {
+		arg0_23:emit(var0_0.ON_DROP_LIST, {
 			item2Row = true,
-			itemList = var2_22,
-			content = var0_22.display
+			itemList = var2_23,
+			content = var0_23.display
 		})
 	else
-		arg0_22:emit(var0_0.ON_DROP, arg1_22)
+		arg0_23:emit(var0_0.ON_DROP, arg1_23)
 	end
 end
 
-function var0_0.willExit(arg0_23)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_23._tf)
+function var0_0.willExit(arg0_24)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_24._tf)
 end
 
-function var0_0.onCancelHard(arg0_24)
-	arg0_24:emit(BossRushFleetSelectMediator.ON_UPDATE_CUSTOM_FLEET)
-	arg0_24:closeView()
+function var0_0.onCancelHard(arg0_25)
+	arg0_25:emit(BossRushFleetSelectMediator.ON_UPDATE_CUSTOM_FLEET)
+	arg0_25:closeView()
 end
 
-function var0_0.onBackPressed(arg0_25)
-	arg0_25:onCancelHard()
-	var0_0.super.onBackPressed(arg0_25)
+function var0_0.onBackPressed(arg0_26)
+	arg0_26:onCancelHard()
+	var0_0.super.onBackPressed(arg0_26)
 end
 
-function var0_0.setHardShipVOs(arg0_26, arg1_26)
-	arg0_26.shipVOs = arg1_26
+function var0_0.setHardShipVOs(arg0_27, arg1_27)
+	arg0_27.shipVOs = arg1_27
 end
 
-function var0_0.initAddButton(arg0_27, arg1_27, arg2_27, arg3_27)
-	local var0_27 = arg0_27.contextData.fleets[arg3_27]:getShipIds()
-	local var1_27 = {}
-	local var2_27 = {}
+function var0_0.initAddButton(arg0_28, arg1_28, arg2_28, arg3_28)
+	local var0_28 = arg0_28.contextData.fleets[arg3_28]:getShipIds()
+	local var1_28 = {}
+	local var2_28 = {}
 
-	for iter0_27, iter1_27 in ipairs(var0_27) do
-		var1_27[arg0_27.shipVOs[iter1_27]] = true
+	for iter0_28, iter1_28 in ipairs(var0_28) do
+		var1_28[arg0_28.shipVOs[iter1_28]] = true
 
-		if arg2_27 == arg0_27.shipVOs[iter1_27]:getTeamType() then
-			table.insert(var2_27, iter1_27)
+		if arg2_28 == arg0_28.shipVOs[iter1_28]:getTeamType() then
+			table.insert(var2_28, iter1_28)
 		end
 	end
 
-	local var3_27 = _.map(var0_27, function(arg0_28)
-		return arg0_27.shipVOs[arg0_28]
+	local var3_28 = _.map(var0_28, function(arg0_29)
+		return arg0_28.shipVOs[arg0_29]
 	end)
 
-	table.sort(var3_27, function(arg0_29, arg1_29)
-		return var0_0.fleetNames[arg0_29:getTeamType()] < var0_0.fleetNames[arg1_29:getTeamType()] or var0_0.fleetNames[arg0_29:getTeamType()] == var0_0.fleetNames[arg1_29:getTeamType()] and table.indexof(var0_27, arg0_29.id) < table.indexof(var0_27, arg1_29.id)
+	table.sort(var3_28, function(arg0_30, arg1_30)
+		return var0_0.fleetNames[arg0_30:getTeamType()] < var0_0.fleetNames[arg1_30:getTeamType()] or var0_0.fleetNames[arg0_30:getTeamType()] == var0_0.fleetNames[arg1_30:getTeamType()] and table.indexof(var0_28, arg0_30.id) < table.indexof(var0_28, arg1_30.id)
 	end)
 
-	local var4_27 = arg1_27:GetComponent("ContentSizeFitter")
-	local var5_27 = arg1_27:GetComponent("HorizontalLayoutGroup")
+	local var4_28 = arg1_28:GetComponent("ContentSizeFitter")
+	local var5_28 = arg1_28:GetComponent("HorizontalLayoutGroup")
 
-	var4_27.enabled = true
-	var5_27.enabled = true
-	arg0_27.isDraging = false
+	var4_28.enabled = true
+	var5_28.enabled = true
+	arg0_28.isDraging = false
 
-	UIItemList.StaticAlign(arg1_27, arg1_27:GetChild(0), 3, function(arg0_30, arg1_30, arg2_30)
-		if arg0_30 ~= UIItemList.EventUpdate then
+	UIItemList.StaticAlign(arg1_28, arg1_28:GetChild(0), 3, function(arg0_31, arg1_31, arg2_31)
+		if arg0_31 ~= UIItemList.EventUpdate then
 			return
 		end
 
-		arg1_30 = arg1_30 + 1
+		arg1_31 = arg1_31 + 1
 
-		local var0_30 = var2_27[arg1_30] and arg0_27.shipVOs[var2_27[arg1_30]] or nil
+		local var0_31 = var2_28[arg1_31] and arg0_28.shipVOs[var2_28[arg1_31]] or nil
 
-		setActive(arg2_30:Find("Ship"), var0_30)
-		setActive(arg2_30:Find("Empty"), not var0_30)
+		setActive(arg2_31:Find("Ship"), var0_31)
+		setActive(arg2_31:Find("Empty"), not var0_31)
 
-		local var1_30 = var0_30 and arg2_30:Find("Ship") or arg2_30:Find("Empty")
+		local var1_31 = var0_31 and arg2_31:Find("Ship") or arg2_31:Find("Empty")
 
-		if var0_30 then
-			updateShip(var1_30, var0_30)
-			setActive(var1_30:Find("EnergyWarn"), arg0_27.contextData.mode == BossRushSeriesData.MODE.SINGLE and var0_30:getEnergy() <= pg.gameset.series_enemy_mood_limit.key_value)
-			setActive(var1_30:Find("event_block"), var0_30:getFlag("inEvent"))
+		if var0_31 then
+			updateShip(var1_31, var0_31)
+			setActive(var1_31:Find("EnergyWarn"), arg0_28.contextData.mode == BossRushSeriesData.MODE.SINGLE and var0_31:getEnergy() <= pg.gameset.series_enemy_mood_limit.key_value)
+			setActive(var1_31:Find("event_block"), var0_31:getFlag("inEvent"))
 		end
 
-		setActive(var1_30:Find("ship_type"), false)
+		setActive(var1_31:Find("ship_type"), false)
 
-		local var2_30 = GetOrAddComponent(var1_30, typeof(UILongPressTrigger))
+		local var2_31 = GetOrAddComponent(var1_31, typeof(UILongPressTrigger))
 
-		var2_30.onLongPressed:RemoveAllListeners()
+		var2_31.onLongPressed:RemoveAllListeners()
 
-		if var0_30 then
-			var2_30.onLongPressed:AddListener(function()
-				arg0_27:emit(BossRushFleetSelectMediator.ON_FLEET_SHIPINFO, {
-					shipId = var0_30.id,
-					shipVOs = var3_27
+		if var0_31 then
+			var2_31.onLongPressed:AddListener(function()
+				arg0_28:emit(BossRushFleetSelectMediator.ON_FLEET_SHIPINFO, {
+					shipId = var0_31.id,
+					shipVOs = var3_28
 				})
 			end)
 		end
 
-		local var3_30 = GetOrAddComponent(var1_30, "EventTriggerListener")
+		local var3_31 = GetOrAddComponent(var1_31, "EventTriggerListener")
 
-		var3_30:RemovePointClickFunc()
-		var3_30:AddPointClickFunc(function(arg0_32, arg1_32)
-			if arg0_27.isDraging then
+		var3_31:RemovePointClickFunc()
+		var3_31:AddPointClickFunc(function(arg0_33, arg1_33)
+			if arg0_28.isDraging then
 				return
 			end
 
-			arg0_27:emit(BossRushFleetSelectMediator.ON_OPEN_DECK, {
-				fleet = var1_27,
-				chapter = arg0_27.chapter,
-				shipVO = var0_30,
-				fleetIndex = arg3_27,
-				teamType = arg2_27
+			arg0_28:emit(BossRushFleetSelectMediator.ON_OPEN_DECK, {
+				fleet = var1_28,
+				chapter = arg0_28.chapter,
+				shipVO = var0_31,
+				fleetIndex = arg3_28,
+				teamType = arg2_28
 			})
 		end)
-		var3_30:RemoveBeginDragFunc()
-		var3_30:RemoveDragFunc()
-		var3_30:RemoveDragEndFunc()
+		var3_31:RemoveBeginDragFunc()
+		var3_31:RemoveDragFunc()
+		var3_31:RemoveDragEndFunc()
 	end)
 end
 
-function var0_0.updateToggles(arg0_33)
-	local var0_33 = #arg0_33.contextData.fleets
-	local var1_33 = arg0_33._tf:Find("Panel/Fleet/Indexes")
-	local var2_33 = var1_33.childCount
+function var0_0.updateToggles(arg0_34)
+	local var0_34 = #arg0_34.contextData.fleets
+	local var1_34 = arg0_34._tf:Find("Panel/Fleet/Indexes")
+	local var2_34 = var1_34.childCount
 
-	arg0_33.fleetIndexToggles = {}
+	arg0_34.fleetIndexToggles = {}
 
-	eachChild(var1_33, function(arg0_34, arg1_34)
-		arg1_34 = arg1_34 + 1
+	eachChild(var1_34, function(arg0_35, arg1_35)
+		arg1_35 = arg1_35 + 1
 
-		setActive(arg0_34, arg1_34 == var2_33 or arg1_34 < var0_33)
+		setActive(arg0_35, arg1_35 == var2_34 or arg1_35 < var0_34)
 
-		if arg1_34 == var2_33 then
-			arg0_33.fleetIndexToggles[var0_33] = arg0_34
-		elseif arg1_34 < var0_33 then
-			arg0_33.fleetIndexToggles[arg1_34] = arg0_34
+		if arg1_35 == var2_34 then
+			arg0_34.fleetIndexToggles[var0_34] = arg0_35
+		elseif arg1_35 < var0_34 then
+			arg0_34.fleetIndexToggles[arg1_35] = arg0_35
 		end
 	end)
 end
 
-function var0_0.updateEliteFleets(arg0_35)
-	local var0_35 = arg0_35.contextData.seriesData
-	local var1_35 = arg0_35.contextData.fleetIndex
-	local var2_35 = arg0_35.contextData.fleets[var1_35]
-	local var3_35 = var1_35 == #arg0_35.contextData.fleets
+function var0_0.updateEliteFleets(arg0_36)
+	local var0_36 = arg0_36.contextData.seriesData
+	local var1_36 = arg0_36.contextData.fleetIndex
+	local var2_36 = arg0_36.contextData.fleets[var1_36]
+	local var3_36 = var1_36 == #arg0_36.contextData.fleets
 
-	setActive(arg0_35._tf:Find("Panel/Fleet/Normal"), not var3_35)
-	setActive(arg0_35._tf:Find("Panel/Fleet/Submarine"), var3_35)
+	setActive(arg0_36._tf:Find("Panel/Fleet/Normal"), not var3_36)
+	setActive(arg0_36._tf:Find("Panel/Fleet/Submarine"), var3_36)
 
-	local var4_35 = arg0_35.btnClear
-	local var5_35 = arg0_35.btnRecommend
-	local var6_35 = arg0_35.commanderList
+	local var4_36 = arg0_36.btnClear
+	local var5_36 = arg0_36.btnRecommend
+	local var6_36 = arg0_36.commanderList
 
-	if not var3_35 then
-		local var7_35 = arg0_35.tfFleets[FleetType.Normal]
+	if not var3_36 then
+		local var7_36 = arg0_36.tfFleets[FleetType.Normal]
 
-		setText(var7_35:Find("bg/name"), Fleet.DEFAULT_NAME[var1_35])
-		arg0_35:initAddButton(var7_35:Find(TeamType.Main), TeamType.Main, var1_35)
-		arg0_35:initAddButton(var7_35:Find(TeamType.Vanguard), TeamType.Vanguard, var1_35)
+		setText(var7_36:Find("bg/name"), Fleet.DEFAULT_NAME[var1_36])
+		arg0_36:initAddButton(var7_36:Find(TeamType.Main), TeamType.Main, var1_36)
+		arg0_36:initAddButton(var7_36:Find(TeamType.Vanguard), TeamType.Vanguard, var1_36)
 	else
-		local var8_35 = arg0_35.tfFleets[FleetType.Submarine]
-		local var9_35 = #arg0_35.contextData.fleets
+		local var8_36 = arg0_36.tfFleets[FleetType.Submarine]
+		local var9_36 = #arg0_36.contextData.fleets
 
-		setText(var8_35:Find("bg/name"), Fleet.DEFAULT_NAME[Fleet.SUBMARINE_FLEET_ID])
-		arg0_35:initAddButton(var8_35:Find(TeamType.Main), TeamType.Submarine, var9_35)
+		setText(var8_36:Find("bg/name"), Fleet.DEFAULT_NAME[Fleet.SUBMARINE_FLEET_ID])
+		arg0_36:initAddButton(var8_36:Find(TeamType.Main), TeamType.Submarine, var9_36)
 	end
 
-	arg0_35:initCommander(var2_35, var6_35)
-	setText(arg0_35.sonarRangeTexts[1], math.floor(var2_35:GetFleetSonarRange()))
+	arg0_36:initCommander(var2_36, var6_36)
+	setText(arg0_36.sonarRangeTexts[1], math.floor(var2_36:GetFleetSonarRange()))
 
-	local var10_35 = #var2_35:GetRawShipIds()
-	local var11_35 = var10_35 == (var3_35 and 3 or 6)
+	local var10_36 = #var2_36:GetRawShipIds()
+	local var11_36 = var10_36 == (var3_36 and 3 or 6)
 
-	onButton(arg0_35, var4_35, function()
-		if var10_35 == 0 then
+	onButton(arg0_36, var4_36, function()
+		if var10_36 == 0 then
 			return
 		end
 
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("battle_preCombatLayer_clear_confirm"),
 			onYes = function()
-				arg0_35:emit(BossRushFleetSelectMediator.ON_ELITE_CLEAR, {
-					index = var1_35
+				arg0_36:emit(BossRushFleetSelectMediator.ON_ELITE_CLEAR, {
+					index = var1_36
 				})
 			end
 		})
 	end)
-	onButton(arg0_35, var5_35, function()
-		if var11_35 then
+	onButton(arg0_36, var5_36, function()
+		if var11_36 then
 			return
 		end
 
 		seriesAsync({
-			function(arg0_39)
-				if var10_35 == 0 then
-					return arg0_39()
+			function(arg0_40)
+				if var10_36 == 0 then
+					return arg0_40()
 				end
 
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("battle_preCombatLayer_auto_confirm"),
-					onYes = arg0_39
+					onYes = arg0_40
 				})
 			end,
-			function(arg0_40)
-				arg0_35:emit(BossRushFleetSelectMediator.ON_ELITE_RECOMMEND, {
-					index = var1_35
+			function(arg0_41)
+				arg0_36:emit(BossRushFleetSelectMediator.ON_ELITE_RECOMMEND, {
+					index = var1_36
 				})
 			end
 		})
 	end)
 
-	local var12_35 = var0_35:GetOilLimit()
+	local var12_36 = var0_36:GetOilLimit()
 
-	setActive(arg0_35.rtCostLimit, _.any(var12_35, function(arg0_41)
-		return arg0_41 > 0
+	setActive(arg0_36.rtCostLimit, _.any(var12_36, function(arg0_42)
+		return arg0_42 > 0
 	end))
 
-	if #var12_35 > 0 then
-		local var13_35 = var3_35 and "formationScene_use_oil_limit_submarine" or "formationScene_use_oil_limit_surface"
-		local var14_35 = var3_35 and var12_35[2] or var12_35[1]
+	if #var12_36 > 0 then
+		local var13_36 = var3_36 and "formationScene_use_oil_limit_submarine" or "formationScene_use_oil_limit_surface"
+		local var14_36 = var3_36 and var12_36[2] or var12_36[1]
 
-		setText(arg0_35.rtCostLimit:Find("Text"), string.format("%s(%d)", i18n(var13_35), var14_35))
+		setText(arg0_36.rtCostLimit:Find("Text"), string.format("%s(%d)", i18n(var13_36), var14_36))
 	end
 
-	local var15_35 = (function(arg0_42)
-		if type(arg0_42) ~= "table" then
+	local var15_36 = (function(arg0_43)
+		if type(arg0_43) ~= "table" then
 			return {}
 		end
 
-		return arg0_42
-	end)(var0_35:GetAdditionalAwards())
+		return arg0_43
+	end)(var0_36:GetAdditionalAwards())
 
-	setActive(arg0_35.extraAwardTF, arg0_35.contextData.mode == BossRushSeriesData.MODE.MULTIPLE and #var15_35 > 0)
+	setActive(arg0_36.extraAwardTF, arg0_36.contextData.mode == BossRushSeriesData.MODE.MULTIPLE and #var15_36 > 0)
 
-	local var16_35 = var0_35:GetExpeditionIds()
-	local var17_35 = arg0_35._tf:Find("Panel/Info/Boss")
+	local var16_36 = var0_36:GetExpeditionIds()
+	local var17_36 = arg0_36._tf:Find("Panel/Info/Boss")
 
-	UIItemList.StaticAlign(var17_35, var17_35:GetChild(0), #var16_35, function(arg0_43, arg1_43, arg2_43)
-		if arg0_43 ~= UIItemList.EventUpdate then
+	UIItemList.StaticAlign(var17_36, var17_36:GetChild(0), #var16_36, function(arg0_44, arg1_44, arg2_44)
+		if arg0_44 ~= UIItemList.EventUpdate then
 			return
 		end
 
-		local var0_43 = arg1_43 + 1 == var1_35 or var1_35 > #var16_35 or arg0_35.contextData.mode == BossRushSeriesData.MODE.SINGLE
+		local var0_44 = arg1_44 + 1 == var1_36 or var1_36 > #var16_36 or arg0_36.contextData.mode == BossRushSeriesData.MODE.SINGLE
 
-		setActive(arg2_43:Find("Select"), var0_43)
-		setActive(arg2_43:Find("Image"), var0_43)
+		setActive(arg2_44:Find("Select"), var0_44)
+		setActive(arg2_44:Find("Image"), var0_44)
 	end)
 end
 
-function var0_0.initCommander(arg0_44, arg1_44, arg2_44)
-	local var0_44 = arg1_44:GetRawCommanderIds()
+function var0_0.initCommander(arg0_45, arg1_45, arg2_45)
+	local var0_45 = arg1_45:GetRawCommanderIds()
 
-	for iter0_44 = 1, 2 do
-		local var1_44 = var0_44[iter0_44]
-		local var2_44
+	for iter0_45 = 1, 2 do
+		local var1_45 = var0_45[iter0_45]
+		local var2_45
 
-		if var1_44 then
-			var2_44 = getProxy(CommanderProxy):getCommanderById(var1_44)
+		if var1_45 then
+			var2_45 = getProxy(CommanderProxy):getCommanderById(var1_45)
 		end
 
-		local var3_44 = arg2_44:Find(iter0_44)
-		local var4_44 = var3_44:Find("add")
-		local var5_44 = var3_44:Find("info")
+		local var3_45 = arg2_45:Find(iter0_45)
+		local var4_45 = var3_45:Find("add")
+		local var5_45 = var3_45:Find("info")
 
-		setActive(var4_44, not var2_44)
-		setActive(var5_44, var2_44)
+		setActive(var4_45, not var2_45)
+		setActive(var5_45, var2_45)
 
-		if var2_44 then
-			local var6_44 = Commander.rarity2Frame(var2_44:getRarity())
+		if var2_45 then
+			local var6_45 = Commander.rarity2Frame(var2_45:getRarity())
 
-			setImageSprite(var5_44:Find("frame"), GetSpriteFromAtlas("weaponframes", "commander_" .. var6_44))
-			GetImageSpriteFromAtlasAsync("CommanderHrz/" .. var2_44:getPainting(), "", var5_44:Find("mask/icon"))
+			setImageSprite(var5_45:Find("frame"), GetSpriteFromAtlas("weaponframes", "commander_" .. var6_45))
+			GetImageSpriteFromAtlasAsync("CommanderHrz/" .. var2_45:getPainting(), "", var5_45:Find("mask/icon"))
 		end
 
-		onButton(arg0_44, var4_44, function()
-			arg0_44:emit(BossRushFleetSelectMediator.OPEN_COMMANDER_PANEL, arg1_44)
+		onButton(arg0_45, var4_45, function()
+			arg0_45:emit(BossRushFleetSelectMediator.OPEN_COMMANDER_PANEL, arg1_45)
 		end, SFX_PANEL)
-		onButton(arg0_44, var5_44, function()
-			arg0_44:emit(BossRushFleetSelectMediator.OPEN_COMMANDER_PANEL, arg1_44)
+		onButton(arg0_45, var5_45, function()
+			arg0_45:emit(BossRushFleetSelectMediator.OPEN_COMMANDER_PANEL, arg1_45)
 		end, SFX_PANEL)
 	end
 end

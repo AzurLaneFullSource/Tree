@@ -379,6 +379,11 @@ pg.task_meta_data_template.all = {
 	100573,
 	100574,
 	100575,
+	100581,
+	100582,
+	100583,
+	100584,
+	100585,
 	200001,
 	200002,
 	200003,
@@ -570,7 +575,11 @@ pg.task_meta_data_template.all = {
 	200481,
 	200482,
 	200483,
-	200484
+	200484,
+	200491,
+	200492,
+	200493,
+	200494
 }
 pg.base = pg.base or {}
 pg.base.task_meta_data_template = {}
@@ -3582,6 +3591,46 @@ end)()
 		target_num = 1,
 		target_id = "100"
 	}
+	pg.base.task_meta_data_template[100581] = {
+		target_id_2 = "970213",
+		sub_type = 180,
+		desc = "Sortie and obtain 1 victory with Nürnberg META in the fleet.",
+		id = 100581,
+		target_num = 1,
+		target_id = "0"
+	}
+	pg.base.task_meta_data_template[100582] = {
+		target_id_2 = "970213",
+		sub_type = 180,
+		desc = "Defeat a Lv. 30+ enemy fleet with Nürnberg META in the fleet.",
+		id = 100582,
+		target_num = 1,
+		target_id = "30"
+	}
+	pg.base.task_meta_data_template[100583] = {
+		target_id_2 = "970213",
+		sub_type = 180,
+		desc = "Defeat a Lv. 55+ enemy fleet with Nürnberg META in the fleet.",
+		id = 100583,
+		target_num = 1,
+		target_id = "55"
+	}
+	pg.base.task_meta_data_template[100584] = {
+		target_id_2 = "970213",
+		sub_type = 180,
+		desc = "Defeat a Lv. 80+ enemy fleet with Nürnberg META in the fleet.",
+		id = 100584,
+		target_num = 1,
+		target_id = "80"
+	}
+	pg.base.task_meta_data_template[100585] = {
+		target_id_2 = "970213",
+		sub_type = 180,
+		desc = "Defeat a Lv. 100+ enemy fleet with Nürnberg META in the fleet.",
+		id = 100585,
+		target_num = 1,
+		target_id = "100"
+	}
 	pg.base.task_meta_data_template[200001] = {
 		target_id_2 = "970101",
 		sub_type = 302,
@@ -3742,6 +3791,8 @@ end)()
 		target_num = 1,
 		target_id = "100"
 	}
+end)()
+;(function()
 	pg.base.task_meta_data_template[200061] = {
 		target_id_2 = "970204",
 		sub_type = 302,
@@ -3782,8 +3833,6 @@ end)()
 		target_num = 1,
 		target_id = "0"
 	}
-end)()
-;(function()
 	pg.base.task_meta_data_template[200072] = {
 		target_id_2 = "970801",
 		sub_type = 302,
@@ -4544,6 +4593,8 @@ end)()
 		target_num = 1,
 		target_id = "100"
 	}
+end)()
+;(function()
 	pg.base.task_meta_data_template[200311] = {
 		target_id_2 = "970706",
 		sub_type = 302,
@@ -4584,8 +4635,6 @@ end)()
 		target_num = 1,
 		target_id = "0"
 	}
-end)()
-;(function()
 	pg.base.task_meta_data_template[200322] = {
 		target_id_2 = "970509",
 		sub_type = 302,
@@ -5119,6 +5168,38 @@ end)()
 		sub_type = 302,
 		desc = "Sortie in Operation Siren and defeat a Lv. 100+ enemy fleet with Bristol META in the fleet.",
 		id = 200484,
+		target_num = 1,
+		target_id = "100"
+	}
+	pg.base.task_meta_data_template[200491] = {
+		target_id_2 = "970213",
+		sub_type = 302,
+		desc = "Sortie in Operation Siren and obtain 1 victory with Nürnberg META in the fleet.",
+		id = 200491,
+		target_num = 1,
+		target_id = "0"
+	}
+	pg.base.task_meta_data_template[200492] = {
+		target_id_2 = "970213",
+		sub_type = 302,
+		desc = "Sortie in Operation Siren and defeat a Lv. 70+ enemy fleet with Nürnberg META in the fleet.",
+		id = 200492,
+		target_num = 1,
+		target_id = "70"
+	}
+	pg.base.task_meta_data_template[200493] = {
+		target_id_2 = "970213",
+		sub_type = 302,
+		desc = "Sortie in Operation Siren and defeat a Lv. 90+ enemy fleet with Nürnberg META in the fleet.",
+		id = 200493,
+		target_num = 1,
+		target_id = "90"
+	}
+	pg.base.task_meta_data_template[200494] = {
+		target_id_2 = "970213",
+		sub_type = 302,
+		desc = "Sortie in Operation Siren and defeat a Lv. 100+ enemy fleet with Nürnberg META in the fleet.",
+		id = 200494,
 		target_num = 1,
 		target_id = "100"
 	}

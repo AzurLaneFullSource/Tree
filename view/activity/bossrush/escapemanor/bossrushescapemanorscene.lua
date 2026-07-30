@@ -273,10 +273,9 @@ function var0_0.UpdateBattle(arg0_26)
 		if var7_26 then
 			local var9_26 = var0_26:GetUsedBonus()[iter0_26] or 0
 			local var10_26 = var3_26:GetMaxBonusCount()
+			local var11_26 = var10_26 - var9_26 > 0
 
-			var8_26 = var10_26 - var9_26 > 0
-
-			setText(var2_26:Find("times/Text"), i18n("series_enemy_SP_count") .. setColorStr(math.max(0, var10_26 - var9_26) .. "/" .. var10_26, var8_26 and "#6EE868" or "#7f7f7f"))
+			setText(var2_26:Find("times/Text"), i18n("series_enemy_SP_count") .. setColorStr(math.max(0, var10_26 - var9_26) .. "/" .. var10_26, var11_26 and "#6EE868" or "#7f7f7f"))
 		end
 
 		onButton(arg0_26, var2_26, function()
@@ -287,12 +286,6 @@ function var0_0.UpdateBattle(arg0_26)
 				})
 
 				pg.TipsMgr.GetInstance():ShowTips(i18n("series_enemy_unlock", var1_32:GetName()))
-
-				return
-			end
-
-			if not var8_26 then
-				pg.TipsMgr.GetInstance():ShowTips(i18n("series_enemy_SP_error"))
 
 				return
 			end

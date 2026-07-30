@@ -28,7 +28,6 @@ function var0_0.Ctor(arg0_1)
 		MainGuildSequence.New(),
 		MainMonthCardSequence.New(),
 		MainMetaSkillSequence.New(),
-		MainCrusingActSequence.New(),
 		MainReceiveBossRushAwardsSequence.New(),
 		MainReceiveRemasterBossRushAwardsSequence.New(),
 		MainActivateInsTopicSequence.New(),
