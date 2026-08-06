@@ -30,73 +30,75 @@ end
 
 function var0_0.OnShipSkillUnlock(arg0_3, arg1_3)
 	local var0_3 = getProxy(IslandProxy):GetIsland():GetCharacterAgency():GetShipById(arg1_3):GetSkill():GetEffectIds()
+	local var1_3 = arg0_3:_SelectGlobalType(var0_3)
 
-	for iter0_3, iter1_3 in ipairs(var0_3) do
-		arg0_3:_AddBuff(arg0_3.skillBuffDic, {
-			isSkill = true,
-			id = iter1_3
-		})
-	end
-
-	table.insert(arg0_3.shipIds, arg1_3)
-end
-
-function var0_0.OnShipSkillUpgrade(arg0_4, arg1_4)
-	local var0_4 = getProxy(IslandProxy):GetIsland():GetCharacterAgency():GetShipById(arg1_4):GetSkill()
-	local var1_4 = var0_4:GetLastEffectIds()
-	local var2_4 = var0_4:GetEffectIds()
-
-	if table.contains(arg0_4.shipIds, arg1_4) then
-		underscore.each(arg0_4:_SelectGlobalType(var1_4), function(arg0_5)
-			arg0_4:_RemoveById(arg0_4.skillBuffDic, arg0_5)
-		end)
-		table.removebyvalue(arg0_4.shipIds, arg1_4)
-	end
-
-	local var3_4 = arg0_4:_SelectGlobalType(var2_4)
-
-	if #var3_4 > 0 then
-		underscore.each(var3_4, function(arg0_6)
-			arg0_4:_AddBuff(arg0_4.skillBuffDic, {
+	if #var1_3 > 0 then
+		underscore.each(var1_3, function(arg0_4)
+			arg0_3:_AddBuff(arg0_3.skillBuffDic, {
 				isSkill = true,
-				id = arg0_6
+				id = arg0_4
 			})
 		end)
-		table.insert(arg0_4.shipIds, arg1_4)
+		table.insert(arg0_3.shipIds, arg1_3)
 	end
 end
 
-function var0_0.GetBuffsByType(arg0_7, arg1_7)
-	local var0_7 = underscore.select(arg0_7.statusBuffDic[arg1_7] or {}, function(arg0_8)
-		return not arg0_8:IsExpiration()
-	end)
+function var0_0.OnShipSkillUpgrade(arg0_5, arg1_5)
+	local var0_5 = getProxy(IslandProxy):GetIsland():GetCharacterAgency():GetShipById(arg1_5):GetSkill()
+	local var1_5 = var0_5:GetLastEffectIds()
+	local var2_5 = var0_5:GetEffectIds()
 
-	return table.mergeArray(var0_7, arg0_7.skillBuffDic[arg1_7] or {})
-end
-
-function var0_0._AddBuff(arg0_9, arg1_9, arg2_9)
-	local var0_9 = IslandShipStatus.New(arg2_9)
-	local var1_9 = var0_9:GetBuffType()
-
-	if not arg1_9[var1_9] then
-		arg1_9[var1_9] = {}
+	if table.contains(arg0_5.shipIds, arg1_5) then
+		underscore.each(arg0_5:_SelectGlobalType(var1_5), function(arg0_6)
+			arg0_5:_RemoveById(arg0_5.skillBuffDic, arg0_6)
+		end)
+		table.removebyvalue(arg0_5.shipIds, arg1_5)
 	end
 
-	table.insert(arg1_9[var1_9], var0_9)
+	local var3_5 = arg0_5:_SelectGlobalType(var2_5)
+
+	if #var3_5 > 0 then
+		underscore.each(var3_5, function(arg0_7)
+			arg0_5:_AddBuff(arg0_5.skillBuffDic, {
+				isSkill = true,
+				id = arg0_7
+			})
+		end)
+		table.insert(arg0_5.shipIds, arg1_5)
+	end
 end
 
-function var0_0._RemoveById(arg0_10, arg1_10, arg2_10)
-	local var0_10 = arg1_10[pg.island_buff_template[arg2_10].buff_type]
-	local var1_10 = underscore.detect(var0_10, function(arg0_11)
-		return arg0_11.id == arg2_10
+function var0_0.GetBuffsByType(arg0_8, arg1_8)
+	local var0_8 = underscore.select(arg0_8.statusBuffDic[arg1_8] or {}, function(arg0_9)
+		return not arg0_9:IsExpiration()
 	end)
 
-	table.removebyvalue(var0_10, var1_10)
+	return table.mergeArray(var0_8, arg0_8.skillBuffDic[arg1_8] or {})
 end
 
-function var0_0._SelectGlobalType(arg0_12, arg1_12)
-	return underscore.select(arg1_12, function(arg0_13)
-		return IslandBuffType.IsGlobalType(pg.island_buff_template[arg0_13].buff_type)
+function var0_0._AddBuff(arg0_10, arg1_10, arg2_10)
+	local var0_10 = IslandShipStatus.New(arg2_10)
+	local var1_10 = var0_10:GetBuffType()
+
+	if not arg1_10[var1_10] then
+		arg1_10[var1_10] = {}
+	end
+
+	table.insert(arg1_10[var1_10], var0_10)
+end
+
+function var0_0._RemoveById(arg0_11, arg1_11, arg2_11)
+	local var0_11 = arg1_11[pg.island_buff_template[arg2_11].buff_type]
+	local var1_11 = underscore.detect(var0_11, function(arg0_12)
+		return arg0_12.id == arg2_11
+	end)
+
+	table.removebyvalue(var0_11, var1_11)
+end
+
+function var0_0._SelectGlobalType(arg0_13, arg1_13)
+	return underscore.select(arg1_13, function(arg0_14)
+		return IslandBuffType.IsGlobalType(pg.island_buff_template[arg0_14].buff_type)
 	end)
 end
 
