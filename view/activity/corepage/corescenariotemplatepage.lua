@@ -789,10 +789,10 @@ function var0_0.UpdateStory(arg0_19, arg1_19)
 					var30_19 = var29_19 or ""
 				end
 
-				setScrollText(var26_19, HXSet.hxLan(var30_19))
+				arg0_19:RefreshUnlockDesc(var25_19, HXSet.hxLan(var22_19:GetDisplayName()), HXSet.hxLan(var30_19))
 				setTextAlpha(var26_19, var28_19[var24_19] or 0.5)
 			else
-				setScrollText(var26_19, HXSet.hxLan(var22_19:GetDisplayName()))
+				arg0_19:RefreshNodeTitle(var25_19, HXSet.hxLan(var22_19:GetDisplayName()))
 				setTextAlpha(var26_19, var28_19[var24_19] or 1)
 			end
 
@@ -1080,25 +1080,33 @@ function var0_0.OnSubmitTaskDone(arg0_50)
 	arg0_50:UpdateView()
 end
 
-function var0_0.Show(arg0_51)
-	var0_0.super.Show(arg0_51)
-	arg0_51:OverlayPanel(arg0_51._tf)
-	arg0_51:OverlayPanel(arg0_51.topPage, {
+function var0_0.RefreshNodeTitle(arg0_51, arg1_51, arg2_51)
+	setScrollText(arg1_51:Find("info/bk/title_form/title"), arg2_51)
+end
+
+function var0_0.RefreshUnlockDesc(arg0_52, arg1_52, arg2_52, arg3_52)
+	setScrollText(arg1_52:Find("info/bk/title_form/title"), arg3_52)
+end
+
+function var0_0.Show(arg0_53)
+	var0_0.super.Show(arg0_53)
+	arg0_53:OverlayPanel(arg0_53._tf)
+	arg0_53:OverlayPanel(arg0_53.topPage, {
 		stopTop = true
 	})
 end
 
-function var0_0.Hide(arg0_52)
-	arg0_52:UnOverlayPanel(arg0_52.topPage, arg0_52._tf)
-	arg0_52:UnOverlayPanel(arg0_52._tf, arg0_52._parentTf)
-	var0_0.super.Hide(arg0_52)
+function var0_0.Hide(arg0_54)
+	arg0_54:UnOverlayPanel(arg0_54.topPage, arg0_54._tf)
+	arg0_54:UnOverlayPanel(arg0_54._tf, arg0_54._parentTf)
+	var0_0.super.Hide(arg0_54)
 end
 
-function var0_0.OnDestroy(arg0_53)
-	arg0_53:RecyclePools()
+function var0_0.OnDestroy(arg0_55)
+	arg0_55:RecyclePools()
 
-	for iter0_53, iter1_53 in pairs(arg0_53.pools) do
-		iter1_53:Clear()
+	for iter0_55, iter1_55 in pairs(arg0_55.pools) do
+		iter1_55:Clear()
 	end
 end
 

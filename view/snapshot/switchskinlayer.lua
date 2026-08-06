@@ -63,7 +63,7 @@ function var0_0.initSelectSkinPanel(arg0_9)
 
 	arg0_9.skinScroll = arg0_9.skinPanel:Find("select_skin/style_scroll")
 	arg0_9.skinContainer = arg0_9.skinScroll:Find("view_port")
-	arg0_9.skinCard = arg0_9._go:GetComponent(typeof(ItemList)).prefabItem[0]
+	arg0_9.skinCard = arg0_9.skinContainer:GetChild(0)
 
 	setActive(arg0_9.skinCard, false)
 

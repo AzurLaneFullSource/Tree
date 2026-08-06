@@ -318,10 +318,6 @@ function var0_0.didEnter(arg0_17)
 							arg0_17.musicView:tryPlayMusic()
 						end
 					end
-
-					if iter0_17 ~= var0_0.GALLERY_INDEX and arg0_17.galleryView and arg0_17.galleryView:CheckState(BaseSubView.STATES.INITED) then
-						arg0_17.galleryView:closePicPanel()
-					end
 				end
 			end, SFX_UI_TAG)
 		end
@@ -1023,54 +1019,51 @@ function var0_0.initMangaPanel(arg0_73)
 end
 
 function var0_0.initEvents(arg0_74)
-	arg0_74:bind(GalleryConst.OPEN_FULL_SCREEN_PIC_VIEW, function(arg0_75, arg1_75)
-		arg0_74:emit(CollectionMediator.EVENT_OPEN_FULL_SCREEN_PIC_VIEW, arg1_75)
-	end)
 	arg0_74:bind(var0_0.UPDATE_RED_POINT, function()
 		arg0_74:updateCollectNotices()
 	end)
 end
 
-function var0_0.onBackPressed(arg0_77)
+function var0_0.onBackPressed(arg0_76)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 
-	if arg0_77.bonusPanel.gameObject.activeSelf then
-		arg0_77:closeBonus()
+	if arg0_76.bonusPanel.gameObject.activeSelf then
+		arg0_76:closeBonus()
 
 		return
 	end
 
-	if arg0_77.galleryView then
-		if arg0_77.galleryView:onBackPressed() == true then
-			arg0_77.galleryView:Destroy()
+	if arg0_76.galleryView then
+		if arg0_76.galleryView:onBackPressed() == true then
+			arg0_76.galleryView:Destroy()
 
-			arg0_77.galleryView = nil
+			arg0_76.galleryView = nil
 		else
 			return
 		end
 	end
 
-	if arg0_77.musicView then
-		if arg0_77.musicView:onBackPressed() == true then
-			arg0_77.musicView:Destroy()
+	if arg0_76.musicView then
+		if arg0_76.musicView:onBackPressed() == true then
+			arg0_76.musicView:Destroy()
 
-			arg0_77.musicView = nil
+			arg0_76.musicView = nil
 		else
 			return
 		end
 	end
 
-	if arg0_77.mangaView then
-		if arg0_77.mangaView:onBackPressed() == true then
-			arg0_77.mangaView:Destroy()
+	if arg0_76.mangaView then
+		if arg0_76.mangaView:onBackPressed() == true then
+			arg0_76.mangaView:Destroy()
 
-			arg0_77.mangaView = nil
+			arg0_76.mangaView = nil
 		else
 			return
 		end
 	end
 
-	triggerButton(arg0_77.backBtn)
+	triggerButton(arg0_76.backBtn)
 end
 
 return var0_0

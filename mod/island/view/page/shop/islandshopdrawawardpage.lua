@@ -11,19 +11,6 @@ function var0_0.Ctor(arg0_2, arg1_2, arg2_2)
 end
 
 function var0_0.OnLoaded(arg0_3)
-	local var0_3 = arg0_3._tf:GetComponent(typeof(ItemList)).prefabItem:ToTable()
-
-	for iter0_3, iter1_3 in ipairs({
-		"rtMiddle",
-		"rtTitle",
-		"btnAll",
-		"btnDraw",
-		"btnDrawTen",
-		"rtDisplayPanel"
-	}) do
-		arg0_3[iter1_3] = var0_3[iter0_3].transform
-	end
-
 	setActive(arg0_3.rtDisplayPanel, false)
 end
 

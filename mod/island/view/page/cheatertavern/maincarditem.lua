@@ -26,18 +26,15 @@ function var0_0.Init(arg0_2, arg1_2, arg2_2, arg3_2)
 	local function var0_2(arg0_3)
 		arg0_2.tf = tf(arg0_3)
 		arg0_2.isLoaded = true
-
-		local var0_3 = arg0_2.tf:GetComponent(typeof(ItemList))
-
-		arg0_2.selectedCardTf = var0_3.prefabItem[0]
-		arg0_2.unSelectedCardTf = var0_3.prefabItem[1]
+		arg0_2.selectedCardTf = arg0_2.tf:Find("vfx_bar_kapai01")
+		arg0_2.unSelectedCardTf = arg0_2.tf:Find("vfx_bar_kapai02")
 
 		arg0_2:SetSelected(false)
 
-		local var1_3 = GetOrAddComponent(arg0_3, typeof(CheaterTavernCard))
+		local var0_3 = GetOrAddComponent(arg0_3, typeof(CheaterTavernCard))
 
-		var1_3.key = arg0_2.key
-		var1_3.parm = arg0_2.id
+		var0_3.key = arg0_2.key
+		var0_3.parm = arg0_2.id
 
 		arg0_2:InitCardView()
 	end
@@ -228,10 +225,7 @@ function var0_0.FlipTableCard(arg0_15, arg1_15, arg2_15, arg3_15)
 
 		local function var3_15(arg0_16)
 			arg0_15.tf = arg0_16.transform
-
-			local var0_16 = arg0_15.tf:GetComponent(typeof(ItemList))
-
-			arg0_15.selectedCardTf = var0_16.prefabItem[0]
+			arg0_15.selectedCardTf = arg0_15.tf:Find("vfx_bar_kapai01")
 
 			setActive(arg0_15.selectedCardTf, false)
 

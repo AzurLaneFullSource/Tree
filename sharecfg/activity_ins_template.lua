@@ -663,6 +663,7 @@ pg.activity_ins_template.all = {
 	20005,
 	20007,
 	20008,
+	20011,
 	20009,
 	20010
 }
@@ -27627,6 +27628,33 @@ end)()
 			},
 			{
 				16,
+				0,
+				0
+			}
+		},
+		time_persist = {},
+		npc_discuss_persist = {}
+	}
+	pg.base.activity_ins_template[20011] = {
+		ship_group = 0,
+		name = "",
+		oalist_pic_persist = "",
+		type = 2,
+		picture_persist = "",
+		title = "[Port News] The Seaside Speedstar Cup: Plans Unveiled for a New Race!",
+		sculpture = "",
+		is_active = 1,
+		message_persist = "",
+		id = 20011,
+		group_id = 20011,
+		time = {
+			{
+				2026,
+				8,
+				6
+			},
+			{
+				11,
 				0,
 				0
 			}

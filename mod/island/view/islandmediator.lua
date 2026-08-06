@@ -136,10 +136,11 @@ function var0_0._register(arg0_1)
 			callback = arg2_7
 		})
 	end)
-	arg0_1:bind(var0_0.NPC_ACTION_AWARD, function(arg0_8, arg1_8, arg2_8)
+	arg0_1:bind(var0_0.NPC_ACTION_AWARD, function(arg0_8, arg1_8, arg2_8, arg3_8)
 		arg0_1:sendNotification(GAME.ISLAND_GET_NPC_ACTION_AWARD, {
 			npcId = arg1_8,
-			actionId = arg2_8
+			shipId = arg2_8,
+			actionId = arg3_8
 		})
 	end)
 	arg0_1:bind(var0_0.ACCEPT_REQUEST, function(arg0_9, arg1_9)

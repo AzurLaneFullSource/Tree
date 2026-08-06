@@ -214,24 +214,36 @@ function var0_0.isNewPicInfo(arg0_10)
 	return true
 end
 
-function var0_0.getGalleryConfigNewIDList()
-	local var0_11 = pg.gameset.new_gallery_id_list.description
+function var0_0.isPicInfoLiked(arg0_11)
+	local var0_11 = false
 
-	if var0_11 == nil or type(var0_11) ~= "table" then
-		var0_11 = {}
+	if arg0_11.type == var0_0.TYPE_GALLERY then
+		var0_11 = GalleryConst.isGalleryLikeByID(arg0_11.id)
+	elseif arg0_11.type == var0_0.TYPE_MANGA then
+		var0_11 = MangaConst.isMangaLikeByID(arg0_11.id)
 	end
 
 	return var0_11
 end
 
-function var0_0.getMangaConfigNewIDList()
-	local var0_12 = pg.gameset.new_manga_id_list.description
+function var0_0.getGalleryConfigNewIDList()
+	local var0_12 = pg.gameset.new_gallery_id_list.description
 
 	if var0_12 == nil or type(var0_12) ~= "table" then
 		var0_12 = {}
 	end
 
 	return var0_12
+end
+
+function var0_0.getMangaConfigNewIDList()
+	local var0_13 = pg.gameset.new_manga_id_list.description
+
+	if var0_13 == nil or type(var0_13) ~= "table" then
+		var0_13 = {}
+	end
+
+	return var0_13
 end
 
 return var0_0

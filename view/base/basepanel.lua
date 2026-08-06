@@ -52,6 +52,7 @@ function var0_0.detach(arg0_8)
 		setActive(arg0_8._go, false)
 		pg.DelegateInfo.Dispose(arg0_8)
 		arg0_8:clear()
+		bindComponent(arg0_8, arg0_8._go, true)
 
 		arg0_8.parent = nil
 		arg0_8.emit = nil

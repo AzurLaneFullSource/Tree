@@ -43,6 +43,8 @@ end
 function var0_0.Show(arg0_5)
 	arg0_5.super.Show(arg0_5)
 	arg0_5:Flush(arg0_5.newestId)
+	IslandSeasonRedDotHelper.UpdateEnterReview()
+	arg0_5:emit(IslandSeasonPage.UPDATE_REDDOT, IslandSeasonPage.PAGE_REVIEW)
 end
 
 function var0_0.Hide(arg0_6)

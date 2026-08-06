@@ -378,6 +378,7 @@ end
 function var0_0.UpdatePerDay(arg0_55)
 	arg0_55:GetSignInAgency():ResetSignInCnt()
 	arg0_55:GetAccessAgency():ResetFreshInviteCodeFlag()
+	arg0_55:GetCharacterAgency():ResetShipSkillUsed()
 end
 
 function var0_0.UpdatePerSecond(arg0_56)

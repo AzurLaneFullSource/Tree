@@ -10,20 +10,9 @@ function var0_0.init(arg0_2)
 	var0_0.super.init(arg0_2)
 
 	arg0_2.itemList = arg0_2.boxView:Find("Content/ItemGrid")
-
-	local var0_2 = Instantiate(arg0_2.itemList:GetComponent(typeof(ItemList)).prefabItem[0])
-
-	var0_2.name = "Icon"
-
-	setParent(var0_2, arg0_2.itemList:Find("GridItem/Shell"))
-
 	arg0_2.itemListSub = arg0_2.boxView:Find("Content/ItemGridSub")
-
-	cloneTplTo(var0_2, arg0_2.itemListSub:Find("GridItem/Shell"), var0_2.name)
-
 	arg0_2.spList = arg0_2.window:Find("Fixed/SpList")
 
-	arg0_2.CloneIconTpl(arg0_2.spList:Find("Item/Active/Item"), "Icon")
 	setText(arg0_2.boxView:Find("Content/Title/Text"), i18n("battle_end_subtitle1"))
 	setText(arg0_2.boxView:Find("Content/TitleSub/Text"), i18n("settle_rewards_text"))
 end
@@ -311,7 +300,7 @@ function var0_0.UpdateSPItem(arg0_18)
 		end
 
 		setActive(arg2_19:Find("Active/Item"), true)
-		updateDrop(arg2_19:Find("Active/Item/Icon"), Drop.New({
+		updateDrop(arg2_19:Find("Active/Item/IconTpl"), Drop.New({
 			id = var2_19,
 			type = DROP_TYPE_ITEM,
 			count = var3_19 and var3_19.count or 0
@@ -325,7 +314,7 @@ function var0_0.UpdateSPItem(arg0_18)
 
 			arg0_18:UpdateSPItem()
 		end, SFX_PANEL)
-		onButton(arg0_18, arg2_19:Find("Active/Item/Icon"), function()
+		onButton(arg0_18, arg2_19:Find("Active/Item/IconTpl"), function()
 			arg0_18:emit(BaseUI.ON_ITEM, var2_19)
 		end)
 		setActive(arg2_19:Find("Active/Checkbox/Mark"), tobool(arg0_18.contextData.spItemID))

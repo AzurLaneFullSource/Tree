@@ -58,7 +58,7 @@ function var0_0.init(arg0_2)
 	end
 
 	arg0_2._attrFrame = arg0_2._blurLayer:Find("attr_frame")
-	arg0_2._cardTpl = arg0_2._tf:GetComponent(typeof(ItemList)).prefabItem[0]
+	arg0_2._cardTpl = arg0_2._tf:Find("RectShipCardTpl")
 	arg0_2._cards = {}
 	arg0_2._cards[TeamType.Main] = {}
 	arg0_2._cards[TeamType.Vanguard] = {}

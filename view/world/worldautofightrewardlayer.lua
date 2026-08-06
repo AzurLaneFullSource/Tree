@@ -12,11 +12,6 @@ function var0_0.init(arg0_2)
 	arg0_2.emptyTip = arg0_2.window:Find("Layout/Box/EmptyTip")
 	arg0_2.itemList = arg0_2.boxView:Find("Content/ItemGrid")
 
-	local var0_2 = Instantiate(arg0_2.itemList:GetComponent(typeof(ItemList)).prefabItem[0])
-
-	var0_2.name = "Icon"
-
-	setParent(var0_2, arg0_2.itemList:Find("GridItem/Shell"))
 	setText(arg0_2.emptyTip, i18n("autofight_rewards_none"))
 	setText(arg0_2.window:Find("Fixed/top/bg/obtain/title"), i18n("autofight_rewards"))
 	setText(arg0_2.boxView:Find("Content/Title/Text"), i18n("battle_end_subtitle1"))
@@ -201,41 +196,25 @@ function var0_0.UpdateView(arg0_5)
 	end)
 end
 
-function var0_0.CloneIconTpl(arg0_18, arg1_18)
-	local var0_18 = arg0_18:GetComponent(typeof(ItemList))
-
-	assert(var0_18, "Need a Itemlist Component for " .. (arg0_18 and arg0_18.name or "NIL"))
-
-	local var1_18 = Instantiate(var0_18.prefabItem[0])
-
-	if arg1_18 then
-		var1_18.name = arg1_18
-	end
-
-	setParent(var1_18, arg0_18)
-
-	return var1_18
-end
-
-function var0_0.SkipAnim(arg0_19)
-	if not arg0_19.isRewardAnimating then
+function var0_0.SkipAnim(arg0_18)
+	if not arg0_18.isRewardAnimating then
 		return
 	end
 
-	arg0_19.isRewardAnimating = nil
+	arg0_18.isRewardAnimating = nil
 
-	if arg0_19.LTid then
-		LeanTween.cancel(arg0_19.LTid)
+	if arg0_18.LTid then
+		LeanTween.cancel(arg0_18.LTid)
 
-		arg0_19.LTid = nil
+		arg0_18.LTid = nil
 	end
 
-	eachChild(arg0_19.itemList, function(arg0_20)
-		setActive(arg0_20, true)
+	eachChild(arg0_18.itemList, function(arg0_19)
+		setActive(arg0_19, true)
 	end)
-	setActive(arg0_19.boxView:Find("Content/Title"), arg0_19.hasRewards)
-	setActive(arg0_19.itemList, arg0_19.hasRewards)
-	setActive(arg0_19.boxView:Find("Content/TextArea"), arg0_19.hasEventMsg)
+	setActive(arg0_18.boxView:Find("Content/Title"), arg0_18.hasRewards)
+	setActive(arg0_18.itemList, arg0_18.hasRewards)
+	setActive(arg0_18.boxView:Find("Content/TextArea"), arg0_18.hasEventMsg)
 end
 
 return var0_0

@@ -34,24 +34,8 @@ function var0_0.UpdateView(arg0_5)
 	end)
 end
 
-function var0_0.CloneIconTpl(arg0_7, arg1_7)
-	local var0_7 = arg0_7:GetComponent(typeof(ItemList))
-
-	assert(var0_7, "Need a Itemlist Component for " .. (arg0_7 and arg0_7.name or "NIL"))
-
-	local var1_7 = Instantiate(var0_7.prefabItem[0])
-
-	if arg1_7 then
-		var1_7.name = arg1_7
-	end
-
-	setParent(var1_7, arg0_7)
-
-	return var1_7
-end
-
-function var0_0.HandleShowMsgBox(arg0_8, arg1_8)
-	pg.MsgboxMgr.GetInstance():ShowMsgBox(arg1_8)
+function var0_0.HandleShowMsgBox(arg0_7, arg1_7)
+	pg.MsgboxMgr.GetInstance():ShowMsgBox(arg1_7)
 end
 
 return var0_0

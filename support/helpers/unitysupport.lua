@@ -1052,7 +1052,7 @@ function getSceneRootTFDic(arg0_126)
 	return var0_126
 end
 
-function bindComponent(arg0_127, arg1_127)
+function bindComponent(arg0_127, arg1_127, arg2_127)
 	local var0_127 = tf(arg1_127):GetComponent(typeof(ComponentBinding))
 
 	if var0_127 == nil then
@@ -1063,6 +1063,6 @@ function bindComponent(arg0_127, arg1_127)
 	local var2_127 = var0_127:GetComponentValues():ToTable()
 
 	for iter0_127, iter1_127 in ipairs(var1_127) do
-		arg0_127[iter1_127] = var2_127[iter0_127]
+		arg0_127[iter1_127] = not arg2_127 and var2_127[iter0_127] or nil
 	end
 end

@@ -74,15 +74,6 @@ function var0_0.OnLoaded(arg0_2)
 end
 
 function var0_0.OnInit(arg0_3)
-	local var0_3 = arg0_3._tf:GetComponent(typeof(ItemList)).prefabItem:ToTable()
-
-	for iter0_3, iter1_3 in ipairs({
-		"rtBg",
-		"rtPages"
-	}) do
-		arg0_3[iter1_3] = var0_3[iter0_3].transform
-	end
-
 	onButton(arg0_3, arg0_3.rtBg, function()
 		arg0_3:HideWindow()
 	end, SFX_PANEL)

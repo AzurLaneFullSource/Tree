@@ -51,6 +51,7 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.detailPanel = IslandTechDetailPanel.New(arg0_2._tf, arg0_2.event, setmetatable({
 		onSelecteShip = function(arg0_5)
 			local var0_5 = pg.island_formula[arg0_5].attribute
+			local var1_5 = pg.island_formula[arg0_5].stamina_cost
 
 			arg0_2:OpenPage(IslandShipSelectPage, {
 				needWorkSpeed = true,
@@ -59,7 +60,8 @@ function var0_0.OnLoaded(arg0_2)
 				confirmFunc = function(arg0_6)
 					arg0_2.detailPanel:ExecuteAction("OnShipSelected", arg0_6[1])
 				end,
-				placeId = IslandProductConst.TechnologyPlaceId
+				placeId = IslandProductConst.TechnologyPlaceId,
+				energyCost = var1_5
 			})
 		end,
 		onFinishImmd = function(arg0_7)

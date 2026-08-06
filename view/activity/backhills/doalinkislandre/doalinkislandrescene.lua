@@ -42,15 +42,9 @@ function var0_0.init(arg0_2)
 	arg0_2.map_tebiezuozhan:GetComponent(typeof(UnityEngine.Canvas)).sortingOrder = var5_2 - 1
 	arg0_2.map_bridge:GetComponent(typeof(UnityEngine.Canvas)).sortingOrder = var5_2 - 1
 
-	local var6_2 = GetComponent(arg0_2._map, "ItemList")
+	local var6_2 = arg0_2._map:Find("DOAhoushan_hailang")
 
-	for iter2_2 = 1, 1 do
-		local var7_2 = var6_2.prefabItem[iter2_2 - 1]
-		local var8_2 = tf(Instantiate(var7_2))
-
-		pg.ViewUtils.SetSortingOrder(var8_2, var5_2 - 2)
-		setParent(var8_2, arg0_2._map)
-	end
+	pg.ViewUtils.SetSortingOrder(var6_2, var5_2 - 2)
 
 	arg0_2.mgProxy = getProxy(MiniGameProxy)
 	arg0_2.loader = AutoLoader.New()

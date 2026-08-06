@@ -21,6 +21,11 @@ function var0_0.execute(arg0_1, arg1_1)
 			if var3_1 then
 				var3_1()
 			end
+
+			arg0_1:sendNotification(GAME.APPRECIATE_GALLERY_LIKE_DONE, {
+				picID = var1_1,
+				action = var2_1
+			})
 		else
 			pg.TipsMgr.GetInstance():ShowTips("Like Fail" .. tostring(arg0_2.result))
 		end

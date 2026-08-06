@@ -138,13 +138,12 @@ function var0_0.OnMovePlayerBefore(arg0_19)
 	arg0_19:RemoveWaitTimer()
 
 	arg0_19.startSingleActionId = nil
+
+	arg0_19:ClearSelected()
 end
 
 function var0_0.OnEnable(arg0_20)
-	if not arg0_20.isInitList then
-		arg0_20:InitList()
-	end
-
+	arg0_20:InitList()
 	arg0_20:UpdateMoveBtn()
 
 	arg0_20.isShowing = true
@@ -167,181 +166,232 @@ function var0_0.GetData(arg0_21)
 		end
 	end
 
+	if arg0_21.markActionId then
+		table.sort(var0_21, function(arg0_22, arg1_22)
+			local var0_22 = arg0_22 == arg0_21.markActionId and 1 or 0
+			local var1_22 = arg1_22 == arg0_21.markActionId and 1 or 0
+
+			if var0_22 == var1_22 then
+				return arg0_22 < arg1_22
+			else
+				return var1_22 < var0_22
+			end
+		end)
+	end
+
 	return var0_21, var1_21
 end
 
-local function var4_0(arg0_22)
-	local var0_22 = {}
+local function var4_0(arg0_23)
+	local var0_23 = {}
 
-	for iter0_22 = 1, #arg0_22, 2 do
-		local var1_22 = arg0_22[iter0_22]
-		local var2_22 = arg0_22[iter0_22 + 1]
+	for iter0_23 = 1, #arg0_23, 2 do
+		local var1_23 = arg0_23[iter0_23]
+		local var2_23 = arg0_23[iter0_23 + 1]
 
-		table.insert(var0_22, {
-			var1_22,
-			var2_22
+		table.insert(var0_23, {
+			var1_23,
+			var2_23
 		})
 	end
 
-	return var0_22
+	return var0_23
 end
 
-function var0_0.InitList(arg0_23)
-	local var0_23, var1_23 = arg0_23:GetData()
-	local var2_23 = {}
+function var0_0.InitList(arg0_24)
+	local var0_24, var1_24 = arg0_24:GetData()
+	local var2_24 = {}
 
-	if arg0_23.page == var1_0 then
-		local var3_23 = var4_0(var0_23)
+	if arg0_24.page == var1_0 then
+		local var3_24 = var4_0(var0_24)
 
-		for iter0_23, iter1_23 in ipairs(var3_23) do
-			table.insert(var2_23, iter1_23)
+		for iter0_24, iter1_24 in ipairs(var3_24) do
+			table.insert(var2_24, iter1_24)
 		end
 	end
 
-	if arg0_23.page == var2_0 then
-		local var4_23 = var4_0(var1_23)
+	if arg0_24.page == var2_0 then
+		local var4_24 = var4_0(var1_24)
 
-		for iter2_23, iter3_23 in ipairs(var4_23) do
-			table.insert(var2_23, iter3_23)
+		for iter2_24, iter3_24 in ipairs(var4_24) do
+			table.insert(var2_24, iter3_24)
 		end
 	end
 
-	arg0_23.displays = var2_23
-	arg0_23.scrollrect.enabled = true
+	arg0_24.displays = var2_24
+	arg0_24.scrollrect.enabled = true
 
-	arg0_23.scrollrect:SetTotalCount(#var2_23, 0)
+	arg0_24.scrollrect:SetTotalCount(#var2_24, 0)
 
-	arg0_23.isInitList = true
+	arg0_24.isInitList = true
 end
 
-function var0_0.OnInitItem(arg0_24, arg1_24)
-	local var0_24 = IslandAniamtionOpCard.New(arg1_24)
+function var0_0.SortForNpcAction(arg0_25, arg1_25)
+	if not arg1_25 then
+		arg0_25.markActionId = nil
 
-	onButton(arg0_24, var0_24.item1, function()
-		arg0_24.selectedId = var0_24.firstId
+		arg0_25:InitList()
 
-		arg0_24:UpdateCardsSelected()
-		arg0_24:PlayAniamtion(var0_24.firstId)
-	end, SFX_PANEL)
-	onButton(arg0_24, var0_24.item2, function()
-		arg0_24.selectedId = var0_24.secondId
-
-		arg0_24:UpdateCardsSelected()
-		arg0_24:PlayAniamtion(var0_24.secondId)
-	end, SFX_PANEL)
-
-	arg0_24.cards[arg1_24] = var0_24
-end
-
-function var0_0.CanPlayCoupleAction(arg0_27, arg1_27)
-	local var0_27 = arg0_27:GetPlayerUnit()
-	local var1_27 = BuildVector3(arg1_27.respond_point).magnitude
-
-	return IslandCalcUtil.IsCircleInsideNavMesh(var0_27.agent, var0_27._tf.position, var1_27, 12)
-end
-
-function var0_0.PlayAniamtion(arg0_28, arg1_28)
-	if not arg1_28 then
 		return
 	end
 
-	local var0_28 = pg.island_action[arg1_28]
+	local var0_25, var1_25 = IslandCalcUtil.GetTypeAndIdByUniqueId(arg1_25)
+	local var2_25 = arg0_25:GetView():GetUnitModuleWithType(var0_25, var1_25)
 
-	if var0_28.type == IslandConst.ANIMATION_OP_DOUBLE then
-		if arg0_28.startCoupleActionId == arg1_28 then
+	if not var2_25 then
+		return
+	end
+
+	if not var2_25.data or not isa(var2_25.data, IslandStrollUnitVO) then
+		return
+	end
+
+	local var3_25 = var2_25.data:GetGreetingFeedback()
+
+	if not var3_25 then
+		return
+	end
+
+	arg0_25.markActionId = var3_25
+
+	arg0_25:InitList()
+end
+
+function var0_0.OnInitItem(arg0_26, arg1_26)
+	local var0_26 = IslandAniamtionOpCard.New(arg1_26)
+
+	onButton(arg0_26, var0_26.item1, function()
+		arg0_26.selectedId = var0_26.firstId
+
+		arg0_26:UpdateCardsSelected()
+		arg0_26:PlayAniamtion(var0_26.firstId)
+	end, SFX_PANEL)
+	onButton(arg0_26, var0_26.item2, function()
+		arg0_26.selectedId = var0_26.secondId
+
+		arg0_26:UpdateCardsSelected()
+		arg0_26:PlayAniamtion(var0_26.secondId)
+	end, SFX_PANEL)
+
+	arg0_26.cards[arg1_26] = var0_26
+end
+
+function var0_0.CanPlayCoupleAction(arg0_29, arg1_29)
+	local var0_29 = arg0_29:GetPlayerUnit()
+	local var1_29 = BuildVector3(arg1_29.respond_point).magnitude
+
+	return IslandCalcUtil.IsCircleInsideNavMesh(var0_29.agent, var0_29._tf.position, var1_29, 12)
+end
+
+function var0_0.PlayAniamtion(arg0_30, arg1_30)
+	if not arg1_30 then
+		return
+	end
+
+	local var0_30 = pg.island_action[arg1_30]
+
+	if var0_30.type == IslandConst.ANIMATION_OP_DOUBLE then
+		if arg0_30.startCoupleActionId == arg1_30 then
 			return
 		end
 
-		if not arg0_28:CanPlayCoupleAction(var0_28) then
+		if not arg0_30:CanPlayCoupleAction(var0_30) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("island_position_cant_play_cp_action"))
 
 			return
 		end
 
-		arg0_28:NotifiyCore(ISLAND_EVT.LOCK_PLAYER_INPUT)
+		arg0_30:NotifiyCore(ISLAND_EVT.LOCK_PLAYER_INPUT)
 
-		arg0_28.startSingleActionId = nil
+		arg0_30.startSingleActionId = nil
 
-		arg0_28:AddWaitTimer(arg1_28)
-		arg0_28:GetPlayerUnit():PlayAnimation(var0_28.resource, 0.25, function()
-			if not arg0_28.startCoupleActionId then
+		arg0_30:AddWaitTimer(arg1_30)
+		arg0_30:GetPlayerUnit():PlayAnimation(var0_30.resource, 0.25, function()
+			if not arg0_30.startCoupleActionId then
 				return
 			end
 
-			if arg0_28:HasFollowerAndNoVisitorAround() then
-				arg0_28:NotifiyCore(ISLAND_EVT.COUPLE_ACTION_WITH_FOLLOWER, arg0_28.startCoupleActionId)
+			if arg0_30:HasFollowerAndNoVisitorAround() then
+				arg0_30:NotifiyCore(ISLAND_EVT.COUPLE_ACTION_WITH_FOLLOWER, arg0_30.startCoupleActionId)
 			else
-				arg0_28.isWaitingCoupleAction = true
+				arg0_30.isWaitingCoupleAction = true
 
-				arg0_28:NotifiyMeditor(IslandBaseMediator.ANIMATION_OP, 0, arg0_28.startCoupleActionId)
+				arg0_30:NotifiyMeditor(IslandBaseMediator.ANIMATION_OP, 0, arg0_30.startCoupleActionId)
 			end
 		end)
-		arg0_28:ApplyEffect(arg1_28)
-	elseif var0_28.type == IslandConst.ANIMATION_OP_SIGNLE then
-		if arg0_28.startSingleActionId == arg1_28 then
+		arg0_30:ApplyEffect(arg1_30)
+	elseif var0_30.type == IslandConst.ANIMATION_OP_SIGNLE then
+		if arg0_30.startSingleActionId == arg1_30 then
 			return
 		end
 
-		arg0_28:NotifiyCore(ISLAND_EVT.LOCK_PLAYER_INPUT)
+		arg0_30:NotifiyCore(ISLAND_EVT.LOCK_PLAYER_INPUT)
 
-		arg0_28.startSingleActionId = arg1_28
+		arg0_30.startSingleActionId = arg1_30
 
-		arg0_28:RemoveWaitTimer()
-		arg0_28:GetPlayerUnit():PlayAnimation(var0_28.resource, 0.25, function()
-			arg0_28.startSingleActionId = nil
+		arg0_30:RemoveWaitTimer()
+		arg0_30:GetPlayerUnit():PlayAnimation(var0_30.resource, 0.25, function()
+			arg0_30.startSingleActionId = nil
 
-			IslandTaskHelper.OnActionEnd(var0_28.id)
-			arg0_28:NotifiyCore(ISLAND_EVT.PLAY_SIGNLE_ANIMATION_END, var0_28.id)
+			IslandTaskHelper.OnActionEnd(var0_30.id)
+			arg0_30:NotifiyCore(ISLAND_EVT.PLAY_SIGNLE_ANIMATION_END, var0_30.id)
+			arg0_30:ClearSelected()
 		end)
 	end
 end
 
-function var0_0.HasFollowerAndNoVisitorAround(arg0_31)
-	local var0_31 = pg.island_set.action_bubble_range.key_value_int
-	local var1_31 = arg0_31:GetView()
-	local var2_31 = var1_31:GetPlayerPosition()
-	local var3_31 = var1_31:GetUnitListByKey(IslandConst.UNIT_LIST_PLAYER)
-	local var4_31 = _.any(var3_31, function(arg0_32)
-		return arg0_32 ~= var1_31.player and Vector3.Distance(arg0_32:GetPosition(), var2_31) <= var0_31
-	end)
-	local var5_31 = var1_31:GetUnitListByKey(IslandConst.UNIT_LIST_FOLLOW)
-	local var6_31 = _.any(var3_31, function(arg0_33)
-		return Vector3.Distance(arg0_33:GetPosition(), var2_31) <= var0_31
-	end)
+function var0_0.ClearSelected(arg0_33, ...)
+	arg0_33.selectedId = nil
 
-	return not var4_31 and var6_31
+	arg0_33:UpdateCardsSelected()
 end
 
-function var0_0.ApplyEffect(arg0_34, arg1_34)
-	arg0_34:CancelEffect()
+function var0_0.HasFollowerAndNoVisitorAround(arg0_34)
+	local var0_34 = pg.island_set.action_bubble_range.key_value_int
+	local var1_34 = arg0_34:GetView()
+	local var2_34 = var1_34:GetPlayerPosition()
+	local var3_34 = var1_34:GetUnitListByKey(IslandConst.UNIT_LIST_PLAYER)
+	local var4_34 = _.any(var3_34, function(arg0_35)
+		return arg0_35 ~= var1_34.player and Vector3.Distance(arg0_35:GetPosition(), var2_34) <= var0_34
+	end)
+	local var5_34 = var1_34:GetUnitListByKey(IslandConst.UNIT_LIST_FOLLOW)
+	local var6_34 = _.any(var3_34, function(arg0_36)
+		return Vector3.Distance(arg0_36:GetPosition(), var2_34) <= var0_34
+	end)
 
-	local var0_34 = pg.TimeMgr.GetInstance():GetServerTime()
-	local var1_34 = pg.TimeMgr.GetInstance():GetServerTime() + arg0_34.waitTime
+	return not var4_34 and var6_34
+end
 
-	arg0_34.loadingData = {
-		id = arg1_34,
-		startTime = var0_34,
-		endTime = var1_34
+function var0_0.ApplyEffect(arg0_37, arg1_37)
+	arg0_37:CancelEffect()
+
+	local var0_37 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var1_37 = pg.TimeMgr.GetInstance():GetServerTime() + arg0_37.waitTime
+
+	arg0_37.loadingData = {
+		id = arg1_37,
+		startTime = var0_37,
+		endTime = var1_37
 	}
 
-	for iter0_34, iter1_34 in pairs(arg0_34.cards) do
-		if iter1_34:Contains(arg1_34) then
-			iter1_34:LoadingEffect(arg0_34.loadingData)
+	for iter0_37, iter1_37 in pairs(arg0_37.cards) do
+		if iter1_37:Contains(arg1_37) then
+			iter1_37:LoadingEffect(arg0_37.loadingData)
 
 			break
 		end
 	end
 end
 
-function var0_0.CancelEffect(arg0_35)
-	if arg0_35.loadingData then
-		local var0_35 = arg0_35.loadingData.id
+function var0_0.CancelEffect(arg0_38)
+	if arg0_38.loadingData then
+		local var0_38 = arg0_38.loadingData.id
 
-		arg0_35.loadingData = nil
+		arg0_38.loadingData = nil
 
-		for iter0_35, iter1_35 in pairs(arg0_35.cards) do
-			if iter1_35:Contains(var0_35) then
-				iter1_35:ClearLoadingEffect()
+		for iter0_38, iter1_38 in pairs(arg0_38.cards) do
+			if iter1_38:Contains(var0_38) then
+				iter1_38:ClearLoadingEffect()
 
 				break
 			end
@@ -349,92 +399,98 @@ function var0_0.CancelEffect(arg0_35)
 	end
 end
 
-function var0_0.AddWaitTimer(arg0_36, arg1_36)
-	arg0_36:RemoveWaitTimer()
+function var0_0.AddWaitTimer(arg0_39, arg1_39)
+	arg0_39:RemoveWaitTimer()
 
-	arg0_36.startCoupleActionId = arg1_36
-	arg0_36.timer = Timer.New(function()
-		arg0_36:RemoveWaitTimer()
-	end, arg0_36.waitTime, 1)
+	arg0_39.startCoupleActionId = arg1_39
+	arg0_39.timer = Timer.New(function()
+		arg0_39:RemoveWaitTimer()
+		arg0_39:ClearSelected()
+	end, arg0_39.waitTime, 1)
 
-	arg0_36.timer:Start()
+	arg0_39.timer:Start()
 end
 
-function var0_0.RemoveWaitTimer(arg0_38, arg1_38)
-	arg1_38 = defaultValue(arg1_38, true)
+function var0_0.RemoveWaitTimer(arg0_41, arg1_41)
+	arg1_41 = defaultValue(arg1_41, true)
 
-	arg0_38:CancelEffect()
-
-	if arg0_38.timer then
-		arg0_38.timer:Stop()
-
-		arg0_38.timer = nil
+	if not arg1_41 then
+		arg0_41:ClearSelected()
 	end
 
-	if arg0_38.startCoupleActionId then
-		if arg1_38 then
-			arg0_38:GetPlayerUnit():CheckMovement()
+	arg0_41:CancelEffect()
+
+	if arg0_41.timer then
+		arg0_41.timer:Stop()
+
+		arg0_41.timer = nil
+	end
+
+	if arg0_41.startCoupleActionId then
+		if arg1_41 then
+			arg0_41:GetPlayerUnit():CheckMovement()
 		end
 
-		arg0_38.startCoupleActionId = nil
+		arg0_41.startCoupleActionId = nil
 	end
 
-	if arg0_38.isWaitingCoupleAction then
-		arg0_38.isWaitingCoupleAction = false
+	if arg0_41.isWaitingCoupleAction then
+		arg0_41.isWaitingCoupleAction = false
 
-		arg0_38:NotifiyMeditor(IslandBaseMediator.ANIMATION_OP, 0, 0)
-	end
-end
-
-function var0_0.UpdateCardsSelected(arg0_39)
-	for iter0_39, iter1_39 in pairs(arg0_39.cards) do
-		iter1_39:UpdateSelected(arg0_39.selectedId)
+		arg0_41:NotifiyMeditor(IslandBaseMediator.ANIMATION_OP, 0, 0)
 	end
 end
 
-function var0_0.OnUpdateItem(arg0_40, arg1_40, arg2_40)
-	local var0_40 = arg0_40.cards[arg2_40]
-
-	if not var0_40 then
-		arg0_40:OnInitItem(arg2_40)
-
-		var0_40 = arg0_40.cards[arg2_40]
-	end
-
-	local var1_40 = arg0_40.displays[arg1_40 + 1]
-
-	var0_40:Update(var1_40, arg0_40.selectedId, arg0_40.loadingData)
-end
-
-function var0_0.OnDisable(arg0_41)
-	if arg0_41.isShowing then
-		arg0_41:NotifiyCore(ISLAND_EVT.CLOSE_ANIMATION_OP)
-
-		arg0_41.isShowing = false
-
-		for iter0_41, iter1_41 in pairs(arg0_41.cards) do
-			iter1_41:Clear()
-		end
-
-		setParent(arg0_41.opPanel, arg0_41.lookParent)
-	end
-end
-
-function var0_0.OnDispose(arg0_42)
-	var0_0.super.OnDispose(arg0_42)
-	ClearLScrollrect(arg0_42.scrollrect)
-	arg0_42.chatView:Dispose()
-
-	arg0_42.chatView = nil
-
-	arg0_42:RemoveWaitTimer()
-
+function var0_0.UpdateCardsSelected(arg0_42)
 	for iter0_42, iter1_42 in pairs(arg0_42.cards) do
-		iter1_42:Dispose()
+		iter1_42:UpdateSelected(arg0_42.selectedId)
+	end
+end
+
+function var0_0.OnUpdateItem(arg0_43, arg1_43, arg2_43)
+	local var0_43 = arg0_43.cards[arg2_43]
+
+	if not var0_43 then
+		arg0_43:OnInitItem(arg2_43)
+
+		var0_43 = arg0_43.cards[arg2_43]
 	end
 
-	arg0_42.cards = nil
-	arg0_42.isShowing = false
+	local var1_43 = arg0_43.displays[arg1_43 + 1]
+
+	var0_43:Update(var1_43, arg0_43.selectedId, arg0_43.loadingData, arg0_43.markActionId)
+end
+
+function var0_0.OnDisable(arg0_44)
+	if arg0_44.isShowing then
+		arg0_44:NotifiyCore(ISLAND_EVT.CLOSE_ANIMATION_OP)
+
+		arg0_44.isShowing = false
+
+		for iter0_44, iter1_44 in pairs(arg0_44.cards) do
+			iter1_44:Clear()
+		end
+
+		setParent(arg0_44.opPanel, arg0_44.lookParent)
+	end
+end
+
+function var0_0.OnDispose(arg0_45)
+	var0_0.super.OnDispose(arg0_45)
+	ClearLScrollrect(arg0_45.scrollrect)
+	arg0_45.chatView:Dispose()
+
+	arg0_45.chatView = nil
+
+	arg0_45:RemoveWaitTimer()
+
+	for iter0_45, iter1_45 in pairs(arg0_45.cards) do
+		iter1_45:Dispose()
+	end
+
+	arg0_45.cards = nil
+	arg0_45.isShowing = false
+	arg0_45.markActionId = nil
 end
 
 return var0_0

@@ -22,20 +22,20 @@ function var0_0.OnInit(arg0_4)
 
 	arg0_4.itemHolder = arg0_4._tf:Find("items")
 
-	local var0_4 = arg0_4._tf:Find("preloadResources"):GetComponent(typeof(ItemList))
-	local var1_4 = Instantiate(var0_4.prefabItem[0])
+	local var0_4 = arg0_4._tf:Find("preloadResources")
+	local var1_4 = var0_4:Find("mengjing_rumeng")
 
 	setAnchoredPosition(arg0_4._tf:Find("rumeng"), tf(var1_4).anchoredPosition)
 	setParent(var1_4, arg0_4._tf:Find("rumeng"))
 	setAnchoredPosition(var1_4, Vector2.zero)
-	arg0_4:InitTransformMapBtn(arg0_4._tf:Find("rumeng"), 1, var0_4.prefabItem[1])
+	arg0_4:InitTransformMapBtn(arg0_4._tf:Find("rumeng"), 1, var0_4:Find("mengjing_rumeng_zhuangchang"))
 
-	local var2_4 = Instantiate(var0_4.prefabItem[2])
+	local var2_4 = var0_4:Find("mengjing_huigui")
 
 	setAnchoredPosition(arg0_4._tf:Find("huigui"), tf(var2_4).anchoredPosition)
 	setParent(var2_4, arg0_4._tf:Find("huigui"))
 	setAnchoredPosition(var2_4, Vector2.zero)
-	arg0_4:InitTransformMapBtn(arg0_4._tf:Find("huigui"), -1, var0_4.prefabItem[3])
+	arg0_4:InitTransformMapBtn(arg0_4._tf:Find("huigui"), -1, var0_4:Find("mengjing_huigui_zhuangchang"))
 end
 
 function var0_0.OnShow(arg0_5)

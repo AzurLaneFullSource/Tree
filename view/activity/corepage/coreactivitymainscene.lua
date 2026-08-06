@@ -148,114 +148,137 @@ function var0_0.flushTabs(arg0_22)
 	arg0_22.tabsList:align(arg0_22.tabs.childCount)
 end
 
-function var0_0.selectActivity(arg0_23, arg1_23)
-	if arg0_23.nextActivity == arg1_23 or not arg0_23.nextActivity and arg0_23.activity and arg1_23.id == arg0_23.activity.id then
+function var0_0.IsImageTgName(arg0_23)
+	return false
+end
+
+function var0_0.OnToggleName(arg0_24, arg1_24, arg2_24)
+	local var0_24 = arg2_24:getConfig("title_res_tag")
+
+	setText(arg1_24:Find("on/name"), i18n(var0_24))
+	setText(arg1_24:Find("off/name"), i18n(var0_24))
+
+	if arg0_24:IsImageTgName() then
+		local var1_24 = string.lower(var0_24)
+
+		if checkABExist("coreactivityuitable/" .. var1_24 .. "_text") then
+			setImageSprite(arg1_24:Find("off/imgName"), GetSpriteFromAtlas("coreactivityuitable/" .. var1_24 .. "_text", ""), true)
+		end
+
+		if checkABExist("coreactivityuitable/" .. var1_24 .. "_text_selected") then
+			setImageSprite(arg1_24:Find("on/imgName"), GetSpriteFromAtlas("coreactivityuitable/" .. var1_24 .. "_text_selected", ""), true)
+		end
+	end
+end
+
+function var0_0.selectActivity(arg0_25, arg1_25)
+	if arg0_25.nextActivity == arg1_25 or not arg0_25.nextActivity and arg0_25.activity and arg1_25.id == arg0_25.activity.id then
 		return
 	end
 
-	local var0_23 = {}
+	local var0_25 = {}
 
-	if arg0_23.activity and not arg0_23.nextActivity then
-		arg0_23.switchCount = arg0_23.switchCount + 1
+	if arg0_25.activity and not arg0_25.nextActivity then
+		arg0_25.switchCount = arg0_25.switchCount + 1
 
-		table.insert(var0_23, function(arg0_24)
-			arg0_23.pageDic[arg0_23.activity.id]:ActionInvoke("SwitchOut", function()
-				arg0_23.switchCount = arg0_23.switchCount - 1
-
-				arg0_24()
-			end)
-		end)
-	end
-
-	if not arg0_23.activity or arg0_23.activity.id ~= arg1_23.id then
-		local var1_23 = arg0_23.pageDic[arg1_23.id]
-
-		assert(var1_23, "找不到id:" .. arg1_23.id .. "的活动页，请检查")
-
-		arg0_23.switchCount = arg0_23.switchCount + 1
-
-		table.insert(var0_23, function(arg0_26)
-			var1_23:Load()
-			var1_23:ActionInvoke("ShowOrHide", false)
-			var1_23:CallbackInvoke(function()
-				arg0_23.switchCount = arg0_23.switchCount - 1
+		table.insert(var0_25, function(arg0_26)
+			arg0_25.pageDic[arg0_25.activity.id]:ActionInvoke("SwitchOut", function()
+				arg0_25.switchCount = arg0_25.switchCount - 1
 
 				arg0_26()
 			end)
 		end)
 	end
 
-	arg0_23.nextActivity = arg1_23
+	if not arg0_25.activity or arg0_25.activity.id ~= arg1_25.id then
+		local var1_25 = arg0_25.pageDic[arg1_25.id]
 
-	parallelAsync(var0_23, function()
-		if arg0_23.switchCount > 0 then
+		assert(var1_25, "找不到id:" .. arg1_25.id .. "的活动页，请检查")
+
+		arg0_25.switchCount = arg0_25.switchCount + 1
+
+		table.insert(var0_25, function(arg0_28)
+			var1_25:Load()
+			var1_25:ActionInvoke("ShowOrHide", false)
+			var1_25:CallbackInvoke(function()
+				arg0_25.switchCount = arg0_25.switchCount - 1
+
+				arg0_28()
+			end)
+		end)
+	end
+
+	arg0_25.nextActivity = arg1_25
+
+	parallelAsync(var0_25, function()
+		if arg0_25.switchCount > 0 then
 			return
 		end
 
-		if arg0_23.activity then
-			arg0_23.pageDic[arg0_23.activity.id]:ActionInvoke("ShowOrHide", false)
+		if arg0_25.activity then
+			arg0_25.pageDic[arg0_25.activity.id]:ActionInvoke("ShowOrHide", false)
 		end
 
-		arg0_23.activity = arg0_23.nextActivity
-		arg0_23.contextData.id = arg0_23.nextActivity.id
-		arg0_23.nextActivity = nil
+		arg0_25.activity = arg0_25.nextActivity
+		arg0_25.contextData.id = arg0_25.nextActivity.id
+		arg0_25.nextActivity = nil
 
-		local var0_28 = arg0_23.pageDic[arg0_23.activity.id]
+		local var0_30 = arg0_25.pageDic[arg0_25.activity.id]
 
-		var0_28:ActionInvoke("ShowOrHide", true)
-		var0_28:ActionInvoke("Flush", arg0_23.activity)
+		var0_30:ActionInvoke("ShowOrHide", true)
+		var0_30:ActionInvoke("Flush", arg0_25.activity)
 	end)
 end
 
-function var0_0.verifyTabs(arg0_29, arg1_29)
-	local var0_29 = arg0_29.activities[arg0_29:getActivityIndex(arg1_29) or arg0_29:getActivityIndex(arg0_29:GetActiveActivity()) or 1]
+function var0_0.verifyTabs(arg0_31, arg1_31)
+	local var0_31 = arg0_31.activities[arg0_31:getActivityIndex(arg1_31) or arg0_31:getActivityIndex(arg0_31:GetActiveActivity()) or 1]
 
-	if var0_29 == nil then
+	if var0_31 == nil then
 		return
 	end
 
-	local var1_29 = var0_29:getConfig("is_show")
-	local var2_29 = arg0_29.tabs:Find(tostring(var1_29))
+	local var1_31 = var0_31:getConfig("is_show")
+	local var2_31 = arg0_31.tabs:Find(tostring(var1_31))
 
-	if var2_29 then
-		triggerToggle(var2_29, true)
+	if var2_31 then
+		triggerToggle(var2_31, true)
 	end
 end
 
-function var0_0.GetActiveActivity(arg0_30)
-	for iter0_30, iter1_30 in ipairs(arg0_30.activities) do
-		if not iter1_30:isEnd() then
-			return iter1_30.id
+function var0_0.GetActiveActivity(arg0_32)
+	for iter0_32, iter1_32 in ipairs(arg0_32.activities) do
+		if not iter1_32:isEnd() then
+			return iter1_32.id
 		end
 	end
 end
 
-function var0_0.GetActivityIdByPageClass(arg0_31, arg1_31)
-	for iter0_31, iter1_31 in ipairs(arg0_31.activities or {}) do
-		local var0_31 = iter1_31:getConfig("page_info")
+function var0_0.GetActivityIdByPageClass(arg0_33, arg1_33)
+	for iter0_33, iter1_33 in ipairs(arg0_33.activities or {}) do
+		local var0_33 = iter1_33:getConfig("page_info")
 
-		if var0_31 and var0_31.class_name == arg1_31 then
-			return iter1_31.id
+		if var0_33 and var0_33.class_name == arg1_33 then
+			return iter1_33.id
 		end
 	end
 
 	return nil
 end
 
-function var0_0.onBackPressed(arg0_32)
-	local var0_32 = arg0_32.pageDic[arg0_32.activity.id]
+function var0_0.onBackPressed(arg0_34)
+	local var0_34 = arg0_34.pageDic[arg0_34.activity.id]
 
-	if var0_32:IsShowingPopWindow() then
-		var0_32:ClosePopWindow()
+	if var0_34:IsShowingPopWindow() then
+		var0_34:ClosePopWindow()
 
 		return
 	end
 
-	var0_0.super.onBackPressed(arg0_32)
+	var0_0.super.onBackPressed(arg0_34)
 end
 
-function var0_0.getActClass(arg0_33, arg1_33)
-	return _G[arg1_33]
+function var0_0.getActClass(arg0_35, arg1_35)
+	return _G[arg1_35]
 end
 
 return var0_0

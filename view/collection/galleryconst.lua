@@ -1,71 +1,50 @@
-local var0_0 = class("GalleryConst")
+GalleryConst = {}
+
+local var0_0 = GalleryConst
 
 var0_0.Version = 3
 var0_0.AutoScrollIndex = 41
 var0_0.NewCount = 15
-var0_0.OPEN_FULL_SCREEN_PIC_VIEW = "GelleryConst:OPEN_FULL_SCREEN_PIC_VIEW"
 var0_0.CardStates = {
-	DirectShow = 0,
-	Unlocked = 1,
-	Unlockable = 2,
-	DisUnlockable = 3
+	Unlocked = 1
 }
-var0_0.DateIndex = {
-	0
-}
-var0_0.DateIndexName = {
-	(i18n("res_pic_time_all"))
-}
-var0_0.Data_All_Value = 0
 var0_0.Sort_Order_Up = 0
 var0_0.Sort_Order_Down = 1
 var0_0.Filte_Normal_Value = 0
 var0_0.Filte_Like_Value = 1
-var0_0.Loading_BG_NO_Filte = 0
-var0_0.Loading_BG_Filte = 1
+var0_0.Filte_Set_Normal_Value = 0
+var0_0.Filte_Set_Value = 1
 var0_0.CARD_PATH_PREFIX = "gallerypic/"
 var0_0.PIC_PATH_PREFIX = "gallerypic/"
-var0_0.Still_Show_On_Lock = 0
-var0_0.Set_BG_Func_Save_Tag = "set_bg_func_save"
 
-function var0_0.SetBGFuncTag(arg0_1)
-	if getProxy(PlayerProxy) then
-		local var0_1 = getProxy(PlayerProxy):getRawData().id
+function var0_0.GetGalleryPicPathByID(arg0_1)
+	local var0_1 = pg.gallery_config[arg0_1]
 
-		PlayerPrefs.SetInt(var0_0.Set_BG_Func_Save_Tag .. var0_1, arg0_1 and 1 or 0)
-	end
-end
-
-function var0_0.GetBGFuncTag()
-	if getProxy(PlayerProxy) then
-		local var0_2 = getProxy(PlayerProxy):getRawData().id
-
-		return PlayerPrefs.GetInt(var0_0.Set_BG_Func_Save_Tag .. var0_2) == 1 and true or false
-	end
-end
-
-function var0_0.GetGalleryPicPathByID(arg0_3)
-	local var0_3 = pg.gallery_config[arg0_3]
-
-	if not var0_3 then
+	if not var0_1 then
 		return nil
 	end
 
-	local var1_3 = var0_3.illustration
+	local var1_1 = var0_1.illustration
 
-	return var0_0.PIC_PATH_PREFIX .. var1_3
+	return var0_0.PIC_PATH_PREFIX .. var1_1
 end
 
-function var0_0.GetGalleryPreviewPicPathByID(arg0_4)
-	local var0_4 = pg.gallery_config[arg0_4]
+function var0_0.GetGalleryPreviewPicPathByID(arg0_2)
+	local var0_2 = pg.gallery_config[arg0_2]
 
-	if not var0_4 then
+	if not var0_2 then
 		return nil
 	end
 
-	local var1_4 = var0_4.illustration .. "_t"
+	local var1_2 = var0_2.illustration .. "_t"
 
-	return var0_0.CARD_PATH_PREFIX .. var1_4
+	return var0_0.CARD_PATH_PREFIX .. var1_2
+end
+
+function var0_0.isGalleryLikeByID(arg0_3)
+	local var0_3 = getProxy(AppreciateProxy):getGalleryLikeIDList()
+
+	return table.contains(var0_3, arg0_3)
 end
 
 return var0_0

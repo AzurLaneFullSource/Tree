@@ -7,30 +7,16 @@ function var0_0.OnAttach(arg0_1, arg1_1)
 	arg0_1.tf = tf(arg1_1)
 	arg0_1.animator = arg0_1.tf:GetComponent(typeof(UnityEngine.Animator))
 
-	local var0_1 = arg0_1.tf:GetComponent(typeof(ItemList))
+	bindComponent(arg0_1, arg1_1)
 
-	arg0_1.turntabletf = var0_1.prefabItem[0].transform
-	arg0_1.decorationtf = var0_1.prefabItem[1].transform
-	arg0_1.tableRoot = var0_1.prefabItem[3].transform
 	arg0_1.decorationAnimator = arg0_1.decorationtf:GetComponent(typeof(UnityEngine.Animator))
-	arg0_1.trunTalbeTip = var0_1.prefabItem[4].transform
 
 	setActive(arg0_1.trunTalbeTip, false)
-
-	arg0_1.noGotShoot = var0_1.prefabItem[5].transform
-	arg0_1.boomShoot = var0_1.prefabItem[6].transform
-	arg0_1.centerRoot = var0_1.prefabItem[7].transform
-
 	setActive(arg0_1.boomShoot, false)
-
-	local var1_1 = 8
-
-	for iter0_1 = var1_1, 13 do
-		arg0_1["bombId" .. tostring(iter0_1 - var1_1 + 1)] = var0_1.prefabItem[iter0_1].transform
-	end
 end
 
 function var0_0.OnDetach(arg0_2)
+	bindComponent(arg0_2, arg0_2.tf, true)
 	var0_0.super.OnDetach(arg0_2)
 end
 

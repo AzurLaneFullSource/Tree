@@ -4110,6 +4110,20 @@ pg.memory_template.all = {
 	5235,
 	5236,
 	5237,
+	5291,
+	5292,
+	5293,
+	5294,
+	5295,
+	5296,
+	5297,
+	5301,
+	5302,
+	5303,
+	5304,
+	5305,
+	5306,
+	5307,
 	5271,
 	5272,
 	5273,
@@ -78414,6 +78428,258 @@ end)()
 			"LAFEIER7"
 		}
 	}
+	pg.base.memory_template[5291] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "SHENGTAFEI1",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "Midnight Invitation",
+		condition = "Begin \"Our Eighth Mystery\" Chapter 1",
+		number = 0,
+		task = 500271,
+		year = 0,
+		id = 5291,
+		icon = "",
+		is_open = 0,
+		unlock_pre = {
+			"SHENGTAFEI1"
+		}
+	}
+	pg.base.memory_template[5292] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "SHENGTAFEI2",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "There Really Is a Ghost?!",
+		condition = "Begin \"Our Eighth Mystery\" Chapter 2",
+		number = 0,
+		task = 500272,
+		year = 0,
+		id = 5292,
+		icon = "",
+		is_open = 0,
+		unlock_pre = {
+			"SHENGTAFEI2"
+		}
+	}
+	pg.base.memory_template[5293] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "SHENGTAFEI3",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "Sneak Past the Night Patrol!",
+		condition = "Begin \"Our Eighth Mystery\" Chapter 3",
+		number = 0,
+		task = 500273,
+		year = 0,
+		id = 5293,
+		icon = "",
+		is_open = 0,
+		unlock_pre = {
+			"SHENGTAFEI3"
+		}
+	}
+	pg.base.memory_template[5294] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "SHENGTAFEI4",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "A Familiar Scribble",
+		condition = "Begin \"Our Eighth Mystery\" Chapter 4",
+		number = 0,
+		task = 500274,
+		year = 0,
+		id = 5294,
+		icon = "",
+		is_open = 0,
+		unlock_pre = {
+			"SHENGTAFEI4"
+		}
+	}
+	pg.base.memory_template[5295] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "SHENGTAFEI5",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "The Truth Behind the Tome",
+		condition = "Begin \"Our Eighth Mystery\" Chapter 5",
+		number = 0,
+		task = 500275,
+		year = 0,
+		id = 5295,
+		icon = "",
+		is_open = 0,
+		unlock_pre = {
+			"SHENGTAFEI5"
+		}
+	}
+	pg.base.memory_template[5296] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "SHENGTAFEI6",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "Embarrassing Past Exposed!",
+		condition = "Begin \"Our Eighth Mystery\" Chapter 6",
+		number = 0,
+		task = 500276,
+		year = 0,
+		id = 5296,
+		icon = "",
+		is_open = 0,
+		unlock_pre = {
+			"SHENGTAFEI6"
+		}
+	}
+	pg.base.memory_template[5297] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "SHENGTAFEI7",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "Birth of the Eighth Mystery!",
+		condition = "Begin \"Our Eighth Mystery\" Chapter 7",
+		number = 0,
+		task = 500277,
+		year = 0,
+		id = 5297,
+		icon = "",
+		is_open = 0,
+		unlock_pre = {
+			"SHENGTAFEI7"
+		}
+	}
+	pg.base.memory_template[5301] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "2056000",
+		type = 2,
+		mask = "bg/bg_memory",
+		title = "Dawn of Winter",
+		condition = "Begin \"Fateful Encounter\" Chapter 1",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5301,
+		icon = "memory_youkezilai",
+		is_open = 0,
+		unlock_pre = {
+			"2056000"
+		}
+	}
+	pg.base.memory_template[5302] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "YOUKEZILAI2",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "\"Her\" Arrival",
+		condition = "Begin \"Fateful Encounter\" Chapter 2",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5302,
+		icon = "memory_youkezilai",
+		is_open = 0,
+		unlock_pre = {
+			"YOUKEZILAI2"
+		}
+	}
+	pg.base.memory_template[5303] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "YOUKEZILAI3",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "New Connexion",
+		condition = "Begin \"Fateful Encounter\" Chapter 3",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5303,
+		icon = "memory_youkezilai",
+		is_open = 0,
+		unlock_pre = {
+			"YOUKEZILAI3"
+		}
+	}
+	pg.base.memory_template[5304] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "YOUKEZILAI4",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "What Happened Next",
+		condition = "Begin \"Fateful Encounter\" Chapter 4",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5304,
+		icon = "memory_youkezilai",
+		is_open = 0,
+		unlock_pre = {
+			"YOUKEZILAI4"
+		}
+	}
+	pg.base.memory_template[5305] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "YOUKEZILAI5",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "The Winter Wall",
+		condition = "Begin \"Fateful Encounter\" Chapter 5",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5305,
+		icon = "memory_youkezilai",
+		is_open = 0,
+		unlock_pre = {
+			"YOUKEZILAI5"
+		}
+	}
+	pg.base.memory_template[5306] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "YOUKEZILAI6",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "Shallow-Layer Investigation",
+		condition = "Begin \"Fateful Encounter\" Chapter 6",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5306,
+		icon = "memory_youkezilai",
+		is_open = 0,
+		unlock_pre = {
+			"YOUKEZILAI6"
+		}
+	}
+	pg.base.memory_template[5307] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "YOUKEZILAI7",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "The City of the Lost",
+		condition = "Begin \"Fateful Encounter\" Chapter 7",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5307,
+		icon = "memory_youkezilai",
+		is_open = 0,
+		unlock_pre = {
+			"YOUKEZILAI7"
+		}
+	}
 	pg.base.memory_template[5271] = {
 		ship_group = 0,
 		subtitle = "",
@@ -79854,6 +80120,8 @@ end)()
 			"ZHUANGJIA1"
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_template[10072] = {
 		ship_group = 0,
 		subtitle = "",
@@ -80106,8 +80374,6 @@ end)()
 			"LINGHANGYUANYANGCHENGJIHUA5"
 		}
 	}
-end)()
-;(function()
 	pg.base.memory_template[20005] = {
 		ship_group = 0,
 		subtitle = "",
@@ -81656,6 +81922,8 @@ end)()
 			"LINGYANGZHEYANGCHENGJIHUA10"
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_template[20091] = {
 		ship_group = 0,
 		subtitle = "",
@@ -81908,8 +82176,6 @@ end)()
 			"LINGYANGZHEYANGCHENGJIHUA24"
 		}
 	}
-end)()
-;(function()
 	pg.base.memory_template[20105] = {
 		ship_group = 0,
 		subtitle = "",
@@ -83458,6 +83724,8 @@ end)()
 			"TANSUOZHEYANGCHENGJIHUA42"
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_template[20192] = {
 		ship_group = 0,
 		subtitle = "",
@@ -83710,8 +83978,6 @@ end)()
 			"TANSUOZHELAIFANGJISHI1"
 		}
 	}
-end)()
-;(function()
 	pg.base.memory_template[20207] = {
 		ship_group = 0,
 		subtitle = "",

@@ -97,7 +97,7 @@ function var0_0.init(arg0_5)
 	arg0_5._arrUpSub = arg0_5._subGS:Find("up")
 	arg0_5._arrDownSub = arg0_5._subGS:Find("down")
 	arg0_5._attrFrame = arg0_5._blurLayer:Find("attr_frame")
-	arg0_5._cardTpl = arg0_5._tf:GetComponent(typeof(ItemList)).prefabItem[0]
+	arg0_5._cardTpl = arg0_5._tf:Find("RectShipCardTpl")
 	arg0_5._cards = {}
 	arg0_5._cards[TeamType.Main] = {}
 	arg0_5._cards[TeamType.Vanguard] = {}

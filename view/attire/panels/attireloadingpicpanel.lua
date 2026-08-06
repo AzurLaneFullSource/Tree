@@ -1,4 +1,4 @@
-local var0_0 = class("AttireFramePanel", import("...base.BaseSubView"))
+local var0_0 = class("AttireLoadingPicPanel", import("...base.BaseSubView"))
 
 var0_0.FilterMode = {
 	Default = 2,

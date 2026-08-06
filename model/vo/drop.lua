@@ -461,8 +461,9 @@ function var0_0.InitSwitch()
 		end,
 		[DROP_TYPE_ISLAND_INVITATION] = function(arg0_87)
 			local var0_87 = pg.island_chara_template[arg0_87.id]
+			local var1_87 = var0_87.invite_item
 
-			arg0_87.desc = ""
+			arg0_87.desc = pg.island_item_data_template[var1_87].desc
 
 			return var0_87
 		end,

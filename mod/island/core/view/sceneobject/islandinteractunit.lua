@@ -131,6 +131,21 @@ function var0_0.BindSelf(arg0_11, arg1_11)
 				end
 			end
 		end
+
+		for iter2_11, iter3_11 in ipairs(arg1_11.control_binding or {}) do
+			local var6_11 = iter3_11[1]
+			local var7_11 = iter3_11[2]
+			local var8_11 = iter3_11[3] or ""
+			local var9_11 = var1_11[var6_11]
+
+			if var9_11 and var7_11 and var7_11 > 0 then
+				local var10_11 = var8_11 == "" and arg0_11:GetTargetRoot() or arg0_11:GetTargetRoot():Find(var8_11)
+
+				if var10_11 then
+					TimelineHelper.SetControlBinding(arg0_11.director, var9_11, var7_11 - 1, go(var10_11))
+				end
+			end
+		end
 	end
 end
 

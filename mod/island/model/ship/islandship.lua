@@ -24,7 +24,8 @@ function var0_0.Ctor(arg0_1, arg1_1)
 
 	arg0_1.skill = IslandShipSkill.New({
 		id = arg0_1:getConfig("skill_id"),
-		level = arg1_1.skill_lv or 0
+		level = arg1_1.skill_lv or 0,
+		isUseToday = (arg1_1.skill_use_state or 0) == 1
 	})
 	arg0_1.maxEnerey = arg0_1:getConfig("power")
 
@@ -717,72 +718,82 @@ function var0_0.CanUpgradeSkill(arg0_78)
 	end)
 end
 
-function var0_0.GetVaildStatusByGroup(arg0_80, arg1_80)
-	return _.select(arg0_80.status, function(arg0_81)
-		return not arg0_81:IsExpiration() and arg0_81:GetGroup() == arg1_80
-	end)
+function var0_0.HasGreetingSkill(arg0_80)
+	local var0_80 = arg0_80:GetSkill()
+
+	return var0_80 and var0_80:IsUnlock() and var0_80:IsGreetingType()
 end
 
-function var0_0.GetVaildStatus(arg0_82)
+function var0_0.ApplySkill(arg0_81, arg1_81)
+	arg0_81:GetSkill():Apply(arg0_81, arg1_81)
+end
+
+function var0_0.GetVaildStatusByGroup(arg0_82, arg1_82)
 	return _.select(arg0_82.status, function(arg0_83)
-		return not arg0_83:IsExpiration()
+		return not arg0_83:IsExpiration() and arg0_83:GetGroup() == arg1_82
 	end)
 end
 
-function var0_0.GetVaildStatusByType(arg0_84, arg1_84)
+function var0_0.GetVaildStatus(arg0_84)
 	return _.select(arg0_84.status, function(arg0_85)
-		return not arg0_85:IsExpiration() and arg0_85:GetBuffType() == arg1_84
+		return not arg0_85:IsExpiration()
 	end)
 end
 
-function var0_0.GetDisplayStatus(arg0_86)
+function var0_0.GetVaildStatusByType(arg0_86, arg1_86)
 	return _.select(arg0_86.status, function(arg0_87)
-		return not arg0_87:IsExpiration() and arg0_87:CanDisplay()
+		return not arg0_87:IsExpiration() and arg0_87:GetBuffType() == arg1_86
 	end)
 end
 
-function var0_0.GetFavoriteGift(arg0_88)
-	return arg0_88:getConfig("gift_id")
-end
-
-function var0_0.IsFavoriteGift(arg0_89, arg1_89)
-	local var0_89 = arg0_89:GetFavoriteGift()
-
-	return _.any(var0_89, function(arg0_90)
-		return arg0_90 == arg1_89
+function var0_0.GetDisplayStatus(arg0_88)
+	return _.select(arg0_88.status, function(arg0_89)
+		return not arg0_89:IsExpiration() and arg0_89:CanDisplay()
 	end)
 end
 
-function var0_0.AddStatus(arg0_91, arg1_91)
-	local var0_91 = _.detect(arg0_91.status, function(arg0_92)
-		return arg0_92.id == arg1_91.id
+function var0_0.GetFavoriteGift(arg0_90)
+	return arg0_90:getConfig("gift_id")
+end
+
+function var0_0.IsFavoriteGift(arg0_91, arg1_91)
+	local var0_91 = arg0_91:GetFavoriteGift()
+
+	return _.any(var0_91, function(arg0_92)
+		return arg0_92 == arg1_91
+	end)
+end
+
+function var0_0.AddStatus(arg0_93, arg1_93)
+	local var0_93 = _.detect(arg0_93.status, function(arg0_94)
+		return arg0_94.id == arg1_93.id
 	end)
 
-	if var0_91 then
-		table.removebyvalue(arg0_91.status, var0_91)
+	if var0_93 then
+		table.removebyvalue(arg0_93.status, var0_93)
 	end
 
-	local var1_91 = arg0_91:GetVaildStatus()
-	local var2_91 = arg1_91:GetDuelTypeList()
-	local var3_91 = _.detect(var1_91, function(arg0_93)
-		return table.contains(var2_91, arg0_93:GetGroup())
+	local var1_93 = arg0_93:GetVaildStatus()
+	local var2_93 = arg1_93:GetDuelTypeList()
+	local var3_93 = _.detect(var1_93, function(arg0_95)
+		return table.contains(var2_93, arg0_95:GetGroup())
 	end)
 
-	if var3_91 then
-		table.removebyvalue(arg0_91.status, var3_91)
+	if var3_93 then
+		table.removebyvalue(arg0_93.status, var3_93)
 	end
 
-	local var4_91 = arg1_91:GetDuelIdList()
-	local var5_91 = _.detect(var1_91, function(arg0_94)
-		return table.contains(var4_91, arg0_94.id)
+	local var4_93 = arg1_93:GetDuelIdList()
+	local var5_93 = _.detect(var1_93, function(arg0_96)
+		return table.contains(var4_93, arg0_96.id)
 	end)
 
-	if var5_91 then
-		table.removebyvalue(arg0_91.status, var5_91)
+	if var5_93 then
+		table.removebyvalue(arg0_93.status, var5_93)
 	end
 
-	pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildIslandShipAddBuff(arg0_91.id, arg1_91.id))
-	table.insert(arg0_91.status, arg1_91)
+	pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildIslandShipAddBuff(arg0_93.id, arg1_93.id))
+	table.insert(arg0_93.status, arg1_93)
 end
 
 return var0_0

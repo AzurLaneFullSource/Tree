@@ -324,16 +324,16 @@ function var0_0.initUI(arg0_12)
 	setActive(arg0_12.clouds, true)
 	setActive(arg0_12.float:Find("levels"), false)
 
-	arg0_12.resources = arg0_12._tf:Find("resources"):GetComponent("ItemList")
-	arg0_12.arrowTarget = arg0_12.resources.prefabItem[0]
-	arg0_12.destinationMarkTpl = arg0_12.resources.prefabItem[1]
-	arg0_12.championTpl = arg0_12.resources.prefabItem[3]
-	arg0_12.deadTpl = arg0_12.resources.prefabItem[4]
-	arg0_12.enemyTpl = Instantiate(arg0_12.resources.prefabItem[5])
-	arg0_12.oniTpl = arg0_12.resources.prefabItem[6]
-	arg0_12.shipTpl = arg0_12.resources.prefabItem[8]
-	arg0_12.subTpl = arg0_12.resources.prefabItem[9]
-	arg0_12.transportTpl = arg0_12.resources.prefabItem[11]
+	arg0_12.resources = arg0_12._tf:Find("resources")
+	arg0_12.arrowTarget = arg0_12.resources:Find("Tpl_Arrow_Target")
+	arg0_12.destinationMarkTpl = arg0_12.resources:Find("Tpl_Destination_Mark")
+	arg0_12.championTpl = arg0_12.resources:Find("Tpl_Champion")
+	arg0_12.deadTpl = arg0_12.resources:Find("Tpl_Dead")
+	arg0_12.enemyTpl = arg0_12.resources:Find("Tpl_Enemy")
+	arg0_12.oniTpl = arg0_12.resources:Find("Tpl_Oni")
+	arg0_12.shipTpl = arg0_12.resources:Find("Tpl_Ship")
+	arg0_12.subTpl = arg0_12.resources:Find("Tpl_Sub")
+	arg0_12.transportTpl = arg0_12.resources:Find("Tpl_Transport")
 
 	setText(tf(arg0_12.enemyTpl):Find("fighting/Text"), i18n("ui_word_levelui2_inevent"))
 	arg0_12:HideBtns()

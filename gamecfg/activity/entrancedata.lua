@@ -435,5 +435,46 @@ return {
 		isTip = function()
 			return CultivatingPlantTools.NeedShowRedPoint()
 		end
+	},
+	{
+		banner = "activity_escapemanor",
+		event = ActivityMediator.EVENT_GO_SCENE,
+		data = {
+			SCENE.ACTIVITY,
+			{
+				id = 51073
+			}
+		},
+		isShow = function()
+			local var0_40 = getProxy(ActivityProxy):getActivityById(51073)
+
+			return var0_40 and not var0_40:isEnd()
+		end,
+		isTip = function()
+			local var0_41 = getProxy(ActivityProxy):getActivityById(51073)
+
+			return Activity.IsActivityReady(var0_41)
+		end
+	},
+	{
+		banner = "activity_auction",
+		event = ActivityMediator.EVENT_GO_SCENE,
+		data = {
+			SCENE.ACTIVITY,
+			{
+				id = 970002
+			}
+		},
+		isShow = function()
+			local var0_42 = getProxy(ActivityProxy):getActivityById(970002)
+
+			return var0_42 and not var0_42:isEnd()
+		end,
+		isTip = function()
+			local var0_43 = getProxy(ActivityProxy):getActivityById(970002)
+			local var1_43 = getProxy(ActivityProxy):getActivityById(970003)
+
+			return Activity.IsActivityReady(var0_43) or Activity.IsActivityReady(var1_43)
+		end
 	}
 }

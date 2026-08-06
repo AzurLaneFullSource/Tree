@@ -121,6 +121,7 @@ function var0_0.Destroy(arg0_9)
 
 	pg.DelegateInfo.Dispose(arg0_9)
 	arg0_9:OnDestroy()
+	bindComponent(arg0_9, arg0_9._go, true)
 	arg0_9:disposeEvent()
 	arg0_9:cleanManagedTween()
 

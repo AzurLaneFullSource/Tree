@@ -24,16 +24,20 @@ pg.activity_banner.all = {
 	202
 }
 pg.activity_banner.get_id_list_by_type = {
-	[2] = {
-		1,
+	{
+		1
+	},
+	{
+		5,
+		6,
+		8,
+		9
+	},
+	{
 		2,
 		3,
 		4,
-		5,
-		6,
-		7,
-		8,
-		9
+		7
 	},
 	[9] = {
 		90,
@@ -61,19 +65,16 @@ pg.base.activity_banner = {}
 
 ;(function()
 	pg.base.activity_banner[1] = {
+		param = "https://www.youtube.com/watch?v=CFN7MIpPwNw",
 		id = 1,
 		pic = "temp1",
-		type = 2,
-		param = {
-			"scene skinshop",
-			{}
-		},
+		type = 1,
 		time = {
 			{
 				{
 					2026,
-					7,
-					23
+					8,
+					6
 				},
 				{
 					0,
@@ -85,33 +86,27 @@ pg.base.activity_banner = {}
 				{
 					2026,
 					8,
-					5
+					8
 				},
 				{
-					23,
-					59,
-					59
+					20,
+					0,
+					0
 				}
 			}
 		}
 	}
 	pg.base.activity_banner[2] = {
+		param = "51088",
 		id = 2,
 		pic = "temp2",
-		type = 2,
-		param = {
-			"scene get boat",
-			{
-				projectName = "new",
-				page = 1
-			}
-		},
+		type = 3,
 		time = {
 			{
 				{
 					2026,
-					7,
-					23
+					8,
+					6
 				},
 				{
 					0,
@@ -123,7 +118,7 @@ pg.base.activity_banner = {}
 				{
 					2026,
 					8,
-					5
+					12
 				},
 				{
 					23,
@@ -134,21 +129,16 @@ pg.base.activity_banner = {}
 		}
 	}
 	pg.base.activity_banner[3] = {
+		param = "51086",
 		id = 3,
 		pic = "temp3",
-		type = 2,
-		param = {
-			"scene core activity",
-			{
-				coreName = "EscapeManorCoreActivityUI"
-			}
-		},
+		type = 3,
 		time = {
 			{
 				{
 					2026,
-					7,
-					23
+					8,
+					6
 				},
 				{
 					0,
@@ -160,7 +150,7 @@ pg.base.activity_banner = {}
 				{
 					2026,
 					8,
-					5
+					12
 				},
 				{
 					23,
@@ -171,21 +161,16 @@ pg.base.activity_banner = {}
 		}
 	}
 	pg.base.activity_banner[4] = {
+		param = "51085",
 		id = 4,
 		pic = "temp4",
-		type = 2,
-		param = {
-			"scene charge",
-			{
-				wrap = 2
-			}
-		},
+		type = 3,
 		time = {
 			{
 				{
 					2026,
-					7,
-					23
+					8,
+					6
 				},
 				{
 					0,
@@ -197,7 +182,7 @@ pg.base.activity_banner = {}
 				{
 					2026,
 					8,
-					5
+					12
 				},
 				{
 					23,
@@ -246,17 +231,18 @@ pg.base.activity_banner = {}
 		pic = "temp6",
 		type = 2,
 		param = {
-			"scene shop",
+			"scene equip",
 			{
-				warp = "shopstreet"
+				designPage = 2,
+				warp = "WARP_TO_DESIGN"
 			}
 		},
 		time = {
 			{
 				{
 					2026,
-					7,
-					23
+					8,
+					6
 				},
 				{
 					0,
@@ -268,7 +254,7 @@ pg.base.activity_banner = {}
 				{
 					2026,
 					8,
-					5
+					12
 				},
 				{
 					23,
@@ -279,19 +265,16 @@ pg.base.activity_banner = {}
 		}
 	}
 	pg.base.activity_banner[7] = {
+		param = "51090",
 		id = 7,
 		pic = "temp7",
-		type = 2,
-		param = {
-			"scene Cryptolalia",
-			{}
-		},
+		type = 3,
 		time = {
 			{
 				{
 					2026,
-					7,
-					30
+					8,
+					6
 				},
 				{
 					0,
@@ -303,7 +286,7 @@ pg.base.activity_banner = {}
 				{
 					2026,
 					8,
-					5
+					12
 				},
 				{
 					23,
