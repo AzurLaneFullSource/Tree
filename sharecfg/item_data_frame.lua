@@ -682,10 +682,10 @@ pg.base.item_data_frame = {}
 	pg.base.item_data_frame[342] = {
 		time_limit_type = 0,
 		name = "Dreams of Astrarium",
-		gain_by = "沉溺于星光之城",
+		gain_by = "Depths of the Astrarium",
 		id = 342,
 		time_second = 0,
-		desc = "Obtained in a future event",
+		desc = "\"Welcome to Astrarium. What dream would you like to see made a reality?\"\n<color=#A7A7AA>Obtained from the Depths of the Astrarium</color>",
 		scene = {}
 	}
 	pg.base.item_data_frame[406] = {

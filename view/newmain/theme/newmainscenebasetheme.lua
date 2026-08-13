@@ -19,6 +19,7 @@ function var0_0.OnLoaded(arg0_1)
 	arg0_1.changeView = arg0_1:GetChangeSkinView()
 	arg0_1.asmrChatView = arg0_1:GetAsmrChatView()
 	arg0_1.redDotUIList = arg0_1:RegisterRedDots()
+	arg0_1._loaded = true
 end
 
 function var0_0.Show(arg0_2, arg1_2)
@@ -149,87 +150,91 @@ function var0_0.Disable(arg0_13)
 	setActiveViaLayer(arg0_13._tf, false)
 end
 
-function var0_0.OnDestroy(arg0_14)
-	arg0_14:UnOverlayPanel(arg0_14._tf, arg0_14._parentTf)
-
-	for iter0_14, iter1_14 in ipairs(arg0_14.panels or {}) do
-		iter1_14:Dispose()
-	end
-
-	arg0_14.panels = nil
-
-	if arg0_14.iconView then
-		arg0_14.iconView:Dispose()
-
-		arg0_14.iconView = nil
-	end
-
-	if arg0_14.chatRoomView then
-		arg0_14.chatRoomView:Dispose()
-
-		arg0_14.chatRoomView = nil
-	end
-
-	if arg0_14.bannerView then
-		arg0_14.bannerView:Dispose()
-
-		arg0_14.bannerView = nil
-	end
-
-	if arg0_14.actBtnView then
-		arg0_14.actBtnView:Dispose()
-
-		arg0_14.actBtnView = nil
-	end
-
-	if arg0_14.buffView then
-		arg0_14.buffView:Dispose()
-
-		arg0_14.buffView = nil
-	end
-
-	if arg0_14.tagView then
-		arg0_14.tagView:Dispose()
-
-		arg0_14.tagView = nil
-	end
-
-	if arg0_14.wordView then
-		arg0_14.wordView:Dispose()
-
-		arg0_14.wordView = nil
-	end
-
-	if arg0_14.changeView then
-		arg0_14.changeView:Dispose()
-
-		arg0_14.changeView = nil
-	end
-
-	if arg0_14.asmrChatView then
-		arg0_14.asmrChatView:Dispose()
-
-		arg0_14.asmrChatView = nil
-	end
-
-	local var0_14 = pg.EasyRedDotMgr.GetInstance()
-
-	for iter2_14, iter3_14 in ipairs(arg0_14.redDotUIList or {}) do
-		var0_14:UnRegisterRedDot(iter3_14)
-	end
-
-	arg0_14.redDotUIList = nil
+function var0_0.IsLoaded(arg0_14)
+	return arg0_14._loaded
 end
 
-function var0_0.GetPbList(arg0_15)
+function var0_0.OnDestroy(arg0_15)
+	arg0_15:UnOverlayPanel(arg0_15._tf, arg0_15._parentTf)
+
+	for iter0_15, iter1_15 in ipairs(arg0_15.panels or {}) do
+		iter1_15:Dispose()
+	end
+
+	arg0_15.panels = nil
+
+	if arg0_15.iconView then
+		arg0_15.iconView:Dispose()
+
+		arg0_15.iconView = nil
+	end
+
+	if arg0_15.chatRoomView then
+		arg0_15.chatRoomView:Dispose()
+
+		arg0_15.chatRoomView = nil
+	end
+
+	if arg0_15.bannerView then
+		arg0_15.bannerView:Dispose()
+
+		arg0_15.bannerView = nil
+	end
+
+	if arg0_15.actBtnView then
+		arg0_15.actBtnView:Dispose()
+
+		arg0_15.actBtnView = nil
+	end
+
+	if arg0_15.buffView then
+		arg0_15.buffView:Dispose()
+
+		arg0_15.buffView = nil
+	end
+
+	if arg0_15.tagView then
+		arg0_15.tagView:Dispose()
+
+		arg0_15.tagView = nil
+	end
+
+	if arg0_15.wordView then
+		arg0_15.wordView:Dispose()
+
+		arg0_15.wordView = nil
+	end
+
+	if arg0_15.changeView then
+		arg0_15.changeView:Dispose()
+
+		arg0_15.changeView = nil
+	end
+
+	if arg0_15.asmrChatView then
+		arg0_15.asmrChatView:Dispose()
+
+		arg0_15.asmrChatView = nil
+	end
+
+	local var0_15 = pg.EasyRedDotMgr.GetInstance()
+
+	for iter2_15, iter3_15 in ipairs(arg0_15.redDotUIList or {}) do
+		var0_15:UnRegisterRedDot(iter3_15)
+	end
+
+	arg0_15.redDotUIList = nil
+end
+
+function var0_0.GetPbList(arg0_16)
 	return {}
 end
 
-function var0_0.GetCalibrationBG(arg0_16)
+function var0_0.GetCalibrationBG(arg0_17)
 	assert(false)
 end
 
-function var0_0.GetPaintingOffset(arg0_17, arg1_17)
+function var0_0.GetPaintingOffset(arg0_18, arg1_18)
 	return MainPaintingShift.New({
 		0,
 		-10,
@@ -243,63 +248,63 @@ function var0_0.GetPaintingOffset(arg0_17, arg1_17)
 	})
 end
 
-function var0_0.ApplyDefaultResUI(arg0_18)
+function var0_0.ApplyDefaultResUI(arg0_19)
 	return true
 end
 
-function var0_0.GetWordView(arg0_19)
+function var0_0.GetWordView(arg0_20)
 	assert(false)
 end
 
-function var0_0.GetTagView(arg0_20)
+function var0_0.GetTagView(arg0_21)
 	assert(false)
 end
 
-function var0_0.GetTopPanel(arg0_21)
+function var0_0.GetTopPanel(arg0_22)
 	assert(false)
 end
 
-function var0_0.GetRightPanel(arg0_22)
+function var0_0.GetRightPanel(arg0_23)
 	assert(false)
 end
 
-function var0_0.GetLeftPanel(arg0_23)
+function var0_0.GetLeftPanel(arg0_24)
 	assert(false)
 end
 
-function var0_0.GetBottomPanel(arg0_24)
+function var0_0.GetBottomPanel(arg0_25)
 	assert(false)
 end
 
-function var0_0.GetIconView(arg0_25)
+function var0_0.GetIconView(arg0_26)
 	assert(false)
 end
 
-function var0_0.GetChatRoomView(arg0_26)
+function var0_0.GetChatRoomView(arg0_27)
 	assert(false)
 end
 
-function var0_0.GetBannerView(arg0_27)
+function var0_0.GetBannerView(arg0_28)
 	assert(false)
 end
 
-function var0_0.GetActBtnView(arg0_28)
+function var0_0.GetActBtnView(arg0_29)
 	assert(false)
 end
 
-function var0_0.GetBuffView(arg0_29)
+function var0_0.GetBuffView(arg0_30)
 	assert(false)
 end
 
-function var0_0.GetChangeSkinView(arg0_30)
+function var0_0.GetChangeSkinView(arg0_31)
 	assert(false)
 end
 
-function var0_0.GetAsmrChatView(arg0_31)
+function var0_0.GetAsmrChatView(arg0_32)
 	assert(false)
 end
 
-function var0_0.RegisterRedDots(arg0_32)
+function var0_0.RegisterRedDots(arg0_33)
 	return {}
 end
 

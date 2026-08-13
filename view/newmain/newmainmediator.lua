@@ -279,8 +279,10 @@ function var0_0.initNotificationHandleDic(arg0_21)
 		[MiniGameProxy.ON_HUB_DATA_UPDATE] = function(arg0_48, arg1_48)
 			local var0_48 = arg0_48.viewComponent:GetFlagShip()
 
-			if arg0_48.viewComponent.theme then
+			if arg0_48.viewComponent.theme and arg0_48.viewComponent.theme:IsLoaded() then
 				arg0_48.viewComponent.theme:Refresh(var0_48)
+			else
+				warning("界面没加载好，不进行刷新")
 			end
 		end
 	}
