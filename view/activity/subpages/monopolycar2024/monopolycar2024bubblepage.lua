@@ -17,53 +17,57 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	setActive(arg0_1._tf, false)
 end
 
-function var0_0.emit(arg0_3, ...)
-	arg0_3.event:emit(...)
+function var0_0.GetUiAtlas(arg0_3)
+	return "ui/MonopolyCar2024_atlas"
 end
 
-function var0_0.Show(arg0_4, arg1_4, arg2_4, arg3_4)
-	setActive(arg0_4._tf, true)
-	arg0_4.anim:Play("anim_monopolycar_bubble_show")
-
-	local var0_4 = GetSpriteFromAtlas("ui/MonopolyCar2024_atlas", arg2_4)
-
-	arg0_4.head.sprite = var0_4
-
-	arg0_4.head:SetNativeSize()
-
-	local var1_4 = pg.activity_event_monopoly_dialogue[arg3_4].dialogue
-
-	arg0_4.content.text = var1_4
-
-	arg0_4:AddTimer()
-	arg0_4:emit(MonopolyCar2024Mediator.ON_DIALOGUE, arg1_4, arg3_4)
+function var0_0.emit(arg0_4, ...)
+	arg0_4.event:emit(...)
 end
 
-function var0_0.AddTimer(arg0_5)
-	arg0_5:RemoveTimer()
+function var0_0.Show(arg0_5, arg1_5, arg2_5, arg3_5)
+	setActive(arg0_5._tf, true)
+	arg0_5.anim:Play("anim_monopolycar_bubble_show")
 
-	arg0_5.timer = Timer.New(function()
-		arg0_5:RemoveTimer()
-		arg0_5:Hide()
-	end, arg0_5.showTime, 1)
+	local var0_5 = GetSpriteFromAtlas(arg0_5:GetUiAtlas(), arg2_5)
 
-	arg0_5.timer:Start()
+	arg0_5.head.sprite = var0_5
+
+	arg0_5.head:SetNativeSize()
+
+	local var1_5 = pg.activity_event_monopoly_dialogue[arg3_5].dialogue
+
+	arg0_5.content.text = var1_5
+
+	arg0_5:AddTimer()
+	arg0_5:emit(MonopolyCar2024Mediator.ON_DIALOGUE, arg1_5, arg3_5)
 end
 
-function var0_0.RemoveTimer(arg0_7)
-	if arg0_7.timer then
-		arg0_7.timer:Stop()
+function var0_0.AddTimer(arg0_6)
+	arg0_6:RemoveTimer()
 
-		arg0_7.timer = nil
+	arg0_6.timer = Timer.New(function()
+		arg0_6:RemoveTimer()
+		arg0_6:Hide()
+	end, arg0_6.showTime, 1)
+
+	arg0_6.timer:Start()
+end
+
+function var0_0.RemoveTimer(arg0_8)
+	if arg0_8.timer then
+		arg0_8.timer:Stop()
+
+		arg0_8.timer = nil
 	end
 end
 
-function var0_0.Hide(arg0_8)
-	arg0_8.anim:Play("anim_monopolycar_bubble_hide")
+function var0_0.Hide(arg0_9)
+	arg0_9.anim:Play("anim_monopolycar_bubble_hide")
 end
 
-function var0_0.Dispose(arg0_9)
-	arg0_9:RemoveTimer()
+function var0_0.Dispose(arg0_10)
+	arg0_10:RemoveTimer()
 end
 
 return var0_0

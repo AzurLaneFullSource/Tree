@@ -108,7 +108,8 @@ end
 
 function var0_0.listNotificationInterests(arg0_8)
 	return {
-		ActivityProxy.ACTIVITY_UPDATED
+		ActivityProxy.ACTIVITY_UPDATED,
+		GAME.STORY_UPDATE_DONE
 	}
 end
 
@@ -116,8 +117,15 @@ function var0_0.handleNotification(arg0_9, arg1_9)
 	local var0_9 = arg1_9:getName()
 	local var1_9 = arg1_9:getBody()
 
-	if var0_9 == ActivityProxy.ACTIVITY_UPDATED and var1_9:getConfig("type") == ActivityConst.ACTIVITY_TYPE_MONOPOLY then
-		arg0_9.viewComponent:UpdateGame(var1_9)
+	if var0_9 == ActivityProxy.ACTIVITY_UPDATED then
+		if var1_9:getConfig("type") == ActivityConst.ACTIVITY_TYPE_MONOPOLY then
+			arg0_9.viewComponent:UpdateGame(var1_9)
+		end
+	elseif var0_9 == GAME.STORY_UPDATE_DONE then
+		arg0_9.viewComponent:UpdateStory()
+		arg0_9.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_9.awards, function()
+			return
+		end)
 	end
 end
 

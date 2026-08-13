@@ -198,6 +198,8 @@ pg.furniture_data_template.all = {
 	339,
 	341,
 	342,
+	343,
+	344,
 	100002,
 	100003,
 	100004,
@@ -3601,7 +3603,26 @@ pg.furniture_data_template.all = {
 	341301,
 	341302,
 	341303,
-	341304
+	341304,
+	342001,
+	342002,
+	342101,
+	342102,
+	342103,
+	342104,
+	342105,
+	342106,
+	342107,
+	342108,
+	342109,
+	342110,
+	342111,
+	342112,
+	342113,
+	342114,
+	342115,
+	342116,
+	342117
 }
 pg.furniture_data_template.get_id_list_by_themeId = {
 	[0] = {
@@ -3797,6 +3818,8 @@ pg.furniture_data_template.get_id_list_by_themeId = {
 		339,
 		341,
 		342,
+		343,
+		344,
 		100002,
 		100003,
 		100004,
@@ -7457,6 +7480,27 @@ pg.furniture_data_template.get_id_list_by_themeId = {
 		341302,
 		341303,
 		341304
+	},
+	[142] = {
+		342001,
+		342002,
+		342101,
+		342102,
+		342103,
+		342104,
+		342105,
+		342106,
+		342107,
+		342108,
+		342109,
+		342110,
+		342111,
+		342112,
+		342113,
+		342114,
+		342115,
+		342116,
+		342117
 	}
 }
 pg.furniture_data_template.get_id_list_by_tag = {
@@ -9759,7 +9803,23 @@ pg.furniture_data_template.get_id_list_by_tag = {
 		341115,
 		341116,
 		341117,
-		341118
+		341118,
+		342101,
+		342102,
+		342103,
+		342104,
+		342105,
+		342106,
+		342107,
+		342108,
+		342109,
+		342110,
+		342111,
+		342112,
+		342113,
+		342114,
+		342115,
+		342116
 	},
 	{
 		1108,
@@ -10052,7 +10112,8 @@ pg.furniture_data_template.get_id_list_by_tag = {
 		338002,
 		339002,
 		340002,
-		341002
+		341002,
+		342002
 	},
 	{
 		1001,
@@ -10181,7 +10242,8 @@ pg.furniture_data_template.get_id_list_by_tag = {
 		338001,
 		339001,
 		340001,
-		341001
+		341001,
+		342001
 	},
 	{
 		1301,
@@ -10991,7 +11053,8 @@ pg.furniture_data_template.get_id_list_by_tag = {
 		338116,
 		339115,
 		340105,
-		341119
+		341119,
+		342117
 	},
 	{
 		106,
@@ -11072,7 +11135,9 @@ pg.furniture_data_template.get_id_list_by_tag = {
 		338,
 		339,
 		341,
-		342
+		342,
+		343,
+		344
 	}
 }
 pg.furniture_data_template.get_id_list_by_type = {
@@ -11204,7 +11269,8 @@ pg.furniture_data_template.get_id_list_by_type = {
 		338002,
 		339002,
 		340002,
-		341002
+		341002,
+		342002
 	},
 	{
 		120,
@@ -13505,7 +13571,24 @@ pg.furniture_data_template.get_id_list_by_type = {
 		341116,
 		341117,
 		341118,
-		341119
+		341119,
+		342101,
+		342102,
+		342103,
+		342104,
+		342105,
+		342106,
+		342107,
+		342108,
+		342109,
+		342110,
+		342111,
+		342112,
+		342113,
+		342114,
+		342115,
+		342116,
+		342117
 	},
 	{
 		1108,
@@ -13798,7 +13881,8 @@ pg.furniture_data_template.get_id_list_by_type = {
 		338001,
 		339001,
 		340001,
-		341001
+		341001,
+		342001
 	},
 	{
 		1101,
@@ -14517,6 +14601,8 @@ pg.furniture_data_template.get_id_list_by_type = {
 		339,
 		341,
 		342,
+		343,
+		344,
 		100002,
 		100004,
 		100005,
@@ -24411,6 +24497,94 @@ end)()
 		},
 		interAction_group = {}
 	}
+	pg.base.furniture_data_template[343] = {
+		effect = "",
+		name = "Master Recording",
+		gain_by = "Depths of the Astrarium",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 1,
+		count = 1,
+		describe = "\"Whoever gets this MacGuffin can have one wish granted. What is your wish, Professor? - BHR.\" Given to Commanders who participated in the Depths of the Astrarium event.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 0,
+		icon = "benningdunxunzhangicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 5,
+		tag = 8,
+		comfortable = 0,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 343,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		spine = {
+			{
+				"benningdunxunzhang",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[344] = {
+		effect = "",
+		name = "Championship Trophy",
+		gain_by = "Scorching Summer Wavechasers",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 1,
+		count = 1,
+		describe = "The winner's trophy for the Sunset Avenue 6-Hour Endurance Rally. It shines with the radiance and glory of victory.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 0,
+		icon = "guanjunjiangbeixunzhangicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 5,
+		tag = 8,
+		comfortable = 0,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 344,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		spine = {
+			{
+				"guanjunjiangbeixunzhang",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
 	pg.base.furniture_data_template[100002] = {
 		can_rotate = 0,
 		name = "Air Pump of Friendship",
@@ -24763,6 +24937,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[100006] = {
 		can_rotate = 0,
 		name = "Sparkling Stage",
@@ -24944,8 +25120,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[100008] = {
 		can_rotate = 0,
 		name = "Portable Shrine ",
@@ -31367,6 +31541,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[1205] = {
 		effect = "",
 		name = "Broken Dining Set",
@@ -31443,8 +31619,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[1301] = {
 		effect = "",
 		name = "Sticky Notes",
@@ -35511,6 +35685,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[5305] = {
 		effect = "",
 		name = "Ship Designs",
@@ -35587,8 +35763,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[5307] = {
 		effect = "",
 		name = "Maintenance Tools",
@@ -39918,6 +40092,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[11115] = {
 		effect = "",
 		name = "Cinderella's Carriage",
@@ -40020,8 +40196,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[11117] = {
 		effect = "",
 		name = "Cake Roll Stool",
@@ -44329,6 +44503,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[14201] = {
 		effect = "",
 		name = "Plant Sample",
@@ -44405,8 +44581,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[14302] = {
 		effect = "",
 		name = "Space Window",
@@ -49179,6 +49353,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[19106] = {
 		effect = "",
 		name = "Green Fence",
@@ -49255,8 +49431,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[19108] = {
 		effect = "",
 		name = "Black Doggo",
@@ -53831,6 +54005,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[23102] = {
 		effect = "",
 		name = "Toy Train",
@@ -53934,8 +54110,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[23104] = {
 		effect = "",
 		name = "Manjuu Chair",
@@ -58779,6 +58953,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[28111] = {
 		effect = "",
 		name = "Carrot Mat",
@@ -58855,8 +59031,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[28113] = {
 		effect = "",
 		name = "Picnic Blanket",
@@ -63541,6 +63715,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[31102] = {
 		effect = "",
 		name = "Waittoriess",
@@ -63617,8 +63793,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[31104] = {
 		can_rotate = 1,
 		name = "Coo-coo Train",
@@ -68040,6 +68214,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[38102] = {
 		effect = "",
 		name = "Boar Bus",
@@ -68156,8 +68332,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[38104] = {
 		effect = "",
 		name = "Fluffy Lamp",
@@ -72323,6 +72497,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[40124] = {
 		effect = "",
 		name = "Snowy Tent",
@@ -72457,8 +72633,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[40126] = {
 		can_rotate = 1,
 		name = "Ski Lift",
@@ -76971,6 +77145,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[44113] = {
 		effect = "",
 		name = "Rainy Fire Hydrant",
@@ -77047,8 +77223,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[44115] = {
 		effect = "",
 		name = "Teru Teru Bouzu",
@@ -81211,6 +81385,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[47002] = {
 		effect = "",
 		name = "Blue Textured Wall",
@@ -81310,8 +81486,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[47102] = {
 		effect = "",
 		name = "Star-Spangled Bed",
@@ -85510,6 +85684,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[50104] = {
 		effect = "",
 		name = "Vending Machine",
@@ -85586,8 +85762,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[50106] = {
 		effect = "",
 		name = "Eagle Union Road",
@@ -89954,6 +90128,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[55109] = {
 		effect = "",
 		name = "Pair of Balloons",
@@ -90030,8 +90206,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[55111] = {
 		effect = "",
 		name = "Sky Blue Sofa",
@@ -94286,6 +94460,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[59103] = {
 		effect = "",
 		name = "Creamsichair",
@@ -94375,8 +94551,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[59105] = {
 		effect = "",
 		name = "Oversized Bean Bag Manjuu",
@@ -98698,6 +98872,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[63001] = {
 		effect = "",
 		name = "Pizzeria Flooring",
@@ -98774,8 +98950,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[63101] = {
 		effect = "",
 		name = "Pizzeria Circular Table",
@@ -103163,6 +103337,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[69107] = {
 		effect = "",
 		name = "Manjuu Nurse w/ Syringe",
@@ -103239,8 +103415,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[69109] = {
 		effect = "",
 		name = "Operating Table",
@@ -107802,6 +107976,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[72125] = {
 		can_rotate = 0,
 		name = "Leisure Pool",
@@ -107921,8 +108097,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[73002] = {
 		icon = "qiangbics4icon",
 		name = "Cozy Christmas Wallpaper",
@@ -112226,6 +112400,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[76304] = {
 		effect = "",
 		name = "Panda Paradise Sliding Door",
@@ -112302,8 +112478,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[77001] = {
 		icon = "dibanels2icon",
 		name = "Wonderland Flooring",
@@ -116603,6 +116777,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[81109] = {
 		effect = "",
 		name = "Book Display Shelf",
@@ -116679,8 +116855,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[81112] = {
 		effect = "",
 		name = "Schoolyard Vending Machine",
@@ -120868,6 +121042,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[84184] = {
 		gain_by = "",
 		name = "Max Potential Grid-juu Model",
@@ -121042,8 +121218,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[84186] = {
 		gain_by = "",
 		name = "Kai-juu Model",
@@ -125314,6 +125488,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[88301] = {
 		effect = "",
 		name = "Batjuu",
@@ -125390,8 +125566,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[88304] = {
 		effect = "",
 		name = "Count's Castle Paintings",
@@ -129417,6 +129591,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[92202] = {
 		effect = "",
 		name = "Fast Food Order 2",
@@ -129493,8 +129669,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[92204] = {
 		effect = "",
 		name = "Bucket of Drumsticks",
@@ -133642,6 +133816,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[96001] = {
 		icon = "dibanhbicon",
 		name = "Beach Cabin Flooring",
@@ -133712,8 +133888,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[96101] = {
 		effect = "",
 		name = "Beach Cabin Bar",
@@ -138119,6 +138293,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[99112] = {
 		effect = "",
 		name = "Bathhouse Noren Curtains",
@@ -138195,8 +138371,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[99114] = {
 		effect = "",
 		name = "Bathhouse Bonsai",
@@ -142704,6 +142878,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[302124] = {
 		effect = "",
 		name = "Palais Fountain",
@@ -142827,8 +143003,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[302126] = {
 		gain_by = "",
 		name = "Palais Harp",
@@ -147408,6 +147582,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[306001] = {
 		icon = "dibanyydicon",
 		name = "Night Club Flooring",
@@ -147484,8 +147660,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[306101] = {
 		effect = "",
 		name = "Neon Menu",
@@ -152157,6 +152331,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[310306] = {
 		effect = "",
 		name = "Starry Wall Light 1",
@@ -152233,8 +152409,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[310308] = {
 		effect = "",
 		name = "Starry Wall Light 3",
@@ -157010,6 +157184,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[316109] = {
 		effect = "",
 		name = "Adrena Flower",
@@ -157099,8 +157275,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[316111] = {
 		effect = "",
 		name = "Alien Sofa",
@@ -161686,6 +161860,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[320113] = {
 		effect = "",
 		name = "Garbage Collection Bot",
@@ -161782,8 +161958,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[320115] = {
 		gain_by = "",
 		name = "Med Station Scanner",
@@ -166359,6 +166533,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[325302] = {
 		effect = "",
 		name = "Fancy Wall Ornament",
@@ -166435,8 +166611,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[326001] = {
 		icon = "dibanlj3icon",
 		name = "Workspace Flooring",
@@ -170917,6 +171091,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[331102] = {
 		effect = "",
 		name = "Medbay Chair",
@@ -171006,8 +171182,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[331104] = {
 		effect = "",
 		name = "Airship Sofa B",
@@ -175735,6 +175909,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[336102] = {
 		effect = "",
 		name = "Command Center Security Door",
@@ -175824,8 +176000,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[336104] = {
 		effect = "",
 		name = "City Projection",
@@ -180326,6 +180500,944 @@ end)()
 		canputonGrid = {},
 		can_trigger = {
 			0
+		},
+		interAction_group = {}
+	}
+end)()
+;(function()
+	pg.base.furniture_data_template[342001] = {
+		icon = "dibancar3icon",
+		name = "Endurance Race Flooring",
+		gain_by = "",
+		type = 4,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "car3/dibancar3",
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 142,
+		size = "",
+		spine_extra = "",
+		level = 1,
+		describe = "Feel the roar of the engines, the cheers, and the dazzling spotlights! Go all out and leave it all on this magical racetrack!",
+		rarity = 4,
+		advice = 0,
+		tag = 4,
+		spine_action_replace = "",
+		belong = 0,
+		deblocking = 1,
+		canputon = 0,
+		comfortable = 4,
+		id = 342001,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[342002] = {
+		icon = "qiangbicar3icon",
+		name = "Endurance Race Wallpaper",
+		gain_by = "",
+		type = 1,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "",
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 142,
+		size = "",
+		spine_extra = "",
+		level = 5,
+		describe = "Feel the roar of the engines, the cheers, and the dazzling spotlights! Go all out and leave it all on this magical racetrack!",
+		rarity = 4,
+		advice = 0,
+		tag = 3,
+		spine_action_replace = "",
+		belong = 0,
+		comfortable = 4,
+		canputon = 0,
+		deblocking = 1,
+		id = 342002,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"qiangbicar3",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[342101] = {
+		effect = "",
+		name = "Endurance Race Ice Bucket",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "car3/bingtongcar3",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Remember to pour one out when you reach the finish line!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 142,
+		icon = "bingtongcar3icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 1,
+		canputon = 0,
+		id = 342101,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[342102] = {
+		effect = "",
+		name = "Endurance Race Spotlights",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 2,
+		describe = "When the lights come on, the mood really heats up!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 142,
+		icon = "chuandengcar3icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 342102,
+		can_rotate = 0,
+		size = {
+			1,
+			6
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"chuandengcar3",
+				"normal",
+				{
+					"action",
+					true
+				}
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[342103] = {
+		effect = "",
+		name = "Seaside Lighthouse",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Go towards the lighthouse! It'll keep you on track!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 142,
+		icon = "dengtacar3icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 342103,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"dengtacar3",
+				"normal",
+				{
+					"action",
+					true
+				}
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[342104] = {
+		effect = "",
+		name = "Endurance Race Arch",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Pose for the fans!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 142,
+		icon = "gongmencar3icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 342104,
+		can_rotate = 1,
+		size = {
+			6,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"gongmencar3",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[342105] = {
+		effect = "",
+		name = "Endurance Race Cheermanjuu",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Do your best, peep! Race like the wind!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 142,
+		icon = "guanzhongjiucar3icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 342105,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"guanzhongjiucar3",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[342106] = {
+		gain_by = "",
+		name = "Endurance Race Carpet",
+		count = 1,
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "",
+		comfortable = 3,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 142,
+		icon = "hongtancar3icon",
+		deblocking = 1,
+		level = 1,
+		describe = "If you're walking on one of these, you're probably on your way to get a trophy!",
+		rarity = 3,
+		can_rotate = 0,
+		tag = 1,
+		spine_action_replace = "",
+		belong = 1,
+		spine_extra = "",
+		canputon = 0,
+		id = 342106,
+		advice = 0,
+		size = {
+			4,
+			14
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"hongtancar3B",
+				"normal"
+			},
+			{
+				"hongtancar3T"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"dance"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			1
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[342107] = {
+		effect = "",
+		name = "Tire Flowerpot",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 4,
+		describe = "A flowerpot made out of used tires. It gives any room a tropical and DIY racer feel.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 142,
+		icon = "huataicar3icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		tag = 1,
+		comfortable = 1,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 342107,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"huataicar3",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[342108] = {
+		effect = "",
+		name = "Mini Racetrack",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "It's almost like the real thing, except not really!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 142,
+		icon = "saidaocar3icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 342108,
+		can_rotate = 0,
+		size = {
+			4,
+			6
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"saidaocar3",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[342109] = {
+		gain_by = "",
+		name = "Endurance Race Sofa Set",
+		count = 1,
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "",
+		comfortable = 4,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 142,
+		icon = "shafazhuocar3icon",
+		deblocking = 1,
+		level = 1,
+		describe = "Let's chill and watch the race!",
+		rarity = 4,
+		can_rotate = 1,
+		tag = 1,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 342109,
+		advice = 0,
+		size = {
+			6,
+			6
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"shafazhuocar3B",
+				"normal"
+			},
+			{
+				"shafazhuocar3T"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		spine_extra = {
+			{
+				{},
+				{
+					0,
+					0
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		followBone = {
+			{
+				"char",
+				1
+			},
+			{
+				"char2",
+				-1
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[342110] = {
+		effect = "",
+		name = "Endurance Race Food Stall",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "They serve race car-themed drinks! Fast and refreshing is their motto!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 142,
+		icon = "tuichecar3icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 342110,
+		can_rotate = 1,
+		size = {
+			5,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"tuichecar3",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[342111] = {
+		effect = "",
+		name = "Endurance Race Pitstop",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Psych yourself up and get ready for the next lap!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 142,
+		icon = "xiuchepengcar3icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 342111,
+		can_rotate = 0,
+		size = {
+			8,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"xiuchepengcar3",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[342112] = {
+		effect = "",
+		name = "Endurance Race Speaker",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "car3/yinxiangcar3",
+		is_get_time_note = 0,
+		count = 2,
+		describe = "Can't throw a beach party without one of these bad boys.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 142,
+		icon = "yinxiangcar3icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 2,
+		canputon = 0,
+		id = 342112,
+		can_rotate = 1,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[342113] = {
+		effect = "",
+		name = "Endurance Race Display Shelves",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "The trophies are all neatly lined up and waiting to be awarded to the champions!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 142,
+		icon = "zhanshijiacar3icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 342113,
+		can_rotate = 0,
+		size = {
+			7,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"zhanshijiacar3",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[342114] = {
+		effect = "",
+		name = "Endurance Race Broadcast Display",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "car3/zhibopingcar3",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "The race will be displayed live! Don't miss the highlights!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 142,
+		icon = "zhibopingcar3icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 3,
+		canputon = 0,
+		id = 342114,
+		can_rotate = 1,
+		size = {
+			1,
+			11
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[342115] = {
+		effect = "",
+		name = "Endurance Race Road Cone",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "car3/zhuiyicar3",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Conspicuous cones to delineate the boundaries of a race circuit.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 142,
+		icon = "zhuiyicar3icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		tag = 1,
+		comfortable = 1,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 342115,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-7.6,
+					65.3
+				},
+				{
+					-1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[342116] = {
+		effect = "",
+		name = "Endurance Race Cushions",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "car3/zuodiancar3",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Everyone needs some downtime between races, so take it easy.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 142,
+		icon = "zuodiancar3icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 342116,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-4.8,
+					38.6
+				},
+				{
+					-1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[342117] = {
+		gain_by = "",
+		name = "Endurance Race Winner's Podium",
+		count = 1,
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "",
+		comfortable = 4,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 142,
+		icon = "lingjiangtaicar3icon",
+		deblocking = 1,
+		level = 1,
+		describe = "Let's cheer for the new champion of the seaside rally!",
+		rarity = 4,
+		can_rotate = 1,
+		tag = 7,
+		spine_action_replace = "",
+		belong = 1,
+		spine_extra = "",
+		canputon = 0,
+		id = 342117,
+		advice = 0,
+		size = {
+			7,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"lingjiangtaicar3B",
+				"normal"
+			},
+			{
+				"lingjiangtaicar3T"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"dance"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			1
 		},
 		interAction_group = {}
 	}

@@ -890,6 +890,10 @@ function var0_0.SetAction(arg0_56, arg1_56, arg2_56, arg3_56)
 
 	arg0_56:updateEffectVisible(arg1_56)
 
+	if HXSet.isHx() and arg0_56:getAnimationExist(arg1_56 .. "_hx") then
+		arg1_56 = arg1_56 .. "_hx"
+	end
+
 	for iter0_56, iter1_56 in ipairs(arg0_56.spineAnimList) do
 		iter1_56:SetAction(arg1_56, arg2_56)
 

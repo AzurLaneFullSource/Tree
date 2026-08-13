@@ -92,297 +92,322 @@ function var0_0.ShouldReplaceDorm(arg0_9)
 	return bit.band(arg0_9.placeholderType, Story.DORM) > 0
 end
 
-function var0_0.ReplacePlayerName(arg0_10, arg1_10)
-	if not getProxy(PlayerProxy) or not getProxy(PlayerProxy):getRawData() then
-		return arg1_10
-	end
-
-	local var0_10 = getProxy(PlayerProxy):getRawData():GetName()
-
-	arg1_10 = string.gsub(arg1_10, "{playername}", var0_10)
-
-	return arg1_10
+function var0_0.ShouldReplaceCar2026(arg0_10)
+	return bit.band(arg0_10.placeholderType, Story.CAR2026) > 0
 end
 
-function var0_0.ReplaceTbName(arg0_11, arg1_11)
-	if pg.NewStoryMgr.GetInstance():IsReView() then
-		return string.gsub(arg1_11, "{tb}", i18n("child_story_name"))
-	end
-
-	if not getProxy(EducateProxy) or not getProxy(NewEducateProxy) then
+function var0_0.ReplacePlayerName(arg0_11, arg1_11)
+	if not getProxy(PlayerProxy) or not getProxy(PlayerProxy):getRawData() then
 		return arg1_11
 	end
 
-	if not getProxy(NewEducateProxy):GetCurChar() then
-		local var0_11, var1_11 = getProxy(EducateProxy):GetStoryInfo()
+	local var0_11 = getProxy(PlayerProxy):getRawData():GetName()
 
-		arg1_11 = string.gsub(arg1_11, "{tb}", var1_11)
-	else
-		local var2_11, var3_11 = getProxy(NewEducateProxy):GetStoryInfo()
-
-		arg1_11 = string.gsub(arg1_11, "{tb}", var3_11)
-	end
+	arg1_11 = string.gsub(arg1_11, "{playername}", var0_11)
 
 	return arg1_11
 end
 
-function var0_0.ReplaceDormName(arg0_12, arg1_12)
-	if not arg0_12.actorName then
+function var0_0.ReplaceTbName(arg0_12, arg1_12)
+	if pg.NewStoryMgr.GetInstance():IsReView() then
+		return string.gsub(arg1_12, "{tb}", i18n("child_story_name"))
+	end
+
+	if not getProxy(EducateProxy) or not getProxy(NewEducateProxy) then
 		return arg1_12
 	end
 
-	local var0_12 = getProxy(ApartmentProxy):getApartment(arg0_12.actorName)
-	local var1_12 = var0_12 and var0_12:GetCallName() or arg0_12.actorName
+	if not getProxy(NewEducateProxy):GetCurChar() then
+		local var0_12, var1_12 = getProxy(EducateProxy):GetStoryInfo()
 
-	arg1_12 = string.gsub(arg1_12, "{dorm3d}", var1_12)
+		arg1_12 = string.gsub(arg1_12, "{tb}", var1_12)
+	else
+		local var2_12, var3_12 = getProxy(NewEducateProxy):GetStoryInfo()
+
+		arg1_12 = string.gsub(arg1_12, "{tb}", var3_12)
+	end
 
 	return arg1_12
 end
 
-function var0_0.ExistDispatcher(arg0_13)
-	return arg0_13.dispatcher ~= nil
+function var0_0.ReplaceDormName(arg0_13, arg1_13)
+	if not arg0_13.actorName then
+		return arg1_13
+	end
+
+	local var0_13 = getProxy(ApartmentProxy):getApartment(arg0_13.actorName)
+	local var1_13 = var0_13 and var0_13:GetCallName() or arg0_13.actorName
+
+	arg1_13 = string.gsub(arg1_13, "{dorm3d}", var1_13)
+
+	return arg1_13
 end
 
-function var0_0.GetDispatcher(arg0_14)
-	return arg0_14.dispatcher
+function var0_0.ReplaceCar2026Name(arg0_14, arg1_14)
+	local var0_14 = getProxy(ActivityProxy)
+	local var1_14 = var0_14:getActivityByType(ActivityConst.ACTIVITY_TYPE_MONOPOLY)
+	local var2_14 = ""
+
+	if getProxy(PlayerProxy) then
+		var2_14 = getProxy(PlayerProxy):getRawData():GetName()
+	end
+
+	if var1_14 then
+		local var3_14 = var1_14:getConfig("config_client").link_act
+		local var4_14 = var0_14:RawGetActivityById(var3_14)
+
+		if var4_14 and not var4_14:isEnd() then
+			var2_14 = var4_14.str_data1
+		end
+	end
+
+	return string.gsub(arg1_14, "{car2026}", var2_14)
 end
 
-function var0_0.IsRecallDispatcher(arg0_15)
-	if not arg0_15:ExistDispatcher() then
+function var0_0.ExistDispatcher(arg0_15)
+	return arg0_15.dispatcher ~= nil
+end
+
+function var0_0.GetDispatcher(arg0_16)
+	return arg0_16.dispatcher
+end
+
+function var0_0.IsRecallDispatcher(arg0_17)
+	if not arg0_17:ExistDispatcher() then
 		return false
 	end
 
-	local var0_15 = arg0_15:GetDispatcher()
+	local var0_17 = arg0_17:GetDispatcher()
 
-	return var0_15.callbackData ~= nil and var0_15.callbackData.name ~= nil
+	return var0_17.callbackData ~= nil and var0_17.callbackData.name ~= nil
 end
 
-function var0_0.GetDispatcherRecallName(arg0_16)
-	if not arg0_16:IsRecallDispatcher() then
+function var0_0.GetDispatcherRecallName(arg0_18)
+	if not arg0_18:IsRecallDispatcher() then
 		return nil
 	end
 
-	return arg0_16:GetDispatcher().callbackData.name
+	return arg0_18:GetDispatcher().callbackData.name
 end
 
-function var0_0.ShouldHideUI(arg0_17)
-	if not arg0_17:IsRecallDispatcher() then
+function var0_0.ShouldHideUI(arg0_19)
+	if not arg0_19:IsRecallDispatcher() then
 		return false
 	end
 
-	return arg0_17:GetDispatcher().callbackData.hideUI == true
+	return arg0_19:GetDispatcher().callbackData.hideUI == true
 end
 
-function var0_0.ExistIcon(arg0_18)
-	return arg0_18.icon ~= nil
+function var0_0.ExistIcon(arg0_20)
+	return arg0_20.icon ~= nil
 end
 
-function var0_0.GetIconData(arg0_19)
-	return arg0_19.icon
+function var0_0.GetIconData(arg0_21)
+	return arg0_21.icon
 end
 
-function var0_0.SetId(arg0_20, arg1_20)
-	arg0_20.id = arg1_20
+function var0_0.SetId(arg0_22, arg1_22)
+	arg0_22.id = arg1_22
 end
 
-function var0_0.GetId(arg0_21)
-	return arg0_21.id
+function var0_0.GetId(arg0_23)
+	return arg0_23.id
 end
 
-function var0_0.AutoShowOption(arg0_22)
-	arg0_22.autoShowOption = true
+function var0_0.AutoShowOption(arg0_24)
+	arg0_24.autoShowOption = true
 end
 
-function var0_0.SkipEventForOption(arg0_23)
-	return arg0_23:ExistOption() and arg0_23.autoShowOption
+function var0_0.SkipEventForOption(arg0_25)
+	return arg0_25:ExistOption() and arg0_25.autoShowOption
 end
 
-function var0_0.IsRecallOption(arg0_24)
-	if arg0_24:ExistOption() and arg0_24:GetOptionCnt() > 1 and arg0_24.recallOption then
+function var0_0.IsRecallOption(arg0_26)
+	if arg0_26:ExistOption() and arg0_26:GetOptionCnt() > 1 and arg0_26.recallOption then
 		return true
 	end
 
 	return false
 end
 
-function var0_0.IsOptionForceCenter(arg0_25)
-	return arg0_25.optionForceCenter
+function var0_0.IsOptionForceCenter(arg0_27)
+	return arg0_27.optionForceCenter
 end
 
-function var0_0.SetBranchCode(arg0_26, arg1_26)
-	arg0_26.selectedBranchCode = arg1_26
+function var0_0.SetBranchCode(arg0_28, arg1_28)
+	arg0_28.selectedBranchCode = arg1_28
 end
 
-function var0_0.GetSelectedBranchCode(arg0_27)
-	return arg0_27.selectedBranchCode
+function var0_0.GetSelectedBranchCode(arg0_29)
+	return arg0_29.selectedBranchCode
 end
 
-function var0_0.ExistLocation(arg0_28)
-	return arg0_28.location ~= nil
+function var0_0.ExistLocation(arg0_30)
+	return arg0_30.location ~= nil
 end
 
-function var0_0.GetLocation(arg0_29)
+function var0_0.GetLocation(arg0_31)
 	return {
-		text = arg0_29.location[1] or "",
-		time = arg0_29.location[2] or 999
+		text = arg0_31.location[1] or "",
+		time = arg0_31.location[2] or 999
 	}
 end
 
-function var0_0.ExistMovableNode(arg0_30)
-	return arg0_30.movableNode ~= nil and type(arg0_30.movableNode) == "table" and #arg0_30.movableNode > 0
+function var0_0.ExistMovableNode(arg0_32)
+	return arg0_32.movableNode ~= nil and type(arg0_32.movableNode) == "table" and #arg0_32.movableNode > 0
 end
 
-function var0_0.GetPathByString(arg0_31, arg1_31, arg2_31)
-	local var0_31 = {}
-	local var1_31 = pg.NewStoryMgr.GetInstance():GetRectSize()
-	local var2_31 = Vector3(-var1_31.x * 0.5, var1_31.y * 0.5, 0)
-	local var3_31 = Vector3(var1_31.x * 0.5, var1_31.y * 0.5, 0)
-	local var4_31 = Vector3(-var1_31.x * 0.5, -var1_31.y * 0.5, 0)
-	local var5_31 = Vector3(var1_31.x * 0.5, -var1_31.y * 0.5, 0)
-	local var6_31 = arg2_31 or 200
-
-	if arg1_31 == "LTLB" then
-		local var7_31 = Vector3(var6_31, 0, 0)
-
-		var0_31 = {
-			var2_31 + var7_31,
-			var4_31 + var7_31
-		}
-	elseif arg1_31 == "LBLT" then
-		local var8_31 = Vector3(var6_31, 0, 0)
-
-		var0_31 = {
-			var4_31 + var8_31,
-			var2_31 + var8_31
-		}
-	elseif arg1_31 == "LTRT" then
-		local var9_31 = Vector3(0, -var6_31, 0)
-
-		var0_31 = {
-			var2_31 + var9_31,
-			var3_31 + var9_31
-		}
-	elseif arg1_31 == "RTLT" then
-		local var10_31 = Vector3(0, -var6_31, 0)
-
-		var0_31 = {
-			var3_31 + var10_31,
-			var2_31 + var10_31
-		}
-	elseif arg1_31 == "RTRB" then
-		local var11_31 = Vector3(var6_31, 0, 0)
-
-		var0_31 = {
-			var3_31 + var11_31,
-			var5_31 + var11_31
-		}
-	elseif arg1_31 == "RBRT" then
-		local var12_31 = Vector3(var6_31, 0, 0)
-
-		var0_31 = {
-			var5_31 + var12_31,
-			var3_31 + var12_31
-		}
-	elseif arg1_31 == "LBRB" then
-		local var13_31 = Vector3(0, -(arg2_31 or 0), 0)
-
-		var0_31 = {
-			var4_31 + var13_31,
-			var5_31 + var13_31
-		}
-	elseif arg1_31 == "RBLB" then
-		local var14_31 = Vector3(0, -(arg2_31 or 0), 0)
-
-		var0_31 = {
-			var5_31 + var14_31,
-			var4_31 + var14_31
-		}
-	end
-
-	return var0_31
-end
-
-function var0_0.GenMoveNode(arg0_32, arg1_32)
-	local var0_32 = {}
-
-	if type(arg1_32.path) == "table" then
-		for iter0_32, iter1_32 in ipairs(arg1_32.path) do
-			table.insert(var0_32, Vector3(iter1_32[1], iter1_32[2], 0))
-		end
-	elseif type(arg1_32.path) == "string" then
-		var0_32 = arg0_32:GetPathByString(arg1_32.path, arg1_32.offset)
-	else
-		var0_32 = arg0_32:GetPathByString("LTRT")
-	end
-
-	local var1_32 = type(arg1_32.spine) == "table" or arg1_32.spine == true
-	local var2_32
-
-	if arg1_32.spine == true then
-		var2_32 = {
-			action = "walk",
-			scale = 0.5
-		}
-	elseif var1_32 then
-		var2_32 = {
-			action = arg1_32.spine.action or "walk",
-			scale = arg1_32.spine.scale or 0.5
-		}
-	end
-
-	return {
-		name = arg1_32.name,
-		isSpine = var1_32,
-		spineData = var2_32,
-		path = var0_32,
-		time = arg1_32.time,
-		delay = arg1_32.delay or 0,
-		easeType = arg1_32.easeType or LeanTweenType.linear
-	}
-end
-
-function var0_0.GetMovableNode(arg0_33)
-	if not arg0_33:ExistMovableNode() then
-		return {}
-	end
-
+function var0_0.GetPathByString(arg0_33, arg1_33, arg2_33)
 	local var0_33 = {}
+	local var1_33 = pg.NewStoryMgr.GetInstance():GetRectSize()
+	local var2_33 = Vector3(-var1_33.x * 0.5, var1_33.y * 0.5, 0)
+	local var3_33 = Vector3(var1_33.x * 0.5, var1_33.y * 0.5, 0)
+	local var4_33 = Vector3(-var1_33.x * 0.5, -var1_33.y * 0.5, 0)
+	local var5_33 = Vector3(var1_33.x * 0.5, -var1_33.y * 0.5, 0)
+	local var6_33 = arg2_33 or 200
 
-	for iter0_33, iter1_33 in pairs(arg0_33.movableNode or {}) do
-		local var1_33 = arg0_33:GenMoveNode(iter1_33)
+	if arg1_33 == "LTLB" then
+		local var7_33 = Vector3(var6_33, 0, 0)
 
-		table.insert(var0_33, var1_33)
+		var0_33 = {
+			var2_33 + var7_33,
+			var4_33 + var7_33
+		}
+	elseif arg1_33 == "LBLT" then
+		local var8_33 = Vector3(var6_33, 0, 0)
+
+		var0_33 = {
+			var4_33 + var8_33,
+			var2_33 + var8_33
+		}
+	elseif arg1_33 == "LTRT" then
+		local var9_33 = Vector3(0, -var6_33, 0)
+
+		var0_33 = {
+			var2_33 + var9_33,
+			var3_33 + var9_33
+		}
+	elseif arg1_33 == "RTLT" then
+		local var10_33 = Vector3(0, -var6_33, 0)
+
+		var0_33 = {
+			var3_33 + var10_33,
+			var2_33 + var10_33
+		}
+	elseif arg1_33 == "RTRB" then
+		local var11_33 = Vector3(var6_33, 0, 0)
+
+		var0_33 = {
+			var3_33 + var11_33,
+			var5_33 + var11_33
+		}
+	elseif arg1_33 == "RBRT" then
+		local var12_33 = Vector3(var6_33, 0, 0)
+
+		var0_33 = {
+			var5_33 + var12_33,
+			var3_33 + var12_33
+		}
+	elseif arg1_33 == "LBRB" then
+		local var13_33 = Vector3(0, -(arg2_33 or 0), 0)
+
+		var0_33 = {
+			var4_33 + var13_33,
+			var5_33 + var13_33
+		}
+	elseif arg1_33 == "RBLB" then
+		local var14_33 = Vector3(0, -(arg2_33 or 0), 0)
+
+		var0_33 = {
+			var5_33 + var14_33,
+			var4_33 + var14_33
+		}
 	end
 
 	return var0_33
 end
 
-function var0_0.OldPhotoEffect(arg0_34)
-	return arg0_34.oldPhoto
-end
+function var0_0.GenMoveNode(arg0_34, arg1_34)
+	local var0_34 = {}
 
-function var0_0.ShouldBgGlitchArt(arg0_35)
-	return arg0_35.bgGlitchArt
-end
-
-function var0_0.IsSameBranch(arg0_36, arg1_36)
-	return not arg0_36.branchCode or arg0_36.branchCode == arg1_36
-end
-
-function var0_0.IsGlobalFlagHit(arg0_37)
-	local var0_37 = var0_0.GetGlobalFlagKey(arg0_37.globalBranchCode.id)
-	local var1_37 = 1
-	local var2_37 = 0
-
-	while PlayerPrefs.HasKey(var0_37 .. var1_37) do
-		var2_37 = var2_37 + PlayerPrefs.GetInt(var0_37 .. var1_37)
-		var1_37 = var1_37 + 1
+	if type(arg1_34.path) == "table" then
+		for iter0_34, iter1_34 in ipairs(arg1_34.path) do
+			table.insert(var0_34, Vector3(iter1_34[1], iter1_34[2], 0))
+		end
+	elseif type(arg1_34.path) == "string" then
+		var0_34 = arg0_34:GetPathByString(arg1_34.path, arg1_34.offset)
+	else
+		var0_34 = arg0_34:GetPathByString("LTRT")
 	end
 
-	local var3_37 = arg0_37.globalBranchCode.section
+	local var1_34 = type(arg1_34.spine) == "table" or arg1_34.spine == true
+	local var2_34
 
-	for iter0_37, iter1_37 in ipairs(var3_37) do
-		if var2_37 >= iter1_37[1] and var2_37 <= iter1_37[2] then
+	if arg1_34.spine == true then
+		var2_34 = {
+			action = "walk",
+			scale = 0.5
+		}
+	elseif var1_34 then
+		var2_34 = {
+			action = arg1_34.spine.action or "walk",
+			scale = arg1_34.spine.scale or 0.5
+		}
+	end
+
+	return {
+		name = arg1_34.name,
+		isSpine = var1_34,
+		spineData = var2_34,
+		path = var0_34,
+		time = arg1_34.time,
+		delay = arg1_34.delay or 0,
+		easeType = arg1_34.easeType or LeanTweenType.linear
+	}
+end
+
+function var0_0.GetMovableNode(arg0_35)
+	if not arg0_35:ExistMovableNode() then
+		return {}
+	end
+
+	local var0_35 = {}
+
+	for iter0_35, iter1_35 in pairs(arg0_35.movableNode or {}) do
+		local var1_35 = arg0_35:GenMoveNode(iter1_35)
+
+		table.insert(var0_35, var1_35)
+	end
+
+	return var0_35
+end
+
+function var0_0.OldPhotoEffect(arg0_36)
+	return arg0_36.oldPhoto
+end
+
+function var0_0.ShouldBgGlitchArt(arg0_37)
+	return arg0_37.bgGlitchArt
+end
+
+function var0_0.IsSameBranch(arg0_38, arg1_38)
+	return not arg0_38.branchCode or arg0_38.branchCode == arg1_38
+end
+
+function var0_0.IsGlobalFlagHit(arg0_39)
+	local var0_39 = var0_0.GetGlobalFlagKey(arg0_39.globalBranchCode.id)
+	local var1_39 = 1
+	local var2_39 = 0
+
+	while PlayerPrefs.HasKey(var0_39 .. var1_39) do
+		var2_39 = var2_39 + PlayerPrefs.GetInt(var0_39 .. var1_39)
+		var1_39 = var1_39 + 1
+	end
+
+	local var3_39 = arg0_39.globalBranchCode.section
+
+	for iter0_39, iter1_39 in ipairs(var3_39) do
+		if var2_39 >= iter1_39[1] and var2_39 <= iter1_39[2] then
 			return true
 		end
 	end
@@ -390,338 +415,342 @@ function var0_0.IsGlobalFlagHit(arg0_37)
 	return false
 end
 
-function var0_0.GetGlobalFlagKey(arg0_38)
-	return getProxy(PlayerProxy):getRawData().id .. "GlobalStoryFlag_" .. arg0_38 .. "_"
+function var0_0.GetGlobalFlagKey(arg0_40)
+	return getProxy(PlayerProxy):getRawData().id .. "GlobalStoryFlag_" .. arg0_40 .. "_"
 end
 
-function var0_0.GetMode(arg0_39)
+function var0_0.GetMode(arg0_41)
 	assert(false, "should override this function")
 end
 
-function var0_0.GetFlashoutData(arg0_40)
-	if arg0_40.flashout then
-		local var0_40 = arg0_40.flashout.alpha[1]
-		local var1_40 = arg0_40.flashout.alpha[2]
-		local var2_40 = arg0_40.flashout.dur
-		local var3_40 = arg0_40.flashout.black
+function var0_0.GetFlashoutData(arg0_42)
+	if arg0_42.flashout then
+		local var0_42 = arg0_42.flashout.alpha[1]
+		local var1_42 = arg0_42.flashout.alpha[2]
+		local var2_42 = arg0_42.flashout.dur
+		local var3_42 = arg0_42.flashout.black
 
-		return var0_40, var1_40, var2_40, var3_40
+		return var0_42, var1_42, var2_42, var3_42
 	end
 end
 
-function var0_0.GetFlashinData(arg0_41)
-	if arg0_41.flashin then
-		local var0_41 = arg0_41.flashin.alpha[1]
-		local var1_41 = arg0_41.flashin.alpha[2]
-		local var2_41 = arg0_41.flashin.dur
-		local var3_41 = arg0_41.flashin.black
-		local var4_41 = arg0_41.flashin.delay
+function var0_0.GetFlashinData(arg0_43)
+	if arg0_43.flashin then
+		local var0_43 = arg0_43.flashin.alpha[1]
+		local var1_43 = arg0_43.flashin.alpha[2]
+		local var2_43 = arg0_43.flashin.dur
+		local var3_43 = arg0_43.flashin.black
+		local var4_43 = arg0_43.flashin.delay
 
-		return var0_41, var1_41, var2_41, var3_41, var4_41
+		return var0_43, var1_43, var2_43, var3_43, var4_43
 	end
 end
 
-function var0_0.GetBgColor(arg0_42)
-	return Color.New(arg0_42.bgColor[1] or 0, arg0_42.bgColor[2] or 0, arg0_42.bgColor[3] or 0)
+function var0_0.GetBgColor(arg0_44)
+	return Color.New(arg0_44.bgColor[1] or 0, arg0_44.bgColor[2] or 0, arg0_44.bgColor[3] or 0)
 end
 
-function var0_0.IsBlackBg(arg0_43)
-	return arg0_43.blackBg
+function var0_0.IsBlackBg(arg0_45)
+	return arg0_45.blackBg
 end
 
-function var0_0.GetBgName(arg0_44)
-	return arg0_44.bgName
+function var0_0.GetBgName(arg0_46)
+	return arg0_46.bgName
 end
 
-function var0_0.GetBgShadow(arg0_45)
-	return arg0_45.bgShadow
+function var0_0.GetBgShadow(arg0_47)
+	return arg0_47.bgShadow
 end
 
-function var0_0.IsDialogueMode(arg0_46)
-	return arg0_46:GetMode() == Story.MODE_DIALOGUE
+function var0_0.IsDialogueMode(arg0_48)
+	return arg0_48:GetMode() == Story.MODE_DIALOGUE
 end
 
-function var0_0.GetBgmData(arg0_47)
-	return arg0_47.bgm, arg0_47.bgmDelay, arg0_47.bgmVolume
+function var0_0.GetBgmData(arg0_49)
+	return arg0_49.bgm, arg0_49.bgmDelay, arg0_49.bgmVolume
 end
 
-function var0_0.ShoulePlayBgm(arg0_48)
-	return arg0_48.bgm ~= nil
+function var0_0.ShoulePlayBgm(arg0_50)
+	return arg0_50.bgm ~= nil
 end
 
-function var0_0.ShouldStopBgm(arg0_49)
-	return arg0_49.stopbgm
+function var0_0.ShouldStopBgm(arg0_51)
+	return arg0_51.stopbgm
 end
 
-function var0_0.GetEffects(arg0_50)
-	return arg0_50.effects
+function var0_0.GetEffects(arg0_52)
+	return arg0_52.effects
 end
 
-function var0_0.ShouldBlink(arg0_51)
-	return arg0_51.blink ~= nil
+function var0_0.ShouldBlink(arg0_53)
+	return arg0_53.blink ~= nil
 end
 
-function var0_0.GetBlinkData(arg0_52)
-	return arg0_52.blink
+function var0_0.GetBlinkData(arg0_54)
+	return arg0_54.blink
 end
 
-function var0_0.ShouldBlinkWithColor(arg0_53)
-	return arg0_53.blinkWithColor ~= nil
+function var0_0.ShouldBlinkWithColor(arg0_55)
+	return arg0_55.blinkWithColor ~= nil
 end
 
-function var0_0.GetBlinkWithColorData(arg0_54)
-	return arg0_54.blinkWithColor
+function var0_0.GetBlinkWithColorData(arg0_56)
+	return arg0_56.blinkWithColor
 end
 
-function var0_0.ShouldPlaySoundEffect(arg0_55)
-	return arg0_55.soundeffect ~= nil
+function var0_0.ShouldPlaySoundEffect(arg0_57)
+	return arg0_57.soundeffect ~= nil
 end
 
-function var0_0.GetSoundeffect(arg0_56)
-	return arg0_56.soundeffect, arg0_56.seDelay
+function var0_0.GetSoundeffect(arg0_58)
+	return arg0_58.soundeffect, arg0_58.seDelay
 end
 
-function var0_0.ShouldPlayVoice(arg0_57)
-	return arg0_57.voice ~= nil
+function var0_0.ShouldPlayVoice(arg0_59)
+	return arg0_59.voice ~= nil
 end
 
-function var0_0.ShouldStopVoice(arg0_58)
-	return arg0_58.stopVoice
+function var0_0.ShouldStopVoice(arg0_60)
+	return arg0_60.stopVoice
 end
 
-function var0_0.GetVoice(arg0_59)
-	return arg0_59.voice, arg0_59.voiceDelay
+function var0_0.GetVoice(arg0_61)
+	return arg0_61.voice, arg0_61.voiceDelay
 end
 
-function var0_0.ExistOption(arg0_60)
-	return arg0_60.options ~= nil and #arg0_60.options > 0
+function var0_0.ExistOption(arg0_62)
+	return arg0_62.options ~= nil and #arg0_62.options > 0
 end
 
-function var0_0.GetOptionCnt(arg0_61)
-	if arg0_61:ExistOption() then
-		return #arg0_61.options
+function var0_0.GetOptionCnt(arg0_63)
+	if arg0_63:ExistOption() then
+		return #arg0_63.options
 	else
 		return 0
 	end
 end
 
-function var0_0.SetOptionSelCodes(arg0_62, arg1_62)
-	arg0_62.optionSelCode = arg1_62
+function var0_0.SetOptionSelCodes(arg0_64, arg1_64)
+	arg0_64.optionSelCode = arg1_64
 end
 
-function var0_0.IsBlackFrontGround(arg0_63)
-	return arg0_63.blackFg > 0, Mathf.Clamp01(arg0_63.blackFg)
+function var0_0.IsBlackFrontGround(arg0_65)
+	return arg0_65.blackFg > 0, Mathf.Clamp01(arg0_65.blackFg)
 end
 
-function var0_0.GetOptionIndexByAutoSel(arg0_64)
-	local var0_64 = 0
-	local var1_64 = 0
+function var0_0.GetOptionIndexByAutoSel(arg0_66)
+	local var0_66 = 0
+	local var1_66 = 0
 
-	for iter0_64, iter1_64 in ipairs(arg0_64.options) do
-		if arg0_64.optionSelCode and iter1_64.flag == arg0_64.optionSelCode then
-			var0_64 = iter0_64
+	for iter0_66, iter1_66 in ipairs(arg0_66.options) do
+		if arg0_66.optionSelCode and iter1_66.flag == arg0_66.optionSelCode then
+			var0_66 = iter0_66
 
 			break
 		end
 
-		if iter1_64.autochoice and iter1_64.autochoice == 1 then
-			var1_64 = iter0_64
+		if iter1_66.autochoice and iter1_66.autochoice == 1 then
+			var1_66 = iter0_66
 		end
 	end
 
-	if var0_64 > 0 then
-		return var0_64
+	if var0_66 > 0 then
+		return var0_66
 	end
 
-	if var1_64 > 0 then
-		return var1_64
+	if var1_66 > 0 then
+		return var1_66
 	end
 
 	return nil
 end
 
-function var0_0.IsImport(arg0_65)
-	return arg0_65.important
+function var0_0.IsImport(arg0_67)
+	return arg0_67.important
 end
 
-function var0_0.SetOptionIndex(arg0_66, arg1_66)
-	arg0_66.optionIndex = arg1_66
+function var0_0.SetOptionIndex(arg0_68, arg1_68)
+	arg0_68.optionIndex = arg1_68
 end
 
-function var0_0.GetOptionIndex(arg0_67)
-	return arg0_67.optionIndex
+function var0_0.GetOptionIndex(arg0_69)
+	return arg0_69.optionIndex
 end
 
-function var0_0.GetOptions(arg0_68)
-	return _.map(arg0_68.options or {}, function(arg0_69)
-		local var0_69 = arg0_69.content
+function var0_0.GetOptions(arg0_70)
+	return _.map(arg0_70.options or {}, function(arg0_71)
+		local var0_71 = arg0_71.content
 
-		if arg0_68:ShouldReplacePlayer() then
-			var0_69 = arg0_68:ReplacePlayerName(var0_69)
+		if arg0_70:ShouldReplacePlayer() then
+			var0_71 = arg0_70:ReplacePlayerName(var0_71)
 		end
 
-		if arg0_68:ShouldReplaceTb() then
-			var0_69 = arg0_68:ReplaceTbName(var0_69)
+		if arg0_70:ShouldReplaceTb() then
+			var0_71 = arg0_70:ReplaceTbName(var0_71)
 		end
 
-		if arg0_68:ShouldReplaceDorm() then
-			var0_69 = arg0_68:ReplaceDormName(var0_69)
+		if arg0_70:ShouldReplaceDorm() then
+			var0_71 = arg0_70:ReplaceDormName(var0_71)
 		end
 
-		local var1_69 = HXSet.hxLan(var0_69)
+		if arg0_70:ShouldReplaceCar2026() then
+			var0_71 = arg0_70:ReplaceCar2026Name(var0_71)
+		end
+
+		local var1_71 = HXSet.hxLan(var0_71)
 
 		return {
-			var1_69,
-			arg0_69.flag,
-			arg0_69.type,
-			arg0_69.globalFlag
+			var1_71,
+			arg0_71.flag,
+			arg0_71.type,
+			arg0_71.globalFlag
 		}
 	end)
 end
 
-function var0_0.ShouldJumpToNextScript(arg0_70)
-	return arg0_70.nextScriptName ~= nil
+function var0_0.ShouldJumpToNextScript(arg0_72)
+	return arg0_72.nextScriptName ~= nil
 end
 
-function var0_0.GetNextScriptName(arg0_71)
-	return arg0_71.nextScriptName
+function var0_0.GetNextScriptName(arg0_73)
+	return arg0_73.nextScriptName
 end
 
-function var0_0.ShouldDelayEvent(arg0_72)
-	return arg0_72.eventDelay and arg0_72.eventDelay > 0
+function var0_0.ShouldDelayEvent(arg0_74)
+	return arg0_74.eventDelay and arg0_74.eventDelay > 0
 end
 
-function var0_0.GetEventDelayTime(arg0_73)
-	return arg0_73.eventDelay
+function var0_0.GetEventDelayTime(arg0_75)
+	return arg0_75.eventDelay
 end
 
-function var0_0.GetUsingPaintingNames(arg0_74)
+function var0_0.GetUsingPaintingNames(arg0_76)
 	return {}
 end
 
-function var0_0.GetResList(arg0_75)
-	local var0_75 = {}
-	local var1_75 = arg0_75:GetBgName()
+function var0_0.GetResList(arg0_77)
+	local var0_77 = {}
+	local var1_77 = arg0_77:GetBgName()
 
-	if var1_75 then
-		table.insert(var0_75, var1_75)
+	if var1_77 then
+		table.insert(var0_77, var1_77)
 	end
 
-	if arg0_75.GetSubBg then
-		local var2_75 = arg0_75:GetSubBg()
+	if arg0_77.GetSubBg then
+		local var2_77 = arg0_77:GetSubBg()
 
-		if var2_75 then
-			table.insert(var0_75, var2_75)
+		if var2_77 then
+			table.insert(var0_77, var2_77)
 		end
 	end
 
-	local var3_75 = _.map(var0_75, function(arg0_76)
-		return "bg/" .. arg0_76
+	local var3_77 = _.map(var0_77, function(arg0_78)
+		return "bg/" .. arg0_78
 	end)
-	local var4_75 = {}
-	local var5_75, var6_75, var7_75 = arg0_75:GetBgmData()
+	local var4_77 = {}
+	local var5_77, var6_77, var7_77 = arg0_77:GetBgmData()
 
-	if var5_75 then
-		table.insert(var4_75, var5_75)
+	if var5_77 then
+		table.insert(var4_77, var5_77)
 	end
 
-	local var8_75 = {}
+	local var8_77 = {}
 
-	_.each(var4_75, function(arg0_77)
-		table.insert(var8_75, "cue/" .. arg0_77 .. ".b")
-		table.insert(var8_75, "cue/bgm-" .. arg0_77 .. ".b")
+	_.each(var4_77, function(arg0_79)
+		table.insert(var8_77, "cue/" .. arg0_79 .. ".b")
+		table.insert(var8_77, "cue/bgm-" .. arg0_79 .. ".b")
 	end)
 
-	local var9_75 = {}
+	local var9_77 = {}
 
-	if arg0_75:ShouldPlaySoundEffect() then
-		local var10_75, var11_75 = arg0_75:GetSoundeffect()
+	if arg0_77:ShouldPlaySoundEffect() then
+		local var10_77, var11_77 = arg0_77:GetSoundeffect()
 
-		if var10_75 then
-			table.insert(var9_75, var10_75)
+		if var10_77 then
+			table.insert(var9_77, var10_77)
 		end
 	end
 
-	local var12_75 = {}
+	local var12_77 = {}
 
-	_.each(var9_75, function(arg0_78)
-		local var0_78 = pg.CriMgr.GetInstance():CheckFModeEvent(arg0_78, function()
+	_.each(var9_77, function(arg0_80)
+		local var0_80 = pg.CriMgr.GetInstance():CheckFModeEvent(arg0_80, function()
 			return
 		end, function()
 			return
 		end)
 
-		if var0_78 then
-			table.insert(var12_75, "cue/" .. var0_78 .. ".b")
+		if var0_80 then
+			table.insert(var12_77, "cue/" .. var0_80 .. ".b")
 		end
 	end)
 
-	local var13_75 = {}
+	local var13_77 = {}
 
-	if arg0_75:ShouldPlayVoice() then
-		local var14_75, var15_75 = arg0_75:GetVoice()
+	if arg0_77:ShouldPlayVoice() then
+		local var14_77, var15_77 = arg0_77:GetVoice()
 
-		if var14_75 then
-			table.insert(var13_75, var14_75)
+		if var14_77 then
+			table.insert(var13_77, var14_77)
 		end
 	end
 
-	local var16_75 = {}
+	local var16_77 = {}
 
-	_.each(var13_75, function(arg0_81)
-		local var0_81 = pg.CriMgr.GetInstance():CheckFModeEvent(arg0_81, function()
+	_.each(var13_77, function(arg0_83)
+		local var0_83 = pg.CriMgr.GetInstance():CheckFModeEvent(arg0_83, function()
 			return
 		end, function()
 			return
 		end)
 
-		if var0_81 then
-			table.insert(var16_75, "cue/" .. var0_81 .. ".b")
+		if var0_83 then
+			table.insert(var16_77, "cue/" .. var0_83 .. ".b")
 		end
 	end)
 
-	local var17_75 = {}
-	local var18_75 = arg0_75:GetEffects()
+	local var17_77 = {}
+	local var18_77 = arg0_77:GetEffects()
 
-	_.each(var18_75, function(arg0_84)
-		local var0_84 = arg0_84.name
+	_.each(var18_77, function(arg0_86)
+		local var0_86 = arg0_86.name
 
-		table.insert(var17_75, var0_84)
+		table.insert(var17_77, var0_86)
 	end)
 
-	local var19_75 = {}
+	local var19_77 = {}
 
-	_.each(var17_75, function(arg0_85)
-		table.insert(var19_75, "ui/" .. arg0_85)
-		table.insert(var19_75, "effect/" .. arg0_85)
+	_.each(var17_77, function(arg0_87)
+		table.insert(var19_77, "ui/" .. arg0_87)
+		table.insert(var19_77, "effect/" .. arg0_87)
 	end)
 
-	local var20_75 = {}
+	local var20_77 = {}
 
-	if arg0_75:ExistIcon() then
-		local var21_75 = arg0_75:GetIconData()
+	if arg0_77:ExistIcon() then
+		local var21_77 = arg0_77:GetIconData()
 
-		if var21_75 and var21_75.image then
-			table.insert(var20_75, var21_75.image)
+		if var21_77 and var21_77.image then
+			table.insert(var20_77, var21_77.image)
 		end
 	end
 
-	local var22_75 = {}
-	local var23_75 = StoryRecorder.New()
+	local var22_77 = {}
+	local var23_77 = StoryRecorder.New()
 
-	var23_75:Add(arg0_75)
+	var23_77:Add(arg0_77)
 
-	local var24_75 = var23_75:GetContentList()
+	local var24_77 = var23_77:GetContentList()
 
-	_.each(var24_75, function(arg0_86)
-		if arg0_86.icon then
-			local var0_86 = "squareicon/" .. arg0_86.icon
+	_.each(var24_77, function(arg0_88)
+		if arg0_88.icon then
+			local var0_88 = "squareicon/" .. arg0_88.icon
 
-			table.insert(var22_75, var0_86)
+			table.insert(var22_77, var0_88)
 		end
 	end)
 
-	return (SplitPackMediatorResMap.MergeLuaArr(var3_75, var8_75, var12_75, var16_75, var19_75, var20_75, var22_75))
+	return (SplitPackMediatorResMap.MergeLuaArr(var3_77, var8_77, var12_77, var16_77, var19_77, var20_77, var22_77))
 end
 
 return var0_0

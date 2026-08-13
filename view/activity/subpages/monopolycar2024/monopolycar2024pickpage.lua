@@ -50,13 +50,18 @@ function var0_0.UpdateList(arg0_6)
 		warning(iter0_6, var0_6)
 		setActive(iter1_6:Find(iter0_6 .. "/active"), not var0_6)
 		setActive(iter1_6:Find(iter0_6 .. "/coin"), arg0_6.banCount < 3 and not var0_6)
+
+		if not var0_6 then
+			triggerToggle(iter1_6, true)
+		end
 	end
 end
 
-function var0_0.Show(arg0_8, arg1_8, arg2_8, arg3_8, arg4_8)
+function var0_0.Show(arg0_8, arg1_8, arg2_8, arg3_8, arg4_8, arg5_8)
 	var0_0.super.Show(arg0_8)
 
 	arg0_8.activityId = arg1_8
+	arg0_8.turnCnt = arg4_8
 	arg0_8.banCount = #arg2_8
 
 	if arg0_8.banCount >= 3 then
@@ -65,10 +70,10 @@ function var0_0.Show(arg0_8, arg1_8, arg2_8, arg3_8, arg4_8)
 		arg0_8.banList = arg2_8
 	end
 
-	arg0_8.callback = arg4_8
+	arg0_8.callback = arg5_8
 
 	arg0_8:UpdateList()
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_8._tf)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_8._tf)
 	arg0_8.anim:Play("anim_monopolycar_pick_in")
 	arg0_8:CheckAuto(arg3_8)
 end
@@ -102,7 +107,7 @@ function var0_0.Hide(arg0_10)
 
 	arg0_10.selectedId = 0
 
-	pg.UIMgr.GetInstagramList():UnOverlayPanel(arg0_10._tf, arg0_10._parentTf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_10._tf, arg0_10._parentTf)
 end
 
 function var0_0.OnDestroy(arg0_11)

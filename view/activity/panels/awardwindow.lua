@@ -44,32 +44,40 @@ function var0_0.UpdateItem(arg0_7, arg1_7, arg2_7)
 	setText(arg2_7:Find("target/title"), arg0_7.targetTitle)
 	setText(arg2_7:Find("target/Text"), arg1_7 + 1)
 	setText(arg2_7:Find("title/Text"), "PHASE  " .. arg1_7 + 1)
+	arg0_7:ShowIndex(arg1_7 + 1, arg2_7)
 end
 
-function var0_0.Flush(arg0_9, arg1_9, arg2_9, arg3_9)
+function var0_0.Flush(arg0_9, arg1_9, arg2_9, arg3_9, arg4_9)
 	arg0_9.awards = arg1_9
 	arg0_9.finishIndex = arg2_9
 	arg0_9.targetTitle = arg3_9[2]
-
-	arg0_9.uiItemList:align(#arg0_9.awards)
-
 	arg0_9.currentTitle.text = arg3_9[1]
 	arg0_9.currentTxt.text = arg2_9
+	arg0_9.showIndex = arg4_9
 
+	arg0_9.uiItemList:align(#arg0_9.awards)
 	arg0_9:Show()
 end
 
-function var0_0.Show(arg0_10)
-	var0_0.super.Show(arg0_10)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_10._tf)
+function var0_0.ShowIndex(arg0_10, arg1_10, arg2_10)
+	if arg0_10.showIndex ~= nil then
+		setText(arg2_10:Find("target/Text"), arg0_10.showIndex.targetList[arg1_10])
+
+		arg0_10.currentTxt.text = arg0_10.showIndex.nowGet
+	end
 end
 
-function var0_0.Hide(arg0_11)
-	var0_0.super.Hide(arg0_11)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_11._tf, arg0_11._parentTf)
+function var0_0.Show(arg0_11)
+	var0_0.super.Show(arg0_11)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_11._tf)
 end
 
-function var0_0.OnDestroy(arg0_12)
+function var0_0.Hide(arg0_12)
+	var0_0.super.Hide(arg0_12)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_12._tf, arg0_12._parentTf)
+end
+
+function var0_0.OnDestroy(arg0_13)
 	return
 end
 

@@ -69,6 +69,9 @@ pg.emoji_template.all = {
 	66,
 	67,
 	68,
+	69,
+	70,
+	71,
 	100,
 	101,
 	102,
@@ -262,6 +265,9 @@ pg.emoji_template.get_id_list_by_auction = {
 		66,
 		67,
 		68,
+		69,
+		70,
+		71,
 		100,
 		101,
 		102,
@@ -1318,6 +1324,48 @@ pg.base.emoji_template = {}
 			2
 		}
 	}
+	pg.base.emoji_template[69] = {
+		item_name = "Sticker: Yippee!",
+		item_desc = "Sticker: Yippee! (Can be found in the Default section of chat stickers.)",
+		index = 1028,
+		pic = "weikesibao_2_1",
+		desc = "<color=#92fc63>[Yippee!]</color>",
+		achieve = 1,
+		auction = 0,
+		id = 69,
+		icon = "",
+		type = {
+			2
+		}
+	}
+	pg.base.emoji_template[70] = {
+		item_name = "Sticker: Twinkly wink",
+		item_desc = "Sticker: Twinkly wink (Can be found in the Default section of chat stickers.)",
+		index = 1029,
+		pic = "weikesibao_2_2",
+		desc = "<color=#92fc63>[Twinkly wink]</color>",
+		achieve = 1,
+		auction = 0,
+		id = 70,
+		icon = "",
+		type = {
+			2
+		}
+	}
+	pg.base.emoji_template[71] = {
+		item_name = "Sticker: Almost there!",
+		item_desc = "Sticker: Almost there! (Can be found in the Default section of chat stickers.)",
+		index = 1030,
+		pic = "weikesibao_2_3",
+		desc = "<color=#92fc63>[Almost there!]</color>",
+		achieve = 1,
+		auction = 0,
+		id = 71,
+		icon = "",
+		type = {
+			2
+		}
+	}
 	pg.base.emoji_template[100] = {
 		item_name = "",
 		item_desc = "",
@@ -1752,6 +1800,8 @@ pg.base.emoji_template = {}
 			1
 		}
 	}
+end)()
+;(function()
 	pg.base.emoji_template[217] = {
 		item_name = "",
 		item_desc = "",
@@ -1794,8 +1844,6 @@ pg.base.emoji_template = {}
 			1
 		}
 	}
-end)()
-;(function()
 	pg.base.emoji_template[220] = {
 		item_name = "",
 		item_desc = "",

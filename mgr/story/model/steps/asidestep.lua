@@ -59,6 +59,10 @@ function var0_0.GetSequence(arg0_5)
 	for iter0_5, iter1_5 in ipairs(arg0_5.sequence or {}) do
 		local var2_5 = var1_5 and arg0_5:ReplacePlayerName(iter1_5[1]) or iter1_5[1]
 
+		if arg0_5:ShouldReplaceCar2026() then
+			var2_5 = arg0_5:ReplaceCar2026Name(var2_5)
+		end
+
 		table.insert(var0_5, {
 			HXSet.hxLan(var2_5),
 			iter1_5[2]

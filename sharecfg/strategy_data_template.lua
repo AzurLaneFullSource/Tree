@@ -376,6 +376,11 @@ pg.strategy_data_template.all = {
 	201763,
 	201764,
 	201765,
+	201820,
+	201821,
+	201826,
+	201831,
+	201832,
 	205001,
 	205002,
 	205003,
@@ -4549,6 +4554,61 @@ end)()
 		desc = "During battle, any healing effects applied to allies are stolen by the boss; each time this occurs, the boss restores <color=#92fc63>1.0% Max HP</color>. The boss's Nether Barrage cannot be cleared by airstrikes.\nThe first time the boss's HP drops beneath <color=#92fc63>20.0%</color>, it will enter an enhanced state, reducing DMG taken for 3s before recovering 30.0% of its Max HP. Afterwards, its attack patterns become more intense, but it loses <color=#92fc63>0.5% Max HP every 1s</color>.\n\n- Hard Mode Details -\nEnemy DMG dealt is <color=#ffc038>significantly increased</color>. Large enemy shells cannot be nullified by airstrikes or shields.\nThe hitbox of your Vanguard fleet is <color=#92fc63>limited to only the frontmost ship, and the size of the hitbox is also significantly reduced</color>.\nWhen your ship is hit, it will become invulnerable for a short period of time.\n\nThe following gear or skills are rendered ineffective:\n[Fiercer When Cornered], [Operation Rainbow], [Eleventh Hour], [I Will Not Yield!]",
 		arg = {}
 	}
+	pg.base.strategy_data_template[201820] = {
+		buff_id = 0,
+		name = "Depths of the Astrarium",
+		iconSize = "",
+		type = 10,
+		id = 201820,
+		icon = "201820",
+		buff_type = 0,
+		desc = "Fragments of emotion spread throughout Astrarium.\nDuring battle, enemies called Glimpses of Emotion will appear. When defeated, they may spawn more Glimpses of Emotion.",
+		arg = {}
+	}
+	pg.base.strategy_data_template[201821] = {
+		buff_id = 201821,
+		name = "Rain Upon Flowery Seas",
+		iconSize = "",
+		type = 10,
+		id = 201821,
+		icon = "201821",
+		buff_type = 0,
+		desc = "During battle, Yorktown META will provide supporting barrages.",
+		arg = {}
+	}
+	pg.base.strategy_data_template[201826] = {
+		buff_id = 201826,
+		name = "Corrosive Aberration",
+		iconSize = "",
+		type = 10,
+		id = 201826,
+		icon = "201826",
+		buff_type = 0,
+		desc = "During battle, Hierophant will provide support.",
+		arg = {}
+	}
+	pg.base.strategy_data_template[201831] = {
+		buff_id = 0,
+		name = "Challenge Mode",
+		iconSize = "",
+		type = 10,
+		id = 201831,
+		icon = "200908",
+		buff_type = 0,
+		desc = "During battle, Bon Homme Richard will be engulfed in a dark tornado that pulls nearby ships closer. Ships pulled into the vortex will <color=#92fc63>sustain continuous damage</color>.\nAt certain points, the wind's direction will shift westward (left of Richard) or eastward (right of Richard). Allies caught in the wind will be afflicted with Corrosion, <color=#92fc63>losing 0.5% Max HP every 1s and taking 20.0% increased DMG</color>.",
+		arg = {}
+	}
+	pg.base.strategy_data_template[201832] = {
+		buff_id = 0,
+		name = "Challenge Mode",
+		iconSize = "",
+		type = 10,
+		id = 201832,
+		icon = "200908",
+		buff_type = 0,
+		desc = "During battle, Bon Homme Richard will be engulfed in a black tornado that pulls nearby ships closer. Ships pulled into the vortex will <color=#ee0000>be instantly Devoured</color>.\nAt certain points, the wind's direction will shift westward (left of Richard) or eastward (right of Richard). <color=#92fc63>If the Flagship is caught in the wind</color>, the entire Vanguard fleet will <color=#92fc63>gradually accumulate stacks of Corrosion</color>. Corrosion can stack up to 10 times, but leaving the affected area will allow ships to gradually recover.\nAllies afflicted with Corrosion will have the following effects applied:\nNon-META ships will be instantly Devoured when they reach 10 stacks.\nMETA ships will have <color=#92fc63>DMG dealt AND received increased by 10%</color> for each stack, but at 10 stacks, they will <color=#92fc63>lose 2.0% Max HP every 1s</color>.\n\n- Hard Mode Details -\nEnemy DMG dealt is <color=#ffc038>significantly increased</color>. Large enemy shells cannot be nullified by airstrikes or shields.\nThe hitbox of your Vanguard fleet is <color=#92fc63>limited to only the frontmost ship, and the size of the hitbox is also significantly reduced</color>.\nWhen your ship is hit, it will become invulnerable for a short period of time.\n\nThe following gear or skills are rendered ineffective:\n[Fiercer When Cornered], [Operation Rainbow], [Eleventh Hour], [I Will Not Yield!]",
+		arg = {}
+	}
 	pg.base.strategy_data_template[205001] = {
 		buff_id = 205001,
 		name = "活动关卡标志A",
@@ -4802,6 +4862,8 @@ end)()
 		desc = "Increases the Affinity your ships earn from battles.",
 		arg = {}
 	}
+end)()
+;(function()
 	pg.base.strategy_data_template[300017] = {
 		buff_id = 0,
 		name = "Core Level 1",

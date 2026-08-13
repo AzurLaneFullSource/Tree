@@ -901,6 +901,15 @@ function var0_0.readyToAchieve(arg0_25)
 		local var2_25 = getProxy(ActivityProxy):getActivityById(arg0_25:getConfig("config_client").sub_act_id)
 
 		return var2_25 and not var2_25:isEnd() and var2_25:readyToAchieve()
+	elseif arg0_25:getConfig("config_client").is_showMedal then
+		local var3_25 = arg0_25:getConfig("config_client").medal_group_id
+
+		return ActivityMedalGroup.showTip(var3_25)
+	elseif arg0_25:getConfig("config_client").is_clickOnce then
+		local var4_25 = arg0_25:getConfig("id")
+		local var5_25 = Activity.GetPlayerActivyIDKey(arg0_25:getConfig("id"))
+
+		return PlayerPrefs.GetInt(var5_25, 0) == 0
 	else
 		return false
 	end
@@ -1512,6 +1521,12 @@ end
 
 function var0_0.IsMaintenanceFinish(arg0_135)
 	return not arg0_135:GetConfigClientSetting("no_maintenance")
+end
+
+function var0_0.GetPlayerActivyIDKey(arg0_136)
+	local var0_136 = getProxy(PlayerProxy):getPlayerId()
+
+	return "Activity_PlayerPrefs_PlayerId_" .. var0_136 .. "ActivityID_" .. arg0_136
 end
 
 return var0_0

@@ -159,31 +159,25 @@ function var0_0.initNotificationHandleDic(arg0_19)
 							timeLimit = var1_22.genre == ShopArgs.SkinShopTimeLimit
 						}
 					}))
+				elseif PaintingShowScene.GetSkinShowAble(var2_22) then
+					arg0_22:addSubLayers(Context.New({
+						mediator = PaintingShowMediator,
+						viewComponent = PaintingShowNewSkinScene,
+						data = {
+							is_shop = true,
+							skinId = var2_22,
+							timeLimit = var1_22.genre == ShopArgs.SkinShopTimeLimit
+						}
+					}))
 				else
-					local function var3_22()
-						arg0_22:addSubLayers(Context.New({
-							mediator = NewSkinMediator,
-							viewComponent = NewSkinLayer,
-							data = {
-								skinId = var1_22.effect_args[1],
-								timeLimit = var1_22.genre == ShopArgs.SkinShopTimeLimit
-							}
-						}))
-					end
-
-					if PaintingShowScene.GetSkinShowAble(var2_22) then
-						arg0_22:addSubLayers(Context.New({
-							mediator = PaintingShowMediator,
-							viewComponent = PaintingShowScene,
-							data = {
-								is_shop = true,
-								skinId = var2_22,
-								callback = var3_22
-							}
-						}))
-					else
-						var3_22()
-					end
+					arg0_22:addSubLayers(Context.New({
+						mediator = NewSkinMediator,
+						viewComponent = NewSkinLayer,
+						data = {
+							skinId = var1_22.effect_args[1],
+							timeLimit = var1_22.genre == ShopArgs.SkinShopTimeLimit
+						}
+					}))
 				end
 
 				arg0_22.viewComponent:OnShopping(var0_22.id)
@@ -191,17 +185,17 @@ function var0_0.initNotificationHandleDic(arg0_19)
 			end
 		end,
 		[GAME.SKIN_COUPON_SHOPPING_DONE] = GAME.SKIN_SHOPPIGN_DONE,
-		[GAME.BUY_FURNITURE_DONE] = function(arg0_24, arg1_24)
-			local var0_24 = arg1_24:getType()
+		[GAME.BUY_FURNITURE_DONE] = function(arg0_23, arg1_23)
+			local var0_23 = arg1_23:getType()
 
-			arg0_24.viewComponent:OnFurnitureUpdate(var0_24[1])
+			arg0_23.viewComponent:OnFurnitureUpdate(var0_23[1])
 		end,
-		[NewShopMainMediator.NOTI_UPDATE_CURRENT] = function(arg0_25, arg1_25)
-			arg0_25.viewComponent:GetAllCommodities()
-			arg0_25.viewComponent:Refresh(true)
+		[NewShopMainMediator.NOTI_UPDATE_CURRENT] = function(arg0_24, arg1_24)
+			arg0_24.viewComponent:GetAllCommodities()
+			arg0_24.viewComponent:Refresh(true)
 		end,
-		[GAME.CHARGE_OPERATION_DONE] = function(arg0_26, arg1_26)
-			arg0_26.viewComponent:closeView()
+		[GAME.CHARGE_OPERATION_DONE] = function(arg0_25, arg1_25)
+			arg0_25.viewComponent:closeView()
 		end
 	}
 end

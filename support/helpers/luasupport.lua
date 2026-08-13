@@ -229,7 +229,7 @@ function errorMsg(...)
 end
 
 function BuildVector3(arg0_21)
-	return Vector3(arg0_21[1], arg0_21[2], arg0_21[3])
+	return Vector3(arg0_21[1] or 0, arg0_21[2] or 0, arg0_21[3] or 0)
 end
 
 function ShowFuncInfo(arg0_22)

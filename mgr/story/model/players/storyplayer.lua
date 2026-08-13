@@ -151,6 +151,12 @@ function var0_0.Play(arg0_10, arg1_10, arg2_10, arg3_10)
 		return
 	end
 
+	if var0_10:GetMode() == Story.MODE_SUBPAGE and not var0_10:ShouldShowSubPage() then
+		arg3_10()
+
+		return
+	end
+
 	pg.NewStoryMgr.GetInstance():AddRecord(var0_10)
 
 	if var0_10:ShouldJumpToNextScript() then

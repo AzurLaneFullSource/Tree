@@ -154,6 +154,12 @@ function var0_0.GetSkillInfo(arg0_30)
 
 	var0_30.unlock = var0_30.skillId == arg0_30:GetEffect()
 
+	local var1_30 = arg0_30:GetShipId()
+
+	if not var1_30 or var1_30 == 0 then
+		var0_30.descTrigger = true
+	end
+
 	return var0_30
 end
 
@@ -191,7 +197,8 @@ function var0_0.GetUpgradableSkillInfo(arg0_31)
 		table.insert(var1_31, {
 			skillId = var4_31,
 			lv = var5_31,
-			unlock = var6_31
+			unlock = var6_31,
+			descTrigger = not var2_31 or nil
 		})
 	end
 

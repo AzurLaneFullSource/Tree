@@ -287,7 +287,9 @@ function var0_0._Init(arg0_27, arg1_27, arg2_27)
 		VedioStoryPlayer.New(arg1_27),
 		CastStoryPlayer.New(arg1_27),
 		SpAnimStoryPlayer.New(arg1_27),
-		BlinkStoryPlayer.New(arg1_27)
+		BlinkStoryPlayer.New(arg1_27),
+		DialogueStoryPlayer.New(arg1_27),
+		SubPageStoryPlayer.New(arg1_27)
 	}
 	arg0_27.setSpeedPanel = StorySetSpeedPanel.New(arg0_27._tf, function(arg0_28)
 		arg0_27:UpdatePlaySpeed(arg0_28)

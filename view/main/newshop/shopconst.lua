@@ -115,5 +115,7 @@ var0_0.TYPE2NAME = {
 	[var0_0.TYPE_META] = "meta_shop_title",
 	[var0_0.TYPE_MINI_GAME] = "mini_game_shop_title"
 }
+var0_0.NEW_SKIN_SHOP_ID = 1
+var0_0.PERMANANT_SKIN_SHOP_ID = 2
 
 return var0_0

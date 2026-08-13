@@ -1,5 +1,5 @@
 local var0_0 = class("DOACoreMiniGamePage", import("view.activity.CorePage.CoreActivityPage"))
-local var1_0 = 83
+local var1_0 = 89
 
 function var0_0.OnInit(arg0_1)
 	arg0_1.mgHubData = getProxy(MiniGameProxy):GetHubByGameId(var1_0)

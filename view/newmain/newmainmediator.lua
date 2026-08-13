@@ -275,30 +275,37 @@ function var0_0.initNotificationHandleDic(arg0_21)
 		end,
 		[ActivityProxy.UPDATED_TIP] = function(arg0_47, arg1_47)
 			arg0_47.viewComponent:emit(MainBaseActivityBtn.UPDATED_TIP)
+		end,
+		[MiniGameProxy.ON_HUB_DATA_UPDATE] = function(arg0_48, arg1_48)
+			local var0_48 = arg0_48.viewComponent:GetFlagShip()
+
+			if arg0_48.viewComponent.theme then
+				arg0_48.viewComponent.theme:Refresh(var0_48)
+			end
 		end
 	}
 end
 
-function var0_0.BuildDebugBattleLoop(arg0_48, arg1_48)
+function var0_0.BuildDebugBattleLoop(arg0_49, arg1_49)
 	if not IsUnityEditor then
 		return
 	end
 
-	local var0_48 = {}
+	local var0_49 = {}
 
-	for iter0_48, iter1_48 in arg1_48:gmatch("%s+(%S+)") do
-		table.insert(var0_48, iter0_48)
+	for iter0_49, iter1_49 in arg1_49:gmatch("%s+(%S+)") do
+		table.insert(var0_49, iter0_49)
 	end
 
-	local var1_48 = {
-		loopCount = tonumber(var0_48[2]),
-		loopStages = underscore.rest(var0_48, 3),
+	local var1_49 = {
+		loopCount = tonumber(var0_49[2]),
+		loopStages = underscore.rest(var0_49, 3),
 		tempList = {}
 	}
 
-	_G.InDebugBattleLoop = var1_48
+	_G.InDebugBattleLoop = var1_49
 
-	arg0_48.viewComponent:CheckDebugBattleLoop()
+	arg0_49.viewComponent:CheckDebugBattleLoop()
 end
 
 return var0_0

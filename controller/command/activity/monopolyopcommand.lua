@@ -74,8 +74,13 @@ function var0_0.execute(arg0_1, arg1_1)
 				local var6_2 = arg0_2.number[2]
 				local var7_2 = #var3_2 > 0 and var3_2[#var3_2] or var0_2.data2
 
+				print(var2_2, "--", var5_2, "-", var6_2, "-", var7_2, "-", #var3_2)
+
+				local var8_2 = false
+
 				if table.contains(var3_2, 1) then
 					var0_2.data1_list[3] = var0_2.data1_list[3] + 1
+					var8_2 = true
 				end
 
 				if var2_2 == ActivityConst.MONOPOLY_OP_THROW then
@@ -84,18 +89,18 @@ function var0_0.execute(arg0_1, arg1_1)
 					var0_2.data3 = var5_2
 					var0_2.data1_list[2] = var0_2.data1_list[2] + 1
 
-					local var8_2 = var0_2:getDataConfig("reward_time")
-					local var9_2 = var0_2:getDataConfig("effective_times") or 0
-					local var10_2
+					local var9_2 = var0_2:getDataConfig("reward_time")
+					local var10_2 = var0_2:getDataConfig("effective_times") or 0
+					local var11_2
 
-					if var9_2 ~= 0 then
-						var10_2 = math.min(var0_2.data1_list[2], var9_2)
+					if var10_2 ~= 0 then
+						var11_2 = math.min(var0_2.data1_list[2], var10_2)
 					else
-						var10_2 = var0_2.data1_list[2]
+						var11_2 = var0_2.data1_list[2]
 					end
 
-					if var8_2 > 0 then
-						var0_2.data2_list[1] = math.floor(var10_2 / var8_2)
+					if var9_2 > 0 then
+						var0_2.data2_list[1] = math.floor(var11_2 / var9_2)
 					else
 						var0_2.data2_list[1] = 0
 					end
@@ -110,7 +115,7 @@ function var0_0.execute(arg0_1, arg1_1)
 					var0_2.data2 = var7_2
 					var0_2.data4 = var6_2
 
-					if var7_2 <= 1 then
+					if var8_2 then
 						var0_2.data1_list[4] = 0
 					end
 
@@ -120,13 +125,17 @@ function var0_0.execute(arg0_1, arg1_1)
 						var0_1.callback(var5_2, var3_2, var6_2)
 					end
 				elseif var2_2 == ActivityConst.MONOPOLY_OP_TRIGGER then
-					local var11_2 = var0_1.callback or function(arg0_4, arg1_4)
+					local var12_2 = var0_1.callback or function(arg0_4, arg1_4)
 						return
 					end
 
 					var0_2.data3 = var5_2
 					var0_2.data2 = var7_2
 					var0_2.data4 = var6_2 or 0
+
+					if var8_2 then
+						var0_2.data1_list[4] = 0
+					end
 
 					var3_1:updateActivity(var0_2)
 
@@ -135,14 +144,14 @@ function var0_0.execute(arg0_1, arg1_1)
 							awards = var1_2,
 							autoFlag = var1_1,
 							callback = function()
-								var11_2(var3_2, var6_2)
+								var12_2(var3_2, var6_2)
 							end
 						})
 					else
-						var11_2(var3_2, var6_2)
+						var12_2(var3_2, var6_2)
 					end
 				elseif var2_2 == ActivityConst.MONOPOLY_OP_PICK then
-					local var12_2 = var0_1.callback or function(arg0_6, arg1_6)
+					local var13_2 = var0_1.callback or function(arg0_6, arg1_6)
 						return
 					end
 
@@ -159,11 +168,11 @@ function var0_0.execute(arg0_1, arg1_1)
 							awards = var1_2,
 							autoFlag = var1_1,
 							callback = function()
-								var12_2(var3_2, var6_2)
+								var13_2(var3_2, var6_2)
 							end
 						})
 					else
-						var12_2(var3_2, var6_2)
+						var13_2(var3_2, var6_2)
 					end
 
 					print("cmd : 6", " 路径 ： ", var4_2, "  剩余步数 ： ", var5_2)

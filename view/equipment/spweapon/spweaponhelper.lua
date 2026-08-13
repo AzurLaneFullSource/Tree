@@ -35,307 +35,328 @@ local function var6_0(arg0_1, arg1_1)
 
 	setActive(var0_1:Find("value/up"), arg1_1.compare and arg1_1.compare > 0)
 	setActive(var0_1:Find("value/down"), arg1_1.compare and arg1_1.compare < 0)
-	triggerToggle(var0_1, arg1_1.lock_open)
 
 	if not arg1_1.lock_open and arg1_1.sub and #arg1_1.sub > 0 then
+		onToggle(nil, var0_1, function(arg0_2)
+			setActive(var0_1:Find("sub"), arg0_2)
+		end, SFX_PANEL)
+		triggerToggle(var0_1, arg1_1.lock_open)
+
+		GetComponent(var0_1, typeof(Toggle)).enabled = true
+	elseif arg1_1.descTrigger ~= nil then
+		local var3_1 = arg0_1:Find("desc")
+
+		onToggle(nil, var0_1, function(arg0_3)
+			setActive(var3_1, arg0_3)
+		end, SFX_PANEL)
+		onButton(nil, var3_1, function()
+			triggerToggle(var0_1, false)
+		end, SFX_PANEL)
+		triggerToggle(var0_1, arg1_1.descTrigger)
+
 		GetComponent(var0_1, typeof(Toggle)).enabled = true
 	else
 		setActive(var0_1:Find("name/close"), false)
 		setActive(var0_1:Find("name/open"), false)
+		removeOnToggle(var0_1)
 
 		GetComponent(var0_1, typeof(Toggle)).enabled = false
 	end
 end
 
-local function var7_0(arg0_2, arg1_2)
-	local var0_2 = arg0_2:Find("desc")
+local function var7_0(arg0_5, arg1_5)
+	local var0_5 = arg0_5:Find("desc")
 
-	if IsNil(var0_2) then
+	if IsNil(var0_5) then
 		return
 	end
 
-	setActive(var0_2, arg1_2.desc)
+	if arg1_5.descTrigger == nil then
+		setActive(var0_5, arg1_5.desc)
+	end
 
-	if not arg1_2.desc then
+	if not arg1_5.desc then
 		return
 	end
 
-	setText(var0_2:Find("Text"), arg1_2.desc)
+	setText(var0_5:Find("Text"), arg1_5.desc)
 end
 
-local function var8_0(arg0_3, arg1_3)
-	var6_0(arg0_3, arg1_3)
-	var7_0(arg0_3, arg1_3)
+local function var8_0(arg0_6, arg1_6)
+	var6_0(arg0_6, arg1_6)
+	var7_0(arg0_6, arg1_6)
 end
 
-local function var9_0(arg0_4, arg1_4, arg2_4)
-	removeAllChildren(arg0_4)
-	var5_0(arg0_4, arg1_4, arg2_4)
+local function var9_0(arg0_7, arg1_7, arg2_7)
+	removeAllChildren(arg0_7)
+	var5_0(arg0_7, arg1_7, arg2_7)
 end
 
-function var5_0(arg0_5, arg1_5, arg2_5)
-	for iter0_5, iter1_5 in ipairs(arg2_5) do
-		local var0_5 = cloneTplTo(arg1_5, arg0_5)
+function var5_0(arg0_8, arg1_8, arg2_8)
+	for iter0_8, iter1_8 in ipairs(arg2_8) do
+		local var0_8 = cloneTplTo(arg1_8, arg0_8)
 
-		var8_0(var0_5, iter1_5)
+		var8_0(var0_8, iter1_8)
 	end
 end
 
-function updateSpWeaponInfo(arg0_6, arg1_6, arg2_6)
-	local var0_6 = arg0_6:Find("attr_tpl")
+function updateSpWeaponInfo(arg0_9, arg1_9, arg2_9)
+	local var0_9 = arg0_9:Find("attr_tpl")
 
-	var9_0(arg0_6:Find("attrs"), var0_6, arg1_6.attrs)
+	var9_0(arg0_9:Find("attrs"), var0_9, arg1_9.attrs)
 
-	local var1_6 = {}
+	local var1_9 = {}
 
-	if arg2_6[1].skillId > 0 then
-		local var2_6 = getSkillDesc(arg2_6[1].skillId, arg2_6[1].lv)
+	if arg2_9[1].skillId > 0 then
+		local var2_9 = getSkillDesc(arg2_9[1].skillId, arg2_9[1].lv)
 
-		if not arg2_6[1].unlock then
-			var2_6 = setColorStr(i18n("spweapon_tip_skill_locked") .. var2_6, "#a2a2a2")
+		if not arg2_9[1].unlock then
+			var2_9 = setColorStr(i18n("spweapon_tip_skill_locked") .. var2_9, "#a2a2a2")
 		end
 
-		table.insert(var1_6, {
+		table.insert(var1_9, {
 			name = i18n("spweapon_attr_effect"),
-			value = setColorStr(getSkillName(arg2_6[1].skillId), arg2_6[1].unlock and "#FFDE00FF" or "#A2A2A2"),
-			desc = var2_6
+			value = setColorStr(getSkillName(arg2_9[1].skillId), arg2_9[1].unlock and "#FFDE00FF" or "#A2A2A2"),
+			desc = var2_9,
+			descTrigger = defaultValue(arg2_9[1].descTrigger, arg2_9[1].unlock)
 		})
 	end
 
-	for iter0_6, iter1_6 in ipairs(arg2_6[2]) do
-		local var3_6 = getSkillDesc(iter1_6.skillId, iter1_6.lv)
+	for iter0_9, iter1_9 in ipairs(arg2_9[2]) do
+		local var3_9 = getSkillDesc(iter1_9.skillId, iter1_9.lv)
 
-		if not iter1_6.unlock then
-			var3_6 = setColorStr(i18n("spweapon_tip_skill_locked") .. var3_6, "#a2a2a2")
+		if not iter1_9.unlock then
+			var3_9 = setColorStr(i18n("spweapon_tip_skill_locked") .. var3_9, "#a2a2a2")
 		end
 
-		table.insert(var1_6, {
+		table.insert(var1_9, {
 			name = i18n("spweapon_attr_skillupgrade"),
-			value = setColorStr(getSkillName(iter1_6.skillId), iter1_6.unlock and "#FFDE00FF" or "#A2A2A2"),
-			desc = var3_6
+			value = setColorStr(getSkillName(iter1_9.skillId), iter1_9.unlock and "#FFDE00FF" or "#A2A2A2"),
+			desc = var3_9,
+			descTrigger = defaultValue(iter1_9.descTrigger, iter1_9.unlock)
 		})
 	end
 
-	var5_0(arg0_6:Find("attrs"), var0_6, var1_6)
+	var5_0(arg0_9:Find("attrs"), var0_9, var1_9)
 
-	local var4_6 = cloneTplTo(var0_6, arg0_6:Find("part"))
+	local var4_9 = cloneTplTo(var0_9, arg0_9:Find("part"))
 
-	var4_6:SetSiblingIndex(0)
-	var8_0(var4_6, {
+	var4_9:SetSiblingIndex(0)
+	var8_0(var4_9, {
 		value = "",
 		name = i18n("equip_info_23")
 	})
 
-	local var5_6 = arg0_6:Find("part/value")
-	local var6_6 = var5_6:Find("label")
-	local var7_6 = {}
-	local var8_6 = {}
+	local var5_9 = arg0_9:Find("part/value")
+	local var6_9 = var5_9:Find("label")
+	local var7_9 = {}
+	local var8_9 = {}
 
-	if #arg1_6.part[1] == 0 and #arg1_6.part[2] == 0 then
-		setmetatable(var7_6, {
-			__index = function(arg0_7, arg1_7)
+	if #arg1_9.part[1] == 0 and #arg1_9.part[2] == 0 then
+		setmetatable(var7_9, {
+			__index = function(arg0_10, arg1_10)
 				return true
 			end
 		})
-		setmetatable(var8_6, {
-			__index = function(arg0_8, arg1_8)
+		setmetatable(var8_9, {
+			__index = function(arg0_11, arg1_11)
 				return true
 			end
 		})
 	else
-		for iter2_6, iter3_6 in ipairs(arg1_6.part[1]) do
-			var7_6[iter3_6] = true
+		for iter2_9, iter3_9 in ipairs(arg1_9.part[1]) do
+			var7_9[iter3_9] = true
 		end
 
-		for iter4_6, iter5_6 in ipairs(arg1_6.part[2]) do
-			var8_6[iter5_6] = true
+		for iter4_9, iter5_9 in ipairs(arg1_9.part[2]) do
+			var8_9[iter5_9] = true
 		end
 	end
 
-	local var9_6 = ShipType.MergeFengFanType(ShipType.FilterOverQuZhuType(ShipType.AllShipType), var7_6, var8_6)
+	local var9_9 = ShipType.MergeFengFanType(ShipType.FilterOverQuZhuType(ShipType.AllShipType), var7_9, var8_9)
 
-	UIItemList.StaticAlign(var5_6, var6_6, #var9_6, function(arg0_9, arg1_9, arg2_9)
-		arg1_9 = arg1_9 + 1
+	UIItemList.StaticAlign(var5_9, var6_9, #var9_9, function(arg0_12, arg1_12, arg2_12)
+		arg1_12 = arg1_12 + 1
 
-		if arg0_9 == UIItemList.EventUpdate then
-			local var0_9 = var9_6[arg1_9]
+		if arg0_12 == UIItemList.EventUpdate then
+			local var0_12 = var9_9[arg1_12]
 
-			GetImageSpriteFromAtlasAsync("shiptype", ShipType.Type2CNLabel(var0_9), arg2_9)
-			setActive(arg2_9:Find("main"), var7_6[var0_9] and not var8_6[var0_9])
-			setActive(arg2_9:Find("sub"), var8_6[var0_9] and not var7_6[var0_9])
-			setImageAlpha(arg2_9, not var7_6[var0_9] and not var8_6[var0_9] and 0.3 or 1)
+			GetImageSpriteFromAtlasAsync("shiptype", ShipType.Type2CNLabel(var0_12), arg2_12)
+			setActive(arg2_12:Find("main"), var7_9[var0_12] and not var8_9[var0_12])
+			setActive(arg2_12:Find("sub"), var8_9[var0_12] and not var7_9[var0_12])
+			setImageAlpha(arg2_12, not var7_9[var0_12] and not var8_9[var0_12] and 0.3 or 1)
 		end
 	end)
-	setActive(var0_6, false)
+	setActive(var0_9, false)
 end
 
-function var0_0.AlignAttrs(arg0_10, arg1_10)
-	for iter0_10 = 1, #arg0_10 do
-		if not arg1_10[iter0_10] or arg0_10[iter0_10].type ~= arg1_10[iter0_10].type then
-			local var0_10 = false
+function var0_0.AlignAttrs(arg0_13, arg1_13)
+	for iter0_13 = 1, #arg0_13 do
+		if not arg1_13[iter0_13] or arg0_13[iter0_13].type ~= arg1_13[iter0_13].type then
+			local var0_13 = false
 
-			for iter1_10 = iter0_10 + 1, #arg1_10 do
-				if arg1_10[iter0_10].type == arg1_10[iter1_10].type then
-					local var1_10 = table.remove(arg1_10, iter1_10)
+			for iter1_13 = iter0_13 + 1, #arg1_13 do
+				if arg1_13[iter0_13].type == arg1_13[iter1_13].type then
+					local var1_13 = table.remove(arg1_13, iter1_13)
 
-					table.insert(arg1_10, iter0_10, var1_10)
+					table.insert(arg1_13, iter0_13, var1_13)
 
-					var0_10 = true
+					var0_13 = true
 
 					break
 				end
 			end
 
-			if not var0_10 then
-				table.insert(arg1_10, iter0_10, {
-					type = arg0_10[iter0_10].type
+			if not var0_13 then
+				table.insert(arg1_13, iter0_13, {
+					type = arg0_13[iter0_13].type
 				})
 
-				arg1_10[iter0_10].empty = true
+				arg1_13[iter0_13].empty = true
 			end
 		end
 	end
 
-	for iter2_10 = #arg0_10 + 1, #arg1_10 do
-		table.insert(arg0_10, {
-			type = arg1_10[iter2_10].type
+	for iter2_13 = #arg0_13 + 1, #arg1_13 do
+		table.insert(arg0_13, {
+			type = arg1_13[iter2_13].type
 		})
 
-		arg0_10[iter2_10].empty = true
+		arg0_13[iter2_13].empty = true
 	end
 end
 
-function var0_0.CompareInfo(arg0_11, arg1_11)
-	local var0_11 = arg0_11.empty and 0 or arg0_11.configAttr + arg0_11.baseAttr
+function var0_0.CompareInfo(arg0_14, arg1_14)
+	local var0_14 = arg0_14.empty and 0 or arg0_14.configAttr + arg0_14.baseAttr
 
-	arg1_11.compare = (arg1_11.empty and 0 or arg1_11.configAttr + arg1_11.baseAttr) - var0_11
+	arg1_14.compare = (arg1_14.empty and 0 or arg1_14.configAttr + arg1_14.baseAttr) - var0_14
 end
 
-function var0_0.InsertAttrsCompare(arg0_12, arg1_12)
-	var0_0.AlignAttrs(arg0_12, arg1_12)
+function var0_0.InsertAttrsCompare(arg0_15, arg1_15)
+	var0_0.AlignAttrs(arg0_15, arg1_15)
 
-	for iter0_12 = 1, #arg0_12 do
-		var0_0.CompareInfo(arg0_12[iter0_12], arg1_12[iter0_12])
+	for iter0_15 = 1, #arg0_15 do
+		var0_0.CompareInfo(arg0_15[iter0_15], arg1_15[iter0_15])
 	end
 end
 
-local function var10_0(arg0_13)
-	local var0_13 = arg0_13:GetConfigAttributes()
-	local var1_13 = arg0_13:GetBaseAttributes()
+local function var10_0(arg0_16)
+	local var0_16 = arg0_16:GetConfigAttributes()
+	local var1_16 = arg0_16:GetBaseAttributes()
 
 	return {
 		{
-			type = arg0_13:getConfig("attribute_1"),
-			configAttr = var0_13[1],
-			baseAttr = var1_13[1]
+			type = arg0_16:getConfig("attribute_1"),
+			configAttr = var0_16[1],
+			baseAttr = var1_16[1]
 		},
 		{
-			type = arg0_13:getConfig("attribute_2"),
-			configAttr = var0_13[2],
-			baseAttr = var1_13[2]
+			type = arg0_16:getConfig("attribute_2"),
+			configAttr = var0_16[2],
+			baseAttr = var1_16[2]
 		}
 	}
 end
 
-local function var11_0(arg0_14, arg1_14)
-	local var0_14 = {
+local function var11_0(arg0_17, arg1_17)
+	local var0_17 = {
 		attrs = {}
 	}
 
-	for iter0_14 = 1, #arg0_14 do
-		local var1_14 = arg0_14[iter0_14]
-		local var2_14 = AttributeType.Type2Name(var1_14.type)
-		local var3_14
+	for iter0_17 = 1, #arg0_17 do
+		local var1_17 = arg0_17[iter0_17]
+		local var2_17 = AttributeType.Type2Name(var1_17.type)
+		local var3_17
 
-		if not var1_14.empty then
-			var3_14 = var1_14.configAttr .. " + " .. var1_14.baseAttr
+		if not var1_17.empty then
+			var3_17 = var1_17.configAttr .. " + " .. var1_17.baseAttr
 
-			if not arg1_14:IsReal() then
-				var3_14 = var3_14 .. "~" .. arg1_14:GetAttributesRange()[iter0_14]
+			if not arg1_17:IsReal() then
+				var3_17 = var3_17 .. "~" .. arg1_17:GetAttributesRange()[iter0_17]
 			end
 		else
-			var3_14 = 0
+			var3_17 = 0
 		end
 
-		table.insert(var0_14.attrs, {
-			name = var2_14,
-			value = var3_14,
-			compare = var1_14.compare
+		table.insert(var0_17.attrs, {
+			name = var2_17,
+			value = var3_17,
+			compare = var1_17.compare
 		})
 	end
 
-	local var4_14 = arg1_14:GetWearableShipTypes()
+	local var4_17 = arg1_17:GetWearableShipTypes()
 
-	var0_14.part = {
-		var4_14,
-		var4_14
+	var0_17.part = {
+		var4_17,
+		var4_17
 	}
-
-	return var0_14
-end
-
-function var0_0.TransformNormalInfo(arg0_15)
-	local var0_15 = var10_0(arg0_15)
-
-	return var11_0(var0_15, arg0_15)
-end
-
-function var0_0.CompareNormalInfo(arg0_16, arg1_16)
-	local var0_16 = var10_0(arg0_16)
-	local var1_16 = var10_0(arg1_16)
-
-	var0_0.InsertAttrsCompare(var0_16, var1_16)
-
-	return var11_0(var0_16, arg0_16), var11_0(var1_16, arg1_16)
-end
-
-function var0_0.TransformCompositeInfo(arg0_17)
-	local var0_17 = {}
-	local var1_17 = {
-		arg0_17:getConfig("attribute_1"),
-		arg0_17:getConfig("attribute_2")
-	}
-	local var2_17 = arg0_17:GetConfigAttributes()
-	local var3_17 = arg0_17:GetAttributesRange()
-
-	for iter0_17 = 1, 2 do
-		local var4_17 = AttributeType.Type2Name(var1_17[iter0_17])
-		local var5_17 = var2_17[iter0_17] .. " + 0~" .. var3_17[iter0_17]
-
-		table.insert(var0_17, {
-			name = var4_17,
-			value = var5_17
-		})
-	end
 
 	return var0_17
 end
 
-function var0_0.TransformUpgradeInfo(arg0_18, arg1_18)
-	local var0_18 = {}
-	local var1_18 = {
-		arg0_18:getConfig("attribute_1"),
-		arg0_18:getConfig("attribute_2")
+function var0_0.TransformNormalInfo(arg0_18)
+	local var0_18 = var10_0(arg0_18)
+
+	return var11_0(var0_18, arg0_18)
+end
+
+function var0_0.CompareNormalInfo(arg0_19, arg1_19)
+	local var0_19 = var10_0(arg0_19)
+	local var1_19 = var10_0(arg1_19)
+
+	var0_0.InsertAttrsCompare(var0_19, var1_19)
+
+	return var11_0(var0_19, arg0_19), var11_0(var1_19, arg1_19)
+end
+
+function var0_0.TransformCompositeInfo(arg0_20)
+	local var0_20 = {}
+	local var1_20 = {
+		arg0_20:getConfig("attribute_1"),
+		arg0_20:getConfig("attribute_2")
 	}
-	local var2_18 = arg0_18:GetConfigAttributes()
-	local var3_18 = arg1_18:GetConfigAttributes()
-	local var4_18 = arg0_18:GetBaseAttributes()
+	local var2_20 = arg0_20:GetConfigAttributes()
+	local var3_20 = arg0_20:GetAttributesRange()
 
-	for iter0_18 = 1, 2 do
-		local var5_18 = AttributeType.Type2Name(var1_18[iter0_18])
-		local var6_18 = var3_18[iter0_18] .. " + " .. var4_18[iter0_18]
+	for iter0_20 = 1, 2 do
+		local var4_20 = AttributeType.Type2Name(var1_20[iter0_20])
+		local var5_20 = var2_20[iter0_20] .. " + 0~" .. var3_20[iter0_20]
 
-		if var2_18[iter0_18] ~= var3_18[iter0_18] then
-			var6_18 = var2_18[iter0_18] .. "   >   " .. var6_18
-		end
-
-		table.insert(var0_18, {
-			name = var5_18,
-			value = var6_18
+		table.insert(var0_20, {
+			name = var4_20,
+			value = var5_20
 		})
 	end
 
-	return var0_18
+	return var0_20
+end
+
+function var0_0.TransformUpgradeInfo(arg0_21, arg1_21)
+	local var0_21 = {}
+	local var1_21 = {
+		arg0_21:getConfig("attribute_1"),
+		arg0_21:getConfig("attribute_2")
+	}
+	local var2_21 = arg0_21:GetConfigAttributes()
+	local var3_21 = arg1_21:GetConfigAttributes()
+	local var4_21 = arg0_21:GetBaseAttributes()
+
+	for iter0_21 = 1, 2 do
+		local var5_21 = AttributeType.Type2Name(var1_21[iter0_21])
+		local var6_21 = var3_21[iter0_21] .. " + " .. var4_21[iter0_21]
+
+		if var2_21[iter0_21] ~= var3_21[iter0_21] then
+			var6_21 = var2_21[iter0_21] .. "   >   " .. var6_21
+		end
+
+		table.insert(var0_21, {
+			name = var5_21,
+			value = var6_21
+		})
+	end
+
+	return var0_21
 end
 
 return var0_0

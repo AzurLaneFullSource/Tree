@@ -1,7 +1,5 @@
 local var0_0 = class("LatestSkinShopLayer", import("...base.BaseUI"))
 
-var0_0.TYPE_NEW_SKIN = "newSkin"
-var0_0.TYPE_PERMANANT_SKIN = "permanentSkin"
 var0_0.MODE_OVERVIEW = 1
 var0_0.MODE_EXPERIENCE = 2
 var0_0.MODE_EXPERIENCE_FOR_ITEM = 3
@@ -153,7 +151,25 @@ function var0_0.init(arg0_4)
 	setText(arg0_4.filterUI:Find("panelMask/panel/filterScroll/Viewport/Content/rarity/subTitleFrame/subTitle"), i18n("shop_new_rarity"))
 	setText(arg0_4.filterUI:Find("panelMask/panel/filterScroll/Viewport/Content/shipType/subTitleFrame/subTitle"), i18n("shop_new_category"))
 	setText(arg0_4.filterUI:Find("panelMask/panel/filterScroll/Viewport/Content/themeType/subTitleFrame/subTitle"), i18n("shop_new_skin_theme"))
+	setText(arg0_4.filterUI:Find("panelMask/panel/filterScroll/Viewport/Content/tag/subTitleFrame/subTitle"), i18n("skin_shop_tag"))
+	setText(arg0_4.filterUI:Find("panelMask/panel/filterScroll/Viewport/Content/tag/options/0/Text"), i18n("skin_shop_tag_0"))
+	setText(arg0_4.filterUI:Find("panelMask/panel/filterScroll/Viewport/Content/tag/options/1/Text"), i18n("skin_shop_tag_1"))
+	setText(arg0_4.filterUI:Find("panelMask/panel/filterScroll/Viewport/Content/tag/options/2/Text"), i18n("skin_shop_tag_2"))
+	setText(arg0_4.filterUI:Find("panelMask/panel/filterScroll/Viewport/Content/tag/options/3/Text"), i18n("skin_shop_tag_3"))
+	setText(arg0_4.filterUI:Find("panelMask/panel/filterScroll/Viewport/Content/tag/options/4/Text"), i18n("skin_shop_tag_4"))
+	setText(arg0_4.filterUI:Find("panelMask/panel/filterScroll/Viewport/Content/tag/options/5/Text"), i18n("skin_shop_tag_5"))
+	setText(arg0_4.filterUI:Find("panelMask/panel/filterScroll/Viewport/Content/tag/options/6/Text"), i18n("skin_shop_tag_6"))
 	setText(arg0_4.filterUI:Find("panelMask/panel/bottom/ok/Text"), i18n("shop_new_confirm"))
+
+	arg0_4.uiOwnOptions = arg0_4.filterContent:Find("own/options")
+	arg0_4.uiTypeOptions = arg0_4.filterContent:Find("type/options")
+	arg0_4.uiShipHaveOptions = arg0_4.filterContent:Find("shipHave/options")
+	arg0_4.uiCampOptions = arg0_4.filterContent:Find("camp/options")
+	arg0_4.uiRrarityOptions = arg0_4.filterContent:Find("rarity/options")
+	arg0_4.uiShipTypeOptions = arg0_4.filterContent:Find("shipType/options")
+	arg0_4.uiThemeTypeOptions = arg0_4.filterContent:Find("themeType/options")
+	arg0_4.uiTagTypeOptions = arg0_4.filterContent:Find("tag/options")
+
 	arg0_4:Overlay()
 end
 
@@ -261,7 +277,7 @@ function var0_0.SetResource(arg0_18)
 end
 
 function var0_0.InitData(arg0_20)
-	arg0_20.type = arg0_20.contextData.type or var0_0.TYPE_PERMANANT_SKIN
+	arg0_20.type = arg0_20.contextData.type or ShopConst.PERMANANT_SKIN_SHOP_ID
 	arg0_20.mode = arg0_20.contextData.mode or var0_0.MODE_OVERVIEW
 
 	arg0_20:GetAllCommodities()
@@ -290,35 +306,48 @@ function var0_0.InitData(arg0_20)
 		},
 		themeType = {
 			var0_20
+		},
+		tagType = {
+			0
 		}
 	}
 	arg0_20.filterValuesTemp = Clone(arg0_20.filterValues)
 end
 
 function var0_0.GetAllCommodities(arg0_21)
-	if arg0_21.type == var0_0.TYPE_NEW_SKIN then
+	if arg0_21.type == ShopConst.NEW_SKIN_SHOP_ID then
 		arg0_21.commodities = getProxy(ShipSkinProxy):GetInTimeSkins()
-	elseif arg0_21.type == var0_0.TYPE_PERMANANT_SKIN then
+	elseif arg0_21.type == ShopConst.PERMANANT_SKIN_SHOP_ID then
 		arg0_21.commodities = getProxy(ShipSkinProxy):GetPermanentSkins()
+	else
+		arg0_21.commodities = {}
+
+		local var0_21 = getProxy(ShipSkinProxy):GetAllSkins()
+
+		for iter0_21, iter1_21 in ipairs(var0_21) do
+			if table.keyof(pg.shop_skin_subsheet[arg0_21.type].param, iter1_21.id) then
+				table.insert(arg0_21.commodities, iter1_21)
+			end
+		end
 	end
 
 	if LOCK_SKIN_US then
-		local var0_21 = pg.gameset.levellimit_skintype.key_value
-		local var1_21 = pg.gameset.levellimit_skintype.description
+		local var1_21 = pg.gameset.levellimit_skintype.key_value
+		local var2_21 = pg.gameset.levellimit_skintype.description
 
-		if var0_21 >= getProxy(PlayerProxy):getData().level then
+		if var1_21 >= getProxy(PlayerProxy):getData().level then
 			arg0_21.commodities = _.filter(arg0_21.commodities, function(arg0_22)
 				local var0_22 = pg.ship_skin_template[arg0_22:getSkinId()].shop_type_id
 
-				return table.contains(var1_21, var0_22)
+				return table.contains(var2_21, var0_22)
 			end)
 		end
 	end
 
 	if arg0_21.mode == var0_0.MODE_OVERVIEW then
-		for iter0_21 = #arg0_21.commodities, 1, -1 do
-			if arg0_21.commodities[iter0_21]:getConfig("genre") == ShopArgs.SkinShopTimeLimit then
-				table.remove(arg0_21.commodities, iter0_21)
+		for iter2_21 = #arg0_21.commodities, 1, -1 do
+			if arg0_21.commodities[iter2_21]:getConfig("genre") == ShopArgs.SkinShopTimeLimit then
+				table.remove(arg0_21.commodities, iter2_21)
 			end
 		end
 	end
@@ -464,83 +493,67 @@ function var0_0.filterOk(arg0_32, arg1_32)
 	local var4_32 = arg0_32.filterValues.rarityType
 	local var5_32 = arg0_32.filterValues.shipType
 	local var6_32 = arg0_32.filterValues.themeType
-	local var7_32 = arg1_32:getSkinId()
-	local var8_32 = ShipSkin.New({
-		id = var7_32
+	local var7_32 = arg0_32.filterValues.tagType
+	local var8_32 = arg1_32:getSkinId()
+	local var9_32 = ShipSkin.New({
+		id = var8_32
 	})
-	local var9_32 = var8_32:GetDefaultShipConfig()
-	local var10_32 = arg0_32:ToVShip(var9_32)
+	local var10_32 = var9_32:GetDefaultShipConfig()
+	local var11_32 = arg0_32:ToVShip(var10_32)
 
 	if var0_32 ~= 0 then
-		local var11_32 = false
-		local var12_32 = getProxy(ShipSkinProxy):hasSkin(var7_32)
-		local var13_32 = var8_32:NoUse()
+		local var12_32 = false
+		local var13_32 = getProxy(ShipSkinProxy):hasSkin(var8_32)
+		local var14_32 = var9_32:NoUse()
 
-		if var0_32 == 1 and var12_32 then
-			var11_32 = true
+		if var0_32 == 1 and var13_32 then
+			var12_32 = true
 		end
 
-		if var0_32 == 2 and not var12_32 then
-			var11_32 = true
+		if var0_32 == 2 and not var13_32 then
+			var12_32 = true
 		end
 
-		if var0_32 == 3 and var12_32 and var13_32 then
-			var11_32 = true
+		if var0_32 == 3 and var13_32 and var14_32 then
+			var12_32 = true
 		end
 
-		if not var11_32 then
+		if not var12_32 then
 			return false
 		end
 	end
 
 	if var1_32[1] ~= 0 then
-		local var14_32 = false
+		local var15_32 = false
 
 		for iter0_32, iter1_32 in ipairs(var1_32) do
-			if iter1_32 == 1 and (var8_32:IsLive2d() or var8_32:IsLive2dPlus()) then
-				var14_32 = true
+			if iter1_32 == 1 and (var9_32:IsLive2d() or var9_32:IsLive2dPlus()) then
+				var15_32 = true
 			end
 
-			if iter1_32 == 2 and not var8_32:IsLive2d() and not var8_32:IsLive2dPlus() and not var8_32:IsSpine() and not var8_32:IsSpinePlus() then
-				var14_32 = true
+			if iter1_32 == 2 and not var9_32:IsLive2d() and not var9_32:IsLive2dPlus() and not var9_32:IsSpine() and not var9_32:IsSpinePlus() then
+				var15_32 = true
 			end
 
-			if iter1_32 == 3 and (var8_32:IsSpine() or var8_32:IsSpinePlus()) then
-				var14_32 = true
+			if iter1_32 == 3 and (var9_32:IsSpine() or var9_32:IsSpinePlus()) then
+				var15_32 = true
 			end
 
-			if iter1_32 == 4 and var8_32:IsBG() then
-				var14_32 = true
+			if iter1_32 == 4 and var9_32:IsBG() then
+				var15_32 = true
 			end
 
-			if iter1_32 == 5 and var8_32:IsDbg() then
-				var14_32 = true
+			if iter1_32 == 5 and var9_32:IsDbg() then
+				var15_32 = true
 			end
 
-			if iter1_32 == 6 and var8_32:isBgm() then
-				var14_32 = true
+			if iter1_32 == 6 and var9_32:isBgm() then
+				var15_32 = true
 			end
 
-			if var14_32 then
+			if var15_32 then
 				break
 			end
-		end
-
-		if not var14_32 then
-			return false
-		end
-	end
-
-	if var2_32 ~= 0 then
-		local var15_32 = false
-		local var16_32 = var8_32:CantUse()
-
-		if var2_32 == 1 and not var16_32 then
-			var15_32 = true
-		end
-
-		if var2_32 == 2 and var16_32 then
-			var15_32 = true
 		end
 
 		if not var15_32 then
@@ -548,123 +561,152 @@ function var0_0.filterOk(arg0_32, arg1_32)
 		end
 	end
 
+	if var2_32 ~= 0 then
+		local var16_32 = false
+		local var17_32 = var9_32:CantUse()
+
+		if var2_32 == 1 and not var17_32 then
+			var16_32 = true
+		end
+
+		if var2_32 == 2 and var17_32 then
+			var16_32 = true
+		end
+
+		if not var16_32 then
+			return false
+		end
+	end
+
 	if var3_32[1] ~= 0 then
-		if not var9_32 then
+		if not var10_32 then
 			return false
 		end
 
-		local var17_32 = false
+		local var18_32 = false
 
 		for iter2_32, iter3_32 in ipairs(var3_32) do
-			local var18_32 = ShipIndexCfg.camp
+			local var19_32 = ShipIndexCfg.camp
 
-			for iter4_32, iter5_32 in ipairs(var18_32[iter3_32 + 1].types) do
+			for iter4_32, iter5_32 in ipairs(var19_32[iter3_32 + 1].types) do
 				if iter5_32 == Nation.LINK then
-					if var10_32:getNation() >= Nation.LINK then
-						var17_32 = true
+					if var11_32:getNation() >= Nation.LINK then
+						var18_32 = true
 					end
-				elseif iter5_32 == var10_32:getNation() then
-					var17_32 = true
+				elseif iter5_32 == var11_32:getNation() then
+					var18_32 = true
 				end
 			end
 
-			if var17_32 then
+			if var18_32 then
 				break
 			end
 		end
 
-		if not var17_32 then
+		if not var18_32 then
 			return false
 		end
 	end
 
 	if var4_32[1] ~= 0 then
-		if not var9_32 then
+		if not var10_32 then
 			return false
 		end
 
-		local var19_32 = false
+		local var20_32 = false
 
 		for iter6_32, iter7_32 in ipairs(var4_32) do
-			local var20_32 = ShipIndexCfg.rarity
+			local var21_32 = ShipIndexCfg.rarity
 
-			if table.contains(var20_32[iter7_32 + 1].types, var10_32:getRarity()) then
-				var19_32 = true
+			if table.contains(var21_32[iter7_32 + 1].types, var11_32:getRarity()) then
+				var20_32 = true
 			end
 
-			if var19_32 then
+			if var20_32 then
 				break
 			end
 		end
 
-		if not var19_32 then
+		if not var20_32 then
 			return false
 		end
 	end
 
 	if var5_32[1] ~= 0 then
-		if not var9_32 then
+		if not var10_32 then
 			return false
 		end
 
-		local var21_32 = false
+		local var22_32 = false
 
 		for iter8_32, iter9_32 in ipairs(var5_32) do
-			local var22_32 = ShipIndexCfg.type
-			local var23_32 = var22_32[iter9_32 + 1].types
+			local var23_32 = ShipIndexCfg.type
+			local var24_32 = var23_32[iter9_32 + 1].types
 
 			if iter9_32 + 1 < 4 then
-				local var24_32 = var22_32[iter9_32].shipTypes
+				local var25_32 = var23_32[iter9_32].shipTypes
 
-				if table.contains(var23_32, var10_32:getShipType()) then
-					var21_32 = true
+				if table.contains(var24_32, var11_32:getShipType()) then
+					var22_32 = true
 				end
 
-				if table.contains(var23_32, var10_32:getTeamType()) then
-					var21_32 = true
+				if table.contains(var24_32, var11_32:getTeamType()) then
+					var22_32 = true
 				end
-			elseif table.contains(var23_32, var10_32:getShipType()) then
-				var21_32 = true
+			elseif table.contains(var24_32, var11_32:getShipType()) then
+				var22_32 = true
 			end
 
-			if var21_32 then
+			if var22_32 then
 				break
 			end
 		end
 
-		if not var21_32 then
+		if not var22_32 then
 			return false
 		end
 	end
 
 	if var6_32[1] ~= 0 then
-		local var25_32 = false
+		local var26_32 = false
 
 		for iter10_32, iter11_32 in ipairs(var6_32) do
-			local var26_32 = arg0_32.classifyIds[iter11_32 + 1]
+			local var27_32 = arg0_32.classifyIds[iter11_32 + 1]
 
 			if arg1_32:getConfig("genre") == ShopArgs.SkinShopTimeLimit then
 				if arg0_32.mode == var0_0.MODE_EXPERIENCE_FOR_ITEM then
-					var25_32 = var26_32 == var15_0 and arg0_32:ExitSkinExperienceItem(arg1_32.id)
+					var26_32 = var27_32 == var15_0 and arg0_32:ExitSkinExperienceItem(arg1_32.id)
 				else
-					var25_32 = var26_32 == var13_0
+					var26_32 = var27_32 == var13_0
 				end
-			elseif var26_32 == var12_0 then
-				var25_32 = true
-			elseif var26_32 == var14_0 and table.contains(arg0_32.returnSkins, arg1_32.id) then
-				var25_32 = true
+			elseif var27_32 == var12_0 then
+				var26_32 = true
+			elseif var27_32 == var14_0 and table.contains(arg0_32.returnSkins, arg1_32.id) then
+				var26_32 = true
 			else
-				local var27_32 = arg0_32:GetShopTypeIdBySkinId(var7_32)
+				local var28_32 = arg0_32:GetShopTypeIdBySkinId(var8_32)
 
-				var25_32 = (var27_32 == 0 and var16_0 or var27_32) == var26_32
+				var26_32 = (var28_32 == 0 and var16_0 or var28_32) == var27_32
 			end
 
-			if var25_32 then
+			if var26_32 then
 				break
 			end
 		end
 
-		if not var25_32 then
+		if not var26_32 then
+			return false
+		end
+	end
+
+	if var7_32[1] ~= 0 then
+		local var29_32 = false
+		local var30_32 = table.contains(arg0_32.returnSkins, arg1_32.id)
+		local var31_32 = NewShopSkinCard.GetTagId(arg1_32, var30_32)
+
+		if table.keyof(var7_32, var31_32) then
+			return true
+		else
 			return false
 		end
 	end
@@ -2021,6 +2063,7 @@ function var0_0.SetFilterPanel(arg0_127)
 	local var4_127 = arg0_127.filterContent:Find("rarity/options")
 	local var5_127 = arg0_127.filterContent:Find("shipType/options")
 	local var6_127 = arg0_127.filterContent:Find("themeType/options")
+	local var7_127 = arg0_127.filterContent:Find("tag/options")
 
 	arg0_127:SetOptionList(var3_127, ShipIndexConst.CampNames, true)
 	arg0_127:SetOptionList(var4_127, ShipIndexConst.RarityNames, true)
@@ -2033,6 +2076,8 @@ function var0_0.SetFilterPanel(arg0_127)
 	arg0_127:SetMultiOptions(var4_127, "rarityType")
 	arg0_127:SetMultiOptions(var5_127, "shipType")
 	arg0_127:SetMultiOptions(var6_127, "themeType")
+	arg0_127:SetMultiOptions(var7_127, "tagType")
+	arg0_127:HideEmptyOptions()
 	onButton(arg0_127, arg0_127.filterUI:Find("bg"), function()
 		for iter0_128, iter1_128 in pairs(arg0_127.filterValues) do
 			arg0_127.filterValuesTemp[iter0_128] = Clone(arg0_127.filterValues[iter0_128])
@@ -2067,6 +2112,7 @@ function var0_0.OpenFilterPanel(arg0_131)
 	local var4_131 = arg0_131.filterContent:Find("rarity/options")
 	local var5_131 = arg0_131.filterContent:Find("shipType/options")
 	local var6_131 = arg0_131.filterContent:Find("themeType/options")
+	local var7_131 = arg0_131.filterContent:Find("tag/options")
 
 	arg0_131:SetSingleOptions(var0_131, "ownType", true)
 	arg0_131:SetMultiOptions(var1_131, "typeType", true)
@@ -2075,6 +2121,7 @@ function var0_0.OpenFilterPanel(arg0_131)
 	arg0_131:SetMultiOptions(var4_131, "rarityType", true)
 	arg0_131:SetMultiOptions(var5_131, "shipType", true)
 	arg0_131:SetMultiOptions(var6_131, "themeType", true)
+	arg0_131:SetMultiOptions(var7_131, "tagType", true)
 end
 
 function var0_0.SetOptionList(arg0_132, arg1_132, arg2_132, arg3_132)
@@ -2142,7 +2189,7 @@ function var0_0.SetMultiOptions(arg0_136, arg1_136, arg2_136, arg3_136)
 					local var0_137 = true
 
 					for iter1_137 = 1, arg1_136.childCount - 1 do
-						if not table.contains(arg0_136.filterValuesTemp[arg2_136], iter1_137) then
+						if not table.contains(arg0_136.filterValuesTemp[arg2_136], iter1_137) and arg1_136:GetChild(iter1_137).gameObject.activeSelf then
 							var0_137 = false
 
 							break
@@ -2153,7 +2200,7 @@ function var0_0.SetMultiOptions(arg0_136, arg1_136, arg2_136, arg3_136)
 						var0_137 = true
 					end
 
-					if var0_137 then
+					if var0_137 and arg2_136 ~= "tagType" then
 						arg0_136.filterValuesTemp[arg2_136] = {
 							0
 						}
@@ -2186,173 +2233,384 @@ function var0_0.SetOptionSelect(arg0_138, arg1_138, arg2_138)
 	end
 end
 
-function var0_0.GetSkinClassify(arg0_139)
-	arg0_139.classifyIds = {}
-	arg0_139.classifyNames = {}
-
-	local var0_139 = {}
-	local var1_139 = {}
+function var0_0.HideEmptyOptions(arg0_139, arg1_139, arg2_139)
+	local var0_139 = {
+		typeType = {
+			0
+		},
+		shipHaveType = {
+			0
+		},
+		campType = {
+			0
+		},
+		rarityType = {
+			0
+		},
+		shipType = {
+			0
+		},
+		tagType = {
+			0
+		}
+	}
 
 	for iter0_139, iter1_139 in ipairs(arg0_139.commodities) do
-		local var2_139 = arg0_139:GetShopTypeIdBySkinId(iter1_139:getSkinId())
-		local var3_139 = var2_139 == 0 and var16_0 or var2_139
+		local var1_139 = iter1_139:getSkinId()
+		local var2_139 = ShipSkin.New({
+			id = var1_139
+		})
+		local var3_139 = arg0_139:GetSkinType(var2_139)
 
-		var1_139[var3_139] = (var1_139[var3_139] or 0) + 1
-	end
+		for iter2_139, iter3_139 in ipairs(var3_139) do
+			if not table.keyof(var0_139.typeType, iter3_139) then
+				table.insert(var0_139.typeType, iter3_139)
+			end
+		end
 
-	local var4_139 = {}
+		local var4_139 = arg0_139:GetShipHave(var2_139)
 
-	for iter2_139, iter3_139 in ipairs(arg0_139.returnSkins) do
-		var4_139[iter3_139] = true
-	end
+		if not table.keyof(var0_139.shipHaveType, var4_139) then
+			table.insert(var0_139.shipHaveType, var4_139)
+		end
 
-	if underscore.any(arg0_139.commodities, function(arg0_140)
-		return var4_139[arg0_140.id]
-	end) then
-		table.insert(var0_139, var14_0)
-	end
+		local var5_139 = arg0_139:GetCampType(var2_139)
 
-	for iter4_139, iter5_139 in ipairs(pg.skin_page_template.all) do
-		if iter5_139 ~= var17_0 and iter5_139 ~= var18_0 and (var1_139[iter5_139] or 0) > 0 then
-			table.insert(var0_139, iter5_139)
+		if not table.keyof(var0_139.campType, var5_139) then
+			table.insert(var0_139.campType, var5_139)
+		end
+
+		local var6_139 = arg0_139:GetRarityType(var2_139)
+
+		if not table.keyof(var0_139.rarityType, var6_139) then
+			table.insert(var0_139.rarityType, var6_139)
+		end
+
+		local var7_139 = arg0_139:GetShipType(var2_139)
+
+		if not table.keyof(var0_139.shipType, var7_139) then
+			table.insert(var0_139.shipType, var7_139)
+		end
+
+		local var8_139 = arg0_139:GetTagType(iter1_139)
+
+		if not table.keyof(var0_139.tagType, var8_139) then
+			table.insert(var0_139.tagType, var8_139)
 		end
 	end
 
-	if arg0_139.mode == var0_0.MODE_EXPERIENCE then
-		table.insert(var0_139, 1, var13_0)
+	for iter4_139, iter5_139 in pairs(var0_139) do
+		table.sort(iter5_139, function(arg0_140, arg1_140)
+			return arg0_140 < arg1_140
+		end)
 	end
 
-	if arg0_139.mode == var0_0.MODE_EXPERIENCE_FOR_ITEM then
-		table.insert(var0_139, 1, var15_0)
+	for iter6_139 = 1, arg0_139.uiTypeOptions.childCount - 1 do
+		setActive(arg0_139.uiTypeOptions:GetChild(iter6_139), table.contains(var0_139.typeType, iter6_139))
 	end
 
-	table.insert(var0_139, 1, var12_0)
+	for iter7_139 = 1, arg0_139.uiShipHaveOptions.childCount - 1 do
+		setActive(arg0_139.uiShipHaveOptions:GetChild(iter7_139), table.contains(var0_139.shipHaveType, iter7_139))
+	end
 
-	arg0_139.classifyIds = var0_139
+	for iter8_139 = 1, arg0_139.uiCampOptions.childCount - 1 do
+		setActive(arg0_139.uiCampOptions:GetChild(iter8_139), table.contains(var0_139.campType, iter8_139))
+	end
 
-	for iter6_139, iter7_139 in ipairs(arg0_139.classifyIds) do
-		if iter7_139 == var12_0 then
-			table.insert(arg0_139.classifyNames, i18n("shop_filter_all"))
-		elseif iter7_139 == var13_0 or iter7_139 == var15_0 then
-			table.insert(arg0_139.classifyNames, i18n("shop_filter_trial"))
-		elseif iter7_139 == var14_0 then
-			table.insert(arg0_139.classifyNames, i18n("shop_filter_retro"))
+	for iter9_139 = 1, arg0_139.uiRrarityOptions.childCount - 1 do
+		setActive(arg0_139.uiRrarityOptions:GetChild(iter9_139), table.contains(var0_139.rarityType, iter9_139))
+	end
+
+	for iter10_139 = 1, arg0_139.uiShipTypeOptions.childCount - 1 do
+		setActive(arg0_139.uiShipTypeOptions:GetChild(iter10_139), table.contains(var0_139.shipType, iter10_139))
+	end
+
+	for iter11_139 = 1, arg0_139.uiTagTypeOptions.childCount - 1 do
+		setActive(arg0_139.uiTagTypeOptions:GetChild(iter11_139), table.contains(var0_139.tagType, iter11_139))
+	end
+end
+
+function var0_0.GetSkinType(arg0_141, arg1_141)
+	local var0_141 = {}
+
+	if arg1_141:IsLive2d() or arg1_141:IsLive2dPlus() then
+		table.insert(var0_141, 1)
+	end
+
+	if not arg1_141:IsLive2d() and not arg1_141:IsLive2dPlus() and not arg1_141:IsSpine() and not arg1_141:IsSpinePlus() then
+		table.insert(var0_141, 2)
+	end
+
+	if arg1_141:IsSpine() or arg1_141:IsSpinePlus() then
+		table.insert(var0_141, 3)
+	end
+
+	if arg1_141:IsBG() then
+		table.insert(var0_141, 4)
+	end
+
+	if arg1_141:IsDbg() then
+		table.insert(var0_141, 5)
+	end
+
+	if arg1_141:isBgm() then
+		table.insert(var0_141, 6)
+	end
+
+	return var0_141
+end
+
+function var0_0.GetShipHave(arg0_142, arg1_142)
+	if arg1_142:CantUse() then
+		return 2
+	else
+		return 1
+	end
+end
+
+function var0_0.GetCampType(arg0_143, arg1_143)
+	local var0_143 = arg1_143:GetDefaultShipConfig()
+
+	if not var0_143 then
+		return 0
+	end
+
+	local var1_143 = arg0_143:ToVShip(var0_143):getNation()
+	local var2_143 = ShipIndexCfg.camp
+
+	for iter0_143, iter1_143 in ipairs(var2_143) do
+		for iter2_143, iter3_143 in ipairs(iter1_143.types) do
+			if iter3_143 == Nation.LINK then
+				if var1_143 >= Nation.LINK then
+					return iter0_143 - 1
+				end
+			elseif var1_143 == iter3_143 then
+				return iter0_143 - 1
+			end
+		end
+	end
+
+	return 0
+end
+
+function var0_0.GetRarityType(arg0_144, arg1_144)
+	local var0_144 = arg1_144:GetDefaultShipConfig()
+
+	if not var0_144 then
+		return 0
+	end
+
+	local var1_144 = arg0_144:ToVShip(var0_144):getRarity()
+	local var2_144 = ShipIndexCfg.rarity
+
+	for iter0_144, iter1_144 in ipairs(var2_144) do
+		if table.contains(iter1_144.types, var1_144) then
+			return iter0_144 - 1
+		end
+	end
+
+	return 0
+end
+
+function var0_0.GetShipType(arg0_145, arg1_145)
+	local var0_145 = arg1_145:GetDefaultShipConfig()
+
+	if not var0_145 then
+		return 0
+	end
+
+	local var1_145 = arg0_145:ToVShip(var0_145):getShipType()
+	local var2_145 = ShipIndexCfg.type
+
+	for iter0_145, iter1_145 in ipairs(var2_145) do
+		for iter2_145, iter3_145 in pairs(iter1_145) do
+			if table.keyof(iter3_145, var1_145) then
+				return iter0_145 - 1
+			end
+		end
+	end
+
+	return 0
+end
+
+function var0_0.GetTagType(arg0_146, arg1_146)
+	local var0_146 = table.contains(arg0_146.returnSkins, arg1_146.id)
+	local var1_146 = NewShopSkinCard.GetTagId(arg1_146, var0_146)
+
+	if var1_146 > 0 then
+		return var1_146
+	else
+		return 0
+	end
+end
+
+function var0_0.GetSkinClassify(arg0_147)
+	arg0_147.classifyIds = {}
+	arg0_147.classifyNames = {}
+
+	local var0_147 = {}
+	local var1_147 = {}
+
+	for iter0_147, iter1_147 in ipairs(arg0_147.commodities) do
+		local var2_147 = arg0_147:GetShopTypeIdBySkinId(iter1_147:getSkinId())
+		local var3_147 = var2_147 == 0 and var16_0 or var2_147
+
+		var1_147[var3_147] = (var1_147[var3_147] or 0) + 1
+	end
+
+	local var4_147 = {}
+
+	for iter2_147, iter3_147 in ipairs(arg0_147.returnSkins) do
+		var4_147[iter3_147] = true
+	end
+
+	if underscore.any(arg0_147.commodities, function(arg0_148)
+		return var4_147[arg0_148.id]
+	end) then
+		table.insert(var0_147, var14_0)
+	end
+
+	for iter4_147, iter5_147 in ipairs(pg.skin_page_template.all) do
+		if iter5_147 ~= var17_0 and iter5_147 ~= var18_0 and (var1_147[iter5_147] or 0) > 0 then
+			table.insert(var0_147, iter5_147)
+		end
+	end
+
+	if arg0_147.mode == var0_0.MODE_EXPERIENCE then
+		table.insert(var0_147, 1, var13_0)
+	end
+
+	if arg0_147.mode == var0_0.MODE_EXPERIENCE_FOR_ITEM then
+		table.insert(var0_147, 1, var15_0)
+	end
+
+	table.insert(var0_147, 1, var12_0)
+
+	arg0_147.classifyIds = var0_147
+
+	for iter6_147, iter7_147 in ipairs(arg0_147.classifyIds) do
+		if iter7_147 == var12_0 then
+			table.insert(arg0_147.classifyNames, i18n("shop_filter_all"))
+		elseif iter7_147 == var13_0 or iter7_147 == var15_0 then
+			table.insert(arg0_147.classifyNames, i18n("shop_filter_trial"))
+		elseif iter7_147 == var14_0 then
+			table.insert(arg0_147.classifyNames, i18n("shop_filter_retro"))
 		else
-			table.insert(arg0_139.classifyNames, pg.skin_page_template[iter7_139].name)
+			table.insert(arg0_147.classifyNames, pg.skin_page_template[iter7_147].name)
 		end
 	end
 end
 
-function var0_0.GetShopTypeIdBySkinId(arg0_141, arg1_141)
-	local var0_141 = pg.ship_skin_template.get_id_list_by_shop_type_id
+function var0_0.GetShopTypeIdBySkinId(arg0_149, arg1_149)
+	local var0_149 = pg.ship_skin_template.get_id_list_by_shop_type_id
 
-	if not arg0_141.shopTypeIdList then
-		arg0_141.shopTypeIdList = {}
+	if not arg0_149.shopTypeIdList then
+		arg0_149.shopTypeIdList = {}
 	end
 
-	if arg0_141.shopTypeIdList[arg1_141] then
-		return arg0_141.shopTypeIdList[arg1_141]
+	if arg0_149.shopTypeIdList[arg1_149] then
+		return arg0_149.shopTypeIdList[arg1_149]
 	end
 
-	for iter0_141, iter1_141 in pairs(var0_141) do
-		for iter2_141, iter3_141 in ipairs(iter1_141) do
-			arg0_141.shopTypeIdList[iter3_141] = iter0_141
+	for iter0_149, iter1_149 in pairs(var0_149) do
+		for iter2_149, iter3_149 in ipairs(iter1_149) do
+			arg0_149.shopTypeIdList[iter3_149] = iter0_149
 
-			if iter3_141 == arg1_141 then
-				return iter0_141
+			if iter3_149 == arg1_149 then
+				return iter0_149
 			end
 		end
 	end
 end
 
-function var0_0.OnShopping(arg0_142, arg1_142)
-	if not arg0_142.showingCommodity then
+function var0_0.OnShopping(arg0_150, arg1_150)
+	if not arg0_150.showingCommodity then
 		return
 	end
 
-	if arg0_142.purchaseView and arg0_142.purchaseView:GetLoaded() then
-		arg0_142.purchaseView:Hide()
+	if arg0_150.purchaseView and arg0_150.purchaseView:GetLoaded() then
+		arg0_150.purchaseView:Hide()
 	end
 
-	if arg0_142.showingCommodity.id == arg1_142 then
-		arg0_142:GetAllCommodities()
-		arg0_142:Refresh(true)
+	if arg0_150.showingCommodity.id == arg1_150 then
+		arg0_150:GetAllCommodities()
+		arg0_150:Refresh(true)
 	end
 end
 
-function var0_0.OnFurnitureUpdate(arg0_143, arg1_143)
-	if not arg0_143.showingCommodity then
+function var0_0.OnFurnitureUpdate(arg0_151, arg1_151)
+	if not arg0_151.showingCommodity then
 		return
 	end
 
-	local var0_143 = arg0_143.showingCommodity.id
+	local var0_151 = arg0_151.showingCommodity.id
 
-	if Goods.ExistFurniture(var0_143) and Goods.Id2FurnitureId(var0_143) == arg1_143 then
-		arg0_143:GetAllCommodities()
-		arg0_143:Refresh(true)
+	if Goods.ExistFurniture(var0_151) and Goods.Id2FurnitureId(var0_151) == arg1_151 then
+		arg0_151:GetAllCommodities()
+		arg0_151:Refresh(true)
 	end
 end
 
-function var0_0.CheckDownloadSkinList(arg0_144, arg1_144)
-	local var0_144 = {}
+function var0_0.CheckDownloadSkinList(arg0_152, arg1_152)
+	local var0_152 = {}
 
-	for iter0_144, iter1_144 in ipairs(arg0_144.commodities) do
-		PaintingGroupConst.AddPaintingNameBySkinID(var0_144, iter1_144:getSkinId())
+	for iter0_152, iter1_152 in ipairs(arg0_152.commodities) do
+		PaintingGroupConst.AddPaintingNameBySkinID(var0_152, iter1_152:getSkinId())
 	end
 
-	local var1_144 = {
+	local var1_152 = {
 		isShowBox = true,
-		paintingNameList = var0_144,
-		finishFunc = arg1_144
+		paintingNameList = var0_152,
+		finishFunc = arg1_152
 	}
 
-	PaintingGroupConst.PaintingDownload(var1_144)
+	PaintingGroupConst.PaintingDownload(var1_152)
 end
 
-function var0_0.willExit(arg0_145)
-	arg0_145:ClearCards()
-	ClearLScrollrect(arg0_145.scrollrect)
-	pg.DynamicBgMgr.GetInstance():ClearBg(arg0_145:getUIName())
+function var0_0.willExit(arg0_153)
+	arg0_153:ClearCards()
+	ClearLScrollrect(arg0_153.scrollrect)
+	pg.DynamicBgMgr.GetInstance():ClearBg(arg0_153:getUIName())
 
-	if arg0_145.live2dChar then
-		arg0_145.live2dChar:Dispose()
+	if arg0_153.live2dChar then
+		arg0_153.live2dChar:Dispose()
 
-		arg0_145.live2dChar = nil
+		arg0_153.live2dChar = nil
 	end
 
-	if arg0_145.voucherMsgBox then
-		arg0_145.voucherMsgBox:Destroy()
+	if arg0_153.voucherMsgBox then
+		arg0_153.voucherMsgBox:Destroy()
 
-		arg0_145.voucherMsgBox = nil
+		arg0_153.voucherMsgBox = nil
 	end
 
-	if arg0_145.purchaseView then
-		arg0_145.purchaseView:Destroy()
+	if arg0_153.purchaseView then
+		arg0_153.purchaseView:Destroy()
 
-		arg0_145.purchaseView = nil
+		arg0_153.purchaseView = nil
 	end
 
-	for iter0_145, iter1_145 in pairs(arg0_145.downloads) do
-		iter1_145:Dispose()
+	for iter0_153, iter1_153 in pairs(arg0_153.downloads) do
+		iter1_153:Dispose()
 	end
 
-	arg0_145.downloads = {}
+	arg0_153.downloads = {}
 
-	arg0_145:ClearPainting()
+	arg0_153:ClearPainting()
 
-	if arg0_145.interactionPreview then
-		arg0_145.interactionPreview:Dispose()
+	if arg0_153.interactionPreview then
+		arg0_153.interactionPreview:Dispose()
 
-		arg0_145.interactionPreview = nil
+		arg0_153.interactionPreview = nil
 	end
 
-	arg0_145:disposeEvent()
-	arg0_145:ClearTimer()
-	arg0_145:ReturnChar()
-	arg0_145:UnOverlay()
+	arg0_153:disposeEvent()
+	arg0_153:ClearTimer()
+	arg0_153:ReturnChar()
+	arg0_153:UnOverlay()
 end
 
-function var0_0.onBackPressed(arg0_146)
+function var0_0.onBackPressed(arg0_154)
 	pg.m02:sendNotification(NewShopMainScene.CLOSE_VIEW)
 end
 
