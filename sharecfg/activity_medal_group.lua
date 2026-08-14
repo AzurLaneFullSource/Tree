@@ -895,7 +895,7 @@ pg.base.activity_medal_group = {}
 		id = 51110,
 		entrance_picture = "medalAlbum/51110",
 		is_out_of_print = 0,
-		group_name = "沉溺于星光之城",
+		group_name = "Depths of the Astrarium",
 		activity_link = {
 			{
 				1,
@@ -939,7 +939,7 @@ pg.base.activity_medal_group = {}
 		id = 51113,
 		entrance_picture = "medalAlbum/51113",
 		is_out_of_print = 0,
-		group_name = "滨海极速",
+		group_name = "Seaside Speedstars",
 		activity_link = {
 			{
 				1,
