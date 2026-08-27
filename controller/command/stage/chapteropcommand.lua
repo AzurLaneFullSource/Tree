@@ -5,30 +5,44 @@ function var0_0.execute(arg0_1, arg1_1)
 
 	if (function()
 		if var0_1.type == ChapterConst.OpRetreat then
+			local var0_2 = getProxy(ChapterProxy):getActiveChapter()
+
+			if not var0_2 then
+				return
+			end
+
+			if not var0_2:CheckChapterWillWin() then
+				return
+			end
+
+			local var1_2 = getProxy(ChapterProxy):GetContinuousData(SYSTEM_SCENARIO)
+
+			var0_1.arg1 = var1_2 and var1_2:IsRecordTime() and 1 or 0
+
 			return
 		end
 
-		local var0_2 = getProxy(ChapterProxy)
-		local var1_2 = var0_2:getActiveChapter()
+		local var2_2 = getProxy(ChapterProxy)
+		local var3_2 = var2_2:getActiveChapter()
 
-		if not var1_2 then
+		if not var3_2 then
 			return true
 		end
 
 		if var0_1.type == ChapterConst.OpSwitch then
-			for iter0_2, iter1_2 in ipairs(var1_2.fleets) do
+			for iter0_2, iter1_2 in ipairs(var3_2.fleets) do
 				if iter1_2.id == var0_1.id then
-					var1_2.findex = iter0_2
+					var3_2.findex = iter0_2
 
 					break
 				end
 			end
 
-			var0_2:updateChapter(var1_2, bit.bor(ChapterConst.DirtyStrategy, ChapterConst.DirtyFleet))
+			var2_2:updateChapter(var3_2, bit.bor(ChapterConst.DirtyStrategy, ChapterConst.DirtyFleet))
 			arg0_1:sendNotification(GAME.CHAPTER_OP_DONE, {
 				type = var0_1.type
 			})
-			pg.TipsMgr.GetInstance():ShowTips(i18n("formation_switch_success", var1_2.fleet.name))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("formation_switch_success", var3_2.fleet.name))
 
 			return true
 		end
@@ -109,7 +123,7 @@ function var0_0.execute(arg0_1, arg1_1)
 							getProxy(ChapterProxy):SetLastFleetIndex(var7_3, true)
 						end
 
-						arg0_1:doRetreat()
+						arg0_1:doRetreat(arg0_3.auto_battle_time_update)
 
 						if not var0_1.id then
 							var3_3 = Clone(arg0_1.chapter)

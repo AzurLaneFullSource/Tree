@@ -268,7 +268,9 @@ function var0_0.IsShowCommssionTip(arg0_25)
 		var18_25 = #var17_25:GetCrusingUnreceiveAward() > 0
 	end
 
-	return var16_25 or var0_25 or var6_25 or var7_25 or var10_25 ~= 0 and var8_25 > var10_25 - 10 or var11_25 or var13_25 > 0 or var14_25 > 0 or var18_25
+	local var19_25 = getProxy(ChapterAutoProxy):IsShowTip()
+
+	return var16_25 or var0_25 or var6_25 or var7_25 or var10_25 ~= 0 and var8_25 > var10_25 - 10 or var11_25 or var13_25 > 0 or var14_25 > 0 or var18_25 or var19_25
 end
 
 function var0_0.SetDeviceMaxPlayerLevel(arg0_28)

@@ -394,7 +394,6 @@ function var0_0.initNotificationHandleDic(arg0_42)
 			end
 
 			if var0_50.awards and #var0_50.awards > 0 then
-				arg0_50.viewComponent:unBlurView()
 				arg0_50.viewComponent:emit(BaseUI.ON_ACHIEVE, var0_50.awards)
 			end
 

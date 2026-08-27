@@ -31,7 +31,8 @@ function var0_0.init(arg0_2)
 	arg0_2.items = {
 		CommissionInfoEventItem.New(arg0_2._tf:Find("frame/main/content/event"), arg0_2),
 		CommissionInfoClassItem.New(arg0_2._tf:Find("frame/main/content/class"), arg0_2),
-		CommissionInfoTechnologyItem.New(arg0_2._tf:Find("frame/main/content/technology"), arg0_2)
+		CommissionInfoTechnologyItem.New(arg0_2._tf:Find("frame/main/content/technology"), arg0_2),
+		CommissionInfoChapterAutoItem.New(arg0_2._tf:Find("frame/main/content/chapterauto"), arg0_2)
 	}
 
 	arg0_2:BlurPanel()
@@ -221,79 +222,83 @@ function var0_0.OnUpdateTechnology(arg0_27)
 	arg0_27.items[3]:Update()
 end
 
-function var0_0.setPlayer(arg0_28, arg1_28)
-	arg0_28.playerVO = arg1_28
-
-	arg0_28:UpdateOilRes(arg1_28)
-	arg0_28:UpdateGoldRes(arg1_28)
-	arg0_28:UpdateClassRes()
+function var0_0.OnUpdateChapterAuto(arg0_28)
+	arg0_28.items[4]:Update()
 end
 
-function var0_0.OnPlayerUpdate(arg0_29, arg1_29)
-	local var0_29 = arg0_29.playerVO
-	local var1_29 = arg1_29
+function var0_0.setPlayer(arg0_29, arg1_29)
+	arg0_29.playerVO = arg1_29
 
-	if var1_29.oilField ~= var0_29.oilField then
-		arg0_29:UpdateOilRes(var1_29)
+	arg0_29:UpdateOilRes(arg1_29)
+	arg0_29:UpdateGoldRes(arg1_29)
+	arg0_29:UpdateClassRes()
+end
+
+function var0_0.OnPlayerUpdate(arg0_30, arg1_30)
+	local var0_30 = arg0_30.playerVO
+	local var1_30 = arg1_30
+
+	if var1_30.oilField ~= var0_30.oilField then
+		arg0_30:UpdateOilRes(var1_30)
 	end
 
-	if var1_29.goldField ~= var0_29.goldField then
-		arg0_29:UpdateGoldRes(var1_29)
+	if var1_30.goldField ~= var0_30.goldField then
+		arg0_30:UpdateGoldRes(var1_30)
 	end
 
-	if var1_29.expField ~= var0_29.expField then
-		arg0_29:UpdateClassRes()
+	if var1_30.expField ~= var0_30.expField then
+		arg0_30:UpdateClassRes()
 	end
 
-	arg0_29.playerVO = var1_29
+	arg0_30.playerVO = var1_30
 end
 
-function var0_0.UpdateOilRes(arg0_30, arg1_30)
-	arg0_30.oilbubbleCG.alpha = 1
-	arg0_30.oilbubbleTF.localScale = Vector3.one
+function var0_0.UpdateOilRes(arg0_31, arg1_31)
+	arg0_31.oilbubbleCG.alpha = 1
+	arg0_31.oilbubbleTF.localScale = Vector3.one
 
-	setActive(arg0_30.oilbubbleTF, arg1_30.oilField ~= 0)
+	setActive(arg0_31.oilbubbleTF, arg1_31.oilField ~= 0)
 
-	arg0_30.oilTF.text = arg1_30.oilField
+	arg0_31.oilTF.text = arg1_31.oilField
 end
 
-function var0_0.UpdateGoldRes(arg0_31, arg1_31)
-	arg0_31.goldbubbleCG.alpha = 1
-	arg0_31.goldbubbleTF.localScale = Vector3.one
+function var0_0.UpdateGoldRes(arg0_32, arg1_32)
+	arg0_32.goldbubbleCG.alpha = 1
+	arg0_32.goldbubbleTF.localScale = Vector3.one
 
-	setActive(arg0_31.goldbubbleTF, arg1_31.goldField ~= 0)
+	setActive(arg0_32.goldbubbleTF, arg1_32.goldField ~= 0)
 
-	arg0_31.goldTF.text = arg1_31.goldField
+	arg0_32.goldTF.text = arg1_32.goldField
 end
 
-function var0_0.UpdateClassRes(arg0_32)
-	local var0_32 = getProxy(NavalAcademyProxy):GetClassVO():GetGenResCnt()
+function var0_0.UpdateClassRes(arg0_33)
+	local var0_33 = getProxy(NavalAcademyProxy):GetClassVO():GetGenResCnt()
 
-	arg0_32.classbubbleCG.alpha = 1
-	arg0_32.classbubbleTF.localScale = Vector3.one
+	arg0_33.classbubbleCG.alpha = 1
+	arg0_33.classbubbleTF.localScale = Vector3.one
 
-	setActive(arg0_32.classbubbleTF, var0_32 > 0)
+	setActive(arg0_33.classbubbleTF, var0_33 > 0)
 
-	arg0_32.classTF.text = var0_32
+	arg0_33.classTF.text = var0_33
 end
 
-function var0_0.onBackPressed(arg0_33)
+function var0_0.onBackPressed(arg0_34)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
-	triggerButton(arg0_33._tf)
+	triggerButton(arg0_34._tf)
 end
 
-function var0_0.willExit(arg0_34)
-	arg0_34:UnBlurPanel()
+function var0_0.willExit(arg0_35)
+	arg0_35:UnBlurPanel()
 
-	for iter0_34, iter1_34 in ipairs(arg0_34.items) do
-		iter1_34:Dispose()
+	for iter0_35, iter1_35 in ipairs(arg0_35.items) do
+		iter1_35:Dispose()
 	end
 
-	arg0_34.items = nil
+	arg0_35.items = nil
 
-	arg0_34.metaBossBtn:Dispose()
+	arg0_35.metaBossBtn:Dispose()
 
-	arg0_34.metaBossBtn = nil
+	arg0_35.metaBossBtn = nil
 end
 
 return var0_0

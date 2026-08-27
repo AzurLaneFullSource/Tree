@@ -1,6 +1,7 @@
 _G.pg.base.item_virtual_data_statistics[40126] = {
 	album_config = "",
 	display = "This item will instantly raise your Commander Level to 70 upon purchase. Does nothing if your Commander Level is already at or above 70.",
+	drop_arg = "",
 	drop_gold_max = 0,
 	drop_oil_max = 0,
 	icon = "Props/lv_70",

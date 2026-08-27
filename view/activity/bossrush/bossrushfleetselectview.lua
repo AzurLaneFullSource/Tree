@@ -65,6 +65,10 @@ function var0_0.didEnter(arg0_5)
 	local var0_5 = arg0_5.contextData.seriesData
 
 	onButton(arg0_5, arg0_5.btnGo, function()
+		if StartChapterAutoCommand.CheckOccupied() then
+			return
+		end
+
 		for iter0_6 = 1, #arg0_5.contextData.fleets - 1 do
 			if arg0_5.contextData.fleets[iter0_6]:isLegalToFight() ~= true then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("series_enemy_team_notenough"))

@@ -350,17 +350,7 @@ function var0_0.willExit(arg0_25)
 		LeanTween.cancel(go(arg0_25.paintTf))
 	end
 
-	if arg0_25.live2dChar then
-		arg0_25.live2dChar:Dispose()
-
-		arg0_25.live2dChar = nil
-	end
-
-	if arg0_25.spinePainting then
-		arg0_25.spinePainting:Dispose()
-
-		arg0_25.spinePainting = nil
-	end
+	arg0_25:ClearPainting()
 
 	if arg0_25.closeCallBack then
 		arg0_25.closeCallBack()
@@ -369,6 +359,20 @@ function var0_0.willExit(arg0_25)
 	end
 
 	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_25.ad, arg0_25._tf)
+end
+
+function var0_0.ClearPainting(arg0_26)
+	if arg0_26.live2dChar then
+		arg0_26.live2dChar:Dispose()
+
+		arg0_26.live2dChar = nil
+	end
+
+	if arg0_26.spinePainting then
+		arg0_26.spinePainting:Dispose()
+
+		arg0_26.spinePainting = nil
+	end
 end
 
 return var0_0

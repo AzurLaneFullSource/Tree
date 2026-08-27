@@ -42,7 +42,10 @@ pg.activity_series_enemy.all = {
 	6005,
 	1001001,
 	1001002,
-	1001003
+	1001003,
+	1002001,
+	1002002,
+	1002003
 }
 pg.base = pg.base or {}
 pg.base.activity_series_enemy = {}
@@ -2860,6 +2863,169 @@ pg.base.activity_series_enemy = {}
 			{
 				2,
 				58837
+			},
+			{
+				2,
+				59001
+			},
+			{
+				2,
+				54017
+			}
+		},
+		additional_awards_display = {
+			{
+				1,
+				1
+			}
+		},
+		defeat_story = {},
+		defeat_story_count = {},
+		use_oil_limit = {
+			25,
+			16
+		}
+	}
+	pg.base.activity_series_enemy[1002001] = {
+		pre_chapter = 0,
+		name = "Admin Building",
+		chapter_name = "Easy",
+		type = 1,
+		pos_x = "0.10703125",
+		count = 0,
+		additional_awards_display = "",
+		pos_y = "0.157291667",
+		whether_singlefight = 0,
+		collection_group_id = 104,
+		ex_count = "",
+		oil = 0,
+		profiles = "Welcome to the admin building.\nMay you have a productive day.\nMay you never feel pressed for time.\nMay your inner child always be with you.",
+		id = 1002001,
+		limitation = {},
+		expedition_id = {
+			1819101
+		},
+		boss_icon = {
+			{
+				"youeryuan_boss05",
+				5
+			}
+		},
+		pass_awards_display = {
+			{
+				2,
+				200174
+			},
+			{
+				2,
+				59001
+			},
+			{
+				2,
+				54012
+			}
+		},
+		defeat_story = {},
+		defeat_story_count = {},
+		use_oil_limit = {
+			0,
+			0
+		}
+	}
+	pg.base.activity_series_enemy[1002002] = {
+		pre_chapter = 1002001,
+		name = "School Building",
+		chapter_name = "Normal",
+		type = 1,
+		pos_x = "0.34609375",
+		count = 0,
+		collection_group_id = 105,
+		pos_y = "0.347916667",
+		whether_singlefight = 1,
+		id = 1002002,
+		ex_count = "",
+		oil = 0,
+		profiles = "Welcome to the school building.\nMay you have a stress-free day.\nMay you bask in the joy of learning. \nMay your inner child always be with you.",
+		limitation = {},
+		expedition_id = {
+			1819201,
+			1819202
+		},
+		boss_icon = {
+			{
+				"youeryuan_boss05",
+				5
+			},
+			{
+				"youeryuan_boss03",
+				7
+			}
+		},
+		pass_awards_display = {
+			{
+				2,
+				200175
+			},
+			{
+				2,
+				59001
+			},
+			{
+				2,
+				54017
+			}
+		},
+		additional_awards_display = {
+			{
+				1,
+				1
+			}
+		},
+		defeat_story = {},
+		defeat_story_count = {},
+		use_oil_limit = {
+			0,
+			0
+		}
+	}
+	pg.base.activity_series_enemy[1002003] = {
+		pre_chapter = 1002002,
+		name = "Arts Building",
+		chapter_name = "Hard",
+		type = 1,
+		pos_x = "0.50546875",
+		count = 0,
+		collection_group_id = 106,
+		pos_y = "0.080208333",
+		whether_singlefight = 1,
+		id = 1002003,
+		ex_count = "",
+		oil = 0,
+		profiles = "Welcome to the arts building. \nMay you have a colorful day.\nMay you keep your innocence.\nMay your inner child always be with you.",
+		limitation = {},
+		expedition_id = {
+			1819301,
+			1819302,
+			1819303
+		},
+		boss_icon = {
+			{
+				"youeryuan_boss05",
+				5
+			},
+			{
+				"youeryuan_boss03",
+				7
+			},
+			{
+				"youeryuan_boss04",
+				3
+			}
+		},
+		pass_awards_display = {
+			{
+				2,
+				200176
 			},
 			{
 				2,

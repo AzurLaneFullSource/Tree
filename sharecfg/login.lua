@@ -82,6 +82,7 @@ pg.login.all = {
 	95,
 	96,
 	97,
+	98,
 	4001,
 	4002,
 	4003
@@ -3498,6 +3499,16 @@ pg.base.login = {}
 		date = "stop",
 		op_play = 1,
 		op_time = "stop",
+		login_cri = "",
+		bgm = ""
+	}
+	pg.base.login[98] = {
+		id = 98,
+		login_static = "login",
+		effective_channel = 0,
+		date = "stop",
+		op_play = 0,
+		op_time = "",
 		login_cri = "",
 		bgm = ""
 	}

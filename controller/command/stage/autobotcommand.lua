@@ -29,6 +29,16 @@ function var0_0.execute(arg0_1, arg1_1)
 	end
 
 	if var1_1 then
+		local var5_1 = getProxy(ChapterProxy)
+
+		if var5_1 then
+			local var6_1 = var5_1:GetContinuousData(SYSTEM_SCENARIO)
+
+			if var6_1 then
+				var6_1:MarkClickStopAutoFlag()
+			end
+		end
+
 		arg0_1:sendNotification(GAME.AUTO_SUB, {
 			isActiveSub = true,
 			system = var3_1

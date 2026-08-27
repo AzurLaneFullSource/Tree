@@ -35,6 +35,11 @@ function var0_0.execute(arg0_1, arg1_1)
 			{}
 		},
 		{
+			ChapterAutoProxy,
+			true,
+			{}
+		},
+		{
 			WorldProxy,
 			true,
 			{}

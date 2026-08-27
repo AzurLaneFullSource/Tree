@@ -4227,6 +4227,11 @@ pg.memory_template.all = {
 	5400,
 	5401,
 	5402,
+	5411,
+	5412,
+	5413,
+	5414,
+	5415,
 	10011,
 	10012,
 	10013,
@@ -80607,6 +80612,96 @@ end)()
 			"BINHAIJISU22"
 		}
 	}
+	pg.base.memory_template[5411] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "DARENWUDEYUGAOXIN1",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "A Remarkable Calling Card",
+		condition = "Go to the event page",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5411,
+		icon = "memory_darenwudeyugaoxin",
+		is_open = 0,
+		unlock_pre = {
+			"DARENWUDEYUGAOXIN1"
+		}
+	}
+	pg.base.memory_template[5412] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "DARENWUDEYUGAOXIN2",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "The First Gatekeeper",
+		condition = "Reach 25% Progress in the \"The Big Shot's Proclamation\" event",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5412,
+		icon = "memory_darenwudeyugaoxin",
+		is_open = 0,
+		unlock_pre = {
+			"DARENWUDEYUGAOXIN2"
+		}
+	}
+	pg.base.memory_template[5413] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "DARENWUDEYUGAOXIN3",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "The Second Gatekeeper",
+		condition = "Reach 50% Progress in the \"The Big Shot's Proclamation\" event",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5413,
+		icon = "memory_darenwudeyugaoxin",
+		is_open = 0,
+		unlock_pre = {
+			"DARENWUDEYUGAOXIN3"
+		}
+	}
+	pg.base.memory_template[5414] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "DARENWUDEYUGAOXIN4",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "The Big Shot's True Identity",
+		condition = "Reach 75% Progress in the \"The Big Shot's Proclamation\" event",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5414,
+		icon = "memory_darenwudeyugaoxin",
+		is_open = 0,
+		unlock_pre = {
+			"DARENWUDEYUGAOXIN4"
+		}
+	}
+	pg.base.memory_template[5415] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "DARENWUDEYUGAOXIN5",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "Ever at Your Side",
+		condition = "Reach 100% Progress in the \"The Big Shot's Proclamation\" event",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5415,
+		icon = "memory_darenwudeyugaoxin",
+		is_open = 0,
+		unlock_pre = {
+			"DARENWUDEYUGAOXIN5"
+		}
+	}
 	pg.base.memory_template[10011] = {
 		ship_group = 0,
 		subtitle = "",
@@ -81903,6 +81998,8 @@ end)()
 			"LINGHANGYUANYANGCHENGJIHUA15"
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_template[20015] = {
 		ship_group = 0,
 		subtitle = "",
@@ -81993,8 +82090,6 @@ end)()
 			"LINGHANGYUANYANGCHENGJIHUA20"
 		}
 	}
-end)()
-;(function()
 	pg.base.memory_template[20020] = {
 		ship_group = 0,
 		subtitle = "",
@@ -83705,6 +83800,8 @@ end)()
 			"LINGYANGZHEYANGCHENGJIHUA34"
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_template[20115] = {
 		ship_group = 0,
 		subtitle = "",
@@ -83795,8 +83892,6 @@ end)()
 			"LINGYANGZHEYANGCHENGJIHUA39"
 		}
 	}
-end)()
-;(function()
 	pg.base.memory_template[20120] = {
 		ship_group = 0,
 		subtitle = "",
@@ -85507,6 +85602,8 @@ end)()
 			"TANSUOZHELAIFANGJISHI11"
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_template[20217] = {
 		ship_group = 0,
 		subtitle = "",

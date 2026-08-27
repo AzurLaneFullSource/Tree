@@ -163,6 +163,26 @@ function var0_0.TryOpenChapterInfo(arg0_28, arg1_28, arg2_28, arg3_28)
 	end
 
 	local var0_28 = getProxy(ChapterProxy):getChapterById(arg1_28, true)
+	local var1_28 = getProxy(ChapterProxy):GetAutoChapterId()
+
+	if var1_28 then
+		if var1_28 == var0_28.id then
+			arg0_28.sceneParent:ShowChapterAutoDetailPanel(var0_28)
+		else
+			local var2_28 = getProxy(ChapterProxy):getChapterById(var1_28)
+
+			arg0_28.sceneParent:HandleShowMsgBox({
+				content = i18n("auto_drop_is_activation", var2_28:getConfig("name")),
+				onYes = function()
+					arg0_28.sceneParent:ShowChapterAutoDetailPanel(var2_28)
+				end,
+				yesText = i18n("auto_drop_is_activation_go"),
+				noText = i18n("auto_drop_is_activation_cancle")
+			})
+		end
+
+		return
+	end
 
 	if var0_28.active then
 		arg0_28.sceneParent:switchToChapter(var0_28)
@@ -171,12 +191,12 @@ function var0_0.TryOpenChapterInfo(arg0_28, arg1_28, arg2_28, arg3_28)
 	end
 
 	if not var0_28:isUnlock() then
-		local var1_28 = var0_28:GetPrevChapterNames()
+		local var3_28 = var0_28:GetPrevChapterNames()
 
-		if #var1_28 == 1 then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_tracking_error_pre", var1_28[1]))
+		if #var3_28 == 1 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_tracking_error_pre", var3_28[1]))
 		else
-			pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_tracking_error_pre_2", var1_28[1], var1_28[2]))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_tracking_error_pre_2", var3_28[1], var3_28[2]))
 		end
 
 		return
@@ -188,17 +208,17 @@ function var0_0.TryOpenChapterInfo(arg0_28, arg1_28, arg2_28, arg3_28)
 		return
 	end
 
-	local var2_28 = var0_28:getConfig("unlocklevel")
+	local var4_28 = var0_28:getConfig("unlocklevel")
 
-	if var2_28 > getProxy(PlayerProxy):getRawData().level then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_chapter_level_limit", var2_28))
+	if var4_28 > getProxy(PlayerProxy):getRawData().level then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_chapter_level_limit", var4_28))
 
 		return
 	end
 
-	local var3_28 = getProxy(ChapterProxy):getActiveChapter(true)
+	local var5_28 = getProxy(ChapterProxy):getActiveChapter(true)
 
-	if var3_28 and var3_28.id ~= arg1_28 then
+	if var5_28 and var5_28.id ~= arg1_28 then
 		arg0_28:emit(LevelMediator2.ON_STRATEGYING_CHAPTER)
 
 		return
@@ -216,11 +236,11 @@ function var0_0.TryOpenChapterInfo(arg0_28, arg1_28, arg2_28, arg3_28)
 	end
 end
 
-function var0_0.OnSubmitTaskDone(arg0_29)
+function var0_0.OnSubmitTaskDone(arg0_30)
 	return
 end
 
-function var0_0.PlayEnterAnim(arg0_30)
+function var0_0.PlayEnterAnim(arg0_31)
 	return
 end
 

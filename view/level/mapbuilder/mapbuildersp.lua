@@ -364,6 +364,7 @@ function var0_0.UpdateView(arg0_26)
 		arg0_26:UpdateBonusPtIconPath()
 		arg0_26:UpdateBattle()
 		arg0_26.sceneParent:SwitchMapBG(arg0_26.contextData.map)
+		pg.BgmMgr.GetInstance():Pop(arg0_26.__cname)
 		arg0_26.sceneParent:PlayBGM()
 	else
 		arg0_26:UpdateStoryNodeStatus()
@@ -1249,8 +1250,6 @@ function var0_0.UpdateStory(arg0_42)
 			local var0_59 = var18_42:GetStoryName()
 
 			arg0_42:PlayStory(var0_59, function()
-				arg0_42:UpdateView()
-
 				arg0_42.needFocusStory = true
 
 				arg0_42:Move2UnlockStory()
@@ -1352,6 +1351,7 @@ function var0_0.SwitchStoryMapAndBGM(arg0_64)
 			Animator = var2_64
 		}
 	})
+	pg.BgmMgr.GetInstance():Pop(arg0_64.__cname)
 	pg.BgmMgr.GetInstance():Push(arg0_64.__cname, var1_64)
 end
 
@@ -1401,6 +1401,7 @@ function var0_0.PlayStory(arg0_66, arg1_66, arg2_66, arg3_66)
 		end,
 		function(arg0_68, ...)
 			existCall(arg2_66, ...)
+			arg0_66:UpdateView()
 		end
 	})
 end

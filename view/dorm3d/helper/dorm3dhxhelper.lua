@@ -63,6 +63,12 @@ function var0_0.ReplaceCharacterParts(arg0_4)
 end
 
 function var0_0.ShowHolyLight(arg0_6, arg1_6, arg2_6)
+	for iter0_6, iter1_6 in ipairs(arg0_6) do
+		if iter1_6 then
+			GetOrAddComponent(iter1_6, typeof(DormAnimationEventDispatcher))
+		end
+	end
+
 	if not HXSet.isHx() then
 		return false
 	end
@@ -71,15 +77,15 @@ function var0_0.ShowHolyLight(arg0_6, arg1_6, arg2_6)
 
 	local var0_6 = {}
 
-	for iter0_6, iter1_6 in ipairs(arg0_6) do
-		if iter1_6 then
-			local var1_6 = var0_0.GetSkinIdByModelName(iter1_6.name)
+	for iter2_6, iter3_6 in ipairs(arg0_6) do
+		if iter3_6 then
+			local var1_6 = var0_0.GetSkinIdByModelName(iter3_6.name)
 
 			if var1_6 then
-				for iter2_6, iter3_6 in ipairs(pg.dorm3d_holylight.get_id_list_by_skin_id[var1_6] or {}) do
+				for iter4_6, iter5_6 in ipairs(pg.dorm3d_holylight.get_id_list_by_skin_id[var1_6] or {}) do
 					table.insert(var0_6, {
-						iter1_6,
-						pg.dorm3d_holylight[iter3_6]
+						iter3_6,
+						pg.dorm3d_holylight[iter5_6]
 					})
 				end
 			end
