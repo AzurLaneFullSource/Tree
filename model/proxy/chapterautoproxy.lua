@@ -311,37 +311,41 @@ function var0_0.SetSkipBatchBuildFlag(arg0_36, arg1_36)
 	arg0_36.skipBatchFlag = arg1_36
 end
 
-function var0_0.RecordNewEventIds(arg0_37, arg1_37)
-	if #arg0_37.commissionList > 0 then
-		arg0_37.newEventIds = table.mergeArray(arg0_37.newEventIds, arg1_37)
+function var0_0.SetRecordEventFlag(arg0_37, arg1_37)
+	arg0_37.recordEventFlag = arg1_37
+end
+
+function var0_0.RecordNewEventIds(arg0_38, arg1_38)
+	if arg0_38.recordEventFlag then
+		arg0_38.newEventIds = table.mergeArray(arg0_38.newEventIds, arg1_38)
 	end
 end
 
-function var0_0.GetNewEventIds(arg0_38)
-	return arg0_38.newEventIds
+function var0_0.GetNewEventIds(arg0_39)
+	return arg0_39.newEventIds
 end
 
-function var0_0.ClearEventIds(arg0_39, arg1_39)
-	arg0_39.newEventIds = {}
+function var0_0.ClearEventIds(arg0_40, arg1_40)
+	arg0_40.newEventIds = {}
 end
 
-function var0_0.remove(arg0_40)
+function var0_0.remove(arg0_41)
 	return
 end
 
-function var0_0.GetFixTime(arg0_41, arg1_41, arg2_41)
-	return switch(arg0_41, {
+function var0_0.GetFixTime(arg0_42, arg1_42, arg2_42)
+	return switch(arg0_42, {
 		[var0_0.TYPE.SLG] = function()
-			local var0_42 = pg.chapter_auto_statistics[arg1_41]
+			local var0_43 = pg.chapter_auto_statistics[arg1_42]
 
-			if not var0_42 then
-				return arg2_41
+			if not var0_43 then
+				return arg2_42
 			end
 
-			return math.floor(arg2_41 * var0_42.time_rate) + var0_42.time_correction
+			return math.floor(arg2_42 * var0_43.time_rate) + var0_43.time_correction
 		end
 	}, function()
-		return arg2_41
+		return arg2_42
 	end)
 end
 

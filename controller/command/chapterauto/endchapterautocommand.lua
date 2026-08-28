@@ -71,12 +71,14 @@ function var0_0.execute(arg0_1, arg1_1)
 end
 
 function var0_0.Send(arg0_10, arg1_10, arg2_10, arg3_10, arg4_10, arg5_10, arg6_10)
+	getProxy(ChapterAutoProxy):SetRecordEventFlag(true)
 	pg.ConnectionMgr.GetInstance():Send(13014, {
 		num = arg3_10
 	}, 13015, function(arg0_11)
 		if arg0_11.result == 0 then
 			local var0_11 = getProxy(ChapterAutoProxy)
 
+			var0_11:SetRecordEventFlag(false)
 			var0_11:ClearCommissionList()
 			var0_11:ReduceCostTime(arg0_11.seconds)
 			var0_11:AddTickets(arg0_11.chapter_auto_ticket_list)
