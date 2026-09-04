@@ -1220,8 +1220,12 @@ function var0_0.updateItem(arg0_102, arg1_102, arg2_102)
 			})
 		end, SFX_PANEL)
 	elseif var1_102:getConfig("type") == Item.ASSIGNED_TYPE or var1_102:getConfig("type") == Item.EQUIPMENT_ASSIGNED_TYPE then
-		if underscore.any(pg.gameset.general_blueprint_list.description, function(arg0_112)
-			return var1_102.id == arg0_112
+		if var1_102:getConfig("usage") == ItemUsage.EX_RE_MAP then
+			onButton(arg0_102, var0_102.go, function()
+				arg0_102:emit(var0_0.ON_ITEM, var1_102.id)
+			end, SFX_PANEL)
+		elseif underscore.any(pg.gameset.general_blueprint_list.description, function(arg0_113)
+			return var1_102.id == arg0_113
 		end) then
 			onButton(arg0_102, var0_102.go, function()
 				arg0_102.blueprintAssignedItemView:Load()
@@ -1246,23 +1250,23 @@ function var0_0.updateItem(arg0_102, arg1_102, arg2_102)
 	elseif var1_102:getConfig("type") == Item.SKIN_ASSIGNED_TYPE then
 		onButton(arg0_102, var0_102.go, function()
 			arg0_102:emit(var0_0.ON_ITEM, var1_102.id, function()
-				local var0_118 = var1_102:getConfig("usage_arg")
+				local var0_119 = var1_102:getConfig("usage_arg")
 
 				if var1_102:IsAllSkinOwner() then
-					local var1_118 = Drop.New({
+					local var1_119 = Drop.New({
 						count = 1,
 						type = DROP_TYPE_ITEM,
-						id = var0_118[5]
+						id = var0_119[5]
 					})
 
 					arg0_102.msgBox:ExecuteAction("Show", {
-						content = i18n("blackfriday_pack_select_skinall_dialog", var1_102:getConfig("name"), var1_118:getName()),
+						content = i18n("blackfriday_pack_select_skinall_dialog", var1_102:getConfig("name"), var1_119:getName()),
 						leftDrop = {
 							count = 1,
 							type = DROP_TYPE_ITEM,
 							id = var1_102.id
 						},
-						rightDrop = var1_118,
+						rightDrop = var1_119,
 						onYes = function()
 							arg0_102:emit(EquipmentMediator.ON_USE_ITEM, var1_102.id, 1, {
 								0
@@ -1270,10 +1274,10 @@ function var0_0.updateItem(arg0_102, arg1_102, arg2_102)
 						end
 					})
 				else
-					local var2_118 = {}
+					local var2_119 = {}
 
-					for iter0_118, iter1_118 in ipairs(var0_118[2]) do
-						var2_118[iter1_118] = true
+					for iter0_119, iter1_119 in ipairs(var0_119[2]) do
+						var2_119[iter1_119] = true
 					end
 
 					arg0_102:emit(EquipmentMediator.ITEM_ADD_LAYER, Context.New({
@@ -1282,15 +1286,15 @@ function var0_0.updateItem(arg0_102, arg1_102, arg2_102)
 						data = {
 							mode = SelectSkinLayer.MODE_SELECT,
 							itemId = var1_102.id,
-							selectableSkinList = underscore.map(var1_102:GetValidSkinList(), function(arg0_120)
+							selectableSkinList = underscore.map(var1_102:GetValidSkinList(), function(arg0_121)
 								return SelectableSkin.New({
-									id = arg0_120,
-									isTimeLimit = var2_118[arg0_120] or false
+									id = arg0_121,
+									isTimeLimit = var2_119[arg0_121] or false
 								})
 							end),
-							OnConfirm = function(arg0_121)
+							OnConfirm = function(arg0_122)
 								arg0_102:emit(EquipmentMediator.ON_USE_ITEM, var1_102.id, 1, {
-									arg0_121
+									arg0_122
 								})
 							end
 						}
@@ -1305,120 +1309,120 @@ function var0_0.updateItem(arg0_102, arg1_102, arg2_102)
 	end
 end
 
-function var0_0.returnItem(arg0_123, arg1_123, arg2_123)
-	if arg0_123.exited then
+function var0_0.returnItem(arg0_124, arg1_124, arg2_124)
+	if arg0_124.exited then
 		return
 	end
 
-	local var0_123 = arg0_123.itemCards[arg2_123]
+	local var0_124 = arg0_124.itemCards[arg2_124]
 
-	if var0_123 then
-		removeOnButton(var0_123.go)
-		var0_123:clear()
+	if var0_124 then
+		removeOnButton(var0_124.go)
+		var0_124:clear()
 	end
 end
 
-function var0_0.selectCount(arg0_124)
-	local var0_124 = 0
+function var0_0.selectCount(arg0_125)
+	local var0_125 = 0
 
-	for iter0_124, iter1_124 in ipairs(arg0_124.selectedIds) do
-		var0_124 = var0_124 + iter1_124[2]
+	for iter0_125, iter1_125 in ipairs(arg0_125.selectedIds) do
+		var0_125 = var0_125 + iter1_125[2]
 	end
 
-	return var0_124
+	return var0_125
 end
 
-function var0_0.selectEquip(arg0_125, arg1_125, arg2_125)
-	if not arg0_125:checkDestroyGold(arg1_125, arg2_125) then
+function var0_0.selectEquip(arg0_126, arg1_126, arg2_126)
+	if not arg0_126:checkDestroyGold(arg1_126, arg2_126) then
 		return
 	end
 
-	if arg0_125.mode == StoreHouseConst.DESTROY then
-		local var0_125 = false
-		local var1_125
-		local var2_125 = 0
+	if arg0_126.mode == StoreHouseConst.DESTROY then
+		local var0_126 = false
+		local var1_126
+		local var2_126 = 0
 
-		for iter0_125, iter1_125 in pairs(arg0_125.selectedIds) do
-			if iter1_125[1] == arg1_125.id then
-				var0_125 = true
-				var1_125 = iter0_125
-				var2_125 = iter1_125[2]
+		for iter0_126, iter1_126 in pairs(arg0_126.selectedIds) do
+			if iter1_126[1] == arg1_126.id then
+				var0_126 = true
+				var1_126 = iter0_126
+				var2_126 = iter1_126[2]
 
 				break
 			end
 		end
 
-		if not var0_125 then
-			local var3_125, var4_125 = arg0_125.checkEquipment(arg1_125, function()
-				arg0_125:selectEquip(arg1_125, arg2_125)
-			end, arg0_125.selectedIds)
+		if not var0_126 then
+			local var3_126, var4_126 = arg0_126.checkEquipment(arg1_126, function()
+				arg0_126:selectEquip(arg1_126, arg2_126)
+			end, arg0_126.selectedIds)
 
-			if not var3_125 then
-				if var4_125 then
-					pg.TipsMgr.GetInstance():ShowTips(var4_125)
+			if not var3_126 then
+				if var4_126 then
+					pg.TipsMgr.GetInstance():ShowTips(var4_126)
 				end
 
 				return
 			end
 
-			local var5_125 = arg0_125:selectCount()
+			local var5_126 = arg0_126:selectCount()
 
-			if arg0_125.selectedMax > 0 and var5_125 + arg2_125 > arg0_125.selectedMax then
-				arg2_125 = arg0_125.selectedMax - var5_125
+			if arg0_126.selectedMax > 0 and var5_126 + arg2_126 > arg0_126.selectedMax then
+				arg2_126 = arg0_126.selectedMax - var5_126
 			end
 
-			if arg0_125.selectedMax == 0 or var5_125 < arg0_125.selectedMax then
-				table.insert(arg0_125.selectedIds, {
-					arg1_125.id,
-					arg2_125
+			if arg0_126.selectedMax == 0 or var5_126 < arg0_126.selectedMax then
+				table.insert(arg0_126.selectedIds, {
+					arg1_126.id,
+					arg2_126
 				})
-			elseif arg0_125.selectedMax == 1 then
-				arg0_125.selectedIds[1] = {
-					arg1_125.id,
-					arg2_125
+			elseif arg0_126.selectedMax == 1 then
+				arg0_126.selectedIds[1] = {
+					arg1_126.id,
+					arg2_126
 				}
 			else
-				pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_equipmentScene_selectError_more", arg0_125.selectedMax))
+				pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_equipmentScene_selectError_more", arg0_126.selectedMax))
 
 				return
 			end
-		elseif var2_125 - arg2_125 > 0 then
-			arg0_125.selectedIds[var1_125][2] = var2_125 - arg2_125
+		elseif var2_126 - arg2_126 > 0 then
+			arg0_126.selectedIds[var1_126][2] = var2_126 - arg2_126
 		else
-			table.remove(arg0_125.selectedIds, var1_125)
+			table.remove(arg0_126.selectedIds, var1_126)
 		end
 	end
 
-	arg0_125:updateSelected()
+	arg0_126:updateSelected()
 end
 
-function var0_0.unselecteAllEquips(arg0_127)
-	arg0_127.selectedIds = {}
+function var0_0.unselecteAllEquips(arg0_128)
+	arg0_128.selectedIds = {}
 
-	arg0_127:updateSelected()
+	arg0_128:updateSelected()
 end
 
-function var0_0.checkDestroyGold(arg0_128, arg1_128, arg2_128)
-	local var0_128 = 0
-	local var1_128 = false
+function var0_0.checkDestroyGold(arg0_129, arg1_129, arg2_129)
+	local var0_129 = 0
+	local var1_129 = false
 
-	for iter0_128, iter1_128 in pairs(arg0_128.selectedIds) do
-		local var2_128 = iter1_128[2]
+	for iter0_129, iter1_129 in pairs(arg0_129.selectedIds) do
+		local var2_129 = iter1_129[2]
 
-		if Equipment.CanInBag(iter1_128[1]) then
-			var0_128 = var0_128 + (Equipment.getConfigData(iter1_128[1]).destory_gold or 0) * var2_128
+		if Equipment.CanInBag(iter1_129[1]) then
+			var0_129 = var0_129 + (Equipment.getConfigData(iter1_129[1]).destory_gold or 0) * var2_129
 		end
 
-		if arg1_128 and iter1_128[1] == arg1_128.configId then
-			var1_128 = true
+		if arg1_129 and iter1_129[1] == arg1_129.configId then
+			var1_129 = true
 		end
 	end
 
-	if not var1_128 and arg1_128 and arg2_128 > 0 then
-		var0_128 = var0_128 + (arg1_128:getConfig("destory_gold") or 0) * arg2_128
+	if not var1_129 and arg1_129 and arg2_129 > 0 then
+		var0_129 = var0_129 + (arg1_129:getConfig("destory_gold") or 0) * arg2_129
 	end
 
-	if arg0_128.player:GoldMax(var0_128) then
+	if arg0_129.player:GoldMax(var0_129) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title") .. i18n("resource_max_tip_destroy"))
 
 		return false
@@ -1427,92 +1431,92 @@ function var0_0.checkDestroyGold(arg0_128, arg1_128, arg2_128)
 	return true
 end
 
-function var0_0.updateSelected(arg0_129)
-	for iter0_129, iter1_129 in pairs(arg0_129.equipmetItems) do
-		if iter1_129.equipmentVO then
-			local var0_129 = false
-			local var1_129 = 0
+function var0_0.updateSelected(arg0_130)
+	for iter0_130, iter1_130 in pairs(arg0_130.equipmetItems) do
+		if iter1_130.equipmentVO then
+			local var0_130 = false
+			local var1_130 = 0
 
-			for iter2_129, iter3_129 in pairs(arg0_129.selectedIds) do
-				if iter1_129.equipmentVO.id == iter3_129[1] then
-					var0_129 = true
-					var1_129 = iter3_129[2]
+			for iter2_130, iter3_130 in pairs(arg0_130.selectedIds) do
+				if iter1_130.equipmentVO.id == iter3_130[1] then
+					var0_130 = true
+					var1_130 = iter3_130[2]
 
 					break
 				end
 			end
 
-			iter1_129:updateSelected(var0_129, var1_129)
+			iter1_130:updateSelected(var0_130, var1_130)
 		end
 	end
 
-	if arg0_129.mode == StoreHouseConst.DESTROY then
-		local var2_129 = arg0_129:selectCount()
+	if arg0_130.mode == StoreHouseConst.DESTROY then
+		local var2_130 = arg0_130:selectCount()
 
-		if arg0_129.selectedMax == 0 then
-			setText(findTF(arg0_129.selectPanel, "bottom_info/bg_input/count"), var2_129)
+		if arg0_130.selectedMax == 0 then
+			setText(findTF(arg0_130.selectPanel, "bottom_info/bg_input/count"), var2_130)
 		else
-			setText(findTF(arg0_129.selectPanel, "bottom_info/bg_input/count"), var2_129 .. "/" .. arg0_129.selectedMax)
+			setText(findTF(arg0_130.selectPanel, "bottom_info/bg_input/count"), var2_130 .. "/" .. arg0_130.selectedMax)
 		end
 
-		if #arg0_129.selectedIds < arg0_129.selectedMin then
-			setActive(findTF(arg0_129.selectPanel, "confirm_button/mask"), true)
+		if #arg0_130.selectedIds < arg0_130.selectedMin then
+			setActive(findTF(arg0_130.selectPanel, "confirm_button/mask"), true)
 		else
-			setActive(findTF(arg0_129.selectPanel, "confirm_button/mask"), false)
+			setActive(findTF(arg0_130.selectPanel, "confirm_button/mask"), false)
 		end
 	end
 end
 
-function var0_0.SwitchToDestroy(arg0_130)
-	arg0_130.page = var2_0
-	arg0_130.filterEquipWaitting = arg0_130.filterEquipWaitting + 1
-
-	triggerToggle(arg0_130.weaponToggle, true)
-	triggerButton(arg0_130.BatchDisposeBtn)
-end
-
-function var0_0.SwitchToSpWeaponStoreHouse(arg0_131)
-	arg0_131.page = var4_0
+function var0_0.SwitchToDestroy(arg0_131)
+	arg0_131.page = var2_0
+	arg0_131.filterEquipWaitting = arg0_131.filterEquipWaitting + 1
 
 	triggerToggle(arg0_131.weaponToggle, true)
+	triggerButton(arg0_131.BatchDisposeBtn)
 end
 
-function var0_0.SwitchEquipmentType(arg0_132, arg1_132)
-	local var0_132
+function var0_0.SwitchToSpWeaponStoreHouse(arg0_132)
+	arg0_132.page = var4_0
 
-	if arg1_132 == var4_0 then
-		var0_132 = i18n("search_sp_equipment")
-	elseif arg1_132 == var3_0 then
-		var0_132 = i18n("search_equipment_appearance")
+	triggerToggle(arg0_132.weaponToggle, true)
+end
+
+function var0_0.SwitchEquipmentType(arg0_133, arg1_133)
+	local var0_133
+
+	if arg1_133 == var4_0 then
+		var0_133 = i18n("search_sp_equipment")
+	elseif arg1_133 == var3_0 then
+		var0_133 = i18n("search_equipment_appearance")
 	else
-		var0_132 = i18n("search_equipment")
+		var0_133 = i18n("search_equipment")
 	end
 
-	arg0_132.searchBar:UpdateHolder(var0_132)
-	arg0_132.searchBar:ClearInputText()
+	arg0_133.searchBar:UpdateHolder(var0_133)
+	arg0_133.searchBar:ClearInputText()
 end
 
-function var0_0.willExit(arg0_133)
-	arg0_133:UnOverlayPanel(arg0_133.blurPanel, arg0_133._tf)
-	arg0_133:UnOverlayPanel(arg0_133.topItems, arg0_133._tf)
+function var0_0.willExit(arg0_134)
+	arg0_134:UnOverlayPanel(arg0_134.blurPanel, arg0_134._tf)
+	arg0_134:UnOverlayPanel(arg0_134.topItems, arg0_134._tf)
 
-	if arg0_133.bulinTip then
-		arg0_133.bulinTip:Destroy()
+	if arg0_134.bulinTip then
+		arg0_134.bulinTip:Destroy()
 
-		arg0_133.bulinTip = nil
+		arg0_134.bulinTip = nil
 	end
 
-	if arg0_133.searchBar then
-		arg0_133.searchBar:Dispose()
+	if arg0_134.searchBar then
+		arg0_134.searchBar:Dispose()
 
-		arg0_133.searchBar = nil
+		arg0_134.searchBar = nil
 	end
 
-	arg0_133.destroyConfirmView:Destroy()
-	arg0_133.assignedItemView:Destroy()
-	arg0_133.blueprintAssignedItemView:Destroy()
-	arg0_133.equipDestroyConfirmWindow:Destroy()
-	arg0_133.msgBox:Destroy()
+	arg0_134.destroyConfirmView:Destroy()
+	arg0_134.assignedItemView:Destroy()
+	arg0_134.blueprintAssignedItemView:Destroy()
+	arg0_134.equipDestroyConfirmWindow:Destroy()
+	arg0_134.msgBox:Destroy()
 end
 
 return var0_0

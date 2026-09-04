@@ -244,6 +244,10 @@ pg.ship_meta_breakout.all = {
 	9707082,
 	9707083,
 	9707084,
+	9707101,
+	9707102,
+	9707103,
+	9707104,
 	9708011,
 	9708012,
 	9708013,
@@ -4178,6 +4182,75 @@ end)()
 		id = 9707084,
 		item1 = 21054,
 		pre_id = 9707083,
+		weapon_ids = {}
+	}
+	pg.base.ship_meta_breakout[9707101] = {
+		breakout_view = "Unlock Ashen Might - Saratoga/All fighters +1/Aircraft efficiency +3%",
+		gold = 1000,
+		breakout_id = 9707102,
+		repair = 0,
+		item2 = 21064,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9707101,
+		item1 = 21064,
+		pre_id = 0,
+		weapon_ids = {
+			60081,
+			54014
+		}
+	}
+	pg.base.ship_meta_breakout[9707102] = {
+		breakout_view = "Hangar capacity +1/All dive bombers +1/Aircraft efficiency +5%",
+		gold = 3000,
+		breakout_id = 9707103,
+		repair = 0,
+		item2 = 21064,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9707102,
+		item1 = 21064,
+		pre_id = 9707101,
+		weapon_ids = {
+			60082,
+			54014,
+			60082,
+			54014
+		}
+	}
+	pg.base.ship_meta_breakout[9707103] = {
+		breakout_view = "Improve Ashen Might - Saratoga/All aircraft +1/Aircraft efficiency +7%",
+		gold = 10000,
+		breakout_id = 9707104,
+		repair = 0,
+		item2 = 21064,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9707103,
+		item1 = 21064,
+		pre_id = 9707102,
+		weapon_ids = {
+			60083,
+			54015,
+			60083,
+			54015
+		}
+	}
+	pg.base.ship_meta_breakout[9707104] = {
+		breakout_view = "None",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21064,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9707104,
+		item1 = 21064,
+		pre_id = 9707103,
 		weapon_ids = {}
 	}
 	pg.base.ship_meta_breakout[9708011] = {

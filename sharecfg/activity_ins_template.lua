@@ -672,7 +672,8 @@ pg.activity_ins_template.all = {
 	20011,
 	20012,
 	20009,
-	20010
+	20010,
+	20013
 }
 pg.base = pg.base or {}
 pg.base.activity_ins_template = {}
@@ -28105,6 +28106,33 @@ end)()
 			{
 				13,
 				15,
+				0
+			}
+		},
+		time_persist = {},
+		npc_discuss_persist = {}
+	}
+	pg.base.activity_ins_template[20013] = {
+		ship_group = 0,
+		name = "",
+		oalist_pic_persist = "",
+		type = 2,
+		picture_persist = "",
+		title = "[Port News] The Port Happiness and Peace of Mind Committee! Are YOU Happy?",
+		sculpture = "",
+		is_active = 1,
+		message_persist = "",
+		id = 20013,
+		group_id = 20013,
+		time = {
+			{
+				2026,
+				9,
+				4
+			},
+			{
+				14,
+				0,
 				0
 			}
 		},

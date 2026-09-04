@@ -7,6 +7,66 @@ var0_0.word_legal_template_10 = {}
 local var1_0 = var0_0.word_legal_template_10
 
 function temp()
+	var1_0.猅 = {
+		this = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.狘 = {
+		this = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.獌 = {
+		this = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.狏 = {
+		this = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.狳 = {
+		this = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.犰 = {
+		this = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var1_0.獒 = {
 		this = {
 			this = true
@@ -295,105 +355,6 @@ function temp()
 	var1_0.鳄 = {
 		this = {
 			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var1_0.鲐 = {
-		this = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var1_0.鲣 = {
-		this = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var1_0.鳂 = {
-		this = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var1_0.鲪 = {
-		this = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var1_0.鳉 = {
-		this = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var1_0.鸱 = {
-		this = {
-			this = true
-		},
-		· = {
-			M = {
-				E = {
-					T = {
-						A = {
-							this = true
-						}
-					}
-				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var1_0.鸢 = {
-		this = {
-			this = true
-		},
-		· = {
-			M = {
-				E = {
-					T = {
-						A = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		一 = {
-			折 = {
-				纸 = {
-					this = true
-				}
-			}
 		}
 	}
 end

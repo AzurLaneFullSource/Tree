@@ -884,7 +884,8 @@ pg.ship_data_group.all = {
 	30060,
 	30061,
 	30062,
-	30063
+	30063,
+	30064
 }
 pg.ship_data_group.get_id_list_by_group_type = {
 	[10000] = {
@@ -3266,6 +3267,9 @@ pg.ship_data_group.get_id_list_by_group_type = {
 	[970708] = {
 		30054
 	},
+	[970710] = {
+		30064
+	},
 	[970801] = {
 		30021
 	},
@@ -4419,7 +4423,8 @@ pg.ship_data_group.get_id_list_by_handbook_type = {
 		30060,
 		30061,
 		30062,
-		30063
+		30063,
+		30064
 	}
 }
 pg.base = pg.base or {}
@@ -41082,6 +41087,41 @@ end)()
 					"METACHARACTER",
 					{
 						autoOpenShipConfigID = 9702131
+					}
+				},
+				0
+			}
+		}
+	}
+	pg.base.ship_data_group[30064] = {
+		type = 7,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 97,
+		trans_skin = 0,
+		handbook_type = 3,
+		index_id = 30066,
+		code = 30064,
+		group_type = 970710,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"C",
+			"E",
+			"S",
+			"C",
+			"A",
+			"A"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"META Lab - Coordinate Analysis",
+				{
+					"METACHARACTER",
+					{
+						autoOpenShipConfigID = 9707101
 					}
 				},
 				0

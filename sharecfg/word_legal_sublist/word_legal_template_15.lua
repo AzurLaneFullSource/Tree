@@ -7,34 +7,6 @@ var0_0.word_legal_template_15 = {}
 local var1_0 = var0_0.word_legal_template_15
 
 function temp()
-	var1_0.梦 = {
-		梦 = {
-			· = {
-				贝 = {
-					莉 = {
-						雅 = {
-							· = {
-								戴 = {
-									比 = {
-										路 = {
-											克 = {
-												this = true
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
 	var1_0.七 = {
 		省 = {
 			this = true
@@ -483,6 +455,25 @@ function temp()
 		上 = {
 			吹 = {
 				雪 = {
+					this = true
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.时 = {
+		乃 = {
+			空 = {
+				this = true
+			}
+		},
+		崎 = {
+			狂 = {
+				三 = {
 					this = true
 				}
 			}

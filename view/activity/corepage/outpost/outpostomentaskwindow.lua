@@ -89,57 +89,67 @@ function var0_0.UpdateListItem(arg0_9, arg1_9, arg2_9)
 	})
 end
 
-function var0_0.UpdateTaskItem(arg0_12, arg1_12, arg2_12, arg3_12)
-	local var0_12 = arg2_12 + 1
-	local var1_12 = arg3_12:Find("item")
-	local var2_12 = arg0_12.taskGroup[arg1_12][var0_12]
-	local var3_12 = arg0_12.taskProxy:getTaskById(var2_12) or arg0_12.taskProxy:getFinishTaskById(var2_12)
-	local var4_12 = pg.task_data_template[var2_12]
-	local var5_12 = Drop.Create(var4_12.award_display[1])
-
-	updateDrop(var1_12, var5_12)
-	onButton(arg0_12, var1_12, function()
-		arg0_12:emit(BaseUI.ON_DROP, var5_12)
-	end, SFX_PANEL)
-
-	local var6_12 = var3_12 and var3_12:getProgress() or 0
-	local var7_12 = var4_12.target_num
-
-	setText(arg3_12:Find("description"), var4_12.desc)
-	setSlider(arg3_12:Find("progress"), 0, var7_12, var6_12)
-	setText(arg3_12:Find("progressText"), var6_12 .. "/" .. var7_12)
-end
-
-function var0_0.getDate(arg0_14, arg1_14, arg2_14)
-	local var0_14 = pg.TimeMgr.GetInstance():CalcMonthDays(arg0_14.year, arg1_14)
-
-	if var0_14 < arg2_14 then
-		arg2_14 = arg2_14 - var0_14
-		arg1_14 = arg1_14 + 1
-
-		if arg1_14 > 12 then
-			arg1_14 = 1
-			arg0_14.year = arg0_14.year + 1
-		end
-	end
-
-	return arg1_14, arg2_14
-end
-
-function var0_0.GetProgressColor(arg0_15)
+function var0_0.GetProgressColor(arg0_12)
 	return nil
 end
 
-function var0_0.isTaskLock(arg0_16, arg1_16)
-	if arg1_16 > arg0_16.nday then
+function var0_0.UpdateTaskItem(arg0_13, arg1_13, arg2_13, arg3_13)
+	local var0_13 = arg2_13 + 1
+	local var1_13 = arg3_13:Find("item")
+	local var2_13 = arg0_13.taskGroup[arg1_13][var0_13]
+	local var3_13 = arg0_13.taskProxy:getTaskById(var2_13) or arg0_13.taskProxy:getFinishTaskById(var2_13)
+	local var4_13 = pg.task_data_template[var2_13]
+	local var5_13 = Drop.Create(var4_13.award_display[1])
+
+	updateDrop(var1_13, var5_13)
+	onButton(arg0_13, var1_13, function()
+		arg0_13:emit(BaseUI.ON_DROP, var5_13)
+	end, SFX_PANEL)
+
+	local var6_13 = var3_13 and var3_13:getProgress() or 0
+	local var7_13 = var4_13.target_num
+
+	setText(arg3_13:Find("description"), var4_13.desc)
+	setSlider(arg3_13:Find("progress"), 0, var7_13, var6_13)
+
+	local var8_13, var9_13 = var0_0:GetProgressColor()
+
+	var6_13 = var8_13 and setColorStr(var6_13, var8_13) or var6_13
+	var7_13 = var9_13 and setColorStr(var7_13, var9_13) or var7_13
+
+	setText(arg3_13:Find("progressText"), var6_13 .. "/" .. var7_13)
+end
+
+function var0_0.getDate(arg0_15, arg1_15, arg2_15)
+	local var0_15 = pg.TimeMgr.GetInstance():CalcMonthDays(arg0_15.year, arg1_15)
+
+	if var0_15 < arg2_15 then
+		arg2_15 = arg2_15 - var0_15
+		arg1_15 = arg1_15 + 1
+
+		if arg1_15 > 12 then
+			arg1_15 = 1
+			arg0_15.year = arg0_15.year + 1
+		end
+	end
+
+	return arg1_15, arg2_15
+end
+
+function var0_0.GetProgressColor(arg0_16)
+	return nil
+end
+
+function var0_0.isTaskLock(arg0_17, arg1_17)
+	if arg1_17 > arg0_17.nday then
 		return 1
 	end
 
-	for iter0_16 = 1, arg1_16 - 1 do
-		local var0_16 = arg0_16.taskGroup[iter0_16]
+	for iter0_17 = 1, arg1_17 - 1 do
+		local var0_17 = arg0_17.taskGroup[iter0_17]
 
-		for iter1_16, iter2_16 in ipairs(var0_16) do
-			if (arg0_16.taskProxy:getTaskById(iter2_16) or arg0_16.taskProxy:getFinishTaskById(iter2_16)):getTaskStatus() ~= 2 then
+		for iter1_17, iter2_17 in ipairs(var0_17) do
+			if (arg0_17.taskProxy:getTaskById(iter2_17) or arg0_17.taskProxy:getFinishTaskById(iter2_17)):getTaskStatus() ~= 2 then
 				return 2
 			end
 		end
@@ -148,10 +158,10 @@ function var0_0.isTaskLock(arg0_16, arg1_16)
 	return 0
 end
 
-function var0_0.Hide(arg0_17)
-	if arg0_17:isShowing() then
-		var0_0.super.Hide(arg0_17)
-		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_17._tf, arg0_17._parentTf)
+function var0_0.Hide(arg0_18)
+	if arg0_18:isShowing() then
+		var0_0.super.Hide(arg0_18)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_18._tf, arg0_18._parentTf)
 	end
 end
 

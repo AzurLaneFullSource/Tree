@@ -27,13 +27,15 @@ pg.activity_banner.get_id_list_by_type = {
 	[2] = {
 		1,
 		2,
-		3,
-		4,
-		5,
-		6,
 		7,
 		8,
 		9
+	},
+	[3] = {
+		3,
+		4,
+		5,
+		6
 	},
 	[9] = {
 		90,
@@ -62,41 +64,6 @@ pg.base.activity_banner = {}
 ;(function()
 	pg.base.activity_banner[1] = {
 		id = 1,
-		pic = "temp1",
-		type = 2,
-		param = {
-			"scene skinshop",
-			{}
-		},
-		time = {
-			{
-				{
-					2026,
-					8,
-					27
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2026,
-					9,
-					7
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
-	}
-	pg.base.activity_banner[2] = {
-		id = 2,
 		pic = "temp2",
 		type = 2,
 		param = {
@@ -123,18 +90,18 @@ pg.base.activity_banner = {}
 				{
 					2026,
 					9,
-					7
+					8
 				},
 				{
-					23,
-					59,
-					59
+					12,
+					0,
+					0
 				}
 			}
 		}
 	}
-	pg.base.activity_banner[3] = {
-		id = 3,
+	pg.base.activity_banner[2] = {
+		id = 2,
 		pic = "temp3",
 		type = 2,
 		param = {
@@ -170,19 +137,49 @@ pg.base.activity_banner = {}
 			}
 		}
 	}
-	pg.base.activity_banner[4] = {
-		id = 4,
-		pic = "temp4",
-		type = 2,
-		param = {
-			"act boss battle"
-		},
+	pg.base.activity_banner[3] = {
+		param = "51127",
+		id = 3,
+		pic = "temp1",
+		type = 3,
 		time = {
 			{
 				{
 					2026,
-					8,
-					27
+					9,
+					4
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					9,
+					7
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.activity_banner[4] = {
+		param = "51126",
+		id = 4,
+		pic = "temp4",
+		type = 3,
+		time = {
+			{
+				{
+					2026,
+					9,
+					4
 				},
 				{
 					0,
@@ -205,35 +202,104 @@ pg.base.activity_banner = {}
 		}
 	}
 	pg.base.activity_banner[5] = {
+		param = "51129",
 		id = 5,
 		pic = "temp5",
-		time = "stop",
-		type = 2,
-		param = {
-			"scene charge",
+		type = 3,
+		time = {
 			{
-				wrap = 4
+				{
+					2026,
+					9,
+					4
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					9,
+					7
+				},
+				{
+					23,
+					59,
+					59
+				}
 			}
 		}
 	}
 	pg.base.activity_banner[6] = {
+		param = "51119",
 		id = 6,
 		pic = "temp6",
-		time = "stop",
-		type = 2,
-		param = {
-			"scene court yard"
+		type = 3,
+		time = {
+			{
+				{
+					2026,
+					9,
+					4
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					9,
+					7
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
 		}
 	}
 	pg.base.activity_banner[7] = {
 		id = 7,
 		pic = "temp7",
-		time = "stop",
 		type = 2,
 		param = {
-			"scene shop",
+			"scene equip",
 			{
-				warp = "shopstreet"
+				designPage = 2,
+				warp = "WARP_TO_DESIGN"
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					9,
+					4
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					9,
+					7
+				},
+				{
+					23,
+					59,
+					59
+				}
 			}
 		}
 	}
@@ -242,14 +308,14 @@ pg.base.activity_banner = {}
 		pic = "temp8",
 		type = 2,
 		param = {
-			"dorm 3d select"
+			"scene dailylevel"
 		},
 		time = {
 			{
 				{
 					2026,
-					8,
-					27
+					9,
+					4
 				},
 				{
 					0,
@@ -276,18 +342,14 @@ pg.base.activity_banner = {}
 		pic = "temp9",
 		type = 2,
 		param = {
-			"scene level",
-			{
-				open_remaster = true,
-				isSP = true
-			}
+			"metacharacter"
 		},
 		time = {
 			{
 				{
 					2026,
-					8,
-					27
+					9,
+					4
 				},
 				{
 					0,
@@ -332,35 +394,10 @@ pg.base.activity_banner = {}
 	}
 	pg.base.activity_banner[99] = {
 		param = "",
-		id = 99,
-		pic = "limit_skin",
+		time = "stop",
 		type = 12,
-		time = {
-			{
-				{
-					2026,
-					8,
-					27
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2026,
-					9,
-					7
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
+		id = 99,
+		pic = "limit_skin"
 	}
 	pg.base.activity_banner[100] = {
 		param = "Dumplings|A world-famous delight from the Dragon Empery! <color=#92fc63>(Increases EXP gained by 5% for 60 minutes.)</color>",
@@ -385,14 +422,14 @@ pg.base.activity_banner = {}
 	}
 	pg.base.activity_banner[200] = {
 		param = "",
-		time = "stop",
+		time = "always",
 		type = 13,
 		id = 200,
 		pic = "autumn"
 	}
 	pg.base.activity_banner[201] = {
 		param = "",
-		time = "always",
+		time = "stop",
 		type = 13,
 		id = 201,
 		pic = "spring"

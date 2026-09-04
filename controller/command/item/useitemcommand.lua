@@ -114,6 +114,10 @@ function var0_0.execute(arg0_1, arg1_1)
 				end
 			elseif var6_1 == ItemUsage.REDUCE_COMMANDER_TIME then
 				arg0_1:sendNotification(GAME.REFRESH_COMMANDER_BOXES)
+			elseif var6_1 == ItemUsage.EX_RE_MAP then
+				var0_2 = PlayerConst.addTranDrop(arg0_2.drop_list)
+
+				getProxy(ChapterProxy):addRemasterPassCount(var3_1[1], ChapterConst.GetActivityIDByReChapterID(var3_1[1]), var2_1)
 			else
 				assert(false, "未处理类型" .. var6_1)
 			end
