@@ -394,10 +394,35 @@ pg.base.activity_banner = {}
 	}
 	pg.base.activity_banner[99] = {
 		param = "",
-		time = "stop",
-		type = 12,
 		id = 99,
-		pic = "limit_skin"
+		pic = "limit_skin",
+		type = 12,
+		time = {
+			{
+				{
+					2026,
+					8,
+					27
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					9,
+					7
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
 	}
 	pg.base.activity_banner[100] = {
 		param = "Dumplings|A world-famous delight from the Dragon Empery! <color=#92fc63>(Increases EXP gained by 5% for 60 minutes.)</color>",
