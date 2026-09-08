@@ -5,6 +5,7 @@ function var0_0.OnInit(arg0_1)
 	arg0_1.charge = arg0_1._tf:Find("charge")
 	arg0_1.take = arg0_1._tf:Find("take")
 	arg0_1.finish = arg0_1._tf:Find("finish")
+	arg0_1.tip = arg0_1.take:Find("tip")
 end
 
 function var0_0.OnDataSetting(arg0_2)
@@ -29,11 +30,16 @@ function var0_0.OnUpdateFlush(arg0_6)
 	setActive(arg0_6.charge, arg0_6.activity.data2 == 0 and arg0_6.activity.data1 == 0)
 	setButtonEnabled(arg0_6.take, arg0_6.activity.data2 == 0)
 	setActive(arg0_6.take, arg0_6.activity.data1 > 0)
+	setActive(arg0_6.tip, ChargeAwardPage.IsShowTip(arg0_6.activity))
 	setActive(arg0_6.finish, arg0_6.activity.data2 == 1)
 end
 
-function var0_0.OnDestroy(arg0_7)
-	clearImageSprite(arg0_7.bg)
+function var0_0.IsShowTip(arg0_7)
+	return arg0_7.data1 > 0 and arg0_7.data2 == 0
+end
+
+function var0_0.OnDestroy(arg0_8)
+	clearImageSprite(arg0_8.bg)
 end
 
 return var0_0

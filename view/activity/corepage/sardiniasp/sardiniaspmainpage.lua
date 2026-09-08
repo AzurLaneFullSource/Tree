@@ -14,7 +14,7 @@ end
 
 function var0_0.updateUI(arg0_3)
 	if arg0_3.shop_id then
-		local var0_3, var1_3 = arg0_3.timeMgr:inTime(pg.shop_template[arg0_3.shop_id].time)
+		local var0_3, var1_3 = arg0_3.timeMgr:inTime(ShopConst.GetShopConfig(arg0_3.shop_id).time)
 		local var2_3
 
 		if var1_3 then

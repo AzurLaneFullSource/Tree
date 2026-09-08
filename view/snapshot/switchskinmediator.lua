@@ -58,7 +58,7 @@ function var0_0.handleNotification(arg0_7, arg1_7)
 	local var1_7 = arg1_7:getBody()
 
 	if var0_7 == GAME.SKIN_SHOPPIGN_DONE or var0_7 == GAME.SKIN_COUPON_SHOPPING_DONE then
-		local var2_7 = pg.shop_template[var1_7.id]
+		local var2_7 = ShopConst.GetShopConfig(var1_7.id)
 
 		if var2_7 and var2_7.genre == ShopArgs.SkinShop then
 			arg0_7:addSubLayers(Context.New({

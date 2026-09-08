@@ -69,13 +69,17 @@ function var0_0.execute(arg0_1, arg1_1)
 
 				pg.TrackerMgr.GetInstance():Tracking(TRACKING_PURCHASE, var0_1)
 				getProxy(ShopsProxy):addWaitTimer()
-				arg0_1:sendNotification(GAME.CHARGE_OPERATION_DONE)
+				arg0_1:sendNotification(GAME.CHARGE_OPERATION_DONE, {
+					shopId = var0_1
+				})
 			else
 				pg.TipsMgr.GetInstance():ShowTips(i18n("charge_trade_no_error"))
 			end
 		else
 			if arg0_2.result == 9999 then
-				arg0_1:sendNotification(GAME.CHARGE_OPERATION_DONE)
+				arg0_1:sendNotification(GAME.CHARGE_OPERATION_DONE, {
+					shopId = var0_1
+				})
 			end
 
 			if arg0_2.result == 6 then

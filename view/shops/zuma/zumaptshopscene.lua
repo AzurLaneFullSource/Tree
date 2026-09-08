@@ -112,11 +112,7 @@ function var0_0.updateTpl(arg0_18, arg1_18, arg2_18)
 	local var2_18 = arg2_18:Find("PTCount")
 	local var3_18 = arg2_18:Find("BuyCount")
 	local var4_18 = arg0_18.goodVOListForShow[arg1_18]
-	local var5_18 = Drop.New({
-		type = var4_18:getConfig("commodity_type"),
-		id = var4_18:getConfig("commodity_id"),
-		count = var4_18:getConfig("num")
-	})
+	local var5_18 = var4_18:getDropInfo()
 
 	updateDrop(var0_18, var5_18)
 	setScrollText(var1_18, var5_18:getName())

@@ -84,7 +84,7 @@ function var0_0.ShowOilBuyTip(arg0_7, arg1_7)
 		return
 	end
 
-	local var2_7 = pg.shop_template[var1_7]
+	local var2_7 = ShopConst.GetShopConfig(var1_7)
 	local var3_7 = var2_7.num
 
 	if var2_7.num == -1 and var2_7.genre == ShopArgs.BuyOil then

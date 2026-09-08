@@ -64,19 +64,31 @@ function var0_0.getDefaultGalleryPicIDList()
 	return var1_3
 end
 
-function var0_0.createPicInfo(arg0_4, arg1_4)
-	local var0_4 = {
-		type = arg0_4,
-		id = arg1_4
-	}
+function var0_0.getOldLoadingPicIDList()
+	local var0_4 = {}
 
-	if arg0_4 == var0_0.TYPE_GALLERY then
-		var0_4.path = GalleryConst.GetGalleryPicPathByID(arg1_4)
-	elseif arg0_4 == var0_0.TYPE_MANGA then
-		var0_4.path = MangaConst.GetMangaPicPathByID(arg1_4)
+	for iter0_4, iter1_4 in ipairs(pg.gallery_config.all) do
+		if iter1_4 > 1000 then
+			table.insert(var0_4, iter1_4)
+		end
 	end
 
 	return var0_4
+end
+
+function var0_0.createPicInfo(arg0_5, arg1_5)
+	local var0_5 = {
+		type = arg0_5,
+		id = arg1_5
+	}
+
+	if arg0_5 == var0_0.TYPE_GALLERY then
+		var0_5.path = GalleryConst.GetGalleryPicPathByID(arg1_5)
+	elseif arg0_5 == var0_0.TYPE_MANGA then
+		var0_5.path = MangaConst.GetMangaPicPathByID(arg1_5)
+	end
+
+	return var0_5
 end
 
 function var0_0.getRandomLoadingPic()
@@ -84,166 +96,166 @@ function var0_0.getRandomLoadingPic()
 		return nil
 	end
 
-	local var0_5 = getProxy(LoadingPicProxy):getGalleryPicIDList()
-	local var1_5 = getProxy(LoadingPicProxy):getMangaPicIDList()
-	local var2_5 = AppreciatePicConst.filterExistGalleryPicIDList(var0_5)
-	local var3_5 = AppreciatePicConst.filterExistMangaPicIDList(var1_5)
-	local var4_5 = getProxy(LoadingPicProxy):getDiyModeOpenFlag()
-	local var5_5 = #var2_5 + #var3_5
+	local var0_6 = getProxy(LoadingPicProxy):getGalleryPicIDList()
+	local var1_6 = getProxy(LoadingPicProxy):getMangaPicIDList()
+	local var2_6 = AppreciatePicConst.filterExistGalleryPicIDList(var0_6)
+	local var3_6 = AppreciatePicConst.filterExistMangaPicIDList(var1_6)
+	local var4_6 = getProxy(LoadingPicProxy):getDiyModeOpenFlag()
+	local var5_6 = #var2_6 + #var3_6
 
-	if not var4_5 or var5_5 == 0 then
-		var2_5 = var0_0.getDefaultGalleryPicIDList()
-		var3_5 = {}
+	if not var4_6 or var5_6 == 0 then
+		var2_6 = var0_0.getDefaultGalleryPicIDList()
+		var3_6 = {}
 	end
 
-	local var6_5 = #var2_5 + #var3_5
+	local var6_6 = #var2_6 + #var3_6
 
-	assert(var6_5 > 0, "loading pic count should be greater than 0")
+	assert(var6_6 > 0, "loading pic count should be greater than 0")
 
-	local var7_5
-	local var8_5 = math.random(1, var6_5)
+	local var7_6
+	local var8_6 = math.random(1, var6_6)
 
-	if var8_5 <= #var2_5 then
-		local var9_5 = var2_5[var8_5]
+	if var8_6 <= #var2_6 then
+		local var9_6 = var2_6[var8_6]
 
-		var7_5 = var0_0.createPicInfo(var0_0.TYPE_GALLERY, var9_5)
+		var7_6 = var0_0.createPicInfo(var0_0.TYPE_GALLERY, var9_6)
 	else
-		local var10_5 = var3_5[var8_5 - #var2_5]
+		local var10_6 = var3_6[var8_6 - #var2_6]
 
-		var7_5 = var0_0.createPicInfo(var0_0.TYPE_MANGA, var10_5)
+		var7_6 = var0_0.createPicInfo(var0_0.TYPE_MANGA, var10_6)
 	end
 
-	return var7_5
+	return var7_6
 end
 
-function var0_0.checkDownloadMissingPic(arg0_6)
-	local var0_6 = AppreciatePicConst.getDefaultGalleryPicIDList()
-	local var1_6 = {}
-	local var2_6 = {}
+function var0_0.checkDownloadMissingPic(arg0_7)
+	local var0_7 = AppreciatePicConst.getDefaultGalleryPicIDList()
+	local var1_7 = {}
+	local var2_7 = {}
 
 	if getProxy(LoadingPicProxy) then
-		var1_6 = getProxy(LoadingPicProxy):getGalleryPicIDList()
-		var2_6 = getProxy(LoadingPicProxy):getMangaPicIDList()
+		var1_7 = getProxy(LoadingPicProxy):getGalleryPicIDList()
+		var2_7 = getProxy(LoadingPicProxy):getMangaPicIDList()
 	end
 
-	local var3_6 = {}
+	local var3_7 = {}
 
-	for iter0_6, iter1_6 in ipairs(var0_6) do
-		local var4_6 = GalleryConst.GetGalleryPicPathByID(iter1_6)
+	for iter0_7, iter1_7 in ipairs(var0_7) do
+		local var4_7 = GalleryConst.GetGalleryPicPathByID(iter1_7)
 
-		if var4_6 then
-			table.insert(var3_6, var4_6)
-			table.insert(var3_6, var4_6 .. "_hx")
+		if var4_7 then
+			table.insert(var3_7, var4_7)
+			table.insert(var3_7, var4_7 .. "_hx")
 		end
 	end
 
-	for iter2_6, iter3_6 in ipairs(var1_6) do
-		local var5_6 = GalleryConst.GetGalleryPicPathByID(iter3_6)
+	for iter2_7, iter3_7 in ipairs(var1_7) do
+		local var5_7 = GalleryConst.GetGalleryPicPathByID(iter3_7)
 
-		if var5_6 then
-			table.insert(var3_6, var5_6)
-			table.insert(var3_6, var5_6 .. "_hx")
+		if var5_7 then
+			table.insert(var3_7, var5_7)
+			table.insert(var3_7, var5_7 .. "_hx")
 		end
 	end
 
-	for iter4_6, iter5_6 in ipairs(var2_6) do
-		local var6_6 = MangaConst.GetMangaPicPathByID(iter5_6)
+	for iter4_7, iter5_7 in ipairs(var2_7) do
+		local var6_7 = MangaConst.GetMangaPicPathByID(iter5_7)
 
-		if var6_6 then
-			table.insert(var3_6, var6_6)
-			table.insert(var3_6, var6_6 .. "_hx")
+		if var6_7 then
+			table.insert(var3_7, var6_7)
+			table.insert(var3_7, var6_7 .. "_hx")
 		end
 	end
 
-	if var3_6 and #var3_6 > 0 then
-		local var7_6 = {}
+	if var3_7 and #var3_7 > 0 then
+		local var7_7 = {}
 
-		var7_6.isShowBox = false
-		var7_6.fileList = var3_6
-		var7_6.finishFunc = arg0_6
+		var7_7.isShowBox = false
+		var7_7.fileList = var3_7
+		var7_7.finishFunc = arg0_7
 
-		function var7_6.onNo()
+		function var7_7.onNo()
 			return
 		end
 
-		function var7_6.onClose()
+		function var7_7.onClose()
 			return
 		end
 
-		DownloadConst.Download(var7_6)
-	elseif arg0_6 then
-		arg0_6()
+		DownloadConst.Download(var7_7)
+	elseif arg0_7 then
+		arg0_7()
 	end
 end
 
-function var0_0.isUsedPicInfo(arg0_9)
-	local var0_9 = false
-
-	if arg0_9.type == var0_0.TYPE_GALLERY then
-		var0_9 = table.contains(getProxy(LoadingPicProxy):getGalleryPicIDList(true), arg0_9.id)
-	elseif arg0_9.type == var0_0.TYPE_MANGA then
-		var0_9 = table.contains(getProxy(LoadingPicProxy):getMangaPicIDList(true), arg0_9.id)
-	end
-
-	return var0_9
-end
-
-function var0_0.isNewPicInfo(arg0_10)
-	local var0_10 = var0_0.getGalleryConfigNewIDList()
-	local var1_10 = var0_0.getMangaConfigNewIDList()
+function var0_0.isUsedPicInfo(arg0_10)
+	local var0_10 = false
 
 	if arg0_10.type == var0_0.TYPE_GALLERY then
-		if not table.contains(var0_10, arg0_10.id) then
+		var0_10 = table.contains(getProxy(LoadingPicProxy):getGalleryPicIDList(true), arg0_10.id)
+	elseif arg0_10.type == var0_0.TYPE_MANGA then
+		var0_10 = table.contains(getProxy(LoadingPicProxy):getMangaPicIDList(true), arg0_10.id)
+	end
+
+	return var0_10
+end
+
+function var0_0.isNewPicInfo(arg0_11)
+	local var0_11 = var0_0.getGalleryConfigNewIDList()
+	local var1_11 = var0_0.getMangaConfigNewIDList()
+
+	if arg0_11.type == var0_0.TYPE_GALLERY then
+		if not table.contains(var0_11, arg0_11.id) then
 			return false
 		end
-	elseif arg0_10.type == var0_0.TYPE_MANGA and not table.contains(var1_10, arg0_10.id) then
+	elseif arg0_11.type == var0_0.TYPE_MANGA and not table.contains(var1_11, arg0_11.id) then
 		return false
 	end
 
-	local var2_10 = getProxy(LoadingPicProxy):getGalleryNewPicOpenList(true)
-	local var3_10 = getProxy(LoadingPicProxy):getMangaNewPicOpenList(true)
+	local var2_11 = getProxy(LoadingPicProxy):getGalleryNewPicOpenList(true)
+	local var3_11 = getProxy(LoadingPicProxy):getMangaNewPicOpenList(true)
 
-	if arg0_10.type == var0_0.TYPE_GALLERY then
-		if table.contains(var2_10, arg0_10.id) then
+	if arg0_11.type == var0_0.TYPE_GALLERY then
+		if table.contains(var2_11, arg0_11.id) then
 			return false
 		end
-	elseif arg0_10.type == var0_0.TYPE_MANGA and table.contains(var3_10, arg0_10.id) then
+	elseif arg0_11.type == var0_0.TYPE_MANGA and table.contains(var3_11, arg0_11.id) then
 		return false
 	end
 
 	return true
 end
 
-function var0_0.isPicInfoLiked(arg0_11)
-	local var0_11 = false
+function var0_0.isPicInfoLiked(arg0_12)
+	local var0_12 = false
 
-	if arg0_11.type == var0_0.TYPE_GALLERY then
-		var0_11 = GalleryConst.isGalleryLikeByID(arg0_11.id)
-	elseif arg0_11.type == var0_0.TYPE_MANGA then
-		var0_11 = MangaConst.isMangaLikeByID(arg0_11.id)
-	end
-
-	return var0_11
-end
-
-function var0_0.getGalleryConfigNewIDList()
-	local var0_12 = pg.gameset.new_gallery_id_list.description
-
-	if var0_12 == nil or type(var0_12) ~= "table" then
-		var0_12 = {}
+	if arg0_12.type == var0_0.TYPE_GALLERY then
+		var0_12 = GalleryConst.isGalleryLikeByID(arg0_12.id)
+	elseif arg0_12.type == var0_0.TYPE_MANGA then
+		var0_12 = MangaConst.isMangaLikeByID(arg0_12.id)
 	end
 
 	return var0_12
 end
 
-function var0_0.getMangaConfigNewIDList()
-	local var0_13 = pg.gameset.new_manga_id_list.description
+function var0_0.getGalleryConfigNewIDList()
+	local var0_13 = pg.gameset.new_gallery_id_list.description
 
 	if var0_13 == nil or type(var0_13) ~= "table" then
 		var0_13 = {}
 	end
 
 	return var0_13
+end
+
+function var0_0.getMangaConfigNewIDList()
+	local var0_14 = pg.gameset.new_manga_id_list.description
+
+	if var0_14 == nil or type(var0_14) ~= "table" then
+		var0_14 = {}
+	end
+
+	return var0_14
 end
 
 return var0_0

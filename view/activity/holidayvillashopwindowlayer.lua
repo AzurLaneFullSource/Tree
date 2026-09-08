@@ -68,11 +68,7 @@ end
 
 function var0_0.didEnter(arg0_13)
 	local var0_13 = arg0_13.goods
-	local var1_13 = {
-		type = var0_13:getConfig("commodity_type"),
-		id = var0_13:getConfig("commodity_id"),
-		count = var0_13:getConfig("num")
-	}
+	local var1_13 = var0_13:getDropInfo()
 	local var2_13 = arg0_13._tf:Find("content/main")
 
 	updateDrop(var2_13:Find("icon/IconTpl"), var1_13)

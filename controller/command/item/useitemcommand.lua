@@ -67,7 +67,7 @@ function var0_0.execute(arg0_1, arg1_1)
 			elseif var6_1 == ItemUsage.USAGE_SKIN_EXP then
 				local var1_2 = getProxy(ShipSkinProxy)
 				local var2_2 = var3_1[1]
-				local var3_2 = pg.shop_template[var2_2]
+				local var3_2 = ShopConst.GetShopConfig(var2_2)
 				local var4_2 = var3_2.effect_args[1]
 				local var5_2 = pg.TimeMgr.GetInstance():GetServerTime() + var3_2.time_second
 				local var6_2 = ShipSkin.New({

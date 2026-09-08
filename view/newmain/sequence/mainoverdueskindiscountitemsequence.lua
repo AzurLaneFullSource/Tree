@@ -80,7 +80,7 @@ function var0_0._CollectExpiredItems(arg0_11, arg1_11)
 	local var1_11 = pg.shop_template.get_id_list_by_genre[ShopArgs.GiftPackage]
 
 	for iter0_11, iter1_11 in pairs(var1_11) do
-		local var2_11 = pg.shop_template[iter1_11]
+		local var2_11 = ShopConst.GetShopConfig(iter1_11)
 
 		if arg0_11:InTime(var2_11.time) then
 			local var3_11 = var2_11.effect_args[1] or 0

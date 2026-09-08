@@ -104,22 +104,8 @@ function var0_0.GetAttrResultValue(arg0_19, arg1_19)
 	return var0_19 and var0_19[3] or 0
 end
 
-function var0_0.GetDropInfo(arg0_21)
-	local var0_21 = {}
-
-	underscore.each(arg0_21:GetResult(), function(arg0_22)
-		table.insert(var0_21, Drop.New({
-			type = arg0_22[1],
-			id = arg0_22[2],
-			number = arg0_22[3]
-		}))
-	end)
-
-	return var0_21
-end
-
-function var0_0.GetPerformance(arg0_23)
-	return arg0_23:getConfig("performance")
+function var0_0.GetPerformance(arg0_21)
+	return arg0_21:getConfig("performance")
 end
 
 return var0_0

@@ -690,7 +690,6 @@ function var0_0.initNotificationHandleDic(arg0_62)
 		[GAME.SHOPPING_DONE] = function(arg0_92, arg1_92)
 			local var0_92 = arg1_92:getBody()
 
-			warning("yzh")
 			arg0_92.viewComponent:emit(BaseUI.ON_ACHIEVE, var0_92.awards, function()
 				arg0_92.viewComponent:updateTaskLayers()
 			end)

@@ -111,7 +111,7 @@ function var0_0.Flush(arg0_14, arg1_14)
 
 		local var7_14 = arg0_14.shipVO:getRemouldSkinId() == iter3_14.id and arg0_14.shipVO:isRemoulded()
 		local var8_14 = (arg0_14.shipVO:proposeSkinOwned(iter3_14) or table.contains(arg0_14.skinList, iter3_14.id) or var7_14) and 1 or 0
-		local var9_14 = iter3_14.shop_id > 0 and pg.shop_template[iter3_14.shop_id] or nil
+		local var9_14 = iter3_14.shop_id > 0 and ShopConst.GetShopConfig(iter3_14.shop_id) or nil
 		local var10_14 = var9_14 and not pg.TimeMgr.GetInstance():inTime(var9_14.time)
 		local var11_14 = iter3_14.id == arg0_14.shipVO:getSkinId()
 		local var12_14 = iter3_14.id == arg0_14.shipVO:getConfig("skin_id") or var8_14 >= 1 or iter3_14.skin_type == ShipSkin.SKIN_TYPE_OLD or var0_14:hasSkin(iter3_14.id)

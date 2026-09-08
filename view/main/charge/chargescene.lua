@@ -465,7 +465,7 @@ function var0_0.checkBuyDone(arg0_36, arg1_36)
 			var0_36 = arg1_36
 		end
 	else
-		local var1_36 = pg.shop_template[arg1_36]
+		local var1_36 = ShopConst.GetShopConfig(arg1_36)
 
 		if var1_36 and var1_36.effect_args and type(var1_36.effect_args) == "table" then
 			for iter0_36, iter1_36 in ipairs(var1_36.effect_args) do

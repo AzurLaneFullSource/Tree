@@ -22,6 +22,7 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.alpha = arg1_1.alpha
 	arg0_1.mask = defaultValue(arg1_1.mask, false)
 	arg0_1.isWorld = defaultValue(arg1_1.isWorld, true)
+	arg0_1.forceDormLine = defaultValue(arg1_1.forceDormLine, false)
 	arg0_1.styleData = arg0_1:GenStyleData(arg1_1.style)
 	arg0_1.highLightData = arg0_1:GenHighLightData(arg1_1.style)
 	arg0_1.baseUI = arg0_1:GenSearchData(arg1_1.baseui)
@@ -148,7 +149,7 @@ function var0_0.GenStyleData(arg0_16, arg1_16)
 end
 
 function var0_0.GetHighlightName(arg0_17)
-	if arg0_17:GetDialogueType() == var0_0.DIALOGUE_DORM then
+	if arg0_17:GetDialogueType() == var0_0.DIALOGUE_DORM or arg0_17.forceDormLine then
 		return "wShowArea4"
 	elseif arg0_17.isWorld then
 		return "wShowArea"

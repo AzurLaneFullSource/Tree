@@ -776,11 +776,17 @@ function var0_0.InitBranches(arg0_63, arg1_63, arg2_63, arg3_63, arg4_63)
 						var6_63.blocksRaycasts = true
 
 						arg0_63:HideBranchesWithoutSelected(arg2_63)
+						pg.m02:sendNotification(STORY_EVENT.OPTION_SELECTED, {
+							optionalFlag = var2_64
+						})
 						arg3_63(var1_64)
 					end)
 				else
 					setActive(arg0_63.optionsCg.gameObject, false)
 					arg0_63:HideBranchesWithoutSelected(arg2_63)
+					pg.m02:sendNotification(STORY_EVENT.OPTION_SELECTED, {
+						optionalFlag = var2_64
+					})
 					arg3_63(var1_64)
 				end
 			end, SFX_PANEL)
@@ -1443,6 +1449,7 @@ function var0_0.Reset(arg0_119, arg1_119, arg2_119, arg3_119)
 	setActive(arg0_119.spAnimPanel, false)
 	setActive(arg0_119.castPanel, false)
 	setActive(arg0_119.bgPanel, false)
+	setActive(arg0_119.frontTr, true)
 
 	if arg1_119 and arg1_119:IsDialogueMode() and arg2_119 and arg2_119:IsDialogueMode() then
 		-- block empty

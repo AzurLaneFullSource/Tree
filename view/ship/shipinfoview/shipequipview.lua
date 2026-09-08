@@ -362,20 +362,16 @@ function var0_0.UpdateEquipmentPanel(arg0_13, arg1_13, arg2_13, arg3_13)
 			arg0_13:emit(BaseUI.ON_EQUIPMENT, {
 				type = EquipmentInfoMediator.TYPE_SHIP,
 				shipId = var4_13.id,
-				pos = arg1_13,
-				onRemoved = function()
-					arg0_13:setEquipDescVisible(true)
-				end
+				pos = arg1_13
 			})
-			arg0_13:setEquipDescVisible(false)
 		end, SFX_UI_DOCKYARD_EQUIPADD)
 	else
 		onButton(arg0_13, var0_13, function()
 			if var4_13 then
-				local var0_18, var1_18 = ShipStatus.ShipStatusCheck("onModify", var4_13)
+				local var0_17, var1_17 = ShipStatus.ShipStatusCheck("onModify", var4_13)
 
-				if not var0_18 then
-					pg.TipsMgr.GetInstance():ShowTips(var1_18)
+				if not var0_17 then
+					pg.TipsMgr.GetInstance():ShowTips(var1_17)
 
 					return
 				end
@@ -386,250 +382,246 @@ function var0_0.UpdateEquipmentPanel(arg0_13, arg1_13, arg2_13, arg3_13)
 	end
 end
 
-function var0_0.setEquipDescVisible(arg0_19, arg1_19)
-	if not arg0_19.equipmentPanels then
+function var0_0.setEquipDescVisible(arg0_18, arg1_18)
+	if not arg0_18.equipmentPanels then
 		return
 	end
 
-	for iter0_19 = 1, #arg0_19.equipmentPanels do
-		local var0_19 = arg0_19.equipmentPanels[iter0_19]
+	for iter0_18 = 1, #arg0_18.equipmentPanels do
+		local var0_18 = arg0_18.equipmentPanels[iter0_18]
 
-		if var0_19 then
-			local var1_19 = var0_19:Find("info/cont/name_mask/name")
-			local var2_19 = GetComponent(var1_19, typeof(ScrollText))
+		if var0_18 then
+			local var1_18 = var0_18:Find("info/cont/name_mask/name")
+			local var2_18 = GetComponent(var1_18, typeof(ScrollText))
 
-			if var2_19 then
-				var2_19:SetVisible(arg1_19)
+			if var2_18 then
+				var2_18:SetVisible(arg1_18)
 			end
 		end
 	end
 end
 
-function var0_0.equipmentCheck(arg0_20, arg1_20)
-	if not arg0_20:GetShipVO() then
+function var0_0.equipmentCheck(arg0_19, arg1_19)
+	if not arg0_19:GetShipVO() then
 		return false
 	end
 
-	local var0_20 = arg1_20.check_type
-	local var1_20 = arg1_20.check_indexList
-	local var2_20 = arg1_20.check_label
+	local var0_19 = arg1_19.check_type
+	local var1_19 = arg1_19.check_indexList
+	local var2_19 = arg1_19.check_label
 
-	if not var0_20 and not var1_20 and not var2_20 then
+	if not var0_19 and not var1_19 and not var2_19 then
 		return true
 	end
 
-	local var3_20 = false
-	local var4_20 = {}
-	local var5_20 = Clone(arg0_20:GetShipVO().equipments)
+	local var3_19 = false
+	local var4_19 = {}
+	local var5_19 = Clone(arg0_19:GetShipVO().equipments)
 
-	if var1_20 then
-		local var6_20 = #var5_20
+	if var1_19 then
+		local var6_19 = #var5_19
 
-		while var6_20 > 0 do
-			if not table.contains(var1_20, var6_20) then
-				table.remove(var5_20, var6_20)
+		while var6_19 > 0 do
+			if not table.contains(var1_19, var6_19) then
+				table.remove(var5_19, var6_19)
 			end
 
-			var6_20 = var6_20 - 1
+			var6_19 = var6_19 - 1
 		end
 	end
 
-	if var0_20 then
-		local var7_20 = #var5_20
+	if var0_19 then
+		local var7_19 = #var5_19
 
-		while var7_20 > 0 do
-			local var8_20 = var5_20[var7_20]
+		while var7_19 > 0 do
+			local var8_19 = var5_19[var7_19]
 
-			if not var8_20 or not table.contains(var0_20, var8_20:getConfig("type")) then
-				table.remove(var5_20, var7_20)
+			if not var8_19 or not table.contains(var0_19, var8_19:getConfig("type")) then
+				table.remove(var5_19, var7_19)
 			end
 
-			var7_20 = var7_20 - 1
+			var7_19 = var7_19 - 1
 		end
 	end
 
-	if var2_20 then
-		local var9_20 = #var5_20
+	if var2_19 then
+		local var9_19 = #var5_19
 
-		while var9_20 > 0 do
-			local var10_20 = var5_20[var9_20]
+		while var9_19 > 0 do
+			local var10_19 = var5_19[var9_19]
 
-			if var10_20 then
-				local var11_20 = 1
+			if var10_19 then
+				local var11_19 = 1
 
-				for iter0_20, iter1_20 in ipairs(var2_20) do
-					if not table.contains(var10_20:getConfig("label"), iter1_20) then
-						var11_20 = var11_20 * 0
+				for iter0_19, iter1_19 in ipairs(var2_19) do
+					if not table.contains(var10_19:getConfig("label"), iter1_19) then
+						var11_19 = var11_19 * 0
 					end
 				end
 
-				if var11_20 == 0 then
-					table.remove(var5_20, var9_20)
+				if var11_19 == 0 then
+					table.remove(var5_19, var9_19)
 				end
 			else
-				table.remove(var5_20, var9_20)
+				table.remove(var5_19, var9_19)
 			end
 
-			var9_20 = var9_20 - 1
+			var9_19 = var9_19 - 1
 		end
 	end
 
-	return #var5_20 > 0
+	return #var5_19 > 0
 end
 
-function var0_0.equipmentEnhance(arg0_21, arg1_21)
-	local var0_21 = 1
-	local var1_21 = arg1_21:getConfig("label")
+function var0_0.equipmentEnhance(arg0_20, arg1_20)
+	local var0_20 = 1
+	local var1_20 = arg1_20:getConfig("label")
 
-	if arg0_21.label then
-		var0_21 = 1
+	if arg0_20.label then
+		var0_20 = 1
 
-		for iter0_21, iter1_21 in ipairs(arg0_21.label) do
-			if not table.contains(var1_21, iter1_21) then
-				var0_21 = 0
+		for iter0_20, iter1_20 in ipairs(arg0_20.label) do
+			if not table.contains(var1_20, iter1_20) then
+				var0_20 = 0
 
 				break
 			end
 		end
 	end
 
-	return var0_21 == 1
+	return var0_20 == 1
 end
 
-function var0_0.UpdateSpWeaponPanel(arg0_22, arg1_22)
-	local var0_22 = arg0_22.equipmentB1
-	local var1_22 = findTF(var0_22, "info")
-	local var2_22 = findTF(var0_22, "empty")
+function var0_0.UpdateSpWeaponPanel(arg0_21, arg1_21)
+	local var0_21 = arg0_21.equipmentB1
+	local var1_21 = findTF(var0_21, "info")
+	local var2_21 = findTF(var0_21, "empty")
 
-	setActive(var1_22, arg1_22)
-	setActive(var2_22, not arg1_22)
+	setActive(var1_21, arg1_21)
+	setActive(var2_21, not arg1_21)
 
-	local var3_22 = arg0_22:GetShipVO()
+	local var3_21 = arg0_21:GetShipVO()
 
-	assert(var3_22)
+	assert(var3_21)
 
-	if arg1_22 then
-		UpdateSpWeaponSlot(var1_22, arg1_22, {
+	if arg1_21 then
+		UpdateSpWeaponSlot(var1_21, arg1_21, {
 			20,
 			20,
 			20,
 			20
 		})
 
-		local var4_22 = var1_22:Find("attrs")
+		local var4_21 = var1_21:Find("attrs")
 
-		eachChild(var4_22, function(arg0_23)
-			setActive(arg0_23, false)
+		eachChild(var4_21, function(arg0_22)
+			setActive(arg0_22, false)
 		end)
 
-		local var5_22 = arg1_22:GetPropertiesInfo().attrs
-		local var6_22 = underscore.filter(var5_22, function(arg0_24)
-			return not arg0_24.type or arg0_24.type ~= AttributeType.AntiSiren
+		local var5_21 = arg1_21:GetPropertiesInfo().attrs
+		local var6_21 = underscore.filter(var5_21, function(arg0_23)
+			return not arg0_23.type or arg0_23.type ~= AttributeType.AntiSiren
 		end)
 
-		for iter0_22 = 1, 2 do
-			local var7_22 = var4_22:GetChild(iter0_22 - 1)
+		for iter0_21 = 1, 2 do
+			local var7_21 = var4_21:GetChild(iter0_21 - 1)
 
-			setActive(var7_22, true)
+			setActive(var7_21, true)
 
-			if #var6_22 > 0 then
-				local var8_22 = table.remove(var6_22, 1)
-				local var9_22, var10_22 = Equipment.GetInfoTrans(var8_22, var3_22)
+			if #var6_21 > 0 then
+				local var8_21 = table.remove(var6_21, 1)
+				local var9_21, var10_21 = Equipment.GetInfoTrans(var8_21, var3_21)
 
-				setText(var7_22:Find("tag"), var9_22)
-				setText(var7_22:Find("values/value"), var10_22)
-				setText(var7_22:Find("values/value_1"), "")
+				setText(var7_21:Find("tag"), var9_21)
+				setText(var7_21:Find("values/value"), var10_21)
+				setText(var7_21:Find("values/value_1"), "")
 			end
 		end
 
 		Canvas.ForceUpdateCanvases()
 
-		local var11_22 = var1_22:Find("cont")
+		local var11_21 = var1_21:Find("cont")
 
 		;(function()
-			local var0_25 = var11_22:GetChild(0)
+			local var0_24 = var11_21:GetChild(0)
 
-			setText(var0_25:Find("tag"), i18n("spweapon_ui_effect_tag"))
+			setText(var0_24:Find("tag"), i18n("spweapon_ui_effect_tag"))
 
-			local var1_25 = arg1_22:GetEffect()
+			local var1_24 = arg1_21:GetEffect()
 
-			setActive(var0_25, var1_25 and var1_25 > 0)
+			setActive(var0_24, var1_24 and var1_24 > 0)
 
-			if not var1_25 or not (var1_25 > 0) then
+			if not var1_24 or not (var1_24 > 0) then
 				return
 			end
 
-			setScrollText(var0_25:Find("value/Text"), getSkillName(var1_25))
+			setScrollText(var0_24:Find("value/Text"), getSkillName(var1_24))
 		end)()
 
-		local function var12_22(arg0_26)
-			local var0_26 = var11_22:GetChild(1)
+		local function var12_21(arg0_25)
+			local var0_25 = var11_21:GetChild(1)
 
-			setText(var0_26:Find("tag"), i18n("spweapon_ui_skill_tag"))
-			setActive(var0_26, arg0_26 and arg0_26 > 0)
+			setText(var0_25:Find("tag"), i18n("spweapon_ui_skill_tag"))
+			setActive(var0_25, arg0_25 and arg0_25 > 0)
 
-			if not arg0_26 or not (arg0_26 > 0) then
+			if not arg0_25 or not (arg0_25 > 0) then
 				return
 			end
 
-			setScrollText(var0_26:Find("value/Text"), getSkillName(arg0_26))
+			setScrollText(var0_25:Find("value/Text"), getSkillName(arg0_25))
 		end
 
-		local var13_22 = arg1_22:GetActiveUpgradableSkillList(var3_22)
+		local var13_21 = arg1_21:GetActiveUpgradableSkillList(var3_21)
 
-		if #var13_22 == 0 then
-			setActive(var11_22:GetChild(1), false)
+		if #var13_21 == 0 then
+			setActive(var11_21:GetChild(1), false)
 		else
-			var12_22(var13_22[1].mapSkillID)
+			var12_21(var13_21[1].mapSkillID)
 		end
 
-		onButton(arg0_22, var0_22, function()
-			arg0_22:emit(BaseUI.ON_SPWEAPON, {
+		onButton(arg0_21, var0_21, function()
+			arg0_21:emit(BaseUI.ON_SPWEAPON, {
 				type = SpWeaponInfoLayer.TYPE_SHIP,
-				shipId = var3_22.id,
-				onRemoved = function()
-					arg0_22:setEquipDescVisible(true)
-				end
+				shipId = var3_21.id
 			})
-			arg0_22:setEquipDescVisible(false)
 		end, SFX_UI_DOCKYARD_EQUIPADD)
 	else
-		onButton(arg0_22, var0_22, function()
-			if var3_22 then
-				local var0_29, var1_29 = ShipStatus.ShipStatusCheck("onModify", var3_22)
+		onButton(arg0_21, var0_21, function()
+			if var3_21 then
+				local var0_27, var1_27 = ShipStatus.ShipStatusCheck("onModify", var3_21)
 
-				if not var0_29 then
-					pg.TipsMgr.GetInstance():ShowTips(var1_29)
+				if not var0_27 then
+					pg.TipsMgr.GetInstance():ShowTips(var1_27)
 
 					return
 				end
 
-				arg0_22:emit(ShipMainMediator.ON_SELECT_SPWEAPON)
+				arg0_21:emit(ShipMainMediator.ON_SELECT_SPWEAPON)
 			end
 		end, SFX_UI_DOCKYARD_EQUIPADD)
 	end
 end
 
-function var0_0.switch2EquipmentSkinPage(arg0_30)
-	if arg0_30.equipSkinLogicPanel:isTweening() then
+function var0_0.switch2EquipmentSkinPage(arg0_28)
+	if arg0_28.equipSkinLogicPanel:isTweening() then
 		return
 	end
 
-	arg0_30.equipSkinLogicPanel:doSwitchAnim(arg0_30.contextData.isInEquipmentSkinPage)
+	arg0_28.equipSkinLogicPanel:doSwitchAnim(arg0_28.contextData.isInEquipmentSkinPage)
 
-	arg0_30.contextData.isInEquipmentSkinPage = not arg0_30.contextData.isInEquipmentSkinPage
+	arg0_28.contextData.isInEquipmentSkinPage = not arg0_28.contextData.isInEquipmentSkinPage
 
-	setActive(arg0_30.equipSkinBtn:Find("unsel"), not arg0_30.contextData.isInEquipmentSkinPage)
-	setActive(arg0_30.equipSkinBtn:Find("sel"), arg0_30.contextData.isInEquipmentSkinPage)
-	arg0_30.equipSkinLogicPanel:updateAll(arg0_30:GetShipVO())
+	setActive(arg0_28.equipSkinBtn:Find("unsel"), not arg0_28.contextData.isInEquipmentSkinPage)
+	setActive(arg0_28.equipSkinBtn:Find("sel"), arg0_28.contextData.isInEquipmentSkinPage)
+	arg0_28.equipSkinLogicPanel:updateAll(arg0_28:GetShipVO())
 end
 
-function var0_0.OnDestroy(arg0_31)
-	setParent(arg0_31.equipmentR, arg0_31._tf)
-	setParent(arg0_31.equipmentL, arg0_31._tf)
-	setParent(arg0_31.equipmentB, arg0_31._tf)
+function var0_0.OnDestroy(arg0_29)
+	setParent(arg0_29.equipmentR, arg0_29._tf)
+	setParent(arg0_29.equipmentL, arg0_29._tf)
+	setParent(arg0_29.equipmentB, arg0_29._tf)
 
-	arg0_31.shareData = nil
+	arg0_29.shareData = nil
 end
 
 return var0_0

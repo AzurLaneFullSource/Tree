@@ -18,42 +18,44 @@ end
 
 function var0_0.DataToLayout(arg0_3, arg1_3)
 	if arg1_3[1] == var1_0 then
+		local var0_3 = HXSet.hxLan(arg1_3[2])
+
 		return {
 			type = var1_0,
-			text = arg1_3[2]
+			text = var0_3
 		}
 	elseif arg1_3[1] == var2_0 then
-		local var0_3 = Vector2(arg1_3[3] or 0, arg1_3[4] or 0)
+		local var1_3 = Vector2(arg1_3[3] or 0, arg1_3[4] or 0)
 
 		return {
 			type = var2_0,
 			path = arg1_3[2],
-			size = var0_3
+			size = var1_3
 		}
 	elseif arg1_3[1] == var3_0 then
-		local var1_3 = {}
-		local var2_3 = arg1_3[2]
-		local var3_3 = arg0_3:ShouldReplacePlayer()
+		local var2_3 = {}
+		local var3_3 = arg1_3[2]
+		local var4_3 = arg0_3:ShouldReplacePlayer()
 
-		for iter0_3 = 1, #var2_3 do
-			local var4_3 = var2_3[iter0_3]
+		for iter0_3 = 1, #var3_3 do
+			local var5_3 = var3_3[iter0_3]
 
-			if var3_3 then
-				var4_3 = arg0_3:ReplacePlayerName(var4_3)
+			if var4_3 then
+				var5_3 = arg0_3:ReplacePlayerName(var5_3)
 			end
 
 			if arg0_3:ShouldReplaceCar2026() then
-				var4_3 = arg0_3:ReplaceCar2026Name(var4_3)
+				var5_3 = arg0_3:ReplaceCar2026Name(var5_3)
 			end
 
-			local var5_3 = HXSet.hxLan(var4_3)
+			local var6_3 = HXSet.hxLan(var5_3)
 
-			table.insert(var1_3, var5_3)
+			table.insert(var2_3, var6_3)
 		end
 
 		return {
 			type = var3_0,
-			names = var1_3,
+			names = var2_3,
 			column = arg1_3[3] or 2,
 			evenColumnColor = arg1_3[4] or "#c2c2c2"
 		}

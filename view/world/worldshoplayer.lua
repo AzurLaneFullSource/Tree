@@ -153,11 +153,13 @@ function var0_0.updateGoods(arg0_17, arg1_17, arg2_17, arg3_17)
 	local var4_17 = {}
 
 	for iter0_17, iter1_17 in pairs(arg3_17) do
-		if not var0_17:inTime(pg.shop_template[iter0_17].time) or not var0_17:inTime(pg.shop_template[iter0_17].time, var2_17 - 1) then
+		local var5_17 = ShopConst.GetShopConfig(iter0_17)
+
+		if not var0_17:inTime(var5_17.time) or not var0_17:inTime(var5_17.time, var2_17 - 1) then
 			-- block empty
 		elseif iter0_17 == 100000 and not nowWorld():IsReseted() then
 			-- block empty
-		elseif pg.shop_template[iter0_17].genre == ShopArgs.WorldCollection and iter1_17 == 0 and var3_17:getRecycleTask(pg.shop_template[iter0_17].effect_args[2]) then
+		elseif var5_17.genre == ShopArgs.WorldCollection and iter1_17 == 0 and var3_17:getRecycleTask(var5_17.effect_args[2]) then
 			-- block empty
 		else
 			table.insert(var4_17, {
@@ -169,7 +171,7 @@ function var0_0.updateGoods(arg0_17, arg1_17, arg2_17, arg3_17)
 
 	table.sort(var4_17, CompareFuncs({
 		function(arg0_18)
-			return pg.shop_template[arg0_18.id].order
+			return ShopConst.GetShopConfig(arg0_18.id).order
 		end,
 		function(arg0_19)
 			return arg0_19.id

@@ -175,7 +175,22 @@ pg.activity_medal_template.all = {
 	5111304,
 	5111305,
 	5111306,
-	5111307
+	5111307,
+	5114301,
+	5114302,
+	5114303,
+	5114304,
+	5114305,
+	5114306,
+	5114307,
+	5114308,
+	5115401,
+	5115402,
+	5115403,
+	5115404,
+	5115405,
+	5115406,
+	5115407
 }
 pg.activity_medal_template.get_id_list_by_group = {
 	[5711] = {
@@ -394,6 +409,25 @@ pg.activity_medal_template.get_id_list_by_group = {
 		5111305,
 		5111306,
 		5111307
+	},
+	[51143] = {
+		5114301,
+		5114302,
+		5114303,
+		5114304,
+		5114305,
+		5114306,
+		5114307,
+		5114308
+	},
+	[51154] = {
+		5115401,
+		5115402,
+		5115403,
+		5115404,
+		5115405,
+		5115406,
+		5115407
 	}
 }
 pg.base = pg.base or {}
@@ -2477,5 +2511,185 @@ end)()
 		activity_medal_name = "Sticker: Max Speed!",
 		id = 5111307,
 		activity_medal_desc = "DU！DU！DU！DU！"
+	}
+	pg.base.activity_medal_template[5114301] = {
+		prefab_node = "1",
+		next_medal = 0,
+		item = 66095,
+		remake_task_id = 0,
+		group = 51143,
+		task_id = 25720,
+		medal_asset = "ActivityMedal/5114301",
+		activity_medal_name = "Sticker: City Hall",
+		id = 5114301,
+		activity_medal_desc = "Another day where the City Hall is bustling with the sounds of \"people\"~"
+	}
+	pg.base.activity_medal_template[5114302] = {
+		prefab_node = "2",
+		next_medal = 0,
+		item = 66096,
+		remake_task_id = 0,
+		group = 51143,
+		task_id = 25721,
+		medal_asset = "ActivityMedal/5114302",
+		activity_medal_name = "Sticker: Shades of Danger",
+		id = 5114302,
+		activity_medal_desc = "*menacing*..."
+	}
+	pg.base.activity_medal_template[5114303] = {
+		prefab_node = "3",
+		next_medal = 0,
+		item = 66097,
+		remake_task_id = 0,
+		group = 51143,
+		task_id = 25722,
+		medal_asset = "ActivityMedal/5114303",
+		activity_medal_name = "Sticker: Flaming Fan",
+		id = 5114303,
+		activity_medal_desc = "A fan that blows hot air. What good is that?!"
+	}
+	pg.base.activity_medal_template[5114304] = {
+		prefab_node = "4",
+		next_medal = 0,
+		item = 66098,
+		remake_task_id = 0,
+		group = 51143,
+		task_id = 25723,
+		medal_asset = "ActivityMedal/5114304",
+		activity_medal_name = "Sticker: Heart Lancer",
+		id = 5114304,
+		activity_medal_desc = "In the name of love, I shall pierce all evil!"
+	}
+	pg.base.activity_medal_template[5114305] = {
+		prefab_node = "5",
+		next_medal = 0,
+		item = 66099,
+		remake_task_id = 0,
+		group = 51143,
+		task_id = 25724,
+		medal_asset = "ActivityMedal/5114305",
+		activity_medal_name = "Sticker: Quality Crayons",
+		id = 5114305,
+		activity_medal_desc = "Office supplies procured by the Council of Eight. You'll come across as extra-intelligent if you jot notes down with these!"
+	}
+	pg.base.activity_medal_template[5114306] = {
+		prefab_node = "6",
+		next_medal = 0,
+		item = 66100,
+		remake_task_id = 0,
+		group = 51143,
+		task_id = 25725,
+		medal_asset = "ActivityMedal/5114306",
+		activity_medal_name = "Sticker: Job Training, GO!",
+		id = 5114306,
+		activity_medal_desc = "Here comes the new onboarding coordinator. Hold onto your britches!"
+	}
+	pg.base.activity_medal_template[5114307] = {
+		prefab_node = "7",
+		next_medal = 0,
+		item = 66101,
+		remake_task_id = 0,
+		group = 51143,
+		task_id = 25726,
+		medal_asset = "ActivityMedal/5114307",
+		activity_medal_name = "Sticker: Symphony of the Stars",
+		id = 5114307,
+		activity_medal_desc = "O cosmos above, sing with me!"
+	}
+	pg.base.activity_medal_template[5114308] = {
+		prefab_node = "8",
+		next_medal = 0,
+		item = 66102,
+		remake_task_id = 0,
+		group = 51143,
+		task_id = 25727,
+		medal_asset = "ActivityMedal/5114308",
+		activity_medal_name = "Sticker: Companion Ball",
+		id = 5114308,
+		activity_medal_desc = "The true name of this item cannot be confirmed..."
+	}
+	pg.base.activity_medal_template[5115401] = {
+		prefab_node = "1",
+		next_medal = 0,
+		item = 66104,
+		remake_task_id = 0,
+		group = 51154,
+		task_id = 25730,
+		medal_asset = "ActivityMedal/5115401",
+		activity_medal_name = "Sticker: Manjuu Statue",
+		id = 5115401,
+		activity_medal_desc = "Peep! Behold, the official Manjuu of the Office of Paranormal Affairs!"
+	}
+	pg.base.activity_medal_template[5115402] = {
+		prefab_node = "2",
+		next_medal = 0,
+		item = 66105,
+		remake_task_id = 0,
+		group = 51154,
+		task_id = 25731,
+		medal_asset = "ActivityMedal/5115402",
+		activity_medal_name = "Sticker: Secret Treasure Trove",
+		id = 5115402,
+		activity_medal_desc = "Now then, what wonderful treasures await... What? It's just a towel?!"
+	}
+	pg.base.activity_medal_template[5115403] = {
+		prefab_node = "3",
+		next_medal = 0,
+		item = 66106,
+		remake_task_id = 0,
+		group = 51154,
+		task_id = 25732,
+		medal_asset = "ActivityMedal/5115403",
+		activity_medal_name = "Sticker: Undying Lantern",
+		id = 5115403,
+		activity_medal_desc = "Even this faint light can illuminate the path ahead."
+	}
+	pg.base.activity_medal_template[5115404] = {
+		prefab_node = "4",
+		next_medal = 0,
+		item = 66107,
+		remake_task_id = 0,
+		group = 51154,
+		task_id = 25733,
+		medal_asset = "ActivityMedal/5115404",
+		activity_medal_name = "Sticker: Raindrops in the Maple Forest",
+		id = 5115404,
+		activity_medal_desc = "Raindrops trickle down the umbrella's rim, and maple leaves brush past your shoulders."
+	}
+	pg.base.activity_medal_template[5115405] = {
+		prefab_node = "5",
+		next_medal = 0,
+		item = 66108,
+		remake_task_id = 0,
+		group = 51154,
+		task_id = 25734,
+		medal_asset = "ActivityMedal/5115405",
+		activity_medal_name = "Sticker: Laurel of Snowflakes",
+		id = 5115405,
+		activity_medal_desc = "Flowers that do not wither, snowflakes that do not melt."
+	}
+	pg.base.activity_medal_template[5115406] = {
+		prefab_node = "6",
+		next_medal = 0,
+		item = 66109,
+		remake_task_id = 0,
+		group = 51154,
+		task_id = 25735,
+		medal_asset = "ActivityMedal/5115406",
+		activity_medal_name = "Sticker: Staff Portrait",
+		id = 5115406,
+		activity_medal_desc = "The portrait is talking... Wait, doesn't she work here too?"
+	}
+	pg.base.activity_medal_template[5115407] = {
+		prefab_node = "7",
+		next_medal = 0,
+		item = 66110,
+		remake_task_id = 0,
+		group = 51154,
+		task_id = 25736,
+		medal_asset = "ActivityMedal/5115407",
+		activity_medal_name = "Sticker: Investigation Funds",
+		id = 5115407,
+		activity_medal_desc = "Feel free to use it as much as you want! Don't worry about the credit limit!"
 	}
 end)()

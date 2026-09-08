@@ -180,7 +180,9 @@ function var0_0.GetActivityShops(arg0_29, arg1_29)
 			arg0_29.shopList[ShopConst.TYPE_ACTIVITY] = {}
 
 			for iter0_32, iter1_32 in pairs(arg1_32) do
-				table.insert(arg0_29.shopList[ShopConst.TYPE_ACTIVITY], iter1_32)
+				if not iter1_32:IsHide() then
+					table.insert(arg0_29.shopList[ShopConst.TYPE_ACTIVITY], iter1_32)
+				end
 			end
 
 			local var0_32 = getProxy(ActivityProxy):getRawData()

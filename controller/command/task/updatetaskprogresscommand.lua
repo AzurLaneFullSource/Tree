@@ -64,6 +64,10 @@ function var0_0.execute(arg0_1, arg1_1)
 		var3_1 = Task.TASK_PROGRESS_UPDATE
 		var4_1 = var0_1.progress
 		var8_1 = true
+	elseif var7_1 == TASK_SUB_TYPE_CLIENT_TRIGGER then
+		var3_1 = Task.TASK_PROGRESS_UPDATE
+		var4_1 = var0_1.progress or 1
+		var8_1 = true
 	end
 
 	if not var8_1 then

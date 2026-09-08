@@ -25,7 +25,7 @@ end
 
 function var0_0.Init(arg0_3)
 	local var0_3 = arg0_3.goodsVO:getConfig("goods_name")
-	local var1_3 = arg0_3.goodsVO:GetDropInfo()
+	local var1_3 = arg0_3.goodsVO:getDropInfo()
 
 	updateDrop(arg0_3.itemTF, var1_3)
 	setScrollText(arg0_3.nameTxt, var0_3)

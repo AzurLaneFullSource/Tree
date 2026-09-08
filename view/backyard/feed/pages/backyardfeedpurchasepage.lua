@@ -46,7 +46,7 @@ function var0_0.Show(arg0_7, arg1_7)
 	local var0_7 = underscore.detect(getGameset("food_shop_id")[2], function(arg0_8)
 		return arg0_8[1] == arg1_7
 	end)[2]
-	local var1_7 = pg.shop_template[var0_7]
+	local var1_7 = ShopConst.GetShopConfig(var0_7)
 	local var2_7 = var1_7.resource_type
 	local var3_7 = var1_7.resource_num
 	local var4_7 = 1

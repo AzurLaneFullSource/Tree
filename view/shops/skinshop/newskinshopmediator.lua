@@ -100,7 +100,7 @@ function var0_0.handleNotification(arg0_14, arg1_14)
 	local var2_14 = arg1_14:getType()
 
 	if var0_14 == GAME.SKIN_SHOPPIGN_DONE or var0_14 == GAME.SKIN_COUPON_SHOPPING_DONE then
-		local var3_14 = pg.shop_template[var1_14.id]
+		local var3_14 = ShopConst.GetShopConfig(var1_14.id)
 
 		if var3_14 and (var3_14.genre == ShopArgs.SkinShop or var3_14.genre == ShopArgs.SkinShopTimeLimit) then
 			local var4_14 = var3_14.effect_args[1]

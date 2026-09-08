@@ -106,15 +106,9 @@ function var0_0.UpdateGoods(arg0_14)
 
 		setActive(arg2_16:Find("mask"), not var1_16)
 
-		local var2_16 = var0_16:getConfig("commodity_type")
-		local var3_16 = var0_16:getConfig("commodity_id")
-		local var4_16 = {
-			type = var2_16,
-			id = var3_16,
-			count = var0_16:getConfig("num")
-		}
+		local var2_16 = var0_16:getDropInfo()
 
-		updateDrop(arg2_16, var4_16)
+		updateDrop(arg2_16, var2_16)
 		setText(arg2_16:Find("Price"), var0_16:getConfig("resource_num"))
 		onButton(arg0_14, arg2_16, function()
 			arg0_14:OnClickCommodity(var0_16, function(arg0_18, arg1_18)
@@ -185,10 +179,7 @@ function var0_0.OnClickCommodity(arg0_25, arg1_25, arg2_25)
 		return
 	end
 
-	local var0_25 = Drop.New({
-		id = arg1_25:getConfig("commodity_id"),
-		type = arg1_25:getConfig("commodity_type")
-	})
+	local var0_25 = arg1_25:getDropInfo()
 
 	arg0_25:Purchase(arg1_25, 1, var0_25:getConfig("name"), arg2_25)
 end

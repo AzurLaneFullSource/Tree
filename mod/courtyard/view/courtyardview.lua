@@ -72,7 +72,8 @@ function var0_0.GetStoreyModule(arg0_11)
 		[CourtYardConst.STYLE_INNER] = CourtYardStoreyModule,
 		[CourtYardConst.STYLE_OUTSIDE] = CourtYardOutStoreyModule,
 		[CourtYardConst.STYLE_FEAST] = CourtYardFeastStoreyModule,
-		[CourtYardConst.STYLE_PREVIEW] = CourtYardStoreyPreviewModule
+		[CourtYardConst.STYLE_PREVIEW] = CourtYardStoreyPreviewModule,
+		[CourtYardConst.STYLE_REVERSE_PACMAN] = CourtYardReversePacmanStoreyModule
 	})[var0_11:GetStyle()]
 end
 
@@ -82,7 +83,8 @@ function var0_0.InitObjPool(arg0_12, arg1_12)
 		[CourtYardConst.STYLE_INNER] = CourtYardPoolMgr,
 		[CourtYardConst.STYLE_OUTSIDE] = CourtYardPoolMgr,
 		[CourtYardConst.STYLE_FEAST] = CourtYardFeastPoolMgr,
-		[CourtYardConst.STYLE_PREVIEW] = CourtYardPoolMgr
+		[CourtYardConst.STYLE_PREVIEW] = CourtYardPoolMgr,
+		[CourtYardConst.STYLE_REVERSE_PACMAN] = CourtYardReversePacmanPoolMgr
 	})[var0_12:GetStyle()].New()
 
 	var1_12:Init(arg0_12.poolRoot, arg1_12)

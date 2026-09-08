@@ -192,7 +192,7 @@ function var0_0.UpdateShipIcon(arg0_7, arg1_7)
 
 	assert(var1_7)
 
-	local var2_7 = pg.shop_template[var1_7].effect_args[1]
+	local var2_7 = ShopConst.GetShopConfig(var1_7).effect_args[1]
 
 	assert(var2_7)
 

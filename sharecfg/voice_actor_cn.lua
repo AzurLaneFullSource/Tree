@@ -2028,4 +2028,20 @@ end)()
 		code = 520,
 		actor_name = "Yurie Funato"
 	}
+	pg.base.voice_actor_CN[522] = {
+		code = 522,
+		actor_name = "Kanna Nakamura"
+	}
+	pg.base.voice_actor_CN[523] = {
+		code = 523,
+		actor_name = "Riko Akechi"
+	}
+	pg.base.voice_actor_CN[524] = {
+		code = 524,
+		actor_name = "Mirai Ayase"
+	}
+	pg.base.voice_actor_CN[525] = {
+		code = 525,
+		actor_name = "Shiori Kurosaki"
+	}
 end)()

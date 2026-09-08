@@ -81,7 +81,7 @@ function var0_0.handleNotification(arg0_9, arg1_9)
 		if var2_9 and #var2_9 > 0 then
 			arg0_9.viewComponent:emit(var0_0.OPEN_DROP_LAYER, var2_9, function()
 				local var0_10 = arg1_9:getBody().id
-				local var1_10 = pg.shop_template[var0_10].effect_args[1]
+				local var1_10 = ShopConst.GetShopConfig(var0_10).effect_args[1]
 
 				arg0_9.viewComponent.room:AddFurnitureByID(var1_10)
 				arg0_9.viewComponent:UpdateDataDisplayFurnitures()

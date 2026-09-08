@@ -79,7 +79,7 @@ function var0_0.didEnter(arg0_4)
 	local var8_4 = 0
 
 	_.each(var0_4:getConfig("shop_id"), function(arg0_7)
-		local var0_7 = pg.shop_template[arg0_7]
+		local var0_7 = ShopConst.GetShopConfig(arg0_7)
 
 		if var0_7.group_type == 2 then
 			var8_4 = math.max(var0_7.group_limit, var8_4)
@@ -168,7 +168,7 @@ function var0_0.didEnter(arg0_4)
 	end, SFX_PANEL)
 	onButton(arg0_4, arg0_4._tf:Find("Window/Confirm"), function()
 		local var0_12 = getProxy(PlayerProxy):getData()
-		local var1_12 = pg.shop_template[arg0_4.itemList[1]]
+		local var1_12 = ShopConst.GetShopConfig(arg0_4.itemList[1])
 
 		if var0_12[id2res(var1_12.resource_type)] < arg0_4.sumPrice then
 			local var2_12 = Drop.New({
@@ -264,7 +264,7 @@ function var0_0.GetShopId(arg0_18, arg1_18)
 
 	for iter0_18 = 1, #var0_18 - 1 do
 		local var1_18 = var0_18[iter0_18]
-		local var2_18 = pg.shop_template[var1_18]
+		local var2_18 = ShopConst.GetShopConfig(var1_18)
 		local var3_18 = var2_18.limit_args[1]
 
 		if not var3_18 and var2_18.group_type == 0 then

@@ -189,7 +189,29 @@ pg.activity_limit_item_guide.all = {
 	215,
 	216,
 	217,
-	218
+	218,
+	219,
+	220,
+	221,
+	222,
+	223,
+	224,
+	225,
+	226,
+	227,
+	228,
+	229,
+	230,
+	231,
+	232,
+	233,
+	234,
+	235,
+	236,
+	237,
+	238,
+	239,
+	240
 }
 pg.activity_limit_item_guide.get_id_list_by_activity = {
 	[4937] = {
@@ -400,6 +422,32 @@ pg.activity_limit_item_guide.get_id_list_by_activity = {
 		216,
 		217,
 		218
+	},
+	[51131] = {
+		238,
+		239,
+		240
+	},
+	[51152] = {
+		219,
+		220,
+		221,
+		222,
+		223,
+		224,
+		225,
+		226,
+		227,
+		228,
+		229,
+		230,
+		231,
+		232,
+		233,
+		234,
+		235,
+		236,
+		237
 	}
 }
 pg.base = pg.base or {}
@@ -3861,6 +3909,508 @@ end)()
 					}
 				},
 				"Exchange in the shop"
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[219] = {
+		id = 219,
+		activity = 51152,
+		count = 1,
+		type = 4,
+		is_new = 1,
+		count_storage = 1,
+		drop_id = 304091,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"scene get boat",
+					{
+						projectName = "new",
+						page = 1
+					}
+				},
+				"Limited Construction"
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[220] = {
+		id = 220,
+		activity = 51152,
+		count = 1,
+		type = 4,
+		is_new = 1,
+		count_storage = 1,
+		drop_id = 202381,
+		order = 0,
+		link_params = {
+			{
+				3,
+				51134,
+				"Tales of the Paranormal - UR Tiger Event Exchange reward"
+			},
+			{
+				2,
+				{
+					"scene shop",
+					{
+						warp = "activity"
+					}
+				},
+				"Event Exchange"
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[221] = {
+		id = 221,
+		activity = 51152,
+		count = 1,
+		type = 4,
+		is_new = 1,
+		count_storage = 1,
+		drop_id = 317031,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"scene get boat",
+					{
+						projectName = "new",
+						page = 1
+					}
+				},
+				"Limited Construction"
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[222] = {
+		id = 222,
+		activity = 51152,
+		count = 1,
+		type = 4,
+		is_new = 1,
+		count_storage = 1,
+		drop_id = 201401,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"scene get boat",
+					{
+						projectName = "new",
+						page = 1
+					}
+				},
+				"Limited Construction"
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[223] = {
+		id = 223,
+		activity = 51152,
+		count = 1,
+		type = 4,
+		is_new = 1,
+		count_storage = 1,
+		drop_id = 201191,
+		order = 0,
+		link_params = {
+			{
+				3,
+				51144,
+				"「Tales of the Paranormal - Happiness Supply Station event reward"
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[224] = {
+		id = 224,
+		activity = 51152,
+		count = 1,
+		type = 4,
+		is_new = 1,
+		count_storage = 1,
+		drop_id = 9707091,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"scene shop",
+					{
+						warp = "activity"
+					}
+				},
+				"Event Exchange"
+			},
+			{
+				2,
+				{
+					"scene get boat",
+					{
+						projectName = "new",
+						page = 1
+					}
+				},
+				"Limited Construction"
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[225] = {
+		id = 225,
+		activity = 51152,
+		count = 1,
+		type = 5,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 348,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"scene level"
+				},
+				"Tales of the Paranormal D3 clear reward"
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[226] = {
+		id = 226,
+		activity = 51152,
+		count = 1,
+		type = 5,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 347,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"scene task"
+				},
+				"A Slightly Paranormal State of Affairs mission reward"
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[227] = {
+		id = 227,
+		activity = 51152,
+		count = 1,
+		type = 5,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 349,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"reverse pacman home",
+					{
+						openTaskID = 27616
+					}
+				},
+				"A Slightly Paranormal State of Affairs mission reward"
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[228] = {
+		id = 228,
+		activity = 51152,
+		count = 1,
+		type = 5,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 350,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"reverse pacman home",
+					{
+						openTaskID = 27617
+					}
+				},
+				"A Slightly Paranormal State of Affairs mission reward"
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[229] = {
+		id = 229,
+		activity = 51152,
+		count = 1,
+		type = 9,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 3086,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"reverse pacman home",
+					{
+						openTaskID = 27610
+					}
+				},
+				"A Slightly Paranormal State of Affairs mission reward"
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[230] = {
+		id = 230,
+		activity = 51152,
+		count = 1,
+		type = 9,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 3087,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"reverse pacman home",
+					{
+						openTaskID = 27611
+					}
+				},
+				"A Slightly Paranormal State of Affairs mission reward"
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[231] = {
+		id = 231,
+		activity = 51152,
+		count = 1,
+		type = 9,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 3088,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"reverse pacman home",
+					{
+						openTaskID = 27612
+					}
+				},
+				"A Slightly Paranormal State of Affairs mission reward"
+			}
+		}
+	}
+end)()
+;(function()
+	pg.base.activity_limit_item_guide[232] = {
+		id = 232,
+		activity = 51152,
+		count = 1,
+		type = 9,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 3089,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"reverse pacman home",
+					{
+						openTaskID = 27613
+					}
+				},
+				"A Slightly Paranormal State of Affairs mission reward"
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[233] = {
+		id = 233,
+		activity = 51152,
+		count = 1,
+		type = 9,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 3090,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"reverse pacman home",
+					{
+						openTaskID = 27614
+					}
+				},
+				"A Slightly Paranormal State of Affairs mission reward"
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[234] = {
+		id = 234,
+		activity = 51152,
+		count = 1,
+		type = 9,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 3091,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"reverse pacman home",
+					{
+						openTaskID = 27615
+					}
+				},
+				"A Slightly Paranormal State of Affairs mission reward"
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[235] = {
+		id = 235,
+		activity = 51152,
+		count = 1,
+		type = 1,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 758,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"scene task"
+				},
+				"Tales of the Paranormal mission reward"
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[236] = {
+		id = 236,
+		activity = 51152,
+		count = 1,
+		type = 1,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 759,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"scene task"
+				},
+				"A Slightly Paranormal State of Affairs mission reward"
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[237] = {
+		id = 237,
+		activity = 51152,
+		count = 1,
+		type = 14,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 344,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"reverse pacman home",
+					{
+						openTaskID = 27618
+					}
+				},
+				"A Slightly Paranormal State of Affairs mission reward"
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[238] = {
+		id = 238,
+		activity = 51131,
+		count = 0,
+		type = 8,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 68694,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"reverse pacman home",
+					{
+						openTaskID = 27857
+					}
+				},
+				"A Slightly Paranormal State of Affairs mission reward"
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[239] = {
+		id = 239,
+		activity = 51131,
+		count = 0,
+		type = 8,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 68695,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"reverse pacman home",
+					{
+						technologyType = 2
+					}
+				},
+				"Exchanged in A Slightly Paranormal State of Affairs - Management"
+			},
+			{
+				2,
+				{
+					"REVERSE_PACMAN_SELECT"
+				},
+				"A Slightly Paranormal State of Affairs event reward"
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[240] = {
+		id = 240,
+		activity = 51131,
+		count = 0,
+		type = 8,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 68691,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"reverse pacman home",
+					{
+						openTaskID = 27608
+					}
+				},
+				"A Slightly Paranormal State of Affairs mission reward"
+			},
+			{
+				2,
+				{
+					"REVERSE_PACMAN_SELECT"
+				},
+				"A Slightly Paranormal State of Affairs event reward"
 			}
 		}
 	}

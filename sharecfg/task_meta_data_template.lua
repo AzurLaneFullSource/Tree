@@ -384,6 +384,11 @@ pg.task_meta_data_template.all = {
 	100583,
 	100584,
 	100585,
+	100601,
+	100602,
+	100603,
+	100604,
+	100605,
 	100591,
 	100592,
 	100593,
@@ -585,6 +590,10 @@ pg.task_meta_data_template.all = {
 	200492,
 	200493,
 	200494,
+	200511,
+	200512,
+	200513,
+	200514,
 	200501,
 	200502,
 	200503,
@@ -3640,6 +3649,46 @@ end)()
 		target_num = 1,
 		target_id = "100"
 	}
+	pg.base.task_meta_data_template[100601] = {
+		target_id_2 = "970709",
+		sub_type = 180,
+		desc = "Win 1 battle with Victorious META in your fleet.",
+		id = 100601,
+		target_num = 1,
+		target_id = "0"
+	}
+	pg.base.task_meta_data_template[100602] = {
+		target_id_2 = "970709",
+		sub_type = 180,
+		desc = "Defeat a Lv. 30+ fleet with Victorious META in your fleet.",
+		id = 100602,
+		target_num = 1,
+		target_id = "30"
+	}
+	pg.base.task_meta_data_template[100603] = {
+		target_id_2 = "970709",
+		sub_type = 180,
+		desc = "Defeat a Lv. 55+ fleet with Victorious META in your fleet.",
+		id = 100603,
+		target_num = 1,
+		target_id = "55"
+	}
+	pg.base.task_meta_data_template[100604] = {
+		target_id_2 = "970709",
+		sub_type = 180,
+		desc = "Defeat a Lv. 80+ fleet with Victorious META in your fleet.",
+		id = 100604,
+		target_num = 1,
+		target_id = "80"
+	}
+	pg.base.task_meta_data_template[100605] = {
+		target_id_2 = "970709",
+		sub_type = 180,
+		desc = "Defeat a Lv. 100+ fleet with Victorious META in your fleet.",
+		id = 100605,
+		target_num = 1,
+		target_id = "100"
+	}
 	pg.base.task_meta_data_template[100591] = {
 		target_id_2 = "970710",
 		sub_type = 180,
@@ -3760,6 +3809,8 @@ end)()
 		target_num = 1,
 		target_id = "70"
 	}
+end)()
+;(function()
 	pg.base.task_meta_data_template[200033] = {
 		target_id_2 = "970503",
 		sub_type = 302,
@@ -3800,8 +3851,6 @@ end)()
 		target_num = 1,
 		target_id = "90"
 	}
-end)()
-;(function()
 	pg.base.task_meta_data_template[200044] = {
 		target_id_2 = "970203",
 		sub_type = 302,
@@ -4562,6 +4611,8 @@ end)()
 		target_num = 1,
 		target_id = "70"
 	}
+end)()
+;(function()
 	pg.base.task_meta_data_template[200283] = {
 		target_id_2 = "970305",
 		sub_type = 302,
@@ -4602,8 +4653,6 @@ end)()
 		target_num = 1,
 		target_id = "90"
 	}
-end)()
-;(function()
 	pg.base.task_meta_data_template[200294] = {
 		target_id_2 = "970306",
 		sub_type = 302,
@@ -5249,6 +5298,38 @@ end)()
 		sub_type = 302,
 		desc = "Sortie in Operation Siren and defeat a Lv. 100+ enemy fleet with Nürnberg META in the fleet.",
 		id = 200494,
+		target_num = 1,
+		target_id = "100"
+	}
+	pg.base.task_meta_data_template[200511] = {
+		target_id_2 = "970709",
+		sub_type = 302,
+		desc = "Win 1 Operation Siren battle with Victorious META in your fleet.",
+		id = 200511,
+		target_num = 1,
+		target_id = "0"
+	}
+	pg.base.task_meta_data_template[200512] = {
+		target_id_2 = "970709",
+		sub_type = 302,
+		desc = "Defeat a Lv. 70+ fleet in Operation Siren with Victorious META in your fleet.",
+		id = 200512,
+		target_num = 1,
+		target_id = "70"
+	}
+	pg.base.task_meta_data_template[200513] = {
+		target_id_2 = "970709",
+		sub_type = 302,
+		desc = "Defeat a Lv. 90+ fleet in Operation Siren with Victorious META in your fleet.",
+		id = 200513,
+		target_num = 1,
+		target_id = "90"
+	}
+	pg.base.task_meta_data_template[200514] = {
+		target_id_2 = "970709",
+		sub_type = 302,
+		desc = "Defeat a Lv. 100+ fleet in Operation Siren with Victorious META in your fleet.",
+		id = 200514,
 		target_num = 1,
 		target_id = "100"
 	}

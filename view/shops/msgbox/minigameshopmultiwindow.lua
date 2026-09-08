@@ -46,7 +46,7 @@ function var0_0.Hide(arg0_7)
 end
 
 function var0_0.InitWindow(arg0_8, arg1_8, arg2_8)
-	local var0_8 = arg1_8:GetDropInfo()
+	local var0_8 = arg1_8:getDropInfo()
 	local var1_8 = getProxy(GameRoomProxy):getTicket()
 	local var2_8 = math.max(math.floor(var1_8 / arg1_8:getConfig("price")), 1)
 

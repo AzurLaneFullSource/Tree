@@ -78,7 +78,7 @@ function var0_0.InitGiftDaily(arg0_7)
 				local var0_8 = pg.dorm3d_gift[iter1_8]
 
 				if #var0_8.shop_id > 0 then
-					local var1_8 = pg.shop_template[var0_8.shop_id[1]].group
+					local var1_8 = ShopConst.GetShopConfig(var0_8.shop_id[1]).group
 
 					if var1_8 ~= 0 then
 						arg0_7.shopCount.dailyGift[var0_8.id] = getProxy(ShopsProxy):GetGroupPayCount(var1_8)
@@ -454,7 +454,7 @@ function var0_0.RefreshGiftDailyTip()
 	for iter0_60, iter1_60 in ipairs(pg.dorm3d_shop_template.all) do
 		local var0_60 = pg.dorm3d_shop_template[iter1_60]
 
-		if pg.shop_template[var0_60.shop_id[1]].group ~= 0 then
+		if ShopConst.GetShopConfig(var0_60.shop_id[1]).group ~= 0 then
 			local var1_60 = getProxy(PlayerProxy):getRawData().id
 
 			PlayerPrefs.SetInt(var1_60 .. "_dorm3dGiftWeekViewed_" .. var0_60.item_id, 0)

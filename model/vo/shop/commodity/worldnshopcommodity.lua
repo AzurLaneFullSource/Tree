@@ -16,7 +16,7 @@ function var0_0.GetLimitGoodCount(arg0_4)
 	return arg0_4:getConfig("frequency")
 end
 
-function var0_0.GetDropInfo(arg0_5)
+function var0_0.getDropInfo(arg0_5)
 	return Drop.New({
 		type = arg0_5:getConfig("item_type"),
 		id = arg0_5:getConfig("item_id"),

@@ -5,7 +5,7 @@ local var3_0 = "com.hkmanjuu.azurlane.gp"
 local var4_0 = "com.hkmanjuu.azurlane.ios1"
 
 function var0_0.CheckPretest()
-	return NetConst.GATEWAY_HOST == "ts-all-login.azurlane.tw" and (NetConst.GATEWAY_PORT == 11001 or NetConst.GATEWAY_PORT == 11101) or IsUnityEditor
+	return NetConst.getwayType == 2 or IsUnityEditor
 end
 
 function var0_0.InitSDK()

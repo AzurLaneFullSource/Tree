@@ -15,7 +15,8 @@ function var0_0.Make(arg0_2, arg1_2)
 		var2_2 = ({
 			CourtYardShipModule,
 			CourtYardVisitorShipModule,
-			CourtYardFeastShipModule
+			CourtYardFeastShipModule,
+			CourtYardReversePacmanShipModule
 		})[arg1_2:GetShipType()].New(arg1_2, var0_2, var1_2)
 	end
 
@@ -57,13 +58,23 @@ function var0_0.MakeAttachments(arg0_6, arg1_6, arg2_6, arg3_6)
 
 			arg3_6()
 		end), true, true)
+	elseif arg2_6:GetShipType() == CourtYardConst.SHIP_TYPE_REVERSE_PACMAN then
+		ResourceMgr.Inst:getAssetAsync("ui/CourtYardReversePacmanAttachments", "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_8)
+			if arg0_6.exited then
+				return
+			end
+
+			Object.Instantiate(arg0_8, arg1_6.transform).name = "reversePacmanAttachments"
+
+			arg3_6()
+		end), true, true)
 	else
 		arg3_6()
 	end
 end
 
-function var0_0.Dispose(arg0_8)
-	arg0_8.exited = true
+function var0_0.Dispose(arg0_9)
+	arg0_9.exited = true
 end
 
 return var0_0

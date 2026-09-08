@@ -111,7 +111,9 @@ function var0_0.didEnter(arg0_8)
 		arg0_8:updateOperation4()
 	end
 
-	pg.UIMgr.GetInstance():BlurPanel(arg0_8._tf)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_8._tf, {
+		staticBlur = true
+	})
 end
 
 local var1_0 = {

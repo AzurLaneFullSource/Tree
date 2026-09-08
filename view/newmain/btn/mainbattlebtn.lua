@@ -13,4 +13,14 @@ function var0_0.IsFixed(arg0_2)
 	return true
 end
 
+function var0_0.ShowOrHideBtnEffect(arg0_3, arg1_3)
+	local var0_3 = arg0_3._tf:Find("FX")
+
+	if IsNil(var0_3) then
+		return
+	end
+
+	setActive(var0_3, arg1_3)
+end
+
 return var0_0

@@ -142,7 +142,7 @@ function var0_0.initData(arg0_3)
 			local var3_3 = var1_3[2]
 
 			if var3_3 and var3_3 ~= 0 then
-				local var4_3 = pg.shop_template[var3_3].time
+				local var4_3 = ShopConst.GetShopConfig(var3_3).time
 				local var5_3, var6_3 = pg.TimeMgr.GetInstance():inTime(var4_3)
 
 				if not var5_3 then

@@ -2,7 +2,7 @@ local var0_0 = {}
 local var1_0 = TxwyKrSdkMgr.inst
 
 function var0_0.CheckPretest()
-	return NetConst.GATEWAY_HOST == "bl-kr-test.xdg.com" and NetConst.GATEWAY_PORT == 30001 or IsUnityEditor
+	return NetConst.getwayType == 2 or IsUnityEditor
 end
 
 function var0_0.GetPNInfo()

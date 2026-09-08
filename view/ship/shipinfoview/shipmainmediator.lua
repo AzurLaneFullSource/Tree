@@ -664,7 +664,7 @@ function var0_0.handleNotification(arg0_57, arg1_57)
 			arg0_57.viewComponent:updateRecordEquipments(var1_57.index)
 		end
 	elseif var0_57 == GAME.SKIN_SHOPPIGN_DONE or var0_57 == GAME.SKIN_COUPON_SHOPPING_DONE then
-		local var8_57 = pg.shop_template[var1_57.id]
+		local var8_57 = ShopConst.GetShopConfig(var1_57.id)
 
 		if var8_57 and var8_57.genre == ShopArgs.SkinShop then
 			arg0_57.viewComponent:StopPreVoice()

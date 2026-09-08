@@ -344,6 +344,7 @@ function var0_0.execute(arg0_1, arg1_1)
 	arg0_1.facade:registerCommand(GAME.ACT_CARD_PUZZLE, ActivityCardPuzzleCombatCommand)
 	arg0_1.facade:registerCommand(GAME.CASTLE_ACT_OP, CastleActivityCommand)
 	arg0_1.facade:registerCommand(GAME.ACT_MANUAL_SIGN, ActivityManualSignCommand)
+	arg0_1.facade:registerCommand(GAME.ACT_MANUAL_SIGN_DONE, ManualSignDoneCommand)
 	arg0_1.facade:registerCommand(GAME.SENRANKAGURA_TRAIN_ACT_OP, SenrankaguraTrainCommand)
 	arg0_1.facade:registerCommand(GAME.ACT_RANDOM_DAILY_TASK, ActivityRandomDailyTaskCommand)
 	arg0_1.facade:registerCommand(GAME.ACTIVITY_STORE_DATE, ActivityStoreDataCommand)
@@ -728,6 +729,10 @@ function var0_0.execute(arg0_1, arg1_1)
 	arg0_1.facade:registerCommand(GAME.AUCTION_GAME_PREORDER_BOX, AuctionGamePreorderBoxCommand)
 	arg0_1.facade:registerCommand(GAME.AUCTION_GAME_OPEN_BOX, AuctionGameOpenBoxCommand)
 	arg0_1.facade:registerCommand(GAME.AUCTION_GAME_GET_RELIEF, AuctionGameGetReliefCommand)
+	arg0_1.facade:registerCommand(GAME.REVERSE_PACMAN_HIRE_ROLE, ReversePacmanHireRoleCommand)
+	arg0_1.facade:registerCommand(GAME.REVERSE_PACMAN_GIFT_ROLE, ReversePacmanGiftRoleCommand)
+	arg0_1.facade:registerCommand(GAME.REVERSE_PACMAN_ADD_FAVORABILITY, ReversePacmanAddFavorabilityCommand)
+	arg0_1.facade:registerCommand(GAME.REVERSE_PACMAN_PASS_LEVEL, ReversePacmanPassLevelCommand)
 end
 
 return var0_0

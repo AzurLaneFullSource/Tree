@@ -30,23 +30,27 @@ function var0_0.Refresh(arg0_6)
 	end
 end
 
-function var0_0.Dispose(arg0_7)
-	var0_0.super.Dispose(arg0_7)
-
-	for iter0_7, iter1_7 in ipairs(arg0_7.btns) do
-		iter1_7:Dispose()
-	end
-
-	arg0_7.btns = {}
-
-	arg0_7:OnDispose()
+function var0_0.ShowOrHideBtnEffect(arg0_7)
+	return
 end
 
-function var0_0.GetBtns(arg0_8)
+function var0_0.Dispose(arg0_8)
+	var0_0.super.Dispose(arg0_8)
+
+	for iter0_8, iter1_8 in ipairs(arg0_8.btns) do
+		iter1_8:Dispose()
+	end
+
+	arg0_8.btns = {}
+
+	arg0_8:OnDispose()
+end
+
+function var0_0.GetBtns(arg0_9)
 	return {}
 end
 
-function var0_0.OnDispose(arg0_9)
+function var0_0.OnDispose(arg0_10)
 	return
 end
 

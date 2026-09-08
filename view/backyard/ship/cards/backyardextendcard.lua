@@ -10,7 +10,7 @@ function var0_0.Unlock(arg0_3)
 	local var0_3 = getProxy(DormProxy):getRawData():getExtendTrainPosShopId()
 
 	if var0_3 then
-		local var1_3 = pg.shop_template[var0_3].resource_num
+		local var1_3 = ShopConst.GetShopConfig(var0_3).resource_num
 
 		_BackyardMsgBoxMgr:Show({
 			content = i18n("backyard_backyardShipInfoLayer_quest_openPos", var1_3),

@@ -44,11 +44,7 @@ function var0_0.Open(arg0_6, arg1_6, arg2_6)
 end
 
 function var0_0.InitWindow(arg0_7, arg1_7, arg2_7)
-	local var0_7 = {
-		id = arg1_7:getConfig("commodity_id"),
-		type = arg1_7:getConfig("commodity_type"),
-		count = arg1_7:getConfig("num")
-	}
+	local var0_7 = arg1_7:getDropInfo()
 
 	if isa(arg1_7, ActivityCommodity) then
 		local var1_7, var2_7, var3_7 = arg1_7:CheckTimeLimit()

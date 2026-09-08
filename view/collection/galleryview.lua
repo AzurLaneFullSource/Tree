@@ -430,17 +430,18 @@ function var0_0.filterPicInfoForShowBySet(arg0_42)
 
 	local var0_42 = {}
 	local var1_42 = getProxy(LoadingPicProxy):getDiyModeOpenFlag()
+	local var2_42 = AppreciatePicConst.getOldLoadingPicIDList()
 
 	for iter0_42, iter1_42 in ipairs(arg0_42.picInfoListForShow) do
-		local var2_42
+		local var3_42
 
 		if var1_42 then
-			var2_42 = AppreciatePicConst.isUsedPicInfo(iter1_42)
+			var3_42 = AppreciatePicConst.isUsedPicInfo(iter1_42)
 		else
-			var2_42 = iter1_42.id > 1000
+			var3_42 = table.contains(var2_42, iter1_42.id)
 		end
 
-		if var2_42 then
+		if var3_42 then
 			var0_42[#var0_42 + 1] = iter1_42
 		end
 	end

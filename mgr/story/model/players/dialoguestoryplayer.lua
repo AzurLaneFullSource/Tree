@@ -31,7 +31,7 @@ function var0_0.Ctor(arg0_1, arg1_1)
 end
 
 function var0_0.OnStart(arg0_2, arg1_2)
-	arg0_2.nextTr = arg0_2.dialogueWin:Find("next")
+	arg0_2.nextTr = arg0_2.dialogueWin:Find("next_container")
 	arg0_2.conentTr = arg0_2.dialogueWin:Find("content")
 	arg0_2.conentTxt = arg0_2.dialogueWin:Find("content"):GetComponent(typeof(Text))
 	arg0_2.typewriter = arg0_2.dialogueWin:Find("content"):GetComponent(typeof(Typewriter))
@@ -41,6 +41,10 @@ function var0_0.OnStart(arg0_2, arg1_2)
 	arg0_2.portraitTr = arg0_2.dialogueWin:Find("portrait")
 	arg0_2.conentLineTr = arg0_2.dialogueWin:Find("line")
 	arg0_2.portraitImg = arg0_2.portraitTr:GetComponent(typeof(Image))
+	arg0_2.nextSignList = {
+		arg0_2.dialogueWin:Find("next_container/0"),
+		arg0_2.dialogueWin:Find("next_container/1")
+	}
 	arg0_2.tags = {
 		arg0_2.nameTr:Find("tags/1"),
 		arg0_2.nameTr:Find("tags/2")
@@ -1441,6 +1445,10 @@ function var0_0.UpdateContent(arg0_102, arg1_102, arg2_102)
 
 	if arg0_102.script:IsDialogueStyle2() then
 		setActive(arg0_102.tag4Dialog2, not var3_102)
+	end
+
+	for iter2_102, iter3_102 in ipairs(arg0_102.nextSignList) do
+		setActive(iter3_102, iter2_102 - 1 == arg1_102:GetNextIcon())
 	end
 end
 

@@ -177,22 +177,21 @@ function var0_0.TipPurchase(arg0_23, arg1_23, arg2_23, arg3_23, arg4_23)
 end
 
 function var0_0.OnPurchase(arg0_24, arg1_24, arg2_24)
-	local var0_24 = arg1_24:getConfig("commodity_type")
-	local var1_24 = arg1_24:getConfig("commodity_id")
+	local var0_24 = arg1_24:getDropInfo()
 
-	if var0_24 == DROP_TYPE_ITEM then
-		local var2_24 = getProxy(BagProxy):RawGetItemById(var1_24)
+	if var0_24.type == DROP_TYPE_ITEM then
+		local var1_24 = getProxy(BagProxy):RawGetItemById(var0_24.id)
 
-		if var2_24 and var2_24:IsShipExpType() and var2_24:IsMaxCnt() then
+		if var1_24 and var1_24:IsShipExpType() and var1_24:IsMaxCnt() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("item_is_max_cnt"))
 
 			return
 		end
 	end
 
-	local var3_24 = arg0_24.shop.activityId
+	local var2_24 = arg0_24.shop.activityId
 
-	arg0_24:emit(NewShopMainMediator.ON_ACT_SHOPPING, var3_24, 1, arg1_24.id, arg2_24)
+	arg0_24:emit(NewShopMainMediator.ON_ACT_SHOPPING, var2_24, 1, arg1_24.id, arg2_24)
 end
 
 function var0_0.OnClickCommodity(arg0_25, arg1_25, arg2_25)

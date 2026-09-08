@@ -34,7 +34,7 @@ end
 function var0_0.Show(arg0_7, arg1_7, arg2_7)
 	var0_0.super.Show(arg0_7)
 
-	local var0_7 = pg.shop_template[arg1_7]
+	local var0_7 = ShopConst.GetShopConfig(arg1_7)
 	local var1_7 = var0_7.resource_type
 	local var2_7 = var0_7.resource_num
 

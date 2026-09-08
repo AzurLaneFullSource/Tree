@@ -120,7 +120,9 @@ function var0_0.didEnter(arg0_9)
 		arg0_9:updateOperation4()
 	end
 
-	pg.UIMgr.GetInstance():BlurPanel(arg0_9._tf)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_9._tf, {
+		staticBlur = true
+	})
 end
 
 function var0_0.initAndSetBtn(arg0_11, arg1_11)

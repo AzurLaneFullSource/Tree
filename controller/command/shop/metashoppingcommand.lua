@@ -27,18 +27,16 @@ function var0_0.execute(arg0_1, arg1_1)
 
 	local var5_1 = getProxy(PlayerProxy):getRawData()
 	local var6_1 = var0_1.arg2
-	local var7_1 = var3_1:getConfig("commodity_type")
-	local var8_1 = var3_1:getConfig("commodity_id")
-	local var9_1 = var3_1:getConfig("num")
+	local var7_1 = var3_1:getDropInfo()
 
-	if var7_1 == 1 then
-		if var8_1 == 1 and var5_1:GoldMax(var9_1 * var6_1) then
+	if var7_1.type == DROP_TYPE_RESOURCE then
+		if var7_1.id == PlayerConst.ResGold and var5_1:GoldMax(var7_1.count * var6_1) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title") .. i18n("resource_max_tip_shop"))
 
 			return
 		end
 
-		if var8_1 == 2 and var5_1:OilMax(var9_1 * var6_1) then
+		if var7_1.id == PlayerConst.ResOil and var5_1:OilMax(var7_1.count * var6_1) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("oil_max_tip_title") .. i18n("resource_max_tip_shop"))
 
 			return

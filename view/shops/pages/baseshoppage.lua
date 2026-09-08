@@ -148,32 +148,29 @@ function var0_0.UpdateCommodity(arg0_21, arg1_21, arg2_21)
 	arg0_21:SetShop(arg1_21)
 
 	local var0_21 = arg1_21:GetCommodityById(arg2_21)
+	local var1_21 = var0_21:getDropInfo()
 
-	if DROP_TYPE_SHIP == var0_21:getConfig("commodity_type") then
+	if DROP_TYPE_SHIP == var1_21.type then
 		arg0_21:OnUpdateAll()
 	else
 		arg0_21:OnUpdateCommodity(var0_21)
 	end
 
-	local var1_21
 	local var2_21
 	local var3_21
+	local var4_21
 
 	if arg1_21:IsPurchaseAll() then
-		var1_21, var2_21, var3_21 = arg0_21:GetPaintingAllPurchaseVoice()
+		var2_21, var3_21, var4_21 = arg0_21:GetPaintingAllPurchaseVoice()
 	else
-		var1_21, var2_21, var3_21 = arg0_21:GetPaintingCommodityUpdateVoice()
+		var2_21, var3_21, var4_21 = arg0_21:GetPaintingCommodityUpdateVoice()
 	end
 
-	arg0_21.contextData.paintingView:Chat(var1_21, var2_21, var3_21, true)
+	arg0_21.contextData.paintingView:Chat(var2_21, var3_21, var4_21, true)
 end
 
 function var0_0.OnClickCommodity(arg0_22, arg1_22, arg2_22)
-	local var0_22 = Drop.New({
-		type = arg1_22:getConfig("commodity_type"),
-		id = arg1_22:getConfig("commodity_id"),
-		count = arg1_22:getConfig("num")
-	})
+	local var0_22 = arg1_22:getDropInfo()
 
 	if var0_22.type == DROP_TYPE_VITEM and var0_22:getConfig("virtual_type") == 22 then
 		local var1_22 = getProxy(ActivityProxy):getActivityById(var0_22:getConfig("link_id"))
@@ -189,7 +186,7 @@ function var0_0.OnClickCommodity(arg0_22, arg1_22, arg2_22)
 
 	if var0_22.type == DROP_TYPE_EQUIPMENT_SKIN then
 		var2_22 = arg0_22.contextData.singleWindowForESkin
-	elseif arg1_22:getConfig("num_limit") == 1 or arg1_22:getConfig("commodity_type") == 4 or isa(arg1_22, QuotaCommodity) and arg1_22:GetLimitGoodCount() == 1 then
+	elseif arg1_22:getConfig("num_limit") == 1 or var0_22.type == DROP_TYPE_SHIP or isa(arg1_22, QuotaCommodity) and arg1_22:GetLimitGoodCount() == 1 then
 		var2_22 = arg0_22.contextData.singleWindow
 	else
 		var2_22 = arg0_22.contextData.multiWindow
@@ -198,7 +195,7 @@ function var0_0.OnClickCommodity(arg0_22, arg1_22, arg2_22)
 	var2_22:ExecuteAction("Open", arg1_22, function(arg0_23, arg1_23, arg2_23)
 		local var0_23 = {}
 
-		if arg0_23:getConfig("commodity_type") == 4 or arg0_22.shop.type == ShopArgs.ShopActivity then
+		if var0_22.type == DROP_TYPE_SHIP or arg0_22.shop.type == ShopArgs.ShopActivity then
 			table.insert(var0_23, function(arg0_24)
 				arg0_22:TipPurchase(arg0_23, arg1_23, arg2_23, arg0_24)
 			end)
@@ -246,20 +243,17 @@ function var0_0.TipPurchase(arg0_28, arg1_28, arg2_28, arg3_28, arg4_28)
 end
 
 function var0_0.getSpecialRule(arg0_29, arg1_29)
-	if arg1_29:getConfig("commodity_type") == DROP_TYPE_ITEM and arg0_29.shop.type == ShopArgs.ShopFragment then
-		local var0_29 = arg1_29:getConfig("commodity_id")
-		local var1_29 = Item.getConfigData(var0_29)
+	local var0_29 = arg1_29:getDropInfo()
 
-		if var1_29 and var1_29.type == 7 and #var1_29.shiptrans_id > 0 then
-			local var2_29 = getProxy(BayProxy)
+	if var0_29.type == DROP_TYPE_ITEM and arg0_29.shop.type == ShopArgs.ShopFragment and var0_29:getConfig("type") == 7 and #var0_29:getConfig("shiptrans_id") > 0 then
+		local var1_29 = getProxy(BayProxy)
 
-			if getProxy(BagProxy):getItemCountById(var0_29) > 0 or underscore.any(var1_29.shiptrans_id, function(arg0_30)
-				return var2_29:getConfigShipCount(arg0_30) > 0
-			end) then
-				pg.TipsMgr.GetInstance():ShowTips(i18n("special_transform_limit_reach"))
+		if getProxy(BagProxy):getItemCountById(var0_29.id) > 0 or underscore.any(var0_29:getConfig("shiptrans_id"), function(arg0_30)
+			return var1_29:getConfigShipCount(arg0_30) > 0
+		end) then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("special_transform_limit_reach"))
 
-				return false
-			end
+			return false
 		end
 	end
 

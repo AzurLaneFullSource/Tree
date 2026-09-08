@@ -515,103 +515,118 @@ function var0_0.UpdateMapItem(arg0_31, arg1_31, arg2_31)
 	local var21_31 = findTF(var1_31, "circle/narrative")
 
 	setText(findTF(var21_31, "Text"), i18n("tag_level_narrative"))
+
+	local var22_31 = findTF(var1_31, "circle/auto")
+
+	setText(findTF(var22_31, "Text"), i18n("tag_level_autoing"))
 	setActive(var19_31, false)
 	setActive(var20_31, false)
 	setActive(var21_31, false)
+	setActive(var22_31, false)
 
-	local var22_31
 	local var23_31
+	local var24_31
 
 	if arg2_31:getConfig("chapter_tag") == 1 then
-		var22_31 = var21_31
+		var23_31 = var21_31
 	end
 
 	if arg2_31.active then
-		var22_31 = arg2_31:existOni() and var20_31 or var19_31
+		var23_31 = arg2_31:existOni() and var20_31 or var19_31
 	end
 
-	if var22_31 then
-		setActive(var22_31, true)
+	local var25_31 = getProxy(ChapterProxy):GetAutoChapterId()
 
-		local var24_31 = GetOrAddComponent(var22_31, "CanvasGroup")
+	if var25_31 and var25_31 == arg2_31.id then
+		var23_31 = var22_31
 
-		var24_31.alpha = 1
+		local var26_31, var27_31 = getProxy(ChapterAutoProxy):GetCntInfo()
 
-		arg0_31:RecordTween("fighting" .. arg2_31.id, LeanTween.alphaCanvas(var24_31, 0, 0.5):setFrom(1):setEase(LeanTweenType.easeInOutSine):setLoopPingPong().uniqueId)
+		setText(findTF(var22_31, "Text"), var26_31 < var27_31 and i18n("tag_level_autoing") or i18n("tag_level_auto_finish"))
 	end
 
-	local var25_31 = findTF(var1_31, "triesLimit")
-	local var26_31 = arg2_31:isTriesLimit()
+	if var23_31 then
+		setActive(var23_31, true)
 
-	setActive(var25_31, var26_31)
+		local var28_31 = GetOrAddComponent(var23_31, "CanvasGroup")
 
-	if var26_31 then
-		local var27_31 = arg2_31:getConfig("count")
-		local var28_31 = var27_31 - arg2_31:getTodayDefeatCount() .. "/" .. var27_31
+		var28_31.alpha = 1
 
-		setText(var25_31:Find("label"), i18n("levelScene_chapter_count_tip"))
-		setText(var25_31:Find("Text"), setColorStr(var28_31, var27_31 <= arg2_31:getTodayDefeatCount() and COLOR_RED or COLOR_GREEN))
-
-		local var29_31 = pg.expedition_data_by_map[arg2_31:getConfig("map")].on_activity
-		local var30_31 = getProxy(ChapterProxy):IsActivitySPChapterActive(var29_31) and SettingsProxy.IsShowActivityMapSPTip()
-
-		setActive(var25_31:Find("TipRect"), var30_31)
+		arg0_31:RecordTween("fighting" .. arg2_31.id, LeanTween.alphaCanvas(var28_31, 0, 0.5):setFrom(1):setEase(LeanTweenType.easeInOutSine):setLoopPingPong().uniqueId)
 	end
 
-	local var31_31 = arg2_31:GetDailyBonusQuota()
-	local var32_31 = findTF(var1_31, "mark")
-	local var33_31 = var32_31:Find("bonus")
-	local var34_31 = var33_31:Find("icon")
-	local var35_31 = findTF(var33_31, "icon/Image")
+	local var29_31 = findTF(var1_31, "triesLimit")
+	local var30_31 = arg2_31:isTriesLimit()
 
-	setActive(var33_31, var31_31)
-	setActive(var32_31, var31_31)
+	setActive(var29_31, var30_31)
 
-	if var34_31 then
-		setActive(var34_31, var31_31 and arg0_31.bonusPtIconPath)
+	if var30_31 then
+		local var31_31 = arg2_31:getConfig("count")
+		local var32_31 = var31_31 - arg2_31:getTodayDefeatCount() .. "/" .. var31_31
+
+		setText(var29_31:Find("label"), i18n("levelScene_chapter_count_tip"))
+		setText(var29_31:Find("Text"), setColorStr(var32_31, var31_31 <= arg2_31:getTodayDefeatCount() and COLOR_RED or COLOR_GREEN))
+
+		local var33_31 = pg.expedition_data_by_map[arg2_31:getConfig("map")].on_activity
+		local var34_31 = getProxy(ChapterProxy):IsActivitySPChapterActive(var33_31) and SettingsProxy.IsShowActivityMapSPTip()
+
+		setActive(var29_31:Find("TipRect"), var34_31)
 	end
 
-	if var31_31 then
-		local var36_31 = var32_31:GetComponent(typeof(CanvasGroup))
-		local var37_31 = arg2_31:GetDailyBonusIconName()
+	local var35_31 = arg2_31:GetDailyBonusQuota()
+	local var36_31 = findTF(var1_31, "mark")
+	local var37_31 = var36_31:Find("bonus")
+	local var38_31 = var37_31:Find("icon")
+	local var39_31 = findTF(var37_31, "icon/Image")
 
-		arg0_31.sceneParent.loader:GetSprite("ui/levelmainscene_atlas", var37_31, var33_31)
+	setActive(var37_31, var35_31)
+	setActive(var36_31, var35_31)
 
-		if var34_31 and arg0_31.bonusPtIconPath then
-			if var35_31 then
-				GetImageSpriteFromAtlasAsync(arg0_31.bonusPtIconPath, "", var35_31, true)
+	if var38_31 then
+		setActive(var38_31, var35_31 and arg0_31.bonusPtIconPath)
+	end
+
+	if var35_31 then
+		local var40_31 = var36_31:GetComponent(typeof(CanvasGroup))
+		local var41_31 = arg2_31:GetDailyBonusIconName()
+
+		arg0_31.sceneParent.loader:GetSprite("ui/levelmainscene_atlas", var41_31, var37_31)
+
+		if var38_31 and arg0_31.bonusPtIconPath then
+			if var39_31 then
+				GetImageSpriteFromAtlasAsync(arg0_31.bonusPtIconPath, "", var39_31, true)
 			else
-				GetImageSpriteFromAtlasAsync(arg0_31.bonusPtIconPath, "", var34_31, true)
+				GetImageSpriteFromAtlasAsync(arg0_31.bonusPtIconPath, "", var38_31, true)
 			end
 		end
 
-		LeanTween.cancel(go(var32_31), true)
+		LeanTween.cancel(go(var36_31), true)
 
-		local var38_31 = var32_31.anchoredPosition.y
+		local var42_31 = var36_31.anchoredPosition.y
 
-		var36_31.alpha = 0
+		var40_31.alpha = 0
 
-		LeanTween.value(go(var32_31), 0, 1, 0.2):setOnUpdate(System.Action_float(function(arg0_32)
-			var36_31.alpha = arg0_32
+		LeanTween.value(go(var36_31), 0, 1, 0.2):setOnUpdate(System.Action_float(function(arg0_32)
+			var40_31.alpha = arg0_32
 
-			local var0_32 = var32_31.anchoredPosition
+			local var0_32 = var36_31.anchoredPosition
 
-			var0_32.y = var38_31 * arg0_32
-			var32_31.anchoredPosition = var0_32
+			var0_32.y = var42_31 * arg0_32
+			var36_31.anchoredPosition = var0_32
 		end)):setOnComplete(System.Action(function()
-			var36_31.alpha = 1
+			var40_31.alpha = 1
 
-			local var0_33 = var32_31.anchoredPosition
+			local var0_33 = var36_31.anchoredPosition
 
-			var0_33.y = var38_31
-			var32_31.anchoredPosition = var0_33
+			var0_33.y = var42_31
+			var36_31.anchoredPosition = var0_33
 		end)):setEase(LeanTweenType.easeOutSine):setDelay(0.7)
 	end
 
-	local var39_31 = arg2_31.id
+	local var43_31 = arg2_31.id
 
 	onButton(arg0_31, var1_31, function()
-		arg0_31:TryOpenChapterInfo(var39_31, nil, var4_31.list)
+		arg0_31:TryOpenChapterInfo(var43_31, nil, var4_31.list)
 	end, SFX_UI_WEIGHANCHOR_SELECT)
 end
 

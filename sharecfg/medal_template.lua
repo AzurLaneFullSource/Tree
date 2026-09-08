@@ -134,7 +134,9 @@ pg.medal_template.all = {
 	200181,
 	200191,
 	200201,
-	200211
+	200211,
+	200221,
+	200231
 }
 pg.base = pg.base or {}
 pg.base.medal_template = {}
@@ -3025,5 +3027,47 @@ end)()
 		id = 200211,
 		target_num = 7,
 		target_id = "51113"
+	}
+	pg.base.medal_template[200221] = {
+		explain1 = "\"Tales of the Paranormal\"",
+		name = "Tales of the Paranormal Medal",
+		explain2 = "Event",
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "Floating trains pass between buildings where light and shadow flow. Behind the glamorous cityscape, darkness stirs and spreads. Welcome to New Era City No. 7.",
+		next = 0,
+		icon = "9221",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9221",
+		condition = "Collect 8 stickers in Tales of the Paranormal.",
+		rank = 1,
+		id = 200221,
+		target_num = 8,
+		target_id = "51143"
+	}
+	pg.base.medal_template[200231] = {
+		explain1 = "\"A Slightly Paranormal State of Affairs\"",
+		name = "Poltergeist Busters Medal",
+		explain2 = "Event",
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "The sun rises once more, and the trains run as always. Even the supernatural beings that have blended into the city seem to be going about their business to the best of their ability.",
+		next = 0,
+		icon = "9231",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9231",
+		condition = "Collect 7 stickers in A Slightly Paranormal State of Affairs.",
+		rank = 1,
+		id = 200231,
+		target_num = 7,
+		target_id = "51154"
 	}
 end)()

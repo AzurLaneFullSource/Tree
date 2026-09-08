@@ -109,10 +109,11 @@ function var0_0.didEnter(arg0_8)
 		end
 	end, SFX_UI_BUILDING_FASTBUILDING)
 	onButton(arg0_8, arg0_8.quickCount, function()
-		local var0_13 = pg.shop_template[61009]
+		local var0_13 = 61009
+		local var1_13 = ShopConst.GetShopConfig(var0_13)
 
-		shoppingBatch(61009, {
-			id = var0_13.effect_args[1]
+		shoppingBatch(var0_13, {
+			id = var1_13.effect_args[1]
 		}, 9, "build_ship_quickly_buy_tool")
 	end)
 

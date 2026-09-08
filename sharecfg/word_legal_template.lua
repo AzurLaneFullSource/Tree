@@ -23,6 +23,7 @@ var0_0.word_legal_template = {
 		D = 1,
 		S = 1,
 		O = 2,
+		虎 = 2,
 		亚 = 2,
 		Z = 2,
 		Ä = 2,

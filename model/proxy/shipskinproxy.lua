@@ -61,7 +61,7 @@ function var0_0.register(arg0_3)
 
 			if not var1_4 then
 				warning("without config in shop_template:" .. iter5_4.id)
-			elseif var1_4.genre ~= "skin_shop" then
+			elseif var1_4.genre ~= ShopArgs.SkinShop then
 				warning("config genre error in shop_template:" .. iter5_4.id)
 			else
 				warning(iter5_4.id, iter5_4.type, pg.TimeMgr.GetInstance():STimeDescS(iter5_4.start_time), pg.TimeMgr.GetInstance():STimeDescS(iter5_4.stop_time))
@@ -288,11 +288,12 @@ function var0_0.GetAllSkins(arg0_34)
 
 		var1_34(var0_36)
 
-		local var1_36 = pg.shop_template[arg0_36].collaboration_skin_time
-		local var2_36 = var1_36 == "" or var1_36 == pg.shop_template[arg0_36].time
-		local var3_36, var4_36 = pg.TimeMgr.GetInstance():inTime(pg.shop_template[arg0_36].time)
+		local var1_36 = ShopConst.GetShopConfig(arg0_36)
+		local var2_36 = var1_36.collaboration_skin_time
+		local var3_36 = var2_36 == "" or var2_36 == var1_36.time
+		local var4_36, var5_36 = pg.TimeMgr.GetInstance():inTime(var1_36.time)
 
-		if var2_36 and var3_36 then
+		if var3_36 and var4_36 then
 			table.insert(var0_34, var0_36)
 		end
 	end
@@ -763,7 +764,7 @@ function var0_0.GetProbabilitySkins(arg0_52, arg1_52)
 
 		var1_52(var0_54)
 
-		local var1_54, var2_54 = pg.TimeMgr.GetInstance():inTime(pg.shop_template[arg0_54].time)
+		local var1_54, var2_54 = pg.TimeMgr.GetInstance():inTime(ShopConst.GetShopConfig(arg0_54).time)
 
 		if var1_54 then
 			table.insert(var0_52, var0_54)

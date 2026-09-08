@@ -499,6 +499,8 @@ end
 function var0_0.DataToShip(arg0_64, arg1_64, arg2_64, arg3_64)
 	if arg0_64.system == CourtYardConst.SYSTEM_FEAST then
 		return CourtYardFeastShip.New(arg0_64, arg1_64)
+	elseif arg0_64.system == CourtYardConst.SYSTEM_REVERSE_PACMAN then
+		return CourtYardReversePacmanShip.New(arg0_64, arg1_64)
 	else
 		return CourtYardShip.New(arg0_64, arg1_64, arg2_64, arg3_64)
 	end

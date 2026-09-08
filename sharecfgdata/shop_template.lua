@@ -28,5 +28,6 @@ _G.pg.base.shop_template[1] = {
 	type_order = 0,
 	discount_time = {},
 	limit_args = {},
+	time_new = {},
 }
 

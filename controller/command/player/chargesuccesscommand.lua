@@ -95,6 +95,18 @@ function var0_0.execute(arg0_1, arg1_1)
 		var15_1.data1 = 1
 	end
 
+	local var16_1, var17_1 = getProxy(ShopsProxy):IsSkinTypeCharge(var1_1)
+
+	if var16_1 then
+		getProxy(ShipSkinProxy):addSkin(ShipSkin.New({
+			id = var17_1
+		}))
+		arg0_1:sendNotification(GAME.SKIN_BY_CHARGE_DONE, {
+			skinId = var17_1,
+			id = var1_1
+		})
+	end
+
 	pg.TipsMgr.GetInstance():ShowTips(i18n("charge_success"))
 end
 

@@ -8,85 +8,71 @@ function var0_0.Ctor(arg0_1)
 	arg0_1.goods = {}
 
 	for iter0_1, iter1_1 in ipairs(var0_1) do
-		local var1_1 = arg0_1:getOwnedGoodCount(iter1_1)
-
 		arg0_1.goods[iter1_1] = Goods.Create({
 			shop_id = iter1_1
 		}, Goods.TYPE_QUOTA)
 	end
 end
 
-function var0_0.getOwnedGoodCount(arg0_2, arg1_2)
-	local var0_2 = pg.activity_shop_template[arg1_2]
-
-	assert(var0_2, "config is missing in activity_shop_template, id: " .. arg1_2)
-
-	return Drop.New({
-		id = var0_2.commodity_id,
-		type = var0_2.commodity_type,
-		count = var0_2.num
-	}):getOwnedCount()
+function var0_0.IsSameKind(arg0_2, arg1_2)
+	return isa(arg1_2, QuotaShop)
 end
 
-function var0_0.IsSameKind(arg0_3, arg1_3)
-	return isa(arg1_3, QuotaShop)
+function var0_0.GetCommodityById(arg0_3, arg1_3)
+	return arg0_3:getGoodsById(arg1_3)
 end
 
-function var0_0.GetCommodityById(arg0_4, arg1_4)
-	return arg0_4:getGoodsById(arg1_4)
+function var0_0.GetCommodities(arg0_4)
+	return arg0_4:getSortGoods()
 end
 
-function var0_0.GetCommodities(arg0_5)
-	return arg0_5:getSortGoods()
-end
+function var0_0.getSortGoods(arg0_5)
+	local var0_5 = {}
 
-function var0_0.getSortGoods(arg0_6)
-	local var0_6 = {}
-
-	for iter0_6, iter1_6 in pairs(arg0_6.goods) do
-		table.insert(var0_6, iter1_6)
+	for iter0_5, iter1_5 in pairs(arg0_5.goods) do
+		table.insert(var0_5, iter1_5)
 	end
 
-	table.sort(var0_6, CompareFuncs({
+	table.sort(var0_5, CompareFuncs({
+		function(arg0_6)
+			return arg0_6:canPurchase() and 0 or 1
+		end,
 		function(arg0_7)
-			return arg0_7:canPurchase() and 0 or 1
+			return arg0_7:getConfig("order")
 		end,
 		function(arg0_8)
-			return arg0_8:getConfig("order")
-		end,
-		function(arg0_9)
-			return arg0_9.id
+			return arg0_8.id
 		end
 	}))
 
-	return var0_6
+	return var0_5
 end
 
-function var0_0.getGoodsCfg(arg0_10, arg1_10)
-	return pg.activity_shop_template[arg1_10]
+function var0_0.getGoodsCfg(arg0_9, arg1_9)
+	return pg.activity_shop_template[arg1_9]
 end
 
-function var0_0.getGoodsById(arg0_11, arg1_11)
-	assert(arg0_11.goods[arg1_11], "goods should exist")
+function var0_0.getGoodsById(arg0_10, arg1_10)
+	assert(arg0_10.goods[arg1_10], "goods should exist")
 
-	return arg0_11.goods[arg1_11]
+	return arg0_10.goods[arg1_10]
 end
 
-function var0_0.getLimitGoodCount(arg0_12, arg1_12)
-	local var0_12 = pg.activity_shop_template[arg1_12].limit_args
+function var0_0.getLimitGoodCount(arg0_11, arg1_11)
+	local var0_11 = pg.activity_shop_template[arg1_11].limit_args
 
-	if type(var0_12) == "table" then
-		for iter0_12, iter1_12 in ipairs(var0_12) do
-			if iter1_12[1] == "quota" then
-				return iter1_12[2]
+	if type(var0_11) == "table" then
+		for iter0_11, iter1_11 in ipairs(var0_11) do
+			if iter1_11[1] == "quota" then
+				return iter1_11[2]
 			end
 		end
 	end
 
-	assert(false, "good not limit_args 'quota' with good id: " .. arg1_12)
+	assert(false, "good not limit_args 'quota' with good id: " .. arg1_11)
 end
 
-function var0_0.GetResList(arg0_13)
+function var0_0.GetResList(arg0_12)
 	return {
 		59900
 	}

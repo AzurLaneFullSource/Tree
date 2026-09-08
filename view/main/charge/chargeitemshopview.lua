@@ -252,63 +252,61 @@ function var0_0.updateItemGoodsVOList(arg0_17)
 		0
 	}
 
-	local var0_17 = pg.shop_template
+	for iter0_17, iter1_17 in pairs(pg.shop_template.all) do
+		local var0_17 = ShopConst.GetShopConfig(iter1_17)
 
-	for iter0_17, iter1_17 in pairs(var0_17.all) do
-		local var1_17 = var0_17[iter1_17]
+		if var0_17.genre == "gem_shop" then
+			local var1_17, var2_17, var3_17 = ChargeConst.getGoodsLimitInfo(iter1_17)
+			local var4_17 = false
+			local var5_17 = var0_17.effect_args
 
-		if var1_17.genre == "gem_shop" then
-			local var2_17, var3_17, var4_17 = ChargeConst.getGoodsLimitInfo(iter1_17)
-			local var5_17 = false
-			local var6_17 = var1_17.effect_args
+			if var5_17 == "ship_bag_size" and var2_17 and var3_17 then
+				local var6_17 = arg0_17.player:getMaxShipBagExcludeGuild()
 
-			if var6_17 == "ship_bag_size" and var3_17 and var4_17 then
-				local var7_17 = arg0_17.player:getMaxShipBagExcludeGuild()
-
-				if var3_17 <= var7_17 and var7_17 <= var4_17 then
-					var5_17 = true
+				if var2_17 <= var6_17 and var6_17 <= var3_17 then
+					var4_17 = true
 				end
-			elseif var6_17 == "equip_bag_max" and var3_17 and var4_17 then
-				local var8_17 = arg0_17.player:getMaxEquipmentBag()
+			elseif var5_17 == "equip_bag_max" and var2_17 and var3_17 then
+				local var7_17 = arg0_17.player:getMaxEquipmentBag()
 
-				if var3_17 <= var8_17 and var8_17 <= var4_17 then
-					var5_17 = true
+				if var2_17 <= var7_17 and var7_17 <= var3_17 then
+					var4_17 = true
 				end
-			elseif var6_17 == "commander_bag_size" and var3_17 and var4_17 then
-				local var9_17 = arg0_17.player.commanderBagMax
+			elseif var5_17 == "commander_bag_size" and var2_17 and var3_17 then
+				local var8_17 = arg0_17.player.commanderBagMax
 
-				if var3_17 <= var9_17 and var9_17 <= var4_17 then
-					var5_17 = true
+				if var2_17 <= var8_17 and var8_17 <= var3_17 then
+					var4_17 = true
 				end
 			else
-				var5_17 = true
+				var4_17 = true
 			end
 
-			if var5_17 == true then
-				local var10_17 = Goods.Create({
+			if var4_17 == true then
+				local var9_17 = Goods.Create({
 					count = 0,
 					shop_id = iter1_17
 				}, Goods.TYPE_MILITARY)
 
-				table.insert(arg0_17.itemGoodsVOList, var10_17)
+				table.insert(arg0_17.itemGoodsVOList, var9_17)
 			end
 		end
 	end
 
 	for iter2_17 = #arg0_17.itemGoodsVOList, 1, -1 do
-		local var11_17 = arg0_17.itemGoodsVOList[iter2_17]
-		local var12_17 = ChargeConst.getGroupLimit(arg0_17.normalGroupList, var11_17:getConfig("group"))
+		local var10_17 = arg0_17.itemGoodsVOList[iter2_17]
+		local var11_17 = ChargeConst.getGroupLimit(arg0_17.normalGroupList, var10_17:getConfig("group"))
 
-		if not var11_17:IsShowWhenGroupSale(var12_17) then
+		if not var10_17:IsShowWhenGroupSale(var11_17) then
 			table.remove(arg0_17.itemGoodsVOList, iter2_17)
 		end
 	end
 
 	for iter3_17, iter4_17 in ipairs(arg0_17.itemGoodsVOList) do
-		local var13_17 = var0_17[iter4_17.id].package_sort_id
+		local var12_17 = ShopConst.GetShopConfig(iter4_17.id).package_sort_id
 
-		if not table.contains(arg0_17.packageSortList, var13_17) then
-			table.insert(arg0_17.packageSortList, var13_17)
+		if not table.contains(arg0_17.packageSortList, var12_17) then
+			table.insert(arg0_17.packageSortList, var12_17)
 		end
 	end
 

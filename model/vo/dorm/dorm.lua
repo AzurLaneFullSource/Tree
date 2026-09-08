@@ -28,7 +28,6 @@ function var0_0.Ctor(arg0_1, arg1_1)
 		50012,
 		50013
 	}
-	arg0_1.shopCfg = pg.shop_template
 end
 
 function var0_0.GetFoodMax(arg0_2)
@@ -39,7 +38,7 @@ function var0_0.GetExpandId(arg0_3)
 	local var0_3 = arg0_3.level - 1
 
 	for iter0_3, iter1_3 in ipairs(arg0_3.expandIds) do
-		if arg0_3.shopCfg[iter1_3].limit_args[1][2] == var0_3 then
+		if ShopConst.GetShopConfig(iter1_3).limit_args[1][2] == var0_3 then
 			return iter1_3
 		end
 	end
@@ -83,15 +82,15 @@ function var0_0.GetName(arg0_10)
 end
 
 function var0_0.getExtendTrainPosShopId(arg0_11)
-	local var0_11 = pg.shop_template
-
 	for iter0_11, iter1_11 in pairs({
 		3,
 		4,
 		18,
 		26
 	}) do
-		if var0_11[iter1_11].effect_args == ShopArgs.EffectDromExpPos and arg0_11.exp_pos >= var0_11[iter1_11].limit_args[1][2] and arg0_11.exp_pos <= var0_11[iter1_11].limit_args[1][3] then
+		local var0_11 = ShopConst.GetShopConfig(iter1_11)
+
+		if var0_11.effect_args == ShopArgs.EffectDromExpPos and arg0_11.exp_pos >= var0_11.limit_args[1][2] and arg0_11.exp_pos <= var0_11.limit_args[1][3] then
 			return iter1_11
 		end
 	end

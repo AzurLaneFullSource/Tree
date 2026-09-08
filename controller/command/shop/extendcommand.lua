@@ -6,7 +6,7 @@ function var0_0.execute(arg0_1, arg1_1)
 	local var2_1 = var0_1.count
 	local var3_1 = getProxy(PlayerProxy)
 	local var4_1 = var3_1:getData()
-	local var5_1 = pg.shop_template[var1_1]
+	local var5_1 = ShopConst.GetShopConfig(var1_1)
 
 	if var5_1.effect_args == ShopArgs.EffecetEquipBagSize then
 		var4_1:addEquipmentBagCount(var5_1.num * var2_1)

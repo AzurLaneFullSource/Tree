@@ -381,6 +381,11 @@ pg.strategy_data_template.all = {
 	201826,
 	201831,
 	201832,
+	201901,
+	201905,
+	201909,
+	201910,
+	201911,
 	205001,
 	205002,
 	205003,
@@ -4609,6 +4614,61 @@ end)()
 		desc = "During battle, Bon Homme Richard will be engulfed in a black tornado that pulls nearby ships closer. Ships pulled into the vortex will <color=#ee0000>be instantly Devoured</color>.\nAt certain points, the wind's direction will shift westward (left of Richard) or eastward (right of Richard). <color=#92fc63>If the Flagship is caught in the wind</color>, the entire Vanguard fleet will <color=#92fc63>gradually accumulate stacks of Corrosion</color>. Corrosion can stack up to 10 times, but leaving the affected area will allow ships to gradually recover.\nAllies afflicted with Corrosion will have the following effects applied:\nNon-META ships will be instantly Devoured when they reach 10 stacks.\nMETA ships will have <color=#92fc63>DMG dealt AND received increased by 10%</color> for each stack, but at 10 stacks, they will <color=#92fc63>lose 2.0% Max HP every 1s</color>.\n\n- Hard Mode Details -\nEnemy DMG dealt is <color=#ffc038>significantly increased</color>. Large enemy shells cannot be nullified by airstrikes or shields.\nThe hitbox of your Vanguard fleet is <color=#92fc63>limited to only the frontmost ship, and the size of the hitbox is also significantly reduced</color>.\nWhen your ship is hit, it will become invulnerable for a short period of time.\n\nThe following gear or skills are rendered ineffective:\n[Fiercer When Cornered], [Operation Rainbow], [Eleventh Hour], [I Will Not Yield!]",
 		arg = {}
 	}
+	pg.base.strategy_data_template[201901] = {
+		buff_id = 201901,
+		name = "Anomalous Space",
+		iconSize = "",
+		type = 10,
+		id = 201901,
+		icon = "201901",
+		buff_type = 0,
+		desc = "An eerie mist hangs in the air. During combat, reduces your ships' ACC and EVA by 5.0%, while increasing enemies' DMG dealt by 5.0% and decreasing their DMG taken by 5.0%.",
+		arg = {}
+	}
+	pg.base.strategy_data_template[201905] = {
+		buff_id = 201905,
+		name = "Resonant Voice",
+		iconSize = "",
+		type = 10,
+		id = 201905,
+		icon = "201905",
+		buff_type = 0,
+		desc = "During battle, Tiger will provide supportive fire.",
+		arg = {}
+	}
+	pg.base.strategy_data_template[201909] = {
+		buff_id = 201909,
+		name = "Standing as One",
+		iconSize = "",
+		type = 10,
+		id = 201909,
+		icon = "201909",
+		buff_type = 0,
+		desc = "During battle, gain buffs depending on how many allies are present. For each ally, increases your ships' DMG dealt by 1.0% and decreases their DMG taken by 1.0% (stacks up to 10 times).",
+		arg = {}
+	}
+	pg.base.strategy_data_template[201910] = {
+		buff_id = 0,
+		name = "Challenge Mode",
+		iconSize = "",
+		type = 10,
+		id = 201910,
+		icon = "200908",
+		buff_type = 0,
+		desc = "Once per battle, when Azuchi's HP drops below 20.0% for the first time: she will enter the <color=#92fc63>Berserk state, becoming invulnerable for 15s</color>.",
+		arg = {}
+	}
+	pg.base.strategy_data_template[201911] = {
+		buff_id = 0,
+		name = "Challenge Mode",
+		iconSize = "",
+		type = 10,
+		id = 201911,
+		icon = "200908",
+		buff_type = 0,
+		desc = "During battle, when Azuchi's HP drops below 20.0%: she will enter the <color=#92fc63>Berserk state, becoming invulnerable for 15s</color>. This effect has a 45s CD.\nWhile in the Berserk state, Azuchi inflicts no damage with her projectiles. Instead, she will restore 3.0% of her max HP each time her projectiles hit one of your ships.\n\n- Hard Mode Details -\nThe hitbox of your Vanguard fleet is <color=#92fc63>limited to only the frontmost ship, and the size of the hitbox is also significantly reduced</color>.\nWhen your ship is hit, it will become invulnerable for a short period of time.\n\nEnemy DMG dealt is <color=#ffc038>significantly increased</color>. Enemy projectiles cannot be nullified by airstrikes; however, when an ally launches an airstrike, the frontmost ship of the Vanguard fleet becomes invulnerable for 3s.\nThe ￼<color=#92fc63>DMG reduction/evasion effects</color> of following gear or skills are rendered ineffective:\n[Fiercer When Cornered], [Operation Rainbow], [Eleventh Hour], [I Will Not Yield!]",
+		arg = {}
+	}
 	pg.base.strategy_data_template[205001] = {
 		buff_id = 205001,
 		name = "活动关卡标志A",
@@ -4807,6 +4867,8 @@ end)()
 		desc = "15s after the battle starts, and every 20s after that: your fleet receives supporting barrages; enemies hit by these barrages have their DMG taken increased by 3.0% for 8s.",
 		arg = {}
 	}
+end)()
+;(function()
 	pg.base.strategy_data_template[300012] = {
 		buff_id = 0,
 		name = "Core Level 4",
@@ -4862,8 +4924,6 @@ end)()
 		desc = "Increases the Affinity your ships earn from battles.",
 		arg = {}
 	}
-end)()
-;(function()
 	pg.base.strategy_data_template[300017] = {
 		buff_id = 0,
 		name = "Core Level 1",

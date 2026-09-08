@@ -17,7 +17,7 @@ function var0_0.PlayEnterAnimation(arg0_3, arg1_3, arg2_3)
 	var0_0.super.PlayEnterAnimation(arg0_3, arg1_3, arg2_3)
 end
 
-function var0_0._FoldPanels(arg0_4, arg1_4, arg2_4)
+function var0_0._FoldPanels(arg0_4, arg1_4, arg2_4, arg3_4)
 	var0_0.super._FoldPanels(arg0_4, arg1_4, arg2_4)
 	arg0_4.adapterView:Fold(arg1_4, arg2_4)
 end

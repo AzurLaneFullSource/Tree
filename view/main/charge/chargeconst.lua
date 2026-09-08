@@ -30,7 +30,7 @@ function var0_0.getGoodsLimitInfo(arg0_3)
 	local var0_3
 	local var1_3
 	local var2_3
-	local var3_3 = pg.shop_template[arg0_3]
+	local var3_3 = ShopConst.GetShopConfig(arg0_3)
 
 	if var3_3 then
 		local var4_3 = var3_3.limit_args[1]

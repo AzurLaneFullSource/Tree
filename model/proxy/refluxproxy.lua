@@ -104,4 +104,65 @@ function var0_0.setAutoActionForbidden(arg0_15, arg1_15)
 	arg0_15.autoActionForbidden = arg1_15
 end
 
+function var0_0.GetRefluxBgs(arg0_16)
+	local var0_16 = getProxy(RefluxProxy).returnLastTimestamp
+	local var1_16 = {}
+
+	for iter0_16, iter1_16 in ipairs(pg.cg_display.all) do
+		local var2_16 = pg.cg_display[iter1_16]
+		local var3_16 = var2_16.version_time[1]
+		local var4_16 = var2_16.version_time[2]
+		local var5_16 = var2_16.version_time[3]
+		local var6_16 = 0
+		local var7_16 = 0
+		local var8_16 = 0
+		local var9_16 = pg.TimeMgr.GetInstance():parseTimeFromConfig({
+			{
+				var3_16,
+				var4_16,
+				var5_16
+			},
+			{
+				var6_16,
+				var7_16,
+				var8_16
+			}
+		})
+
+		if var0_16 < var9_16 then
+			table.insert(var1_16, {
+				id = iter1_16,
+				time = var9_16
+			})
+		end
+	end
+
+	table.sort(var1_16, function(arg0_17, arg1_17)
+		local var0_17 = arg0_17.id
+		local var1_17 = arg1_17.id
+		local var2_17 = arg0_17.time
+		local var3_17 = arg1_17.time
+		local var4_17 = pg.cg_display[var0_17]
+		local var5_17 = pg.cg_display[var1_17]
+
+		if var4_17.Cgpriority == var5_17.Cgpriority then
+			return var3_17 < var2_17
+		else
+			return var4_17.Cgpriority > var5_17.Cgpriority
+		end
+	end)
+
+	local var10_16 = {}
+
+	for iter2_16 = 1, 20 do
+		if var1_16[iter2_16] then
+			local var11_16 = pg.cg_display[var1_16[iter2_16].id]
+
+			table.insert(var10_16, var11_16.Cgname)
+		end
+	end
+
+	return var10_16
+end
+
 return var0_0

@@ -98,7 +98,7 @@ function var0_0.InShopTime(arg0_16)
 		return true
 	end
 
-	local var1_16 = pg.shop_template[var0_16]
+	local var1_16 = ShopConst.GetShopConfig(var0_16)
 
 	return pg.TimeMgr.GetInstance():inTime(var1_16.time)
 end
@@ -110,7 +110,7 @@ function var0_0.GetEndTime(arg0_17)
 		return 0
 	end
 
-	local var1_17 = pg.shop_template[var0_17]
+	local var1_17 = ShopConst.GetShopConfig(var0_17)
 
 	assert(var1_17, "Missing shopCfg " .. (var0_17 or "NIL"))
 

@@ -560,7 +560,10 @@ local function var17_0(arg0_19, arg1_19)
 		if arg0_19.foldAble <= 0 then
 			arg0_19.foldAble = nil
 
-			pg.m02:sendNotification(NewMainMediator.HIDE_PANEL, false)
+			pg.m02:sendNotification(NewMainMediator.HIDE_PANEL, {
+				flag = false,
+				content = {}
+			})
 		end
 	end
 end
@@ -778,7 +781,10 @@ local function var19_0(arg0_34, arg1_34)
 		arg0_34:changeActionIdle()
 
 		if arg0_34.foldAble then
-			pg.m02:sendNotification(NewMainMediator.HIDE_PANEL, false)
+			pg.m02:sendNotification(NewMainMediator.HIDE_PANEL, {
+				flag = false,
+				content = {}
+			})
 		end
 	end
 
@@ -1366,7 +1372,10 @@ function var0_0.applyActiveData(arg0_67, arg1_67)
 	if var7_67 ~= nil then
 		arg0_67.foldAble = true
 
-		pg.m02:sendNotification(NewMainMediator.HIDE_PANEL, var7_67)
+		pg.m02:sendNotification(NewMainMediator.HIDE_PANEL, {
+			flag = var7_67,
+			content = {}
+		})
 	end
 end
 
@@ -1491,17 +1500,23 @@ end
 function var0_0.GetDragBounds(arg0_79)
 	if not arg0_79.dragRenders or #arg0_79.dragRenders == 0 then
 		arg0_79.dragRenders = {}
+		arg0_79.dragableNames = {}
 
 		if arg0_79.drags then
 			for iter0_79 = 1, #arg0_79.drags do
-				local var0_79 = arg0_79.liveCom:GetDrawablePart(arg0_79.drags[iter0_79].drawAbleName)
+				local var0_79 = arg0_79.drags[iter0_79].drawAbleName
 
-				if var0_79 then
-					arg0_79.drags[iter0_79]:IsTouchAble()
+				if var0_79 and var0_79 ~= "" and not table.contains(arg0_79.dragableNames, var0_79) then
+					local var1_79 = arg0_79.liveCom:GetDrawablePart(var0_79)
 
-					local var1_79 = GetComponent(var0_79, typeof(MeshRenderer))
+					if var1_79 then
+						arg0_79.drags[iter0_79]:IsTouchAble()
 
-					table.insert(arg0_79.dragRenders, var1_79)
+						local var2_79 = GetComponent(var1_79, typeof(MeshRenderer))
+
+						table.insert(arg0_79.dragRenders, var2_79)
+						table.insert(arg0_79.dragableNames, var0_79)
+					end
 				end
 			end
 		end

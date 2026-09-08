@@ -169,20 +169,22 @@ function var0_0.initToggleList(arg0_10)
 			if var0_11 == ShopConst.TYPE_ACTIVITY then
 				local var2_11 = var1_11.activityId
 				local var3_11 = pg.activity_template[var2_11] and pg.activity_template[var2_11].config_client and pg.activity_template[var2_11].config_client.shop_title or nil
+				local var4_11 = var3_11 and i18n(var3_11) or i18n(ShopConst.TYPE2NAME[var0_11])
 
-				setText(arg2_11:Find("selected/Label"), i18n(var3_11) or i18n(ShopConst.TYPE2NAME[var0_11]))
+				setText(arg2_11:Find("selected/Label"), var4_11)
+				setText(arg2_11:Find("unselected/Label"), var4_11)
 			else
 				setText(arg2_11:Find("selected/Label"), i18n(ShopConst.TYPE2NAME[var0_11]))
+				setText(arg2_11:Find("unselected/Label"), i18n(ShopConst.TYPE2NAME[var0_11]))
 			end
 
 			setText(arg2_11:Find("selected/enText"), i18n(ShopConst.TYPE2NAME[var0_11] .. "en"))
-			setText(arg2_11:Find("unselected/Label"), i18n(ShopConst.TYPE2NAME[var0_11]))
 
-			local var4_11 = arg0_10.packageSortList[arg1_11 + 1].index
-			local var5_11 = arg0_10.allShopList[var0_11][1]
-			local var6_11, var7_11 = arg0_10.pages[var0_11]:CanOpen(var5_11, arg0_10.player)
+			local var5_11 = arg0_10.packageSortList[arg1_11 + 1].index
+			local var6_11 = arg0_10.allShopList[var0_11][1]
+			local var7_11, var8_11 = arg0_10.pages[var0_11]:CanOpen(var6_11, arg0_10.player)
 
-			if var6_11 == false then
+			if var7_11 == false then
 				setActive(arg2_11:Find("unselected/Label/lock"), true)
 			else
 				setActive(arg2_11:Find("unselected/Label/lock"), false)

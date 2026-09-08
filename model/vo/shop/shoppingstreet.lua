@@ -1,10 +1,10 @@
 local var0_0 = class("ShoppingStreet", import(".BaseShop"))
 
 function var0_0.getRiseShopId(arg0_1, arg1_1)
-	for iter0_1, iter1_1 in ipairs(pg.shop_template.all) do
-		local var0_1 = pg.shop_template[iter1_1]
+	for iter0_1, iter1_1 in ipairs(pg.shop_template.get_id_list_by_genre[arg0_1]) do
+		local var0_1 = ShopConst.GetShopConfig(iter1_1)
 
-		if var0_1.genre == arg0_1 and arg1_1 >= var0_1.limit_args[2] and arg1_1 <= var0_1.limit_args[3] then
+		if arg1_1 >= var0_1.limit_args[2] and arg1_1 <= var0_1.limit_args[3] then
 			return iter1_1
 		end
 	end
