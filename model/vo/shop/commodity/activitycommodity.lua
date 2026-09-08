@@ -200,9 +200,15 @@ function var0_0.Selectable(arg0_13)
 end
 
 function var0_0.getDropInfo(arg0_14)
+	local var0_14 = arg0_14:getConfig("commodity_id")
+
+	if not var0_14 or var0_14 == 0 then
+		var0_14 = arg0_14:getConfig("commodity_id_list")[1]
+	end
+
 	return Drop.New({
 		type = arg0_14:getConfig("commodity_type"),
-		id = arg0_14:getConfig("commodity_id"),
+		id = var0_14,
 		count = arg0_14:getConfig("num")
 	})
 end

@@ -15000,7 +15000,7 @@ end)()
 		skin_id = 201169,
 		use_ship = 1,
 		level_limit = 85,
-		descrip = "Retrofit complete. The following changes have been applied:\nTRP +25, EVA +20\n<color=#92fc63>Main Gun base +1</color>, <color=#92fc63>",
+		descrip = "Retrofit complete. The following changes have been applied:\nTRP +25, EVA +20\n<color=#92fc63>Main Gun base +1</color>",
 		icon = "mt_red",
 		skill_id = 0,
 		condition_id = {

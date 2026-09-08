@@ -126,7 +126,9 @@ function var0_0.OnStart(arg0_22)
 	removeAllOnButton(arg0_22.a3ReviewBtn)
 	removeAllOnButton(arg0_22.s1ClickBtn)
 	eachChild(arg0_22._tf, function(arg0_23)
-		setActive(arg0_23, false)
+		if arg0_23.name ~= "bg_low" then
+			setActive(arg0_23, false)
+		end
 	end)
 	setActive(arg0_22.a3ReviewBtn, #arg0_22.bgs > 0)
 end

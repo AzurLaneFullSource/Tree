@@ -3515,13 +3515,39 @@ pg.base.login = {}
 	}
 	pg.base.login[99] = {
 		id = 99,
-		login_static = "login",
 		effective_channel = 0,
 		op_play = 1,
-		op_time = "stop",
+		login_static = "login",
 		login_cri = "",
 		bgm = "",
 		date = {
+			"timer",
+			{
+				{
+					2026,
+					9,
+					8
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					9,
+					17
+				},
+				{
+					10,
+					0,
+					0
+				}
+			}
+		},
+		op_time = {
 			"timer",
 			{
 				{

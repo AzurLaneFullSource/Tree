@@ -7,7 +7,7 @@ return {
 			delay = 0.6,
 			forceDormLine = true,
 			style = {
-				text = "点击banner可以了解游戏内容！",
+				text = "Tap the banner to learn more about the game!",
 				mode = 2,
 				dir = -1,
 				char = "char",
@@ -33,7 +33,7 @@ return {
 			alpha = 0.4,
 			forceDormLine = true,
 			style = {
-				text = "点击入口可以了解游戏活动！",
+				text = "Tap this entrance to see the ongoing events!",
 				mode = 2,
 				dir = 1,
 				char = "char",
@@ -59,7 +59,7 @@ return {
 			alpha = 0.4,
 			forceDormLine = true,
 			style = {
-				text = "点击出击可以了解击败敌舰！",
+				text = "Sortie and defeat your enemies to earn rewards!",
 				mode = 2,
 				dir = 1,
 				char = "char",

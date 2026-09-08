@@ -31954,438 +31954,438 @@ cs.gametip = {
 	},
 	reverse_pacman_count = {
 		1435868,
-		85
+		86
 	},
 	reverse_pacman_buy = {
-		1435953,
+		1435954,
 		85
 	},
 	reverse_pacman_level_upgrade = {
-		1436038,
+		1436039,
 		99
 	},
 	reverse_pacman_sold_out = {
-		1436137,
+		1436138,
 		95
 	},
 	reverse_pacman_select_role = {
-		1436232,
+		1436233,
 		135
 	},
 	reverse_pacman_hired_role = {
-		1436367,
+		1436368,
 		102
 	},
 	reverse_pacman_hire_tip = {
-		1436469,
+		1436470,
 		109
 	},
 	reverse_pacman_unlock_role = {
-		1436578,
+		1436579,
 		157
 	},
 	reverse_pacman_unhire_role = {
-		1436735,
+		1436736,
 		136
 	},
 	reverse_pacman_resume_speed = {
-		1436871,
+		1436872,
 		105
 	},
 	reverse_pacman_resume_ai_type = {
-		1436976,
+		1436977,
 		107
 	},
 	reverse_pacman_resume_ai_desc = {
-		1437083,
+		1437084,
 		108
 	},
 	reverse_pacman_resume_close = {
-		1437191,
+		1437192,
 		121
 	},
 	reverse_pacman_resume_close_1 = {
-		1437312,
+		1437313,
 		98
 	},
 	reverse_pacman_type_chaser_1 = {
-		1437410,
+		1437411,
 		98
 	},
 	reverse_pacman_type_ambusher_1 = {
-		1437508,
+		1437509,
 		102
 	},
 	reverse_pacman_type_planner_1 = {
-		1437610,
+		1437611,
 		100
 	},
 	reverse_pacman_speed_level = {
-		1437710,
+		1437711,
 		116
 	},
 	reverse_pacman_select_ship_speed = {
-		1437826,
+		1437827,
 		105
 	},
 	reverse_pacman_deploy_tip = {
-		1437931,
+		1437932,
 		130
 	},
 	reverse_pacman_select_level_title = {
-		1438061,
+		1438062,
 		111
 	},
 	reverse_pacman_select_ship_title = {
-		1438172,
+		1438173,
 		117
 	},
 	reverse_pacman_level_type_1 = {
-		1438289,
+		1438290,
 		97
 	},
 	reverse_pacman_level_type_2 = {
-		1438386,
+		1438387,
 		94
 	},
 	reverse_pacman_select_level_lock_tip = {
-		1438480,
+		1438481,
 		137
 	},
 	reverse_pacman_ship_type_0 = {
-		1438617,
+		1438618,
 		93
 	},
 	reverse_pacman_ship_type_1 = {
-		1438710,
+		1438711,
 		96
 	},
 	reverse_pacman_ship_type_2 = {
-		1438806,
+		1438807,
 		98
 	},
 	reverse_pacman_ship_type_3 = {
-		1438904,
+		1438905,
 		97
 	},
 	reverse_pacman_deploy_empty = {
-		1439001,
+		1439002,
 		128
 	},
 	reverse_pacman_unlock_date_tip = {
-		1439129,
+		1439130,
 		111
 	},
 	reverse_pacman_game_speed_up_tip = {
-		1439240,
+		1439241,
 		167
 	},
 	reverse_pacman_cast_block = {
-		1439407,
+		1439408,
 		99
 	},
 	reverse_pacman_pick_speed = {
-		1439506,
+		1439507,
 		101
 	},
 	reverse_pacman_pick_giant = {
-		1439607,
+		1439608,
 		99
 	},
 	reverse_pacman_settle_award_title = {
-		1439706,
+		1439707,
 		115
 	},
 	reverse_pacman_settle_fail_tips = {
-		1439821,
+		1439822,
 		203
 	},
 	reverse_pacman_settle_statistics = {
-		1440024,
+		1440025,
 		113
 	},
 	reverse_pacman_settle_time = {
-		1440137,
+		1440138,
 		104
 	},
 	reverse_pacman_settle_arrest = {
-		1440241,
+		1440242,
 		136
 	},
 	reverse_pacman_settle_timeout = {
-		1440377,
+		1440378,
 		108
 	},
 	reverse_pacman_settle_escape = {
-		1440485,
+		1440486,
 		135
 	},
 	["260908activity_shop_title"] = {
-		1440620,
+		1440621,
 		112
 	},
 	reverse_pacman_char_talk1 = {
-		1440732,
+		1440733,
 		133
 	},
 	reverse_pacman_char_talk2 = {
-		1440865,
+		1440866,
 		136
 	},
 	reverse_pacman_char_talk3 = {
-		1441001,
+		1441002,
 		138
 	},
 	reverse_pacman_char_talk4 = {
-		1441139,
+		1441140,
 		104
 	},
 	reverse_pacman_char_talk5 = {
-		1441243,
+		1441244,
 		119
 	},
 	reverse_pacman_char_talk6 = {
-		1441362,
+		1441363,
 		127
 	},
 	reverse_pacman_char_talk7 = {
-		1441489,
+		1441490,
 		111
 	},
 	reverse_pacman_char_talk8 = {
-		1441600,
+		1441601,
 		132
 	},
 	reverse_pacman_char_talk9 = {
-		1441732,
+		1441733,
 		141
 	},
 	auto_battle_unlock_tip = {
-		1441873,
+		1441874,
 		126
 	},
 	auto_chapter_unlock_tip = {
-		1441999,
+		1442000,
 		125
 	},
 	auto_battle_headline = {
-		1442124,
+		1442125,
 		104
 	},
 	auto_battle_headline_en = {
-		1442228,
+		1442229,
 		107
 	},
 	auto_battle_book_day = {
-		1442335,
+		1442336,
 		93
 	},
 	auto_battle_book_hour = {
-		1442428,
+		1442429,
 		95
 	},
 	auto_battle_cnt = {
-		1442523,
+		1442524,
 		96
 	},
 	auto_battle_dec_en = {
-		1442619,
+		1442620,
 		91
 	},
 	auto_battle_time_limit_reached = {
-		1442710,
+		1442711,
 		122
 	},
 	auto_battle_cnt_book = {
-		1442832,
+		1442833,
 		103
 	},
 	auto_battle_book_max_reached = {
-		1442935,
+		1442936,
 		122
 	},
 	auto_battle_book_times_reached = {
-		1443057,
+		1443058,
 		117
 	},
 	auto_battle_time_left = {
-		1443174,
+		1443175,
 		99
 	},
 	auto_battle_cost_time = {
-		1443273,
+		1443274,
 		100
 	},
 	auto_battle_cost_extra = {
-		1443373,
+		1443374,
 		113
 	},
 	auto_battle_cost_oil = {
-		1443486,
+		1443487,
 		143
 	},
 	auto_battle_cost_book = {
-		1443629,
+		1443630,
 		159
 	},
 	auto_battle_add_time = {
-		1443788,
+		1443789,
 		101
 	},
 	auto_battle_base_loot = {
-		1443889,
+		1443890,
 		101
 	},
 	auto_battle_class_exp_head = {
-		1443990,
+		1443991,
 		114
 	},
 	auto_battle_extra_loot = {
-		1444104,
+		1444105,
 		104
 	},
 	auto_battle_extra_loot_lock = {
-		1444208,
+		1444209,
 		165
 	},
 	auto_battle_oil_store_tip = {
-		1444373,
+		1444374,
 		179
 	},
 	auto_battle_confirm_button = {
-		1444552,
+		1444553,
 		96
 	},
 	auto_battle_times_zero = {
-		1444648,
+		1444649,
 		120
 	},
 	auto_battle_start_tips = {
-		1444768,
+		1444769,
 		100
 	},
 	auto_battle_not_enough_resource = {
-		1444868,
+		1444869,
 		139
 	},
 	auto_battle_base_exp_warning = {
-		1445007,
+		1445008,
 		165
 	},
 	auto_battle_info_tips = {
-		1445172,
+		1445173,
 		431
 	},
 	auto_battle_time_add_headline = {
-		1445603,
+		1445604,
 		97
 	},
 	auto_battle_time_add_headline_en = {
-		1445700,
+		1445701,
 		102
 	},
 	auto_battle_time_add_info = {
-		1445802,
+		1445803,
 		168
 	},
 	auto_battle_time_add_item_lack = {
-		1445970,
+		1445971,
 		113
 	},
 	auto_battle_time_add_cancel = {
-		1446083,
+		1446084,
 		97
 	},
 	auto_battle_time_add_confirm = {
-		1446180,
+		1446181,
 		99
 	},
 	auto_battle_time_add_zero_item = {
-		1446279,
+		1446280,
 		114
 	},
 	auto_battle_time_add_success = {
-		1446393,
+		1446394,
 		112
 	},
 	auto_battle_ing_headline = {
-		1446505,
+		1446506,
 		108
 	},
 	auto_battle_ing_time = {
-		1446613,
+		1446614,
 		125
 	},
 	auto_battle_ing_cnt = {
-		1446738,
+		1446739,
 		122
 	},
 	auto_battle_ing_base_loot = {
-		1446860,
+		1446861,
 		107
 	},
 	auto_battle_ing_stop = {
-		1446967,
+		1446968,
 		93
 	},
 	auto_battle_ing_finish = {
-		1447060,
+		1447061,
 		99
 	},
 	auto_battle_ing_stop_tips = {
-		1447159,
+		1447160,
 		262
 	},
 	auto_battle_drop_book_expired = {
-		1447421,
+		1447422,
 		173
 	},
 	auto_battle_drop_classEXP_overflow = {
-		1447594,
+		1447595,
 		173
 	},
 	auto_battle_drop_bookEXP_overflow = {
-		1447767,
+		1447768,
 		163
 	},
 	auto_battle_stop = {
-		1447930,
+		1447931,
 		121
 	},
 	auto_battle_finish = {
-		1448051,
+		1448052,
 		117
 	},
 	auto_battle_end_exp = {
-		1448168,
+		1448169,
 		144
 	},
 	auto_battle_end_status = {
-		1448312,
+		1448313,
 		172
 	},
 	auto_battle_book_expire_warning = {
-		1448484,
+		1448485,
 		113
 	},
 	auto_drop_is_activation = {
-		1448597,
+		1448598,
 		196
 	},
 	auto_drop_is_activation_cancle = {
-		1448793,
+		1448794,
 		100
 	},
 	auto_drop_is_activation_go = {
-		1448893,
+		1448894,
 		103
 	},
 	auto_battle_help = {
-		1448996,
+		1448997,
 		2494
 	},
 	reverse_pacman_no_char = {
-		1451490,
+		1451491,
 		211
 	}
 }
