@@ -621,9 +621,11 @@ function var0_0.BuildIslandFishingCancel(arg0_66, arg1_66)
 	}, {})
 end
 
-function var0_0.BuildJuusOfficialAccountsClick(arg0_67)
+function var0_0.BuildJuusOfficialAccountsClick(arg0_67, arg1_67, arg2_67)
 	return var3_0(40002, {
-		arg0_67
+		arg0_67,
+		arg1_67,
+		arg2_67
 	}, {})
 end
 

@@ -1,6 +1,7 @@
 local var0_0 = class("CarWashGameFlowSystem", import("view.dorm3d.Game.CarWash.CarWashBaseSystem"))
 
 var0_0.START_GAME = "CarWashGameFlowSystem.START_GAME"
+var0_0.GAME_RESET = "CarWashGameFlowSystem.GAME_RESET"
 var0_0.REQUEST_RESTART_GAME = "CarWashGameFlowSystem.REQUEST_RESTART_GAME"
 var0_0.MODIFY_GAME_STATUS = "CarWashGameFlowSystem.MODIFY_GAME_STATUS"
 var0_0.UPDATE_GAME_STATE = "CarWashGameFlowSystem.UPDATE_GAME_STATE"
@@ -30,6 +31,7 @@ function var0_0.OnInit(arg0_1)
 	arg0_1.remainingTime = 0
 	arg0_1.lastCountdownSeconds = nil
 	arg0_1.isEnding = false
+	arg0_1.isRestarting = false
 	arg0_1.isTimelineSequencePlaying = false
 	arg0_1.isTransitionPlaying = false
 
@@ -98,6 +100,7 @@ function var0_0.OnDispose(arg0_20)
 	arg0_20.remainingTime = nil
 	arg0_20.lastCountdownSeconds = nil
 	arg0_20.isEnding = nil
+	arg0_20.isRestarting = nil
 	arg0_20.isTimelineSequencePlaying = nil
 	arg0_20.isTransitionPlaying = nil
 end
@@ -115,9 +118,11 @@ end
 
 function var0_0.StartGame(arg0_22, arg1_22)
 	arg0_22:ResetRuntimeState()
+	arg0_22:Emit(var0_0.GAME_RESET)
 	seriesAsync({
 		function(arg0_23)
 			arg0_22:SetCurrentGunType(CarWashConst.GUN_TYPE.WASHER)
+			arg0_22:SetShooting(false)
 			arg0_22:SetLadyPos(pg.dorm3d_carwash_pos[arg0_22.contextData.gameConfig.pos[1]])
 			arg0_22:Emit(CarWashDecalSystem.GENERATE_DECALS)
 			arg0_23()
@@ -439,13 +444,19 @@ function var0_0.RestartGame(arg0_63)
 		return
 	end
 
+	if arg0_63.isRestarting or arg0_63.isTransitionPlaying then
+		return
+	end
+
+	arg0_63.isRestarting = true
+
 	arg0_63:Emit(CarWashTimelineSystem.EXIT_ART_TIMELINE, {
 		onHold = function(arg0_64, arg1_64)
 			arg0_63:InitGameStatus()
 			arg0_63:StartGame(arg0_64)
 		end,
 		onFinish = function(arg0_65)
-			return
+			arg0_63.isRestarting = false
 		end
 	})
 end
@@ -455,8 +466,15 @@ function var0_0.TriggerHiddenReaction(arg0_66, arg1_66)
 		return
 	end
 
-	arg0_66:ModifyHeartBeatValue(arg1_66.mood_value_plus)
-	arg0_66:Emit(CarWashTimelineSystem.PLAY_ART_TIMELINE, arg1_66.hidden_reaction)
+	local var0_66 = table.shallowCopy(arg1_66.hidden_reaction)
+	local var1_66 = var0_66.onFinish
+
+	function var0_66.onFinish(arg0_67)
+		existCall(var1_66, arg0_67)
+		arg0_66:ModifyHeartBeatValue(arg1_66.mood_value_plus)
+	end
+
+	arg0_66:Emit(CarWashTimelineSystem.PLAY_ART_TIMELINE, var0_66)
 end
 
 return var0_0

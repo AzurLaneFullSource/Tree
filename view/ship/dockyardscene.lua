@@ -25,660 +25,760 @@ function var0_0.getUIName(arg0_1)
 	return "DockyardUI"
 end
 
-function var0_0.init(arg0_2)
-	local var0_2 = arg0_2.contextData
+function var0_0.getResource(arg0_2, arg1_2)
+	local var0_2 = {
+		"ui/dockyardui_atlas",
+		"energy",
+		"shipstatus",
+		"shipframe",
+		"shiptype",
+		"ui/proposeshipcard",
+		"ui/heartshipcard",
+		"shipYardIcon/unknown",
+		"ui/iconcolorful",
+		"ui/recordablesearchbarui"
+	}
 
-	var0_2.mode = defaultValue(var0_2.mode, var0_0.MODE_SELECT)
-	var0_2.otherSelectedIds = defaultValue(var0_2.otherSelectedIds, {})
-	arg0_2.teamTypeFilter = var0_2.teamFilter
-	arg0_2.selectedMin = var0_2.selectedMin or 1
-	arg0_2.leastLimitMsg = var0_2.leastLimitMsg
-	arg0_2.selectedMax = var0_2.selectedMax or 0
-	var0_2.selectedIds = var0_2.selectedIds or {}
+	table.insertto(var0_2, arg0_2:getDockyardShipResList(arg1_2))
 
-	if var0_2.infoShipId then
-		table.insert(var0_2.selectedIds, var0_2.infoShipId)
+	return table.insertto(var0_2, var0_0.super.getResource(arg0_2, arg1_2))
+end
 
-		var0_2.infoShipId = nil
+function var0_0.getDockyardShipResList(arg0_3, arg1_3)
+	local var0_3 = {}
+	local var1_3 = {}
+
+	if arg1_3 and arg1_3.shipVOs then
+		for iter0_3, iter1_3 in ipairs(arg1_3.shipVOs) do
+			var1_3[iter1_3.id] = iter1_3
+		end
+	elseif arg1_3 and arg1_3.mode == var0_0.MODE_WORLD then
+		for iter2_3, iter3_3 in ipairs(nowWorld():GetShipVOs()) do
+			var1_3[iter3_3.id] = iter3_3
+		end
+	else
+		local var2_3 = getProxy(BayProxy)
+
+		for iter4_3, iter5_3 in pairs(var2_3.data) do
+			var1_3[iter4_3] = iter5_3
+		end
 	end
 
-	arg0_2.selectedIds = underscore(var0_2.selectedIds):chain():select(function(arg0_3)
-		return getProxy(BayProxy):RawGetShipById(arg0_3) ~= nil
-	end):first(arg0_2.selectedMax):value()
-	var0_2.selectedIds = nil
-	arg0_2.checkShip = var0_2.onShip or function(arg0_4, arg1_4, arg2_4)
+	if arg1_3 and arg1_3.ignoredIds then
+		for iter6_3, iter7_3 in ipairs(arg1_3.ignoredIds) do
+			var1_3[iter7_3] = nil
+		end
+	end
+
+	for iter8_3, iter9_3 in pairs(var1_3) do
+		arg0_3:insertDockyardShipItemRes(var0_3, iter9_3)
+	end
+
+	if arg1_3 and arg1_3.mode == var0_0.MODE_SHIP_PHANTOM then
+		local var3_3 = getProxy(TechnologyProxy)
+		local var4_3 = getProxy(BayProxy)
+
+		for iter10_3, iter11_3 in ipairs(var3_3:getAllBluePrintShipIds()) do
+			local var5_3 = var4_3:getShipById(iter11_3)
+
+			if var5_3 and #var5_3:getAllShipPhantomMarks() > 1 then
+				_.each(var5_3:getAllShipPhantom(), function(arg0_4)
+					local var0_4 = ResPathSupport.GetPaintingShipYardIconListByPaintingName(arg0_4:getPainting())
+
+					table.insertto(var0_3, var0_4)
+				end)
+			end
+		end
+	end
+
+	return var0_3
+end
+
+function var0_0.insertDockyardShipItemRes(arg0_5, arg1_5, arg2_5)
+	local var0_5 = string.format(ResPathSupport.ConstPath.BG.ShipCard, arg2_5:rarity2bgPrint())
+
+	table.insert(arg1_5, var0_5)
+
+	local var1_5 = ResPathSupport.GetPaintingShipYardIconListByPaintingName(arg2_5:getPainting())
+
+	table.insertto(arg1_5, var1_5)
+
+	local var2_5, var3_5 = arg2_5:GetFrameAndEffect()
+	local var4_5 = ResPathSupport.CombinePath(ResPathSupport.ConstPath.UI.Effect, var3_5)
+
+	table.insert(arg1_5, var4_5)
+
+	local var5_5 = arg2_5.user
+
+	if var5_5 then
+		local var6_5 = Ship.New({
+			configId = var5_5.icon
+		}):getPrefab()
+		local var7_5 = ResPathSupport.GetSpineQIconListByPrefabName(var6_5)
+
+		table.insertto(arg1_5, var7_5)
+
+		local var8_5 = AttireFrame.attireFrameRes(var5_5, false, AttireConst.TYPE_ICON_FRAME, var5_5.propose)
+		local var9_5 = ResPathSupport.CombinePath(ResPathSupport.ConstPath.UI.IconFrame, var8_5)
+
+		table.insert(arg1_5, var9_5)
+	end
+end
+
+function var0_0.init(arg0_6)
+	local var0_6 = arg0_6.contextData
+
+	var0_6.mode = defaultValue(var0_6.mode, var0_0.MODE_SELECT)
+	var0_6.otherSelectedIds = defaultValue(var0_6.otherSelectedIds, {})
+	arg0_6.teamTypeFilter = var0_6.teamFilter
+	arg0_6.selectedMin = var0_6.selectedMin or 1
+	arg0_6.leastLimitMsg = var0_6.leastLimitMsg
+	arg0_6.selectedMax = var0_6.selectedMax or 0
+	var0_6.selectedIds = var0_6.selectedIds or {}
+
+	if var0_6.infoShipId then
+		table.insert(var0_6.selectedIds, var0_6.infoShipId)
+
+		var0_6.infoShipId = nil
+	end
+
+	arg0_6.selectedIds = underscore(var0_6.selectedIds):chain():select(function(arg0_7)
+		return getProxy(BayProxy):RawGetShipById(arg0_7) ~= nil
+	end):first(arg0_6.selectedMax):value()
+	var0_6.selectedIds = nil
+	arg0_6.checkShip = var0_6.onShip or function(arg0_8, arg1_8, arg2_8)
 		return true
 	end
-	arg0_2.onCancelShip = var0_2.onCancelShip or function(arg0_5, arg1_5, arg2_5)
+	arg0_6.onCancelShip = var0_6.onCancelShip or function(arg0_9, arg1_9, arg2_9)
 		return true
 	end
-	arg0_2.onClick = var0_2.onClick or function(arg0_6, arg1_6, arg2_6)
-		arg0_2:emit(DockyardMediator.ON_SHIP_DETAIL, arg0_6, arg1_6, arg2_6)
+	arg0_6.onClick = var0_6.onClick or function(arg0_10, arg1_10, arg2_10)
+		arg0_6:emit(DockyardMediator.ON_SHIP_DETAIL, arg0_10, arg1_10, arg2_10)
 	end
-	arg0_2.confirmSelect = var0_2.confirmSelect
-	arg0_2.callbackQuit = var0_2.callbackQuit
-	arg0_2.onSelected = var0_2.onSelected or function(arg0_7, arg1_7)
+	arg0_6.confirmSelect = var0_6.confirmSelect
+	arg0_6.callbackQuit = var0_6.callbackQuit
+	arg0_6.onSelected = var0_6.onSelected or function(arg0_11, arg1_11)
 		warning("not implemented.")
 	end
-	arg0_2.blurPanel = arg0_2._tf:Find("blur_panel")
-	arg0_2.settingBtn = arg0_2.blurPanel:Find("adapt/left_length/frame/setting")
-	arg0_2.settingPanel = DockyardQuickSelectSettingPage.New(arg0_2._tf, arg0_2.event)
+	arg0_6.blurPanel = arg0_6._tf:Find("blur_panel")
+	arg0_6.settingBtn = arg0_6.blurPanel:Find("adapt/left_length/frame/setting")
+	arg0_6.settingPanel = DockyardQuickSelectSettingPage.New(arg0_6._tf, arg0_6.event)
 
-	arg0_2.settingPanel:OnSettingChanged(function()
-		arg0_2:unselecteAllShips()
+	arg0_6.settingPanel:OnSettingChanged(function()
+		arg0_6:unselecteAllShips()
 	end)
 
-	arg0_2.topPanel = arg0_2.blurPanel:Find("adapt/top")
-	arg0_2.sortBtn = arg0_2.topPanel:Find("sort_button")
-	arg0_2.sortImgAsc = arg0_2.sortBtn:Find("asc")
-	arg0_2.sortImgDesc = arg0_2.sortBtn:Find("desc")
-	arg0_2.leftTipsText = arg0_2.topPanel:Find("capacity")
+	arg0_6.topPanel = arg0_6.blurPanel:Find("adapt/top")
+	arg0_6.sortBtn = arg0_6.topPanel:Find("sort_button")
+	arg0_6.sortImgAsc = arg0_6.sortBtn:Find("asc")
+	arg0_6.sortImgDesc = arg0_6.sortBtn:Find("desc")
+	arg0_6.leftTipsText = arg0_6.topPanel:Find("capacity")
 
-	onButton(arg0_2, arg0_2.leftTipsText:Find("switch"), function()
-		arg0_2.isCapacityMeta = not arg0_2.isCapacityMeta
+	onButton(arg0_6, arg0_6.leftTipsText:Find("switch"), function()
+		arg0_6.isCapacityMeta = not arg0_6.isCapacityMeta
 
-		arg0_2:updateCapacityDisplay()
+		arg0_6:updateCapacityDisplay()
 	end, SFX_PANEL)
-	onButton(arg0_2, arg0_2.leftTipsText:Find("plus"), function()
+	onButton(arg0_6, arg0_6.leftTipsText:Find("plus"), function()
 		gotoChargeScene()
 	end, SFX_PANEL)
-	onButton(arg0_2, arg0_2.leftTipsText:Find("tip"), function()
+	onButton(arg0_6, arg0_6.leftTipsText:Find("tip"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			hideNo = true,
 			content = i18n("specialshipyard_tip")
 		})
 	end, SFX_PANEL)
-	setActive(arg0_2.leftTipsText, false)
+	setActive(arg0_6.leftTipsText, false)
 
-	arg0_2.indexBtn = arg0_2.topPanel:Find("index_button")
-	arg0_2.switchPanel = arg0_2.topPanel:Find("switch")
-	arg0_2.preferenceAndAttrContainer = arg0_2.switchPanel:Find("toggles")
-	arg0_2.preferenceBtn = arg0_2.switchPanel:Find("toggles/preference_toggle")
-	arg0_2.attrBtn = arg0_2.switchPanel:Find("toggles/attr_toggle")
-	arg0_2.modLockFilter = arg0_2.topPanel:Find("mod_flter_lock")
-	arg0_2.modLeveFilter = arg0_2.topPanel:Find("mod_flter_level")
-	arg0_2.energyDescTF = arg0_2._tf:Find("energy_desc")
-	arg0_2.energyDescTextTF = arg0_2.energyDescTF:Find("Text")
-	arg0_2.selectPanel = arg0_2.blurPanel:Find("select_panel")
-	arg0_2.bottomTipsText = arg0_2.selectPanel:Find("tip")
-	arg0_2.bottomTipsWithFrame = arg0_2.selectPanel:Find("tipwithframe")
+	arg0_6.indexBtn = arg0_6.topPanel:Find("index_button")
+	arg0_6.switchPanel = arg0_6.topPanel:Find("switch")
+	arg0_6.preferenceAndAttrContainer = arg0_6.switchPanel:Find("toggles")
+	arg0_6.preferenceBtn = arg0_6.switchPanel:Find("toggles/preference_toggle")
+	arg0_6.attrBtn = arg0_6.switchPanel:Find("toggles/attr_toggle")
+	arg0_6.modLockFilter = arg0_6.topPanel:Find("mod_flter_lock")
+	arg0_6.modLeveFilter = arg0_6.topPanel:Find("mod_flter_level")
+	arg0_6.energyDescTF = arg0_6._tf:Find("energy_desc")
+	arg0_6.energyDescTextTF = arg0_6.energyDescTF:Find("Text")
+	arg0_6.selectPanel = arg0_6.blurPanel:Find("select_panel")
+	arg0_6.bottomTipsText = arg0_6.selectPanel:Find("tip")
+	arg0_6.bottomTipsWithFrame = arg0_6.selectPanel:Find("tipwithframe")
 
-	setText(arg0_2.selectPanel:Find("bottom_info/bg_input/selected"), i18n("disassemble_selected") .. ":")
+	setText(arg0_6.selectPanel:Find("bottom_info/bg_input/selected"), i18n("disassemble_selected") .. ":")
 
-	arg0_2.awardTF = arg0_2.selectPanel:Find("bottom_info/bg_award")
+	arg0_6.awardTF = arg0_6.selectPanel:Find("bottom_info/bg_award")
 
-	setText(arg0_2.awardTF:Find("label"), i18n("disassemble_available") .. ":")
+	setText(arg0_6.awardTF:Find("label"), i18n("disassemble_available") .. ":")
 
-	arg0_2.modAttrsTF = arg0_2.selectPanel:Find("bottom_info/bg_mod")
-	arg0_2.viewEquipmentBtn = arg0_2.selectPanel:Find("view_equipments")
-	arg0_2.tipPanel = arg0_2.blurPanel:Find("TipPanel")
+	arg0_6.modAttrsTF = arg0_6.selectPanel:Find("bottom_info/bg_mod")
+	arg0_6.viewEquipmentBtn = arg0_6.selectPanel:Find("view_equipments")
+	arg0_6.tipPanel = arg0_6.blurPanel:Find("TipPanel")
 
-	setActive(arg0_2.tipPanel, false)
+	setActive(arg0_6.tipPanel, false)
 
-	arg0_2.worldPanel = arg0_2.blurPanel:Find("world_port_panel")
+	arg0_6.worldPanel = arg0_6.blurPanel:Find("world_port_panel")
 
-	setActive(arg0_2.worldPanel, arg0_2.contextData.mode == var0_0.MODE_WORLD)
+	setActive(arg0_6.worldPanel, arg0_6.contextData.mode == var0_0.MODE_WORLD)
 
-	arg0_2.assultBtn = arg0_2.blurPanel:Find("adapt/top/assult_btn")
-	arg0_2.stampBtn = arg0_2.topPanel:Find("stamp")
-	arg0_2.isRemouldOrUpgradeMode = arg0_2.contextData.mode == var0_0.MODE_REMOULD or arg0_2.contextData.mode == var0_0.MODE_UPGRADE
+	arg0_6.assultBtn = arg0_6.blurPanel:Find("adapt/top/assult_btn")
+	arg0_6.stampBtn = arg0_6.topPanel:Find("stamp")
+	arg0_6.isRemouldOrUpgradeMode = arg0_6.contextData.mode == var0_0.MODE_REMOULD or arg0_6.contextData.mode == var0_0.MODE_UPGRADE
 
-	setActive(arg0_2.modLeveFilter, arg0_2.isRemouldOrUpgradeMode)
-	setActive(arg0_2.modLockFilter, arg0_2.isRemouldOrUpgradeMode)
-	setActive(arg0_2.assultBtn, arg0_2.contextData.mode == var0_0.MODE_GUILD_BOSS)
-	switch(arg0_2.contextData.mode, {
+	setActive(arg0_6.modLeveFilter, arg0_6.isRemouldOrUpgradeMode)
+	setActive(arg0_6.modLockFilter, arg0_6.isRemouldOrUpgradeMode)
+	setActive(arg0_6.assultBtn, arg0_6.contextData.mode == var0_0.MODE_GUILD_BOSS)
+	switch(arg0_6.contextData.mode, {
 		[var0_0.MODE_OVERVIEW] = function()
-			arg0_2.selecteEnabled = false
+			arg0_6.selecteEnabled = false
 		end,
 		[var0_0.MODE_DESTROY] = function()
-			arg0_2.selecteEnabled = true
-			arg0_2.blacklist = {}
-			arg0_2.destroyResList = UIItemList.New(arg0_2.awardTF:Find("res_list"), arg0_2.awardTF:Find("res_list/res"))
+			arg0_6.selecteEnabled = true
+			arg0_6.blacklist = {}
+			arg0_6.destroyResList = UIItemList.New(arg0_6.awardTF:Find("res_list"), arg0_6.awardTF:Find("res_list/res"))
 		end,
 		[var0_0.MODE_MOD] = function()
-			arg0_2.selecteEnabled = true
+			arg0_6.selecteEnabled = true
 
-			setText(arg0_2.modAttrsTF:Find("title/Text"), i18n("word_mod_value"))
+			setText(arg0_6.modAttrsTF:Find("title/Text"), i18n("word_mod_value"))
 
-			arg0_2.modAttrContainer = arg0_2.modAttrsTF:Find("attrs")
+			arg0_6.modAttrContainer = arg0_6.modAttrsTF:Find("attrs")
 		end,
 		[var0_0.MODE_SHIP_PHANTOM] = function()
-			arg0_2.selecteEnabled = false
+			arg0_6.selecteEnabled = false
 		end
 	}, function()
-		arg0_2.selecteEnabled = true
+		arg0_6.selecteEnabled = true
 	end)
-	setActive(arg0_2.selectPanel, arg0_2.selecteEnabled and arg0_2.contextData.mode ~= var0_0.MODE_WORLD)
-	setActive(arg0_2.worldPanel, arg0_2.contextData.mode == var0_0.MODE_WORLD)
+	setActive(arg0_6.selectPanel, arg0_6.selecteEnabled and arg0_6.contextData.mode ~= var0_0.MODE_WORLD)
+	setActive(arg0_6.worldPanel, arg0_6.contextData.mode == var0_0.MODE_WORLD)
 
-	local var1_2 = arg0_2.contextData.mode == var0_0.MODE_DESTROY
+	local var1_6 = arg0_6.contextData.mode == var0_0.MODE_DESTROY
 
-	setActive(arg0_2.settingBtn, var1_2)
-	setActive(arg0_2.selectPanel:Find("quick_select"), var1_2)
+	setActive(arg0_6.settingBtn, var1_6)
+	setActive(arg0_6.selectPanel:Find("quick_select"), var1_6)
 
-	if arg0_2.contextData.priorEquipUpShipIDList and arg0_2.contextData.priorMode then
-		setActive(arg0_2.tipPanel, true)
+	if arg0_6.contextData.priorEquipUpShipIDList and arg0_6.contextData.priorMode then
+		setActive(arg0_6.tipPanel, true)
 
-		local var2_2 = arg0_2.tipPanel:Find("EquipUP")
-		local var3_2 = arg0_2.tipPanel:Find("ShipUP")
+		local var2_6 = arg0_6.tipPanel:Find("EquipUP")
+		local var3_6 = arg0_6.tipPanel:Find("ShipUP")
 
-		setText(var2_2, i18n("fightfail_choiceequip"))
-		setText(var3_2, i18n("fightfail_choicestrengthen"))
-		setActive(var2_2, arg0_2.contextData.priorMode == var0_0.PRIOR_MODE_EQUIP_UP)
-		setActive(var3_2, arg0_2.contextData.priorMode == var0_0.PRIOR_MODE_SHIP_UP)
+		setText(var2_6, i18n("fightfail_choiceequip"))
+		setText(var3_6, i18n("fightfail_choicestrengthen"))
+		setActive(var2_6, arg0_6.contextData.priorMode == var0_0.PRIOR_MODE_EQUIP_UP)
+		setActive(var3_6, arg0_6.contextData.priorMode == var0_0.PRIOR_MODE_SHIP_UP)
 	end
 
-	arg0_2.togglePhantom = arg0_2._tf:Find("blur_panel/adapt/left_length/frame/toggle_phantom")
+	arg0_6.togglePhantom = arg0_6._tf:Find("blur_panel/adapt/left_length/frame/toggle_phantom")
 
-	onToggle(arg0_2, arg0_2.togglePhantom, function(arg0_17)
-		if arg0_2.inPhantom ~= arg0_17 then
-			arg0_2.inPhantom = arg0_17
+	onToggle(arg0_6, arg0_6.togglePhantom, function(arg0_21)
+		if arg0_6.inPhantom ~= arg0_21 then
+			arg0_6.inPhantom = arg0_21
 
-			arg0_2:SwitchContainerDisplay()
+			arg0_6:SwitchContainerDisplay()
 		end
 	end, SFX_PANEL)
-	setActive(arg0_2.togglePhantom, false)
+	setActive(arg0_6.togglePhantom, false)
 
-	arg0_2.helpPhantom = arg0_2._tf:Find("blur_panel/adapt/left_length/frame/help_phantom")
+	arg0_6.helpPhantom = arg0_6._tf:Find("blur_panel/adapt/left_length/frame/help_phantom")
 
-	onButton(arg0_2, arg0_2.helpPhantom, function()
+	onButton(arg0_6, arg0_6.helpPhantom, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("projection_help")
 		})
 	end, SFX_PANEL)
 
-	local var4_2 = arg0_2.contextData.mode == var0_0.MODE_SHIP_PHANTOM and "phantom" or "dockyard"
+	local var4_6 = arg0_6.contextData.mode == var0_0.MODE_SHIP_PHANTOM and "phantom" or "dockyard"
 
-	eachChild(arg0_2.topPanel:Find("titles"), function(arg0_19, arg1_19)
-		setActive(arg0_19, arg0_19.name == var4_2)
+	eachChild(arg0_6.topPanel:Find("titles"), function(arg0_23, arg1_23)
+		setActive(arg0_23, arg0_23.name == var4_6)
 	end)
 
-	arg0_2.listEmptyTF = arg0_2._tf:Find("empty")
+	arg0_6.listEmptyTF = arg0_6._tf:Find("empty")
 
-	setActive(arg0_2.listEmptyTF, false)
+	setActive(arg0_6.listEmptyTF, false)
 
-	arg0_2.listEmptyTxt = arg0_2.listEmptyTF:Find("Text")
+	arg0_6.listEmptyTxt = arg0_6.listEmptyTF:Find("Text")
 
-	setText(arg0_2.listEmptyTxt, i18n("list_empty_tip_dockyardui"))
+	setText(arg0_6.listEmptyTxt, i18n("list_empty_tip_dockyardui"))
 
-	arg0_2.destroyPage = ShipDestroyPage.New(arg0_2._tf, arg0_2.event)
+	arg0_6.destroyPage = ShipDestroyPage.New(arg0_6._tf, arg0_6.event)
 
-	arg0_2.destroyPage:SetCardClickCallBack(function(arg0_20)
-		arg0_2.blacklist[arg0_20.shipVO:getGroupId()] = true
+	arg0_6.destroyPage:SetCardClickCallBack(function(arg0_24)
+		arg0_6.blacklist[arg0_24.shipVO:getGroupId()] = true
 
-		local var0_20 = table.indexof(arg0_2.selectedIds, arg0_20.shipVO.id)
+		local var0_24 = table.indexof(arg0_6.selectedIds, arg0_24.shipVO.id)
 
-		if var0_20 and var0_20 > 0 then
-			table.remove(arg0_2.selectedIds, var0_20)
+		if var0_24 and var0_24 > 0 then
+			table.remove(arg0_6.selectedIds, var0_24)
 		end
 
-		arg0_2:updateDestroyRes()
-		arg0_2:updateSelected()
+		arg0_6:updateDestroyRes()
+		arg0_6:updateSelected()
 	end)
-	arg0_2.destroyPage:SetConfirmCallBack(function()
-		local var0_21 = {}
-		local var1_21, var2_21 = arg0_2:checkDestroyGold()
+	arg0_6.destroyPage:SetConfirmCallBack(function()
+		local var0_25 = {}
+		local var1_25, var2_25 = arg0_6:checkDestroyGold()
 
-		if not var2_21 then
-			table.insert(var0_21, function(arg0_22)
+		if not var2_25 then
+			table.insert(var0_25, function(arg0_26)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("oil_max_tip_title") .. i18n("resource_max_tip_retire_1"),
-					onYes = arg0_22
+					onYes = arg0_26
 				})
 			end)
 		end
 
-		local var3_21 = underscore.map(arg0_2.selectedIds, function(arg0_23)
-			return arg0_2.shipVOsById[arg0_23]
+		local var3_25 = underscore.map(arg0_6.selectedIds, function(arg0_27)
+			return arg0_6.shipVOsById[arg0_27]
 		end)
 
-		table.insert(var0_21, function(arg0_24)
-			arg0_2:checkDestroyShips(var3_21, arg0_24)
+		table.insert(var0_25, function(arg0_28)
+			arg0_6:checkDestroyShips(var3_25, arg0_28)
 		end)
-		seriesAsync(var0_21, function()
-			arg0_2:emit(DockyardMediator.ON_DESTROY_SHIPS, arg0_2.selectedIds)
+		seriesAsync(var0_25, function()
+			arg0_6:emit(DockyardMediator.ON_DESTROY_SHIPS, arg0_6.selectedIds)
 		end)
 	end)
 
-	arg0_2.destroyConfirmWindow = ShipDestoryConfirmWindow.New(arg0_2._tf, arg0_2.event)
-	arg0_2.searchBar = RecordableSearchBar.New(RecordableSearchBar.CreateData({
+	arg0_6.destroyConfirmWindow = ShipDestoryConfirmWindow.New(arg0_6._tf, arg0_6.event)
+	arg0_6.searchBar = RecordableSearchBar.New(RecordableSearchBar.CreateData({
 		refresh_pos_when_expand = true,
 		holder = i18n("dockyard_search_holder"),
-		onActive = function(arg0_26)
-			setActive(arg0_2.preferenceAndAttrContainer, not arg0_26)
+		onActive = function(arg0_30)
+			setActive(arg0_6.preferenceAndAttrContainer, not arg0_30)
 		end,
 		onInputChanged = function()
-			arg0_2:filter()
+			arg0_6:filter()
 		end,
-		key = arg0_2.__cname,
-		parent = arg0_2.switchPanel,
-		expand_parent = arg0_2.blurPanel:Find("adapt"),
+		key = arg0_6.__cname,
+		parent = arg0_6.switchPanel,
+		expand_parent = arg0_6.blurPanel:Find("adapt"),
 		anchoredPosition = Vector3(-33, -33, 0)
 	}))
 end
 
-function var0_0.SwitchContainerDisplay(arg0_28)
-	arg0_28.isPhantomMode = arg0_28.contextData.mode == var0_0.MODE_SHIP_PHANTOM or arg0_28.inPhantom
+function var0_0.SwitchContainerDisplay(arg0_32)
+	arg0_32.isPhantomMode = arg0_32.contextData.mode == var0_0.MODE_SHIP_PHANTOM or arg0_32.inPhantom
 
-	setActive(arg0_28.switchPanel, not arg0_28.isRemouldOrUpgradeMode and not arg0_28.isPhantomMode)
-	setActive(arg0_28.indexBtn, not arg0_28.isRemouldOrUpgradeMode and not arg0_28.isPhantomMode)
-	setActive(arg0_28.sortBtn, not arg0_28.isRemouldOrUpgradeMode and not arg0_28.isPhantomMode)
-	setActive(arg0_28._tf:Find("main/ship_container"), not arg0_28.isPhantomMode)
-	setActive(arg0_28._tf:Find("main/phantom_container"), arg0_28.isPhantomMode)
-	setActive(arg0_28.preferenceBtn, not arg0_28.isPhantomMode)
-	arg0_28:updateBarInfo()
-	setActive(arg0_28.helpPhantom, arg0_28.contextData.mode == var0_0.MODE_SHIP_PHANTOM)
+	setActive(arg0_32.switchPanel, not arg0_32.isRemouldOrUpgradeMode and not arg0_32.isPhantomMode)
+	setActive(arg0_32.indexBtn, not arg0_32.isRemouldOrUpgradeMode and not arg0_32.isPhantomMode)
+	setActive(arg0_32.sortBtn, not arg0_32.isRemouldOrUpgradeMode and not arg0_32.isPhantomMode)
+	setActive(arg0_32._tf:Find("main/ship_container"), not arg0_32.isPhantomMode)
+	setActive(arg0_32._tf:Find("main/phantom_container"), arg0_32.isPhantomMode)
+	setActive(arg0_32.preferenceBtn, not arg0_32.isPhantomMode)
+	arg0_32:updateBarInfo()
+	setActive(arg0_32.helpPhantom, arg0_32.contextData.mode == var0_0.MODE_SHIP_PHANTOM)
 
 	if pg.SeriesGuideMgr.GetInstance():isEnd() and PlayerPrefs.GetInt("PHANTOM_HELP_FIRST", 0) == 0 then
 		PlayerPrefs.SetInt("PHANTOM_HELP_FIRST", 1)
-		triggerButton(arg0_28.helpPhantom)
+		triggerButton(arg0_32.helpPhantom)
 	end
 
-	switch(tobool(arg0_28.isPhantomMode), {
+	switch(tobool(arg0_32.isPhantomMode), {
 		[true] = function()
-			arg0_28.initDic = arg0_28.initDic or {}
+			arg0_32.initDic = arg0_32.initDic or {}
 
-			if arg0_28.initDic.phantom then
+			if arg0_32.initDic.phantom then
 				return
 			end
 
-			arg0_28.initDic.phantom = true
+			arg0_32.initDic.phantom = true
 
-			local var0_29 = getProxy(TechnologyProxy)
-			local var1_29 = arg0_28._tf:Find("main/phantom_container/title/content")
-			local var2_29 = var0_29:getConfigMaxVersion()
+			local var0_33 = getProxy(TechnologyProxy)
+			local var1_33 = arg0_32._tf:Find("main/phantom_container/title/content")
+			local var2_33 = var0_33:getConfigMaxVersion()
 
-			UIItemList.StaticAlign(var1_29, var1_29:GetChild(0), var2_29 + 1, function(arg0_30, arg1_30, arg2_30)
-				if arg0_30 == UIItemList.EventUpdate then
-					arg2_30.name = "phase_" .. arg1_30
+			UIItemList.StaticAlign(var1_33, var1_33:GetChild(0), var2_33 + 1, function(arg0_34, arg1_34, arg2_34)
+				if arg0_34 == UIItemList.EventUpdate then
+					arg2_34.name = "phase_" .. arg1_34
 
-					GetImageSpriteFromAtlasAsync("ui/dockyardui_atlas", arg1_30, arg2_30:Find("on"))
-					GetImageSpriteFromAtlasAsync("ui/dockyardui_atlas", arg1_30, arg2_30:Find("off"))
-					onToggle(arg0_28, arg2_30, function(arg0_31)
-						if arg0_31 then
-							arg0_28.selectVersion = arg1_30
-							arg0_28.filterBluePrint = underscore.filter(arg0_28.shipBluePrints, function(arg0_32)
-								return arg1_30 == 0 or arg0_32:getConfig("blueprint_version") == arg1_30
+					GetImageSpriteFromAtlasAsync("ui/dockyardui_atlas", arg1_34, arg2_34:Find("on"))
+					GetImageSpriteFromAtlasAsync("ui/dockyardui_atlas", arg1_34, arg2_34:Find("off"))
+					onToggle(arg0_32, arg2_34, function(arg0_35)
+						if arg0_35 then
+							arg0_32.selectVersion = arg1_34
+							arg0_32.filterBluePrint = underscore.filter(arg0_32.shipBluePrints, function(arg0_36)
+								return arg1_34 == 0 or arg0_36:getConfig("blueprint_version") == arg1_34
 							end)
 
-							arg0_28.phantomContainer:SetTotalCount(#arg0_28.filterBluePrint, 0)
+							arg0_32.phantomContainer:SetTotalCount(#arg0_32.filterBluePrint, 0)
 						end
 					end, SFX_PANEL)
 				end
 			end)
-			setActive(arg0_28._tf:Find("main/phantom_container/view/tpl"), false)
+			setActive(arg0_32._tf:Find("main/phantom_container/view/tpl"), false)
 
-			arg0_28.phantomContainer = arg0_28._tf:Find("main/phantom_container/view/groups"):GetComponent("LScrollRect")
-			arg0_28.phantomContainer.enabled = true
-			arg0_28.phantomContainer.decelerationRate = 0.07
+			arg0_32.phantomContainer = arg0_32._tf:Find("main/phantom_container/view/groups"):GetComponent("LScrollRect")
+			arg0_32.phantomContainer.enabled = true
+			arg0_32.phantomContainer.decelerationRate = 0.07
 
-			function arg0_28.phantomContainer.onInitItem(arg0_33)
-				arg0_28:getOrInitPhantom(arg0_33)
-				ClearTweenItemAlphaAndWhite(arg0_33)
+			function arg0_32.phantomContainer.onInitItem(arg0_37)
+				arg0_32:getOrInitPhantom(arg0_37)
+				ClearTweenItemAlphaAndWhite(arg0_37)
 			end
 
-			function arg0_28.phantomContainer.onUpdateItem(arg0_34, arg1_34)
-				arg0_28:updatePhantomGroup(arg0_28.filterBluePrint[arg0_34 + 1], arg1_34)
-				TweenItemAlphaAndWhite(arg1_34)
+			function arg0_32.phantomContainer.onUpdateItem(arg0_38, arg1_38)
+				arg0_32:updatePhantomGroup(arg0_32.filterBluePrint[arg0_38 + 1], arg1_38)
+				TweenItemAlphaAndWhite(arg1_38)
 			end
 
-			function arg0_28.phantomContainer.onReturnItem(arg0_35, arg1_35)
-				if arg0_28.exited then
+			function arg0_32.phantomContainer.onReturnItem(arg0_39, arg1_39)
+				if arg0_32.exited then
 					return
 				end
 
-				arg0_28:getOrInitPhantom(arg1_35):clear()
-				ClearTweenItemAlphaAndWhite(arg1_35)
+				arg0_32:getOrInitPhantom(arg1_39):clear()
+				ClearTweenItemAlphaAndWhite(arg1_39)
 			end
 
-			arg0_28.scrollPhantoms = {}
-			arg0_28.phantomGroupDic = {}
+			arg0_32.scrollPhantoms = {}
+			arg0_32.phantomGroupDic = {}
 
-			local var3_29 = 0
+			local var3_33 = 0
 
-			if arg0_28.contextData.techVersion and #underscore.filter(arg0_28.shipBluePrints, function(arg0_36)
-				return arg0_28.contextData.techVersion == 0 or arg0_36:getConfig("blueprint_version") == arg0_28.contextData.techVersion
+			if arg0_32.contextData.techVersion and #underscore.filter(arg0_32.shipBluePrints, function(arg0_40)
+				return arg0_32.contextData.techVersion == 0 or arg0_40:getConfig("blueprint_version") == arg0_32.contextData.techVersion
 			end) > 0 then
-				var3_29 = arg0_28.contextData.techVersion
+				var3_33 = arg0_32.contextData.techVersion
 			end
 
-			arg0_28.contextData.techVersion = nil
+			arg0_32.contextData.techVersion = nil
 
-			triggerToggle(arg0_28._tf:Find("main/phantom_container/title/content"):GetChild(var3_29), true)
+			triggerToggle(arg0_32._tf:Find("main/phantom_container/title/content"):GetChild(var3_33), true)
 		end,
 		[false] = function()
-			arg0_28.initDic = arg0_28.initDic or {}
+			arg0_32.initDic = arg0_32.initDic or {}
 
-			if arg0_28.initDic.ship then
+			if arg0_32.initDic.ship then
 				return
 			end
 
-			arg0_28.initDic.ship = true
-			arg0_28.shipContainer = arg0_28._tf:Find("main/ship_container/ships"):GetComponent("LScrollRect")
-			arg0_28.shipContainer.enabled = true
-			arg0_28.shipContainer.decelerationRate = 0.07
+			arg0_32.initDic.ship = true
+			arg0_32.shipContainer = arg0_32._tf:Find("main/ship_container/ships"):GetComponent("LScrollRect")
+			arg0_32.shipContainer.enabled = true
+			arg0_32.shipContainer.decelerationRate = 0.07
 
-			function arg0_28.shipContainer.onInitItem(arg0_38)
-				arg0_28:onInitItem(arg0_38)
+			function arg0_32.shipContainer.onInitItem(arg0_42)
+				arg0_32:onInitItem(arg0_42)
 			end
 
-			function arg0_28.shipContainer.onUpdateItem(arg0_39, arg1_39)
-				arg0_28:onUpdateItem(arg0_39, arg1_39)
+			function arg0_32.shipContainer.onUpdateItem(arg0_43, arg1_43)
+				arg0_32:onUpdateItem(arg0_43, arg1_43)
 			end
 
-			function arg0_28.shipContainer.onReturnItem(arg0_40, arg1_40)
-				arg0_28:onReturnItem(arg0_40, arg1_40)
+			function arg0_32.shipContainer.onReturnItem(arg0_44, arg1_44)
+				arg0_32:onReturnItem(arg0_44, arg1_44)
 			end
 
-			function arg0_28.shipContainer.onStart()
-				arg0_28:updateSelected()
+			function arg0_32.shipContainer.onStart()
+				arg0_32:updateSelected()
 			end
 
-			arg0_28.shipLayout = arg0_28._tf:Find("main/ship_container/ships")
-			arg0_28.scrollItems = {}
-			arg0_28.cardItemDic = {}
+			arg0_32.shipLayout = arg0_32._tf:Find("main/ship_container/ships")
+			arg0_32.scrollItems = {}
+			arg0_32.cardItemDic = {}
 
-			local var0_37 = _G[arg0_28.contextData.preView]
+			local var0_41 = _G[arg0_32.contextData.preView]
 
-			if var0_37 then
-				arg0_28.sortIndex = var0_37.sortIndex or ShipIndexConst.SortLevel
-				arg0_28.selectAsc = var0_37.selectAsc or false
-				arg0_28.typeIndex = var0_37.typeIndex or ShipIndexConst.TypeAll
-				arg0_28.campIndex = var0_37.campIndex or ShipIndexConst.CampAll
-				arg0_28.rarityIndex = var0_37.rarityIndex or ShipIndexConst.RarityAll
-				arg0_28.extraIndex = var0_37.extraIndex or ShipIndexConst.ExtraAll
-				arg0_28.commonTag = var0_37.commonTag or Ship.PREFERENCE_TAG_NONE
-			elseif arg0_28.contextData.sortData then
-				local var1_37 = arg0_28.contextData.sortData
+			if var0_41 then
+				arg0_32.sortIndex = var0_41.sortIndex or ShipIndexConst.SortLevel
+				arg0_32.selectAsc = var0_41.selectAsc or false
+				arg0_32.typeIndex = var0_41.typeIndex or ShipIndexConst.TypeAll
+				arg0_32.campIndex = var0_41.campIndex or ShipIndexConst.CampAll
+				arg0_32.rarityIndex = var0_41.rarityIndex or ShipIndexConst.RarityAll
+				arg0_32.extraIndex = var0_41.extraIndex or ShipIndexConst.ExtraAll
+				arg0_32.commonTag = var0_41.commonTag or Ship.PREFERENCE_TAG_NONE
+			elseif arg0_32.contextData.sortData then
+				local var1_41 = arg0_32.contextData.sortData
 
-				arg0_28.sortIndex = var1_37.sort or ShipIndexConst.SortLevel
-				arg0_28.selectAsc = var1_37.Asc or false
-				arg0_28.typeIndex = var1_37.typeIndex or ShipIndexConst.TypeAll
-				arg0_28.campIndex = var1_37.campIndex or ShipIndexConst.CampAll
-				arg0_28.rarityIndex = var1_37.rarityIndex or ShipIndexConst.RarityAll
-				arg0_28.extraIndex = var1_37.extraIndex or ShipIndexConst.ExtraAll
-				arg0_28.commonTag = var1_37.commonTag or Ship.PREFERENCE_TAG_NONE
+				arg0_32.sortIndex = var1_41.sort or ShipIndexConst.SortLevel
+				arg0_32.selectAsc = var1_41.Asc or false
+				arg0_32.typeIndex = var1_41.typeIndex or ShipIndexConst.TypeAll
+				arg0_32.campIndex = var1_41.campIndex or ShipIndexConst.CampAll
+				arg0_32.rarityIndex = var1_41.rarityIndex or ShipIndexConst.RarityAll
+				arg0_32.extraIndex = var1_41.extraIndex or ShipIndexConst.ExtraAll
+				arg0_32.commonTag = var1_41.commonTag or Ship.PREFERENCE_TAG_NONE
 			else
-				arg0_28.selectAsc = DockyardScene.selectAsc or false
-				arg0_28.sortIndex = DockyardScene.sortIndex or ShipIndexConst.SortLevel
-				arg0_28.typeIndex = DockyardScene.typeIndex or ShipIndexConst.TypeAll
-				arg0_28.campIndex = DockyardScene.campIndex or ShipIndexConst.CampAll
-				arg0_28.rarityIndex = DockyardScene.rarityIndex or ShipIndexConst.RarityAll
-				arg0_28.extraIndex = DockyardScene.extraIndex or ShipIndexConst.ExtraAll
-				arg0_28.commonTag = DockyardScene.commonTag or Ship.PREFERENCE_TAG_NONE
+				arg0_32.selectAsc = DockyardScene.selectAsc or false
+				arg0_32.sortIndex = DockyardScene.sortIndex or ShipIndexConst.SortLevel
+				arg0_32.typeIndex = DockyardScene.typeIndex or ShipIndexConst.TypeAll
+				arg0_32.campIndex = DockyardScene.campIndex or ShipIndexConst.CampAll
+				arg0_32.rarityIndex = DockyardScene.rarityIndex or ShipIndexConst.RarityAll
+				arg0_32.extraIndex = DockyardScene.extraIndex or ShipIndexConst.ExtraAll
+				arg0_32.commonTag = DockyardScene.commonTag or Ship.PREFERENCE_TAG_NONE
 			end
 
-			arg0_28:updateIndexDatas()
-			triggerToggle(arg0_28.preferenceBtn, arg0_28.commonTag == Ship.PREFERENCE_TAG_COMMON)
-			arg0_28:initIndexPanel()
+			arg0_32:updateIndexDatas()
+			triggerToggle(arg0_32.preferenceBtn, arg0_32.commonTag == Ship.PREFERENCE_TAG_COMMON)
+			arg0_32:initIndexPanel()
 
-			arg0_28.itemDetailType = -1
+			arg0_32.itemDetailType = -1
 
-			if arg0_28.contextData.mode == var0_0.MODE_DESTROY then
-				arg0_28.blacklist = {}
-				arg0_28.selectPanel:GetComponent("HorizontalLayoutGroup").padding.right = 50
+			if arg0_32.contextData.mode == var0_0.MODE_DESTROY then
+				arg0_32.blacklist = {}
+				arg0_32.selectPanel:GetComponent("HorizontalLayoutGroup").padding.right = 50
 
-				setActive(arg0_28.selectPanel:Find("quick_select"), true)
-				setActive(arg0_28.settingBtn, true)
+				setActive(arg0_32.selectPanel:Find("quick_select"), true)
+				setActive(arg0_32.settingBtn, true)
 			else
-				arg0_28.selectPanel:GetComponent("HorizontalLayoutGroup").padding.right = 250
+				arg0_32.selectPanel:GetComponent("HorizontalLayoutGroup").padding.right = 250
 
-				setActive(arg0_28.selectPanel:Find("quick_select"), false)
-				setActive(arg0_28.settingBtn, false)
+				setActive(arg0_32.selectPanel:Find("quick_select"), false)
+				setActive(arg0_32.settingBtn, false)
 			end
 
-			if arg0_28.contextData.mode == var0_0.MODE_GUILD_BOSS then
-				arg0_28.isShowAssultShips = false
+			if arg0_32.contextData.mode == var0_0.MODE_GUILD_BOSS then
+				arg0_32.isShowAssultShips = false
 
-				triggerToggle(arg0_28.assultBtn, true)
+				triggerToggle(arg0_32.assultBtn, true)
 
-				arg0_28.guildShipEquipmentsPage = GuildShipEquipmentsPage.New(arg0_28._tf, arg0_28.event)
+				arg0_32.guildShipEquipmentsPage = GuildShipEquipmentsPage.New(arg0_32._tf, arg0_32.event)
 
-				arg0_28.guildShipEquipmentsPage:SetCallBack(function()
-					arg0_28:TriggerCard(-1)
+				arg0_32.guildShipEquipmentsPage:SetCallBack(function()
+					arg0_32:TriggerCard(-1)
 				end, function()
-					arg0_28:TriggerCard(1)
+					arg0_32:TriggerCard(1)
 				end)
 			end
 
-			eachChild(arg0_28.attrBtn, function(arg0_44)
-				setActive(arg0_44, false)
+			eachChild(arg0_32.attrBtn, function(arg0_48)
+				setActive(arg0_48, false)
 			end)
 
-			arg0_28.isFormTactics = arg0_28.contextData.prevPage == "NewNavalTacticsMediator"
+			arg0_32.isFormTactics = arg0_32.contextData.prevPage == "NewNavalTacticsMediator"
 
-			local var2_37 = arg0_28.attrBtn:Find("off"):GetComponent("Image")
-			local var3_37 = arg0_28.attrBtn:Find("on"):GetComponent("Image")
+			local var2_41 = arg0_32.attrBtn:Find("off"):GetComponent("Image")
+			local var3_41 = arg0_32.attrBtn:Find("on"):GetComponent("Image")
 
-			if arg0_28.isFormTactics then
-				GetImageSpriteFromAtlasAsync("ui/dockyardui_atlas", "skill_off", var2_37)
-				GetImageSpriteFromAtlasAsync("ui/dockyardui_atlas", "skill_on", var3_37)
+			if arg0_32.isFormTactics then
+				GetImageSpriteFromAtlasAsync("ui/dockyardui_atlas", "skill_off", var2_41)
+				GetImageSpriteFromAtlasAsync("ui/dockyardui_atlas", "skill_on", var3_41)
 			else
-				GetImageSpriteFromAtlasAsync("ui/dockyardui_atlas", "attr_off", var2_37)
-				GetImageSpriteFromAtlasAsync("ui/dockyardui_atlas", "attr_on", var3_37)
+				GetImageSpriteFromAtlasAsync("ui/dockyardui_atlas", "attr_off", var2_41)
+				GetImageSpriteFromAtlasAsync("ui/dockyardui_atlas", "attr_on", var3_41)
 			end
 
-			triggerButton(arg0_28.attrBtn)
+			triggerButton(arg0_32.attrBtn)
 
-			if arg0_28.isRemouldOrUpgradeMode then
-				local var4_37 = getProxy(SettingsProxy)
+			if arg0_32.isRemouldOrUpgradeMode then
+				local var4_41 = getProxy(SettingsProxy)
 
-				arg0_28.isFilterLevelForMod = var4_37:GetDockYardLevelBtnFlag()
+				arg0_32.isFilterLevelForMod = var4_41:GetDockYardLevelBtnFlag()
 
-				arg0_28:OnSwitch(arg0_28.modLeveFilter, arg0_28.isFilterLevelForMod, function(arg0_45)
-					arg0_28.isFilterLevelForMod = arg0_45
+				arg0_32:OnSwitch(arg0_32.modLeveFilter, arg0_32.isFilterLevelForMod, function(arg0_49)
+					arg0_32.isFilterLevelForMod = arg0_49
 
-					arg0_28:filter()
+					arg0_32:filter()
 				end)
 
-				arg0_28.isFilterLockForMod = var4_37:GetDockYardLockBtnFlag()
+				arg0_32.isFilterLockForMod = var4_41:GetDockYardLockBtnFlag()
 
-				arg0_28:OnSwitch(arg0_28.modLockFilter, arg0_28.isFilterLockForMod, function(arg0_46)
-					arg0_28.isFilterLockForMod = arg0_46
+				arg0_32:OnSwitch(arg0_32.modLockFilter, arg0_32.isFilterLockForMod, function(arg0_50)
+					arg0_32.isFilterLockForMod = arg0_50
 
-					arg0_28:filter()
+					arg0_32:filter()
 				end)
 			end
 
-			arg0_28.shipContainer:GetComponentInChildren(typeof(GridLayoutGroup)).constraintCount = 7
+			arg0_32.shipContainer:GetComponentInChildren(typeof(GridLayoutGroup)).constraintCount = 7
 
-			arg0_28:filter()
+			arg0_32:filter()
 		end
 	})
 
-	if arg0_28.isPhantomMode then
-		setActive(arg0_28.listEmptyTF, #arg0_28.filterBluePrint == 0)
+	if arg0_32.isPhantomMode then
+		setActive(arg0_32.listEmptyTF, #arg0_32.filterBluePrint == 0)
 	else
-		setActive(arg0_28.listEmptyTF, #arg0_28.shipVOs <= 0)
+		setActive(arg0_32.listEmptyTF, #arg0_32.shipVOs <= 0)
 	end
 end
 
-function var0_0.isDefaultStatus(arg0_47)
-	return arg0_47.sortIndex == ShipIndexConst.SortLevel and (not arg0_47.typeIndex or arg0_47.typeIndex == ShipIndexConst.TypeAll) and (not arg0_47.campIndex or arg0_47.campIndex == ShipIndexConst.CampAll) and (not arg0_47.rarityIndex or arg0_47.rarityIndex == ShipIndexConst.RarityAll) and (not arg0_47.extraIndex or arg0_47.extraIndex == ShipIndexConst.ExtraAll)
+function var0_0.isDefaultStatus(arg0_51)
+	return arg0_51.sortIndex == ShipIndexConst.SortLevel and (not arg0_51.typeIndex or arg0_51.typeIndex == ShipIndexConst.TypeAll) and (not arg0_51.campIndex or arg0_51.campIndex == ShipIndexConst.CampAll) and (not arg0_51.rarityIndex or arg0_51.rarityIndex == ShipIndexConst.RarityAll) and (not arg0_51.extraIndex or arg0_51.extraIndex == ShipIndexConst.ExtraAll)
 end
 
-function var0_0.setShipsCount(arg0_48, arg1_48, arg2_48)
-	arg0_48.shipsCount = arg1_48
-	arg0_48.specialShipCount = arg2_48
+function var0_0.setShipsCount(arg0_52, arg1_52, arg2_52)
+	arg0_52.shipsCount = arg1_52
+	arg0_52.specialShipCount = arg2_52
 end
 
-function var0_0.GetCard(arg0_49, arg1_49)
-	return DockyardShipItem.New(arg1_49, arg0_49.contextData.hideTagFlags, arg0_49.contextData.blockTagFlags)
+function var0_0.GetCard(arg0_53, arg1_53)
+	return DockyardShipItem.New(arg1_53, arg0_53.contextData.hideTagFlags, arg0_53.contextData.blockTagFlags)
 end
 
-function var0_0.OnClickCard(arg0_50, arg1_50)
-	if arg1_50.shipVO then
-		if not arg0_50.selecteEnabled then
+function var0_0.OnClickCard(arg0_54, arg1_54)
+	if arg1_54.shipVO then
+		if not arg0_54.selecteEnabled then
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_CLICK)
 
-			DockyardScene.value = arg0_50.shipContainer.value
+			DockyardScene.value = arg0_54.shipContainer.value
 
-			arg0_50.onClick(arg1_50.shipVO, arg0_50.shipVOs)
+			arg0_54.onClick(arg1_54.shipVO, arg0_54.shipVOs)
 		else
-			pg.CriMgr.GetInstance():PlaySoundEffect_V3(table.contains(arg0_50.selectedIds, arg1_50.shipVO.id) and SFX_UI_CANCEL or SFX_UI_FORMATION_SELECT)
-			arg0_50:selectShip(arg1_50.shipVO)
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(table.contains(arg0_54.selectedIds, arg1_54.shipVO.id) and SFX_UI_CANCEL or SFX_UI_FORMATION_SELECT)
+			arg0_54:selectShip(arg1_54.shipVO)
 		end
 	else
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_CLICK)
 
-		if arg0_50.callbackQuit then
-			arg0_50.onSelected({}, function()
-				arg0_50:back()
+		if arg0_54.callbackQuit then
+			arg0_54.onSelected({}, function()
+				arg0_54:back()
 			end)
-		elseif not arg1_50.isLoading then
-			arg0_50.onSelected({})
-			arg0_50:back()
+		elseif not arg1_54.isLoading then
+			arg0_54.onSelected({})
+			arg0_54:back()
 		end
 	end
 end
 
-function var0_0.OnClickPhantom(arg0_52, arg1_52)
-	if arg1_52.phantomId == 0 then
+function var0_0.OnClickPhantom(arg0_56, arg1_56)
+	if arg1_56.phantomId == 0 then
 		return
 	else
-		arg0_52:emit(DockyardMediator.CHANGE_SKIN, arg1_52)
+		arg0_56:emit(DockyardMediator.CHANGE_SKIN, arg1_56)
 	end
 end
 
-function var0_0.onInitItem(arg0_53, arg1_53)
-	if arg0_53.scrollItems[arg1_53] then
-		return arg0_53.scrollItems[arg1_53]
+function var0_0.onInitItem(arg0_57, arg1_57)
+	if arg0_57.scrollItems[arg1_57] then
+		return arg0_57.scrollItems[arg1_57]
 	end
 
-	local var0_53 = arg0_53:GetCard(arg1_53)
+	local var0_57 = arg0_57:GetCard(arg1_57)
 
-	var0_53:updateDetail(arg0_53.itemDetailType)
+	var0_57:updateDetail(arg0_57.itemDetailType)
 
-	var0_53.isLoading = true
+	var0_57.isLoading = true
 
-	onButton(arg0_53, var0_53.go, function()
-		arg0_53:OnClickCard(var0_53)
+	onButton(arg0_57, var0_57.go, function()
+		arg0_57:OnClickCard(var0_57)
 	end)
 
-	local var1_53 = GetOrAddComponent(var0_53.go, "UILongPressTrigger").onLongPressed
+	local var1_57 = GetOrAddComponent(var0_57.go, "UILongPressTrigger").onLongPressed
 
-	if arg0_53.contextData.preView == NewBackYardShipInfoLayer.__cname then
-		var1_53:RemoveAllListeners()
-		var1_53:AddListener(function()
-			if var0_53.shipVO then
-				arg0_53.contextData.selectedIds = arg0_53.selectedIds
+	if arg0_57.contextData.preView == NewBackYardShipInfoLayer.__cname then
+		var1_57:RemoveAllListeners()
+		var1_57:AddListener(function()
+			if var0_57.shipVO then
+				arg0_57.contextData.selectedIds = arg0_57.selectedIds
 
-				arg0_53.onClick(var0_53.shipVO, underscore.select(arg0_53.shipVOs, function(arg0_56)
-					return arg0_56
-				end), arg0_53.contextData)
+				arg0_57.onClick(var0_57.shipVO, underscore.select(arg0_57.shipVOs, function(arg0_60)
+					return arg0_60
+				end), arg0_57.contextData)
 			end
 		end)
 	else
-		var1_53:RemoveAllListeners()
+		var1_57:RemoveAllListeners()
 	end
 
-	arg0_53.scrollItems[arg1_53] = var0_53
+	arg0_57.scrollItems[arg1_57] = var0_57
 
-	return var0_53
+	return var0_57
 end
 
-function var0_0.getOrInitPhantom(arg0_57, arg1_57)
-	arg0_57.scrollPhantoms[arg1_57] = arg0_57.scrollPhantoms[arg1_57] or {
+function var0_0.getOrInitPhantom(arg0_61, arg1_61)
+	arg0_61.scrollPhantoms[arg1_61] = arg0_61.scrollPhantoms[arg1_61] or {
 		isClear = true,
-		go = arg1_57,
-		tf = tf(arg1_57),
-		updateSelected = function(arg0_58, arg1_58)
-			arg0_58.shipCard:updateSelected(arg1_58[0])
-			eachChild(arg0_58.tf:Find("phantoms"), function(arg0_59, arg1_59)
-				arg1_59 = arg1_59 + 1
+		go = arg1_61,
+		tf = tf(arg1_61),
+		updateSelected = function(arg0_62, arg1_62)
+			arg0_62.shipCard:updateSelected(arg1_62[0])
+			eachChild(arg0_62.tf:Find("phantoms"), function(arg0_63, arg1_63)
+				arg1_63 = arg1_63 + 1
 
-				local var0_59 = arg0_58.phantoms[arg1_59 + 1]
+				local var0_63 = arg0_62.phantoms[arg1_63 + 1]
 
-				setActive(arg0_59:Find("selected"), var0_59 and arg1_58[var0_59.phantomId])
+				setActive(arg0_63:Find("selected"), var0_63 and arg1_62[var0_63.phantomId])
 			end)
 		end,
-		clear = function(arg0_60)
-			if arg0_60.isClear then
+		clear = function(arg0_64)
+			if arg0_64.isClear then
 				return
 			end
 
-			arg0_60.shipCard:clear()
+			arg0_64.shipCard:clear()
 
-			arg0_60.isClear = true
+			arg0_64.isClear = true
 		end
 	}
 
-	return arg0_57.scrollPhantoms[arg1_57]
+	return arg0_61.scrollPhantoms[arg1_61]
 end
 
-function var0_0.updatePhantomGroup(arg0_61, arg1_61, arg2_61)
-	local var0_61 = arg0_61:getOrInitPhantom(arg2_61)
+function var0_0.updatePhantomGroup(arg0_65, arg1_65, arg2_65)
+	local var0_65 = arg0_65:getOrInitPhantom(arg2_65)
 
-	var0_61.isClear = false
-	arg0_61.phantomGroupDic[arg1_61.shipId] = arg2_61
-	var0_61.shipCard = var0_61.shipCard or arg0_61:GetCard(var0_61.tf:Find("card"):GetChild(0).gameObject)
+	var0_65.isClear = false
+	arg0_65.phantomGroupDic[arg1_65.shipId] = arg2_65
+	var0_65.shipCard = var0_65.shipCard or arg0_65:GetCard(var0_65.tf:Find("card"):GetChild(0).gameObject)
 
-	local var1_61 = arg0_61.shipVOsById[arg1_61.shipId]:getAllShipPhantom()
+	local var1_65 = arg0_65.shipVOsById[arg1_65.shipId]:getAllShipPhantom()
 
-	assert(var1_61[1].phantomId == 0)
+	assert(var1_65[1].phantomId == 0)
 
-	var0_61.phantoms = var1_61
+	var0_65.phantoms = var1_65
 
-	var0_61.shipCard:update(var1_61[1])
-	var0_61.shipCard:updateSelected(underscore.any(arg0_61.selectedIds, function(arg0_62)
-		return arg0_62 == var1_61[1].id
+	var0_65.shipCard:update(var1_65[1])
+	var0_65.shipCard:updateSelected(underscore.any(arg0_65.selectedIds, function(arg0_66)
+		return arg0_66 == var1_65[1].id
 	end))
-	arg0_61:updateItemBlackBlock(var0_61.shipCard)
+	arg0_65:updateItemBlackBlock(var0_65.shipCard)
 
-	var0_61.shipCard.isLoading = false
+	var0_65.shipCard.isLoading = false
 
-	var0_61.shipCard:updateIntimacyEnergy(false)
-	var0_61.shipCard:updateIntimacy(false)
-	onButton(arg0_61, var0_61.shipCard.tr, function()
-		arg0_61:OnClickPhantom(var1_61[1])
+	var0_65.shipCard:updateIntimacyEnergy(false)
+	var0_65.shipCard:updateIntimacy(false)
+	onButton(arg0_65, var0_65.shipCard.tr, function()
+		arg0_65:OnClickPhantom(var1_65[1])
 	end, SFX_UI_CLICK)
 
-	local var2_61 = getGameset("technology_shadow_num")[1]
-	local var3_61 = var0_61.tf:Find("phantoms")
+	local var2_65 = getGameset("technology_shadow_num")[1]
+	local var3_65 = var0_65.tf:Find("phantoms")
 
-	UIItemList.StaticAlign(var3_61, var3_61:GetChild(0), var2_61, function(arg0_64, arg1_64, arg2_64)
-		arg1_64 = arg1_64 + 1
+	UIItemList.StaticAlign(var3_65, var3_65:GetChild(0), var2_65, function(arg0_68, arg1_68, arg2_68)
+		arg1_68 = arg1_68 + 1
 
-		if arg0_64 == UIItemList.EventUpdate then
-			local var0_64 = var1_61[arg1_64 + 1]
+		if arg0_68 == UIItemList.EventUpdate then
+			local var0_68 = var1_65[arg1_68 + 1]
 
-			setActive(arg2_64:Find("skin"), tobool(var0_64))
-			setActive(arg2_64:Find("lock"), not var0_64)
+			setActive(arg2_68:Find("skin"), tobool(var0_68))
+			setActive(arg2_68:Find("lock"), not var0_68)
 
-			if var0_64 then
-				GetImageSpriteFromAtlasAsync("shipYardIcon/" .. var0_64:getPainting(), "", arg2_64:Find("skin/Image"))
+			if var0_68 then
+				GetImageSpriteFromAtlasAsync("shipYardIcon/" .. var0_68:getPainting(), "", arg2_68:Find("skin/Image"))
 
-				local var1_64 = var0_64:getSkinId()
+				local var1_68 = var0_68:getSkinId()
 
-				changeToScrollText(arg2_64:Find("skin/name/Text"), pg.ship_skin_template[var1_64].name)
-				setActive(arg2_64:Find("skin/status"), false)
+				changeToScrollText(arg2_68:Find("skin/name/Text"), pg.ship_skin_template[var1_68].name)
+				setActive(arg2_68:Find("skin/status"), false)
 
-				local var2_64 = var0_64:GetShipPhantomMark()
+				local var2_68 = var0_68:GetShipPhantomMark()
 
-				setActive(arg2_64:Find("selected"), underscore.any(arg0_61.selectedMarks or {}, function(arg0_65)
-					return var2_64 == arg0_65
+				setActive(arg2_68:Find("selected"), underscore.any(arg0_65.selectedMarks or {}, function(arg0_69)
+					return var2_68 == arg0_69
 				end))
-				setActive(arg2_64:Find("skin/mark/base"), arg0_61.contextData.mode ~= var0_0.MODE_SHIP_PHANTOM)
-				setActive(arg2_64:Find("skin/mark/toggle"), arg0_61.contextData.mode == var0_0.MODE_SHIP_PHANTOM)
+				setActive(arg2_68:Find("skin/mark/base"), arg0_65.contextData.mode ~= var0_0.MODE_SHIP_PHANTOM)
+				setActive(arg2_68:Find("skin/mark/toggle"), arg0_65.contextData.mode == var0_0.MODE_SHIP_PHANTOM)
 
-				local var3_64 = var0_64:getRandomFlag()
+				local var3_68 = var0_68:getRandomFlag()
 
-				onToggle(arg0_61, arg2_64:Find("skin/mark/toggle"), function(arg0_66)
-					if arg0_66 ~= var3_64 then
-						var3_64 = arg0_66
+				onToggle(arg0_65, arg2_68:Find("skin/mark/toggle"), function(arg0_70)
+					if arg0_70 ~= var3_68 then
+						var3_68 = arg0_70
 
-						arg0_61:emit(DockyardMediator.CHANGE_RANDOM_FLAG, var0_64:GetShipPhantomMark(), var3_64)
+						arg0_65:emit(DockyardMediator.CHANGE_RANDOM_FLAG, var0_68:GetShipPhantomMark(), var3_68)
 					end
 				end, SFX_UI_CLICK)
-				triggerToggle(arg2_64:Find("skin/mark/toggle"), var3_64)
+				triggerToggle(arg2_68:Find("skin/mark/toggle"), var3_68)
 			else
-				setActive(arg2_64:Find("selected"), false)
+				setActive(arg2_68:Find("selected"), false)
 			end
 
-			onButton(arg0_61, arg2_64, function()
-				if var0_64 then
-					arg0_61:OnClickPhantom(var0_64)
+			onButton(arg0_65, arg2_68, function()
+				if var0_68 then
+					arg0_65:OnClickPhantom(var0_68)
 				else
 					pg.TipsMgr.GetInstance():ShowTips(i18n("shadow_unlock_tip"))
 				end
@@ -687,78 +787,78 @@ function var0_0.updatePhantomGroup(arg0_61, arg1_61, arg2_61)
 	end)
 end
 
-function var0_0.showEnergyDesc(arg0_68, arg1_68, arg2_68)
-	if LeanTween.isTweening(go(arg0_68.energyDescTF)) then
-		LeanTween.cancel(go(arg0_68.energyDescTF))
+function var0_0.showEnergyDesc(arg0_72, arg1_72, arg2_72)
+	if LeanTween.isTweening(go(arg0_72.energyDescTF)) then
+		LeanTween.cancel(go(arg0_72.energyDescTF))
 
-		arg0_68.energyDescTF.localScale = Vector3.one
+		arg0_72.energyDescTF.localScale = Vector3.one
 	end
 
-	setText(arg0_68.energyDescTextTF, i18n(arg2_68))
+	setText(arg0_72.energyDescTextTF, i18n(arg2_72))
 
-	arg0_68.energyDescTF.position = arg1_68
+	arg0_72.energyDescTF.position = arg1_72
 
-	setActive(arg0_68.energyDescTF, true)
-	LeanTween.scale(arg0_68.energyDescTF, Vector3.zero, 0.2):setDelay(1):setFrom(Vector3.one):setOnComplete(System.Action(function()
-		arg0_68.energyDescTF.localScale = Vector3.one
+	setActive(arg0_72.energyDescTF, true)
+	LeanTween.scale(arg0_72.energyDescTF, Vector3.zero, 0.2):setDelay(1):setFrom(Vector3.one):setOnComplete(System.Action(function()
+		arg0_72.energyDescTF.localScale = Vector3.one
 
-		setActive(arg0_68.energyDescTF, false)
+		setActive(arg0_72.energyDescTF, false)
 	end))
 end
 
-function var0_0.onUpdateItem(arg0_70, arg1_70, arg2_70)
-	local var0_70 = arg0_70.shipVOs[arg1_70 + 1]
-	local var1_70 = var0_70 and var0_70.id or 0
+function var0_0.onUpdateItem(arg0_74, arg1_74, arg2_74)
+	local var0_74 = arg0_74.shipVOs[arg1_74 + 1]
+	local var1_74 = var0_74 and var0_74.id or 0
 
-	arg0_70.cardItemDic[var1_70] = arg2_70
+	arg0_74.cardItemDic[var1_74] = arg2_74
 
-	local var2_70 = arg0_70:onInitItem(arg2_70)
+	local var2_74 = arg0_74:onInitItem(arg2_74)
 
-	var2_70:update(var0_70)
+	var2_74:update(var0_74)
 
-	if arg0_70.contextData.mode == DockyardScene.MODE_WORLD then
-		var2_70:updateWorld()
+	if arg0_74.contextData.mode == DockyardScene.MODE_WORLD then
+		var2_74:updateWorld()
 	end
 
-	var2_70:updateSelected(var2_70.shipVO and underscore.any(arg0_70.selectedIds, function(arg0_71)
-		return var2_70.shipVO.id == arg0_71
+	var2_74:updateSelected(var2_74.shipVO and underscore.any(arg0_74.selectedIds, function(arg0_75)
+		return var2_74.shipVO.id == arg0_75
 	end))
-	arg0_70:updateItemBlackBlock(var2_70)
+	arg0_74:updateItemBlackBlock(var2_74)
 
-	var2_70.isLoading = false
+	var2_74.isLoading = false
 
-	var2_70:updateIntimacyEnergy(arg0_70.contextData.energyDisplay or arg0_70.sortIndex == ShipIndexConst.SortEnergy)
+	var2_74:updateIntimacyEnergy(arg0_74.contextData.energyDisplay or arg0_74.sortIndex == ShipIndexConst.SortEnergy)
 
-	local var3_70 = (arg0_70.sortIndex == ShipIndexConst.SortIntimacy or arg0_70.extraIndex == ShipIndexConst.ExtraMarry) and arg0_70.contextData.mode ~= DockyardScene.MODE_UPGRADE
+	local var3_74 = (arg0_74.sortIndex == ShipIndexConst.SortIntimacy or arg0_74.extraIndex == ShipIndexConst.ExtraMarry) and arg0_74.contextData.mode ~= DockyardScene.MODE_UPGRADE
 
-	var2_70:updateIntimacy(var3_70)
+	var2_74:updateIntimacy(var3_74)
 end
 
-function var0_0.onReturnItem(arg0_72, arg1_72, arg2_72)
-	if arg0_72.exited then
+function var0_0.onReturnItem(arg0_76, arg1_76, arg2_76)
+	if arg0_76.exited then
 		return
 	end
 
-	local var0_72 = arg0_72.scrollItems[arg2_72]
+	local var0_76 = arg0_76.scrollItems[arg2_76]
 
-	if var0_72 then
-		var0_72:clear()
+	if var0_76 then
+		var0_76:clear()
 	end
 end
 
-function var0_0.updateIndexDatas(arg0_73)
-	arg0_73.contextData.indexDatas = arg0_73.contextData.indexDatas or {}
-	arg0_73.contextData.indexDatas.sortIndex = arg0_73.sortIndex
-	arg0_73.contextData.indexDatas.typeIndex = arg0_73.typeIndex
-	arg0_73.contextData.indexDatas.campIndex = arg0_73.campIndex
-	arg0_73.contextData.indexDatas.rarityIndex = arg0_73.rarityIndex
-	arg0_73.contextData.indexDatas.extraIndex = arg0_73.extraIndex
+function var0_0.updateIndexDatas(arg0_77)
+	arg0_77.contextData.indexDatas = arg0_77.contextData.indexDatas or {}
+	arg0_77.contextData.indexDatas.sortIndex = arg0_77.sortIndex
+	arg0_77.contextData.indexDatas.typeIndex = arg0_77.typeIndex
+	arg0_77.contextData.indexDatas.campIndex = arg0_77.campIndex
+	arg0_77.contextData.indexDatas.rarityIndex = arg0_77.rarityIndex
+	arg0_77.contextData.indexDatas.extraIndex = arg0_77.extraIndex
 end
 
-function var0_0.initIndexPanel(arg0_74)
-	onButton(arg0_74, arg0_74.indexBtn, function()
-		local var0_75 = {
-			indexDatas = Clone(arg0_74.contextData.indexDatas),
+function var0_0.initIndexPanel(arg0_78)
+	onButton(arg0_78, arg0_78.indexBtn, function()
+		local var0_79 = {
+			indexDatas = Clone(arg0_78.contextData.indexDatas),
 			customPanels = {
 				minHeight = 650,
 				sortIndex = {
@@ -844,144 +944,144 @@ function var0_0.initIndexPanel(arg0_74)
 					}
 				}
 			},
-			callback = function(arg0_76)
-				arg0_74.sortIndex = arg0_76.sortIndex
-				arg0_74.typeIndex = arg0_76.typeIndex
-				arg0_74.campIndex = arg0_76.campIndex
-				arg0_74.rarityIndex = arg0_76.rarityIndex
-				arg0_74.extraIndex = arg0_76.extraIndex
+			callback = function(arg0_80)
+				arg0_78.sortIndex = arg0_80.sortIndex
+				arg0_78.typeIndex = arg0_80.typeIndex
+				arg0_78.campIndex = arg0_80.campIndex
+				arg0_78.rarityIndex = arg0_80.rarityIndex
+				arg0_78.extraIndex = arg0_80.extraIndex
 
-				arg0_74:updateIndexDatas()
-				arg0_74:filter()
+				arg0_78:updateIndexDatas()
+				arg0_78:filter()
 			end
 		}
 
-		arg0_74:emit(DockyardMediator.OPEN_DOCKYARD_INDEX, var0_75)
+		arg0_78:emit(DockyardMediator.OPEN_DOCKYARD_INDEX, var0_79)
 	end, SFX_PANEL)
-	onToggle(arg0_74, arg0_74.preferenceBtn, function(arg0_77)
-		if arg0_77 then
-			arg0_74.commonTag = Ship.PREFERENCE_TAG_COMMON
+	onToggle(arg0_78, arg0_78.preferenceBtn, function(arg0_81)
+		if arg0_81 then
+			arg0_78.commonTag = Ship.PREFERENCE_TAG_COMMON
 		else
-			arg0_74.commonTag = Ship.PREFERENCE_TAG_NONE
+			arg0_78.commonTag = Ship.PREFERENCE_TAG_NONE
 		end
 
-		arg0_74:filter()
+		arg0_78:filter()
 	end)
 end
 
-function var0_0.setShips(arg0_78, arg1_78)
-	arg0_78.shipVOsById = arg1_78
+function var0_0.setShips(arg0_82, arg1_82)
+	arg0_82.shipVOsById = arg1_82
 
-	local var0_78 = getProxy(TechnologyProxy)
+	local var0_82 = getProxy(TechnologyProxy)
 
-	arg0_78.shipBluePrints = {}
+	arg0_82.shipBluePrints = {}
 
-	for iter0_78, iter1_78 in ipairs(var0_78:getAllBluePrintShipIds()) do
-		local var1_78 = getProxy(BayProxy):getShipById(iter1_78)
+	for iter0_82, iter1_82 in ipairs(var0_82:getAllBluePrintShipIds()) do
+		local var1_82 = getProxy(BayProxy):getShipById(iter1_82)
 
-		if #var1_78:getAllShipPhantomMarks() > 1 then
-			table.insert(arg0_78.shipBluePrints, var0_78:getBluePrintById(var1_78.groupId))
+		if #var1_82:getAllShipPhantomMarks() > 1 then
+			table.insert(arg0_82.shipBluePrints, var0_82:getBluePrintById(var1_82.groupId))
 		end
 	end
 
-	table.sort(arg0_78.shipBluePrints, CompareFuncs({
-		function(arg0_79)
-			return arg0_79:getConfig("blueprint_version")
+	table.sort(arg0_82.shipBluePrints, CompareFuncs({
+		function(arg0_83)
+			return arg0_83:getConfig("blueprint_version")
 		end,
-		function(arg0_80)
-			return arg0_80.id
+		function(arg0_84)
+			return arg0_84.id
 		end
 	}))
 end
 
-function var0_0.setPlayer(arg0_81, arg1_81)
-	arg0_81.player = arg1_81
+function var0_0.setPlayer(arg0_85, arg1_85)
+	arg0_85.player = arg1_85
 
-	arg0_81:updateBarInfo()
+	arg0_85:updateBarInfo()
 end
 
-function var0_0.updateBarInfo(arg0_82)
-	setActive(arg0_82.bottomTipsText, arg0_82.contextData.leftTopInfo)
-	setText(arg0_82.bottomTipsText, arg0_82.contextData.leftTopInfo and i18n("dock_yard_left_tips", arg0_82.contextData.leftTopInfo) or "")
-	setActive(arg0_82.bottomTipsWithFrame, arg0_82.contextData.leftTopWithFrameInfo)
-	setText(arg0_82.bottomTipsWithFrame:Find("Text"), arg0_82.contextData.leftTopWithFrameInfo or "")
+function var0_0.updateBarInfo(arg0_86)
+	setActive(arg0_86.bottomTipsText, arg0_86.contextData.leftTopInfo)
+	setText(arg0_86.bottomTipsText, arg0_86.contextData.leftTopInfo and i18n("dock_yard_left_tips", arg0_86.contextData.leftTopInfo) or "")
+	setActive(arg0_86.bottomTipsWithFrame, arg0_86.contextData.leftTopWithFrameInfo)
+	setText(arg0_86.bottomTipsWithFrame:Find("Text"), arg0_86.contextData.leftTopWithFrameInfo or "")
 
-	if arg0_82.contextData.mode == var0_0.MODE_WORLD or arg0_82.contextData.mode == var0_0.MODE_GUILD_BOSS or arg0_82.contextData.mode == var0_0.MODE_REMOULD or arg0_82.isPhantomMode then
-		setActive(arg0_82.leftTipsText, false)
+	if arg0_86.contextData.mode == var0_0.MODE_WORLD or arg0_86.contextData.mode == var0_0.MODE_GUILD_BOSS or arg0_86.contextData.mode == var0_0.MODE_REMOULD or arg0_86.isPhantomMode then
+		setActive(arg0_86.leftTipsText, false)
 	else
-		setActive(arg0_82.leftTipsText, true)
-		arg0_82:updateCapacityDisplay()
+		setActive(arg0_86.leftTipsText, true)
+		arg0_86:updateCapacityDisplay()
 	end
 end
 
-function var0_0.updateCapacityDisplay(arg0_83)
-	setActive(arg0_83.leftTipsText:Find("plus"), not arg0_83.isCapacityMeta)
-	setActive(arg0_83.leftTipsText:Find("tip"), arg0_83.isCapacityMeta)
-	setActive(arg0_83.leftTipsText:Find("switch/off"), not arg0_83.isCapacityMeta)
-	setActive(arg0_83.leftTipsText:Find("switch/on"), arg0_83.isCapacityMeta)
+function var0_0.updateCapacityDisplay(arg0_87)
+	setActive(arg0_87.leftTipsText:Find("plus"), not arg0_87.isCapacityMeta)
+	setActive(arg0_87.leftTipsText:Find("tip"), arg0_87.isCapacityMeta)
+	setActive(arg0_87.leftTipsText:Find("switch/off"), not arg0_87.isCapacityMeta)
+	setActive(arg0_87.leftTipsText:Find("switch/on"), arg0_87.isCapacityMeta)
 
-	if arg0_83.isCapacityMeta then
-		setText(arg0_83.leftTipsText:Find("label"), i18n("specialshipyard_name"))
-		setText(arg0_83.leftTipsText:Find("Text"), arg0_83.specialShipCount)
+	if arg0_87.isCapacityMeta then
+		setText(arg0_87.leftTipsText:Find("label"), i18n("specialshipyard_name"))
+		setText(arg0_87.leftTipsText:Find("Text"), arg0_87.specialShipCount)
 	else
-		setText(arg0_83.leftTipsText:Find("label"), i18n("ship_dockyardScene_capacity"))
-		setText(arg0_83.leftTipsText:Find("Text"), arg0_83.shipsCount .. "/" .. arg0_83.player:getMaxShipBag())
+		setText(arg0_87.leftTipsText:Find("label"), i18n("ship_dockyardScene_capacity"))
+		setText(arg0_87.leftTipsText:Find("Text"), arg0_87.shipsCount .. "/" .. arg0_87.player:getMaxShipBag())
 	end
 end
 
-function var0_0.initWorldPanel(arg0_84)
-	onButton(arg0_84, arg0_84.worldPanel:Find("btn_repair"), function()
-		if #arg0_84.selectedIds > 0 then
-			arg0_84:repairWorldShip(arg0_84.shipVOsById[arg0_84.selectedIds[1]])
+function var0_0.initWorldPanel(arg0_88)
+	onButton(arg0_88, arg0_88.worldPanel:Find("btn_repair"), function()
+		if #arg0_88.selectedIds > 0 then
+			arg0_88:repairWorldShip(arg0_88.shipVOsById[arg0_88.selectedIds[1]])
 		end
 	end, SFX_PANEL)
-	onButton(arg0_84, arg0_84.worldPanel:Find("btn_repair_all"), function()
-		local var0_86 = {}
-		local var1_86 = 0
+	onButton(arg0_88, arg0_88.worldPanel:Find("btn_repair_all"), function()
+		local var0_90 = {}
+		local var1_90 = 0
 
-		for iter0_86, iter1_86 in pairs(arg0_84.shipVOsById) do
-			local var2_86 = WorldConst.FetchWorldShip(iter1_86.id)
+		for iter0_90, iter1_90 in pairs(arg0_88.shipVOsById) do
+			local var2_90 = WorldConst.FetchWorldShip(iter1_90.id)
 
-			if var2_86:IsBroken() or not var2_86:IsHpFull() then
-				table.insert(var0_86, var2_86.id)
+			if var2_90:IsBroken() or not var2_90:IsHpFull() then
+				table.insert(var0_90, var2_90.id)
 
-				var1_86 = var1_86 + nowWorld():CalcRepairCost(var2_86)
+				var1_90 = var1_90 + nowWorld():CalcRepairCost(var2_90)
 			end
 		end
 
-		if #var0_86 == 0 then
+		if #var0_90 == 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("world_ship_repair_no_need"))
 		else
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
-				content = i18n("world_ship_repair_all", var1_86),
+				content = i18n("world_ship_repair_all", var1_90),
 				onYes = function()
-					arg0_84:emit(DockyardMediator.ON_SHIP_REPAIR, var0_86, var1_86)
+					arg0_88:emit(DockyardMediator.ON_SHIP_REPAIR, var0_90, var1_90)
 				end
 			})
 		end
 	end, SFX_PANEL)
 end
 
-function var0_0.repairWorldShip(arg0_88, arg1_88)
-	local var0_88 = WorldConst.FetchWorldShip(arg1_88.id)
-	local var1_88 = nowWorld():CalcRepairCost(var0_88)
+function var0_0.repairWorldShip(arg0_92, arg1_92)
+	local var0_92 = WorldConst.FetchWorldShip(arg1_92.id)
+	local var1_92 = nowWorld():CalcRepairCost(var0_92)
 
-	if var0_88:IsBroken() then
+	if var0_92:IsBroken() then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			content = i18n("world_ship_repair_2", arg1_88:getName(), var1_88),
+			content = i18n("world_ship_repair_2", arg1_92:getName(), var1_92),
 			onYes = function()
-				arg0_88:emit(DockyardMediator.ON_SHIP_REPAIR, {
-					var0_88.id
-				}, var1_88)
+				arg0_92:emit(DockyardMediator.ON_SHIP_REPAIR, {
+					var0_92.id
+				}, var1_92)
 			end
 		})
-	elseif not var0_88:IsHpFull() then
+	elseif not var0_92:IsHpFull() then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			content = i18n("world_ship_repair_1", arg1_88:getName(), var1_88),
+			content = i18n("world_ship_repair_1", arg1_92:getName(), var1_92),
 			onYes = function()
-				arg0_88:emit(DockyardMediator.ON_SHIP_REPAIR, {
-					var0_88.id
-				}, var1_88)
+				arg0_92:emit(DockyardMediator.ON_SHIP_REPAIR, {
+					var0_92.id
+				}, var1_92)
 			end
 		})
 	else
@@ -989,286 +1089,286 @@ function var0_0.repairWorldShip(arg0_88, arg1_88)
 	end
 end
 
-function var0_0.filter(arg0_91)
-	local var0_91 = arg0_91:isDefaultStatus() and "shaixuan_off" or "shaixuan_on"
+function var0_0.filter(arg0_95)
+	local var0_95 = arg0_95:isDefaultStatus() and "shaixuan_off" or "shaixuan_on"
 
-	LoadImageSpriteAtlasAsync("ui/dockyardui_atlas", var0_91, arg0_91.indexBtn, true)
+	LoadImageSpriteAtlasAsync("ui/dockyardui_atlas", var0_95, arg0_95.indexBtn, true)
 
-	if arg0_91.isRemouldOrUpgradeMode then
-		arg0_91:filterForRemouldAndUpgrade()
+	if arg0_95.isRemouldOrUpgradeMode then
+		arg0_95:filterForRemouldAndUpgrade()
 	else
-		arg0_91:filterCommon()
+		arg0_95:filterCommon()
 	end
 
-	local var1_91 = 0
+	local var1_95 = 0
 
-	if arg0_91.contextData.quitTeam then
-		var1_91 = var1_91 + 1
+	if arg0_95.contextData.quitTeam then
+		var1_95 = var1_95 + 1
 
-		table.insert(arg0_91.shipVOs, var1_91, false)
+		table.insert(arg0_95.shipVOs, var1_95, false)
 	end
 
-	if arg0_91.contextData.priorEquipUpShipIDList then
-		local var2_91 = {}
+	if arg0_95.contextData.priorEquipUpShipIDList then
+		local var2_95 = {}
 
-		for iter0_91, iter1_91 in ipairs(arg0_91.contextData.priorEquipUpShipIDList) do
-			var2_91[iter1_91] = true
+		for iter0_95, iter1_95 in ipairs(arg0_95.contextData.priorEquipUpShipIDList) do
+			var2_95[iter1_95] = true
 		end
 
-		for iter2_91 = #arg0_91.shipVOs, 1, -1 do
-			local var3_91 = type(arg0_91.shipVOs[iter2_91]) == "table" and arg0_91.shipVOs[iter2_91].id
+		for iter2_95 = #arg0_95.shipVOs, 1, -1 do
+			local var3_95 = type(arg0_95.shipVOs[iter2_95]) == "table" and arg0_95.shipVOs[iter2_95].id
 
-			if var2_91[var3_91] then
-				var2_91[var3_91] = table.remove(arg0_91.shipVOs, iter2_91)
+			if var2_95[var3_95] then
+				var2_95[var3_95] = table.remove(arg0_95.shipVOs, iter2_95)
 			end
 		end
 
-		for iter3_91, iter4_91 in ipairs(arg0_91.contextData.priorEquipUpShipIDList) do
-			local var4_91 = var2_91[iter4_91]
+		for iter3_95, iter4_95 in ipairs(arg0_95.contextData.priorEquipUpShipIDList) do
+			local var4_95 = var2_95[iter4_95]
 
-			if type(var4_91) == "table" then
-				var1_91 = var1_91 + 1
+			if type(var4_95) == "table" then
+				var1_95 = var1_95 + 1
 
-				table.insert(arg0_91.shipVOs, var1_91, var4_91)
+				table.insert(arg0_95.shipVOs, var1_95, var4_95)
 			end
 		end
 	end
 
-	if var0_0.MODE_OVERVIEW == arg0_91.contextData.mode and DockyardScene.value then
-		arg0_91:updateShipCount(DockyardScene.value or 0)
+	if var0_0.MODE_OVERVIEW == arg0_95.contextData.mode and DockyardScene.value then
+		arg0_95:updateShipCount(DockyardScene.value or 0)
 
 		DockyardScene.value = nil
 	else
-		arg0_91:updateShipCount(0)
+		arg0_95:updateShipCount(0)
 	end
 end
 
-function var0_0.filterForRemouldAndUpgrade(arg0_92)
-	arg0_92.shipVOs = {}
+function var0_0.filterForRemouldAndUpgrade(arg0_96)
+	arg0_96.shipVOs = {}
 
-	local var0_92 = arg0_92.isFilterLockForMod
-	local var1_92 = arg0_92.isFilterLevelForMod
+	local var0_96 = arg0_96.isFilterLockForMod
+	local var1_96 = arg0_96.isFilterLevelForMod
 
-	local function var2_92(arg0_93)
-		local var0_93 = true
+	local function var2_96(arg0_97)
+		local var0_97 = true
 
-		if not var0_92 and arg0_93.lockState == Ship.LOCK_STATE_LOCK then
-			var0_93 = false
+		if not var0_96 and arg0_97.lockState == Ship.LOCK_STATE_LOCK then
+			var0_97 = false
 		end
 
-		if not var1_92 and arg0_93.level > 1 then
-			var0_93 = false
+		if not var1_96 and arg0_97.level > 1 then
+			var0_97 = false
 		end
 
-		return var0_93
+		return var0_97
 	end
 
-	for iter0_92, iter1_92 in pairs(arg0_92.shipVOsById) do
-		if var2_92(iter1_92) then
-			table.insert(arg0_92.shipVOs, iter1_92)
+	for iter0_96, iter1_96 in pairs(arg0_96.shipVOsById) do
+		if var2_96(iter1_96) then
+			table.insert(arg0_96.shipVOs, iter1_96)
 		end
 	end
 
-	table.sort(arg0_92.shipVOs, CompareFuncs({
-		function(arg0_94)
-			return arg0_94.level
+	table.sort(arg0_96.shipVOs, CompareFuncs({
+		function(arg0_98)
+			return arg0_98.level
 		end,
-		function(arg0_95)
-			return arg0_95:isTestShip() and 1 or 0
+		function(arg0_99)
+			return arg0_99:isTestShip() and 1 or 0
 		end
 	}))
 end
 
-function var0_0.filterCommon(arg0_96)
-	arg0_96.shipVOs = {}
+function var0_0.filterCommon(arg0_100)
+	arg0_100.shipVOs = {}
 
-	local var0_96 = arg0_96.sortIndex
+	local var0_100 = arg0_100.sortIndex
 
-	local function var1_96(arg0_97)
-		if arg0_96.contextData.mode ~= var0_0.MODE_GUILD_BOSS then
+	local function var1_100(arg0_101)
+		if arg0_100.contextData.mode ~= var0_0.MODE_GUILD_BOSS then
 			return true
 		end
 
-		if arg0_96.isShowAssultShips then
+		if arg0_100.isShowAssultShips then
 			return true
 		end
 
-		if not arg0_97.user then
+		if not arg0_101.user then
 			return true
 		end
 
-		if arg0_97.user.id == arg0_96.player.id then
+		if arg0_101.user.id == arg0_100.player.id then
 			return true
 		end
 
 		return false
 	end
 
-	for iter0_96, iter1_96 in pairs(arg0_96.shipVOsById) do
-		if arg0_96.contextData.blockLock and iter1_96:GetLockState() == Ship.LOCK_STATE_LOCK then
+	for iter0_100, iter1_100 in pairs(arg0_100.shipVOsById) do
+		if arg0_100.contextData.blockLock and iter1_100:GetLockState() == Ship.LOCK_STATE_LOCK then
 			-- block empty
-		elseif arg0_96.teamTypeFilter and iter1_96:getTeamType() ~= arg0_96.teamTypeFilter then
+		elseif arg0_100.teamTypeFilter and iter1_100:getTeamType() ~= arg0_100.teamTypeFilter then
 			-- block empty
-		elseif ShipIndexConst.filterByType(iter1_96, arg0_96.typeIndex) and ShipIndexConst.filterByCamp(iter1_96, arg0_96.campIndex) and ShipIndexConst.filterByRarity(iter1_96, arg0_96.rarityIndex) and ShipIndexConst.filterByExtra(iter1_96, arg0_96.extraIndex) and (arg0_96.commonTag == Ship.PREFERENCE_TAG_NONE or arg0_96.commonTag == iter1_96:GetPreferenceTag()) and var1_96(iter1_96) then
-			table.insert(arg0_96.shipVOs, iter1_96)
+		elseif ShipIndexConst.filterByType(iter1_100, arg0_100.typeIndex) and ShipIndexConst.filterByCamp(iter1_100, arg0_100.campIndex) and ShipIndexConst.filterByRarity(iter1_100, arg0_100.rarityIndex) and ShipIndexConst.filterByExtra(iter1_100, arg0_100.extraIndex) and (arg0_100.commonTag == Ship.PREFERENCE_TAG_NONE or arg0_100.commonTag == iter1_100:GetPreferenceTag()) and var1_100(iter1_100) then
+			table.insert(arg0_100.shipVOs, iter1_100)
 		end
 	end
 
-	local var2_96 = arg0_96.searchBar:GetInputText()
+	local var2_100 = arg0_100.searchBar:GetInputText()
 
-	if var2_96 and var2_96 ~= "" then
-		arg0_96.shipVOs = underscore.filter(arg0_96.shipVOs, function(arg0_98)
-			return arg0_98:IsMatchKey(var2_96)
+	if var2_100 and var2_100 ~= "" then
+		arg0_100.shipVOs = underscore.filter(arg0_100.shipVOs, function(arg0_102)
+			return arg0_102:IsMatchKey(var2_100)
 		end)
 	end
 
-	local var3_96, var4_96 = ShipIndexConst.getSortFuncAndName(var0_96, arg0_96.selectAsc)
+	local var3_100, var4_100 = ShipIndexConst.getSortFuncAndName(var0_100, arg0_100.selectAsc)
 
-	if (var0_96 ~= ShipIndexConst.SortIntimacy and true or false) and not defaultValue((arg0_96.contextData.hideTagFlags or {}).inFleet, ShipStatus.TAG_HIDE_BASE.inFleet) then
-		table.insert(var3_96, 1, function(arg0_99)
-			return arg0_99:getFlag("inFleet") and 0 or 1
+	if (var0_100 ~= ShipIndexConst.SortIntimacy and true or false) and not defaultValue((arg0_100.contextData.hideTagFlags or {}).inFleet, ShipStatus.TAG_HIDE_BASE.inFleet) then
+		table.insert(var3_100, 1, function(arg0_103)
+			return arg0_103:getFlag("inFleet") and 0 or 1
 		end)
 	end
 
-	if var3_96 then
-		arg0_96:SortShips(var3_96)
+	if var3_100 then
+		arg0_100:SortShips(var3_100)
 	end
 
-	arg0_96:updateSelected()
-	setActive(arg0_96.sortImgAsc, arg0_96.selectAsc)
-	setActive(arg0_96.sortImgDesc, not arg0_96.selectAsc)
-	setText(arg0_96.sortBtn:Find("Image"), i18n(var4_96))
+	arg0_100:updateSelected()
+	setActive(arg0_100.sortImgAsc, arg0_100.selectAsc)
+	setActive(arg0_100.sortImgDesc, not arg0_100.selectAsc)
+	setText(arg0_100.sortBtn:Find("Image"), i18n(var4_100))
 end
 
-function var0_0.SortShips(arg0_100, arg1_100)
+function var0_0.SortShips(arg0_104, arg1_104)
 	if pg.NewGuideMgr.GetInstance():IsBusy() then
-		local var0_100 = {
+		local var0_104 = {
 			101171,
 			201211,
 			401231,
 			301051
 		}
 
-		arg1_100 = {
-			function(arg0_101)
-				return table.contains(var0_100, arg0_101.configId) and 0 or 1
+		arg1_104 = {
+			function(arg0_105)
+				return table.contains(var0_104, arg0_105.configId) and 0 or 1
 			end
 		}
-	elseif arg0_100.isFormTactics then
-		table.insert(arg1_100, 1, function(arg0_102)
-			return arg0_102:getNation() == Nation.META and 1 or 0
+	elseif arg0_104.isFormTactics then
+		table.insert(arg1_104, 1, function(arg0_106)
+			return arg0_106:getNation() == Nation.META and 1 or 0
 		end)
-		table.insert(arg1_100, 1, function(arg0_103)
-			return arg0_103:isFullSkillLevel() and 1 or 0
+		table.insert(arg1_104, 1, function(arg0_107)
+			return arg0_107:isFullSkillLevel() and 1 or 0
 		end)
-	elseif arg0_100.contextData.mode == var0_0.MODE_OVERVIEW or arg0_100.contextData.mode == var0_0.MODE_SELECT then
-		table.insert(arg1_100, 1, function(arg0_104)
-			return -arg0_104.activityNpc
+	elseif arg0_104.contextData.mode == var0_0.MODE_OVERVIEW or arg0_104.contextData.mode == var0_0.MODE_SELECT then
+		table.insert(arg1_104, 1, function(arg0_108)
+			return -arg0_108.activityNpc
 		end)
-	elseif arg0_100.contextData.mode == var0_0.MODE_GUILD_BOSS then
-		table.insert(arg1_100, 1, function(arg0_105)
-			return arg0_105.guildRecommand and 0 or 1
+	elseif arg0_104.contextData.mode == var0_0.MODE_GUILD_BOSS then
+		table.insert(arg1_104, 1, function(arg0_109)
+			return arg0_109.guildRecommand and 0 or 1
 		end)
 	end
 
-	table.sort(arg0_100.shipVOs, CompareFuncs(arg1_100))
+	table.sort(arg0_104.shipVOs, CompareFuncs(arg1_104))
 end
 
-function var0_0.UpdateGuildViewEquipmentsBtn(arg0_106)
-	setActive(arg0_106.viewEquipmentBtn, arg0_106.contextData.mode == var0_0.MODE_GUILD_BOSS and #arg0_106.selectedIds > 0)
+function var0_0.UpdateGuildViewEquipmentsBtn(arg0_110)
+	setActive(arg0_110.viewEquipmentBtn, arg0_110.contextData.mode == var0_0.MODE_GUILD_BOSS and #arg0_110.selectedIds > 0)
 end
 
-function var0_0.GetSelectCount(arg0_107)
-	return #arg0_107.selectedIds
+function var0_0.GetSelectCount(arg0_111)
+	return #arg0_111.selectedIds
 end
 
-function var0_0.GetConfirmSelect(arg0_108)
-	return arg0_108.selectedIds
+function var0_0.GetConfirmSelect(arg0_112)
+	return arg0_112.selectedIds
 end
 
-function var0_0.didEnter(arg0_109)
-	if arg0_109:isLayer() then
-		arg0_109:OverlayPanel(arg0_109._tf, {
+function var0_0.didEnter(arg0_113)
+	if arg0_113:isLayer() then
+		arg0_113:OverlayPanel(arg0_113._tf, {
 			groupDelta = -1
 		})
 	end
 
-	arg0_109:OverlayPanel(arg0_109.blurPanel)
-	arg0_109:PlayUIAnimation(arg0_109.blurPanel, "enter")
-	setActive(arg0_109.stampBtn, getProxy(TaskProxy):mingshiTouchFlagEnabled() and arg0_109.contextData.mode ~= var0_0.MODE_GUILD_BOSS)
-	arg0_109:UpdateGuildViewEquipmentsBtn()
-	onButton(arg0_109, arg0_109.stampBtn, function()
+	arg0_113:OverlayPanel(arg0_113.blurPanel)
+	arg0_113:PlayUIAnimation(arg0_113.blurPanel, "enter")
+	setActive(arg0_113.stampBtn, getProxy(TaskProxy):mingshiTouchFlagEnabled() and arg0_113.contextData.mode ~= var0_0.MODE_GUILD_BOSS)
+	arg0_113:UpdateGuildViewEquipmentsBtn()
+	onButton(arg0_113, arg0_113.stampBtn, function()
 		getProxy(TaskProxy):dealMingshiTouchFlag(1)
 	end, SFX_CONFIRM)
-	onButton(arg0_109, arg0_109.topPanel:Find("back"), function()
-		arg0_109:back()
+	onButton(arg0_113, arg0_113.topPanel:Find("back"), function()
+		arg0_113:back()
 	end, SFX_CANCEL)
-	onButton(arg0_109, arg0_109.sortBtn, function()
-		arg0_109.selectAsc = not arg0_109.selectAsc
+	onButton(arg0_113, arg0_113.sortBtn, function()
+		arg0_113.selectAsc = not arg0_113.selectAsc
 
-		arg0_109:filter()
+		arg0_113:filter()
 	end, SFX_UI_CLICK)
-	onToggle(arg0_109, arg0_109.assultBtn, function(arg0_113)
-		arg0_109.isShowAssultShips = arg0_113
+	onToggle(arg0_113, arg0_113.assultBtn, function(arg0_117)
+		arg0_113.isShowAssultShips = arg0_117
 
-		arg0_109:filter()
+		arg0_113:filter()
 	end, SFX_PANEL)
-	onButton(arg0_109, arg0_109.viewEquipmentBtn, function()
-		local var0_114 = arg0_109.selectedIds[#arg0_109.selectedIds]
+	onButton(arg0_113, arg0_113.viewEquipmentBtn, function()
+		local var0_118 = arg0_113.selectedIds[#arg0_113.selectedIds]
 
-		if not var0_114 then
+		if not var0_118 then
 			return
 		end
 
-		local var1_114 = arg0_109.shipVOsById[var0_114]
-		local var2_114 = var1_114.user
+		local var1_118 = arg0_113.shipVOsById[var0_118]
+		local var2_118 = var1_118.user
 
-		arg0_109.guildShipEquipmentsPage:ExecuteAction("Show", var1_114, var2_114)
+		arg0_113.guildShipEquipmentsPage:ExecuteAction("Show", var1_118, var2_118)
 	end, SFX_PANEL)
-	onButton(arg0_109, arg0_109.attrBtn, function()
-		if not arg0_109.isFormTactics then
-			arg0_109.itemDetailType = (arg0_109.itemDetailType + 1) % 4
+	onButton(arg0_113, arg0_113.attrBtn, function()
+		if not arg0_113.isFormTactics then
+			arg0_113.itemDetailType = (arg0_113.itemDetailType + 1) % 4
 		else
-			arg0_109.itemDetailType = arg0_109.itemDetailType == DockyardShipItem.DetailType0 and DockyardShipItem.DetailType3 or DockyardShipItem.DetailType0
+			arg0_113.itemDetailType = arg0_113.itemDetailType == DockyardShipItem.DetailType0 and DockyardShipItem.DetailType3 or DockyardShipItem.DetailType0
 		end
 
-		setActive(arg0_109.attrBtn:Find("off"), arg0_109.itemDetailType == DockyardShipItem.DetailType0)
-		setActive(arg0_109.attrBtn:Find("on"), arg0_109.itemDetailType ~= DockyardShipItem.DetailType0)
+		setActive(arg0_113.attrBtn:Find("off"), arg0_113.itemDetailType == DockyardShipItem.DetailType0)
+		setActive(arg0_113.attrBtn:Find("on"), arg0_113.itemDetailType ~= DockyardShipItem.DetailType0)
 
-		arg0_109.attrBtn:GetComponent("Button").targetGraphic = arg0_109.itemDetailType == DockyardShipItem.DetailType0 and imageOff or imageOn
+		arg0_113.attrBtn:GetComponent("Button").targetGraphic = arg0_113.itemDetailType == DockyardShipItem.DetailType0 and imageOff or imageOn
 
-		arg0_109:updateItemDetailType()
+		arg0_113:updateItemDetailType()
 	end, SFX_PANEL)
-	onButton(arg0_109, arg0_109.selectPanel:Find("cancel_button"), function()
-		if arg0_109.animating then
+	onButton(arg0_113, arg0_113.selectPanel:Find("cancel_button"), function()
+		if arg0_113.animating then
 			return
 		end
 
-		if arg0_109.contextData.mode == var0_0.MODE_DESTROY then
-			if #arg0_109.selectedIds > 0 then
-				arg0_109:unselecteAllShips()
-				arg0_109:back()
+		if arg0_113.contextData.mode == var0_0.MODE_DESTROY then
+			if #arg0_113.selectedIds > 0 then
+				arg0_113:unselecteAllShips()
+				arg0_113:back()
 			else
-				arg0_109:back()
+				arg0_113:back()
 			end
 		else
-			arg0_109:back()
+			arg0_113:back()
 
 			return
 		end
 	end, SFX_CANCEL)
-	onButton(arg0_109, arg0_109.selectPanel:Find("confirm_button"), function()
-		if arg0_109.animating then
+	onButton(arg0_113, arg0_113.selectPanel:Find("confirm_button"), function()
+		if arg0_113.animating then
 			return
 		end
 
-		if arg0_109.contextData.mode == var0_0.MODE_DESTROY then
-			local var0_117, var1_117 = arg0_109:checkDestroyGold()
+		if arg0_113.contextData.mode == var0_0.MODE_DESTROY then
+			local var0_121, var1_121 = arg0_113:checkDestroyGold()
 
-			if not var0_117 or not var1_117 then
-				if not var0_117 then
+			if not var0_121 or not var1_121 then
+				if not var0_121 then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title") .. i18n("resource_max_tip_retire"))
-				elseif not var0_117 then
+				elseif not var0_121 then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("oil_max_tip_title") .. i18n("resource_max_tip_retire"))
 				end
 
@@ -1276,103 +1376,103 @@ function var0_0.didEnter(arg0_109)
 			end
 		end
 
-		if arg0_109:GetSelectCount() < arg0_109.selectedMin then
-			if arg0_109.leastLimitMsg then
-				pg.TipsMgr.GetInstance():ShowTips(arg0_109.leastLimitMsg)
+		if arg0_113:GetSelectCount() < arg0_113.selectedMin then
+			if arg0_113.leastLimitMsg then
+				pg.TipsMgr.GetInstance():ShowTips(arg0_113.leastLimitMsg)
 			else
-				pg.TipsMgr.GetInstance():ShowTips(i18n("ship_dockyardScene_error_choiseRoleMore", arg0_109.selectedMin))
+				pg.TipsMgr.GetInstance():ShowTips(i18n("ship_dockyardScene_error_choiseRoleMore", arg0_113.selectedMin))
 			end
 
 			return
 		end
 
-		if arg0_109.contextData.mode == var0_0.MODE_DESTROY then
-			arg0_109:displayDestroyPanel()
+		if arg0_113.contextData.mode == var0_0.MODE_DESTROY then
+			arg0_113:displayDestroyPanel()
 		else
-			local var2_117 = {}
+			local var2_121 = {}
 
-			if arg0_109.contextData.destroyCheck then
-				local var3_117 = underscore.map(arg0_109.selectedIds, function(arg0_118)
-					return arg0_109.shipVOsById[arg0_118]
+			if arg0_113.contextData.destroyCheck then
+				local var3_121 = underscore.map(arg0_113.selectedIds, function(arg0_122)
+					return arg0_113.shipVOsById[arg0_122]
 				end)
 
-				table.insert(var2_117, function(arg0_119)
-					arg0_109:checkDestroyShips(var3_117, arg0_119)
+				table.insert(var2_121, function(arg0_123)
+					arg0_113:checkDestroyShips(var3_121, arg0_123)
 				end)
 			end
 
-			local var4_117 = arg0_109:GetConfirmSelect()
+			local var4_121 = arg0_113:GetConfirmSelect()
 
-			if arg0_109.confirmSelect then
-				table.insert(var2_117, function(arg0_120)
-					arg0_109.confirmSelect(var4_117, function()
-						arg0_120(true)
-					end, arg0_120)
+			if arg0_113.confirmSelect then
+				table.insert(var2_121, function(arg0_124)
+					arg0_113.confirmSelect(var4_121, function()
+						arg0_124(true)
+					end, arg0_124)
 				end)
-				seriesAsync(var2_117, function(arg0_122)
-					if arg0_122 then
-						arg0_109.onSelected(var4_117)
+				seriesAsync(var2_121, function(arg0_126)
+					if arg0_126 then
+						arg0_113.onSelected(var4_121)
 					end
 
-					arg0_109:back()
+					arg0_113:back()
 				end)
 			else
-				table.insert(var2_117, function(arg0_123)
-					if arg0_109.callbackQuit then
-						arg0_109.onSelected(var4_117, arg0_123)
+				table.insert(var2_121, function(arg0_127)
+					if arg0_113.callbackQuit then
+						arg0_113.onSelected(var4_121, arg0_127)
 					else
-						arg0_109.onSelected(var4_117)
-						arg0_123()
+						arg0_113.onSelected(var4_121)
+						arg0_127()
 					end
 				end)
-				seriesAsync(var2_117, function()
-					arg0_109:back()
+				seriesAsync(var2_121, function()
+					arg0_113:back()
 				end)
 			end
 		end
 	end, SFX_CONFIRM)
-	onButton(arg0_109, arg0_109.selectPanel:Find("quick_select"), function()
-		if arg0_109.animating then
+	onButton(arg0_113, arg0_113.selectPanel:Find("quick_select"), function()
+		if arg0_113.animating then
 			return
 		end
 
-		local var0_125 = {
+		local var0_129 = {
 			PlayerPrefs.GetInt("QuickSelectRarity1", 3),
 			PlayerPrefs.GetInt("QuickSelectRarity2", 4),
 			PlayerPrefs.GetInt("QuickSelectRarity3", 2)
 		}
-		local var1_125 = 3
-		local var2_125 = {}
+		local var1_129 = 3
+		local var2_129 = {}
 
-		for iter0_125, iter1_125 in pairs(var0_125) do
-			if iter1_125 ~= 0 then
-				var2_125[iter1_125] = var2_125[iter1_125] or var1_125
-				var1_125 = var1_125 - 1
+		for iter0_129, iter1_129 in pairs(var0_129) do
+			if iter1_129 ~= 0 then
+				var2_129[iter1_129] = var2_129[iter1_129] or var1_129
+				var1_129 = var1_129 - 1
 			end
 		end
 
-		local var3_125 = getProxy(BayProxy):getShips()
-		local var4_125 = {}
-		local var5_125 = {}
+		local var3_129 = getProxy(BayProxy):getShips()
+		local var4_129 = {}
+		local var5_129 = {}
 
-		for iter2_125, iter3_125 in pairs(var3_125) do
-			if iter3_125:isMaxStar() then
-				var4_125[iter3_125:getGroupId()] = true
+		for iter2_129, iter3_129 in pairs(var3_129) do
+			if iter3_129:isMaxStar() then
+				var4_129[iter3_129:getGroupId()] = true
 			else
-				local var6_125 = iter3_125:getMaxStar() - iter3_125:getStar() + 1
+				local var6_129 = iter3_129:getMaxStar() - iter3_129:getStar() + 1
 
-				if iter3_125:GetLockState() == Ship.LOCK_STATE_UNLOCK then
-					var6_125 = var6_125 + 1
+				if iter3_129:GetLockState() == Ship.LOCK_STATE_UNLOCK then
+					var6_129 = var6_129 + 1
 				end
 
-				local var7_125 = var5_125[iter3_125:getGroupId()]
+				local var7_129 = var5_129[iter3_129:getGroupId()]
 
-				var5_125[iter3_125:getGroupId()] = var7_125 and var7_125 < var6_125 and var7_125 or var6_125
+				var5_129[iter3_129:getGroupId()] = var7_129 and var7_129 < var6_129 and var7_129 or var6_129
 			end
 		end
 
-		local var8_125 = _.select(arg0_109.shipVOs, function(arg0_126)
-			return arg0_126.configId ~= 100001 and arg0_126.configId ~= 100011 and arg0_126:GetLockState() == Ship.LOCK_STATE_UNLOCK and table.contains(var0_125, arg0_126:getRarity()) and arg0_126.level == 1 and not arg0_109.blacklist[arg0_126:getGroupId()] and not table.contains(arg0_109.selectedIds, arg0_126.id) and not arg0_126:hasAnyFlag({
+		local var8_129 = _.select(arg0_113.shipVOs, function(arg0_130)
+			return arg0_130.configId ~= 100001 and arg0_130.configId ~= 100011 and arg0_130:GetLockState() == Ship.LOCK_STATE_UNLOCK and table.contains(var0_129, arg0_130:getRarity()) and arg0_130.level == 1 and not arg0_113.blacklist[arg0_130:getGroupId()] and not table.contains(arg0_113.selectedIds, arg0_130.id) and not arg0_130:hasAnyFlag({
 				"inFleet",
 				"inChapter",
 				"inWorld",
@@ -1389,874 +1489,874 @@ function var0_0.didEnter(arg0_109)
 			})
 		end)
 
-		if not _.all(var8_125, function(arg0_127)
-			return arg0_109.blacklist[arg0_127:getGroupId()]
+		if not _.all(var8_129, function(arg0_131)
+			return arg0_113.blacklist[arg0_131:getGroupId()]
 		end) then
-			var8_125 = _.select(var8_125, function(arg0_128)
-				return not arg0_109.blacklist[arg0_128:getGroupId()]
+			var8_129 = _.select(var8_129, function(arg0_132)
+				return not arg0_113.blacklist[arg0_132:getGroupId()]
 			end)
-		elseif #arg0_109.selectedIds > 0 then
-			var8_125 = {}
+		elseif #arg0_113.selectedIds > 0 then
+			var8_129 = {}
 		end
 
-		table.sort(var8_125, function(arg0_129, arg1_129)
-			local var0_129 = var2_125[arg0_129:getRarity()] or 0
-			local var1_129 = var2_125[arg1_129:getRarity()] or 0
+		table.sort(var8_129, function(arg0_133, arg1_133)
+			local var0_133 = var2_129[arg0_133:getRarity()] or 0
+			local var1_133 = var2_129[arg1_133:getRarity()] or 0
 
-			if var0_129 == var1_129 then
-				if arg0_129:getGroupId() == arg1_129:getGroupId() then
-					return arg0_129.createTime > arg1_129.createTime
+			if var0_133 == var1_133 then
+				if arg0_133:getGroupId() == arg1_133:getGroupId() then
+					return arg0_133.createTime > arg1_133.createTime
 				end
 
-				return arg0_129.configId > arg1_129.configId
+				return arg0_133.configId > arg1_133.configId
 			else
-				return var1_129 < var0_129
+				return var1_133 < var0_133
 			end
 		end)
 
-		local var9_125 = PlayerPrefs.GetString("QuickSelectWhenHasAtLeastOneMaxstar", "KeepNone")
-		local var10_125 = PlayerPrefs.GetString("QuickSelectWithoutMaxstar", "KeepAll")
-		local var11_125 = {}
-		local var12_125 = _.select(var8_125, function(arg0_130)
-			if var4_125[arg0_130:getGroupId()] then
-				if var9_125 == "KeepNone" then
+		local var9_129 = PlayerPrefs.GetString("QuickSelectWhenHasAtLeastOneMaxstar", "KeepNone")
+		local var10_129 = PlayerPrefs.GetString("QuickSelectWithoutMaxstar", "KeepAll")
+		local var11_129 = {}
+		local var12_129 = _.select(var8_129, function(arg0_134)
+			if var4_129[arg0_134:getGroupId()] then
+				if var9_129 == "KeepNone" then
 					return true
-				elseif var9_125 == "KeepOne" then
-					if not var11_125[arg0_130:getGroupId()] then
-						var11_125[arg0_130:getGroupId()] = true
+				elseif var9_129 == "KeepOne" then
+					if not var11_129[arg0_134:getGroupId()] then
+						var11_129[arg0_134:getGroupId()] = true
 
 						return false
 					end
 
 					return true
-				elseif var9_125 == "KeepAll" then
+				elseif var9_129 == "KeepAll" then
 					return false
 				end
-			elseif var10_125 == "KeepNone" then
+			elseif var10_129 == "KeepNone" then
 				return true
-			elseif var10_125 == "KeepNeeded" then
-				if var5_125[arg0_130:getGroupId()] > 0 then
-					var5_125[arg0_130:getGroupId()] = var5_125[arg0_130:getGroupId()] - 1
+			elseif var10_129 == "KeepNeeded" then
+				if var5_129[arg0_134:getGroupId()] > 0 then
+					var5_129[arg0_134:getGroupId()] = var5_129[arg0_134:getGroupId()] - 1
 
 					return false
 				end
 
 				return true
-			elseif var10_125 == "KeepAll" then
+			elseif var10_129 == "KeepAll" then
 				return false
 			end
 		end)
-		local var13_125 = 0
-		local var14_125 = false
-		local var15_125 = false
-		local var16_125 = 0
-		local var17_125 = 0
+		local var13_129 = 0
+		local var14_129 = false
+		local var15_129 = false
+		local var16_129 = 0
+		local var17_129 = 0
 
-		for iter4_125, iter5_125 in ipairs(arg0_109.selectedIds) do
-			local var18_125, var19_125 = arg0_109.shipVOsById[iter5_125]:calReturnRes()
+		for iter4_129, iter5_129 in ipairs(arg0_113.selectedIds) do
+			local var18_129, var19_129 = arg0_113.shipVOsById[iter5_129]:calReturnRes()
 
-			var16_125 = var16_125 + var18_125
-			var17_125 = var17_125 + var19_125
+			var16_129 = var16_129 + var18_129
+			var17_129 = var17_129 + var19_129
 		end
 
-		for iter6_125, iter7_125 in ipairs(var12_125) do
-			if arg0_109.selectedMax > 0 and arg0_109.selectedMax <= arg0_109:GetSelectCount() then
+		for iter6_129, iter7_129 in ipairs(var12_129) do
+			if arg0_113.selectedMax > 0 and arg0_113.selectedMax <= arg0_113:GetSelectCount() then
 				break
 			end
 
-			local var20_125, var21_125 = iter7_125:calReturnRes()
+			local var20_129, var21_129 = iter7_129:calReturnRes()
 
-			var16_125 = var16_125 + var20_125
-			var17_125 = var17_125 + var21_125
-			var14_125 = arg0_109.player:OilMax(var17_125)
-			var15_125 = arg0_109.player:GoldMax(var16_125)
+			var16_129 = var16_129 + var20_129
+			var17_129 = var17_129 + var21_129
+			var14_129 = arg0_113.player:OilMax(var17_129)
+			var15_129 = arg0_113.player:GoldMax(var16_129)
 
-			if var15_125 then
+			if var15_129 then
 				break
 			end
 
-			var13_125 = var13_125 + 1
+			var13_129 = var13_129 + 1
 
-			arg0_109:selectShip(iter7_125)
+			arg0_113:selectShip(iter7_129)
 		end
 
-		if var13_125 == 0 then
-			if var15_125 then
-				if #arg0_109.selectedIds == 0 then
+		if var13_129 == 0 then
+			if var15_129 then
+				if #arg0_113.selectedIds == 0 then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title") .. i18n("resource_max_tip_retire"))
 				else
 					pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title"))
 				end
-			elseif #arg0_109.selectedIds > 0 then
-				arg0_109:displayDestroyPanel()
+			elseif #arg0_113.selectedIds > 0 then
+				arg0_113:displayDestroyPanel()
 			else
 				pg.TipsMgr.GetInstance():ShowTips(i18n("retire_selectzero"))
 			end
-		elseif var14_125 then
+		elseif var14_129 then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("oil_max_tip_title") .. i18n("resource_max_tip_retire_1"),
 				onYes = function()
-					arg0_109:displayDestroyPanel()
+					arg0_113:displayDestroyPanel()
 				end
 			})
 		else
-			arg0_109:displayDestroyPanel()
+			arg0_113:displayDestroyPanel()
 		end
 	end, SFX_CONFIRM)
 
-	if isActive(arg0_109.togglePhantom) then
-		triggerToggle(arg0_109.togglePhantom, tobool(arg0_109.inPhantom))
+	if isActive(arg0_113.togglePhantom) then
+		triggerToggle(arg0_113.togglePhantom, tobool(arg0_113.inPhantom))
 	else
-		arg0_109:SwitchContainerDisplay()
+		arg0_113:SwitchContainerDisplay()
 	end
 
-	arg0_109:updateBarInfo()
+	arg0_113:updateBarInfo()
 
-	if arg0_109.contextData.mode == var0_0.MODE_WORLD then
-		arg0_109:initWorldPanel()
-	elseif arg0_109.contextData.mode == var0_0.MODE_DESTROY and not LOCK_DESTROY_GUIDE then
-		pg.SystemGuideMgr.GetInstance():Play(arg0_109)
+	if arg0_113.contextData.mode == var0_0.MODE_WORLD then
+		arg0_113:initWorldPanel()
+	elseif arg0_113.contextData.mode == var0_0.MODE_DESTROY and not LOCK_DESTROY_GUIDE then
+		pg.SystemGuideMgr.GetInstance():Play(arg0_113)
 	end
 
-	setAnchoredPosition(arg0_109.topPanel, {
-		y = arg0_109.topPanel.rect.height
+	setAnchoredPosition(arg0_113.topPanel, {
+		y = arg0_113.topPanel.rect.height
 	})
-	setAnchoredPosition(arg0_109.selectPanel, {
-		y = -1 * arg0_109.selectPanel.rect.height
+	setAnchoredPosition(arg0_113.selectPanel, {
+		y = -1 * arg0_113.selectPanel.rect.height
 	})
 	onNextTick(function()
-		if arg0_109.exited then
+		if arg0_113.exited then
 			return
 		end
 
-		arg0_109:uiStartAnimating()
+		arg0_113:uiStartAnimating()
 	end)
 
-	arg0_109.bulinTip = AprilFoolBulinSubView.ShowAprilFoolBulin(arg0_109)
+	arg0_113.bulinTip = AprilFoolBulinSubView.ShowAprilFoolBulin(arg0_113)
 
-	onButton(arg0_109, arg0_109.settingBtn, function()
-		arg0_109.settingPanel:Load()
-		arg0_109.settingPanel:ActionInvoke("Show")
+	onButton(arg0_113, arg0_113.settingBtn, function()
+		arg0_113.settingPanel:Load()
+		arg0_113.settingPanel:ActionInvoke("Show")
 	end)
-	pg.SystemGuideMgr.GetInstance():Play(arg0_109)
+	pg.SystemGuideMgr.GetInstance():Play(arg0_113)
 end
 
-function var0_0.TriggerCard(arg0_134, arg1_134)
-	local var0_134 = arg0_134.selectedIds[1]
+function var0_0.TriggerCard(arg0_138, arg1_138)
+	local var0_138 = arg0_138.selectedIds[1]
 
-	if not var0_134 then
+	if not var0_138 then
 		return
 	end
 
-	local var1_134
+	local var1_138
 
-	for iter0_134, iter1_134 in ipairs(arg0_134.shipVOs) do
-		if iter1_134 and iter1_134.id == var0_134 then
-			var1_134 = iter0_134
+	for iter0_138, iter1_138 in ipairs(arg0_138.shipVOs) do
+		if iter1_138 and iter1_138.id == var0_138 then
+			var1_138 = iter0_138
 
 			break
 		end
 	end
 
-	if not var1_134 then
+	if not var1_138 then
 		return
 	end
 
-	local var2_134 = var1_134
-	local var3_134
+	local var2_138 = var1_138
+	local var3_138
 
-	local function var4_134()
-		var2_134 = var2_134 + arg1_134
+	local function var4_138()
+		var2_138 = var2_138 + arg1_138
 
-		local var0_135 = arg0_134.shipVOs[var2_134]
+		local var0_139 = arg0_138.shipVOs[var2_138]
 
-		if not var0_135 or arg0_134.checkShip(var0_135) then
-			return var0_135
+		if not var0_139 or arg0_138.checkShip(var0_139) then
+			return var0_139
 		else
-			return var4_134()
+			return var4_138()
 		end
 	end
 
-	local var5_134 = var4_134()
+	local var5_138 = var4_138()
 
-	if not var5_134 then
+	if not var5_138 then
 		return
 	end
 
-	local function var6_134()
-		local var0_136
+	local function var6_138()
+		local var0_140
 
-		for iter0_136, iter1_136 in pairs(arg0_134.scrollItems) do
-			if iter1_136.shipVO and iter1_136.go.name ~= "-1" and iter1_136.shipVO.id == var5_134.id then
-				var0_136 = iter1_136
+		for iter0_140, iter1_140 in pairs(arg0_138.scrollItems) do
+			if iter1_140.shipVO and iter1_140.go.name ~= "-1" and iter1_140.shipVO.id == var5_138.id then
+				var0_140 = iter1_140
 
 				break
 			end
 		end
 
-		return var0_136
+		return var0_140
 	end
 
-	local var7_134 = arg0_134.cardItemDic[var0_134]
-	local var8_134 = var7_134 and arg0_134.scrollItems[var7_134]
-	local var9_134 = var8_134 and var8_134.shipVO.id == var5_134.id and var8_134 or nil
+	local var7_138 = arg0_138.cardItemDic[var0_138]
+	local var8_138 = var7_138 and arg0_138.scrollItems[var7_138]
+	local var9_138 = var8_138 and var8_138.shipVO.id == var5_138.id and var8_138 or nil
 
-	if var9_134 then
-		local var10_134 = getBounds(arg0_134._tf:Find("main/ship_container"))
-		local var11_134 = getBounds(var9_134.tr)
+	if var9_138 then
+		local var10_138 = getBounds(arg0_138._tf:Find("main/ship_container"))
+		local var11_138 = getBounds(var9_138.tr)
 
-		if not var10_134:Intersects(var11_134) then
-			local var12_134 = arg1_134 * (arg0_134.shipContainer:HeadIndexToValue(7) - arg0_134.shipContainer:HeadIndexToValue(1))
-			local var13_134 = arg0_134.shipContainer.value + var12_134
+		if not var10_138:Intersects(var11_138) then
+			local var12_138 = arg1_138 * (arg0_138.shipContainer:HeadIndexToValue(7) - arg0_138.shipContainer:HeadIndexToValue(1))
+			local var13_138 = arg0_138.shipContainer.value + var12_138
 
-			arg0_134.shipContainer:SetNormalizedPosition(var13_134, 1)
+			arg0_138.shipContainer:SetNormalizedPosition(var13_138, 1)
 		end
 	end
 
-	if not var9_134 then
-		local var14_134 = (math.ceil(var2_134 / 7) - math.ceil(var1_134 / 7)) * (arg0_134.shipContainer:HeadIndexToValue(21) - arg0_134.shipContainer:HeadIndexToValue(1))
-		local var15_134 = arg0_134.shipContainer.value + var14_134
+	if not var9_138 then
+		local var14_138 = (math.ceil(var2_138 / 7) - math.ceil(var1_138 / 7)) * (arg0_138.shipContainer:HeadIndexToValue(21) - arg0_138.shipContainer:HeadIndexToValue(1))
+		local var15_138 = arg0_138.shipContainer.value + var14_138
 
-		arg0_134.shipContainer:SetNormalizedPosition(var15_134, 1)
+		arg0_138.shipContainer:SetNormalizedPosition(var15_138, 1)
 
-		var9_134 = var6_134()
+		var9_138 = var6_138()
 	end
 
-	if var9_134 then
-		triggerButton(var9_134.tr)
+	if var9_138 then
+		triggerButton(var9_138.tr)
 
-		local var16_134 = arg0_134.shipVOsById[var9_134.shipVO.id]
+		local var16_138 = arg0_138.shipVOsById[var9_138.shipVO.id]
 
-		arg0_134.guildShipEquipmentsPage:Refresh(var16_134, var16_134.user)
+		arg0_138.guildShipEquipmentsPage:Refresh(var16_138, var16_138.user)
 	end
 end
 
-function var0_0.OnSwitch(arg0_137, arg1_137, arg2_137, arg3_137)
-	local function var0_137()
-		setActive(arg1_137:Find("off"), not arg2_137)
-		setActive(arg1_137:Find("on"), arg2_137)
+function var0_0.OnSwitch(arg0_141, arg1_141, arg2_141, arg3_141)
+	local function var0_141()
+		setActive(arg1_141:Find("off"), not arg2_141)
+		setActive(arg1_141:Find("on"), arg2_141)
 	end
 
-	onButton(arg0_137, arg1_137, function()
-		arg2_137 = not arg2_137
+	onButton(arg0_141, arg1_141, function()
+		arg2_141 = not arg2_141
 
-		if arg3_137 then
-			arg3_137(arg2_137)
+		if arg3_141 then
+			arg3_141(arg2_141)
 		end
 
-		var0_137()
+		var0_141()
 	end, SFX_PANEL)
-	var0_137()
+	var0_141()
 end
 
-function var0_0.OnShipSkinChanged(arg0_140, arg1_140)
-	local var0_140, var1_140 = ShipPhantom.UnpackMark(arg1_140)
-	local var2_140 = arg0_140.phantomGroupDic[var0_140]
-	local var3_140 = var2_140 and arg0_140.scrollPhantoms[var2_140]
+function var0_0.OnShipSkinChanged(arg0_144, arg1_144)
+	local var0_144, var1_144 = ShipPhantom.UnpackMark(arg1_144)
+	local var2_144 = arg0_144.phantomGroupDic[var0_144]
+	local var3_144 = var2_144 and arg0_144.scrollPhantoms[var2_144]
 
-	if var3_140 and var3_140.shipCard.shipVO.id == var0_140 then
-		arg0_140:updatePhantomGroup(underscore.detect(arg0_140.filterBluePrint, function(arg0_141)
-			return arg0_141.shipId == var0_140
-		end), var2_140)
+	if var3_144 and var3_144.shipCard.shipVO.id == var0_144 then
+		arg0_144:updatePhantomGroup(underscore.detect(arg0_144.filterBluePrint, function(arg0_145)
+			return arg0_145.shipId == var0_144
+		end), var2_144)
 	end
 end
 
-function var0_0.onBackPressed(arg0_142)
-	if arg0_142.destroyConfirmWindow:isShowing() then
-		arg0_142.destroyConfirmWindow:Hide()
+function var0_0.onBackPressed(arg0_146)
+	if arg0_146.destroyConfirmWindow:isShowing() then
+		arg0_146.destroyConfirmWindow:Hide()
 
 		return
 	end
 
-	if arg0_142.destroyPage:isShowing() then
-		arg0_142.destroyPage:Hide()
+	if arg0_146.destroyPage:isShowing() then
+		arg0_146.destroyPage:Hide()
 
 		return
 	end
 
-	if arg0_142.settingPanel:isShowing() then
-		arg0_142.settingPanel:Hide()
+	if arg0_146.settingPanel:isShowing() then
+		arg0_146.settingPanel:Hide()
 
 		return
 	end
 
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
-	arg0_142:back()
+	arg0_146:back()
 end
 
-function var0_0.updateShipStatusById(arg0_143, arg1_143)
-	local var0_143 = arg0_143.cardItemDic[arg1_143]
-	local var1_143 = var0_143 and arg0_143.scrollItems[var0_143]
+function var0_0.updateShipStatusById(arg0_147, arg1_147)
+	local var0_147 = arg0_147.cardItemDic[arg1_147]
+	local var1_147 = var0_147 and arg0_147.scrollItems[var0_147]
 
-	if var1_143 and var1_143.shipVO.id == arg1_143 then
-		var1_143:flush(arg0_143.selectedIds)
+	if var1_147 and var1_147.shipVO.id == arg1_147 then
+		var1_147:flush(arg0_147.selectedIds)
 
-		if arg0_143.contextData.mode == DockyardScene.MODE_WORLD then
-			var1_143:updateWorld()
+		if arg0_147.contextData.mode == DockyardScene.MODE_WORLD then
+			var1_147:updateWorld()
 		end
 	end
 end
 
-function var0_0.checkDestroyGold(arg0_144, arg1_144)
-	local var0_144 = 0
-	local var1_144 = 0
+function var0_0.checkDestroyGold(arg0_148, arg1_148)
+	local var0_148 = 0
+	local var1_148 = 0
 
-	for iter0_144, iter1_144 in ipairs(arg0_144.selectedIds) do
-		local var2_144, var3_144 = arg0_144.shipVOsById[iter1_144]:calReturnRes()
+	for iter0_148, iter1_148 in ipairs(arg0_148.selectedIds) do
+		local var2_148, var3_148 = arg0_148.shipVOsById[iter1_148]:calReturnRes()
 
-		var0_144 = var0_144 + var2_144
-		var1_144 = var1_144 + var3_144
+		var0_148 = var0_148 + var2_148
+		var1_148 = var1_148 + var3_148
 	end
 
-	if arg1_144 then
-		local var4_144, var5_144 = arg1_144:calReturnRes()
+	if arg1_148 then
+		local var4_148, var5_148 = arg1_148:calReturnRes()
 
-		var0_144 = var0_144 + var4_144
-		var1_144 = var1_144 + var5_144
+		var0_148 = var0_148 + var4_148
+		var1_148 = var1_148 + var5_148
 	end
 
-	local var6_144 = arg0_144.player:OilMax(var1_144)
+	local var6_148 = arg0_148.player:OilMax(var1_148)
 
-	if arg0_144.player:GoldMax(var0_144) then
-		return false, not var6_144
+	if arg0_148.player:GoldMax(var0_148) then
+		return false, not var6_148
 	end
 
-	return true, not var6_144
+	return true, not var6_148
 end
 
-function var0_0.selectShip(arg0_145, arg1_145)
-	local var0_145 = false
-	local var1_145
+function var0_0.selectShip(arg0_149, arg1_149)
+	local var0_149 = false
+	local var1_149
 
-	for iter0_145, iter1_145 in ipairs(arg0_145.selectedIds) do
-		if iter1_145 == arg1_145.id then
-			var0_145 = true
-			var1_145 = iter0_145
+	for iter0_149, iter1_149 in ipairs(arg0_149.selectedIds) do
+		if iter1_149 == arg1_149.id then
+			var0_149 = true
+			var1_149 = iter0_149
 
 			break
 		end
 	end
 
-	if var0_145 or arg0_145.selectedMax == 1 and arg0_145:GetSelectCount() > 0 then
-		local var2_145 = defaultValue(var1_145, 1)
-		local var3_145 = arg0_145.shipVOsById[arg0_145.selectedIds[var2_145]]
-		local var4_145, var5_145 = arg0_145.onCancelShip(var3_145, function()
-			if not arg0_145.exited then
+	if var0_149 or arg0_149.selectedMax == 1 and arg0_149:GetSelectCount() > 0 then
+		local var2_149 = defaultValue(var1_149, 1)
+		local var3_149 = arg0_149.shipVOsById[arg0_149.selectedIds[var2_149]]
+		local var4_149, var5_149 = arg0_149.onCancelShip(var3_149, function()
+			if not arg0_149.exited then
 				return
 			end
 
-			arg0_145:selectShip(arg1_145)
-		end, arg0_145.selectedIds)
+			arg0_149:selectShip(arg1_149)
+		end, arg0_149.selectedIds)
 
-		if not var4_145 then
-			if var5_145 then
-				pg.TipsMgr.GetInstance():ShowTips(var5_145)
+		if not var4_149 then
+			if var5_149 then
+				pg.TipsMgr.GetInstance():ShowTips(var5_149)
 			end
 
 			return
 		end
 
-		table.remove(arg0_145.selectedIds, var2_145)
+		table.remove(arg0_149.selectedIds, var2_149)
 
-		if arg0_145.selectedMax ~= 1 then
-			arg0_145:updateBlackBlocks(var3_145)
+		if arg0_149.selectedMax ~= 1 then
+			arg0_149:updateBlackBlocks(var3_149)
 		end
 	end
 
-	if not var0_145 then
-		local var6_145, var7_145 = arg0_145.checkShip(arg1_145, function()
-			if arg0_145.exited then
+	if not var0_149 then
+		local var6_149, var7_149 = arg0_149.checkShip(arg1_149, function()
+			if arg0_149.exited then
 				return
 			end
 
-			arg0_145:selectShip(arg1_145)
-		end, arg0_145.selectedIds)
+			arg0_149:selectShip(arg1_149)
+		end, arg0_149.selectedIds)
 
-		if not var6_145 then
-			if var7_145 then
-				pg.TipsMgr.GetInstance():ShowTips(var7_145)
+		if not var6_149 then
+			if var7_149 then
+				pg.TipsMgr.GetInstance():ShowTips(var7_149)
 			end
 
 			return
 		end
 
-		if arg0_145.selectedMax == 0 or arg0_145:GetSelectCount() < arg0_145.selectedMax then
-			table.insert(arg0_145.selectedIds, arg1_145.id)
+		if arg0_149.selectedMax == 0 or arg0_149:GetSelectCount() < arg0_149.selectedMax then
+			table.insert(arg0_149.selectedIds, arg1_149.id)
 
-			if arg0_145.selectedMax ~= 1 then
-				arg0_145:updateBlackBlocks(removeShip)
+			if arg0_149.selectedMax ~= 1 then
+				arg0_149:updateBlackBlocks(removeShip)
 			end
 		else
-			pg.TipsMgr.GetInstance():ShowTips(i18n("ship_dockyardScene_error_choiseRoleLess", arg0_145.selectedMax))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("ship_dockyardScene_error_choiseRoleLess", arg0_149.selectedMax))
 
 			return
 		end
 	end
 
-	arg0_145:updateSelected()
+	arg0_149:updateSelected()
 
-	if arg0_145.contextData.mode == var0_0.MODE_DESTROY then
-		arg0_145:updateDestroyRes()
-	elseif arg0_145.contextData.mode == var0_0.MODE_MOD then
-		arg0_145:updateModAttr()
+	if arg0_149.contextData.mode == var0_0.MODE_DESTROY then
+		arg0_149:updateDestroyRes()
+	elseif arg0_149.contextData.mode == var0_0.MODE_MOD then
+		arg0_149:updateModAttr()
 	end
 
-	arg0_145:UpdateGuildViewEquipmentsBtn()
+	arg0_149:UpdateGuildViewEquipmentsBtn()
 end
 
-function var0_0.updateBlackBlocks(arg0_148, arg1_148)
-	if not arg0_148.contextData.useBlackBlock or not arg1_148 then
+function var0_0.updateBlackBlocks(arg0_152, arg1_152)
+	if not arg0_152.contextData.useBlackBlock or not arg1_152 then
 		return
 	end
 
-	for iter0_148, iter1_148 in pairs(arg0_148.scrollItems) do
-		arg0_148:updateItemBlackBlock(iter1_148)
+	for iter0_152, iter1_152 in pairs(arg0_152.scrollItems) do
+		arg0_152:updateItemBlackBlock(iter1_152)
 	end
 end
 
-function var0_0.updateItemBlackBlock(arg0_149, arg1_149)
-	if arg0_149.contextData.useBlackBlock then
-		if arg0_149.selectedMax == 1 then
-			arg1_149:updateBlackBlock(arg0_149.contextData.otherSelectedIds)
+function var0_0.updateItemBlackBlock(arg0_153, arg1_153)
+	if arg0_153.contextData.useBlackBlock then
+		if arg0_153.selectedMax == 1 then
+			arg1_153:updateBlackBlock(arg0_153.contextData.otherSelectedIds)
 		else
-			arg1_149:updateBlackBlock(arg0_149.selectedIds)
+			arg1_153:updateBlackBlock(arg0_153.selectedIds)
 		end
 	else
-		arg1_149:updateBlackBlock()
+		arg1_153:updateBlackBlock()
 	end
 end
 
-function var0_0.unselecteAllShips(arg0_150)
-	arg0_150.selectedIds = {}
+function var0_0.unselecteAllShips(arg0_154)
+	arg0_154.selectedIds = {}
 
-	arg0_150:updateSelected()
-	arg0_150:updateDestroyRes()
+	arg0_154:updateSelected()
+	arg0_154:updateDestroyRes()
 end
 
-function var0_0.updateSelected(arg0_151)
-	if arg0_151.shipContainer then
-		for iter0_151, iter1_151 in pairs(arg0_151.scrollItems) do
-			if not iter1_151.isClear then
-				local var0_151 = iter1_151.shipVO and iter1_151.shipVO.id or nil
+function var0_0.updateSelected(arg0_155)
+	if arg0_155.shipContainer then
+		for iter0_155, iter1_155 in pairs(arg0_155.scrollItems) do
+			if not iter1_155.isClear then
+				local var0_155 = iter1_155.shipVO and iter1_155.shipVO.id or nil
 
-				iter1_151:updateSelected(iter1_151.shipVO and underscore.any(arg0_151.selectedIds, function(arg0_152)
-					return var0_151 == arg0_152
+				iter1_155:updateSelected(iter1_155.shipVO and underscore.any(arg0_155.selectedIds, function(arg0_156)
+					return var0_155 == arg0_156
 				end))
 			end
 		end
 	end
 
-	if arg0_151.phantomContainer then
-		for iter2_151, iter3_151 in pairs(arg0_151.scrollPhantoms) do
-			if not iter3_151.isClear then
-				local var1_151 = iter3_151.shipCard.shipVO.id
-				local var2_151 = {}
-				local var3_151 = getGameset("technology_shadow_num")[1]
+	if arg0_155.phantomContainer then
+		for iter2_155, iter3_155 in pairs(arg0_155.scrollPhantoms) do
+			if not iter3_155.isClear then
+				local var1_155 = iter3_155.shipCard.shipVO.id
+				local var2_155 = {}
+				local var3_155 = getGameset("technology_shadow_num")[1]
 
-				for iter4_151 = 0, var3_151 do
-					if iter4_151 == 0 then
-						var2_151[iter4_151] = underscore.any(arg0_151.selectedIds, function(arg0_153)
-							return var1_151 == arg0_153
+				for iter4_155 = 0, var3_155 do
+					if iter4_155 == 0 then
+						var2_155[iter4_155] = underscore.any(arg0_155.selectedIds, function(arg0_157)
+							return var1_155 == arg0_157
 						end)
 					else
-						var2_151[iter4_151] = underscore.any(arg0_151.selectedMarks, function(arg0_154)
-							return arg0_154 == ShipPhantom.PackMark(var1_151, iter4_151)
+						var2_155[iter4_155] = underscore.any(arg0_155.selectedMarks, function(arg0_158)
+							return arg0_158 == ShipPhantom.PackMark(var1_155, iter4_155)
 						end)
 					end
 				end
 
-				iter3_151:updateSelected(var2_151)
+				iter3_155:updateSelected(var2_155)
 			end
 		end
 	end
 
-	if arg0_151.selectedMax == 0 then
-		setText(arg0_151.selectPanel:Find("bottom_info/bg_input/count"), arg0_151:GetSelectCount())
+	if arg0_155.selectedMax == 0 then
+		setText(arg0_155.selectPanel:Find("bottom_info/bg_input/count"), arg0_155:GetSelectCount())
 	else
-		local var4_151 = arg0_151:GetSelectCount()
+		local var4_155 = arg0_155:GetSelectCount()
 
-		if arg0_151.contextData.mode ~= var0_0.MODE_DESTROY or arg0_151:GetSelectCount() == 0 then
-			var4_151 = setColorStr(var4_151, COLOR_WHITE)
-		elseif arg0_151.contextData.mode == var0_0.MODE_DESTROY then
-			var4_151 = setColorStr(var4_151, #arg0_151.selectedIds == 10 and COLOR_RED or COLOR_GREEN)
+		if arg0_155.contextData.mode ~= var0_0.MODE_DESTROY or arg0_155:GetSelectCount() == 0 then
+			var4_155 = setColorStr(var4_155, COLOR_WHITE)
+		elseif arg0_155.contextData.mode == var0_0.MODE_DESTROY then
+			var4_155 = setColorStr(var4_155, #arg0_155.selectedIds == 10 and COLOR_RED or COLOR_GREEN)
 		end
 
-		setText(arg0_151.selectPanel:Find("bottom_info/bg_input/count"), var4_151 .. "/" .. arg0_151.selectedMax)
+		setText(arg0_155.selectPanel:Find("bottom_info/bg_input/count"), var4_155 .. "/" .. arg0_155.selectedMax)
 	end
 
-	if arg0_151:GetSelectCount() < arg0_151.selectedMin then
-		setActive(arg0_151.selectPanel:Find("confirm_button/mask"), true)
+	if arg0_155:GetSelectCount() < arg0_155.selectedMin then
+		setActive(arg0_155.selectPanel:Find("confirm_button/mask"), true)
 	else
-		setActive(arg0_151.selectPanel:Find("confirm_button/mask"), false)
+		setActive(arg0_155.selectPanel:Find("confirm_button/mask"), false)
 	end
 
-	if arg0_151.contextData.mode == var0_0.MODE_MOD then
-		arg0_151:updateModAttr()
-	end
-end
-
-function var0_0.updateItemDetailType(arg0_155)
-	for iter0_155, iter1_155 in pairs(arg0_155.scrollItems) do
-		iter1_155:updateDetail(arg0_155.itemDetailType)
-	end
-
-	arg0_155.shipLayout.anchoredPosition = arg0_155.shipLayout.anchoredPosition + Vector3(0, 0.001, 0)
-end
-
-function var0_0.closeDestroyMode(arg0_156)
-	setActive(arg0_156.awardTF, false)
-	setActive(arg0_156.bottomTipsText, true)
-end
-
-function var0_0.updateDestroyRes(arg0_157)
-	if table.getCount(arg0_157.selectedIds) == 0 then
-		arg0_157:closeDestroyMode()
-	else
-		setActive(arg0_157.awardTF, true)
-		setActive(arg0_157.bottomTipsText, false)
-	end
-
-	local var0_157 = _.map(arg0_157.selectedIds, function(arg0_158)
-		return arg0_157.shipVOsById[arg0_158]
-	end)
-	local var1_157, var2_157, var3_157 = ShipCalcHelper.CalcDestoryRes(var0_157)
-	local var4_157 = var2_157 == 0
-
-	if arg0_157.destroyResList then
-		local var5_157 = (var4_157 and 1 or 2) + #var3_157
-
-		arg0_157.destroyResList:make(function(arg0_159, arg1_159, arg2_159)
-			if arg0_159 == UIItemList.EventUpdate then
-				local var0_159 = ""
-				local var1_159 = 0
-
-				if arg1_159 == 0 then
-					var0_159, var1_159 = "Props/gold", var1_157
-				elseif arg1_159 == 1 then
-					if not var4_157 then
-						var0_159, var1_159 = "Props/oil", var2_157
-					else
-						local var2_159 = var3_157[1]
-
-						var0_159, var1_159 = Item.getConfigData(var2_159.id).icon, var2_159.count
-					end
-				elseif arg1_159 > 1 then
-					local var3_159 = var4_157 and var3_157[arg1_159] or var3_157[arg1_159 - 1]
-
-					var0_159, var1_159 = Item.getConfigData(var3_159.id).icon, var3_159.count
-				end
-
-				GetImageSpriteFromAtlasAsync(var0_159, "", arg2_159:Find("icon"))
-				setText(arg2_159:Find("Text"), "X" .. var1_159)
-			end
-		end)
-		arg0_157.destroyResList:align(var5_157)
-	end
-
-	if arg0_157.destroyPage and arg0_157.destroyPage:GetLoaded() and arg0_157.destroyPage:isShowing() then
-		arg0_157.destroyPage:RefreshRes()
+	if arg0_155.contextData.mode == var0_0.MODE_MOD then
+		arg0_155:updateModAttr()
 	end
 end
 
-function var0_0.setModShip(arg0_160, arg1_160)
-	arg0_160.modShip = arg1_160
+function var0_0.updateItemDetailType(arg0_159)
+	for iter0_159, iter1_159 in pairs(arg0_159.scrollItems) do
+		iter1_159:updateDetail(arg0_159.itemDetailType)
+	end
+
+	arg0_159.shipLayout.anchoredPosition = arg0_159.shipLayout.anchoredPosition + Vector3(0, 0.001, 0)
 end
 
-function var0_0.updateModAttr(arg0_161)
+function var0_0.closeDestroyMode(arg0_160)
+	setActive(arg0_160.awardTF, false)
+	setActive(arg0_160.bottomTipsText, true)
+end
+
+function var0_0.updateDestroyRes(arg0_161)
 	if table.getCount(arg0_161.selectedIds) == 0 then
-		arg0_161:closeModAttr()
+		arg0_161:closeDestroyMode()
 	else
-		setActive(arg0_161.modAttrsTF, true)
+		setActive(arg0_161.awardTF, true)
 		setActive(arg0_161.bottomTipsText, false)
 	end
 
-	local var0_161 = arg0_161.contextData.ignoredIds[1]
-	local var1_161 = {}
+	local var0_161 = _.map(arg0_161.selectedIds, function(arg0_162)
+		return arg0_161.shipVOsById[arg0_162]
+	end)
+	local var1_161, var2_161, var3_161 = ShipCalcHelper.CalcDestoryRes(var0_161)
+	local var4_161 = var2_161 == 0
 
-	for iter0_161, iter1_161 in ipairs(arg0_161.selectedIds) do
-		table.insert(var1_161, arg0_161.shipVOsById[iter1_161])
+	if arg0_161.destroyResList then
+		local var5_161 = (var4_161 and 1 or 2) + #var3_161
+
+		arg0_161.destroyResList:make(function(arg0_163, arg1_163, arg2_163)
+			if arg0_163 == UIItemList.EventUpdate then
+				local var0_163 = ""
+				local var1_163 = 0
+
+				if arg1_163 == 0 then
+					var0_163, var1_163 = "Props/gold", var1_161
+				elseif arg1_163 == 1 then
+					if not var4_161 then
+						var0_163, var1_163 = "Props/oil", var2_161
+					else
+						local var2_163 = var3_161[1]
+
+						var0_163, var1_163 = Item.getConfigData(var2_163.id).icon, var2_163.count
+					end
+				elseif arg1_163 > 1 then
+					local var3_163 = var4_161 and var3_161[arg1_163] or var3_161[arg1_163 - 1]
+
+					var0_163, var1_163 = Item.getConfigData(var3_163.id).icon, var3_163.count
+				end
+
+				GetImageSpriteFromAtlasAsync(var0_163, "", arg2_163:Find("icon"))
+				setText(arg2_163:Find("Text"), "X" .. var1_163)
+			end
+		end)
+		arg0_161.destroyResList:align(var5_161)
 	end
 
-	local var2_161 = ShipModLayer.getModExpAdditions(arg0_161.modShip, var1_161)
+	if arg0_161.destroyPage and arg0_161.destroyPage:GetLoaded() and arg0_161.destroyPage:isShowing() then
+		arg0_161.destroyPage:RefreshRes()
+	end
+end
 
-	for iter2_161, iter3_161 in pairs(ShipModAttr.ID_TO_ATTR) do
-		if iter2_161 ~= ShipModLayer.IGNORE_ID then
-			local var3_161 = arg0_161.modAttrContainer:Find("attr_" .. iter2_161)
+function var0_0.setModShip(arg0_164, arg1_164)
+	arg0_164.modShip = arg1_164
+end
 
-			setText(var3_161:Find("value"), var2_161[iter3_161])
-			setText(var3_161:Find("name"), ShipModAttr.id2Name(iter2_161))
+function var0_0.updateModAttr(arg0_165)
+	if table.getCount(arg0_165.selectedIds) == 0 then
+		arg0_165:closeModAttr()
+	else
+		setActive(arg0_165.modAttrsTF, true)
+		setActive(arg0_165.bottomTipsText, false)
+	end
+
+	local var0_165 = arg0_165.contextData.ignoredIds[1]
+	local var1_165 = {}
+
+	for iter0_165, iter1_165 in ipairs(arg0_165.selectedIds) do
+		table.insert(var1_165, arg0_165.shipVOsById[iter1_165])
+	end
+
+	local var2_165 = ShipModLayer.getModExpAdditions(arg0_165.modShip, var1_165)
+
+	for iter2_165, iter3_165 in pairs(ShipModAttr.ID_TO_ATTR) do
+		if iter2_165 ~= ShipModLayer.IGNORE_ID then
+			local var3_165 = arg0_165.modAttrContainer:Find("attr_" .. iter2_165)
+
+			setText(var3_165:Find("value"), var2_165[iter3_165])
+			setText(var3_165:Find("name"), ShipModAttr.id2Name(iter2_165))
 		end
 	end
 end
 
-function var0_0.closeModAttr(arg0_162)
-	setActive(arg0_162.modAttrsTF, false)
-	setActive(arg0_162.bottomTipsText, true)
+function var0_0.closeModAttr(arg0_166)
+	setActive(arg0_166.modAttrsTF, false)
+	setActive(arg0_166.bottomTipsText, true)
 end
 
-function var0_0.removeShip(arg0_163, arg1_163)
-	for iter0_163, iter1_163 in ipairs(arg0_163.selectedIds) do
-		if iter1_163 == arg1_163 then
-			table.remove(arg0_163.selectedIds, iter0_163)
+function var0_0.removeShip(arg0_167, arg1_167)
+	for iter0_167, iter1_167 in ipairs(arg0_167.selectedIds) do
+		if iter1_167 == arg1_167 then
+			table.remove(arg0_167.selectedIds, iter0_167)
 
 			break
 		end
 	end
 
-	for iter2_163 = #arg0_163.shipVOs, 1, -1 do
-		if arg0_163.shipVOs[iter2_163].id == arg1_163 then
-			table.remove(arg0_163.shipVOs, iter2_163)
+	for iter2_167 = #arg0_167.shipVOs, 1, -1 do
+		if arg0_167.shipVOs[iter2_167].id == arg1_167 then
+			table.remove(arg0_167.shipVOs, iter2_167)
 
 			break
 		end
 	end
 
-	arg0_163.shipVOsById[arg1_163] = nil
+	arg0_167.shipVOsById[arg1_167] = nil
 end
 
-function var0_0.updateShipCount(arg0_164, arg1_164)
-	arg0_164.shipContainer:SetTotalCount(#arg0_164.shipVOs, defaultValue(arg1_164, -1))
-	setActive(arg0_164.listEmptyTF, #arg0_164.shipVOs <= 0)
+function var0_0.updateShipCount(arg0_168, arg1_168)
+	arg0_168.shipContainer:SetTotalCount(#arg0_168.shipVOs, defaultValue(arg1_168, -1))
+	setActive(arg0_168.listEmptyTF, #arg0_168.shipVOs <= 0)
 end
 
-function var0_0.ClearShipsBlackBlock(arg0_165)
-	if not arg0_165.shipVOsById then
+function var0_0.ClearShipsBlackBlock(arg0_169)
+	if not arg0_169.shipVOsById then
 		return
 	end
 
-	for iter0_165, iter1_165 in pairs(arg0_165.shipVOsById) do
-		iter1_165.blackBlock = false
+	for iter0_169, iter1_169 in pairs(arg0_169.shipVOsById) do
+		iter1_169.blackBlock = false
 	end
 end
 
-function var0_0.willExit(arg0_166)
-	arg0_166:closeDestroyMode()
-	arg0_166:closeModAttr()
-	arg0_166:ClearShipsBlackBlock()
+function var0_0.willExit(arg0_170)
+	arg0_170:closeDestroyMode()
+	arg0_170:closeModAttr()
+	arg0_170:ClearShipsBlackBlock()
 
-	if arg0_166.guildShipEquipmentsPage then
-		arg0_166.guildShipEquipmentsPage:Destroy()
+	if arg0_170.guildShipEquipmentsPage then
+		arg0_170.guildShipEquipmentsPage:Destroy()
 	end
 
-	if arg0_166.settingPanel then
-		arg0_166.settingPanel:Destroy()
+	if arg0_170.settingPanel then
+		arg0_170.settingPanel:Destroy()
 	end
 
-	if arg0_166.destroyPage then
-		arg0_166.destroyPage:Destroy()
+	if arg0_170.destroyPage then
+		arg0_170.destroyPage:Destroy()
 	end
 
-	if arg0_166.destroyConfirmWindow then
-		arg0_166.destroyConfirmWindow:Destroy()
+	if arg0_170.destroyConfirmWindow then
+		arg0_170.destroyConfirmWindow:Destroy()
 	end
 
-	if arg0_166.contextData.mode == var0_0.MODE_MOD then
+	if arg0_170.contextData.mode == var0_0.MODE_MOD then
 		-- block empty
-	elseif not arg0_166.contextData.sortData then
-		if _G[arg0_166.contextData.preView] then
-			_G[arg0_166.contextData.preView].sortIndex = arg0_166.sortIndex
-			_G[arg0_166.contextData.preView].selectAsc = arg0_166.selectAsc
-			_G[arg0_166.contextData.preView].typeIndex = arg0_166.typeIndex
-			_G[arg0_166.contextData.preView].campIndex = arg0_166.campIndex
-			_G[arg0_166.contextData.preView].rarityIndex = arg0_166.rarityIndex
-			_G[arg0_166.contextData.preView].extraIndex = arg0_166.extraIndex
-			_G[arg0_166.contextData.preView].commonTag = arg0_166.commonTag
+	elseif not arg0_170.contextData.sortData then
+		if _G[arg0_170.contextData.preView] then
+			_G[arg0_170.contextData.preView].sortIndex = arg0_170.sortIndex
+			_G[arg0_170.contextData.preView].selectAsc = arg0_170.selectAsc
+			_G[arg0_170.contextData.preView].typeIndex = arg0_170.typeIndex
+			_G[arg0_170.contextData.preView].campIndex = arg0_170.campIndex
+			_G[arg0_170.contextData.preView].rarityIndex = arg0_170.rarityIndex
+			_G[arg0_170.contextData.preView].extraIndex = arg0_170.extraIndex
+			_G[arg0_170.contextData.preView].commonTag = arg0_170.commonTag
 		else
-			DockyardScene.sortIndex = arg0_166.sortIndex
-			DockyardScene.selectAsc = arg0_166.selectAsc
-			DockyardScene.typeIndex = arg0_166.typeIndex
-			DockyardScene.campIndex = arg0_166.campIndex
-			DockyardScene.rarityIndex = arg0_166.rarityIndex
-			DockyardScene.extraIndex = arg0_166.extraIndex
-			DockyardScene.commonTag = arg0_166.commonTag
+			DockyardScene.sortIndex = arg0_170.sortIndex
+			DockyardScene.selectAsc = arg0_170.selectAsc
+			DockyardScene.typeIndex = arg0_170.typeIndex
+			DockyardScene.campIndex = arg0_170.campIndex
+			DockyardScene.rarityIndex = arg0_170.rarityIndex
+			DockyardScene.extraIndex = arg0_170.extraIndex
+			DockyardScene.commonTag = arg0_170.commonTag
 		end
 	end
 
-	if arg0_166.shipContainer then
-		arg0_166.shipContainer.enabled = false
+	if arg0_170.shipContainer then
+		arg0_170.shipContainer.enabled = false
 
-		for iter0_166, iter1_166 in pairs(arg0_166.scrollItems) do
-			iter1_166:clear()
-			GetOrAddComponent(iter1_166.go, "UILongPressTrigger").onLongPressed:RemoveAllListeners()
+		for iter0_170, iter1_170 in pairs(arg0_170.scrollItems) do
+			iter1_170:clear()
+			GetOrAddComponent(iter1_170.go, "UILongPressTrigger").onLongPressed:RemoveAllListeners()
 		end
 	end
 
-	if arg0_166.phantomContainer then
-		arg0_166.phantomContainer.enabled = false
+	if arg0_170.phantomContainer then
+		arg0_170.phantomContainer.enabled = false
 
-		for iter2_166, iter3_166 in pairs(arg0_166.scrollPhantoms) do
-			iter3_166:clear()
+		for iter2_170, iter3_170 in pairs(arg0_170.scrollPhantoms) do
+			iter3_170:clear()
 		end
 	end
 
-	if LeanTween.isTweening(go(arg0_166.energyDescTF)) then
-		setActive(arg0_166.energyDescTF, false)
-		LeanTween.cancel(go(arg0_166.energyDescTF))
+	if LeanTween.isTweening(go(arg0_170.energyDescTF)) then
+		setActive(arg0_170.energyDescTF, false)
+		LeanTween.cancel(go(arg0_170.energyDescTF))
 	end
 
-	arg0_166:cancelAnimating()
+	arg0_170:cancelAnimating()
 
-	if arg0_166.isRemouldOrUpgradeMode then
-		local var0_166 = getProxy(SettingsProxy)
+	if arg0_170.isRemouldOrUpgradeMode then
+		local var0_170 = getProxy(SettingsProxy)
 
-		var0_166:SetDockYardLockBtnFlag(arg0_166.isFilterLockForMod)
-		var0_166:SetDockYardLevelBtnFlag(arg0_166.isFilterLevelForMod)
+		var0_170:SetDockYardLockBtnFlag(arg0_170.isFilterLockForMod)
+		var0_170:SetDockYardLevelBtnFlag(arg0_170.isFilterLevelForMod)
 	end
 
-	if arg0_166.bulinTip then
-		arg0_166.bulinTip:Destroy()
+	if arg0_170.bulinTip then
+		arg0_170.bulinTip:Destroy()
 
-		arg0_166.bulinTip = nil
+		arg0_170.bulinTip = nil
 	end
 
-	if arg0_166.searchBar then
-		arg0_166.searchBar:Dispose()
+	if arg0_170.searchBar then
+		arg0_170.searchBar:Dispose()
 
-		arg0_166.searchBar = nil
+		arg0_170.searchBar = nil
 	end
 
-	arg0_166:UnOverlayPanel(arg0_166.blurPanel, arg0_166._tf)
+	arg0_170:UnOverlayPanel(arg0_170.blurPanel, arg0_170._tf)
 
-	if arg0_166:isLayer() then
-		arg0_166:UnOverlayPanel(arg0_166._tf)
+	if arg0_170:isLayer() then
+		arg0_170:UnOverlayPanel(arg0_170._tf)
 	end
 end
 
-function var0_0.uiStartAnimating(arg0_167)
-	local var0_167 = arg0_167.topPanel:Find("back")
-	local var1_167 = 0
-	local var2_167 = 0.3
+function var0_0.uiStartAnimating(arg0_171)
+	local var0_171 = arg0_171.topPanel:Find("back")
+	local var1_171 = 0
+	local var2_171 = 0.3
 
-	if isActive(arg0_167.selectPanel) then
-		shiftPanel(arg0_167.selectPanel, nil, 0, var2_167, var1_167, true, true)
+	if isActive(arg0_171.selectPanel) then
+		shiftPanel(arg0_171.selectPanel, nil, 0, var2_171, var1_171, true, true)
 	end
 end
 
-function var0_0.uiExitAnimating(arg0_168)
-	if arg0_168.contextData.mode == var0_0.MODE_OVERVIEW then
+function var0_0.uiExitAnimating(arg0_172)
+	if arg0_172.contextData.mode == var0_0.MODE_OVERVIEW then
 		-- block empty
 	else
-		local var0_168 = 0
-		local var1_168 = 0.3
+		local var0_172 = 0
+		local var1_172 = 0.3
 
-		shiftPanel(arg0_168.selectPanel, nil, -1 * arg0_168.selectPanel.rect.height, var1_168, var0_168, true, true)
+		shiftPanel(arg0_172.selectPanel, nil, -1 * arg0_172.selectPanel.rect.height, var1_172, var0_172, true, true)
 	end
 end
 
-function var0_0.back(arg0_169)
-	if arg0_169.exited then
+function var0_0.back(arg0_173)
+	if arg0_173.exited then
 		return
 	end
 
-	arg0_169:closeView()
+	arg0_173:closeView()
 end
 
-function var0_0.cancelAnimating(arg0_170)
-	if LeanTween.isTweening(go(arg0_170.topPanel)) then
-		LeanTween.cancel(go(arg0_170.topPanel))
+function var0_0.cancelAnimating(arg0_174)
+	if LeanTween.isTweening(go(arg0_174.topPanel)) then
+		LeanTween.cancel(go(arg0_174.topPanel))
 	end
 
-	if LeanTween.isTweening(go(arg0_170.selectPanel)) then
-		LeanTween.cancel(go(arg0_170.selectPanel))
+	if LeanTween.isTweening(go(arg0_174.selectPanel)) then
+		LeanTween.cancel(go(arg0_174.selectPanel))
 	end
 
-	if arg0_170.tweens then
-		cancelTweens(arg0_170.tweens)
+	if arg0_174.tweens then
+		cancelTweens(arg0_174.tweens)
 	end
 end
 
-function var0_0.quickExitFunc(arg0_171)
+function var0_0.quickExitFunc(arg0_175)
 	seriesAsync({
-		function(arg0_172)
-			if arg0_171.contextData.onQuickHome then
-				arg0_171.contextData.onQuickHome(arg0_172)
+		function(arg0_176)
+			if arg0_175.contextData.onQuickHome then
+				arg0_175.contextData.onQuickHome(arg0_176)
 			else
-				arg0_172()
+				arg0_176()
 			end
 		end,
-		function(arg0_173)
-			arg0_171:emit(var0_0.ON_HOME)
+		function(arg0_177)
+			arg0_175:emit(var0_0.ON_HOME)
 		end
 	})
 end
 
-function var0_0.displayDestroyPanel(arg0_174)
-	arg0_174.destroyPage:ExecuteAction("Show")
-	arg0_174.destroyPage:ActionInvoke("Refresh", arg0_174.selectedIds, arg0_174.shipVOsById)
+function var0_0.displayDestroyPanel(arg0_178)
+	arg0_178.destroyPage:ExecuteAction("Show")
+	arg0_178.destroyPage:ActionInvoke("Refresh", arg0_178.selectedIds, arg0_178.shipVOsById)
 end
 
-function var0_0.closeDestroyPanel(arg0_175)
-	if arg0_175.destroyPage:isShowing() then
-		arg0_175.destroyPage:Hide()
+function var0_0.closeDestroyPanel(arg0_179)
+	if arg0_179.destroyPage:isShowing() then
+		arg0_179.destroyPage:Hide()
 	end
 end
 
-function var0_0.checkDestroyShips(arg0_176, arg1_176, arg2_176)
-	local var0_176 = {}
+function var0_0.checkDestroyShips(arg0_180, arg1_180, arg2_180)
+	local var0_180 = {}
 
 	if PlayerPrefs.GetInt("RetireProtect", 1) == 0 then
-		local var1_176 = {}
+		local var1_180 = {}
 
-		for iter0_176, iter1_176 in pairs(arg1_176) do
-			local var2_176 = 0
+		for iter0_180, iter1_180 in pairs(arg1_180) do
+			local var2_180 = 0
 
-			for iter2_176, iter3_176 in pairs(arg1_176) do
-				if iter3_176:getGroupId() == iter1_176:getGroupId() then
-					var2_176 = var2_176 + 1
+			for iter2_180, iter3_180 in pairs(arg1_180) do
+				if iter3_180:getGroupId() == iter1_180:getGroupId() then
+					var2_180 = var2_180 + 1
 				end
 			end
 
-			if #getProxy(BayProxy):findShipsByGroup(iter1_176:getGroupId()) == var2_176 then
-				local var3_176 = false
+			if #getProxy(BayProxy):findShipsByGroup(iter1_180:getGroupId()) == var2_180 then
+				local var3_180 = false
 
-				for iter4_176, iter5_176 in pairs(var1_176) do
-					if iter5_176:getGroupId() == iter1_176:getGroupId() then
-						var3_176 = true
+				for iter4_180, iter5_180 in pairs(var1_180) do
+					if iter5_180:getGroupId() == iter1_180:getGroupId() then
+						var3_180 = true
 
 						break
 					end
 				end
 
-				if not var3_176 then
-					table.insert(var1_176, iter1_176)
+				if not var3_180 then
+					table.insert(var1_180, iter1_180)
 				end
 			end
 		end
 
-		if #var1_176 > 0 then
-			table.insert(var0_176, function(arg0_177)
-				arg0_176.destroyConfirmWindow:ExecuteAction("ShowOneShipProtect", var1_176, arg0_177)
+		if #var1_180 > 0 then
+			table.insert(var0_180, function(arg0_181)
+				arg0_180.destroyConfirmWindow:ExecuteAction("ShowOneShipProtect", var1_180, arg0_181)
 			end)
 		end
 	end
 
-	local var4_176, var5_176 = ShipCalcHelper.GetEliteAndHightLevelShips(arg1_176)
+	local var4_180, var5_180 = ShipCalcHelper.GetEliteAndHightLevelShips(arg1_180)
 
-	if #var4_176 > 0 or #var5_176 > 0 then
-		table.insert(var0_176, function(arg0_178)
-			local var0_178 = false
+	if #var4_180 > 0 or #var5_180 > 0 then
+		table.insert(var0_180, function(arg0_182)
+			local var0_182 = false
 
-			if arg0_176.contextData.mode == var0_0.MODE_DESTROY then
-				var0_178 = ({
-					ShipCalcHelper.CalcDestoryRes(arg1_176)
+			if arg0_180.contextData.mode == var0_0.MODE_DESTROY then
+				var0_182 = ({
+					ShipCalcHelper.CalcDestoryRes(arg1_180)
 				})[4]
 			end
 
-			arg0_176.destroyConfirmWindow:ExecuteAction("Show", var4_176, var5_176, var0_178, arg0_178)
+			arg0_180.destroyConfirmWindow:ExecuteAction("Show", var4_180, var5_180, var0_182, arg0_182)
 		end)
 	end
 
-	local var6_176 = underscore.filter(arg1_176, function(arg0_179)
-		return arg0_179:getFlag("inElite")
+	local var6_180 = underscore.filter(arg1_180, function(arg0_183)
+		return arg0_183:getFlag("inElite")
 	end)
 
-	if #var6_176 > 0 then
-		table.insert(var0_176, function(arg0_180)
-			arg0_176.destroyConfirmWindow:ExecuteAction("ShowEliteTag", var6_176, arg0_180)
+	if #var6_180 > 0 then
+		table.insert(var0_180, function(arg0_184)
+			arg0_180.destroyConfirmWindow:ExecuteAction("ShowEliteTag", var6_180, arg0_184)
 		end)
 	end
 
-	seriesAsync(var0_176, arg2_176)
+	seriesAsync(var0_180, arg2_180)
 end
 
 return var0_0

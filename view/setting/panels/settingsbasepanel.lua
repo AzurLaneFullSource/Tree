@@ -26,58 +26,73 @@ end
 function var0_0.Load(arg0_4, arg1_4)
 	arg0_4.state = var2_0
 
-	PoolMgr.GetInstance():GetUI(arg0_4:GetUIName(), true, function(arg0_5)
-		if arg0_4.exited then
-			PoolMgr.GetInstance():ReturnUI(arg0_4:GetUIName(), arg0_5)
+	seriesAsync({
+		function(arg0_5)
+			local var0_5 = arg0_4:getResource()
 
-			return
+			SplitPackConst.DownloadByLuaArr(var0_5, arg0_5)
+		end,
+		function(arg0_6)
+			PoolMgr.GetInstance():GetUI(arg0_4:GetUIName(), true, function(arg0_7)
+				if arg0_4.exited then
+					PoolMgr.GetInstance():ReturnUI(arg0_4:GetUIName(), arg0_7)
+
+					return
+				end
+
+				arg0_4.state = var3_0
+				arg0_4._go = arg0_7
+				arg0_4._tf = arg0_7.transform
+
+				setParent(arg0_4._tf, arg0_4.parentTF)
+				arg0_4:InitTitle()
+				arg0_4:OnInit()
+				arg0_4:OnUpdate()
+				setActive(arg0_4._tf, true)
+				arg0_6()
+			end)
 		end
-
-		arg0_4.state = var3_0
-		arg0_4._go = arg0_5
-		arg0_4._tf = arg0_5.transform
-
-		setParent(arg0_4._tf, arg0_4.parentTF)
-		arg0_4:InitTitle()
-		arg0_4:OnInit()
-		arg0_4:OnUpdate()
-		setActive(arg0_4._tf, true)
-		arg1_4()
-	end)
+	}, arg1_4)
 end
 
-function var0_0.InitTitle(arg0_6)
-	setText(arg0_6._tf:Find("title"), arg0_6:GetTitle())
-	setText(arg0_6._tf:Find("title/title_text"), arg0_6:GetTitleEn())
+function var0_0.InitTitle(arg0_8)
+	setText(arg0_8._tf:Find("title"), arg0_8:GetTitle())
+	setText(arg0_8._tf:Find("title/title_text"), arg0_8:GetTitleEn())
 end
 
-function var0_0.Dispose(arg0_7)
-	arg0_7.exited = true
+function var0_0.Dispose(arg0_9)
+	arg0_9.exited = true
 
-	pg.DelegateInfo.Dispose(arg0_7)
+	pg.DelegateInfo.Dispose(arg0_9)
 
-	if arg0_7.state >= var3_0 then
-		PoolMgr.GetInstance():ReturnUI(arg0_7:GetUIName(), arg0_7._go)
+	if arg0_9.state >= var3_0 then
+		PoolMgr.GetInstance():ReturnUI(arg0_9:GetUIName(), arg0_9._go)
 	end
 end
 
-function var0_0.GetUIName(arg0_8)
+function var0_0.GetUIName(arg0_10)
 	assert(false, "overwrite me !!!")
 end
 
-function var0_0.GetTitle(arg0_9)
+function var0_0.getResource(arg0_11)
+	return {
+		"ui/" .. arg0_11:GetUIName()
+	}
+end
+
+function var0_0.GetTitle(arg0_12)
 	assert(false, "overwrite me !!!")
 end
 
-function var0_0.GetTitleEn(arg0_10)
+function var0_0.GetTitleEn(arg0_13)
 	assert(false, "overwrite me !!!")
 end
 
-function var0_0.OnInit(arg0_11)
+function var0_0.OnInit(arg0_14)
 	return
 end
 
-function var0_0.OnUpdate(arg0_12)
+function var0_0.OnUpdate(arg0_15)
 	return
 end
 

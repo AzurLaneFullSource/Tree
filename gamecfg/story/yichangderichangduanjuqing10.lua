@@ -5,11 +5,12 @@ return {
 	scripts = {
 		{
 			expression = 4,
+			side = 2,
 			nameColor = "#A9F548FF",
-			actor = 201401,
 			hidePaintObj = true,
 			dir = 1,
-			side = 2,
+			NextIcon = 1,
+			actor = 201401,
 			say = "Commander... You found me. Heheh!♪",
 			typewriter = {
 				speed = 0.05,
@@ -18,11 +19,12 @@ return {
 		},
 		{
 			expression = 4,
+			side = 2,
 			nameColor = "#A9F548FF",
-			actor = 201401,
 			hidePaintObj = true,
 			dir = 1,
-			side = 2,
+			NextIcon = 1,
+			actor = 201401,
 			say = "I waited for you here for so long... Let's play already~",
 			typewriter = {
 				speed = 0.05,
@@ -31,9 +33,10 @@ return {
 		},
 		{
 			actor = 201401,
-			nameColor = "#A9F548FF",
 			actorName = "Dolls",
+			nameColor = "#A9F548FF",
 			hidePaintObj = true,
+			NextIcon = 1,
 			side = 2,
 			say = "let'S pLaY TOgETHer!",
 			typewriter = {
@@ -54,11 +57,12 @@ return {
 		{
 			expression = 4,
 			side = 2,
-			actor = 201401,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 1,
+			actor = 201401,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "Hee hee! I got a lot of stuff to play with~",
 			typewriter = {
 				speed = 0.05,
@@ -68,11 +72,12 @@ return {
 		{
 			expression = 2,
 			side = 2,
-			actor = 201401,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 2,
+			actor = 201401,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "Oh... Then we can meet up later?",
 			typewriter = {
 				speed = 0.05,

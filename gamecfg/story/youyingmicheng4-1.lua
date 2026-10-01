@@ -9,6 +9,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			NextIcon = 1,
 			bgm = "story-visioncity-1",
 			actor = 231211,
 			nameColor = "#A9F548FF",
@@ -42,10 +43,11 @@ return {
 			expression = 2,
 			side = 2,
 			bgName = "star_level_bg_495",
-			hidePaintObj = true,
+			portrait = "zhihuiguan",
+			NextIcon = 1,
 			actor = 0,
 			nameColor = "#A9F548FF",
-			portrait = "zhihuiguan",
+			hidePaintObj = true,
 			say = "Watch out for reflective surfaces! Don't look into them!",
 			typewriter = {
 				speed = 0.05,
@@ -53,10 +55,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "As I shout the order, a pale hand reaches out of a shop's TV display and lunges straight for Javelin.",
 			typewriter = {
 				speed = 0.05,
@@ -69,6 +72,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -89,10 +93,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "She raises her wand high. Pink light shines from it, causing the hand to recoil as if burned.",
 			typewriter = {
 				speed = 0.05,
@@ -100,11 +105,12 @@ return {
 			}
 		},
 		{
-			actor = 403143,
 			nameColor = "#FF9B93",
+			side = 2,
 			bgName = "star_level_bg_495",
 			factiontag = "Poltergeist",
-			side = 2,
+			NextIcon = 1,
+			actor = 403143,
 			actorName = "???",
 			hidePaintObj = true,
 			say = "Heehee... That one hurt. Slowing you down won't be as easy as I'd hoped.",
@@ -114,12 +120,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "Slowing us down, huh? Who are you trying to let escape? Was it that shadow chasing Z14?",
 			typewriter = {
 				speed = 0.05,
@@ -127,12 +134,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "Are you behind the disappearances?",
 			typewriter = {
 				speed = 0.05,
@@ -145,6 +153,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 403143,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -160,6 +169,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 403143,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -170,10 +180,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Amidst the static noise, a woman begins crawling out of the screen.",
 			typewriter = {
 				speed = 0.05,
@@ -186,6 +197,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 403143,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -201,6 +213,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 403143,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -211,11 +224,12 @@ return {
 			}
 		},
 		{
-			actor = 403143,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_495",
 			factiontag = "Poltergeist",
 			dir = 1,
+			actor = 403143,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "The affection dripping from your words does fascinate me, but helping my Lord comes first... so I'm afraid I'll have to listen another time.",
@@ -230,6 +244,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 403143,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -240,12 +255,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "Do you think we'd abandon a mission just because you asked us to?",
 			typewriter = {
 				speed = 0.05,
@@ -258,6 +274,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 403143,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -268,10 +285,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Friedrich Carl's lips curl up into a grin. Suddenly, all of the glass surfaces around us shatter as countless black shadows lunge forth.",
 			typewriter = {
 				speed = 0.05,
@@ -279,12 +297,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "Amatsukaze! Tiger!",
 			typewriter = {
 				speed = 0.05,
@@ -297,6 +316,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Poltergeist Operative",
 			dir = 1,
+			NextIcon = 1,
 			actor = 900557,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -311,10 +331,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Ghostly flames spread, incinerating the shadows before they can reach us.",
 			typewriter = {
 				speed = 0.05,
@@ -327,6 +348,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -342,6 +364,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -352,10 +375,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "With a gleam in her eyes and a fang poking out from between her lips, Tiger's demeanor becomes wild and frenzied.",
 			typewriter = {
 				speed = 0.05,
@@ -368,6 +392,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 403143,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -383,6 +408,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 403143,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -398,6 +424,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,

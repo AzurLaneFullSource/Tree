@@ -44,7 +44,7 @@ function var0_0.didEnter(arg0_5)
 
 	arg0_5.zoneIndex = 1
 
-	local var1_5 = arg0_5.scene:GetAttachedFurnitureName()
+	local var1_5 = arg0_5.scene:GetCurrentZoneNodeName()
 
 	if var1_5 then
 		table.Ipairs(var0_5, function(arg0_8, arg1_8)

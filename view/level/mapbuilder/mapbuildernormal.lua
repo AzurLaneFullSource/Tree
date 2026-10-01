@@ -261,7 +261,6 @@ end
 function var0_0.UpdateMapItem(arg0_17, arg1_17, arg2_17)
 	local var0_17 = arg2_17:getConfigTable()
 
-	warning(1920 * var0_17.pos_x, 1080 * var0_17.pos_y)
 	setLocalPosition(arg1_17, {
 		x = 1920 * var0_17.pos_x,
 		y = 1080 * var0_17.pos_y

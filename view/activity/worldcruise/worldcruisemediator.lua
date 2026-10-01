@@ -88,7 +88,7 @@ function var0_0.handleNotification(arg0_11, arg1_11)
 			arg0_11.viewComponent:UpdateView()
 		end
 	elseif var0_11 == GAME.CRUSING_CMD_DONE then
-		arg0_11.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_11.awards)
+		arg0_11.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_11.awards, var1_11.callback)
 		arg0_11.viewComponent:UpdateAwardPage()
 		arg0_11.viewComponent:UpdateView()
 	elseif var0_11 == PlayerProxy.UPDATED then
@@ -99,7 +99,11 @@ function var0_0.handleNotification(arg0_11, arg1_11)
 			shop_id = var1_11.shopId
 		}, Goods.TYPE_CHARGE)
 
-		arg0_11.viewComponent:OnChargeSuccess(var2_11)
+		arg0_11.viewComponent:OnChargeSuccess(var2_11, function()
+			MainFetchPrevPeriodCrusingSequence.New():Execute(function()
+				return
+			end)
+		end)
 		arg0_11.viewComponent:UpdateRes()
 	elseif var0_11 == BagProxy.ITEM_UPDATED then
 		if var1_11.id == Item.QUICK_TASK_PASS_TICKET_ID then

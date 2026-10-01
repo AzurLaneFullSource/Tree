@@ -280,11 +280,13 @@ pg.furniture_data_template.all = {
 	100078,
 	100079,
 	100080,
+	100081,
 	100083,
 	100084,
 	100086,
 	100088,
 	100089,
+	100090,
 	200001,
 	200002,
 	200003,
@@ -3937,11 +3939,13 @@ pg.furniture_data_template.get_id_list_by_themeId = {
 		100078,
 		100079,
 		100080,
+		100081,
 		100083,
 		100084,
 		100086,
 		100088,
 		100089,
+		100090,
 		200001,
 		200002,
 		200003,
@@ -10935,11 +10939,13 @@ pg.furniture_data_template.get_id_list_by_tag = {
 		100078,
 		100079,
 		100080,
+		100081,
 		100083,
 		100084,
 		100086,
 		100088,
 		100089,
+		100090,
 		31101,
 		54104,
 		54105
@@ -14804,6 +14810,7 @@ pg.furniture_data_template.get_id_list_by_type = {
 		100078,
 		100079,
 		100080,
+		100081,
 		100084,
 		100088
 	},
@@ -14874,6 +14881,7 @@ pg.furniture_data_template.get_id_list_by_type = {
 		100083,
 		100086,
 		100089,
+		100090,
 		30123,
 		35128,
 		37121,
@@ -30297,6 +30305,77 @@ end)()
 		},
 		interAction_group = {}
 	}
+	pg.base.furniture_data_template[100081] = {
+		gain_by = "",
+		name = "Photography Studio",
+		count = 1,
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "",
+		comfortable = 0,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 0,
+		icon = "xiaosheyingpengicon",
+		deblocking = 1,
+		level = 1,
+		describe = "The photography staff is ready. Models, please line up and enter in order. Refrain from stealing the spotlight and fighting over space.",
+		rarity = 4,
+		can_rotate = 0,
+		tag = 6,
+		spine_action_replace = "",
+		belong = 1,
+		spine_extra = "",
+		canputon = 0,
+		id = 100081,
+		advice = 0,
+		size = {
+			8,
+			9
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"xiaosheyingpengB",
+				"normal"
+			},
+			{
+				"xiaosheyingpengT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"dance"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			-1
+		},
+		interAction_group = {}
+	}
 	pg.base.furniture_data_template[100083] = {
 		gain_by = "",
 		name = "Phantasmal Flying Object",
@@ -30601,7 +30680,7 @@ end)()
 	}
 	pg.base.furniture_data_template[100089] = {
 		effect = "",
-		name = "幽幽祟祟",
+		name = "Will-o'-Wisp",
 		gain_by = "",
 		type = 11,
 		dir = 0,
@@ -30609,7 +30688,7 @@ end)()
 		picture = "",
 		is_get_time_note = 0,
 		count = 1,
-		describe = "飘飘忽忽，生人勿近~",
+		describe = "O weary stranger, beware the gentle, swaying light.",
 		is_3d_obj = 0,
 		spine_combine_action_replace = "",
 		themeId = 0,
@@ -30638,6 +30717,54 @@ end)()
 		spine = {
 			{
 				"pupuguihuo",
+				"normal",
+				{
+					"action",
+					true
+				}
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[100090] = {
+		effect = "",
+		name = "藏宝旋风",
+		gain_by = "",
+		type = 11,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "快跟上，宝藏要逃走了！",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 0,
+		icon = "jufengicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 6,
+		comfortable = 0,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 100090,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"jufeng",
 				"normal",
 				{
 					"action",
@@ -31725,6 +31852,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[1107] = {
 		effect = "",
 		name = "Radish Seedlings",
@@ -31801,8 +31930,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[1109] = {
 		effect = "",
 		name = "Broken Washbasin",
@@ -35873,6 +36000,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[5112] = {
 		effect = "",
 		name = "Brick Table",
@@ -35965,8 +36094,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[5114] = {
 		effect = "",
 		name = "Ironblood Fireplace",
@@ -40242,6 +40369,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[11105] = {
 		effect = "",
 		name = "Dream Pot",
@@ -40345,8 +40474,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[11107] = {
 		effect = "",
 		name = "Rainbow Fountain",
@@ -44542,6 +44669,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[14112] = {
 		effect = "",
 		name = "Saturn Table",
@@ -44654,8 +44783,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[14114] = {
 		effect = "",
 		name = "Telescope",
@@ -49550,6 +49677,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[18304] = {
 		effect = "",
 		name = "Minimap",
@@ -49626,8 +49755,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[18306] = {
 		effect = "",
 		name = "Mind Control Device (Black)",
@@ -54189,6 +54316,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[22203] = {
 		effect = "",
 		name = "Tea Party Snacks",
@@ -54265,8 +54394,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[22302] = {
 		effect = "",
 		name = "Wall-Mounted Plants",
@@ -59091,6 +59218,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[28101] = {
 		effect = "",
 		name = "Forest Bush",
@@ -59167,8 +59296,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[28103] = {
 		effect = "",
 		name = "Floral Bed",
@@ -63756,6 +63883,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[30122] = {
 		can_rotate = 0,
 		name = "Red Cannon",
@@ -63913,8 +64042,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[30124] = {
 		can_rotate = 1,
 		name = "Rainbow Surprise 1",
@@ -68316,6 +68443,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[37116] = {
 		effect = "",
 		name = "Snowman Bath",
@@ -68406,8 +68535,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[37118] = {
 		effect = "",
 		name = "Post Box",
@@ -72674,6 +72801,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[40114] = {
 		effect = "",
 		name = "Penguinjuu",
@@ -72750,8 +72879,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[40116] = {
 		effect = "",
 		name = "Snowy Stone",
@@ -77284,6 +77411,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[44103] = {
 		effect = "",
 		name = "Rain-Drenched Bush",
@@ -77360,8 +77489,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[44105] = {
 		effect = "",
 		name = "Set of Potted Plants",
@@ -81504,6 +81631,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[46128] = {
 		effect = "",
 		name = "Exposed Circuitry",
@@ -81640,8 +81769,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[46130] = {
 		effect = "",
 		name = "Schrödinger's Hologram",
@@ -85888,6 +86015,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[49301] = {
 		effect = "",
 		name = "Lattice Window",
@@ -85964,8 +86093,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[49303] = {
 		effect = "",
 		name = "Otherworldly Atlas",
@@ -90292,6 +90419,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[55001] = {
 		effect = "",
 		name = "Holoflooring",
@@ -90368,8 +90497,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[55101] = {
 		effect = "",
 		name = "Holoboard",
@@ -94626,6 +94753,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[58115] = {
 		effect = "",
 		name = "Lion Dancers",
@@ -94714,8 +94843,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[58301] = {
 		effect = "",
 		name = "Empery Window",
@@ -98946,6 +99073,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[62109] = {
 		effect = "",
 		name = "Iris Flower Bed",
@@ -99022,8 +99151,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[62111] = {
 		effect = "",
 		name = "Disused White Chapel",
@@ -103432,6 +103559,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[68114] = {
 		can_rotate = 0,
 		name = "Manjuu Roller Coaster",
@@ -103576,8 +103705,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[69001] = {
 		effect = "",
 		name = "Infirmary Flooring",
@@ -108110,6 +108237,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[72115] = {
 		effect = "",
 		name = "Pacific Reef",
@@ -108186,8 +108315,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[72117] = {
 		effect = "",
 		name = "Pacific Reefs",
@@ -112551,6 +112678,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[76117] = {
 		effect = "",
 		name = "Panda Drawers",
@@ -112640,8 +112769,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[76119] = {
 		effect = "",
 		name = "Panda Slippers",
@@ -116973,6 +117100,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[80306] = {
 		effect = "",
 		name = "Bottle Cap Decorations",
@@ -117046,8 +117175,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[81002] = {
 		icon = "qiangbisc2icon",
 		name = "School Wallpaper",
@@ -121195,6 +121322,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[84174] = {
 		can_rotate = 1,
 		name = "Greenscreen",
@@ -121322,8 +121451,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[84176] = {
 		effect = "",
 		name = "Replica Battle Tracto Max",
@@ -125615,6 +125742,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[88112] = {
 		effect = "",
 		name = "Wine Barrel",
@@ -125691,8 +125820,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[88114] = {
 		effect = "",
 		name = "Count's Castle Candelabra",
@@ -129750,6 +129877,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[91304] = {
 		effect = "",
 		name = "Square Ballerina Manjuu Portrait",
@@ -129826,8 +129955,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[92001] = {
 		icon = "dibankfcicon",
 		name = "Fast Food Flooring",
@@ -133964,6 +134091,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[95140] = {
 		effect = "",
 		name = "Giant Manuscript",
@@ -134065,8 +134194,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[95142] = {
 		effect = "",
 		name = "Blue Puni Doll",
@@ -138337,6 +138464,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[98314] = {
 		effect = "",
 		name = "Manjuu Portrait 3",
@@ -138410,8 +138539,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[99002] = {
 		icon = "qiangbiwqicon",
 		name = "Bathhouse Wallpaper",
@@ -143029,6 +143156,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[302114] = {
 		effect = "",
 		name = "Palais Desk",
@@ -143118,8 +143247,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[302116] = {
 		effect = "",
 		name = "Palais Armchair",
@@ -147683,6 +147810,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[305116] = {
 		effect = "",
 		name = "Shinobi Mansion Porch",
@@ -147796,8 +147925,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[305118] = {
 		effect = "",
 		name = "Shinobi Sliding Doors",
@@ -152474,6 +152601,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[310112] = {
 		effect = "",
 		name = "Bunny Make-Up Chair 1 (With Tail)",
@@ -152564,8 +152693,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[310114] = {
 		effect = "",
 		name = "Bunny Make-Up Chair 3 (With Tail)",
@@ -157332,6 +157459,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[316001] = {
 		icon = "dibantolicon",
 		name = "Princessy Flooring",
@@ -157402,8 +157531,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[316101] = {
 		effect = "",
 		name = "Princessy Stool",
@@ -161958,6 +162085,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[320103] = {
 		effect = "",
 		name = "Med Station Stool",
@@ -162095,8 +162224,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[320105] = {
 		effect = "",
 		name = "Med Station Lamp",
@@ -166660,6 +166787,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[325118] = {
 		effect = "",
 		name = "Study Desk",
@@ -166736,8 +166865,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[325120] = {
 		effect = "",
 		name = "Fancy Chair",
@@ -171231,6 +171358,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[332108] = {
 		effect = "",
 		name = "Temple Entrance",
@@ -171327,8 +171456,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[332110] = {
 		effect = "",
 		name = "Temple Stone Pillar",
@@ -175946,6 +176073,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[335115] = {
 		effect = "",
 		name = "Spring Auction Display Case 2",
@@ -176038,8 +176167,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[335117] = {
 		effect = "",
 		name = "Spring Auction Clock",
@@ -180650,6 +180777,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[341114] = {
 		effect = "",
 		name = "Abandoned Hospital Storage 2",
@@ -180726,8 +180855,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[341116] = {
 		effect = "",
 		name = "Abandoned Hospital IV Stand",

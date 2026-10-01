@@ -4,10 +4,11 @@ return {
 	fadeOut = 1.5,
 	scripts = {
 		{
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Just a few minutes ago, this street was the liveliest place in all of the East Side's commercial district.",
 			bgm = "battle-visioncity-1",
 			typewriter = {
@@ -25,10 +26,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "But by the time we arrive, everything has changed. An unseen force has plucked this bright, bustling street out of reality.",
 			typewriter = {
 				speed = 0.05,
@@ -36,10 +38,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Though it's still midday, a leaden gloom hangs over the city, turning the light cold.",
 			typewriter = {
 				speed = 0.05,
@@ -52,6 +55,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Poltergeist Operative",
 			dir = 1,
+			NextIcon = 1,
 			actor = 900557,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -66,12 +70,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "Our navigation systems are malfunctioning, too.",
 			typewriter = {
 				speed = 0.05,
@@ -79,11 +84,12 @@ return {
 			}
 		},
 		{
-			actor = 231211,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_495",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "What are we going to do?",
@@ -93,11 +99,12 @@ return {
 			}
 		},
 		{
-			actor = 900557,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_495",
 			factiontag = "Poltergeist Operative",
 			dir = 1,
+			actor = 900557,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Isn't it obvious? We're gonna find that poltergeist and capture it.",
@@ -111,12 +118,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "Tiger, can you sense anything up ahead?",
 			typewriter = {
 				speed = 0.05,
@@ -127,10 +135,11 @@ return {
 			expression = 6,
 			side = 2,
 			bgName = "star_level_bg_495",
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 202380,
+			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "Hmm... There are many discordant sounds coming from deep inside the anomaly.",
 			typewriter = {
 				speed = 0.05,
@@ -141,10 +150,11 @@ return {
 			expression = 6,
 			side = 2,
 			bgName = "star_level_bg_495",
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 202380,
+			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "Grating arguments, intense clashes...",
 			typewriter = {
 				speed = 0.05,
@@ -157,6 +167,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -172,6 +183,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -182,10 +194,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Tiger raises her baton slightly, pointing it toward a side street engulfed by shadow up ahead.",
 			typewriter = {
 				speed = 0.05,
@@ -198,6 +211,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -213,6 +227,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Innocent Victim",
 			dir = 1,
+			NextIcon = 1,
 			actor = 401140,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -245,6 +260,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Innocent Victim",
 			dir = 1,
+			NextIcon = 1,
 			actor = 401140,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -255,10 +271,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Unable to bear the fear, Z14 turns around. A black shadow is looming there, silently.",
 			typewriter = {
 				speed = 0.05,
@@ -266,13 +283,14 @@ return {
 			}
 		},
 		{
-			actorName = "???",
+			nameColor = "#FF9B93",
 			side = 2,
 			bgName = "star_level_bg_495",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 900560,
-			nameColor = "#FF9B93",
+			actorName = "???",
 			hidePaintObj = true,
 			say = "...#&...",
 			typewriter = {
@@ -286,6 +304,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Innocent Victim",
 			dir = 1,
+			NextIcon = 1,
 			actor = 401140,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -296,10 +315,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "The shadow begins its soundless approach.",
 			typewriter = {
 				speed = 0.05,
@@ -312,6 +332,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Innocent Victim",
 			dir = 1,
+			NextIcon = 1,
 			actor = 401140,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -327,6 +348,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -342,10 +364,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Dazzling light cuts between them.",
 			typewriter = {
 				speed = 0.05,
@@ -353,10 +376,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "The shadow backs off just slightly. After hesitating there for a few seconds, it instantly vanishes from sight.",
 			typewriter = {
 				speed = 0.05,
@@ -369,6 +393,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -384,6 +409,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Poltergeist Operative",
 			dir = 1,
+			NextIcon = 1,
 			actor = 900557,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -403,6 +429,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Innocent Victim",
 			dir = 1,
+			NextIcon = 1,
 			actor = 401140,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -413,11 +440,12 @@ return {
 			}
 		},
 		{
-			actor = 231211,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_495",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Commander, we've found a survivor!",
@@ -427,11 +455,12 @@ return {
 			}
 		},
 		{
-			actor = 231211,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_495",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "You're safe now! Ah... You scraped your knee? I'll help you up.",
@@ -446,6 +475,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Innocent Victim",
 			dir = 1,
+			NextIcon = 1,
 			actor = 401140,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -461,6 +491,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -471,10 +502,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_170",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "One girl sitting in another seat timidly held up her Urban Survival Guide book.",
 			typewriter = {
 				speed = 0.05,
@@ -510,6 +542,7 @@ return {
 			bgName = "star_level_bg_170",
 			factiontag = "Passenger",
 			dir = 1,
+			NextIcon = 1,
 			actor = 401140,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -525,6 +558,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -563,6 +597,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Innocent Victim",
 			dir = 1,
+			NextIcon = 1,
 			actor = 401140,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -579,10 +614,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Photos had been attached to the joint investigation request. Z14 was one of the kidnapping victims.",
 			typewriter = {
 				speed = 0.05,
@@ -590,12 +626,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "(This anomaly must be connected to that case.)",
 			typewriter = {
 				speed = 0.05,
@@ -603,10 +640,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			shakeTime = 3,
 			say = "The anomalous space suddenly lurches. Harsh electrical interference engulfs us.",
 			typewriter = {
@@ -615,10 +653,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Instantly after, streetside shop windows, glass storefronts, and even reflections in puddles on the ground display the same exact image.",
 			typewriter = {
 				speed = 0.05,
@@ -626,10 +665,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "It's the pale, blurred face of a woman, backed by a pitch-black background.",
 			typewriter = {
 				speed = 0.05,
@@ -642,6 +682,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Poltergeist",
 			actorName = "???",
+			NextIcon = 1,
 			actor = 403143,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,

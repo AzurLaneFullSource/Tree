@@ -4,6 +4,7 @@ return {
 	fadeOut = 1.5,
 	scripts = {
 		{
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
@@ -37,6 +38,7 @@ return {
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -47,10 +49,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_red_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Not even I could have predicted this turn of events. I'm sitting in a reception room, with the source of all our troubles sitting across from me.",
 			typewriter = {
 				speed = 0.05,
@@ -58,11 +61,12 @@ return {
 			}
 		},
 		{
-			actor = 304090,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
 			dir = 1,
+			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "So after City No. 5, your next objective seems to have been City No. 4.",
@@ -77,6 +81,7 @@ return {
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -87,12 +92,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
-			bgName = "bg_guild_red_n",
-			hidePaintObj = true,
 			portrait = "zhihuiguan",
 			side = 2,
+			bgName = "bg_guild_red_n",
+			hidePaintObj = true,
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "We were told that they'd consider our proposal and to wait for them to get in contact.",
 			typewriter = {
 				speed = 0.05,
@@ -105,6 +111,7 @@ return {
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -115,12 +122,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
-			bgName = "bg_guild_red_n",
-			hidePaintObj = true,
 			portrait = "zhihuiguan",
 			side = 2,
+			bgName = "bg_guild_red_n",
+			hidePaintObj = true,
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "They did offer some tea, but then, they handed me some limited-edition merchandise of the town's amusement park and kicked me out.",
 			typewriter = {
 				speed = 0.05,
@@ -133,6 +141,7 @@ return {
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -143,12 +152,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
-			bgName = "bg_guild_red_n",
-			hidePaintObj = true,
 			portrait = "zhihuiguan",
 			side = 2,
+			bgName = "bg_guild_red_n",
+			hidePaintObj = true,
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "They didn't refuse directly, but they did give me the cold shoulder by saying the administrator's schedule didn't line up for a meeting.",
 			typewriter = {
 				speed = 0.05,
@@ -156,10 +166,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_red_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Each city was a different set of emotions.",
 			typewriter = {
 				speed = 0.05,
@@ -167,10 +178,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_red_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "In their eyes, I saw doubt, reticence, caution, and hesitation. That's about all I got from them.",
 			typewriter = {
 				speed = 0.05,
@@ -183,6 +195,7 @@ return {
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -193,11 +206,12 @@ return {
 			}
 		},
 		{
-			actor = 304090,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
 			dir = 1,
+			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "If it makes you feel better, I've also been shown the door at City No. 2 many times. The manager there, Sheffield, is not very keen on entertaining visitors.",
@@ -207,12 +221,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
-			bgName = "bg_guild_red_n",
-			hidePaintObj = true,
 			portrait = "zhihuiguan",
 			side = 2,
+			bgName = "bg_guild_red_n",
+			hidePaintObj = true,
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "That's good news, for once.",
 			typewriter = {
 				speed = 0.05,
@@ -225,6 +240,7 @@ return {
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -235,10 +251,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_red_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "There have been no surprise attacks by poltergeists since I arrived at City No. 2, and I managed to reach Azuchi without any trouble.",
 			typewriter = {
 				speed = 0.05,
@@ -263,10 +280,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_red_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "However, I was the only one to receive her \"invitation.\"",
 			typewriter = {
 				speed = 0.05,
@@ -279,6 +297,7 @@ return {
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -289,11 +308,12 @@ return {
 			}
 		},
 		{
-			actor = 304090,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
 			dir = 1,
+			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "Commander. Become mine.",
@@ -303,10 +323,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_red_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "She holds a folding fan to her lips, her body language emanating nothing but assured confidence.",
 			typewriter = {
 				speed = 0.05,
@@ -319,6 +340,7 @@ return {
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -329,12 +351,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
-			bgName = "bg_guild_red_n",
-			hidePaintObj = true,
 			portrait = "zhihuiguan",
 			side = 2,
+			bgName = "bg_guild_red_n",
+			hidePaintObj = true,
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "You're not seriously asking me to command the poltergeists in your stead, right?",
 			typewriter = {
 				speed = 0.05,
@@ -342,11 +365,12 @@ return {
 			}
 		},
 		{
-			actor = 202380,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
 			dir = 1,
+			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "I'm all for it. Say the word, and I'll sink my teeth into her.",
@@ -361,6 +385,7 @@ return {
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -371,11 +396,12 @@ return {
 			}
 		},
 		{
-			actor = 304090,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
 			dir = 1,
+			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "Let me be candid here. I want you to help me keep the humans under our control.",
@@ -390,6 +416,7 @@ return {
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -400,12 +427,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
-			bgName = "bg_guild_red_n",
-			hidePaintObj = true,
 			portrait = "zhihuiguan",
 			side = 2,
+			bgName = "bg_guild_red_n",
+			hidePaintObj = true,
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "And what happens after that?",
 			typewriter = {
 				speed = 0.05,
@@ -418,6 +446,7 @@ return {
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -428,12 +457,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
-			bgName = "bg_guild_red_n",
-			hidePaintObj = true,
 			portrait = "zhihuiguan",
 			side = 2,
+			bgName = "bg_guild_red_n",
+			hidePaintObj = true,
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "What do you plan to do once mankind is under your thumb?",
 			typewriter = {
 				speed = 0.05,
@@ -446,6 +476,7 @@ return {
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -456,10 +487,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_red_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Azuchi's expression turns gravely serious, and she stares right into my eyes for what feels like forever.",
 			typewriter = {
 				speed = 0.05,
@@ -472,6 +504,7 @@ return {
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -482,12 +515,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
-			bgName = "bg_guild_red_n",
-			hidePaintObj = true,
 			portrait = "zhihuiguan",
 			side = 2,
+			bgName = "bg_guild_red_n",
+			hidePaintObj = true,
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "...That's fine. I'll have your answer after we defeat you.",
 			typewriter = {
 				speed = 0.05,
@@ -500,6 +534,7 @@ return {
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -510,11 +545,12 @@ return {
 			}
 		},
 		{
-			actor = 304090,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
 			dir = 1,
+			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "Though...",
@@ -529,6 +565,7 @@ return {
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -539,12 +576,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
-			bgName = "bg_guild_red_n",
-			hidePaintObj = true,
 			portrait = "zhihuiguan",
 			side = 2,
+			bgName = "bg_guild_red_n",
+			hidePaintObj = true,
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "Thank you for your understanding. I'll be going now.",
 			typewriter = {
 				speed = 0.05,
@@ -557,6 +595,7 @@ return {
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -567,10 +606,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_red_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "She stands up and points towards the empty corridor leading out of the reception room.",
 			typewriter = {
 				speed = 0.05,
@@ -583,6 +623,7 @@ return {
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -593,12 +634,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
-			bgName = "bg_guild_red_n",
-			hidePaintObj = true,
 			portrait = "zhihuiguan",
 			side = 2,
+			bgName = "bg_guild_red_n",
+			hidePaintObj = true,
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "Don't tell me you set up ambushes out there.",
 			typewriter = {
 				speed = 0.05,
@@ -611,6 +653,7 @@ return {
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -626,6 +669,7 @@ return {
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -641,6 +685,7 @@ return {
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 307053,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -651,10 +696,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_red_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "A girl appears from the shadows, bows her head to Azuchi, and leaves.",
 			typewriter = {
 				speed = 0.05,
@@ -662,12 +708,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
-			bgName = "bg_guild_red_n",
-			hidePaintObj = true,
 			portrait = "zhihuiguan",
 			side = 2,
+			bgName = "bg_guild_red_n",
+			hidePaintObj = true,
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "(...There WAS an ambush after all.)",
 			typewriter = {
 				speed = 0.05,
@@ -680,6 +727,7 @@ return {
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -695,6 +743,7 @@ return {
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -710,6 +759,7 @@ return {
 			bgName = "bg_guild_red_n",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -720,10 +770,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_494",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "The corridor doesn't seem particularly long, but my steps feel heavy.",
 			bgm = "story-visioncity-1",
 			typewriter = {
@@ -749,10 +800,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_494",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Everything is eerily silent around me. But it feels like something is clinging to my back, following me closely with every step. I dare not look back.",
 			typewriter = {
 				speed = 0.05,
@@ -760,10 +812,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_494",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Once I see the door to the elevator open at the end of the corridor, I heave a sigh of relief.",
 			typewriter = {
 				speed = 0.05,
@@ -771,10 +824,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_494",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "When I press the button to go to the first floor, the elevator whirrs to life and starts to descend. Feeling the elevator go down eases my worry a little.",
 			typewriter = {
 				speed = 0.05,
@@ -783,10 +837,11 @@ return {
 		},
 		{
 			actor = 304091,
-			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_494",
-			nameColor = "#A9F548FF",
+			side = 2,
 			withoutActorName = true,
+			nameColor = "#A9F548FF",
 			say = "But when the elevator stops and the door opens, I don't see the first floor.",
 			hideRecordIco = true,
 			typewriter = {
@@ -813,12 +868,13 @@ return {
 		},
 		{
 			actor = 304091,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			bgName = "star_level_bg_494",
 			side = 2,
 			withoutActorName = true,
-			hideRecordIco = true,
+			nameColor = "#A9F548FF",
 			say = "At the end of the corridor, I see Azuchi bathed in eerie crimson light. She seems to be staring at me with a smile on her face.",
+			hideRecordIco = true,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -826,11 +882,12 @@ return {
 		},
 		{
 			actor = 304091,
-			side = 2,
+			nameColor = "#FF9B93",
 			bgName = "star_level_bg_494",
 			factiontag = "Poltergeist",
 			dir = 1,
-			nameColor = "#FF9B93",
+			side = 2,
+			NextIcon = 1,
 			say = "Welcome back.",
 			typewriter = {
 				speed = 0.05,
@@ -843,6 +900,7 @@ return {
 			bgName = "star_level_bg_494",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304091,
 			nameColor = "#FF9B93",
 			say = "Oh, did you miss me? After just a few minutes? I'm flattered.",
@@ -853,11 +911,12 @@ return {
 		},
 		{
 			actor = 304091,
-			side = 2,
+			nameColor = "#FF9B93",
 			bgName = "star_level_bg_494",
 			factiontag = "Poltergeist",
 			dir = 1,
-			nameColor = "#FF9B93",
+			side = 2,
+			NextIcon = 1,
 			say = "Shouldn't have left in such a hurry... Heheh♪",
 			typewriter = {
 				speed = 0.05,
@@ -866,10 +925,11 @@ return {
 		},
 		{
 			actor = 304091,
-			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_494",
-			nameColor = "#A9F548FF",
+			side = 2,
 			withoutActorName = true,
+			nameColor = "#A9F548FF",
 			say = "The elevator door closes again, and after a little shake, it begins descending again.",
 			hideRecordIco = true,
 			typewriter = {
@@ -896,12 +956,13 @@ return {
 		},
 		{
 			actor = 304091,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			bgName = "star_level_bg_494",
 			side = 2,
 			withoutActorName = true,
-			hideRecordIco = true,
+			nameColor = "#A9F548FF",
 			say = "And then, it stops again a moment later.",
+			hideRecordIco = true,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -909,12 +970,13 @@ return {
 		},
 		{
 			actor = 304091,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			bgName = "star_level_bg_494",
 			side = 2,
 			withoutActorName = true,
-			hideRecordIco = true,
+			nameColor = "#A9F548FF",
 			say = "The door opens to the same corridor from seconds ago, the crimson light flashing.",
+			hideRecordIco = true,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -922,12 +984,13 @@ return {
 		},
 		{
 			actor = 304091,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			bgName = "star_level_bg_494",
 			side = 2,
 			withoutActorName = true,
-			hideRecordIco = true,
+			nameColor = "#A9F548FF",
 			say = "The distance between us has narrowed considerably. I can see her eyes clearly now, and her gaze is filled with a burning interest that sends a cold shiver down my spine.",
+			hideRecordIco = true,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -939,6 +1002,7 @@ return {
 			bgName = "star_level_bg_494",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304091,
 			nameColor = "#FF9B93",
 			say = "Ah, so predictable. You know something is off, but you keep expecting your eyes to have deceived you again and again.",
@@ -953,6 +1017,7 @@ return {
 			bgName = "star_level_bg_494",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304091,
 			nameColor = "#FF9B93",
 			say = "Humans are all the same. They cower in fear and keep dreaming of the monsters haunting their dreams to suddenly turn sweet on them.",
@@ -963,11 +1028,12 @@ return {
 		},
 		{
 			actor = 304091,
-			side = 2,
+			nameColor = "#FF9B93",
 			bgName = "star_level_bg_494",
 			factiontag = "Poltergeist",
 			dir = 1,
-			nameColor = "#FF9B93",
+			side = 2,
+			NextIcon = 1,
 			say = "Sure. Why don't I do just that?",
 			typewriter = {
 				speed = 0.05,
@@ -975,14 +1041,15 @@ return {
 			}
 		},
 		{
-			actor = 304091,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_494",
-			hidePaintObj = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "The elevator door closes again.",
 			hideRecordIco = true,
+			actor = 304091,
+			NextIcon = 1,
+			hidePaintObj = true,
+			say = "The elevator door closes again.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -1006,14 +1073,15 @@ return {
 			}
 		},
 		{
-			actor = 304091,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_494",
-			hidePaintObj = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "A strand of hair brushes past my ear, sending a chill down my neck. And then, I feel a cold breath blow against the nape of my neck.",
 			hideRecordIco = true,
+			actor = 304091,
+			NextIcon = 1,
+			hidePaintObj = true,
+			say = "A strand of hair brushes past my ear, sending a chill down my neck. And then, I feel a cold breath blow against the nape of my neck.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -1025,6 +1093,7 @@ return {
 			bgName = "star_level_bg_494",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304091,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -1035,10 +1104,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_503",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Azuchi's presence fades after a moment. The elevator resumes going down, and it doesn't stop on the way anymore.",
 			bgm = "story-antarctica-serious",
 			typewriter = {
@@ -1064,10 +1134,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_503",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "I feel a wave of relief when the first floor lobby spreads open before me.",
 			typewriter = {
 				speed = 0.05,
@@ -1075,11 +1146,12 @@ return {
 			}
 		},
 		{
-			actor = 304090,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_503",
 			factiontag = "Poltergeist",
 			dir = 1,
+			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "You managed to make it out. I'll let you go, just as promised.",
@@ -1094,6 +1166,7 @@ return {
 			bgName = "star_level_bg_503",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -1109,6 +1182,7 @@ return {
 			bgName = "star_level_bg_503",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -1124,6 +1198,7 @@ return {
 			bgName = "star_level_bg_503",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -1134,12 +1209,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_503",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "......",
 			typewriter = {
 				speed = 0.05,
@@ -1152,6 +1228,7 @@ return {
 			bgName = "star_level_bg_503",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -1162,11 +1239,12 @@ return {
 			}
 		},
 		{
-			actor = 304090,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_503",
 			factiontag = "Poltergeist",
 			dir = 1,
+			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "Go now. Take your silly little belief and keep knocking on those doors.",
@@ -1176,11 +1254,12 @@ return {
 			}
 		},
 		{
-			actor = 304090,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_503",
 			factiontag = "Poltergeist",
 			dir = 1,
+			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "And if you ever decide to take me up on my offer...",
@@ -1195,6 +1274,7 @@ return {
 			bgName = "star_level_bg_503",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,

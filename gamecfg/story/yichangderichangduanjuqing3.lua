@@ -5,11 +5,12 @@ return {
 	scripts = {
 		{
 			expression = 2,
+			side = 2,
 			nameColor = "#A9F548FF",
-			actor = 202381,
 			hidePaintObj = true,
 			dir = 1,
-			side = 2,
+			NextIcon = 1,
+			actor = 202381,
 			say = "Commander, have you noticed my wings? I feel they're not shining as bright as they used to.",
 			typewriter = {
 				speed = 0.05,
@@ -19,10 +20,11 @@ return {
 		{
 			expression = 2,
 			side = 2,
-			actor = 202381,
+			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			actor = 202381,
 			say = "Do you know why that might be?",
 			typewriter = {
 				speed = 0.05,
@@ -41,11 +43,12 @@ return {
 		},
 		{
 			actor = 202381,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 1,
+			NextIcon = 1,
 			say = "I may not have been getting as much sleep as I should...",
 			typewriter = {
 				speed = 0.05,
@@ -54,11 +57,12 @@ return {
 		},
 		{
 			actor = 202381,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 1,
+			NextIcon = 1,
 			say = "I guess even a star's brilliance fades when they're exhausted.",
 			typewriter = {
 				speed = 0.05,
@@ -68,11 +72,12 @@ return {
 		{
 			expression = 1,
 			side = 2,
-			actor = 202381,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 1,
+			actor = 202381,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "So, to regain that luster... Commander, could you keep me company in getting some rest?",
 			typewriter = {
 				speed = 0.05,
@@ -81,11 +86,12 @@ return {
 		},
 		{
 			actor = 202381,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 2,
+			NextIcon = 1,
 			say = "I see...",
 			typewriter = {
 				speed = 0.05,
@@ -94,11 +100,12 @@ return {
 		},
 		{
 			actor = 202381,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 2,
+			NextIcon = 1,
 			say = "I may be overthinking things.",
 			typewriter = {
 				speed = 0.05,

@@ -14,51 +14,66 @@ function var0_0.preload(arg0_2, arg1_2)
 	end)
 end
 
-function var0_0.init(arg0_4)
-	setImageSprite(arg0_4._tf:Find("panel"), arg0_4.windowSprite, true)
+function var0_0.getResource(arg0_4)
+	local var0_4 = var0_0.super.getResource(arg0_4)
+	local var1_4 = {
+		"crusingwindow"
+	}
 
-	arg0_4.rtBg = arg0_4._tf:Find("bg")
-	arg0_4.btnBack = arg0_4._tf:Find("panel/btn_back")
-	arg0_4.btnGo = arg0_4._tf:Find("panel/btn_go")
-	arg0_4.itemContent = arg0_4._tf:Find("panel/content")
+	for iter0_4, iter1_4 in ipairs(var1_4 or {}) do
+		if not table.contains(var0_4, iter1_4) then
+			table.insert(var0_4, iter1_4)
+		end
+	end
 
-	local var0_4 = getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING)
-	local var1_4 = pg.battlepass_event_pt[var0_4.id].equip_skin or {}
+	return var0_4
+end
 
-	arg0_4.itemList = UIItemList.New(arg0_4.itemContent, arg0_4.itemContent:GetChild(0))
+function var0_0.init(arg0_5)
+	setImageSprite(arg0_5._tf:Find("panel"), arg0_5.windowSprite, true)
 
-	arg0_4.itemList:make(function(arg0_5, arg1_5, arg2_5)
-		arg1_5 = arg1_5 + 1
+	arg0_5.rtBg = arg0_5._tf:Find("bg")
+	arg0_5.btnBack = arg0_5._tf:Find("panel/btn_back")
+	arg0_5.btnGo = arg0_5._tf:Find("panel/btn_go")
+	arg0_5.itemContent = arg0_5._tf:Find("panel/content")
 
-		if arg0_5 == UIItemList.EventUpdate then
-			local var0_5 = {}
+	local var0_5 = getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING)
+	local var1_5 = pg.battlepass_event_pt[var0_5.id].equip_skin or {}
 
-			var0_5.type, var0_5.id, var0_5.count = unpack(var1_4[arg1_5])
+	arg0_5.itemList = UIItemList.New(arg0_5.itemContent, arg0_5.itemContent:GetChild(0))
 
-			updateDrop(arg2_5, var0_5)
-			onButton(arg0_4, arg2_5, function()
-				arg0_4:emit(var0_0.ON_DROP, var0_5)
+	arg0_5.itemList:make(function(arg0_6, arg1_6, arg2_6)
+		arg1_6 = arg1_6 + 1
+
+		if arg0_6 == UIItemList.EventUpdate then
+			local var0_6 = {}
+
+			var0_6.type, var0_6.id, var0_6.count = unpack(var1_5[arg1_6])
+
+			updateDrop(arg2_6, var0_6)
+			onButton(arg0_5, arg2_6, function()
+				arg0_5:emit(var0_0.ON_DROP, var0_6)
 			end, SFX_PANEL)
 		end
 	end)
-	arg0_4.itemList:align(#var1_4)
+	arg0_5.itemList:align(#var1_5)
 end
 
-function var0_0.didEnter(arg0_7)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_7._tf)
-	onButton(arg0_7, arg0_7.rtBg, function()
-		arg0_7:closeView()
+function var0_0.didEnter(arg0_8)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_8._tf)
+	onButton(arg0_8, arg0_8.rtBg, function()
+		arg0_8:closeView()
 	end, SFX_CANCEL)
-	onButton(arg0_7, arg0_7.btnBack, function()
-		arg0_7:closeView()
+	onButton(arg0_8, arg0_8.btnBack, function()
+		arg0_8:closeView()
 	end, SFX_CANCEL)
-	onButton(arg0_7, arg0_7.btnGo, function()
-		arg0_7:emit(CrusingWindowMediator.GO_CRUSING)
+	onButton(arg0_8, arg0_8.btnGo, function()
+		arg0_8:emit(CrusingWindowMediator.GO_CRUSING)
 	end, SFX_CONFIRM)
 end
 
-function var0_0.willExit(arg0_11)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_11._tf)
+function var0_0.willExit(arg0_12)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_12._tf)
 end
 
 return var0_0

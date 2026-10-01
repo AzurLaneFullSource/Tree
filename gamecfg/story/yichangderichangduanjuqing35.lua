@@ -5,12 +5,13 @@ return {
 	scripts = {
 		{
 			actor = 317031,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			side = 2,
 			hidePaintObj = true,
 			withoutActorName = true,
-			hideRecordIco = true,
+			nameColor = "#A9F548FF",
 			say = "I-14 stares at the mask in her hand with an inscrutable expression on her face.",
+			hideRecordIco = true,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -18,11 +19,12 @@ return {
 		},
 		{
 			expression = 10,
+			side = 2,
 			nameColor = "#A9F548FF",
-			actor = 317031,
 			hidePaintObj = true,
 			dir = 1,
-			side = 2,
+			NextIcon = 1,
+			actor = 317031,
 			say = "*Bubble* *Bubble*... You're here.",
 			typewriter = {
 				speed = 0.05,
@@ -31,10 +33,11 @@ return {
 		},
 		{
 			actor = 317031,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
+			NextIcon = 1,
 			say = "What do you wanna talk about today?",
 			typewriter = {
 				speed = 0.05,
@@ -53,11 +56,12 @@ return {
 		},
 		{
 			actor = 317031,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 1,
+			NextIcon = 1,
 			say = "...",
 			typewriter = {
 				speed = 0.05,
@@ -67,11 +71,12 @@ return {
 		{
 			expression = 7,
 			side = 2,
-			actor = 317031,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 1,
+			actor = 317031,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "Wanna blow bubbles together?",
 			typewriter = {
 				speed = 0.05,
@@ -80,11 +85,12 @@ return {
 		},
 		{
 			actor = 317031,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 2,
+			NextIcon = 1,
 			say = "A disguise tool. That's all...",
 			typewriter = {
 				speed = 0.05,
@@ -94,11 +100,12 @@ return {
 		{
 			expression = 9,
 			side = 2,
-			actor = 317031,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 2,
+			actor = 317031,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "Wearing it only makes you feel empty...",
 			typewriter = {
 				speed = 0.05,

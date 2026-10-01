@@ -102,11 +102,9 @@ function var0_0.update(arg0_3, arg1_3)
 	if var2_3 and var2_3 ~= "" then
 		local var4_3 = arg1_3:getConfig("story_icon")
 
-		if not var4_3 or var4_3 == "" then
-			var4_3 = "task_icon_default"
-		end
+		var4_3 = (not var4_3 or var4_3 == "") and "memoryicon/task_icon_default" or "shipmodels/" .. var4_3
 
-		LoadSpriteAsync("shipmodels/" .. var4_3, function(arg0_4)
+		LoadSpriteAsync(var4_3, function(arg0_4)
 			if arg0_4 then
 				setImageSprite(arg0_3.storyIcon, arg0_4, true)
 				arg0_3:UpdateStoryIconPosition(arg1_3)

@@ -891,7 +891,8 @@ pg.ship_data_group.all = {
 	30062,
 	30063,
 	30064,
-	30065
+	30065,
+	30066
 }
 pg.ship_data_group.get_id_list_by_group_type = {
 	[10000] = {
@@ -3144,6 +3145,9 @@ pg.ship_data_group.get_id_list_by_group_type = {
 	[970112] = {
 		30062
 	},
+	[970113] = {
+		30066
+	},
 	[970201] = {
 		30003
 	},
@@ -4454,7 +4458,8 @@ pg.ship_data_group.get_id_list_by_handbook_type = {
 		30062,
 		30063,
 		30064,
-		30065
+		30065,
+		30066
 	}
 }
 pg.base = pg.base or {}
@@ -41354,6 +41359,41 @@ end)()
 				"Event: Tales of the Paranormal",
 				{
 					""
+				},
+				0
+			}
+		}
+	}
+	pg.base.ship_data_group[30066] = {
+		type = 1,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 97,
+		trans_skin = 0,
+		handbook_type = 3,
+		index_id = 30066,
+		code = 30066,
+		group_type = 970113,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"A",
+			"D",
+			"E",
+			"B",
+			"C",
+			"D"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: Cruise Missions",
+				{
+					"METACHARACTER",
+					{
+						autoOpenShipConfigID = 9701131
+					}
 				},
 				0
 			}

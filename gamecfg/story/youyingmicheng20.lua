@@ -4,14 +4,15 @@ return {
 	fadeOut = 1.5,
 	scripts = {
 		{
-			actor = 317030,
 			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_170",
-			hidePaintObj = true,
-			actorName = "Ordinary Rear Service Personnel",
 			side = 2,
-			say = "Thank goodness, we're safe...",
+			bgName = "star_level_bg_170",
+			actorName = "Ordinary Rear Service Personnel",
 			bgm = "story-nonightcity",
+			actor = 317030,
+			NextIcon = 1,
+			hidePaintObj = true,
+			say = "Thank goodness, we're safe...",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -36,6 +37,7 @@ return {
 			bgName = "star_level_bg_170",
 			factiontag = "Poltergeist Operative",
 			dir = 1,
+			NextIcon = 1,
 			actor = 900557,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -53,10 +55,11 @@ return {
 			expression = 4,
 			side = 2,
 			bgName = "star_level_bg_170",
-			hidePaintObj = true,
-			actor = 317030,
 			actorName = "Ordinary Rear Service Personnel",
+			NextIcon = 1,
+			actor = 317030,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "Hmm... I can't recall...",
 			typewriter = {
 				speed = 0.05,
@@ -67,10 +70,11 @@ return {
 			expression = 3,
 			side = 2,
 			bgName = "star_level_bg_170",
-			hidePaintObj = true,
-			actor = 317030,
 			actorName = "Ordinary Rear Service Personnel",
+			NextIcon = 1,
+			actor = 317030,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "Oh, right... Amagi-chan, may I help you with the controls?",
 			typewriter = {
 				speed = 0.05,
@@ -78,10 +82,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_529",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "As the airship soars through clouds, a pristine white city sprawls below us.",
 			typewriter = {
 				speed = 0.05,
@@ -106,10 +111,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_529",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Unlike other cities, City No. 1 has a pure, unsullied atmosphere. It's as if the poltergeists haven't touched it whatsoever.",
 			typewriter = {
 				speed = 0.05,
@@ -122,6 +128,7 @@ return {
 			bgName = "star_level_bg_529",
 			factiontag = "City No. 1 Supporter",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304070,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -135,10 +142,11 @@ return {
 			expression = 5,
 			side = 2,
 			bgName = "star_level_bg_529",
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 900557,
+			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "Mmnh... What's going on? I feel a little dizzy...",
 			actorPosition = {
 				x = -200,
@@ -155,6 +163,7 @@ return {
 			bgName = "star_level_bg_529",
 			factiontag = "City No. 1 Supporter",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304070,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -165,11 +174,12 @@ return {
 			}
 		},
 		{
-			actor = 304070,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_529",
 			factiontag = "City No. 1 Supporter",
 			dir = 1,
+			actor = 304070,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "But unfortunately, there still seems to be some discomfort... Please try to bear with it, okay?",
@@ -184,6 +194,7 @@ return {
 			bgName = "star_level_bg_529",
 			factiontag = "City No. 1 Supporter",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304070,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -211,10 +222,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_529",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "As the airship comes to a stop on the landing strip, Amagi-chan's tension melts away, and she falls backward suddenly.",
 			typewriter = {
 				speed = 0.05,
@@ -233,6 +245,7 @@ return {
 			bgName = "star_level_bg_529",
 			factiontag = "City No. 1 Supporter",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304070,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -243,12 +256,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_529",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "You did great. Leave the rest to us.",
 			typewriter = {
 				speed = 0.05,
@@ -256,10 +270,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_529",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "The exhausted girl leans on me. Her labored breathing gradually settles into a sleepy rhythm.",
 			typewriter = {
 				speed = 0.05,
@@ -272,6 +287,7 @@ return {
 			bgName = "star_level_bg_529",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -282,10 +298,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_529",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Suddenly, the hatch opens, and a girl in maid attire enters. She offers a cute curtsy.",
 			typewriter = {
 				speed = 0.05,
@@ -293,11 +310,12 @@ return {
 			}
 		},
 		{
-			actor = 202180,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_529",
 			factiontag = "City No. 1 Administrative Officer",
 			dir = 1,
+			actor = 202180,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Hello. I am Belfast, an administrative officer. Please allow me to take care of Amagi-chan.",
@@ -307,12 +325,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_529",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "Thank you.",
 			typewriter = {
 				speed = 0.05,
@@ -320,10 +339,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_529",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "As Little Bel escorts Amagi-chan to the rear of the ship, a melody drifts in from afar.",
 			typewriter = {
 				speed = 0.05,
@@ -336,6 +356,7 @@ return {
 			bgName = "star_level_bg_529",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -351,6 +372,7 @@ return {
 			bgName = "star_level_bg_529",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -361,10 +383,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_529",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "We turn toward the source of the sound and see blue ripples of energy radiating outward from the Research Tower.",
 			typewriter = {
 				speed = 0.05,
@@ -372,11 +395,12 @@ return {
 			}
 		},
 		{
-			actor = 102200,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_529",
 			factiontag = "City No. 1 Special Envoy",
 			dir = 1,
+			actor = 102200,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "That's the New Era Reboot Device, the heart of the Happy City Project!",
@@ -386,11 +410,12 @@ return {
 			}
 		},
 		{
-			actor = 102200,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_529",
 			factiontag = "City No. 1 Special Envoy",
 			dir = 1,
+			actor = 102200,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Don't act like you've never seen it before. The device in front of No. 7's City Hall is a miniature version of it.",
@@ -400,10 +425,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_529",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Cleveland, the special envoy from City No. 1, appears as well.",
 			typewriter = {
 				speed = 0.05,
@@ -411,10 +437,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_529",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Or, rather... A smaller version of her?",
 			typewriter = {
 				speed = 0.05,
@@ -422,11 +449,12 @@ return {
 			}
 		},
 		{
-			actor = 900557,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_529",
 			factiontag = "Poltergeist Operative",
 			dir = 1,
+			actor = 900557,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "You're tiny! Did you shrink?!",
@@ -445,6 +473,7 @@ return {
 			bgName = "star_level_bg_529",
 			factiontag = "City No. 1 Special Envoy",
 			dir = 1,
+			NextIcon = 1,
 			actor = 102200,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -455,11 +484,12 @@ return {
 			}
 		},
 		{
-			actor = 102200,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_529",
 			factiontag = "City No. 1 Special Envoy",
 			dir = 1,
+			actor = 102200,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Anyway, thanks to the Reboot Device in that Research Tower, we can maintain stability here even in the midst of a large-scale poltergeist attack.",
@@ -474,6 +504,7 @@ return {
 			bgName = "star_level_bg_529",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -484,11 +515,12 @@ return {
 			}
 		},
 		{
-			actor = 102200,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_529",
 			factiontag = "City No. 1 Special Envoy",
 			dir = 1,
+			actor = 102200,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Well... Of course it does. Somebody else can explain the details later!",
@@ -503,6 +535,7 @@ return {
 			bgName = "star_level_bg_529",
 			factiontag = "City No. 1 Special Envoy",
 			dir = 1,
+			NextIcon = 1,
 			actor = 102200,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -513,11 +546,12 @@ return {
 			}
 		},
 		{
-			actor = 102200,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_529",
 			factiontag = "City No. 1 Special Envoy",
 			dir = 1,
+			actor = 102200,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "The Council of Eight awaits.",
@@ -527,10 +561,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_529",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Tiger watches with an unreadable look as Clevelad confidently leads the way.",
 			typewriter = {
 				speed = 0.05,
@@ -538,10 +573,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_529",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "But then, she seems to notice something interesting outside, and beckons to me.",
 			typewriter = {
 				speed = 0.05,
@@ -549,10 +585,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_704",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Pedestrians walk along the street in an orderly fashion, showing none of the stress or discomfort of wartime.",
 			typewriter = {
 				speed = 0.05,
@@ -578,11 +615,12 @@ return {
 		},
 		{
 			actor = 102210,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_704",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			side = 2,
 			say = "Formidable, my Sandy Senses are tingling... I just had a great idea!",
 			typewriter = {
 				speed = 0.05,
@@ -593,10 +631,11 @@ return {
 			expression = 4,
 			side = 2,
 			bgName = "star_level_bg_704",
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 102210,
+			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "What if that Research Tower is actually a super-huge turret?!",
 			typewriter = {
 				speed = 0.05,
@@ -605,11 +644,12 @@ return {
 		},
 		{
 			actor = 207130,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_704",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			side = 2,
 			say = "Hmm... Perhaps it is possible? But how could we ascertain such a thing?",
 			typewriter = {
 				speed = 0.05,
@@ -620,10 +660,11 @@ return {
 			expression = 1,
 			side = 2,
 			bgName = "star_level_bg_704",
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 102210,
+			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "Easy! We just...",
 			typewriter = {
 				speed = 0.05,
@@ -631,10 +672,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_704",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Li'l Sandy takes out a cup of lemonade with a snowman face on it and drinks it as she surveys the Research Tower.",
 			typewriter = {
 				speed = 0.05,
@@ -646,8 +688,9 @@ return {
 			side = 2,
 			bgName = "star_level_bg_704",
 			hidePaintObj = true,
-			nameColor = "#A9F548FF",
 			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = ".........",
 			typewriter = {
 				speed = 0.05,
@@ -677,6 +720,7 @@ return {
 			bgName = "star_level_bg_704",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -692,6 +736,7 @@ return {
 			bgName = "star_level_bg_704",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -707,6 +752,7 @@ return {
 			bgName = "star_level_bg_704",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,

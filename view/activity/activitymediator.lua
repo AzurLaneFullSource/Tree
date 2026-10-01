@@ -361,16 +361,18 @@ function var0_0.register(arg0_1)
 		arg0_1:showNextActivity(arg1_46)
 	end)
 	arg0_1:bind(var0_0.ACTIVITY_PERMANENT, function(arg0_47, arg1_47)
-		if PlayerPrefs.GetString("permanent_time", "") ~= pg.gameset.permanent_mark.description then
-			PlayerPrefs.SetString("permanent_time", pg.gameset.permanent_mark.description)
+		local var0_47 = ActivityConst.GetLatestPermanentActivityIds()
+
+		if PlayerPrefs.GetInt("permanent_times", 0) ~= #var0_47 then
+			PlayerPrefs.SetInt("permanent_times", #var0_47)
 			arg0_1.viewComponent:updateEntrances()
 		end
 
-		local var0_47 = getProxy(ActivityPermanentProxy):getDoingActivity(ActivityPermanentProxy.TYPE_NORMAL_ACTIVITY)
+		local var1_47 = getProxy(ActivityPermanentProxy):getDoingActivity(ActivityPermanentProxy.TYPE_NORMAL_ACTIVITY)
 
-		if var0_47 then
+		if var1_47 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("activity_permanent_tips3"))
-			arg0_1.viewComponent:verifyTabs(var0_47.id)
+			arg0_1.viewComponent:verifyTabs(var1_47.id)
 		else
 			arg0_1:addSubLayers(Context.New({
 				mediator = ActivityPermanentMediator,

@@ -7,7 +7,7 @@ end
 function var0_0.init(arg0_2)
 	onButton(arg0_2, arg0_2.uiCloseBtn, function()
 		arg0_2:closeView()
-	end, SFX_CANCLE)
+	end, SFX_CANCEL)
 	onButton(arg0_2, arg0_2.uiCultivatingBtn, function()
 		arg0_2:emit(CultivatingPlantMediator.GO_SCENE)
 	end, SFX_PANEL)
@@ -88,50 +88,43 @@ function var0_0.RefreshTask(arg0_10)
 	local var0_10 = arg0_10.taskList[arg0_10.index]
 	local var1_10 = pg.task_data_template[var0_10]
 	local var2_10 = getProxy(TaskProxy):getTaskVO(arg0_10.taskList[arg0_10.index])
-	local var3_10 = Drop.Create(var1_10.award_display[1])
+	local var3_10 = var2_10 and var2_10:isReceive() or false
+	local var4_10 = var2_10 and var2_10:isFinish() or false
 
-	updateDrop(arg0_10.uiRewardItem, var3_10)
-	onButton(arg0_10, arg0_10.uiRewardItem, function()
-		arg0_10:emit(BaseUI.ON_DROP, var3_10)
-	end, SFX_PANEL)
-
-	local var4_10 = var2_10 and var2_10:isReceive() or false
-	local var5_10 = var2_10 and var2_10:isFinish() or false
-
-	setActive(arg0_10.uiRewardGot, var4_10)
-	setActive(arg0_10.uiRed, var5_10 and not var4_10)
-	setGray(arg0_10.uiIslandBtn, not var5_10)
+	setActive(arg0_10.uiRewardGot, var3_10)
+	setActive(arg0_10.uiRed, var4_10 and not var3_10)
+	setGray(arg0_10.uiIslandBtn, not var4_10)
 	setText(arg0_10.uiTaskDesc, var1_10.desc)
 
-	local var6_10 = var2_10 and var2_10:getProgress() or 0
+	local var5_10 = var2_10 and var2_10:getProgress() or 0
 
-	setText(arg0_10.uiTaskCnt, string.format("<color=#268BC5>%s</color>/%s", var6_10, var1_10.target_num))
+	setText(arg0_10.uiTaskCnt, string.format("<color=#268BC5>%s</color>/%s", var5_10, var1_10.target_num))
 
-	arg0_10.uiSlider.fillAmount = var6_10 / var1_10.target_num
+	arg0_10.uiSlider.fillAmount = var5_10 / var1_10.target_num
 
 	setActive(arg0_10.uiTask, false)
 	setActive(arg0_10.uiTask, true)
 end
 
-function var0_0.OpenLiveArea(arg0_12)
-	if arg0_12.liveAreaPage == nil then
-		arg0_12.liveAreaPage = MainLiveAreaPage.New(arg0_12._parentTf, arg0_12.event)
+function var0_0.OpenLiveArea(arg0_11)
+	if arg0_11.liveAreaPage == nil then
+		arg0_11.liveAreaPage = MainLiveAreaPage.New(arg0_11._parentTf, arg0_11.event)
 	end
 
-	arg0_12.liveAreaPage:ExecuteAction("Show", true, function()
+	arg0_11.liveAreaPage:ExecuteAction("Show", true, function()
 		return
 	end)
 end
 
-function var0_0.RefreshSubmitTaskDone(arg0_14)
-	setActive(arg0_14.uiRewardGot, true)
-	setActive(arg0_14.uiRed, false)
-	arg0_14:OpenLiveArea()
+function var0_0.RefreshSubmitTaskDone(arg0_13)
+	setActive(arg0_13.uiRewardGot, true)
+	setActive(arg0_13.uiRed, false)
+	arg0_13:OpenLiveArea()
 end
 
-function var0_0.onBackPressed(arg0_15)
-	if arg0_15.liveAreaPage and arg0_15.liveAreaPage:GetLoaded() and arg0_15.liveAreaPage:isShowing() then
-		arg0_15.liveAreaPage:Hide()
+function var0_0.onBackPressed(arg0_14)
+	if arg0_14.liveAreaPage and arg0_14.liveAreaPage:GetLoaded() and arg0_14.liveAreaPage:isShowing() then
+		arg0_14.liveAreaPage:Hide()
 
 		return true
 	end

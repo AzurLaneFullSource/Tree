@@ -1294,6 +1294,7 @@ pg.activity_template.all = {
 	51156,
 	51157,
 	51161,
+	51162,
 	51160,
 	7001,
 	7011,
@@ -1316,6 +1317,7 @@ pg.activity_template.all = {
 	7028,
 	7029,
 	7030,
+	7031,
 	7101,
 	7103,
 	7104,
@@ -1333,6 +1335,7 @@ pg.activity_template.all = {
 	7503,
 	7505,
 	7506,
+	7507,
 	8009,
 	8010,
 	8050,
@@ -2752,6 +2755,7 @@ pg.activity_template.get_id_list_by_type = {
 		51145,
 		51154,
 		51156,
+		51162,
 		1103,
 		1104,
 		1105,
@@ -3212,6 +3216,7 @@ pg.activity_template.get_id_list_by_type = {
 		51127,
 		51129,
 		7506,
+		7507,
 		6000,
 		6001,
 		6002,
@@ -3725,7 +3730,8 @@ pg.activity_template.get_id_list_by_type = {
 		7027,
 		7028,
 		7029,
-		7030
+		7030,
+		7031
 	},
 	[55] = {
 		5010,
@@ -64749,7 +64755,7 @@ end)()
 								warp = "shopstreet"
 							}
 						},
-						"Merit Shop"
+						"Shop"
 					}
 				}
 			}
@@ -64962,6 +64968,48 @@ end)()
 					2026,
 					10,
 					31
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.activity_template[51162] = {
+		mark = 20260917,
+		title_res_tag = "",
+		page_info = "",
+		type = 13,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 0,
+		config_client = "",
+		id = 51162,
+		page_core = "",
+		config_data = {
+			27609
+		},
+		time = {
+			"timer",
+			{
+				{
+					2026,
+					9,
+					17
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					9,
+					30
 				},
 				{
 					23,
@@ -65544,6 +65592,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.activity_template[7017] = {
 		mark = 20240530,
 		id = 7017,
@@ -65627,8 +65677,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.activity_template[7018] = {
 		mark = 20240730,
 		title_res_tag = "CrusingDisplayAct",
@@ -66292,6 +66340,59 @@ end)()
 			ui_name = "CrusingDisplayActPage30"
 		}
 	}
+	pg.base.activity_template[7031] = {
+		mark = 20260924,
+		title_res_tag = "CrusingDisplayAct",
+		type = 54,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 14,
+		config_client = "",
+		id = 7031,
+		page_core = "",
+		config_data = {
+			300,
+			301,
+			302,
+			303,
+			304,
+			305,
+			306,
+			307,
+			308
+		},
+		time = {
+			"timer",
+			{
+				{
+					2026,
+					10,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					11,
+					30
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		page_info = {
+			class_name = "CrusingDisplayActPage2",
+			ui_name = "CrusingDisplayActPage31"
+		}
+	}
 	pg.base.activity_template[7101] = {
 		mark = 20230511,
 		title_res_tag = "survey",
@@ -66435,7 +66536,9 @@ end)()
 			12047,
 			12048,
 			12049,
-			12050
+			12050,
+			12051,
+			12052
 		},
 		config_client = {
 			"commonbg/meta_shop_bg",
@@ -67246,6 +67349,84 @@ end)()
 				},
 				{
 					27406
+				}
+			}
+		}
+	}
+	pg.base.activity_template[7507] = {
+		mark = 20260924,
+		id = 7507,
+		title_res_tag = "DormTaskTwo",
+		type = 18,
+		login_pop = 99,
+		config_id = 3,
+		is_show = 44,
+		page_core = "",
+		config_data = {
+			{
+				27420,
+				27421,
+				27422,
+				27423,
+				27424,
+				27425,
+				27426
+			}
+		},
+		time = {
+			"timer",
+			{
+				{
+					2026,
+					9,
+					24
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					10,
+					7
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		page_info = {
+			class_name = "DormTaskTwoPage",
+			ui_name = "DormTaskTwoPage"
+		},
+		config_client = {
+			subType = 1,
+			unlock_task = {
+				{
+					27420
+				},
+				{
+					27421
+				},
+				{
+					27422
+				},
+				{
+					27423
+				},
+				{
+					27424
+				},
+				{
+					27425
+				},
+				{
+					27426
 				}
 			}
 		}
@@ -70623,6 +70804,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.activity_template[6012] = {
 		mark = 20220513,
 		title_res_tag = "u73_permanent",
@@ -70803,8 +70986,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.activity_template[6015] = {
 		mark = 20221027,
 		title_res_tag = "beiliwanshengjie_permanent",
@@ -74179,6 +74360,8 @@ end)()
 			10301
 		}
 	}
+end)()
+;(function()
 	pg.base.activity_template[30090] = {
 		mark = 20190314,
 		time = "stop",
@@ -74247,8 +74430,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.activity_template[30093] = {
 		mark = 20190314,
 		time = "stop",
@@ -77267,6 +77448,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.activity_template[30191] = {
 		mark = 20190815,
 		time = "stop",
@@ -77352,8 +77535,6 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-end)()
-;(function()
 	pg.base.activity_template[30194] = {
 		mark = 20190822,
 		time = "stop",
@@ -80007,6 +80188,8 @@ end)()
 			15271
 		}
 	}
+end)()
+;(function()
 	pg.base.activity_template[30298] = {
 		mark = 20191226,
 		title_res_tag = "donghuadenglu",
@@ -80126,8 +80309,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.activity_template[30301] = {
 		mark = 20191226,
 		time = "stop",
@@ -82660,6 +82841,8 @@ end)()
 			ui_name = "FranceSpPage"
 		}
 	}
+end)()
+;(function()
 	pg.base.activity_template[30398] = {
 		mark = 20200507,
 		time = "stop",
@@ -82718,8 +82901,6 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-end)()
-;(function()
 	pg.base.activity_template[30401] = {
 		mark = 20200521,
 		title_res_tag = "france_re_main",
@@ -85593,6 +85774,8 @@ end)()
 		id = 30497,
 		page_core = ""
 	}
+end)()
+;(function()
 	pg.base.activity_template[30498] = {
 		mark = 20200903,
 		time = "stop",
@@ -85653,8 +85836,6 @@ end)()
 			{}
 		}
 	}
-end)()
-;(function()
 	pg.base.activity_template[30501] = {
 		mark = 20181122,
 		time = "always",
@@ -88208,6 +88389,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.activity_template[30826] = {
 		mark = 20210812,
 		title_res_tag = "zhaodaizhuang",
@@ -88313,8 +88496,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.activity_template[30829] = {
 		mark = 20211014,
 		title_res_tag = "",
@@ -95173,6 +95354,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.activity_template[990015] = {
 		mark = 20260319,
 		title_res_tag = "",
@@ -95311,8 +95494,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.activity_template[990018] = {
 		mark = 20260507,
 		title_res_tag = "",

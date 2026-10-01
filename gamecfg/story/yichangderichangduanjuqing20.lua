@@ -5,11 +5,12 @@ return {
 	scripts = {
 		{
 			expression = 3,
+			side = 2,
 			nameColor = "#A9F548FF",
-			actor = 900561,
 			hidePaintObj = true,
 			dir = 1,
-			side = 2,
+			NextIcon = 1,
+			actor = 900561,
 			say = "Let me just sneak up closer... And when you least expect it... Boo!",
 			typewriter = {
 				speed = 0.05,
@@ -18,11 +19,12 @@ return {
 		},
 		{
 			expression = 4,
+			side = 2,
 			nameColor = "#A9F548FF",
-			actor = 900561,
 			hidePaintObj = true,
 			dir = 1,
-			side = 2,
+			NextIcon = 1,
+			actor = 900561,
 			say = "Oh, you don't look surprised at all. I wouldn't have expected any less~",
 			typewriter = {
 				speed = 0.05,
@@ -32,10 +34,11 @@ return {
 		{
 			expression = 2,
 			side = 2,
-			actor = 900561,
+			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			actor = 900561,
 			say = "What are you doing out here so late? Looking for something?",
 			typewriter = {
 				speed = 0.05,
@@ -55,11 +58,12 @@ return {
 		{
 			expression = 4,
 			side = 2,
-			actor = 900561,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 1,
+			actor = 900561,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "Oh, you were looking for little ol' me? I'm so happy!",
 			typewriter = {
 				speed = 0.05,
@@ -69,11 +73,12 @@ return {
 		{
 			expression = 6,
 			side = 2,
-			actor = 900561,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 1,
+			actor = 900561,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "Commander, what would you like to do with me now that you found me?",
 			typewriter = {
 				speed = 0.05,
@@ -83,11 +88,12 @@ return {
 		{
 			expression = 8,
 			side = 2,
-			actor = 900561,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 2,
+			actor = 900561,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "In that case... Feel free to rely on me if you ever need anything.",
 			typewriter = {
 				speed = 0.05,

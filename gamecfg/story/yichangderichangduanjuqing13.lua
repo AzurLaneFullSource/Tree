@@ -5,10 +5,11 @@ return {
 	scripts = {
 		{
 			actor = 9600032,
-			side = 2,
 			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			hidePaintObj = true,
 			dir = 1,
+			side = 2,
 			say = "Oh, Commander. Can I have a minute?",
 			typewriter = {
 				speed = 0.05,
@@ -17,10 +18,11 @@ return {
 		},
 		{
 			actor = 9600032,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
+			NextIcon = 1,
 			say = "I have to duck every time I go in and out of this door. Isn't there an easier way to get around?",
 			typewriter = {
 				speed = 0.05,
@@ -39,11 +41,12 @@ return {
 		},
 		{
 			actor = 9600032,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 1,
+			NextIcon = 1,
 			say = "Good idea!",
 			typewriter = {
 				speed = 0.05,
@@ -52,11 +55,12 @@ return {
 		},
 		{
 			actor = 9600032,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 1,
+			NextIcon = 1,
 			say = "Can you reach out and take it? Heheheh~",
 			typewriter = {
 				speed = 0.05,
@@ -65,11 +69,12 @@ return {
 		},
 		{
 			actor = 9600032,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 2,
+			NextIcon = 1,
 			say = "Not as simple as it sounds... What a shame.",
 			typewriter = {
 				speed = 0.05,
@@ -78,11 +83,12 @@ return {
 		},
 		{
 			actor = 9600032,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 2,
+			NextIcon = 1,
 			say = "Sadly, City Hall's budget is limited.",
 			typewriter = {
 				speed = 0.05,

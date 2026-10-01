@@ -1,10 +1,5 @@
 local var0_0 = class("ChapterAutoAddTimePanel", import("view.base.BaseSubView"))
 
-var0_0.GET_SHOW_ID = {
-	[ChapterAutoTicket.TYPE.MAIN] = 68710,
-	[ChapterAutoTicket.TYPE.TIME] = 68711
-}
-
 function var0_0.getUIName(arg0_1)
 	return "ChapterAutoAddTimePanel"
 end
@@ -121,7 +116,7 @@ function var0_0.InitTpl(arg0_15, arg1_15, arg2_15)
 	local var0_15 = arg0_15.showTypes[arg1_15 + 1]
 	local var1_15 = Drop.New({
 		type = DROP_TYPE_VITEM,
-		id = var0_0.GET_SHOW_ID[var0_15],
+		id = ChapterAutoTicket.GET_SHOW_ID[var0_15],
 		count = arg0_15.allCntByType[var0_15]
 	})
 

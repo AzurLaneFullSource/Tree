@@ -4,14 +4,15 @@ return {
 	fadeOut = 1.5,
 	scripts = {
 		{
-			actor = 202381,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_496",
-			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
-			say = "I've answered your invitation, Commander.",
 			bgm = "story-ghostnight-fascinsting",
+			actor = 202381,
+			nameColor = "#A9F548FF",
+			hidePaintObj = true,
+			say = "I've answered your invitation, Commander.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -19,11 +20,12 @@ return {
 		},
 		{
 			actor = 202381,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			side = 2,
 			say = "I've become your poltergeist, but I'm still being put through recruitment procedures? Heheh, forgive my amusement.",
 			typewriter = {
 				speed = 0.05,
@@ -38,11 +40,12 @@ return {
 		},
 		{
 			actor = 202381,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			side = 2,
 			say = "Yes. Noise always flows towards where balance is disrupted. Poltergeists are the same way.",
 			typewriter = {
 				speed = 0.05,
@@ -51,11 +54,12 @@ return {
 		},
 		{
 			actor = 202381,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			side = 2,
 			say = "If you can hear where the next beat will land, all you need to do is anticipate the next move and wait.",
 			typewriter = {
 				speed = 0.05,
@@ -72,10 +76,11 @@ return {
 			expression = 5,
 			side = 2,
 			bgName = "star_level_bg_496",
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 202381,
+			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "Heheh, there's none that can tear themselves from the grip of a tiger's fangs.",
 			typewriter = {
 				speed = 0.05,
@@ -84,11 +89,12 @@ return {
 		},
 		{
 			actor = 202381,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			side = 2,
 			say = "Changing my performance style is just a matter of letting frequencies resonate in a different way.",
 			typewriter = {
 				speed = 0.05,
@@ -103,11 +109,12 @@ return {
 		},
 		{
 			actor = 202381,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			side = 2,
 			say = "Not at all. My very power is given to me by the stars in the firmament.",
 			typewriter = {
 				speed = 0.05,
@@ -116,11 +123,12 @@ return {
 		},
 		{
 			actor = 202381,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			side = 2,
 			say = "Whenever I have free time, I play melodies with them. Would you care to listen sometime?",
 			typewriter = {
 				speed = 0.05,
@@ -128,12 +136,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "I think I got what I need.",
 			typewriter = {
 				speed = 0.05,
@@ -141,12 +150,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "Tiger, you're in.",
 			typewriter = {
 				speed = 0.05,
@@ -157,10 +167,11 @@ return {
 			expression = 8,
 			side = 2,
 			bgName = "star_level_bg_496",
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 202381,
+			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "You're already part of my movement, so I can't wait to see our next composition come together♪",
 			typewriter = {
 				speed = 0.05,

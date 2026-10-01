@@ -3,14 +3,15 @@ local var0_0 = class("WorldMap", import("...BaseEntity"))
 var0_0.Fields = {
 	config = "table",
 	cells = "table",
-	findex = "number",
 	gid = "number",
+	isDelegated = "boolean",
+	findex = "number",
 	phaseDisplayList = "table",
-	salvageAutoResult = "boolean",
 	isPressing = "boolean",
+	salvageAutoResult = "boolean",
 	id = "number",
-	clearFlag = "boolean",
 	valid = "boolean",
+	clearFlag = "boolean",
 	visionFlag = "boolean",
 	isLoss = "boolean",
 	bottom = "number",
@@ -36,7 +37,7 @@ var0_0.EventUpdateFleetFOV = "WorldMap.EventUpdateFleetFOV"
 var0_0.EventUpdateMoveSpeed = "WorldMap.EventUpdateMoveSpeed"
 
 function var0_0.DebugPrint(arg0_1)
-	return string.format("地图 [%s] [id: %s] [gid: %s] [危险度: %s] [是否压制：%s]", arg0_1.config.name, arg0_1.id, tostring(arg0_1.gid), arg0_1:GetDanger(), arg0_1.isPressing)
+	return string.format("地图 [%s] [id: %s] [gid: %s] [危险度: %s] [是否委派：%s] [是否压制：%s]", arg0_1.config.name, arg0_1.id, tostring(arg0_1.gid), arg0_1:GetDanger(), arg0_1.isDelegated, arg0_1.isPressing)
 end
 
 function var0_0.Build(arg0_2)
@@ -336,7 +337,7 @@ function var0_0.UnbindFleets(arg0_25)
 end
 
 function var0_0.GetFleets(arg0_26)
-	return _.rest(arg0_26.fleets, 1)
+	return underscore.to_array(arg0_26.fleets)
 end
 
 function var0_0.GetFleet(arg0_27, arg1_27)
@@ -636,72 +637,39 @@ function var0_0.UpdateVisionFlag(arg0_56, arg1_56)
 	arg0_56:OrderAROpenFOV(arg0_56.visionFlag)
 end
 
-function var0_0.UpdatePressingMark(arg0_57, arg1_57)
-	if tobool(arg0_57.isPressing) ~= tobool(arg1_57) then
-		arg0_57.isPressing = arg1_57
-
-		nowWorld():GetTaskProxy():doUpdateTaskByMap(arg0_57.id, arg1_57)
+function var0_0.UpdateDeteagtedMark(arg0_57, arg1_57)
+	if tobool(arg0_57.isDelegated) ~= tobool(arg1_57) then
+		arg0_57.isDelegated = arg1_57
 	end
 end
 
-function var0_0.ExistAny(arg0_58, arg1_58, arg2_58)
-	return arg0_58:GetCell(arg1_58, arg2_58):GetAliveAttachment() or arg0_58:ExistFleet(arg1_58, arg2_58)
+function var0_0.UpdatePressingMark(arg0_58, arg1_58)
+	if tobool(arg0_58.isPressing) ~= tobool(arg1_58) then
+		arg0_58.isPressing = arg1_58
+
+		nowWorld():GetTaskProxy():doUpdateTaskByMap(arg0_58.id, arg1_58)
+	end
 end
 
-function var0_0.ExistFleet(arg0_59, arg1_59, arg2_59)
-	return tobool(arg0_59:FindFleet(arg1_59, arg2_59))
+function var0_0.ExistAny(arg0_59, arg1_59, arg2_59)
+	return arg0_59:GetCell(arg1_59, arg2_59):GetAliveAttachment() or arg0_59:ExistFleet(arg1_59, arg2_59)
 end
 
-function var0_0.CalcFleetSpeed(arg0_60, arg1_60)
-	local var0_60 = arg1_60:GetSpeed()
+function var0_0.ExistFleet(arg0_60, arg1_60, arg2_60)
+	return tobool(arg0_60:FindFleet(arg1_60, arg2_60))
+end
 
-	if arg0_60:GetCell(arg1_60.row, arg1_60.column):GetTerrain() == WorldMapCell.TerrainFog then
-		var0_60 = math.min(var0_60, 1)
+function var0_0.CalcFleetSpeed(arg0_61, arg1_61)
+	local var0_61 = arg1_61:GetSpeed()
+
+	if arg0_61:GetCell(arg1_61.row, arg1_61.column):GetTerrain() == WorldMapCell.TerrainFog then
+		var0_61 = math.min(var0_61, 1)
 	end
 
-	return var0_60
+	return var0_61
 end
 
-function var0_0.FindPath(arg0_61, arg1_61, arg2_61, arg3_61)
-	local var0_61 = var0_0.pathFinder
-
-	if not var0_61 then
-		var0_61 = PathFinding.New({}, WorldConst.MaxRow, WorldConst.MaxColumn)
-		var0_0.pathFinder = var0_61
-	end
-
-	local var1_61 = {}
-
-	for iter0_61 = 0, WorldConst.MaxRow - 1 do
-		if not var1_61[iter0_61] then
-			var1_61[iter0_61] = {}
-		end
-
-		for iter1_61 = 0, WorldConst.MaxColumn - 1 do
-			local var2_61 = PathFinding.PrioForbidden
-
-			if arg0_61:IsWalkable(iter0_61, iter1_61) and (not arg3_61 or arg0_61:GetCell(iter0_61, iter1_61):GetInFOV()) then
-				var2_61 = PathFinding.PrioNormal
-
-				if iter0_61 == arg2_61.row and iter1_61 == arg2_61.column then
-					if not arg0_61:IsStayPoint(iter0_61, iter1_61) then
-						var2_61 = PathFinding.PrioObstacle
-					end
-				elseif arg0_61:IsObstacle(iter0_61, iter1_61) then
-					var2_61 = PathFinding.PrioObstacle
-				end
-			end
-
-			var1_61[iter0_61][iter1_61] = var2_61
-		end
-	end
-
-	var0_61.cells = var1_61
-
-	return var0_61:Find(arg1_61, arg2_61)
-end
-
-function var0_0.FindAIPath(arg0_62, arg1_62, arg2_62)
+function var0_0.FindPath(arg0_62, arg1_62, arg2_62, arg3_62)
 	local var0_62 = var0_0.pathFinder
 
 	if not var0_62 then
@@ -719,10 +687,14 @@ function var0_0.FindAIPath(arg0_62, arg1_62, arg2_62)
 		for iter1_62 = 0, WorldConst.MaxColumn - 1 do
 			local var2_62 = PathFinding.PrioForbidden
 
-			if arg0_62:IsWalkable(iter0_62, iter1_62) then
+			if arg0_62:IsWalkable(iter0_62, iter1_62) and (not arg3_62 or arg0_62:GetCell(iter0_62, iter1_62):GetInFOV()) then
 				var2_62 = PathFinding.PrioNormal
 
-				if (iter0_62 ~= arg2_62.row or iter1_62 ~= arg2_62.column) and arg0_62:ExistFleet(iter0_62, iter1_62) then
+				if iter0_62 == arg2_62.row and iter1_62 == arg2_62.column then
+					if not arg0_62:IsStayPoint(iter0_62, iter1_62) then
+						var2_62 = PathFinding.PrioObstacle
+					end
+				elseif arg0_62:IsObstacle(iter0_62, iter1_62) then
 					var2_62 = PathFinding.PrioObstacle
 				end
 			end
@@ -736,39 +708,74 @@ function var0_0.FindAIPath(arg0_62, arg1_62, arg2_62)
 	return var0_62:Find(arg1_62, arg2_62)
 end
 
-function var0_0.GetMoveRange(arg0_63, arg1_63)
-	local var0_63 = arg1_63.row
-	local var1_63 = arg1_63.column
-	local var2_63 = arg0_63:CalcFleetSpeed(arg1_63)
-	local var3_63 = {}
+function var0_0.FindAIPath(arg0_63, arg1_63, arg2_63)
+	local var0_63 = var0_0.pathFinder
+
+	if not var0_63 then
+		var0_63 = PathFinding.New({}, WorldConst.MaxRow, WorldConst.MaxColumn)
+		var0_0.pathFinder = var0_63
+	end
+
+	local var1_63 = {}
 
 	for iter0_63 = 0, WorldConst.MaxRow - 1 do
-		if not var3_63[iter0_63] then
-			var3_63[iter0_63] = {}
+		if not var1_63[iter0_63] then
+			var1_63[iter0_63] = {}
 		end
 
 		for iter1_63 = 0, WorldConst.MaxColumn - 1 do
-			var3_63[iter0_63][iter1_63] = arg0_63:IsWalkable(iter0_63, iter1_63)
+			local var2_63 = PathFinding.PrioForbidden
+
+			if arg0_63:IsWalkable(iter0_63, iter1_63) then
+				var2_63 = PathFinding.PrioNormal
+
+				if (iter0_63 ~= arg2_63.row or iter1_63 ~= arg2_63.column) and arg0_63:ExistFleet(iter0_63, iter1_63) then
+					var2_63 = PathFinding.PrioObstacle
+				end
+			end
+
+			var1_63[iter0_63][iter1_63] = var2_63
 		end
 	end
 
-	local var4_63 = {}
-	local var5_63 = {
+	var0_63.cells = var1_63
+
+	return var0_63:Find(arg1_63, arg2_63)
+end
+
+function var0_0.GetMoveRange(arg0_64, arg1_64)
+	local var0_64 = arg1_64.row
+	local var1_64 = arg1_64.column
+	local var2_64 = arg0_64:CalcFleetSpeed(arg1_64)
+	local var3_64 = {}
+
+	for iter0_64 = 0, WorldConst.MaxRow - 1 do
+		if not var3_64[iter0_64] then
+			var3_64[iter0_64] = {}
+		end
+
+		for iter1_64 = 0, WorldConst.MaxColumn - 1 do
+			var3_64[iter0_64][iter1_64] = arg0_64:IsWalkable(iter0_64, iter1_64)
+		end
+	end
+
+	local var4_64 = {}
+	local var5_64 = {
 		{
 			step = 0,
-			row = var0_63,
-			column = var1_63
+			row = var0_64,
+			column = var1_64
 		}
 	}
 
-	var3_63[var0_63][var1_63] = false
+	var3_64[var0_64][var1_64] = false
 
-	while #var5_63 > 0 do
-		local var6_63 = table.remove(var5_63, 1)
+	while #var5_64 > 0 do
+		local var6_64 = table.remove(var5_64, 1)
 
-		table.insert(var4_63, var6_63)
+		table.insert(var4_64, var6_64)
 
-		local var7_63 = {
+		local var7_64 = {
 			{
 				row = 1,
 				column = 0
@@ -787,63 +794,63 @@ function var0_0.GetMoveRange(arg0_63, arg1_63)
 			}
 		}
 
-		_.each(var7_63, function(arg0_64)
-			arg0_64.row = var6_63.row + arg0_64.row
-			arg0_64.column = var6_63.column + arg0_64.column
-			arg0_64.step = var6_63.step + 1
+		_.each(var7_64, function(arg0_65)
+			arg0_65.row = var6_64.row + arg0_65.row
+			arg0_65.column = var6_64.column + arg0_65.column
+			arg0_65.step = var6_64.step + 1
 
-			if arg0_64.row >= 0 and arg0_64.row < WorldConst.MaxRow and arg0_64.column >= 0 and arg0_64.column < WorldConst.MaxColumn and arg0_64.step <= var2_63 and var3_63[arg0_64.row][arg0_64.column] then
-				var3_63[arg0_64.row][arg0_64.column] = false
+			if arg0_65.row >= 0 and arg0_65.row < WorldConst.MaxRow and arg0_65.column >= 0 and arg0_65.column < WorldConst.MaxColumn and arg0_65.step <= var2_64 and var3_64[arg0_65.row][arg0_65.column] then
+				var3_64[arg0_65.row][arg0_65.column] = false
 
-				if arg0_63:IsObstacle(arg0_64.row, arg0_64.column) then
-					table.insert(var4_63, arg0_64)
+				if arg0_64:IsObstacle(arg0_65.row, arg0_65.column) then
+					table.insert(var4_64, arg0_65)
 				else
-					table.insert(var5_63, arg0_64)
+					table.insert(var5_64, arg0_65)
 				end
 			end
 		end)
 	end
 
-	var4_63 = _.filter(var4_63, function(arg0_65)
-		return arg0_63:IsStayPoint(arg0_65.row, arg0_65.column)
+	var4_64 = _.filter(var4_64, function(arg0_66)
+		return arg0_64:IsStayPoint(arg0_66.row, arg0_66.column)
 	end)
 
-	return var4_63
+	return var4_64
 end
 
-function var0_0.BuildLongMoveInfos(arg0_66)
-	local var0_66 = {}
+function var0_0.BuildLongMoveInfos(arg0_67)
+	local var0_67 = {}
 
-	for iter0_66 = 0, WorldConst.MaxRow - 1 do
-		var0_66[iter0_66] = var0_66[iter0_66] or {}
+	for iter0_67 = 0, WorldConst.MaxRow - 1 do
+		var0_67[iter0_67] = var0_67[iter0_67] or {}
 
-		for iter1_66 = 0, WorldConst.MaxColumn - 1 do
-			if arg0_66:IsWalkable(iter0_66, iter1_66) and arg0_66:GetCell(iter0_66, iter1_66):GetInFOV() then
-				var0_66[iter0_66][iter1_66] = {
+		for iter1_67 = 0, WorldConst.MaxColumn - 1 do
+			if arg0_67:IsWalkable(iter0_67, iter1_67) and arg0_67:GetCell(iter0_67, iter1_67):GetInFOV() then
+				var0_67[iter0_67][iter1_67] = {
 					isMark = false,
 					isFinish = false,
-					row = iter0_66,
-					column = iter1_66,
+					row = iter0_67,
+					column = iter1_67,
 					dp = {},
 					last = {},
-					isStayPoint = arg0_66:IsStayPoint(iter0_66, iter1_66),
-					isObstacle = arg0_66:IsObstacle(iter0_66, iter1_66)
+					isStayPoint = arg0_67:IsStayPoint(iter0_67, iter1_67),
+					isObstacle = arg0_67:IsObstacle(iter0_67, iter1_67)
 				}
 			end
 		end
 	end
 
-	return var0_66
+	return var0_67
 end
 
-function var0_0.GetLongMoveRange(arg0_67, arg1_67)
-	local var0_67 = arg1_67.row
-	local var1_67 = arg1_67.column
-	local var2_67 = arg0_67:CalcFleetSpeed(arg1_67)
-	local var3_67 = arg0_67:BuildLongMoveInfos()
-	local var4_67 = {}
-	local var5_67 = {}
-	local var6_67 = {
+function var0_0.GetLongMoveRange(arg0_68, arg1_68)
+	local var0_68 = arg1_68.row
+	local var1_68 = arg1_68.column
+	local var2_68 = arg0_68:CalcFleetSpeed(arg1_68)
+	local var3_68 = arg0_68:BuildLongMoveInfos()
+	local var4_68 = {}
+	local var5_68 = {}
+	local var6_68 = {
 		{
 			row = 1,
 			column = 0
@@ -862,59 +869,59 @@ function var0_0.GetLongMoveRange(arg0_67, arg1_67)
 		}
 	}
 
-	local function var7_67(arg0_68, arg1_68, arg2_68)
-		return arg0_68 < arg1_68 or arg2_68 < arg0_68
+	local function var7_68(arg0_69, arg1_69, arg2_69)
+		return arg0_69 < arg1_69 or arg2_69 < arg0_69
 	end
 
-	local function var8_67(arg0_69)
-		if not arg0_69 then
+	local function var8_68(arg0_70)
+		if not arg0_70 then
 			return
 		end
 
-		arg0_69.isFinish = true
+		arg0_70.isFinish = true
 
-		table.insert(var4_67, arg0_69)
+		table.insert(var4_68, arg0_70)
 
-		if arg0_69.isStayPoint then
-			local var0_69 = arg0_69.dp
+		if arg0_70.isStayPoint then
+			local var0_70 = arg0_70.dp
 
-			for iter0_69 = 1, var2_67 do
-				if var0_69[iter0_69] and (not var0_69[0] or var0_69[0] > var0_69[iter0_69] + 1) then
-					var0_69[0] = var0_69[iter0_69] + 1
-					arg0_69.last[0] = arg0_69.last[iter0_69]
+			for iter0_70 = 1, var2_68 do
+				if var0_70[iter0_70] and (not var0_70[0] or var0_70[0] > var0_70[iter0_70] + 1) then
+					var0_70[0] = var0_70[iter0_70] + 1
+					arg0_70.last[0] = arg0_70.last[iter0_70]
 				end
 			end
 		end
 	end
 
-	local var9_67 = var3_67[var0_67][var1_67]
+	local var9_68 = var3_68[var0_68][var1_68]
 
-	var9_67.dp[0] = 0
-	var9_67.isMark = true
+	var9_68.dp[0] = 0
+	var9_68.isMark = true
 
-	var8_67(var9_67)
+	var8_68(var9_68)
 
-	while var9_67 do
-		_.each(var6_67, function(arg0_70)
-			if var7_67(var9_67.row + arg0_70.row, 0, WorldConst.MaxRow - 1) or var7_67(var9_67.column + arg0_70.column, 0, WorldConst.MaxColumn - 1) then
+	while var9_68 do
+		_.each(var6_68, function(arg0_71)
+			if var7_68(var9_68.row + arg0_71.row, 0, WorldConst.MaxRow - 1) or var7_68(var9_68.column + arg0_71.column, 0, WorldConst.MaxColumn - 1) then
 				return
 			end
 
-			local var0_70 = var3_67[var9_67.row + arg0_70.row][var9_67.column + arg0_70.column]
+			local var0_71 = var3_68[var9_68.row + arg0_71.row][var9_68.column + arg0_71.column]
 
-			if var0_70 and not var0_70.isFinish then
-				for iter0_70 = 1, var2_67 do
-					if var9_67.dp[iter0_70 - 1] and (not var0_70.dp[iter0_70] or var0_70.dp[iter0_70] > var9_67.dp[iter0_70 - 1]) then
-						var0_70.dp[iter0_70] = var9_67.dp[iter0_70 - 1]
-						var0_70.last[iter0_70] = {
-							var9_67,
-							iter0_70 - 1
+			if var0_71 and not var0_71.isFinish then
+				for iter0_71 = 1, var2_68 do
+					if var9_68.dp[iter0_71 - 1] and (not var0_71.dp[iter0_71] or var0_71.dp[iter0_71] > var9_68.dp[iter0_71 - 1]) then
+						var0_71.dp[iter0_71] = var9_68.dp[iter0_71 - 1]
+						var0_71.last[iter0_71] = {
+							var9_68,
+							iter0_71 - 1
 						}
 
-						if not var0_70.isMark then
-							var0_70.isMark = true
+						if not var0_71.isMark then
+							var0_71.isMark = true
 
-							table.insert(var5_67, var0_70)
+							table.insert(var5_68, var0_71)
 						end
 					end
 				end
@@ -922,70 +929,70 @@ function var0_0.GetLongMoveRange(arg0_67, arg1_67)
 		end)
 
 		repeat
-			var9_67 = table.remove(var5_67, 1)
+			var9_68 = table.remove(var5_68, 1)
 
-			var8_67(var9_67)
-		until not var9_67 or not var9_67.isObstacle
+			var8_68(var9_68)
+		until not var9_68 or not var9_68.isObstacle
 	end
 
-	local var10_67 = {}
+	local var10_68 = {}
 
-	for iter0_67, iter1_67 in ipairs(var4_67) do
-		if iter1_67.dp[0] and iter1_67.dp[0] > 0 then
-			table.insert(var10_67, {
-				row = iter1_67.row,
-				column = iter1_67.column,
-				stay = iter1_67.dp[0]
+	for iter0_68, iter1_68 in ipairs(var4_68) do
+		if iter1_68.dp[0] and iter1_68.dp[0] > 0 then
+			table.insert(var10_68, {
+				row = iter1_68.row,
+				column = iter1_68.column,
+				stay = iter1_68.dp[0]
 			})
 		end
 	end
 
-	return var10_67, var3_67
+	return var10_68, var3_68
 end
 
-function var0_0.IsWalkable(arg0_71, arg1_71, arg2_71)
-	local var0_71 = arg0_71:GetCell(arg1_71, arg2_71)
+function var0_0.IsWalkable(arg0_72, arg1_72, arg2_72)
+	local var0_72 = arg0_72:GetCell(arg1_72, arg2_72)
 
-	return var0_71 and var0_71.walkable and (var0_71:CanLeave() or arg0_71:IsStayPoint(arg1_71, arg2_71))
+	return var0_72 and var0_72.walkable and (var0_72:CanLeave() or arg0_72:IsStayPoint(arg1_72, arg2_72))
 end
 
-function var0_0.IsStayPoint(arg0_72, arg1_72, arg2_72)
-	return arg0_72:GetCell(arg1_72, arg2_72):CanArrive() and not arg0_72:ExistFleet(arg1_72, arg2_72)
+function var0_0.IsStayPoint(arg0_73, arg1_73, arg2_73)
+	return arg0_73:GetCell(arg1_73, arg2_73):CanArrive() and not arg0_73:ExistFleet(arg1_73, arg2_73)
 end
 
-function var0_0.IsObstacle(arg0_73, arg1_73, arg2_73)
-	return not arg0_73:GetCell(arg1_73, arg2_73):CanPass()
+function var0_0.IsObstacle(arg0_74, arg1_74, arg2_74)
+	return not arg0_74:GetCell(arg1_74, arg2_74):CanPass()
 end
 
-function var0_0.IsSign(arg0_74, arg1_74, arg2_74)
-	return arg0_74:GetCell(arg1_74, arg2_74):IsSign()
+function var0_0.IsSign(arg0_75, arg1_75, arg2_75)
+	return arg0_75:GetCell(arg1_75, arg2_75):IsSign()
 end
 
-function var0_0.FindNearestBlankPoint(arg0_75, arg1_75, arg2_75)
-	local var0_75 = {}
+function var0_0.FindNearestBlankPoint(arg0_76, arg1_76, arg2_76)
+	local var0_76 = {}
 
-	for iter0_75 = 0, WorldConst.MaxRow - 1 do
-		if not var0_75[iter0_75] then
-			var0_75[iter0_75] = {}
+	for iter0_76 = 0, WorldConst.MaxRow - 1 do
+		if not var0_76[iter0_76] then
+			var0_76[iter0_76] = {}
 		end
 
-		for iter1_75 = 0, WorldConst.MaxColumn - 1 do
-			var0_75[iter0_75][iter1_75] = arg0_75:IsWalkable(iter0_75, iter1_75)
+		for iter1_76 = 0, WorldConst.MaxColumn - 1 do
+			var0_76[iter0_76][iter1_76] = arg0_76:IsWalkable(iter0_76, iter1_76)
 		end
 	end
 
-	local var1_75 = {
-		row = arg1_75,
-		column = arg2_75
+	local var1_76 = {
+		row = arg1_76,
+		column = arg2_76
 	}
-	local var2_75 = {}
+	local var2_76 = {}
 
-	while #var1_75 > 0 do
-		local var3_75 = table.remove(var1_75, 1)
+	while #var1_76 > 0 do
+		local var3_76 = table.remove(var1_76, 1)
 
-		table.insert(var2_75, var3_75)
+		table.insert(var2_76, var3_76)
 
-		local var4_75 = {
+		local var4_76 = {
 			{
 				row = 1,
 				column = 0
@@ -1004,218 +1011,218 @@ function var0_0.FindNearestBlankPoint(arg0_75, arg1_75, arg2_75)
 			}
 		}
 
-		_.each(var4_75, function(arg0_76)
-			arg0_76.row = var3_75.row + arg0_76.row
-			arg0_76.column = var3_75.column + arg0_76.column
+		_.each(var4_76, function(arg0_77)
+			arg0_77.row = var3_76.row + arg0_77.row
+			arg0_77.column = var3_76.column + arg0_77.column
 
-			if arg0_76.row >= 0 and arg0_76.row < WorldConst.MaxRow and arg0_76.column >= 0 and arg0_76.column < WorldConst.MaxColumn and not (_.any(var1_75, function(arg0_77)
-				return arg0_77.row == arg0_76.row and arg0_77.column == arg0_76.column
-			end) or _.any(var2_75, function(arg0_78)
-				return arg0_78.row == arg0_76.row and arg0_78.column == arg0_76.column
-			end)) and var0_75[arg0_76.row][arg0_76.column] then
-				if arg0_75:ExistAny(arg0_76.row, arg0_76.column) then
-					table.insert(var1_75, arg0_76)
+			if arg0_77.row >= 0 and arg0_77.row < WorldConst.MaxRow and arg0_77.column >= 0 and arg0_77.column < WorldConst.MaxColumn and not (_.any(var1_76, function(arg0_78)
+				return arg0_78.row == arg0_77.row and arg0_78.column == arg0_77.column
+			end) or _.any(var2_76, function(arg0_79)
+				return arg0_79.row == arg0_77.row and arg0_79.column == arg0_77.column
+			end)) and var0_76[arg0_77.row][arg0_77.column] then
+				if arg0_76:ExistAny(arg0_77.row, arg0_77.column) then
+					table.insert(var1_76, arg0_77)
 				else
-					return arg0_76
+					return arg0_77
 				end
 			end
 		end)
 	end
 end
 
-function var0_0.WriteBack(arg0_79, arg1_79, arg2_79)
-	local var0_79 = arg0_79:GetFleet()
-	local var1_79 = {}
+function var0_0.WriteBack(arg0_80, arg1_80, arg2_80)
+	local var0_80 = arg0_80:GetFleet()
+	local var1_80 = {}
 
-	for iter0_79, iter1_79 in ipairs(var0_79:GetShips(true)) do
-		table.insert(var1_79, iter1_79)
+	for iter0_80, iter1_80 in ipairs(var0_80:GetShips(true)) do
+		table.insert(var1_80, iter1_80)
 	end
 
-	if arg2_79.statistics.submarineAid then
-		local var2_79 = arg0_79:GetSubmarineFleet()
+	if arg2_80.statistics.submarineAid then
+		local var2_80 = arg0_80:GetSubmarineFleet()
 
-		assert(var2_79, "submarine fleet not exist.")
+		assert(var2_80, "submarine fleet not exist.")
 
-		local var3_79 = var2_79:GetTeamShips(TeamType.Submarine, true)
+		local var3_80 = var2_80:GetTeamShips(TeamType.Submarine, true)
 
-		for iter2_79, iter3_79 in ipairs(var3_79) do
-			table.insert(var1_79, iter3_79)
+		for iter2_80, iter3_80 in ipairs(var3_80) do
+			table.insert(var1_80, iter3_80)
 		end
 
-		var2_79:UseAmmo()
-		var2_79:AddDefeatEnemies(arg1_79)
+		var2_80:UseAmmo()
+		var2_80:AddDefeatEnemies(arg1_80)
 	end
 
-	var0_79:AddDefeatEnemies(arg1_79)
-	_.each(var1_79, function(arg0_80)
-		local var0_80 = arg2_79.statistics[arg0_80.id]
+	var0_80:AddDefeatEnemies(arg1_80)
+	_.each(var1_80, function(arg0_81)
+		local var0_81 = arg2_80.statistics[arg0_81.id]
 
-		if var0_80 then
-			arg0_80.hpRant = var0_80.bp
+		if var0_81 then
+			arg0_81.hpRant = var0_81.bp
 		end
 
-		if arg0_80.hpRant <= 0 then
-			arg0_80:Rebirth()
+		if arg0_81.hpRant <= 0 then
+			arg0_81:Rebirth()
 		end
 	end)
 
-	local var4_79 = arg0_79:GetCell(var0_79.row, var0_79.column):GetStageEnemy()
+	local var4_80 = arg0_80:GetCell(var0_80.row, var0_80.column):GetStageEnemy()
 
-	assert(var4_79)
+	assert(var4_80)
 
-	if arg1_79 then
-		var4_79:UpdateFlag(1)
+	if arg1_80 then
+		var4_80:UpdateFlag(1)
 
-		arg0_79.phaseDisplayList = table.mergeArray(arg0_79.phaseDisplayList, var4_79:SetHP(0))
+		arg0_80.phaseDisplayList = table.mergeArray(arg0_80.phaseDisplayList, var4_80:SetHP(0))
 
-		local var5_79 = false
+		local var5_80 = false
 
-		_.each(arg0_79:GetFleets(), function(arg0_81)
-			var5_79 = var5_79 or arg0_81:HasDamageLevel()
+		_.each(arg0_80:GetFleets(), function(arg0_82)
+			var5_80 = var5_80 or arg0_82:HasDamageLevel()
 
-			arg0_81:ClearDamageLevel()
+			arg0_82:ClearDamageLevel()
 		end)
 
-		if var5_79 then
-			table.insert(arg0_79.phaseDisplayList, 1, {
+		if var5_80 then
+			table.insert(arg0_80.phaseDisplayList, 1, {
 				story = "W1500",
-				hp = var4_79:GetMaxHP()
+				hp = var4_80:GetMaxHP()
 			})
 		end
 	else
-		arg0_79.isLoss = true
+		arg0_80.isLoss = true
 
-		var0_79:IncDamageLevel(var4_79)
-		var4_79:UpdateData(var4_79.data - 1)
+		var0_80:IncDamageLevel(var4_80)
+		var4_80:UpdateData(var4_80.data - 1)
 
-		arg0_79.phaseDisplayList = table.mergeArray(arg0_79.phaseDisplayList, var4_79:SetHP(arg2_79.statistics._maxBossHP))
+		arg0_80.phaseDisplayList = table.mergeArray(arg0_80.phaseDisplayList, var4_80:SetHP(arg2_80.statistics._maxBossHP))
 
-		local var6_79 = nowWorld()
+		local var6_80 = nowWorld()
 
-		if var6_79.isAutoFight then
-			var6_79:TriggerAutoFight(false)
+		if var6_80.isAutoFight then
+			var6_80:TriggerAutoFight(false)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("autofight_tip_bigworld_dead"))
 		end
 	end
 
-	_.each(arg2_79.hpDropInfo, function(arg0_82)
-		local var0_82 = #arg0_79.phaseDisplayList + 1
+	_.each(arg2_80.hpDropInfo, function(arg0_83)
+		local var0_83 = #arg0_80.phaseDisplayList + 1
 
-		for iter0_82, iter1_82 in ipairs(arg0_79.phaseDisplayList) do
-			if iter1_82.hp < arg0_82.hp then
-				var0_82 = iter0_82
+		for iter0_83, iter1_83 in ipairs(arg0_80.phaseDisplayList) do
+			if iter1_83.hp < arg0_83.hp then
+				var0_83 = iter0_83
 
 				break
 			end
 		end
 
-		arg0_79:AddPhaseDisplay({
-			hp = arg0_82.hp,
-			drops = PlayerConst.addTranDrop(arg0_82.drop_info)
-		}, var0_82)
+		arg0_80:AddPhaseDisplay({
+			hp = arg0_83.hp,
+			drops = PlayerConst.addTranDrop(arg0_83.drop_info)
+		}, var0_83)
 	end)
 end
 
-function var0_0.AddPhaseDisplay(arg0_83, arg1_83, arg2_83)
-	if arg2_83 then
-		table.insert(arg0_83.phaseDisplayList, arg2_83, arg1_83)
+function var0_0.AddPhaseDisplay(arg0_84, arg1_84, arg2_84)
+	if arg2_84 then
+		table.insert(arg0_84.phaseDisplayList, arg2_84, arg1_84)
 	else
-		table.insert(arg0_83.phaseDisplayList, arg1_83)
+		table.insert(arg0_84.phaseDisplayList, arg1_84)
 	end
 end
 
-function var0_0.FindAttachments(arg0_84, arg1_84, arg2_84)
-	local var0_84 = {}
-
-	for iter0_84, iter1_84 in pairs(arg0_84.typeAttachments) do
-		if not arg1_84 or arg1_84 == iter0_84 then
-			for iter2_84, iter3_84 in ipairs(iter1_84) do
-				if not arg2_84 or iter3_84.id == arg2_84 then
-					table.insert(var0_84, iter3_84)
-				end
-			end
-		end
-	end
-
-	return var0_84
-end
-
-function var0_0.FindEnemys(arg0_85)
+function var0_0.FindAttachments(arg0_85, arg1_85, arg2_85)
 	local var0_85 = {}
 
 	for iter0_85, iter1_85 in pairs(arg0_85.typeAttachments) do
-		if WorldMapAttachment.IsEnemyType(iter0_85) then
-			var0_85 = table.mergeArray(var0_85, iter1_85)
+		if not arg1_85 or arg1_85 == iter0_85 then
+			for iter2_85, iter3_85 in ipairs(iter1_85) do
+				if not arg2_85 or iter3_85.id == arg2_85 then
+					table.insert(var0_85, iter3_85)
+				end
+			end
 		end
 	end
 
 	return var0_85
 end
 
-function var0_0.GetMapMinMax(arg0_86)
-	local var0_86 = Vector2(WorldConst.MaxColumn, WorldConst.MaxRow)
-	local var1_86 = Vector2(-WorldConst.MaxColumn, -WorldConst.MaxRow)
+function var0_0.FindEnemys(arg0_86)
+	local var0_86 = {}
 
-	for iter0_86 = 0, WorldConst.MaxRow - 1 do
-		for iter1_86 = 0, WorldConst.MaxColumn - 1 do
-			if arg0_86:GetCell(iter0_86, iter1_86) then
-				var0_86.x = math.min(var0_86.x, iter1_86)
-				var0_86.y = math.min(var0_86.y, iter0_86)
-				var1_86.x = math.max(var1_86.x, iter1_86)
-				var1_86.y = math.max(var1_86.y, iter0_86)
+	for iter0_86, iter1_86 in pairs(arg0_86.typeAttachments) do
+		if WorldMapAttachment.IsEnemyType(iter0_86) then
+			var0_86 = table.mergeArray(var0_86, iter1_86)
+		end
+	end
+
+	return var0_86
+end
+
+function var0_0.GetMapMinMax(arg0_87)
+	local var0_87 = Vector2(WorldConst.MaxColumn, WorldConst.MaxRow)
+	local var1_87 = Vector2(-WorldConst.MaxColumn, -WorldConst.MaxRow)
+
+	for iter0_87 = 0, WorldConst.MaxRow - 1 do
+		for iter1_87 = 0, WorldConst.MaxColumn - 1 do
+			if arg0_87:GetCell(iter0_87, iter1_87) then
+				var0_87.x = math.min(var0_87.x, iter1_87)
+				var0_87.y = math.min(var0_87.y, iter0_87)
+				var1_87.x = math.max(var1_87.x, iter1_87)
+				var1_87.y = math.max(var1_87.y, iter0_87)
 			end
 		end
 	end
 
-	return var0_86.y, var1_86.y, var0_86.x, var1_86.x
+	return var0_87.y, var1_87.y, var0_87.x, var1_87.x
 end
 
-function var0_0.GetMapSize(arg0_87)
-	local var0_87, var1_87, var2_87, var3_87 = arg0_87:GetMapMinMax()
+function var0_0.GetMapSize(arg0_88)
+	local var0_88, var1_88, var2_88, var3_88 = arg0_88:GetMapMinMax()
 
-	return var1_87 - var0_87 + 1, var3_87 - var2_87 + 1
+	return var1_88 - var0_88 + 1, var3_88 - var2_88 + 1
 end
 
-function var0_0.CountEventEffectKeys(arg0_88, arg1_88)
-	local var0_88 = 0
+function var0_0.CountEventEffectKeys(arg0_89, arg1_89)
+	local var0_89 = 0
 
-	for iter0_88, iter1_88 in ipairs(arg0_88:GetNormalFleets()) do
-		local var1_88 = arg0_88:GetCell(iter1_88.row, iter1_88.column):GetAliveAttachment()
+	for iter0_89, iter1_89 in ipairs(arg0_89:GetNormalFleets()) do
+		local var1_89 = arg0_89:GetCell(iter1_89.row, iter1_89.column):GetAliveAttachment()
 
-		if var1_88 and var1_88.type == WorldMapAttachment.TypeEvent and var1_88:GetEventEffect() == arg1_88 then
-			var0_88 = var0_88 + 1
+		if var1_89 and var1_89.type == WorldMapAttachment.TypeEvent and var1_89:GetEventEffect() == arg1_89 then
+			var0_89 = var0_89 + 1
 		end
 	end
 
-	return var0_88
+	return var0_89
 end
 
-function var0_0.EventEffectOpenFOV(arg0_89, arg1_89)
-	assert(arg1_89.effect_type == WorldMapAttachment.EffectEventFOV)
+function var0_0.EventEffectOpenFOV(arg0_90, arg1_90)
+	assert(arg1_90.effect_type == WorldMapAttachment.EffectEventFOV)
 
-	local var0_89, var1_89 = unpack(arg1_89.effect_paramater)
-	local var2_89 = var1_89 >= 0
+	local var0_90, var1_90 = unpack(arg1_90.effect_paramater)
+	local var2_90 = var1_90 >= 0
 
-	var1_89 = var2_89 and var1_89 or math.abs(var1_89) - 1
+	var1_90 = var2_90 and var1_90 or math.abs(var1_90) - 1
 
-	local var3_89 = arg0_89:FindAttachments(WorldMapAttachment.TypeEvent, var0_89)
+	local var3_90 = arg0_90:FindAttachments(WorldMapAttachment.TypeEvent, var0_90)
 
-	_.each(var3_89, function(arg0_90)
-		arg0_89.centerCellFOV = {
-			row = arg0_90.row,
-			column = arg0_90.column
+	_.each(var3_90, function(arg0_91)
+		arg0_90.centerCellFOV = {
+			row = arg0_91.row,
+			column = arg0_91.column
 		}
 
-		for iter0_90 = math.max(arg0_90.row - var1_89, 0), math.min(arg0_90.row + var1_89, WorldConst.MaxRow - 1) do
-			for iter1_90 = math.max(arg0_90.column - var1_89, 0), math.min(arg0_90.column + var1_89, WorldConst.MaxColumn - 1) do
-				if WorldConst.InFOVRange(arg0_90.row, arg0_90.column, iter0_90, iter1_90, var1_89) then
-					local var0_90 = arg0_89:GetCell(iter0_90, iter1_90)
+		for iter0_91 = math.max(arg0_91.row - var1_90, 0), math.min(arg0_91.row + var1_90, WorldConst.MaxRow - 1) do
+			for iter1_91 = math.max(arg0_91.column - var1_90, 0), math.min(arg0_91.column + var1_90, WorldConst.MaxColumn - 1) do
+				if WorldConst.InFOVRange(arg0_91.row, arg0_91.column, iter0_91, iter1_91, var1_90) then
+					local var0_91 = arg0_90:GetCell(iter0_91, iter1_91)
 
-					if var0_90 then
-						if var2_89 then
-							var0_90:UpdateInFov(bit.bor(var0_90.infov, WorldConst.FOVEventEffect))
+					if var0_91 then
+						if var2_90 then
+							var0_91:UpdateInFov(bit.bor(var0_91.infov, WorldConst.FOVEventEffect))
 						else
-							var0_90:UpdateInFov(bit.band(var0_90.infov, WorldConst.Flag16Max - WorldConst.FOVEventEffect))
+							var0_91:UpdateInFov(bit.band(var0_91.infov, WorldConst.Flag16Max - WorldConst.FOVEventEffect))
 						end
 					end
 				end
@@ -1224,758 +1231,758 @@ function var0_0.EventEffectOpenFOV(arg0_89, arg1_89)
 	end)
 end
 
-function var0_0.OrderAROpenFOV(arg0_91, arg1_91)
-	if arg1_91 then
-		local var0_91 = arg0_91:GetFleet()
+function var0_0.OrderAROpenFOV(arg0_92, arg1_92)
+	if arg1_92 then
+		local var0_92 = arg0_92:GetFleet()
 
-		arg0_91.centerCellFOV = {
-			row = var0_91.row,
-			column = var0_91.column
+		arg0_92.centerCellFOV = {
+			row = var0_92.row,
+			column = var0_92.column
 		}
 	end
 
-	for iter0_91, iter1_91 in pairs(arg0_91.cells) do
-		if arg1_91 then
-			iter1_91:UpdateInFov(bit.bor(iter1_91.infov, WorldConst.FOVEventEffect))
+	for iter0_92, iter1_92 in pairs(arg0_92.cells) do
+		if arg1_92 then
+			iter1_92:UpdateInFov(bit.bor(iter1_92.infov, WorldConst.FOVEventEffect))
 		else
-			iter1_91:UpdateInFov(bit.band(iter1_91.infov, WorldConst.Flag16Max - WorldConst.FOVEventEffect))
+			iter1_92:UpdateInFov(bit.band(iter1_92.infov, WorldConst.Flag16Max - WorldConst.FOVEventEffect))
 		end
 	end
 end
 
-function var0_0.GetMaxDistanceCell(arg0_92, arg1_92, arg2_92)
-	local var0_92
-	local var1_92 = 0
-	local var2_92 = {
+function var0_0.GetMaxDistanceCell(arg0_93, arg1_93, arg2_93)
+	local var0_93
+	local var1_93 = 0
+	local var2_93 = {
 		{
-			row = arg0_92.top,
-			column = arg0_92.left
+			row = arg0_93.top,
+			column = arg0_93.left
 		},
 		{
-			row = arg0_92.bottom,
-			column = arg0_92.left
+			row = arg0_93.bottom,
+			column = arg0_93.left
 		},
 		{
-			row = arg0_92.top,
-			column = arg0_92.right
+			row = arg0_93.top,
+			column = arg0_93.right
 		},
 		{
-			row = arg0_92.bottom,
-			column = arg0_92.right
+			row = arg0_93.bottom,
+			column = arg0_93.right
 		}
 	}
 
-	for iter0_92, iter1_92 in pairs(var2_92) do
-		local var3_92 = (iter1_92.row - arg1_92) * (iter1_92.row - arg1_92) + (iter1_92.column - arg2_92) * (iter1_92.column - arg2_92)
+	for iter0_93, iter1_93 in pairs(var2_93) do
+		local var3_93 = (iter1_93.row - arg1_93) * (iter1_93.row - arg1_93) + (iter1_93.column - arg2_93) * (iter1_93.column - arg2_93)
 
-		if var1_92 < var3_92 then
-			var0_92 = iter1_92
-			var1_92 = var3_92
+		if var1_93 < var3_93 then
+			var0_93 = iter1_93
+			var1_93 = var3_93
 		end
 	end
 
-	return var0_92, math.sqrt(var1_92)
+	return var0_93, math.sqrt(var1_93)
 end
 
-function var0_0.GetCellsInFOV(arg0_93)
-	local var0_93 = {}
+function var0_0.GetCellsInFOV(arg0_94)
+	local var0_94 = {}
 
-	for iter0_93, iter1_93 in pairs(arg0_93.cells) do
-		if iter1_93:GetInFOV() then
-			table.insert(var0_93, iter1_93)
+	for iter0_94, iter1_94 in pairs(arg0_94.cells) do
+		if iter1_94:GetInFOV() then
+			table.insert(var0_94, iter1_94)
 		end
 	end
 
-	return var0_93
+	return var0_94
 end
 
-function var0_0.AlwaysInFOV(arg0_94)
-	return arg0_94.config.map_sight == 1
+function var0_0.AlwaysInFOV(arg0_95)
+	return arg0_95.config.map_sight == 1
 end
 
-function var0_0.GetEventTipWord(arg0_95)
-	local var0_95 = arg0_95:FindAttachments(WorldMapAttachment.TypeEvent)
-	local var1_95 = ""
-	local var2_95 = 0
-
-	for iter0_95, iter1_95 in ipairs(var0_95) do
-		local var3_95 = pg.world_event_desc[iter1_95.id]
-
-		if iter1_95:IsAlive() and var3_95 and var2_95 < var3_95.hint_pri then
-			var2_95 = var3_95.hint_pri
-			var1_95 = var3_95.hint
-		end
-	end
-
-	return var1_95, var2_95
-end
-
-function var0_0.GetEventPoisonRate(arg0_96)
+function var0_0.GetEventTipWord(arg0_96)
 	local var0_96 = arg0_96:FindAttachments(WorldMapAttachment.TypeEvent)
-	local var1_96 = 0
+	local var1_96 = ""
+	local var2_96 = 0
 
 	for iter0_96, iter1_96 in ipairs(var0_96) do
-		if iter1_96:IsAlive() then
-			var1_96 = var1_96 + iter1_96.config.infection_value
+		local var3_96 = pg.world_event_desc[iter1_96.id]
+
+		if iter1_96:IsAlive() and var3_96 and var2_96 < var3_96.hint_pri then
+			var2_96 = var3_96.hint_pri
+			var1_96 = var3_96.hint
 		end
 	end
 
-	return var1_96, arg0_96.config.is_sairen
+	return var1_96, var2_96
 end
 
-function var0_0.GetPressingLevel(arg0_97)
-	return arg0_97.config.complete_effect
+function var0_0.GetEventPoisonRate(arg0_97)
+	local var0_97 = arg0_97:FindAttachments(WorldMapAttachment.TypeEvent)
+	local var1_97 = 0
+
+	for iter0_97, iter1_97 in ipairs(var0_97) do
+		if iter1_97:IsAlive() then
+			var1_97 = var1_97 + iter1_97.config.infection_value
+		end
+	end
+
+	return var1_97, arg0_97.config.is_sairen
 end
 
-function var0_0.CheckMapPressing(arg0_98)
-	return arg0_98:GetPressingLevel() > 0 and not arg0_98.isPressing and arg0_98:GetEventPoisonRate() == 0
+function var0_0.GetPressingLevel(arg0_98)
+	return arg0_98.config.complete_effect
 end
 
-function var0_0.CheckMapPressingDisplay(arg0_99)
-	return arg0_99:GetPressingLevel() > 1
+function var0_0.CheckMapPressing(arg0_99)
+	return arg0_99:GetPressingLevel() > 0 and not arg0_99.isPressing and arg0_99:GetEventPoisonRate() == 0
 end
 
-function var0_0.UpdateClearFlag(arg0_100, arg1_100)
-	arg0_100.clearFlag = tobool(arg1_100)
+function var0_0.CheckMapPressingDisplay(arg0_100)
+	return arg0_100:GetPressingLevel() > 1
 end
 
-function var0_0.IsUnlockFleetMode(arg0_101)
-	if arg0_101.config.move_switch == 1 then
+function var0_0.UpdateClearFlag(arg0_101, arg1_101)
+	arg0_101.clearFlag = tobool(arg1_101)
+end
+
+function var0_0.IsUnlockFleetMode(arg0_102)
+	if arg0_102.config.move_switch == 1 then
 		return true
-	elseif arg0_101.config.move_switch == 0 then
+	elseif arg0_102.config.move_switch == 0 then
 		return false
 	else
 		assert(false, "config error")
 	end
 end
 
-function var0_0.CheckFleetSalvage(arg0_102, arg1_102)
-	local var0_102 = underscore.detect(arg0_102:GetFleets(), function(arg0_103)
-		return arg0_103:IsCatSalvage() and (arg1_102 or arg0_103:IsSalvageFinish() or arg0_102.salvageAutoResult or arg0_103.catSalvageFrom ~= arg0_102.id)
+function var0_0.CheckFleetSalvage(arg0_103, arg1_103)
+	local var0_103 = underscore.detect(arg0_103:GetFleets(), function(arg0_104)
+		return arg0_104:IsCatSalvage() and (arg1_103 or arg0_104:IsSalvageFinish() or arg0_103.salvageAutoResult or arg0_104.catSalvageFrom ~= arg0_103.id)
 	end)
 
-	if var0_102 then
-		return var0_102.id
+	if var0_103 then
+		return var0_103.id
 	else
-		arg0_102.salvageAutoResult = false
+		arg0_103.salvageAutoResult = false
 	end
 end
 
-function var0_0.GetChapterAuraBuffs(arg0_104)
-	local var0_104 = {}
-
-	for iter0_104, iter1_104 in ipairs(arg0_104.fleets) do
-		local var1_104 = iter1_104:getMapAura()
-
-		for iter2_104, iter3_104 in ipairs(var1_104) do
-			table.insert(var0_104, iter3_104)
-		end
-	end
-
-	return var0_104
-end
-
-function var0_0.GetChapterAidBuffs(arg0_105)
+function var0_0.GetChapterAuraBuffs(arg0_105)
 	local var0_105 = {}
 
 	for iter0_105, iter1_105 in ipairs(arg0_105.fleets) do
-		if iter0_105 ~= arg0_105.findex then
-			local var1_105 = iter1_105:getMapAid()
+		local var1_105 = iter1_105:getMapAura()
 
-			for iter2_105, iter3_105 in pairs(var1_105) do
-				var0_105[iter2_105] = iter3_105
-			end
+		for iter2_105, iter3_105 in ipairs(var1_105) do
+			table.insert(var0_105, iter3_105)
 		end
 	end
 
 	return var0_105
 end
 
-function var0_0.getFleetBattleBuffs(arg0_106, arg1_106, arg2_106)
+function var0_0.GetChapterAidBuffs(arg0_106)
 	local var0_106 = {}
 
-	underscore.each(arg1_106:GetBuffList(), function(arg0_107)
-		local var0_107 = arg0_107.config.lua_id
+	for iter0_106, iter1_106 in ipairs(arg0_106.fleets) do
+		if iter0_106 ~= arg0_106.findex then
+			local var1_106 = iter1_106:getMapAid()
 
-		if var0_107 ~= 0 then
-			table.insert(var0_106, var0_107)
+			for iter2_106, iter3_106 in pairs(var1_106) do
+				var0_106[iter2_106] = iter3_106
+			end
+		end
+	end
+
+	return var0_106
+end
+
+function var0_0.getFleetBattleBuffs(arg0_107, arg1_107, arg2_107)
+	local var0_107 = {}
+
+	underscore.each(arg1_107:GetBuffList(), function(arg0_108)
+		local var0_108 = arg0_108.config.lua_id
+
+		if var0_108 ~= 0 then
+			table.insert(var0_107, var0_108)
 		end
 	end)
 
-	local var1_106 = {}
+	local var1_107 = {}
 
-	if arg2_106 and arg1_106:IsCatSalvage() then
+	if arg2_107 and arg1_107:IsCatSalvage() then
 		-- block empty
 	else
-		var1_106 = arg0_106:BuildBattleBuffList(arg1_106)
+		var1_107 = arg0_107:BuildBattleBuffList(arg1_107)
 	end
 
-	return var0_106, var1_106
+	return var0_107, var1_107
 end
 
-function var0_0.BuildBattleBuffList(arg0_108, arg1_108)
-	local var0_108 = {}
-	local var1_108, var2_108 = arg0_108:triggerSkill(arg1_108, FleetSkill.TypeBattleBuff)
+function var0_0.BuildBattleBuffList(arg0_109, arg1_109)
+	local var0_109 = {}
+	local var1_109, var2_109 = arg0_109:triggerSkill(arg1_109, FleetSkill.TypeBattleBuff)
 
-	if var1_108 and #var1_108 > 0 then
-		local var3_108 = {}
+	if var1_109 and #var1_109 > 0 then
+		local var3_109 = {}
 
-		for iter0_108, iter1_108 in ipairs(var1_108) do
-			local var4_108 = var2_108[iter0_108]
-			local var5_108 = arg1_108:findCommanderBySkillId(var4_108.id)
+		for iter0_109, iter1_109 in ipairs(var1_109) do
+			local var4_109 = var2_109[iter0_109]
+			local var5_109 = arg1_109:findCommanderBySkillId(var4_109.id)
 
-			var3_108[var5_108] = var3_108[var5_108] or {}
+			var3_109[var5_109] = var3_109[var5_109] or {}
 
-			table.insert(var3_108[var5_108], iter1_108)
+			table.insert(var3_109[var5_109], iter1_109)
 		end
 
-		for iter2_108, iter3_108 in pairs(var3_108) do
-			table.insert(var0_108, {
-				iter2_108,
-				iter3_108
+		for iter2_109, iter3_109 in pairs(var3_109) do
+			table.insert(var0_109, {
+				iter2_109,
+				iter3_109
 			})
 		end
 	end
 
-	local var6_108 = arg1_108:getCommanders()
+	local var6_109 = arg1_109:getCommanders()
 
-	for iter4_108, iter5_108 in pairs(var6_108) do
-		local var7_108 = iter5_108:getTalents()
+	for iter4_109, iter5_109 in pairs(var6_109) do
+		local var7_109 = iter5_109:getTalents()
 
-		for iter6_108, iter7_108 in ipairs(var7_108) do
-			local var8_108 = iter7_108:getBuffsAddition()
+		for iter6_109, iter7_109 in ipairs(var7_109) do
+			local var8_109 = iter7_109:getBuffsAddition()
 
-			if #var8_108 > 0 then
-				local var9_108
+			if #var8_109 > 0 then
+				local var9_109
 
-				for iter8_108, iter9_108 in ipairs(var0_108) do
-					if iter9_108[1] == iter5_108 then
-						var9_108 = iter9_108[2]
+				for iter8_109, iter9_109 in ipairs(var0_109) do
+					if iter9_109[1] == iter5_109 then
+						var9_109 = iter9_109[2]
 
 						break
 					end
 				end
 
-				if not var9_108 then
-					var9_108 = {}
+				if not var9_109 then
+					var9_109 = {}
 
-					table.insert(var0_108, {
-						iter5_108,
-						var9_108
+					table.insert(var0_109, {
+						iter5_109,
+						var9_109
 					})
 				end
 
-				for iter10_108, iter11_108 in ipairs(var8_108) do
-					table.insert(var9_108, iter11_108)
+				for iter10_109, iter11_109 in ipairs(var8_109) do
+					table.insert(var9_109, iter11_109)
 				end
 			end
 		end
 	end
 
-	return var0_108
+	return var0_109
 end
 
-function var0_0.CanLongMove(arg0_109, arg1_109)
-	return arg0_109:IsUnlockFleetMode() and not arg1_109:HasTrapBuff() and arg0_109:GetFleetTerrain(arg1_109) ~= WorldMapCell.TerrainFog
+function var0_0.CanLongMove(arg0_110, arg1_110)
+	return arg0_110:IsUnlockFleetMode() and not arg1_110:HasTrapBuff() and arg0_110:GetFleetTerrain(arg1_110) ~= WorldMapCell.TerrainFog
 end
 
-function var0_0.triggerSkill(arg0_110, arg1_110, arg2_110)
-	local var0_110 = _.filter(arg1_110:findSkills(arg2_110), function(arg0_111)
-		local var0_111 = arg0_111:GetTriggers()
+function var0_0.triggerSkill(arg0_111, arg1_111, arg2_111)
+	local var0_111 = _.filter(arg1_111:findSkills(arg2_111), function(arg0_112)
+		local var0_112 = arg0_112:GetTriggers()
 
-		return _.any(var0_111, function(arg0_112)
-			return arg0_112[1] == FleetSkill.TriggerInSubTeam and arg0_112[2] == 1
-		end) == (arg1_110:GetFleetType() == FleetType.Submarine) and _.all(arg0_111:GetTriggers(), function(arg0_113)
-			return arg0_110:triggerCheck(arg1_110, arg0_111, arg0_113)
+		return _.any(var0_112, function(arg0_113)
+			return arg0_113[1] == FleetSkill.TriggerInSubTeam and arg0_113[2] == 1
+		end) == (arg1_111:GetFleetType() == FleetType.Submarine) and _.all(arg0_112:GetTriggers(), function(arg0_114)
+			return arg0_111:triggerCheck(arg1_111, arg0_112, arg0_114)
 		end)
 	end)
 
-	return _.reduce(var0_110, nil, function(arg0_114, arg1_114)
-		local var0_114 = arg1_114:GetType()
-		local var1_114 = arg1_114:GetArgs()
+	return _.reduce(var0_111, nil, function(arg0_115, arg1_115)
+		local var0_115 = arg1_115:GetType()
+		local var1_115 = arg1_115:GetArgs()
 
-		if var0_114 == FleetSkill.TypeMoveSpeed or var0_114 == FleetSkill.TypeHuntingLv or var0_114 == FleetSkill.TypeTorpedoPowerUp then
-			return (arg0_114 or 0) + var1_114[1]
-		elseif var0_114 == FleetSkill.TypeAmbushDodge or var0_114 == FleetSkill.TypeAirStrikeDodge then
-			return math.max(arg0_114 or 0, var1_114[1])
-		elseif var0_114 == FleetSkill.TypeAttack or var0_114 == FleetSkill.TypeStrategy then
-			arg0_114 = arg0_114 or {}
+		if var0_115 == FleetSkill.TypeMoveSpeed or var0_115 == FleetSkill.TypeHuntingLv or var0_115 == FleetSkill.TypeTorpedoPowerUp then
+			return (arg0_115 or 0) + var1_115[1]
+		elseif var0_115 == FleetSkill.TypeAmbushDodge or var0_115 == FleetSkill.TypeAirStrikeDodge then
+			return math.max(arg0_115 or 0, var1_115[1])
+		elseif var0_115 == FleetSkill.TypeAttack or var0_115 == FleetSkill.TypeStrategy then
+			arg0_115 = arg0_115 or {}
 
-			table.insert(arg0_114, var1_114)
+			table.insert(arg0_115, var1_115)
 
-			return arg0_114
-		elseif var0_114 == FleetSkill.TypeBattleBuff then
-			arg0_114 = arg0_114 or {}
+			return arg0_115
+		elseif var0_115 == FleetSkill.TypeBattleBuff then
+			arg0_115 = arg0_115 or {}
 
-			table.insert(arg0_114, var1_114[1])
+			table.insert(arg0_115, var1_115[1])
 
-			return arg0_114
+			return arg0_115
 		end
-	end), var0_110
+	end), var0_111
 end
 
-function var0_0.triggerCheck(arg0_115, arg1_115, arg2_115, arg3_115)
-	local var0_115 = arg3_115[1]
+function var0_0.triggerCheck(arg0_116, arg1_116, arg2_116, arg3_116)
+	local var0_116 = arg3_116[1]
 
-	if var0_115 == FleetSkill.TriggerDDHead then
-		local var1_115 = arg1_115:GetTeamShipVOs(TeamType.Vanguard, false)
+	if var0_116 == FleetSkill.TriggerDDHead then
+		local var1_116 = arg1_116:GetTeamShipVOs(TeamType.Vanguard, false)
 
-		return #var1_115 > 0 and ShipType.IsTypeQuZhu(var1_115[1]:getShipType())
-	elseif var0_115 == FleetSkill.TriggerVanCount then
-		local var2_115 = arg1_115:GetTeamShipVOs(TeamType.Vanguard, false)
+		return #var1_116 > 0 and ShipType.IsTypeQuZhu(var1_116[1]:getShipType())
+	elseif var0_116 == FleetSkill.TriggerVanCount then
+		local var2_116 = arg1_116:GetTeamShipVOs(TeamType.Vanguard, false)
 
-		return #var2_115 >= arg3_115[2] and #var2_115 <= arg3_115[3]
-	elseif var0_115 == FleetSkill.TriggerShipCount then
-		local var3_115 = _.filter(arg1_115:GetShipVOs(false), function(arg0_116)
-			return table.contains(arg3_115[2], arg0_116:getShipType())
+		return #var2_116 >= arg3_116[2] and #var2_116 <= arg3_116[3]
+	elseif var0_116 == FleetSkill.TriggerShipCount then
+		local var3_116 = _.filter(arg1_116:GetShipVOs(false), function(arg0_117)
+			return table.contains(arg3_116[2], arg0_117:getShipType())
 		end)
 
-		return #var3_115 >= arg3_115[3] and #var3_115 <= arg3_115[4]
-	elseif var0_115 == FleetSkill.TriggerAroundEnemy then
-		local var4_115 = {
-			row = arg1_115.row,
-			column = arg1_115.column
+		return #var3_116 >= arg3_116[3] and #var3_116 <= arg3_116[4]
+	elseif var0_116 == FleetSkill.TriggerAroundEnemy then
+		local var4_116 = {
+			row = arg1_116.row,
+			column = arg1_116.column
 		}
-		local var5_115 = {}
-		local var6_115 = arg3_115[2]
+		local var5_116 = {}
+		local var6_116 = arg3_116[2]
 
-		for iter0_115 = -var6_115, var6_115 do
-			local var7_115 = var6_115 - math.abs(iter0_115)
+		for iter0_116 = -var6_116, var6_116 do
+			local var7_116 = var6_116 - math.abs(iter0_116)
 
-			for iter1_115 = -var7_115, var7_115 do
-				local var8_115 = arg0_115:GetCell(var4_115.row + iter0_115, var4_115.column + iter1_115)
+			for iter1_116 = -var7_116, var7_116 do
+				local var8_116 = arg0_116:GetCell(var4_116.row + iter0_116, var4_116.column + iter1_116)
 
-				table.insert(var5_115, var8_115)
+				table.insert(var5_116, var8_116)
 			end
 		end
 
-		return underscore.any(var5_115, function(arg0_117)
-			local var0_117 = arg0_117:ExistEnemy() and arg0_117:GetStageEnemy().config.type or nil
+		return underscore.any(var5_116, function(arg0_118)
+			local var0_118 = arg0_118:ExistEnemy() and arg0_118:GetStageEnemy().config.type or nil
 
-			return type(arg3_115[3]) == "number" and arg3_115[3] == var0_117 or type(arg3_115[3]) == "table" and table.contains(arg3_115[3], var0_117)
+			return type(arg3_116[3]) == "number" and arg3_116[3] == var0_118 or type(arg3_116[3]) == "table" and table.contains(arg3_116[3], var0_118)
 		end)
-	elseif var0_115 == FleetSkill.TriggerNekoPos then
-		local var9_115 = arg1_115:findCommanderBySkillId(arg2_115.id)
+	elseif var0_116 == FleetSkill.TriggerNekoPos then
+		local var9_116 = arg1_116:findCommanderBySkillId(arg2_116.id)
 
-		for iter2_115, iter3_115 in pairs(arg1_115:getCommanders()) do
-			if var9_115.id == iter3_115.id and iter2_115 == arg3_115[2] then
+		for iter2_116, iter3_116 in pairs(arg1_116:getCommanders()) do
+			if var9_116.id == iter3_116.id and iter2_116 == arg3_116[2] then
 				return true
 			end
 		end
-	elseif var0_115 == FleetSkill.TriggerAroundLand then
-		local var10_115 = {
-			row = arg1_115.row,
-			column = arg1_115.column
+	elseif var0_116 == FleetSkill.TriggerAroundLand then
+		local var10_116 = {
+			row = arg1_116.row,
+			column = arg1_116.column
 		}
-		local var11_115 = arg3_115[2]
+		local var11_116 = arg3_116[2]
 
-		for iter4_115 = -var11_115, var11_115 do
-			local var12_115 = var11_115 - math.abs(iter4_115)
+		for iter4_116 = -var11_116, var11_116 do
+			local var12_116 = var11_116 - math.abs(iter4_116)
 
-			for iter5_115 = -var12_115, var12_115 do
-				local var13_115 = var10_115.row + iter4_115
-				local var14_115 = var10_115.column + iter5_115
+			for iter5_116 = -var12_116, var12_116 do
+				local var13_116 = var10_116.row + iter4_116
+				local var14_116 = var10_116.column + iter5_116
 
-				if arg0_115:GetCell(var13_115, var14_115) and not arg0_115:IsWalkable(var13_115, var14_115) then
+				if arg0_116:GetCell(var13_116, var14_116) and not arg0_116:IsWalkable(var13_116, var14_116) then
 					return true
 				end
 			end
 		end
 
 		return false
-	elseif var0_115 == FleetSkill.TriggerAroundCombatAlly then
-		local var15_115 = {
-			row = arg1_115.row,
-			column = arg1_115.column
+	elseif var0_116 == FleetSkill.TriggerAroundCombatAlly then
+		local var15_116 = {
+			row = arg1_116.row,
+			column = arg1_116.column
 		}
 
-		return _.any(arg0_115.fleets, function(arg0_118)
-			return arg1_115.id ~= arg0_118.id and arg0_118:GetFleetType() == FleetType.Normal and arg0_115:GetCell(arg0_118.line.row, arg0_118.line.column):ExistEnemy() and ManhattonDist(var15_115, {
-				row = arg0_118.line.row,
-				column = arg0_118.line.column
-			}) <= arg3_115[2]
+		return _.any(arg0_116.fleets, function(arg0_119)
+			return arg1_116.id ~= arg0_119.id and arg0_119:GetFleetType() == FleetType.Normal and arg0_116:GetCell(arg0_119.line.row, arg0_119.line.column):ExistEnemy() and ManhattonDist(var15_116, {
+				row = arg0_119.line.row,
+				column = arg0_119.line.column
+			}) <= arg3_116[2]
 		end)
-	elseif var0_115 == FleetSkill.TriggerInSubTeam then
+	elseif var0_116 == FleetSkill.TriggerInSubTeam then
 		return true
 	else
-		assert(false, "invalid trigger type: " .. var0_115)
+		assert(false, "invalid trigger type: " .. var0_116)
 	end
 end
 
-function var0_0.OnUpdateAttachmentExist(arg0_119, arg1_119, arg2_119, arg3_119)
-	local var0_119 = arg3_119.type
+function var0_0.OnUpdateAttachmentExist(arg0_120, arg1_120, arg2_120, arg3_120)
+	local var0_120 = arg3_120.type
 
-	arg0_119.typeAttachments[var0_119] = arg0_119.typeAttachments[var0_119] or {}
+	arg0_120.typeAttachments[var0_120] = arg0_120.typeAttachments[var0_120] or {}
 
-	if arg1_119 == WorldMapCell.EventAddAttachment then
-		table.insert(arg0_119.typeAttachments[var0_119], arg3_119)
-	elseif arg1_119 == WorldMapCell.EventRemoveAttachment then
-		table.removebyvalue(arg0_119.typeAttachments[var0_119], arg3_119)
+	if arg1_120 == WorldMapCell.EventAddAttachment then
+		table.insert(arg0_120.typeAttachments[var0_120], arg3_120)
+	elseif arg1_120 == WorldMapCell.EventRemoveAttachment then
+		table.removebyvalue(arg0_120.typeAttachments[var0_120], arg3_120)
 	end
 
-	local var1_119 = arg3_119:GetVisionRadius()
+	local var1_120 = arg3_120:GetVisionRadius()
 
-	if var1_119 > 0 then
-		local var2_119 = 0
+	if var1_120 > 0 then
+		local var2_120 = 0
 
-		if arg1_119 == WorldMapCell.EventAddAttachment then
-			var2_119 = var2_119 + 1
-		elseif arg1_119 == WorldMapCell.EventRemoveAttachment then
-			var2_119 = var2_119 - 1
+		if arg1_120 == WorldMapCell.EventAddAttachment then
+			var2_120 = var2_120 + 1
+		elseif arg1_120 == WorldMapCell.EventRemoveAttachment then
+			var2_120 = var2_120 - 1
 		else
-			assert(false, "listener event error: " .. arg1_119)
+			assert(false, "listener event error: " .. arg1_120)
 		end
 
-		arg0_119.centerCellFOV = {
-			row = arg2_119.row,
-			column = arg2_119.column
+		arg0_120.centerCellFOV = {
+			row = arg2_120.row,
+			column = arg2_120.column
 		}
 
-		for iter0_119 = arg2_119.row - var1_119, arg2_119.row + var1_119 do
-			for iter1_119 = arg2_119.column - var1_119, arg2_119.column + var1_119 do
-				local var3_119 = arg0_119:GetCell(iter0_119, iter1_119)
+		for iter0_120 = arg2_120.row - var1_120, arg2_120.row + var1_120 do
+			for iter1_120 = arg2_120.column - var1_120, arg2_120.column + var1_120 do
+				local var3_120 = arg0_120:GetCell(iter0_120, iter1_120)
 
-				if var3_119 and WorldConst.InFOVRange(arg2_119.row, arg2_119.column, var3_119.row, var3_119.column, var1_119) then
-					var3_119:ChangeInLight(var2_119 > 0)
+				if var3_120 and WorldConst.InFOVRange(arg2_120.row, arg2_120.column, var3_120.row, var3_120.column, var1_120) then
+					var3_120:ChangeInLight(var2_120 > 0)
 				end
 			end
 		end
 	end
 
-	local var4_119 = arg3_119:GetRadiationBuffs()
+	local var4_120 = arg3_120:GetRadiationBuffs()
 
-	if #var4_119 > 0 then
-		local var5_119 = {}
+	if #var4_120 > 0 then
+		local var5_120 = {}
 
-		for iter2_119, iter3_119 in ipairs(var4_119) do
-			local var6_119, var7_119, var8_119 = unpack(iter3_119)
+		for iter2_120, iter3_120 in ipairs(var4_120) do
+			local var6_120, var7_120, var8_120 = unpack(iter3_120)
 
-			if arg1_119 == WorldMapCell.EventAddAttachment then
-				var5_119[var6_119] = true
+			if arg1_120 == WorldMapCell.EventAddAttachment then
+				var5_120[var6_120] = true
 
-				arg0_119:AddBuff(var6_119, var7_119, var8_119)
-			elseif arg1_119 == WorldMapCell.EventRemoveAttachment then
-				var5_119[var6_119] = true
+				arg0_120:AddBuff(var6_120, var7_120, var8_120)
+			elseif arg1_120 == WorldMapCell.EventRemoveAttachment then
+				var5_120[var6_120] = true
 
-				arg0_119:RemoveBuff(var6_119, var7_119, var8_119)
+				arg0_120:RemoveBuff(var6_120, var7_120, var8_120)
 			end
 		end
 
-		for iter4_119, iter5_119 in pairs(var5_119) do
-			if iter5_119 then
-				arg0_119:FlushFaction(iter4_119)
+		for iter4_120, iter5_120 in pairs(var5_120) do
+			if iter5_120 then
+				arg0_120:FlushFaction(iter4_120)
 			end
 		end
 	end
 end
 
-function var0_0.GetBGM(arg0_120)
-	return arg0_120.config.bgm
+function var0_0.GetBGM(arg0_121)
+	return arg0_121.config.bgm
 end
 
-function var0_0.NeedClear(arg0_121)
-	local var0_121, var1_121 = arg0_121:GetEventPoisonRate()
+function var0_0.NeedClear(arg0_122)
+	local var0_122, var1_122 = arg0_122:GetEventPoisonRate()
 
-	return var1_121 > 0 and var0_121 == 0 or arg0_121.clearFlag or arg0_121.config.is_clear > 0
+	return var1_122 > 0 and var0_122 == 0 or arg0_122.clearFlag or arg0_122.config.is_clear > 0
 end
 
-function var0_0.GetBuff(arg0_122, arg1_122, arg2_122)
-	if not arg0_122.factionBuffs[arg1_122][arg2_122] then
-		arg0_122.factionBuffs[arg1_122][arg2_122] = WorldBuff.New()
+function var0_0.GetBuff(arg0_123, arg1_123, arg2_123)
+	if not arg0_123.factionBuffs[arg1_123][arg2_123] then
+		arg0_123.factionBuffs[arg1_123][arg2_123] = WorldBuff.New()
 
-		arg0_122.factionBuffs[arg1_122][arg2_122]:Setup({
+		arg0_123.factionBuffs[arg1_123][arg2_123]:Setup({
 			floor = 0,
-			id = arg2_122
+			id = arg2_123
 		})
 	end
 
-	return arg0_122.factionBuffs[arg1_122][arg2_122]
+	return arg0_123.factionBuffs[arg1_123][arg2_123]
 end
 
-function var0_0.AddBuff(arg0_123, arg1_123, arg2_123, arg3_123)
-	arg0_123:GetBuff(arg1_123, arg2_123):AddFloor(arg3_123)
+function var0_0.AddBuff(arg0_124, arg1_124, arg2_124, arg3_124)
+	arg0_124:GetBuff(arg1_124, arg2_124):AddFloor(arg3_124)
 end
 
-function var0_0.RemoveBuff(arg0_124, arg1_124, arg2_124, arg3_124)
-	local var0_124 = arg0_124:GetBuff(arg1_124, arg2_124)
+function var0_0.RemoveBuff(arg0_125, arg1_125, arg2_125, arg3_125)
+	local var0_125 = arg0_125:GetBuff(arg1_125, arg2_125)
 
-	if arg3_124 then
-		var0_124:AddFloor(arg3_124 * -1)
+	if arg3_125 then
+		var0_125:AddFloor(arg3_125 * -1)
 	else
-		arg0_124.factionBuffs[arg1_124][arg2_124] = nil
+		arg0_125.factionBuffs[arg1_125][arg2_125] = nil
 	end
 end
 
-function var0_0.GetBuffList(arg0_125, arg1_125, arg2_125)
-	if arg1_125 == var0_0.FactionSelf then
-		return underscore.filter(underscore.values(arg0_125.factionBuffs[arg1_125]), function(arg0_126)
-			return arg0_126:GetFloor() > 0
+function var0_0.GetBuffList(arg0_126, arg1_126, arg2_126)
+	if arg1_126 == var0_0.FactionSelf then
+		return underscore.filter(underscore.values(arg0_126.factionBuffs[arg1_126]), function(arg0_127)
+			return arg0_127:GetFloor() > 0
 		end)
-	elseif arg1_125 == var0_0.FactionEnemy then
-		if WorldMapAttachment.IsEnemyType(arg2_125.type) or arg2_125.type == WorldMapAttachment.TypeEvent and arg2_125:GetSpEventType() == WorldMapAttachment.SpEventEnemy then
-			return underscore.filter(underscore.values(arg0_125.factionBuffs[arg1_125]), function(arg0_127)
-				return arg0_127:GetFloor() > 0
+	elseif arg1_126 == var0_0.FactionEnemy then
+		if WorldMapAttachment.IsEnemyType(arg2_126.type) or arg2_126.type == WorldMapAttachment.TypeEvent and arg2_126:GetSpEventType() == WorldMapAttachment.SpEventEnemy then
+			return underscore.filter(underscore.values(arg0_126.factionBuffs[arg1_126]), function(arg0_128)
+				return arg0_128:GetFloor() > 0
 			end)
 		else
 			return {}
 		end
 	else
-		assert(false, string.format("faction error: $d", arg1_125))
+		assert(false, string.format("faction error: $d", arg1_126))
 	end
 end
 
-function var0_0.FlushFaction(arg0_128, arg1_128)
-	if arg1_128 == var0_0.FactionSelf then
-		underscore.each(arg0_128:GetFleets(), function(arg0_129)
-			arg0_129:DispatchEvent(WorldMapFleet.EventUpdateBuff)
+function var0_0.FlushFaction(arg0_129, arg1_129)
+	if arg1_129 == var0_0.FactionSelf then
+		underscore.each(arg0_129:GetFleets(), function(arg0_130)
+			arg0_130:DispatchEvent(WorldMapFleet.EventUpdateBuff)
 		end)
-	elseif arg1_128 == var0_0.FactionEnemy then
-		local var0_128 = {}
+	elseif arg1_129 == var0_0.FactionEnemy then
+		local var0_129 = {}
 
-		underscore.each(arg0_128:FindEnemys(), function(arg0_130)
-			var0_128[WorldMapCell.GetName(arg0_130.row, arg0_130.column)] = true
+		underscore.each(arg0_129:FindEnemys(), function(arg0_131)
+			var0_129[WorldMapCell.GetName(arg0_131.row, arg0_131.column)] = true
 		end)
-		underscore.each(arg0_128:FindAttachments(WorldMapAttachment.TypeEvent), function(arg0_131)
-			if arg0_131:GetSpEventType() == WorldMapAttachment.SpEventEnemy then
-				var0_128[WorldMapCell.GetName(arg0_131.row, arg0_131.column)] = true
+		underscore.each(arg0_129:FindAttachments(WorldMapAttachment.TypeEvent), function(arg0_132)
+			if arg0_132:GetSpEventType() == WorldMapAttachment.SpEventEnemy then
+				var0_129[WorldMapCell.GetName(arg0_132.row, arg0_132.column)] = true
 			end
 		end)
 
-		for iter0_128 in pairs(var0_128) do
-			arg0_128.cells[iter0_128]:DispatchEvent(var0_0.EventUpdateMapBuff)
+		for iter0_129 in pairs(var0_129) do
+			arg0_129.cells[iter0_129]:DispatchEvent(var0_0.EventUpdateMapBuff)
 		end
 	else
-		assert(false, string.format("faction error: $d", arg1_128))
+		assert(false, string.format("faction error: $d", arg1_129))
 	end
 end
 
-function var0_0.GetBattleLuaBuffs(arg0_132, arg1_132, arg2_132)
-	local var0_132 = {}
+function var0_0.GetBattleLuaBuffs(arg0_133, arg1_133, arg2_133)
+	local var0_133 = {}
 
-	underscore.each(arg0_132:GetBuffList(arg1_132, arg2_132), function(arg0_133)
-		if arg0_133.config.lua_id > 0 then
-			table.insert(var0_132, arg0_133.config.lua_id)
+	underscore.each(arg0_133:GetBuffList(arg1_133, arg2_133), function(arg0_134)
+		if arg0_134.config.lua_id > 0 then
+			table.insert(var0_133, arg0_134.config.lua_id)
 		end
 	end)
 
-	return var0_132
+	return var0_133
 end
 
-function var0_0.UpdateFleetLocation(arg0_134, arg1_134, arg2_134, arg3_134)
-	local var0_134 = arg0_134:GetFleet(arg1_134)
+function var0_0.UpdateFleetLocation(arg0_135, arg1_135, arg2_135, arg3_135)
+	local var0_135 = arg0_135:GetFleet(arg1_135)
 
-	assert(var0_134, "without this fleet : " .. arg1_134)
+	assert(var0_135, "without this fleet : " .. arg1_135)
 
-	if var0_134.row ~= arg2_134 or var0_134.column ~= arg3_134 then
-		arg0_134:CheckFleetUpdateFOV(var0_134, function()
-			var0_134.row = arg2_134
-			var0_134.column = arg3_134
+	if var0_135.row ~= arg2_135 or var0_135.column ~= arg3_135 then
+		arg0_135:CheckFleetUpdateFOV(var0_135, function()
+			var0_135.row = arg2_135
+			var0_135.column = arg3_135
 		end)
-		var0_134:DispatchEvent(WorldMapFleet.EventUpdateLocation)
+		var0_135:DispatchEvent(WorldMapFleet.EventUpdateLocation)
 	end
 end
 
-function var0_0.GetRangeDic(arg0_136, arg1_136)
-	local var0_136 = {}
+function var0_0.GetRangeDic(arg0_137, arg1_137)
+	local var0_137 = {}
 
-	WorldConst.RangeCheck(arg1_136, arg0_136:GetFOVRange(arg1_136), function(arg0_137, arg1_137)
-		local var0_137 = WorldMapCell.GetName(arg0_137, arg1_137)
+	WorldConst.RangeCheck(arg1_137, arg0_137:GetFOVRange(arg1_137), function(arg0_138, arg1_138)
+		local var0_138 = WorldMapCell.GetName(arg0_138, arg1_138)
 
-		if arg0_136.cells[var0_137] then
-			var0_136[var0_137] = defaultValue(var0_136[var0_137], 0) + 1
+		if arg0_137.cells[var0_138] then
+			var0_137[var0_138] = defaultValue(var0_137[var0_138], 0) + 1
 		end
 	end)
 
-	return var0_136
+	return var0_137
 end
 
-function var0_0.CheckFleetUpdateFOV(arg0_138, arg1_138, arg2_138)
-	if not arg0_138:IsValid() then
-		arg2_138()
-
-		return
-	end
-
-	local var0_138 = arg0_138:GetRangeDic(arg1_138)
-	local var1_138 = arg0_138:GetFleetTerrain(arg1_138) == WorldMapCell.TerrainFog
-	local var2_138 = arg0_138:IsFleetTerrainSairenFog(arg1_138)
-	local var3_138 = arg0_138:CalcFleetSpeed(arg1_138)
-
-	arg2_138()
-
-	local var4_138 = arg0_138:GetRangeDic(arg1_138)
-	local var5_138 = arg0_138:GetFleetTerrain(arg1_138) == WorldMapCell.TerrainFog
-	local var6_138 = arg0_138:IsFleetTerrainSairenFog(arg1_138)
-	local var7_138 = arg0_138:CalcFleetSpeed(arg1_138)
-
-	arg0_138.centerCellFOV = {
-		row = arg1_138.row,
-		column = arg1_138.column
-	}
-
-	local var8_138 = false
-	local var9_138 = false
-	local var10_138 = {}
-
-	if not var1_138 then
-		for iter0_138, iter1_138 in pairs(var0_138) do
-			var10_138[iter0_138] = defaultValue(var10_138[iter0_138], 0) - iter1_138
-		end
-	end
-
-	if not var5_138 then
-		for iter2_138, iter3_138 in pairs(var4_138) do
-			var10_138[iter2_138] = defaultValue(var10_138[iter2_138], 0) + iter3_138
-		end
-	end
-
-	for iter4_138, iter5_138 in pairs(var10_138) do
-		if iter5_138 ~= 0 then
-			arg0_138.cells[iter4_138]:ChangeInLight(iter5_138 > 0)
-
-			var8_138 = true
-		end
-	end
-
-	if arg0_138:GetFleet() == arg1_138 then
-		local var11_138 = {}
-
-		if var1_138 then
-			for iter6_138, iter7_138 in pairs(var0_138) do
-				var11_138[iter6_138] = defaultValue(var11_138[iter6_138], 0) - iter7_138
-			end
-		end
-
-		if var5_138 then
-			for iter8_138, iter9_138 in pairs(var4_138) do
-				var11_138[iter8_138] = defaultValue(var11_138[iter8_138], 0) + iter9_138
-			end
-		end
-
-		if var1_138 ~= var5_138 or var2_138 ~= var6_138 then
-			for iter10_138, iter11_138 in pairs(arg0_138.cells) do
-				local var12_138
-
-				if var11_138[iter10_138] and var11_138[iter10_138] ~= 0 then
-					var12_138 = var11_138[iter10_138] > 0
-				end
-
-				iter11_138:UpdateFog(var5_138, var12_138, var6_138)
-			end
-
-			var8_138 = true
-		else
-			for iter12_138, iter13_138 in pairs(var11_138) do
-				if iter13_138 ~= 0 then
-					arg0_138.cells[iter12_138]:UpdateFog(nil, iter13_138 > 0, nil)
-
-					var8_138 = true
-				end
-			end
-		end
-
-		if var3_138 ~= var7_138 then
-			var9_138 = true
-		end
-	end
-
-	if var8_138 then
-		arg0_138:DispatchEvent(var0_0.EventUpdateFleetFOV)
-	end
-
-	if var9_138 then
-		arg0_138:DispatchEvent(var0_0.EventUpdateMoveSpeed)
-	end
-end
-
-function var0_0.CheckSelectFleetUpdateFog(arg0_139, arg1_139)
+function var0_0.CheckFleetUpdateFOV(arg0_139, arg1_139, arg2_139)
 	if not arg0_139:IsValid() then
-		arg1_139()
+		arg2_139()
 
 		return
 	end
 
-	local var0_139 = arg0_139:GetFleet()
-	local var1_139 = arg0_139:GetRangeDic(var0_139)
-	local var2_139 = arg0_139:GetFleetTerrain(var0_139) == WorldMapCell.TerrainFog
-	local var3_139 = arg0_139:IsFleetTerrainSairenFog(var0_139)
+	local var0_139 = arg0_139:GetRangeDic(arg1_139)
+	local var1_139 = arg0_139:GetFleetTerrain(arg1_139) == WorldMapCell.TerrainFog
+	local var2_139 = arg0_139:IsFleetTerrainSairenFog(arg1_139)
+	local var3_139 = arg0_139:CalcFleetSpeed(arg1_139)
 
-	arg1_139()
+	arg2_139()
 
-	local var4_139 = arg0_139:GetFleet()
-	local var5_139 = arg0_139:GetRangeDic(var4_139)
-	local var6_139 = arg0_139:GetFleetTerrain(var4_139) == WorldMapCell.TerrainFog
-	local var7_139 = arg0_139:IsFleetTerrainSairenFog(var4_139)
+	local var4_139 = arg0_139:GetRangeDic(arg1_139)
+	local var5_139 = arg0_139:GetFleetTerrain(arg1_139) == WorldMapCell.TerrainFog
+	local var6_139 = arg0_139:IsFleetTerrainSairenFog(arg1_139)
+	local var7_139 = arg0_139:CalcFleetSpeed(arg1_139)
 
 	arg0_139.centerCellFOV = {
-		row = var4_139.row,
-		column = var4_139.column
+		row = arg1_139.row,
+		column = arg1_139.column
 	}
 
-	local var8_139 = {}
+	local var8_139 = false
+	local var9_139 = false
+	local var10_139 = {}
 
-	if var2_139 then
-		for iter0_139, iter1_139 in pairs(var1_139) do
-			var8_139[iter0_139] = defaultValue(var8_139[iter0_139], 0) - iter1_139
+	if not var1_139 then
+		for iter0_139, iter1_139 in pairs(var0_139) do
+			var10_139[iter0_139] = defaultValue(var10_139[iter0_139], 0) - iter1_139
 		end
 	end
 
-	if var6_139 then
-		for iter2_139, iter3_139 in pairs(var5_139) do
-			var8_139[iter2_139] = defaultValue(var8_139[iter2_139], 0) + iter3_139
+	if not var5_139 then
+		for iter2_139, iter3_139 in pairs(var4_139) do
+			var10_139[iter2_139] = defaultValue(var10_139[iter2_139], 0) + iter3_139
 		end
 	end
 
-	if var2_139 ~= var6_139 or var3_139 ~= var7_139 then
-		for iter4_139, iter5_139 in pairs(arg0_139.cells) do
-			local var9_139
+	for iter4_139, iter5_139 in pairs(var10_139) do
+		if iter5_139 ~= 0 then
+			arg0_139.cells[iter4_139]:ChangeInLight(iter5_139 > 0)
 
-			if var8_139[iter4_139] and var8_139[iter4_139] ~= 0 then
-				var9_139 = var8_139[iter4_139] > 0
+			var8_139 = true
+		end
+	end
+
+	if arg0_139:GetFleet() == arg1_139 then
+		local var11_139 = {}
+
+		if var1_139 then
+			for iter6_139, iter7_139 in pairs(var0_139) do
+				var11_139[iter6_139] = defaultValue(var11_139[iter6_139], 0) - iter7_139
+			end
+		end
+
+		if var5_139 then
+			for iter8_139, iter9_139 in pairs(var4_139) do
+				var11_139[iter8_139] = defaultValue(var11_139[iter8_139], 0) + iter9_139
+			end
+		end
+
+		if var1_139 ~= var5_139 or var2_139 ~= var6_139 then
+			for iter10_139, iter11_139 in pairs(arg0_139.cells) do
+				local var12_139
+
+				if var11_139[iter10_139] and var11_139[iter10_139] ~= 0 then
+					var12_139 = var11_139[iter10_139] > 0
+				end
+
+				iter11_139:UpdateFog(var5_139, var12_139, var6_139)
 			end
 
-			iter5_139:UpdateFog(var6_139, var9_139, var7_139)
-		end
-	else
-		for iter6_139, iter7_139 in pairs(var8_139) do
-			if iter7_139 ~= 0 then
-				arg0_139.cells[iter6_139]:UpdateFog(nil, iter7_139 > 0, nil)
+			var8_139 = true
+		else
+			for iter12_139, iter13_139 in pairs(var11_139) do
+				if iter13_139 ~= 0 then
+					arg0_139.cells[iter12_139]:UpdateFog(nil, iter13_139 > 0, nil)
+
+					var8_139 = true
+				end
 			end
+		end
+
+		if var3_139 ~= var7_139 then
+			var9_139 = true
 		end
 	end
 
-	arg0_139:DispatchEvent(var0_0.EventUpdateFleetFOV)
+	if var8_139 then
+		arg0_139:DispatchEvent(var0_0.EventUpdateFleetFOV)
+	end
+
+	if var9_139 then
+		arg0_139:DispatchEvent(var0_0.EventUpdateMoveSpeed)
+	end
 end
 
-function var0_0.CheckEventAutoTrigger(arg0_140, arg1_140)
-	if arg1_140:GetSpEventType() == WorldMapAttachment.SpEventConsumeItem then
+function var0_0.CheckSelectFleetUpdateFog(arg0_140, arg1_140)
+	if not arg0_140:IsValid() then
+		arg1_140()
+
+		return
+	end
+
+	local var0_140 = arg0_140:GetFleet()
+	local var1_140 = arg0_140:GetRangeDic(var0_140)
+	local var2_140 = arg0_140:GetFleetTerrain(var0_140) == WorldMapCell.TerrainFog
+	local var3_140 = arg0_140:IsFleetTerrainSairenFog(var0_140)
+
+	arg1_140()
+
+	local var4_140 = arg0_140:GetFleet()
+	local var5_140 = arg0_140:GetRangeDic(var4_140)
+	local var6_140 = arg0_140:GetFleetTerrain(var4_140) == WorldMapCell.TerrainFog
+	local var7_140 = arg0_140:IsFleetTerrainSairenFog(var4_140)
+
+	arg0_140.centerCellFOV = {
+		row = var4_140.row,
+		column = var4_140.column
+	}
+
+	local var8_140 = {}
+
+	if var2_140 then
+		for iter0_140, iter1_140 in pairs(var1_140) do
+			var8_140[iter0_140] = defaultValue(var8_140[iter0_140], 0) - iter1_140
+		end
+	end
+
+	if var6_140 then
+		for iter2_140, iter3_140 in pairs(var5_140) do
+			var8_140[iter2_140] = defaultValue(var8_140[iter2_140], 0) + iter3_140
+		end
+	end
+
+	if var2_140 ~= var6_140 or var3_140 ~= var7_140 then
+		for iter4_140, iter5_140 in pairs(arg0_140.cells) do
+			local var9_140
+
+			if var8_140[iter4_140] and var8_140[iter4_140] ~= 0 then
+				var9_140 = var8_140[iter4_140] > 0
+			end
+
+			iter5_140:UpdateFog(var6_140, var9_140, var7_140)
+		end
+	else
+		for iter6_140, iter7_140 in pairs(var8_140) do
+			if iter7_140 ~= 0 then
+				arg0_140.cells[iter6_140]:UpdateFog(nil, iter7_140 > 0, nil)
+			end
+		end
+	end
+
+	arg0_140:DispatchEvent(var0_0.EventUpdateFleetFOV)
+end
+
+function var0_0.CheckEventAutoTrigger(arg0_141, arg1_141)
+	if arg1_141:GetSpEventType() == WorldMapAttachment.SpEventConsumeItem then
 		return getProxy(SettingsProxy):GetWorldFlag("consume_item")
 	end
 
-	local var0_140 = arg1_140:GetEventEffect()
+	local var0_141 = arg1_141:GetEventEffect()
 
-	if var0_140 then
-		local var1_140 = arg0_140:GetFleet()
-		local var2_140 = var0_140.effect_type
+	if var0_141 then
+		local var1_141 = arg0_141:GetFleet()
+		local var2_141 = var0_141.effect_type
 
-		if var2_140 == WorldMapAttachment.EffectEventConsumeCarry then
-			local var3_140 = var0_140.effect_paramater[1] or {}
+		if var2_141 == WorldMapAttachment.EffectEventConsumeCarry then
+			local var3_141 = var0_141.effect_paramater[1] or {}
 
-			return not underscore.any(var3_140, function(arg0_141)
-				return not var1_140:ExistCarry(arg0_141)
+			return not underscore.any(var3_141, function(arg0_142)
+				return not var1_141:ExistCarry(arg0_142)
 			end)
-		elseif var2_140 == WorldMapAttachment.EffectEventCatSalvage then
-			return var1_140:GetDisplayCommander() and not var1_140:IsCatSalvage()
+		elseif var2_141 == WorldMapAttachment.EffectEventCatSalvage then
+			return var1_141:GetDisplayCommander() and not var1_141:IsCatSalvage()
 		end
 	end
 
 	return true
 end
 
-function var0_0.CanAutoFight(arg0_142)
-	if arg0_142.config.is_auto > 0 then
-		for iter0_142 = 1, arg0_142.config.is_auto do
-			if not nowWorld():IsSystemOpen(WorldConst["SystemAutoFight_" .. iter0_142]) then
+function var0_0.CanAutoFight(arg0_143)
+	if arg0_143.config.is_auto > 0 then
+		for iter0_143 = 1, arg0_143.config.is_auto do
+			if not nowWorld():IsSystemOpen(WorldConst["SystemAutoFight_" .. iter0_143]) then
 				return false
 			end
 		end
@@ -1986,14 +1993,14 @@ function var0_0.CanAutoFight(arg0_142)
 	end
 end
 
-function var0_0.CkeckTransport(arg0_143)
-	assert(arg0_143:IsValid(), "without map info")
+function var0_0.CkeckTransport(arg0_144)
+	assert(arg0_144:IsValid(), "without map info")
 
-	if arg0_143.config.is_transfer == 0 then
+	if arg0_144.config.is_transfer == 0 then
 		return false, i18n("world_transport_disable")
 	end
 
-	if arg0_143:CheckAttachmentTransport() == "block" then
+	if arg0_144:CheckAttachmentTransport() == "block" then
 		return false, i18n("world_movelimit_event_text")
 	end
 

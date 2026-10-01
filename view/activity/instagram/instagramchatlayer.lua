@@ -218,6 +218,7 @@ function var0_0.OnUpdateItem(arg0_9, arg1_9, arg2_9)
 
 			var0_10:Stop()
 			var0_10:Play("anim_newinstagram_chat_right_in")
+			pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildJuusOfficialAccountsClick(0, var0_9.currentTopicId, 1))
 		end, SFX_PANEL)
 	else
 		SetActive(var1_9:Find("officialAccounts/tip"), getProxy(InstagramProxy):ShouldShowOfficialAccountsTip())
@@ -647,13 +648,13 @@ function var0_0.UpdateMessageList(arg0_17, arg1_17, arg2_17, arg3_17, arg4_17, a
 						var8_20 = string.gsub(var8_20, iter0_20, "<color=#93e9ff>" .. var1_0[tonumber(var9_20)].name .. "</color>")
 					end
 
-					setText(arg2_20:Find("charaMessageCard/systemTip/panel/Text"), var8_20)
+					setText(arg2_20:Find("charaMessageCard/systemTip/systemTipPanel/panel/Text"), var8_20)
 
 					if arg3_17 and var0_17 and arg1_20 + 1 > var0_17 then
 						SetActive(arg2_20, false)
 						arg0_17:StartTimer(function()
 							SetActive(arg2_20, true)
-							arg2_20:Find("charaMessageCard/systemTip"):GetComponent(typeof(Animation)):Play("anim_newinstagram_tip_in")
+							arg2_20:Find("charaMessageCard/systemTip/systemTipPanel"):GetComponent(typeof(Animation)):Play("anim_newinstagram_tip_in")
 
 							if arg1_20 + 1 ~= #arg2_17 then
 								arg0_17:ChangeCharaTextFunc(arg4_17, var8_20)
@@ -665,7 +666,7 @@ function var0_0.UpdateMessageList(arg0_17, arg1_17, arg2_17, arg3_17, arg4_17, a
 
 							Canvas.ForceUpdateCanvases()
 							LeanTween.value(go(arg0_17.rightPanel:Find("chat/messageScroll")), var2_17.normalizedPosition.y, 0, 0.5):setOnUpdate(System.Action_float(var3_17)):setEase(LeanTweenType.easeInOutCubic)
-							arg0_17:SetEndAniEvent(arg2_20:Find("charaMessageCard/systemTip"), function()
+							arg0_17:SetEndAniEvent(arg2_20:Find("charaMessageCard/systemTip/systemTipPanel"), function()
 								if arg0_17.shouldShowOption and arg1_20 + 1 == #arg2_17 then
 									arg0_17:SetOptionPanelActive(true)
 								end
@@ -872,6 +873,7 @@ function var0_0.UpdateOptionPanel(arg0_46, arg1_46, arg2_46)
 				setText(arg2_47:Find("Text"), HXSet.hxLan(var0_47[2]))
 				onButton(arg0_46, arg2_47, function()
 					arg0_46:emit(InstagramChatMediator.REPLY, arg1_46.topicId, arg2_46[#arg2_46].id, var0_47[1])
+					pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildJuusOfficialAccountsClick(1, arg1_46.topicId, 1))
 				end, SFX_PANEL)
 			end
 		end)
@@ -1196,6 +1198,7 @@ function var0_0.SetTopicPanel(arg0_61, arg1_61)
 
 		var0_67:Stop()
 		var0_67:Play("anim_newinstagram_chat_right_in")
+		pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildJuusOfficialAccountsClick(0, arg0_61.currentTopic.topicId, 1))
 	end, SFX_PANEL)
 end
 
@@ -1672,7 +1675,7 @@ function var0_0.OfficialAccountsUpdateItem(arg0_110, arg1_110, arg2_110)
 	onButton(arg0_110, var2_110, function()
 		arg0_110.currentOfficalID = var1_110.id
 
-		pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildJuusOfficialAccountsClick(var1_110.id))
+		pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildJuusOfficialAccountsClick(0, var1_110.id, 2))
 		arg0_110:ShowOfficialAccountsInfo(var1_110)
 		arg0_110:ReadOfficialAccountComment()
 
@@ -1688,7 +1691,7 @@ function var0_0.ShowOfficialAccountsInfo(arg0_112, arg1_112)
 		arg0_112:ExitOfficialAccountsInfo()
 	end, SFX_PANEL)
 	setScrollText(arg0_112.officialAccountsInfoItem:Find("title/Text"), arg1_112:getConfig("title"))
-	setText(arg0_112.officialAccountsInfoItem:Find("content"), arg1_112.text)
+	setText(arg0_112.officialAccountsInfoItem:Find("content"), arg1_112:GetContent())
 	arg0_112:SetImageByUrl(arg1_112:GetImage(), arg0_112.officialAccountsInfoItem:Find("Image/Image"):GetComponent(typeof(RawImage)))
 	setText(arg0_112.officialAccountsInfoItem:Find("bottom/time"), arg1_112:GetPushTime())
 	arg0_112:UpdateLinkBtn(arg1_112.id)
@@ -1841,6 +1844,7 @@ function var0_0.OpenCommentPanel(arg0_126, arg1_126)
 
 			setText(arg2_127:Find("Text"), HXSet.hxLan(var1_127))
 			onButton(arg0_126, arg2_127, function()
+				pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildJuusOfficialAccountsClick(1, arg1_126, 2))
 				arg0_126:emit(InstagramChatMediator.ON_OFFICIAL_ACCOUNTS_OPERATE, ActivityConst.INSTAGRAM_OP_COMMENT, arg1_126, var2_127, var3_127)
 				arg0_126:CloseCommentPanel()
 			end, SFX_PANEL)

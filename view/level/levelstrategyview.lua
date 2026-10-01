@@ -4,71 +4,94 @@ function var0_0.getUIName(arg0_1)
 	return "LevelStrategyView"
 end
 
-function var0_0.OnInit(arg0_2)
-	arg0_2:InitUI()
-	setActive(arg0_2._tf, true)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf)
-end
+function var0_0.downloadLevelStrategyRes(arg0_2, arg1_2, arg2_2)
+	local var0_2 = pg.strategy_data_template[arg1_2.id]
+	local var1_2 = {}
 
-function var0_0.OnDestroy(arg0_3)
-	arg0_3.onConfirm = nil
-	arg0_3.onCancel = nil
+	if var0_2 and noEmptyStr(var0_2.icon) then
+		local var2_2 = ResPathSupport.CombinePath(ResPathSupport.ConstPath.StrategyIcon, var0_2.icon)
 
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_3._tf, arg0_3._parentTf)
-end
-
-function var0_0.setCBFunc(arg0_4, arg1_4, arg2_4)
-	arg0_4.onConfirm = arg1_4
-	arg0_4.onCancel = arg2_4
-end
-
-function var0_0.InitUI(arg0_5)
-	arg0_5.icon = arg0_5._tf:Find("window/panel/item/icon_bg/icon")
-	arg0_5.count = arg0_5._tf:Find("window/panel/item/icon_bg/count")
-	arg0_5.name = arg0_5._tf:Find("window/panel/item/name")
-	arg0_5.desc = arg0_5._tf:Find("window/panel/item/desc")
-	arg0_5.btnCancel = arg0_5._tf:Find("window/panel/actions/cancel_button")
-	arg0_5.btnUse = arg0_5._tf:Find("window/panel/actions/use_button")
-	arg0_5.btnBack = arg0_5._tf:Find("top/btnBack")
-	arg0_5.tips = arg0_5._tf:Find("window/panel/tips")
-	arg0_5.txSwitch = findTF(arg0_5.btnUse, "switch")
-	arg0_5.txUse = findTF(arg0_5.btnUse, "use")
-end
-
-function var0_0.set(arg0_6, arg1_6)
-	arg0_6.strategy = arg1_6
-
-	local var0_6 = pg.strategy_data_template[arg1_6.id]
-
-	GetImageSpriteFromAtlasAsync("strategyicon/" .. var0_6.icon, "", arg0_6.icon)
-
-	if var0_6.type == 1 then
-		setText(arg0_6.count, "")
-		setActive(arg0_6.tips, true)
-		setActive(arg0_6.txSwitch, true)
-		setActive(arg0_6.txUse, false)
-	else
-		setText(arg0_6.count, arg1_6.count)
-		setActive(arg0_6.tips, false)
-		setActive(arg0_6.txSwitch, false)
-		setActive(arg0_6.txUse, true)
+		table.insert(var1_2, var2_2)
 	end
 
-	setText(arg0_6.name, var0_6.name)
-	setText(arg0_6.desc, var0_6.desc)
-	onButton(arg0_6, arg0_6.btnBack, function()
-		if arg0_6.onCancel then
-			arg0_6.onCancel()
+	SplitPackConst.DownloadByLuaArr(var1_2, function()
+		if arg0_2._state == var0_0.STATES.DESTROY then
+			return
+		end
+
+		arg2_2(var0_2)
+	end)
+end
+
+function var0_0.OnInit(arg0_4)
+	arg0_4:InitUI()
+	setActive(arg0_4._tf, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_4._tf)
+end
+
+function var0_0.OnDestroy(arg0_5)
+	arg0_5.onConfirm = nil
+	arg0_5.onCancel = nil
+
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_5._tf, arg0_5._parentTf)
+end
+
+function var0_0.setCBFunc(arg0_6, arg1_6, arg2_6)
+	arg0_6.onConfirm = arg1_6
+	arg0_6.onCancel = arg2_6
+end
+
+function var0_0.InitUI(arg0_7)
+	arg0_7.icon = arg0_7._tf:Find("window/panel/item/icon_bg/icon")
+	arg0_7.count = arg0_7._tf:Find("window/panel/item/icon_bg/count")
+	arg0_7.name = arg0_7._tf:Find("window/panel/item/name")
+	arg0_7.desc = arg0_7._tf:Find("window/panel/item/desc")
+	arg0_7.btnCancel = arg0_7._tf:Find("window/panel/actions/cancel_button")
+	arg0_7.btnUse = arg0_7._tf:Find("window/panel/actions/use_button")
+	arg0_7.btnBack = arg0_7._tf:Find("top/btnBack")
+	arg0_7.tips = arg0_7._tf:Find("window/panel/tips")
+	arg0_7.txSwitch = findTF(arg0_7.btnUse, "switch")
+	arg0_7.txUse = findTF(arg0_7.btnUse, "use")
+end
+
+function var0_0.set(arg0_8, arg1_8)
+	arg0_8.strategy = arg1_8
+
+	arg0_8:downloadLevelStrategyRes(arg1_8, function(arg0_9)
+		arg0_8:setAfterDownload(arg1_8, arg0_9)
+	end)
+end
+
+function var0_0.setAfterDownload(arg0_10, arg1_10, arg2_10)
+	GetImageSpriteFromAtlasAsync("strategyicon/" .. arg2_10.icon, "", arg0_10.icon)
+
+	if arg2_10.type == 1 then
+		setText(arg0_10.count, "")
+		setActive(arg0_10.tips, true)
+		setActive(arg0_10.txSwitch, true)
+		setActive(arg0_10.txUse, false)
+	else
+		setText(arg0_10.count, arg1_10.count)
+		setActive(arg0_10.tips, false)
+		setActive(arg0_10.txSwitch, false)
+		setActive(arg0_10.txUse, true)
+	end
+
+	setText(arg0_10.name, arg2_10.name)
+	setText(arg0_10.desc, arg2_10.desc)
+	onButton(arg0_10, arg0_10.btnBack, function()
+		if arg0_10.onCancel then
+			arg0_10.onCancel()
 		end
 	end, SFX_CANCEL)
-	onButton(arg0_6, arg0_6.btnCancel, function()
-		if arg0_6.onCancel then
-			arg0_6.onCancel()
+	onButton(arg0_10, arg0_10.btnCancel, function()
+		if arg0_10.onCancel then
+			arg0_10.onCancel()
 		end
 	end, SFX_CANCEL)
-	onButton(arg0_6, arg0_6.btnUse, function()
-		if arg0_6.onConfirm then
-			arg0_6.onConfirm()
+	onButton(arg0_10, arg0_10.btnUse, function()
+		if arg0_10.onConfirm then
+			arg0_10.onConfirm()
 		end
 	end, SFX_CONFIRM)
 end

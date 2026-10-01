@@ -17,7 +17,7 @@ function var0_0.IsNeedCheck()
 	local var0_3 = Application.isEditor
 	local var1_3 = SplitPackHelper.Inst:IsSplitPackMode()
 
-	if var0_3 and not var1_3 then
+	if EDITOR_TOOL or var0_3 and not var1_3 then
 		return false
 	end
 
@@ -103,7 +103,8 @@ function var0_0.Download(arg0_6)
 			table.insert(var0_6, function(arg0_8)
 				local var0_8 = {
 					dataList = {},
-					onFinish = arg0_8
+					onFinish = arg0_8,
+					showMask = arg0_6.showMask == true
 				}
 
 				for iter0_8, iter1_8 in pairs(var5_6) do

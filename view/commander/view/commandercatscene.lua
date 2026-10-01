@@ -354,31 +354,108 @@ function var0_0.onBackPressed(arg0_31)
 	var0_0.super.onBackPressed(arg0_31)
 end
 
-function var0_0.willExit(arg0_32)
-	arg0_32:ReturnCommanderPainting()
+function var0_0.getResource(arg0_32, arg1_32)
+	local var0_32 = var0_0.super.getResource(arg0_32, arg1_32)
 
-	for iter0_32, iter1_32 in pairs(arg0_32.pages) do
-		iter1_32:Destroy()
+	for iter0_32 = 1, 4 do
+		table.insert(var0_32, "char/NekoBox" .. iter0_32)
+		table.insert(var0_32, "char/SRNekoBox" .. iter0_32)
+		table.insert(var0_32, "char/SSRNekoBox" .. iter0_32)
 	end
 
-	arg0_32.pages = {}
+	for iter1_32, iter2_32 in pairs(pg.commander_home_style.all) do
+		local var1_32 = pg.commander_home_style[iter2_32]
 
-	if arg0_32.detailPage then
-		arg0_32.detailPage:Destroy()
-
-		arg0_32.detailPage = nil
+		if var1_32.name and var1_32.name ~= "" and not table.contains(var0_32, "catterystyle/" .. var1_32.name) then
+			table.insert(var0_32, "catterystyle/" .. var1_32.name)
+			table.insert(var0_32, "catterystyle/" .. var1_32.name .. "_d")
+		end
 	end
 
-	if arg0_32.contextData.msgBox then
-		arg0_32.contextData.msgBox:Destroy()
+	for iter3_32, iter4_32 in pairs(pg.commander_skill_template.all) do
+		local var2_32 = pg.commander_skill_template[iter4_32]
 
-		arg0_32.contextData.msgBox = nil
+		if var2_32.icon and var2_32.icon ~= "" and not table.contains(var0_32, "commanderskillicon/" .. var2_32.icon) then
+			table.insert(var0_32, "commanderskillicon/" .. var2_32.icon)
+		end
 	end
 
-	if arg0_32.contextData.treePanel then
-		arg0_32.contextData.treePanel:Destroy()
+	for iter5_32, iter6_32 in pairs(pg.commander_ability_template.all) do
+		local var3_32 = pg.commander_ability_template[iter6_32]
 
-		arg0_32.contextData.treePanel = nil
+		if var3_32.icon and var3_32.icon ~= "" and not table.contains(var0_32, "commandertalenticon/" .. var3_32.icon) then
+			table.insert(var0_32, "commandertalenticon/" .. var3_32.icon)
+		end
+	end
+
+	for iter7_32, iter8_32 in pairs(pg.commander_data_template.all) do
+		local var4_32 = pg.commander_data_template[iter8_32]
+
+		if var4_32.painting and var4_32.painting ~= "" and not table.contains(var0_32, "commandericon/" .. var4_32.painting) then
+			table.insert(var0_32, "commandericon/" .. var4_32.painting)
+		end
+
+		if var4_32.painting and var4_32.painting ~= "" and not table.contains(var0_32, "commanderpainting/" .. var4_32.painting) then
+			table.insert(var0_32, "commanderpainting/" .. var4_32.painting)
+		end
+	end
+
+	table.insert(var0_32, "props/20010")
+	table.insert(var0_32, "props/20011")
+	table.insert(var0_32, "props/20012")
+	table.insert(var0_32, "props/20013")
+	table.insert(var0_32, "bg/commander_bg_1")
+	table.insert(var0_32, "bg/commander_bg_2")
+	table.insert(var0_32, "commanderrarity/n")
+	table.insert(var0_32, "commanderrarity/r")
+	table.insert(var0_32, "commanderrarity/sr")
+	table.insert(var0_32, "commanderrarity/ssr")
+	table.insert(var0_32, "char/ai_manjuuu")
+	table.insert(var0_32, "painting/mingshi")
+	table.insert(var0_32, "ui/CommanderCatPlayui")
+	table.insert(var0_32, "ui/CommanderCatTalentui")
+	table.insert(var0_32, "ui/CommanderCatDockui")
+	table.insert(var0_32, "ui/CommanderDetailUI")
+	table.insert(var0_32, "ui/CommanderMsgBoxUI")
+	table.insert(var0_32, "ui/CommanderTreeUI")
+	table.insert(var0_32, "ui/CommanderReserveUI")
+	table.insert(var0_32, "ui/CommanderBoxesUI")
+	table.insert(var0_32, "ui/CommanderIndexUI")
+	table.insert(var0_32, "ui/CommandeRenameUI")
+	table.insert(var0_32, "ui/CommanderQuicklyFinishBoxUI")
+	table.insert(var0_32, "ui/CommanderBuildPoolUI")
+	table.insert(var0_32, "ui/GetCommanderResultUI")
+	table.insert(var0_32, "attricon")
+	table.insert(var0_32, "ui/CommanderBuildResultUI_atlas")
+
+	return var0_32
+end
+
+function var0_0.willExit(arg0_33)
+	arg0_33:ReturnCommanderPainting()
+
+	for iter0_33, iter1_33 in pairs(arg0_33.pages) do
+		iter1_33:Destroy()
+	end
+
+	arg0_33.pages = {}
+
+	if arg0_33.detailPage then
+		arg0_33.detailPage:Destroy()
+
+		arg0_33.detailPage = nil
+	end
+
+	if arg0_33.contextData.msgBox then
+		arg0_33.contextData.msgBox:Destroy()
+
+		arg0_33.contextData.msgBox = nil
+	end
+
+	if arg0_33.contextData.treePanel then
+		arg0_33.contextData.treePanel:Destroy()
+
+		arg0_33.contextData.treePanel = nil
 	end
 end
 

@@ -50,287 +50,358 @@ function var0_0.getUIName(arg0_4)
 	return "PlayerVitaeShipsPage"
 end
 
-function var0_0.UpdateCard(arg0_5, arg1_5)
-	local var0_5 = arg0_5.cards[var1_0]
+function var0_0.getResource(arg0_5, arg1_5)
+	local var0_5 = {
+		"ui/proposeShipCard"
+	}
+	local var1_5 = var0_0.super.getResource(arg0_5)
+	local var2_5 = arg1_5 and arg1_5.showTrans
 
-	for iter0_5, iter1_5 in ipairs(var0_5) do
-		if isActive(iter1_5._tf) and iter1_5.displayShip and iter1_5.displayShip:GetShipPhantomMark() == arg1_5 then
-			iter1_5:Refresh()
+	local function var3_5(arg0_6)
+		local var0_6 = getProxy(BayProxy):GetShipPhantom(arg0_6)
+		local var1_6 = getProxy(ShipSkinProxy):GetAllSkinForShip(var0_6)
+		local var2_6 = getProxy(ShipSkinProxy):GetShareSkinsForShip(var0_6)
+		local var3_6 = _.map(var2_6, function(arg0_7)
+			return pg.ship_skin_template[arg0_7.id]
+		end)
+
+		table.insertto(var1_6, var3_6)
+
+		for iter0_6, iter1_6 in ipairs(var1_6) do
+			local var4_6 = iter1_6 and iter1_6.painting or "unknown"
+
+			if var4_6 ~= "unknown" then
+				local var5_6 = ResPathSupport.GetPaintingListByPaintingName(var4_6)
+
+				table.insertto(var1_5, var5_6)
+			end
+		end
+	end
+
+	local function var4_5(arg0_8)
+		if not arg0_8 then
+			return
+		end
+
+		local var0_8 = arg0_8:rarity2bgPrint(var2_5)
+
+		table.insert(var1_5, string.format(ResPathSupport.ConstPath.BG.ShipCard, var0_8))
+
+		local var1_8, var2_8 = arg0_8:GetFrameAndEffect(true)
+
+		if noEmptyStr(var2_8) then
+			table.insert(var1_5, ResPathSupport.CombinePath(ResPathSupport.ConstPath.UI.Effect, var2_8))
+		end
+	end
+
+	local function var5_5(arg0_9)
+		local var0_9 = getProxy(BayProxy):GetShipPhantom(arg0_9)
+
+		var4_5(var0_9)
+	end
+
+	for iter0_5, iter1_5 in ipairs(getProxy(PlayerProxy):getRawData():GetShipPhantomMarks()) do
+		var5_5(iter1_5)
+		var3_5(iter1_5)
+	end
+
+	for iter2_5, iter3_5 in ipairs(getProxy(SettingsProxy):GetRandomFlagShipList()) do
+		var5_5(iter3_5)
+		var3_5(iter3_5)
+	end
+
+	local var6_5 = getProxy(PlayerProxy):getRawData()
+
+	if var6_5:ExistEducateChar() then
+		local var7_5 = VirtualEducateCharShip.New(var6_5:GetEducateCharacter())
+
+		table.insert(var1_5, "painting/" .. var7_5:getPainting())
+	end
+
+	return ResPathSupport.UniqueLuaArr(ResPathSupport.MergeLuaArr(var1_5, var0_5))
+end
+
+function var0_0.UpdateCard(arg0_10, arg1_10)
+	local var0_10 = arg0_10.cards[var1_0]
+
+	for iter0_10, iter1_10 in ipairs(var0_10) do
+		if isActive(iter1_10._tf) and iter1_10.displayShip and iter1_10.displayShip:GetShipPhantomMark() == arg1_10 then
+			iter1_10:Refresh()
 
 			break
 		end
 	end
 end
 
-function var0_0.UpdateCardPaintingTag(arg0_6)
-	local var0_6 = arg0_6.cards[var1_0]
+function var0_0.UpdateCardPaintingTag(arg0_11)
+	local var0_11 = arg0_11.cards[var1_0]
 
-	for iter0_6, iter1_6 in ipairs(var0_6) do
-		iter1_6:updatePaintingTag()
+	for iter0_11, iter1_11 in ipairs(var0_11) do
+		iter1_11:updatePaintingTag()
 	end
 end
 
-function var0_0.RefreshShips(arg0_7)
-	arg0_7:Update()
+function var0_0.RefreshShips(arg0_12)
+	arg0_12:Update()
 end
 
-function var0_0.OnLoaded(arg0_8)
-	arg0_8.cardContainer = arg0_8._tf:Find("frame")
-	arg0_8.shipTpl = arg0_8._tf:Find("frame/shipCard")
-	arg0_8.emptyTpl = arg0_8._tf:Find("frame/addCard")
-	arg0_8.lockTpl = arg0_8._tf:Find("frame/lockCard")
-	arg0_8.helpBtn = arg0_8._tf:Find("help_btn")
-	arg0_8.settingBtn = arg0_8._tf:Find("setting_btn")
-	arg0_8.settingBtnSlider = arg0_8.settingBtn:Find("toggle/on")
-	arg0_8.randomBtn = arg0_8._tf:Find("ran_setting_btn")
-	arg0_8.randomBtnSlider = arg0_8.randomBtn:Find("toggle/on")
-	arg0_8.settingSeceneBtn = arg0_8._tf:Find("setting_scene_btn")
-	arg0_8.nativeBtn = arg0_8._tf:Find("native_setting_btn")
-	arg0_8.nativeBtnOn = arg0_8.nativeBtn:Find("on")
-	arg0_8.nativeBtnOff = arg0_8.nativeBtn:Find("off")
-	arg0_8.getMailBtn = arg0_8._tf:Find("get_mail")
-	arg0_8.educateCharTr = arg0_8._tf:Find("educate_char")
-	arg0_8.educateCharSettingList = UIItemList.New(arg0_8._tf:Find("educate_char/shipCard/settings/panel"), arg0_8._tf:Find("educate_char/shipCard/settings/panel/tpl"))
-	arg0_8.educateCharSettingBtn = arg0_8._tf:Find("educate_char/shipCard/settings/tpl")
-	arg0_8.educateCharTrTip = arg0_8.educateCharTr:Find("tip")
+function var0_0.OnLoaded(arg0_13)
+	arg0_13.cardContainer = arg0_13._tf:Find("frame")
+	arg0_13.shipTpl = arg0_13._tf:Find("frame/shipCard")
+	arg0_13.emptyTpl = arg0_13._tf:Find("frame/addCard")
+	arg0_13.lockTpl = arg0_13._tf:Find("frame/lockCard")
+	arg0_13.helpBtn = arg0_13._tf:Find("help_btn")
+	arg0_13.settingBtn = arg0_13._tf:Find("setting_btn")
+	arg0_13.settingBtnSlider = arg0_13.settingBtn:Find("toggle/on")
+	arg0_13.randomBtn = arg0_13._tf:Find("ran_setting_btn")
+	arg0_13.randomBtnSlider = arg0_13.randomBtn:Find("toggle/on")
+	arg0_13.settingSeceneBtn = arg0_13._tf:Find("setting_scene_btn")
+	arg0_13.nativeBtn = arg0_13._tf:Find("native_setting_btn")
+	arg0_13.nativeBtnOn = arg0_13.nativeBtn:Find("on")
+	arg0_13.nativeBtnOff = arg0_13.nativeBtn:Find("off")
+	arg0_13.getMailBtn = arg0_13._tf:Find("get_mail")
+	arg0_13.educateCharTr = arg0_13._tf:Find("educate_char")
+	arg0_13.educateCharSettingList = UIItemList.New(arg0_13._tf:Find("educate_char/shipCard/settings/panel"), arg0_13._tf:Find("educate_char/shipCard/settings/panel/tpl"))
+	arg0_13.educateCharSettingBtn = arg0_13._tf:Find("educate_char/shipCard/settings/tpl")
+	arg0_13.educateCharTrTip = arg0_13.educateCharTr:Find("tip")
 
 	if LOCK_EDUCATE_SYSTEM then
-		setActive(arg0_8.educateCharTr, false)
-		setAnchoredPosition(arg0_8.cardContainer, {
+		setActive(arg0_13.educateCharTr, false)
+		setAnchoredPosition(arg0_13.cardContainer, {
 			x = 0
 		})
-		setAnchoredPosition(arg0_8._tf:Find("flagship"), {
+		setAnchoredPosition(arg0_13._tf:Find("flagship"), {
 			x = -720
 		})
-		setAnchoredPosition(arg0_8._tf:Find("zs"), {
+		setAnchoredPosition(arg0_13._tf:Find("zs"), {
 			x = 763
 		})
-		setAnchoredPosition(arg0_8._tf:Find("line"), {
+		setAnchoredPosition(arg0_13._tf:Find("line"), {
 			x = 740
 		})
 	end
 
-	arg0_8.educateCharCards = {
-		[var1_0] = PlayerVitaeEducateShipCard.New(arg0_8._tf:Find("educate_char/shipCard"), arg0_8.event),
-		[var2_0] = PlayerVitaeEducateAddCard.New(arg0_8._tf:Find("educate_char/addCard"), arg0_8.event),
-		[var3_0] = PlayerVitaeEducateLockCard.New(arg0_8._tf:Find("educate_char/lockCard"), arg0_8.event)
+	arg0_13.educateCharCards = {
+		[var1_0] = PlayerVitaeEducateShipCard.New(arg0_13._tf:Find("educate_char/shipCard"), arg0_13.event),
+		[var2_0] = PlayerVitaeEducateAddCard.New(arg0_13._tf:Find("educate_char/addCard"), arg0_13.event),
+		[var3_0] = PlayerVitaeEducateLockCard.New(arg0_13._tf:Find("educate_char/lockCard"), arg0_13.event)
 	}
-	arg0_8.tip = arg0_8._tf:Find("tip"):GetComponent(typeof(Text))
-	arg0_8.flagShipMark = arg0_8._tf:Find("flagship")
+	arg0_13.tip = arg0_13._tf:Find("tip"):GetComponent(typeof(Text))
+	arg0_13.flagShipMark = arg0_13._tf:Find("flagship")
 
-	arg0_8:bind(var0_0.ON_BEGIN_DRAG_CARD, function(arg0_9, arg1_9)
-		arg0_8:OnBeginDragCard(arg1_9)
+	arg0_13:bind(var0_0.ON_BEGIN_DRAG_CARD, function(arg0_14, arg1_14)
+		arg0_13:OnBeginDragCard(arg1_14)
 	end)
-	arg0_8:bind(var0_0.ON_DRAGING_CARD, function(arg0_10, arg1_10)
-		arg0_8:OnDragingCard(arg1_10)
+	arg0_13:bind(var0_0.ON_DRAGING_CARD, function(arg0_15, arg1_15)
+		arg0_13:OnDragingCard(arg1_15)
 	end)
-	arg0_8:bind(var0_0.ON_DRAG_END_CARD, function(arg0_11)
-		arg0_8:OnEndDragCard()
+	arg0_13:bind(var0_0.ON_DRAG_END_CARD, function(arg0_16)
+		arg0_13:OnEndDragCard()
 	end)
-	setText(arg0_8.nativeBtnOn:Find("Text"), i18n("random_ship_before"))
-	setText(arg0_8.nativeBtnOff:Find("Text"), i18n("random_ship_now"))
-	setText(arg0_8.settingBtn:Find("Text"), i18n("player_vitae_skin_setting"))
-	setText(arg0_8.randomBtn:Find("Text"), i18n("random_ship_label"))
-	setText(arg0_8.settingSeceneBtn:Find("Text"), i18n("playervtae_setting_btn_label"))
-	setText(arg0_8.getMailBtn:Find("Text"), i18n("spring_present_tips_btn"))
-	setText(arg0_8.getMailBtn:Find("time"), i18n("spring_present_tips_time"))
+	setText(arg0_13.nativeBtnOn:Find("Text"), i18n("random_ship_before"))
+	setText(arg0_13.nativeBtnOff:Find("Text"), i18n("random_ship_now"))
+	setText(arg0_13.settingBtn:Find("Text"), i18n("player_vitae_skin_setting"))
+	setText(arg0_13.randomBtn:Find("Text"), i18n("random_ship_label"))
+	setText(arg0_13.settingSeceneBtn:Find("Text"), i18n("playervtae_setting_btn_label"))
+	setText(arg0_13.getMailBtn:Find("Text"), i18n("spring_present_tips_btn"))
+	setText(arg0_13.getMailBtn:Find("time"), i18n("spring_present_tips_time"))
 
-	arg0_8.cardContainerCG = GetOrAddComponent(arg0_8.cardContainer, typeof(CanvasGroup))
+	arg0_13.cardContainerCG = GetOrAddComponent(arg0_13.cardContainer, typeof(CanvasGroup))
 end
 
-function var0_0.OnBeginDragCard(arg0_12, arg1_12)
-	arg0_12.dragIndex = arg1_12
-	arg0_12.displayCards = {}
-	arg0_12.displayPos = {}
+function var0_0.OnBeginDragCard(arg0_17, arg1_17)
+	arg0_17.dragIndex = arg1_17
+	arg0_17.displayCards = {}
+	arg0_17.displayPos = {}
 
-	local var0_12 = arg0_12.cards[var1_0]
+	local var0_17 = arg0_17.cards[var1_0]
 
-	for iter0_12, iter1_12 in ipairs(var0_12) do
-		if isActive(iter1_12._tf) then
-			arg0_12.displayCards[iter0_12] = iter1_12
-			arg0_12.displayPos[iter0_12] = iter1_12._tf.localPosition
+	for iter0_17, iter1_17 in ipairs(var0_17) do
+		if isActive(iter1_17._tf) then
+			arg0_17.displayCards[iter0_17] = iter1_17
+			arg0_17.displayPos[iter0_17] = iter1_17._tf.localPosition
 		end
 	end
 
-	for iter2_12, iter3_12 in pairs(arg0_12.displayCards) do
-		if iter2_12 ~= arg1_12 then
-			iter3_12:DisableDrag()
+	for iter2_17, iter3_17 in pairs(arg0_17.displayCards) do
+		if iter2_17 ~= arg1_17 then
+			iter3_17:DisableDrag()
 		end
 	end
 end
 
-function var0_0.OnDragingCard(arg0_13, arg1_13)
-	local var0_13 = arg0_13.displayCards[arg0_13.dragIndex - 1]
-	local var1_13 = arg0_13.displayCards[arg0_13.dragIndex + 1]
+function var0_0.OnDragingCard(arg0_18, arg1_18)
+	local var0_18 = arg0_18.displayCards[arg0_18.dragIndex - 1]
+	local var1_18 = arg0_18.displayCards[arg0_18.dragIndex + 1]
 
-	if var0_13 and arg0_13:ShouldSwap(arg1_13, arg0_13.dragIndex - 1) then
-		arg0_13:Swap(arg0_13.dragIndex, arg0_13.dragIndex - 1)
-	elseif var1_13 and arg0_13:ShouldSwap(arg1_13, arg0_13.dragIndex + 1) then
-		arg0_13:Swap(arg0_13.dragIndex, arg0_13.dragIndex + 1)
+	if var0_18 and arg0_18:ShouldSwap(arg1_18, arg0_18.dragIndex - 1) then
+		arg0_18:Swap(arg0_18.dragIndex, arg0_18.dragIndex - 1)
+	elseif var1_18 and arg0_18:ShouldSwap(arg1_18, arg0_18.dragIndex + 1) then
+		arg0_18:Swap(arg0_18.dragIndex, arg0_18.dragIndex + 1)
 	end
 end
 
-function var0_0.Swap(arg0_14, arg1_14, arg2_14)
-	local var0_14 = arg0_14.displayCards[arg1_14]
-	local var1_14 = arg0_14.displayPos[arg1_14]
-	local var2_14 = arg0_14.displayCards[arg2_14]
+function var0_0.Swap(arg0_19, arg1_19, arg2_19)
+	local var0_19 = arg0_19.displayCards[arg1_19]
+	local var1_19 = arg0_19.displayPos[arg1_19]
+	local var2_19 = arg0_19.displayCards[arg2_19]
 
-	var2_14._tf.localPosition = var1_14
-	arg0_14.displayCards[arg1_14], arg0_14.displayCards[arg2_14] = arg0_14.displayCards[arg2_14], arg0_14.displayCards[arg1_14]
-	arg0_14.dragIndex = arg2_14
-	var0_14.slotIndex = arg2_14
-	var2_14.slotIndex = arg1_14
-	var0_14.typeIndex, var2_14.typeIndex = var2_14.typeIndex, var0_14.typeIndex
+	var2_19._tf.localPosition = var1_19
+	arg0_19.displayCards[arg1_19], arg0_19.displayCards[arg2_19] = arg0_19.displayCards[arg2_19], arg0_19.displayCards[arg1_19]
+	arg0_19.dragIndex = arg2_19
+	var0_19.slotIndex = arg2_19
+	var2_19.slotIndex = arg1_19
+	var0_19.typeIndex, var2_19.typeIndex = var2_19.typeIndex, var0_19.typeIndex
 
-	local var3_14 = arg0_14.cards[var1_0]
+	local var3_19 = arg0_19.cards[var1_0]
 
-	var3_14[arg1_14], var3_14[arg2_14] = var3_14[arg2_14], var3_14[arg1_14]
+	var3_19[arg1_19], var3_19[arg2_19] = var3_19[arg2_19], var3_19[arg1_19]
 end
 
-function var0_0.ShouldSwap(arg0_15, arg1_15, arg2_15)
-	local var0_15 = arg0_15.displayPos[arg2_15]
+function var0_0.ShouldSwap(arg0_20, arg1_20, arg2_20)
+	local var0_20 = arg0_20.displayPos[arg2_20]
 
-	return math.abs(var0_15.x - arg1_15.x) <= 130
+	return math.abs(var0_20.x - arg1_20.x) <= 130
 end
 
-function var0_0.OnEndDragCard(arg0_16)
-	local var0_16 = arg0_16.displayPos[arg0_16.dragIndex]
+function var0_0.OnEndDragCard(arg0_21)
+	local var0_21 = arg0_21.displayPos[arg0_21.dragIndex]
 
-	arg0_16.displayCards[arg0_16.dragIndex]._tf.localPosition = var0_16
+	arg0_21.displayCards[arg0_21.dragIndex]._tf.localPosition = var0_21
 
-	local var1_16 = {}
-	local var2_16 = getProxy(PlayerProxy):getRawData():GetShipPhantomMarks()
-	local var3_16 = false
+	local var1_21 = {}
+	local var2_21 = getProxy(PlayerProxy):getRawData():GetShipPhantomMarks()
+	local var3_21 = false
 
-	for iter0_16, iter1_16 in pairs(arg0_16.displayCards) do
-		iter1_16:EnableDrag()
-		table.insert(var1_16, iter1_16.displayShip:GetShipPhantomMark())
+	for iter0_21, iter1_21 in pairs(arg0_21.displayCards) do
+		iter1_21:EnableDrag()
+		table.insert(var1_21, iter1_21.displayShip:GetShipPhantomMark())
 
-		if not var3_16 and var2_16[#var1_16] ~= var1_16[#var1_16] then
-			var3_16 = true
+		if not var3_21 and var2_21[#var1_21] ~= var1_21[#var1_21] then
+			var3_21 = true
 		end
 	end
 
-	arg0_16.dragIndex = nil
-	arg0_16.displayCards = nil
-	arg0_16.displayPos = nil
-	arg0_16.cardContainerCG.blocksRaycasts = false
+	arg0_21.dragIndex = nil
+	arg0_21.displayCards = nil
+	arg0_21.displayPos = nil
+	arg0_21.cardContainerCG.blocksRaycasts = false
 
-	if var3_16 then
-		arg0_16:emit(PlayerVitaeMediator.CHANGE_PAINTS, var1_16, function()
+	if var3_21 then
+		arg0_21:emit(PlayerVitaeMediator.CHANGE_PAINTS, var1_21, function()
 			Timer.New(function()
-				if arg0_16.cardContainerCG then
-					arg0_16.cardContainerCG.blocksRaycasts = true
+				if arg0_21.cardContainerCG then
+					arg0_21.cardContainerCG.blocksRaycasts = true
 				end
 			end, 0.3, 1):Start()
 		end)
 	else
-		arg0_16.cardContainerCG.blocksRaycasts = true
+		arg0_21.cardContainerCG.blocksRaycasts = true
 	end
 end
 
-function var0_0.OnInit(arg0_19)
-	onButton(arg0_19, arg0_19.helpBtn, function()
+function var0_0.OnInit(arg0_24)
+	onButton(arg0_24, arg0_24.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("secretary_help")
 		})
 	end, SFX_PANEL)
 
-	local var0_19 = false
+	local var0_24 = false
 
-	local function var1_19()
-		local var0_21 = {
+	local function var1_24()
+		local var0_26 = {
 			68,
 			-68
 		}
 
-		setAnchoredPosition(arg0_19.settingBtnSlider, {
-			x = var0_21[var0_19 and 1 or 2]
+		setAnchoredPosition(arg0_24.settingBtnSlider, {
+			x = var0_26[var0_24 and 1 or 2]
 		})
 	end
 
-	onButton(arg0_19, arg0_19.settingBtn, function()
-		var0_19 = not var0_19
+	onButton(arg0_24, arg0_24.settingBtn, function()
+		var0_24 = not var0_24
 
-		arg0_19:EditCards(var0_19)
-		var1_19()
+		arg0_24:EditCards(var0_24)
+		var1_24()
 	end, SFX_PANEL)
-	var1_19()
+	var1_24()
 
-	local var2_19 = getProxy(SettingsProxy)
+	local var2_24 = getProxy(SettingsProxy)
 
-	arg0_19.randomFlag = var2_19:IsOpenRandomFlagShip()
-	arg0_19.nativeFlag = false
+	arg0_24.randomFlag = var2_24:IsOpenRandomFlagShip()
+	arg0_24.nativeFlag = false
 
-	local function var3_19()
-		local var0_23 = {
+	local function var3_24()
+		local var0_28 = {
 			68,
 			-68
 		}
 
-		setAnchoredPosition(arg0_19.randomBtnSlider, {
-			x = var0_23[arg0_19.randomFlag and 1 or 2]
+		setAnchoredPosition(arg0_24.randomBtnSlider, {
+			x = var0_28[arg0_24.randomFlag and 1 or 2]
 		})
-		setActive(arg0_19.nativeBtn, arg0_19.randomFlag)
-		setActive(arg0_19.flagShipMark, not arg0_19.randomFlag or arg0_19.nativeFlag)
+		setActive(arg0_24.nativeBtn, arg0_24.randomFlag)
+		setActive(arg0_24.flagShipMark, not arg0_24.randomFlag or arg0_24.nativeFlag)
 
-		if arg0_19.randomFlag and var0_19 then
-			triggerButton(arg0_19.settingBtn)
+		if arg0_24.randomFlag and var0_24 then
+			triggerButton(arg0_24.settingBtn)
 		end
 	end
 
-	local function var4_19()
-		setActive(arg0_19.nativeBtnOn, arg0_19.nativeFlag)
-		setActive(arg0_19.nativeBtnOff, not arg0_19.nativeFlag)
-		setActive(arg0_19.flagShipMark, not arg0_19.randomFlag or arg0_19.nativeFlag)
+	local function var4_24()
+		setActive(arg0_24.nativeBtnOn, arg0_24.nativeFlag)
+		setActive(arg0_24.nativeBtnOff, not arg0_24.nativeFlag)
+		setActive(arg0_24.flagShipMark, not arg0_24.randomFlag or arg0_24.nativeFlag)
 
-		if var0_19 then
-			triggerButton(arg0_19.settingBtn)
+		if var0_24 then
+			triggerButton(arg0_24.settingBtn)
 		end
 	end
 
-	onButton(arg0_19, arg0_19.randomBtn, function()
-		arg0_19.randomFlag = not arg0_19.randomFlag
+	onButton(arg0_24, arg0_24.randomBtn, function()
+		arg0_24.randomFlag = not arg0_24.randomFlag
 
-		if arg0_19.randomFlag then
-			local var0_25 = MainRandomFlagShipSequence.New():Random()
+		if arg0_24.randomFlag then
+			local var0_30 = MainRandomFlagShipSequence.New():Random()
 
-			if not var0_25 or #var0_25 <= 0 then
+			if not var0_30 or #var0_30 <= 0 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("random_ship_off_0"))
 
-				arg0_19.randomFlag = not arg0_19.randomFlag
+				arg0_24.randomFlag = not arg0_24.randomFlag
 
 				return
 			end
 
-			var2_19:UpdateRandomFlagShipList(var0_25)
+			var2_24:UpdateRandomFlagShipList(var0_30)
 		else
-			var2_19:UpdateRandomFlagShipList({})
+			var2_24:UpdateRandomFlagShipList({})
 
-			arg0_19.nativeFlag = false
+			arg0_24.nativeFlag = false
 
-			var4_19()
+			var4_24()
 		end
 
-		arg0_19:SwitchToPage(arg0_19.randomFlag and var5_0 or var4_0)
-		var3_19()
+		arg0_24:SwitchToPage(arg0_24.randomFlag and var5_0 or var4_0)
+		var3_24()
 
-		local var1_25 = arg0_19.randomFlag and i18n("random_ship_on") or i18n("random_ship_off")
+		local var1_30 = arg0_24.randomFlag and i18n("random_ship_on") or i18n("random_ship_off")
 
-		pg.TipsMgr.GetInstance():ShowTips(var1_25)
-		arg0_19:emit(PlayerVitaeMediator.ON_SWITCH_RANDOM_FLAG_SHIP_BTN, arg0_19.randomFlag)
+		pg.TipsMgr.GetInstance():ShowTips(var1_30)
+		arg0_24:emit(PlayerVitaeMediator.ON_SWITCH_RANDOM_FLAG_SHIP_BTN, arg0_24.randomFlag)
 	end, SFX_PANEL)
-	var3_19()
-	onButton(arg0_19, arg0_19.nativeBtn, function()
-		arg0_19.nativeFlag = not arg0_19.nativeFlag
+	var3_24()
+	onButton(arg0_24, arg0_24.nativeBtn, function()
+		arg0_24.nativeFlag = not arg0_24.nativeFlag
 
-		var4_19()
-		arg0_19:SwitchToPage(arg0_19.nativeFlag and var4_0 or var5_0)
+		var4_24()
+		arg0_24:SwitchToPage(arg0_24.nativeFlag and var4_0 or var5_0)
 	end, SFX_PANEL)
-	var4_19()
-	onButton(arg0_19, arg0_19.getMailBtn, function()
-		if arg0_19.randomFlag then
+	var4_24()
+	onButton(arg0_24, arg0_24.getMailBtn, function()
+		if arg0_24.randomFlag then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("spring_present_tips0"))
 
 			return
@@ -339,75 +410,75 @@ function var0_0.OnInit(arg0_19)
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("spring_present_tips1"),
 			onYes = function()
-				local var0_28 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_LOVE_LETTER_MAIL)
+				local var0_33 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_LOVE_LETTER_MAIL)
 
-				if not var0_28 then
-					setActive(arg0_19.getMailBtn, false)
+				if not var0_33 then
+					setActive(arg0_24.getMailBtn, false)
 					pg.TipsMgr.GetInstance():ShowTips(i18n("challenge_end_tip"))
 
 					return
 				end
 
-				arg0_19:emit(PlayerVitaeMediator.ON_GET_LOVE_LETTER_MAIL, var0_28.id)
+				arg0_24:emit(PlayerVitaeMediator.ON_GET_LOVE_LETTER_MAIL, var0_33.id)
 			end
 		})
 	end)
-	arg0_19:UpdateGetMailBtn()
-	onButton(arg0_19, arg0_19.educateCharSettingBtn, function()
-		local var0_29 = isActive(arg0_19.educateCharSettingList.container)
+	arg0_24:UpdateGetMailBtn()
+	onButton(arg0_24, arg0_24.educateCharSettingBtn, function()
+		local var0_34 = isActive(arg0_24.educateCharSettingList.container)
 
-		setActive(arg0_19.educateCharSettingList.container, not var0_29)
+		setActive(arg0_24.educateCharSettingList.container, not var0_34)
 	end, SFX_PANEL)
-	onButton(arg0_19, arg0_19.settingSeceneBtn, function()
-		arg0_19.contextData.showSelectCharacters = true
+	onButton(arg0_24, arg0_24.settingSeceneBtn, function()
+		arg0_24.contextData.showSelectCharacters = true
 
-		arg0_19:emit(PlayerVitaeMediator.GO_SCENE, SCENE.SETTINGS, {
+		arg0_24:emit(PlayerVitaeMediator.GO_SCENE, SCENE.SETTINGS, {
 			page = NewSettingsScene.PAGE_OPTION,
 			scroll = SettingsRandomFlagShipAndSkinPanel
 		})
 	end, SFX_PANEL)
 
-	arg0_19.cards = {
+	arg0_24.cards = {
 		{},
 		{},
 		{}
 	}
 
-	table.insert(arg0_19.cards[var1_0], PlayerVitaeShipCard.New(arg0_19.shipTpl, arg0_19.event))
-	table.insert(arg0_19.cards[var2_0], PlayerVitaeAddCard.New(arg0_19.emptyTpl, arg0_19.event))
-	table.insert(arg0_19.cards[var3_0], PlayerVitaeLockCard.New(arg0_19.lockTpl, arg0_19.event))
+	table.insert(arg0_24.cards[var1_0], PlayerVitaeShipCard.New(arg0_24.shipTpl, arg0_24.event))
+	table.insert(arg0_24.cards[var2_0], PlayerVitaeAddCard.New(arg0_24.emptyTpl, arg0_24.event))
+	table.insert(arg0_24.cards[var3_0], PlayerVitaeLockCard.New(arg0_24.lockTpl, arg0_24.event))
 end
 
-function var0_0.UpdateGetMailBtn(arg0_31)
-	local var0_31 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_LOVE_LETTER_MAIL)
+function var0_0.UpdateGetMailBtn(arg0_36)
+	local var0_36 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_LOVE_LETTER_MAIL)
 
-	setActive(arg0_31.getMailBtn, var0_31 and not var0_31:isEnd() and var0_31:readyToAchieve())
+	setActive(arg0_36.getMailBtn, var0_36 and not var0_36:isEnd() and var0_36:readyToAchieve())
 end
 
-function var0_0.Update(arg0_32)
-	local var0_32 = getProxy(SettingsProxy)
-	local var1_32
+function var0_0.Update(arg0_37)
+	local var0_37 = getProxy(SettingsProxy)
+	local var1_37
 
-	if arg0_32.randomFlag and arg0_32.nativeFlag then
-		var1_32 = var4_0
+	if arg0_37.randomFlag and arg0_37.nativeFlag then
+		var1_37 = var4_0
 	else
-		var1_32 = var0_32:IsOpenRandomFlagShip() and var5_0 or var4_0
+		var1_37 = var0_37:IsOpenRandomFlagShip() and var5_0 or var4_0
 	end
 
-	arg0_32:SwitchToPage(var1_32)
-	arg0_32:UpdateEducateChar()
-	arg0_32:UpdateGetMailBtn()
-	arg0_32:Show()
+	arg0_37:SwitchToPage(var1_37)
+	arg0_37:UpdateEducateChar()
+	arg0_37:UpdateGetMailBtn()
+	arg0_37:Show()
 end
 
-function var0_0.UpdateEducateChar(arg0_33)
-	arg0_33:UpdateEducateCharSettings()
-	arg0_33:UpdateEducateSlot()
-	arg0_33:UpdateEducateCharTrTip()
+function var0_0.UpdateEducateChar(arg0_38)
+	arg0_38:UpdateEducateCharSettings()
+	arg0_38:UpdateEducateSlot()
+	arg0_38:UpdateEducateCharTrTip()
 end
 
-function var0_0.UpdateEducateCharTrTip(arg0_34)
-	setActive(arg0_34.educateCharTrTip, getProxy(SettingsProxy):ShouldEducateCharTip())
+function var0_0.UpdateEducateCharTrTip(arg0_39)
+	setActive(arg0_39.educateCharTrTip, getProxy(SettingsProxy):ShouldEducateCharTip())
 end
 
 local function var6_0()
@@ -422,245 +493,245 @@ local function var6_0()
 	return var2_0
 end
 
-function var0_0.UpdateEducateSlot(arg0_36)
-	local var0_36 = var6_0()
-	local var1_36
+function var0_0.UpdateEducateSlot(arg0_41)
+	local var0_41 = var6_0()
+	local var1_41
 
-	for iter0_36, iter1_36 in pairs(arg0_36.educateCharCards) do
-		local var2_36 = iter0_36 == var0_36
+	for iter0_41, iter1_41 in pairs(arg0_41.educateCharCards) do
+		local var2_41 = iter0_41 == var0_41
 
-		iter1_36:ShowOrHide(var2_36)
+		iter1_41:ShowOrHide(var2_41)
 
-		if var2_36 then
-			var1_36 = iter1_36
+		if var2_41 then
+			var1_41 = iter1_41
 		end
 	end
 
-	var1_36:Flush()
+	var1_41:Flush()
 end
 
-function var0_0.UpdateEducateCharSettings(arg0_37)
-	local var0_37 = getProxy(SettingsProxy)
+function var0_0.UpdateEducateCharSettings(arg0_42)
+	local var0_42 = getProxy(SettingsProxy)
 
-	local function var1_37()
-		local var0_38 = var0_37:GetFlagShipDisplayMode()
+	local function var1_42()
+		local var0_43 = var0_42:GetFlagShipDisplayMode()
 
-		setText(arg0_37.educateCharSettingBtn:Find("Text"), i18n("flagship_display_mode_" .. var0_38))
+		setText(arg0_42.educateCharSettingBtn:Find("Text"), i18n("flagship_display_mode_" .. var0_43))
 	end
 
-	local var2_37 = {
+	local var2_42 = {
 		FlAG_SHIP_DISPLAY_ONLY_SHIP,
 		FlAG_SHIP_DISPLAY_ONLY_EDUCATECHAR,
 		FlAG_SHIP_DISPLAY_ALL
 	}
 
-	arg0_37.educateCharSettingList:make(function(arg0_39, arg1_39, arg2_39)
-		if arg0_39 == UIItemList.EventUpdate then
-			local var0_39 = var2_37[arg1_39 + 1]
+	arg0_42.educateCharSettingList:make(function(arg0_44, arg1_44, arg2_44)
+		if arg0_44 == UIItemList.EventUpdate then
+			local var0_44 = var2_42[arg1_44 + 1]
 
-			setText(arg2_39:Find("Text"), i18n("flagship_display_mode_" .. var0_39))
-			onButton(arg0_37, arg2_39, function()
-				var0_37:SetFlagShipDisplayMode(var0_39)
-				var1_37()
-				setActive(arg0_37.educateCharSettingList.container, false)
+			setText(arg2_44:Find("Text"), i18n("flagship_display_mode_" .. var0_44))
+			onButton(arg0_42, arg2_44, function()
+				var0_42:SetFlagShipDisplayMode(var0_44)
+				var1_42()
+				setActive(arg0_42.educateCharSettingList.container, false)
 			end, SFX_PANEL)
-			setActive(arg2_39:Find("line"), arg1_39 + 1 ~= #var2_37)
+			setActive(arg2_44:Find("line"), arg1_44 + 1 ~= #var2_42)
 		end
 	end)
-	arg0_37.educateCharSettingList:align(#var2_37)
-	var1_37()
+	arg0_42.educateCharSettingList:align(#var2_42)
+	var1_42()
 end
 
-function var0_0.SwitchToPage(arg0_41, arg1_41)
-	local var0_41
+function var0_0.SwitchToPage(arg0_46, arg1_46)
+	local var0_46
 
-	if arg1_41 == var5_0 then
-		var0_41 = _.select(getProxy(SettingsProxy):GetRandomFlagShipList(), function(arg0_42)
-			return getProxy(BayProxy):GetShipPhantom(arg0_42) ~= nil
+	if arg1_46 == var5_0 then
+		var0_46 = _.select(getProxy(SettingsProxy):GetRandomFlagShipList(), function(arg0_47)
+			return getProxy(BayProxy):GetShipPhantom(arg0_47) ~= nil
 		end)
-		arg0_41.tip.text = i18n("random_ship_tips1")
+		arg0_46.tip.text = i18n("random_ship_tips1")
 
-		arg0_41:emit(PlayerVitaeScene.ON_PAGE_SWTICH, PlayerVitaeScene.PAGE_RANDOM_SHIPS)
-	elseif arg1_41 == var4_0 then
-		var0_41 = getProxy(PlayerProxy):getRawData():GetShipPhantomMarks()
-		arg0_41.tip.text = i18n("random_ship_tips2")
+		arg0_46:emit(PlayerVitaeScene.ON_PAGE_SWTICH, PlayerVitaeScene.PAGE_RANDOM_SHIPS)
+	elseif arg1_46 == var4_0 then
+		var0_46 = getProxy(PlayerProxy):getRawData():GetShipPhantomMarks()
+		arg0_46.tip.text = i18n("random_ship_tips2")
 
-		arg0_41:emit(PlayerVitaeScene.ON_PAGE_SWTICH, PlayerVitaeScene.PAGE_NATIVE_SHIPS)
+		arg0_46:emit(PlayerVitaeScene.ON_PAGE_SWTICH, PlayerVitaeScene.PAGE_NATIVE_SHIPS)
 	end
 
-	arg0_41:Flush(var0_41, arg1_41)
-	setActive(arg0_41.tip.gameObject, arg0_41.randomFlag)
+	arg0_46:Flush(var0_46, arg1_46)
+	setActive(arg0_46.tip.gameObject, arg0_46.randomFlag)
 end
 
-function var0_0.Flush(arg0_43, arg1_43, arg2_43)
-	local var0_43, var1_43 = var0_0.GetSlotMaxCnt()
+function var0_0.Flush(arg0_48, arg1_48, arg2_48)
+	local var0_48, var1_48 = var0_0.GetSlotMaxCnt()
 
-	arg0_43.max = var0_43
-	arg0_43.unlockCnt = var1_43
+	arg0_48.max = var0_48
+	arg0_48.unlockCnt = var1_48
 
-	local var2_43 = arg0_43:GetUnlockShipCnt(arg1_43)
+	local var2_48 = arg0_48:GetUnlockShipCnt(arg1_48)
 
-	arg0_43:UpdateCards(arg2_43, arg1_43, var2_43)
+	arg0_48:UpdateCards(arg2_48, arg1_48, var2_48)
 end
 
-function var0_0.UpdateCards(arg0_44, arg1_44, arg2_44, arg3_44)
-	local var0_44 = {
+function var0_0.UpdateCards(arg0_49, arg1_49, arg2_49, arg3_49)
+	local var0_49 = {
 		0
 	}
-	local var1_44 = {}
+	local var1_49 = {}
 
-	for iter0_44, iter1_44 in ipairs(arg3_44) do
-		table.insert(var1_44, function(arg0_45)
-			arg0_44:UpdateTypeCards(arg1_44, arg2_44, iter0_44, iter1_44, var0_44, arg0_45)
+	for iter0_49, iter1_49 in ipairs(arg3_49) do
+		table.insert(var1_49, function(arg0_50)
+			arg0_49:UpdateTypeCards(arg1_49, arg2_49, iter0_49, iter1_49, var0_49, arg0_50)
 		end)
 	end
 
-	seriesAsync(var1_44)
+	seriesAsync(var1_49)
 end
 
-function var0_0.UpdateTypeCards(arg0_46, arg1_46, arg2_46, arg3_46, arg4_46, arg5_46, arg6_46)
-	local var0_46 = {}
-	local var1_46 = arg0_46.cards[arg3_46]
+function var0_0.UpdateTypeCards(arg0_51, arg1_51, arg2_51, arg3_51, arg4_51, arg5_51, arg6_51)
+	local var0_51 = {}
+	local var1_51 = arg0_51.cards[arg3_51]
 
-	local function var2_46(arg0_47)
-		local var0_47 = var1_46[arg0_47]
+	local function var2_51(arg0_52)
+		local var0_52 = var1_51[arg0_52]
 
-		if not var0_47 then
-			var0_47 = var1_46[1]:Clone()
-			var1_46[arg0_47] = var0_47
+		if not var0_52 then
+			var0_52 = var1_51[1]:Clone()
+			var1_51[arg0_52] = var0_52
 		end
 
-		arg5_46[1] = arg5_46[1] + 1
+		arg5_51[1] = arg5_51[1] + 1
 
-		var0_47:Enable()
-		var0_47:Update(arg5_46[1], arg0_47, arg2_46, arg1_46, arg0_46.nativeFlag)
+		var0_52:Enable()
+		var0_52:Update(arg5_51[1], arg0_52, arg2_51, arg1_51, arg0_51.nativeFlag)
 	end
 
-	for iter0_46 = 1, arg4_46 do
-		table.insert(var0_46, function(arg0_48)
-			if arg0_46.exited then
+	for iter0_51 = 1, arg4_51 do
+		table.insert(var0_51, function(arg0_53)
+			if arg0_51.exited then
 				return
 			end
 
-			var2_46(iter0_46)
-			onNextTick(arg0_48)
+			var2_51(iter0_51)
+			onNextTick(arg0_53)
 		end)
 	end
 
-	for iter1_46 = #var1_46, arg4_46 + 1, -1 do
-		var1_46[iter1_46]:Disable()
+	for iter1_51 = #var1_51, arg4_51 + 1, -1 do
+		var1_51[iter1_51]:Disable()
 	end
 
-	seriesAsync(var0_46, arg6_46)
+	seriesAsync(var0_51, arg6_51)
 end
 
-function var0_0.GetUnlockShipCnt(arg0_49, arg1_49)
-	local var0_49 = 0
-	local var1_49 = 0
-	local var2_49 = 0
-	local var3_49 = #arg1_49
-	local var4_49 = arg0_49.unlockCnt - var3_49
-	local var5_49 = arg0_49.max - arg0_49.unlockCnt
+function var0_0.GetUnlockShipCnt(arg0_54, arg1_54)
+	local var0_54 = 0
+	local var1_54 = 0
+	local var2_54 = 0
+	local var3_54 = #arg1_54
+	local var4_54 = arg0_54.unlockCnt - var3_54
+	local var5_54 = arg0_54.max - arg0_54.unlockCnt
 
 	return {
-		var3_49,
-		var4_49,
-		var5_49
+		var3_54,
+		var4_54,
+		var5_54
 	}
 end
 
-function var0_0.EditCards(arg0_50, arg1_50)
-	local var0_50 = {
+function var0_0.EditCards(arg0_55, arg1_55)
+	local var0_55 = {
 		var1_0,
 		var2_0
 	}
 
-	for iter0_50, iter1_50 in ipairs(var0_50) do
-		local var1_50 = arg0_50.cards[iter1_50]
+	for iter0_55, iter1_55 in ipairs(var0_55) do
+		local var1_55 = arg0_55.cards[iter1_55]
 
-		for iter2_50, iter3_50 in ipairs(var1_50) do
-			if isActive(iter3_50._tf) then
-				iter3_50:EditCard(arg1_50)
+		for iter2_55, iter3_55 in ipairs(var1_55) do
+			if isActive(iter3_55._tf) then
+				iter3_55:EditCard(arg1_55)
 			end
 		end
 	end
 
-	arg0_50.IsOpenEdit = arg1_50
+	arg0_55.IsOpenEdit = arg1_55
 end
 
-function var0_0.EditCardsForRandom(arg0_51, arg1_51)
-	local var0_51 = {}
-	local var1_51 = arg0_51.cards[var1_0]
+function var0_0.EditCardsForRandom(arg0_56, arg1_56)
+	local var0_56 = {}
+	local var1_56 = arg0_56.cards[var1_0]
 
-	for iter0_51, iter1_51 in ipairs(var1_51) do
-		if isActive(iter1_51._tf) then
-			if not arg1_51 then
-				var0_51[iter1_51.slotIndex] = iter1_51:GetRandomFlagValue()
+	for iter0_56, iter1_56 in ipairs(var1_56) do
+		if isActive(iter1_56._tf) then
+			if not arg1_56 then
+				var0_56[iter1_56.slotIndex] = iter1_56:GetRandomFlagValue()
 			end
 
-			iter1_51:EditCardForRandom(arg1_51)
+			iter1_56:EditCardForRandom(arg1_56)
 		end
 	end
 
-	arg0_51.IsOpenEditForRandom = arg1_51
+	arg0_56.IsOpenEditForRandom = arg1_56
 
-	if #var0_51 > 0 then
-		arg0_51:SaveRandomSettings(var0_51)
+	if #var0_56 > 0 then
+		arg0_56:SaveRandomSettings(var0_56)
 	end
 
-	local var2_51 = arg0_51.cards[var2_0]
+	local var2_56 = arg0_56.cards[var2_0]
 
-	for iter2_51, iter3_51 in ipairs(var2_51) do
-		if isActive(iter3_51._tf) then
-			iter3_51:EditCard(arg1_51)
+	for iter2_56, iter3_56 in ipairs(var2_56) do
+		if isActive(iter3_56._tf) then
+			iter3_56:EditCard(arg1_56)
 		end
 	end
 end
 
-function var0_0.SaveRandomSettings(arg0_52, arg1_52)
-	local var0_52 = getProxy(PlayerProxy):getRawData()
+function var0_0.SaveRandomSettings(arg0_57, arg1_57)
+	local var0_57 = getProxy(PlayerProxy):getRawData()
 
-	for iter0_52 = 1, arg0_52.max do
-		if not arg1_52[iter0_52] then
-			arg1_52[iter0_52] = var0_52:RawGetRandomShipAndSkinValueInpos(iter0_52)
+	for iter0_57 = 1, arg0_57.max do
+		if not arg1_57[iter0_57] then
+			arg1_57[iter0_57] = var0_57:RawGetRandomShipAndSkinValueInpos(iter0_57)
 		end
 	end
 
-	arg0_52:emit(PlayerVitaeMediator.CHANGE_RANDOM_SETTING, arg1_52)
+	arg0_57:emit(PlayerVitaeMediator.CHANGE_RANDOM_SETTING, arg1_57)
 end
 
-function var0_0.Show(arg0_53)
-	var0_0.super.Show(arg0_53)
+function var0_0.Show(arg0_58)
+	var0_0.super.Show(arg0_58)
 
 	Input.multiTouchEnabled = false
 end
 
-function var0_0.Hide(arg0_54)
-	var0_0.super.Hide(arg0_54)
+function var0_0.Hide(arg0_59)
+	var0_0.super.Hide(arg0_59)
 
-	if arg0_54.IsOpenEdit then
-		triggerButton(arg0_54.settingBtn)
+	if arg0_59.IsOpenEdit then
+		triggerButton(arg0_59.settingBtn)
 	end
 
-	if arg0_54.IsOpenEditForRandom then
-		triggerButton(arg0_54.randomBtn)
+	if arg0_59.IsOpenEditForRandom then
+		triggerButton(arg0_59.randomBtn)
 	end
 
 	Input.multiTouchEnabled = true
 
-	arg0_54:emit(PlayerVitaeScene.ON_PAGE_SWTICH, PlayerVitaeScene.PAGE_DEFAULT)
+	arg0_59:emit(PlayerVitaeScene.ON_PAGE_SWTICH, PlayerVitaeScene.PAGE_DEFAULT)
 end
 
-function var0_0.OnDestroy(arg0_55)
-	arg0_55:Hide()
+function var0_0.OnDestroy(arg0_60)
+	arg0_60:Hide()
 
-	for iter0_55, iter1_55 in pairs(arg0_55.cards) do
-		for iter2_55, iter3_55 in pairs(iter1_55) do
-			iter3_55:Dispose()
+	for iter0_60, iter1_60 in pairs(arg0_60.cards) do
+		for iter2_60, iter3_60 in pairs(iter1_60) do
+			iter3_60:Dispose()
 		end
 	end
 
-	arg0_55.exited = true
+	arg0_60.exited = true
 end
 
 return var0_0

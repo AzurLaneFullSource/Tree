@@ -92,40 +92,47 @@ function var0_0.createPicInfo(arg0_5, arg1_5)
 end
 
 function var0_0.getRandomLoadingPic()
-	if not getProxy(LoadingPicProxy) then
+	local var0_6 = getProxy(LoadingPicProxy)
+
+	if not var0_6 then
 		return nil
 	end
 
-	local var0_6 = getProxy(LoadingPicProxy):getGalleryPicIDList()
-	local var1_6 = getProxy(LoadingPicProxy):getMangaPicIDList()
-	local var2_6 = AppreciatePicConst.filterExistGalleryPicIDList(var0_6)
-	local var3_6 = AppreciatePicConst.filterExistMangaPicIDList(var1_6)
-	local var4_6 = getProxy(LoadingPicProxy):getDiyModeOpenFlag()
-	local var5_6 = #var2_6 + #var3_6
-
-	if not var4_6 or var5_6 == 0 then
-		var2_6 = var0_0.getDefaultGalleryPicIDList()
-		var3_6 = {}
+	if not var0_6:getDiyModeOpenFlag() then
+		return {
+			type = var0_0.TYPE_GALLERY,
+			path = "loadingbg/bg_" .. math.random(1, var0_0.MAX_COUNT)
+		}
 	end
 
-	local var6_6 = #var2_6 + #var3_6
+	local var1_6 = var0_6:getGalleryPicIDList()
+	local var2_6 = var0_6:getMangaPicIDList()
+	local var3_6 = AppreciatePicConst.filterExistGalleryPicIDList(var1_6)
+	local var4_6 = AppreciatePicConst.filterExistMangaPicIDList(var2_6)
 
-	assert(var6_6 > 0, "loading pic count should be greater than 0")
+	if #var3_6 + #var4_6 == 0 then
+		var3_6 = var0_0.getDefaultGalleryPicIDList()
+		var4_6 = {}
+	end
 
-	local var7_6
-	local var8_6 = math.random(1, var6_6)
+	local var5_6 = #var3_6 + #var4_6
 
-	if var8_6 <= #var2_6 then
-		local var9_6 = var2_6[var8_6]
+	assert(var5_6 > 0, "loading pic count should be greater than 0")
 
-		var7_6 = var0_0.createPicInfo(var0_0.TYPE_GALLERY, var9_6)
+	local var6_6
+	local var7_6 = math.random(1, var5_6)
+
+	if var7_6 <= #var3_6 then
+		local var8_6 = var3_6[var7_6]
+
+		var6_6 = var0_0.createPicInfo(var0_0.TYPE_GALLERY, var8_6)
 	else
-		local var10_6 = var3_6[var8_6 - #var2_6]
+		local var9_6 = var4_6[var7_6 - #var3_6]
 
-		var7_6 = var0_0.createPicInfo(var0_0.TYPE_MANGA, var10_6)
+		var6_6 = var0_0.createPicInfo(var0_0.TYPE_MANGA, var9_6)
 	end
 
-	return var7_6
+	return var6_6
 end
 
 function var0_0.checkDownloadMissingPic(arg0_7)

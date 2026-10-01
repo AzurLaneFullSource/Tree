@@ -186,7 +186,15 @@ function var0_0.GetSelBuffIds(arg0_21)
 	local var0_21 = {}
 
 	for iter0_21 = 1, arg0_21 do
-		table.insert(var0_21, var0_0.GetLocalBuffData(iter0_21))
+		local var1_21 = var0_0.GetLocalBuffData(iter0_21)
+
+		if var1_21 ~= 0 and table.contains(var0_21, var1_21) then
+			var1_21 = 0
+
+			var0_0.SetLocalBuffData(iter0_21, var1_21)
+		end
+
+		table.insert(var0_21, var1_21)
 	end
 
 	return var0_21

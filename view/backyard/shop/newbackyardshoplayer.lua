@@ -222,25 +222,130 @@ function var0_0.InitPageFooter(arg0_19)
 	setActive(arg0_19.btnTpl, false)
 end
 
-function var0_0.UpdateSpecialPageFooter(arg0_23)
-	local var0_23 = arg0_23.btns[5]
+function var0_0.getResource(arg0_23, arg1_23)
+	local var0_23 = var0_0.super.getResource(arg0_23, arg1_23)
+	local var1_23 = {}
 
-	setActive(var0_23:Find("new"), getProxy(SettingsProxy):IsTipNewGemFurniture())
+	for iter0_23, iter1_23 in ipairs(var0_23) do
+		var1_23[iter1_23] = true
+	end
+
+	local var2_23 = pg.furniture_shop_template.all
+
+	for iter2_23, iter3_23 in ipairs(var2_23) do
+		local var3_23 = pg.furniture_shop_template[iter3_23]
+
+		if pg.TimeMgr.GetInstance():inTime(var3_23.time) then
+			local var4_23 = pg.furniture_data_template[iter3_23].icon
+			local var5_23 = pg.furniture_data_template[iter3_23].picture
+			local var6_23 = "furnitrues/" .. var5_23
+			local var7_23 = "furnitureicon/" .. var4_23
+
+			if var7_23 ~= "furnitureicon/" and not var1_23[var7_23] then
+				var1_23[var7_23] = true
+
+				table.insert(var0_23, var7_23)
+			end
+
+			local var8_23 = pg.furniture_data_template[iter3_23].type
+			local var9_23 = pg.furniture_data_template[iter3_23].tag
+			local var10_23 = pg.furniture_data_template[iter3_23].spine
+
+			if var6_23 == "furnitrues/" then
+				-- block empty
+			elseif var8_23 == 1 and var9_23 == 3 then
+				for iter4_23 = 1, 4 do
+					if not var1_23[var6_23 .. iter4_23] then
+						var1_23[var6_23 .. iter4_23] = true
+
+						table.insert(var0_23, var6_23 .. iter4_23)
+					end
+				end
+			elseif var10_23 and var10_23 ~= "" then
+				local var11_23
+				local var12_23
+
+				if var10_23[1] and #var10_23[1] > 0 and type(var10_23[1][1]) == "string" then
+					var11_23 = "sfurniture/" .. var10_23[1][1]
+				end
+
+				if var10_23[2] and #var10_23[2] > 0 and type(var10_23[2][1]) == "string" then
+					var12_23 = "sfurniture/" .. var10_23[2][1]
+				end
+
+				if var11_23 and not var1_23[var11_23] then
+					var1_23[var11_23] = true
+
+					table.insert(var0_23, var11_23)
+				end
+
+				if var12_23 and not var1_23[var12_23] then
+					var1_23[var12_23] = true
+
+					table.insert(var0_23, var12_23)
+				end
+			elseif not var1_23[var6_23] then
+				var1_23[var6_23] = true
+
+				table.insert(var0_23, var6_23)
+			end
+		end
+	end
+
+	local var13_23 = getProxy(DormProxy):GetSystemThemes()
+
+	for iter5_23, iter6_23 in ipairs(var13_23) do
+		if iter6_23:getConfig("is_view") == 1 and not iter6_23:IsOverTime() then
+			local var14_23 = iter6_23.id
+			local var15_23 = pg.backyard_theme_template[var14_23].icon
+			local var16_23 = "furnitureicon/" .. var15_23
+
+			if not var1_23[var16_23] then
+				var1_23[var16_23] = true
+
+				table.insert(var0_23, var16_23)
+			end
+
+			local var17_23 = "backyardtheme/theme_" .. var14_23
+
+			if not var1_23[var17_23] then
+				var1_23[var17_23] = true
+
+				table.insert(var0_23, var17_23)
+			end
+
+			local var18_23 = "backyardtheme/" .. var14_23
+
+			if not var1_23[var18_23] then
+				var1_23[var18_23] = true
+
+				table.insert(var0_23, var18_23)
+			end
+		end
+	end
+
+	return var0_23
 end
 
-function var0_0.willExit(arg0_24)
-	arg0_24.isOverlay = false
+function var0_0.UpdateSpecialPageFooter(arg0_24)
+	local var0_24 = arg0_24.btns[5]
 
-	arg0_24.contextData.filterPanel:Destroy()
-	arg0_24.themePage:Destroy()
-	arg0_24.furniturePage:Destroy()
-	arg0_24.contextData.furnitureMsgBox:Destroy()
+	setActive(var0_24:Find("new"), getProxy(SettingsProxy):IsTipNewGemFurniture())
+end
 
-	arg0_24.contextData.furnitureMsgBox = nil
+function var0_0.willExit(arg0_25)
+	arg0_25.isOverlay = false
 
-	arg0_24.contextData.themeMsgBox:Destroy()
+	arg0_25.contextData.filterPanel:Destroy()
+	arg0_25.themePage:Destroy()
+	arg0_25.furniturePage:Destroy()
+	arg0_25.contextData.furnitureMsgBox:Destroy()
 
-	arg0_24.contextData.themeMsgBox = nil
+	arg0_25.contextData.furnitureMsgBox = nil
+
+	arg0_25.contextData.themeMsgBox:Destroy()
+
+	arg0_25.contextData.themeMsgBox = nil
 end
 
 return var0_0

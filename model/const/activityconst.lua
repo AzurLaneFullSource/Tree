@@ -280,4 +280,16 @@ var0_0.IslandPageIdLinks = {
 	}
 }
 
+function var0_0.GetLatestPermanentActivityIds()
+	local var0_5 = {}
+
+	for iter0_5, iter1_5 in ipairs(pg.activity_task_permanent.all) do
+		if pg.activity_task_permanent[iter1_5].activity_group == 1000 then
+			table.insert(var0_5, iter1_5)
+		end
+	end
+
+	return var0_5
+end
+
 return var0_0

@@ -607,7 +607,7 @@ function var0_0.GetAllShowGiftPackages(arg0_73, arg1_73)
 					shop_id = iter1_73
 				}, Goods.TYPE_CHARGE)
 
-				if arg0_73:filterLimitTypeGoods(var7_73, var2_73) then
+				if arg0_73:filterLimitTypeGoods(var7_73, var2_73) and arg0_73:IsVaildBattlePass(var7_73) then
 					table.insert(var0_73, var7_73)
 				end
 			end
@@ -687,48 +687,69 @@ function var0_0.GetAllShowGiftPackages(arg0_73, arg1_73)
 	return var12_73, var13_73
 end
 
-function var0_0.filterLimitTypeGoods(arg0_74, arg1_74, arg2_74)
-	local var0_74 = arg1_74:getConfig("limit_type")
+function var0_0.IsVaildBattlePass(arg0_74, arg1_74)
+	if not arg1_74:isPassItem() then
+		return true
+	end
 
-	return switch(var0_74, {
+	local var0_74 = arg1_74:getConfig("sub_display")[1]
+	local var1_74 = getProxy(ActivityProxy):RawGetActivityById(var0_74)
+
+	if var1_74 and not var1_74:isEnd() then
+		return true
+	end
+
+	local var2_74, var3_74 = PrevPeriodCrusingActivity.StaticExistPrevPeriodCrusingActivity()
+
+	if var2_74 and var0_74 == var3_74 then
+		return true
+	end
+
+	return false
+end
+
+function var0_0.filterLimitTypeGoods(arg0_75, arg1_75, arg2_75)
+	local var0_75 = arg1_75:getConfig("limit_type")
+
+	return switch(var0_75, {
 		[3] = function()
-			if arg1_74:getConfig("limit_arg") ~= 0 or arg1_74:isLevelLimit(arg2_74.level, true) then
+			if arg1_75:getConfig("limit_arg") ~= 0 or arg1_75:isLevelLimit(arg2_75.level, true) then
 				return false
 			end
 
-			local var0_75
-			local var1_75
-			local var2_75
+			local var0_76
+			local var1_76
+			local var2_76
 
-			for iter0_75, iter1_75 in ipairs(arg1_74:getSameLimitGroupTecGoods()) do
-				if iter1_75:getConfig("limit_arg") == 1 then
-					var1_75 = iter1_75
-				elseif iter1_75:getConfig("limit_arg") == 2 then
-					var0_75 = iter1_75
-				elseif iter1_75:getConfig("limit_arg") == 3 then
-					var2_75 = iter1_75
+			for iter0_76, iter1_76 in ipairs(arg1_75:getSameLimitGroupTecGoods()) do
+				if iter1_76:getConfig("limit_arg") == 1 then
+					var1_76 = iter1_76
+				elseif iter1_76:getConfig("limit_arg") == 2 then
+					var0_76 = iter1_76
+				elseif iter1_76:getConfig("limit_arg") == 3 then
+					var2_76 = iter1_76
 				end
 			end
 
-			local var3_75 = ChargeConst.getBuyCount(arg0_74.chargeList, var0_75.id)
-			local var4_75 = ChargeConst.getBuyCount(arg0_74.chargeList, var1_75.id)
-			local var5_75 = ChargeConst.getBuyCount(arg0_74.chargeList, var2_75.id)
+			local var3_76 = ChargeConst.getBuyCount(arg0_75.chargeList, var0_76.id)
+			local var4_76 = ChargeConst.getBuyCount(arg0_75.chargeList, var1_76.id)
+			local var5_76 = ChargeConst.getBuyCount(arg0_75.chargeList, var2_76.id)
 
-			if var4_75 > 0 then
+			if var4_76 > 0 then
 				return false
-			elseif var3_75 > 0 and var5_75 > 0 then
+			elseif var3_76 > 0 and var5_76 > 0 then
 				return false
 			else
 				return true
 			end
 		end,
 		[5] = function()
-			if arg1_74:getConfig("limit_arg") ~= 0 or arg1_74:isLevelLimit(arg2_74.level, true) then
+			if arg1_75:getConfig("limit_arg") ~= 0 or arg1_75:isLevelLimit(arg2_75.level, true) then
 				return false
 			end
 
-			for iter0_76, iter1_76 in ipairs(arg1_74:getSameLimitGroupTecGoods()) do
-				if iter1_76:getConfig("limit_arg") ~= 0 and ChargeConst.getBuyCount(arg0_74.chargeList, iter1_76.id) > 0 then
+			for iter0_77, iter1_77 in ipairs(arg1_75:getSameLimitGroupTecGoods()) do
+				if iter1_77:getConfig("limit_arg") ~= 0 and ChargeConst.getBuyCount(arg0_75.chargeList, iter1_77.id) > 0 then
 					return false
 				end
 			end
@@ -740,23 +761,23 @@ function var0_0.filterLimitTypeGoods(arg0_74, arg1_74, arg2_74)
 	end)
 end
 
-function var0_0.CanPurchasedByCharge(arg0_78, arg1_78)
-	local var0_78 = pg.pay_data_display.get_id_list_by_extra_service[Goods.NON_MAIL] or {}
+function var0_0.CanPurchasedByCharge(arg0_79, arg1_79)
+	local var0_79 = pg.pay_data_display.get_id_list_by_extra_service[Goods.NON_MAIL] or {}
 
-	for iter0_78, iter1_78 in ipairs(var0_78) do
-		local var1_78 = pg.pay_data_display[iter1_78].extra_service_item
+	for iter0_79, iter1_79 in ipairs(var0_79) do
+		local var1_79 = pg.pay_data_display[iter1_79].extra_service_item
 
-		if type(var1_78) == "string" then
-			var1_78 = {}
+		if type(var1_79) == "string" then
+			var1_79 = {}
 		end
 
-		for iter2_78, iter3_78 in ipairs(var1_78) do
-			local var2_78 = iter3_78[1]
-			local var3_78 = iter3_78[2]
-			local var4_78 = iter3_78[3]
+		for iter2_79, iter3_79 in ipairs(var1_79) do
+			local var2_79 = iter3_79[1]
+			local var3_79 = iter3_79[2]
+			local var4_79 = iter3_79[3]
 
-			if var2_78 == DROP_TYPE_SKIN and var3_78 == arg1_78 then
-				return true, iter1_78
+			if var2_79 == DROP_TYPE_SKIN and var3_79 == arg1_79 then
+				return true, iter1_79
 			end
 		end
 	end
@@ -764,24 +785,24 @@ function var0_0.CanPurchasedByCharge(arg0_78, arg1_78)
 	return false
 end
 
-function var0_0.IsSkinTypeCharge(arg0_79, arg1_79)
-	local var0_79 = pg.pay_data_display[arg1_79]
+function var0_0.IsSkinTypeCharge(arg0_80, arg1_80)
+	local var0_80 = pg.pay_data_display[arg1_80]
 
-	assert(var0_79, "pay_data_display" .. arg1_79)
+	assert(var0_80, "pay_data_display" .. arg1_80)
 
-	local var1_79 = var0_79.extra_service_item
+	local var1_80 = var0_80.extra_service_item
 
-	if type(var1_79) == "string" then
-		var1_79 = {}
+	if type(var1_80) == "string" then
+		var1_80 = {}
 	end
 
-	for iter0_79, iter1_79 in ipairs(var1_79) do
-		local var2_79 = iter1_79[1]
-		local var3_79 = iter1_79[2]
-		local var4_79 = iter1_79[3]
+	for iter0_80, iter1_80 in ipairs(var1_80) do
+		local var2_80 = iter1_80[1]
+		local var3_80 = iter1_80[2]
+		local var4_80 = iter1_80[3]
 
-		if var2_79 == DROP_TYPE_SKIN then
-			return true, var3_79
+		if var2_80 == DROP_TYPE_SKIN then
+			return true, var3_80
 		end
 	end
 

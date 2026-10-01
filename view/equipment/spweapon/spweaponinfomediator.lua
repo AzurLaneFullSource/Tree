@@ -7,6 +7,7 @@ var0_0.ON_CHANGE = "SpWeaponInfoMediator.ON_CHANGE"
 var0_0.ON_UNEQUIP = "SpWeaponInfoMediator:ON_UNEQUIP"
 var0_0.ON_MOVE = "SpWeaponInfoMediator:ON_MOVE"
 var0_0.ON_MODIFY = "SpWeaponInfoMediator:ON_MODIFY"
+var0_0.ON_SKIP_UNIQUE_SHIPS = "SpWeaponInfoMediator:ON_SKIP_UNIQUE_SHIPS"
 
 function var0_0.register(arg0_1)
 	arg0_1:BindEvent()
@@ -120,20 +121,33 @@ function var0_0.BindEvent(arg0_2)
 			shipId = arg1_9
 		})
 	end)
+	arg0_2:bind(var0_0.ON_SKIP_UNIQUE_SHIPS, function(arg0_10, arg1_10)
+		local var0_10 = getProxy(ContextProxy):getCurrentContext()
+
+		if var0_10 and var0_10.scene == SCENE.EQUIPSCENE then
+			var0_10.data.warp = StoreHouseConst.WARP_TO_WEAPON
+			var0_10.data.mode = StoreHouseConst.SPWEAPON
+		end
+
+		arg0_2:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
+			shipVOs = arg1_10.shipVOs,
+			mode = DockyardScene.MODE_OVERVIEW
+		})
+	end)
 end
 
-function var0_0.listNotificationInterests(arg0_10)
+function var0_0.listNotificationInterests(arg0_11)
 	return {
 		GAME.EQUIP_SPWEAPON_TO_SHIP_DONE
 	}
 end
 
-function var0_0.handleNotification(arg0_11, arg1_11)
-	local var0_11 = arg1_11:getName()
-	local var1_11 = arg1_11:getBody()
+function var0_0.handleNotification(arg0_12, arg1_12)
+	local var0_12 = arg1_12:getName()
+	local var1_12 = arg1_12:getBody()
 
-	if var0_11 == GAME.EQUIP_SPWEAPON_TO_SHIP_DONE then
-		arg0_11.viewComponent:emit(BaseUI.ON_CLOSE)
+	if var0_12 == GAME.EQUIP_SPWEAPON_TO_SHIP_DONE then
+		arg0_12.viewComponent:emit(BaseUI.ON_CLOSE)
 	end
 end
 

@@ -196,8 +196,8 @@ function var0_0.Setup(arg0_8, arg1_8)
 	arg0_8.id = arg1_8.item_id
 	arg0_8.flag = arg1_8.item_flag
 	arg0_8.data = arg1_8.item_data
-	arg0_8.effects = underscore.rest(arg1_8.effect_list, 1)
-	arg0_8.buffList = underscore.rest(arg1_8.buff_list, 1)
+	arg0_8.effects = underscore.to_array(arg1_8.effect_list)
+	arg0_8.buffList = underscore.to_array(arg1_8.buff_list)
 	arg0_8.hp = arg1_8.boss_hp
 
 	arg0_8:InitConfig()
@@ -284,7 +284,7 @@ function var0_0.UpdateData(arg0_15, arg1_15, arg2_15)
 	arg0_15.data = arg1_15
 
 	if arg0_15.type == var0_0.TypeEvent then
-		arg0_15.effects = underscore.rest(arg2_15, 1)
+		arg0_15.effects = underscore.to_array(arg2_15)
 	end
 
 	arg0_15:DispatchEvent(var0_0.EventUpdateData)

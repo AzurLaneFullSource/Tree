@@ -29,7 +29,8 @@ function var1_0.onAircraftCreate(arg0_3, arg1_3, arg2_3, arg3_3)
 		buffID = arg0_3._buffID,
 		rant = arg0_3._rant,
 		level = arg0_3._level,
-		buff_level = arg0_3._buffLevel
+		buff_level = arg0_3._buffLevel,
+		group_level = arg0_3._level
 	}
 	local var1_3 = arg3_3.aircraft:GetWeapon()
 

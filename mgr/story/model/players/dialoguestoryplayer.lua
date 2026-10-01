@@ -938,31 +938,34 @@ function var0_0.UpdateMeshPainting(arg0_63, arg1_63, arg2_63, arg3_63, arg4_63, 
 			var5_63 = -var5_63
 		end
 
+		local var6_63 = arg1_63:GetPaintingZRotation()
+
+		arg2_63.localEulerAngles = Vector3(0, 0, var6_63)
 		arg2_63.localScale = Vector3(var4_63, var5_63, 1)
 
-		local var6_63 = findTF(arg2_63, "fitter"):GetChild(0)
+		local var7_63 = findTF(arg2_63, "fitter"):GetChild(0)
 
-		var6_63.name = var0_63
+		var7_63.name = var0_63
 
 		arg0_63:UpdateActorPostion(arg2_63, arg1_63)
-		arg0_63:UpdateExpression(var6_63, arg1_63)
-		arg0_63:AddGlitchArtEffectForPating(arg2_63, var6_63, arg1_63)
+		arg0_63:UpdateExpression(var7_63, arg1_63)
+		arg0_63:AddGlitchArtEffectForPating(arg2_63, var7_63, arg1_63)
 		arg2_63:SetAsLastSibling()
 
 		if arg1_63:ShouldGrayPainting() then
-			setGray(var6_63, true, true)
+			setGray(var7_63, true, true)
 		end
 
-		local var7_63 = findTF(var6_63, "shadow")
-
-		if var7_63 then
-			setActive(var7_63, arg1_63:ShouldFaceBlack())
-		end
-
-		local var8_63 = arg1_63:GetPaintingAlpha()
+		local var8_63 = findTF(var7_63, "shadow")
 
 		if var8_63 then
-			arg0_63:setPaintingAlpha(arg2_63, var8_63)
+			setActive(var8_63, arg1_63:ShouldFaceBlack())
+		end
+
+		local var9_63 = arg1_63:GetPaintingAlpha()
+
+		if var9_63 then
+			arg0_63:setPaintingAlpha(arg2_63, var9_63)
 		end
 	end
 

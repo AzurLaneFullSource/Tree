@@ -162,7 +162,7 @@ function var0_0.riseTaskFinishCount(arg0_16)
 end
 
 function var0_0.getDailyTaskIds(arg0_17)
-	return underscore.rest(arg0_17.dailyTaskIds, 1)
+	return underscore.to_array(arg0_17.dailyTaskIds)
 end
 
 function var0_0.UpdateDailyTaskIds(arg0_18, arg1_18)
@@ -194,7 +194,7 @@ function var0_0.checkDailyTask(arg0_19, arg1_19)
 						arg0_19:checkDailyTask()
 					end, arg0_19.dailyTimeStemp - pg.TimeMgr.GetInstance():GetServerTime() + 1)
 
-					arg0_19:UpdateDailyTaskIds(underscore.rest(arg0_21.task_list, 1))
+					arg0_19:UpdateDailyTaskIds(underscore.to_array(arg0_21.task_list))
 				else
 					pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg0_21.result))
 				end

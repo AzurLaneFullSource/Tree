@@ -76,7 +76,7 @@ function var0_0.UpdateTask(arg0_7, arg1_7, arg2_7)
 
 	setText(arg1_7:Find("canvas/Text"), var2_7)
 
-	local var5_7 = underscore.rest(arg2_7:getConfig("award_display"), 1)
+	local var5_7 = underscore.to_array(arg2_7:getConfig("award_display"))
 
 	while #var5_7 > 3 do
 		table.remove(var5_7)

@@ -4,10 +4,11 @@ return {
 	fadeOut = 1.5,
 	scripts = {
 		{
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "A makeshift podium stands out amidst the morning light.",
 			bgm = "story-dailyfuture-soft",
 			typewriter = {
@@ -25,10 +26,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_highschool_future",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "A public briefing on last night's events, also doubling as an awards ceremony, is about to begin.",
 			typewriter = {
 				speed = 0.05,
@@ -41,6 +43,7 @@ return {
 			bgName = "bg_highschool_future",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -51,11 +54,12 @@ return {
 			}
 		},
 		{
-			actor = 900557,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "Poltergeist Operative",
 			dir = 1,
+			actor = 900557,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "It's a formal event, after all. Stand up straight, rookie – and quit looking around.",
@@ -74,6 +78,7 @@ return {
 			bgName = "bg_highschool_future",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -84,12 +89,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "bg_highschool_future",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "It's okay. Just relax and smile, and you'll be fine. I'll handle the rest.",
 			typewriter = {
 				speed = 0.05,
@@ -97,10 +103,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_highschool_future",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Traces of last night's chaos remain throughout the city, but the crowd's energy is surprisingly high.",
 			typewriter = {
 				speed = 0.05,
@@ -108,10 +115,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_highschool_future",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Amidst their heated debating, the envoy from City No. 1 takes the podium.",
 			typewriter = {
 				speed = 0.05,
@@ -119,11 +127,12 @@ return {
 			}
 		},
 		{
-			actor = 102092,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "City No. 1 Special Envoy",
 			dir = 1,
+			actor = 102092,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Thanks for waiting, everyone!",
@@ -133,11 +142,12 @@ return {
 			}
 		},
 		{
-			actor = 102092,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "City No. 1 Special Envoy",
 			dir = 1,
+			actor = 102092,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "I'm Cleveland, here to represent New Era City No. 1! I've come with a message from the Council of Eight.",
@@ -147,11 +157,12 @@ return {
 			}
 		},
 		{
-			actor = 102092,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "City No. 1 Special Envoy",
 			dir = 1,
+			actor = 102092,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "First, I'd like to express my respect for the people who fought on the front lines against the poltergeist incursion.",
@@ -161,11 +172,12 @@ return {
 			}
 		},
 		{
-			actor = 102092,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "City No. 1 Special Envoy",
 			dir = 1,
+			actor = 102092,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Special thanks to the people from the Office of Paranormal Affairs, who successfully contained the anomaly, brought order to the city, and made great contributions to the following containment effort.",
@@ -175,11 +187,12 @@ return {
 			}
 		},
 		{
-			actor = 102092,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "City No. 1 Special Envoy",
 			dir = 1,
+			actor = 102092,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "After discussing it with the Council, we've decided that the OPA will be transitioning from a civilian organization to an official agency of New Era City No. 7, effective immediately!",
@@ -189,10 +202,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_highschool_future",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "After a brief silence, the plaza is filled with thunderous applause.",
 			typewriter = {
 				speed = 0.05,
@@ -200,11 +214,12 @@ return {
 			}
 		},
 		{
-			actor = 231211,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "W-we're an official agency?! We'll be government employees?!",
@@ -214,12 +229,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "bg_highschool_future",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "That means we can file reimbursement claims for future missions.",
 			typewriter = {
 				speed = 0.05,
@@ -232,6 +248,7 @@ return {
 			bgName = "bg_highschool_future",
 			factiontag = "Poltergeist Operative",
 			dir = 1,
+			NextIcon = 1,
 			actor = 900557,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -246,11 +263,12 @@ return {
 			}
 		},
 		{
-			actor = 102092,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "City No. 1 Special Envoy",
 			dir = 1,
+			actor = 102092,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Furthermore, the Council would like to publicly commend those who made great contributions to the operation.",
@@ -260,11 +278,12 @@ return {
 			}
 		},
 		{
-			actor = 102092,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "City No. 1 Special Envoy",
 			dir = 1,
+			actor = 102092,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Namely, the Commander and the Field Ops Team of the OPA!",
@@ -274,10 +293,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_highschool_future",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Spotlights and cameras all swing toward us.",
 			typewriter = {
 				speed = 0.05,
@@ -290,6 +310,7 @@ return {
 			bgName = "bg_highschool_future",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -300,11 +321,12 @@ return {
 			}
 		},
 		{
-			actor = 900557,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "Poltergeist Operative",
 			dir = 1,
+			actor = 900557,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Heheh! Looks like I'll be the star of the show today~",
@@ -318,13 +340,14 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
+			stopbgm = true,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "City No. 1 Special Envoy",
 			dir = 1,
+			NextIcon = 1,
 			actor = 102092,
-			stopbgm = true,
+			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Though poltergeists threaten the progress of the Happy City Project, this victory has proven something once and for all.",
 			typewriter = {
@@ -333,11 +356,12 @@ return {
 			}
 		},
 		{
-			actor = 102092,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "City No. 1 Special Envoy",
 			dir = 1,
+			actor = 102092,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Poltergeists are NOT beyond our control. There is no enemy we cannot defeat!",
@@ -347,10 +371,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_highschool_future",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Her cape flutters in the wind as she takes a step forward.",
 			typewriter = {
 				speed = 0.05,
@@ -358,11 +383,12 @@ return {
 			}
 		},
 		{
-			actor = 102092,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "City No. 1 Special Envoy",
 			dir = 1,
+			actor = 102092,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "The Happy City Project has only one goal: to bring happiness to all of mankind!",
@@ -372,6 +398,7 @@ return {
 			}
 		},
 		{
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "City No. 1 Special Envoy",
@@ -387,11 +414,12 @@ return {
 			}
 		},
 		{
-			actor = 102092,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "City No. 1 Special Envoy",
 			dir = 1,
+			actor = 102092,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Containment can't be the end goal. We cannot be satisfied with simply locking the poltergeists away and filing them away in our records.",
@@ -401,11 +429,12 @@ return {
 			}
 		},
 		{
-			actor = 102092,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "City No. 1 Special Envoy",
 			dir = 1,
+			actor = 102092,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "We must research, understand, and ultimately, annihilate them!",
@@ -415,10 +444,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_highschool_future",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "The crowd roars with applause. Even the security staff smile proudly.",
 			typewriter = {
 				speed = 0.05,
@@ -431,6 +461,7 @@ return {
 			bgName = "bg_highschool_future",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 9600030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -441,12 +472,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "bg_highschool_future",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "It's a stirring speech, sure. But...",
 			typewriter = {
 				speed = 0.05,
@@ -459,6 +491,7 @@ return {
 			bgName = "bg_highschool_future",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -469,10 +502,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_highschool_future",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Before I can say anything, the large screen above the podium begins to flicker.",
 			bgm = "story-visioncity-1",
 			typewriter = {
@@ -481,11 +515,12 @@ return {
 			}
 		},
 		{
-			actor = 102092,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "City No. 1 Special Envoy",
 			dir = 1,
+			actor = 102092,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Hmm?",
@@ -495,11 +530,12 @@ return {
 			}
 		},
 		{
-			side = 2,
+			nameColor = "#A9F548FF",
 			actorName = "PA System",
 			bgName = "bg_highschool_future",
 			hidePaintObj = true,
-			nameColor = "#A9F548FF",
+			side = 2,
+			NextIcon = 1,
 			say = "Warning! Warning! Anomalous signal encroaching!",
 			typewriter = {
 				speed = 0.05,
@@ -507,10 +543,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_highschool_future",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "After a burst of violent static, a face comes on screen again.",
 			typewriter = {
 				speed = 0.05,
@@ -545,11 +582,12 @@ return {
 			}
 		},
 		{
-			side = 2,
 			actorName = "???",
+			side = 2,
 			bgName = "bg_youyingmicheng_cg2",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "Testing, testing~ Can you all hear me, you little people playing inside your mud boxes?",
@@ -559,11 +597,12 @@ return {
 			}
 		},
 		{
-			side = 2,
 			actorName = "???",
+			side = 2,
 			bgName = "bg_youyingmicheng_cg2",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "Hmph... I'm afraid I'll never get used to using a form of speech that you can comprehend.",
@@ -573,11 +612,12 @@ return {
 			}
 		},
 		{
-			side = 2,
 			actorName = "???",
+			side = 2,
 			bgName = "bg_youyingmicheng_cg2",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "Forget it. I suppose I should introduce myself, if I hope to explain to you how this conflagration started.",
@@ -587,11 +627,12 @@ return {
 			}
 		},
 		{
-			side = 2,
 			actorName = "???",
+			side = 2,
 			bgName = "bg_youyingmicheng_cg2",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "According to your stale human traditions... I suppose the \"bad guy\" is meant to introduce herself, strike a pose, and recite some tedious spiel right now.",
@@ -602,11 +643,12 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "???",
+			nameColor = "#FF9B93",
 			bgName = "bg_youyingmicheng_cg2",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#FF9B93",
+			NextIcon = 1,
+			actorName = "???",
 			say = "Well, I'm so sorry, but I have no interest in your trite expectations.",
 			typewriter = {
 				speed = 0.05,
@@ -614,11 +656,12 @@ return {
 			}
 		},
 		{
-			side = 2,
 			actorName = "???",
+			side = 2,
 			bgName = "bg_youyingmicheng_cg2",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "As such, let's just get to business.",
@@ -628,13 +671,14 @@ return {
 			}
 		},
 		{
-			nameColor = "#FF9B93",
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_youyingmicheng_cg3",
 			factiontag = "Poltergeist",
 			dir = 1,
-			soundeffect = "event:/battle/boom2",
 			actorName = "???",
+			soundeffect = "event:/battle/boom2",
+			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "Watch this. Boom!",
 			typewriter = {
@@ -705,11 +749,12 @@ return {
 			}
 		},
 		{
-			side = 2,
 			actorName = "???",
+			side = 2,
 			bgName = "bg_youyingmicheng_cg3",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "Your poor, beloved Happy City Project is going to be turned into ash before your very eyes!",
@@ -719,10 +764,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_youyingmicheng_cg3",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "As those words leave her lips, the screen changes.",
 			typewriter = {
 				speed = 0.05,
@@ -736,6 +782,7 @@ return {
 			factiontag = "City No. 1 Special Envoy",
 			dir = 1,
 			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			actorName = "Cleveland",
 			hidePaintObj = true,
 			say = "Wha?!",
@@ -768,6 +815,7 @@ return {
 			factiontag = "City No. 1 Special Envoy",
 			dir = 1,
 			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			actorName = "Cleveland",
 			hidePaintObj = true,
 			say = "Cities 5, 6... and even 3 and 4...",
@@ -800,6 +848,7 @@ return {
 			factiontag = "City No. 1 Special Envoy",
 			dir = 1,
 			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			actorName = "Cleveland",
 			hidePaintObj = true,
 			say = "Number 2 is sending out an alert, too?!",
@@ -832,6 +881,7 @@ return {
 			factiontag = "City No. 1 Special Envoy",
 			dir = 1,
 			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			actorName = "Cleveland",
 			hidePaintObj = true,
 			say = "I'm sorry, everybody. I have to head back to City No. 1 at once!",
@@ -841,10 +891,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_youyingmicheng_2",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "I gaze at the girl grinning onscreen – and then at Golden Hind, who looks clearly guarded.",
 			typewriter = {
 				speed = 0.05,
@@ -852,12 +903,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "bg_youyingmicheng_2",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "Is she the dangerous one you mentioned?",
 			typewriter = {
 				speed = 0.05,
@@ -870,6 +922,7 @@ return {
 			bgName = "bg_youyingmicheng_2",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 9600030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -880,11 +933,12 @@ return {
 			}
 		},
 		{
-			side = 2,
 			actorName = "Azuchi",
+			side = 2,
 			bgName = "bg_youyingmicheng_cg3",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "\"Responsibility, duty, the courage to stand strong... They aren't burdens – they're a future that you must face.\"",
@@ -911,11 +965,12 @@ return {
 			}
 		},
 		{
-			side = 2,
 			actorName = "Azuchi",
+			side = 2,
 			bgName = "bg_youyingmicheng_cg3",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "\"Containment can't be the end goal. We cannot be satisfied with simply locking the humans away and marking them for servitude.\"",
@@ -925,11 +980,12 @@ return {
 			}
 		},
 		{
-			side = 2,
 			actorName = "Azuchi",
+			side = 2,
 			bgName = "bg_youyingmicheng_cg3",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "\"We must research, understand, and ultimately, subjugate them.\"",
@@ -939,11 +995,12 @@ return {
 			}
 		},
 		{
-			side = 2,
 			actorName = "Azuchi",
+			side = 2,
 			bgName = "bg_youyingmicheng_cg3",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "Heehee. I'll see you in the new world that rises from the ashes of yours.",

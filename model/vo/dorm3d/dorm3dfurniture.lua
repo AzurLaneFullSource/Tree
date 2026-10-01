@@ -65,7 +65,15 @@ function var0_0.GetIcon(arg0_10)
 	return arg0_10:getConfig("icon")
 end
 
-function var0_0.GetModel(arg0_11)
+function var0_0.GetModel(arg0_11, arg1_11)
+	if arg1_11 == 2 then
+		local var0_11 = arg0_11:getConfig("model_night")
+
+		if var0_11 and var0_11 ~= "" then
+			return var0_11
+		end
+	end
+
 	return arg0_11:getConfig("model")
 end
 

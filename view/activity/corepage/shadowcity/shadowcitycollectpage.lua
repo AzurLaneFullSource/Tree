@@ -54,17 +54,22 @@ function var0_0.OnUpdateItem(arg0_4, arg1_4, arg2_4)
 		type = var0_4.config.type,
 		id = var0_4.config.drop_id
 	}):getName())
+
+	if var2_4.type == 4 then
+		local var3_4 = Ship.getGroupIdByConfigId(var0_4.config.drop_id)
+
+		var0_4.count = #getProxy(BayProxy):findShipsByGroup(var3_4)
+
+		setActive(arg2_4:Find("got"), var0_4.count >= 1)
+	else
+		setActive(arg2_4:Find("got"), var0_4.count == var0_4.config.count)
+	end
+
 	arg0_4:RefreshCountText(var0_4, arg2_4)
 
 	GetOrAddComponent(arg2_4:Find("owner"), typeof(CanvasGroup)).alpha = var0_4.count == var0_4.config.count and 0.5 or 1
 
 	setActive(arg2_4:Find("new"), var0_4.config.is_new == "1")
-
-	if var2_4.type == 4 then
-		setActive(arg2_4:Find("got"), var0_4.count >= 1)
-	else
-		setActive(arg2_4:Find("got"), var0_4.count == var0_4.config.count)
-	end
 end
 
 function var0_0.IsShowingPopWindow(arg0_6)

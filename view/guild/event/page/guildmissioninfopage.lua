@@ -252,12 +252,15 @@ function var0_0.InitBattleSea(arg0_22)
 	end
 
 	table.insert(var0_22, function(arg0_24)
+		arg0_22:downloadBattleShipResList(var2_22, var3_22, arg0_24)
+	end)
+	table.insert(var0_22, function(arg0_25)
 		arg0_22.battleView:LoadShip(var2_22, var3_22, var4_22, function()
 			if var2_22 then
 				arg0_22:CheckNodesState()
 			end
 
-			arg0_24()
+			arg0_25()
 		end)
 	end)
 	seriesAsync(var0_22, function()
@@ -265,193 +268,283 @@ function var0_0.InitBattleSea(arg0_22)
 	end)
 end
 
-function var0_0.AddOtherShipMoveTimer(arg0_27)
-	local function var0_27(arg0_28)
-		local var0_28 = {}
-		local var1_28 = arg0_27.mission:GetOtherShips()
+function var0_0.AddOtherShipMoveTimer(arg0_28)
+	local function var0_28(arg0_29)
+		local var0_29 = {}
+		local var1_29 = arg0_28.mission:GetOtherShips()
 
-		if #var1_28 == 0 then
-			return var0_28
+		if #var1_29 == 0 then
+			return var0_29
 		end
 
-		if arg0_28 >= #var1_28 then
-			return var1_28
+		if arg0_29 >= #var1_29 then
+			return var1_29
 		end
 
-		shuffle(var1_28)
+		shuffle(var1_29)
 
-		for iter0_28 = 1, arg0_28 do
-			table.insert(var0_28, var1_28[iter0_28])
+		for iter0_29 = 1, arg0_29 do
+			table.insert(var0_29, var1_29[iter0_29])
 		end
 
-		return var0_28
+		return var0_29
 	end
 
-	local var1_27
+	local var1_28
 
-	local function var2_27()
-		if arg0_27.timer then
-			arg0_27.timer:Stop()
+	local function var2_28()
+		if arg0_28.timer then
+			arg0_28.timer:Stop()
 
-			arg0_27.timer = nil
+			arg0_28.timer = nil
 		end
 
-		local var0_29 = math.random(30, 150)
+		local var0_30 = math.random(30, 150)
 
-		arg0_27.timer = Timer.New(function()
-			local var0_30 = math.random(1, 2)
-			local var1_30 = var0_27(var0_30)
+		arg0_28.timer = Timer.New(function()
+			local var0_31 = math.random(1, 2)
+			local var1_31 = var0_28(var0_31)
 
-			arg0_27.battleView:PlayOtherShipAnim(var1_30, var2_27)
-		end, var0_29, 1)
+			arg0_28.battleView:PlayOtherShipAnim(var1_31, var2_28)
+		end, var0_30, 1)
 
-		arg0_27.timer:Start()
+		arg0_28.timer:Start()
 	end
 
-	var2_27()
+	var2_28()
 end
 
-function var0_0.CheckNodesState(arg0_31)
-	local function var0_31(arg0_32)
-		if arg0_32:IsItemType() then
-			arg0_31.battleView:PlayItemAnim()
-		elseif arg0_32:IsBattleType() then
-			arg0_31.battleView:PlayAttackAnim()
+function var0_0.CheckNodesState(arg0_32)
+	local function var0_32(arg0_33)
+		if arg0_33:IsItemType() then
+			arg0_32.battleView:PlayItemAnim()
+		elseif arg0_33:IsBattleType() then
+			arg0_32.battleView:PlayAttackAnim()
 		end
 	end
 
-	local var1_31 = arg0_31.mission
-	local var2_31 = var1_31:GetNewestSuccessNode()
+	local var1_32 = arg0_32.mission
+	local var2_32 = var1_32:GetNewestSuccessNode()
 
-	if var2_31 then
-		local var3_31 = var1_31:GetNodeAnimPosistion()
-		local var4_31 = var2_31:GetPosition()
+	if var2_32 then
+		local var3_32 = var1_32:GetNodeAnimPosistion()
+		local var4_32 = var2_32:GetPosition()
 
-		if var3_31 < var4_31 then
-			var0_31(var2_31)
-			arg0_31:emit(GuildEventMediator.ON_UPDATE_NODE_ANIM_FLAG, var1_31.id, var4_31)
+		if var3_32 < var4_32 then
+			var0_32(var2_32)
+			arg0_32:emit(GuildEventMediator.ON_UPDATE_NODE_ANIM_FLAG, var1_32.id, var4_32)
 		end
 	end
 end
 
-function var0_0.AddRefreshProgressTimer(arg0_33)
-	arg0_33:RemoveCdTimer()
-	arg0_33:RemoveRefreshTimer()
+function var0_0.AddRefreshProgressTimer(arg0_34)
+	arg0_34:RemoveCdTimer()
+	arg0_34:RemoveRefreshTimer()
 
-	local var0_33 = arg0_33.mission
-	local var1_33 = var0_33:GetTotalTimeCost()
-	local var2_33 = not var0_33:IsFinish() and var1_33 > 0
+	local var0_34 = arg0_34.mission
+	local var1_34 = var0_34:GetTotalTimeCost()
+	local var2_34 = not var0_34:IsFinish() and var1_34 > 0
 
-	if var2_33 then
-		assert(var1_33 > 900, var1_33)
+	if var2_34 then
+		assert(var1_34 > 900, var1_34)
 
-		local var3_33 = var1_33 * 0.01
+		local var3_34 = var1_34 * 0.01
 
-		arg0_33.refreshTimer = Timer.New(function()
-			arg0_33:RemoveRefreshTimer()
-			arg0_33:emit(GuildEventMediator.FORCE_REFRESH_MISSION, var0_33.id)
-		end, var3_33, 1)
+		arg0_34.refreshTimer = Timer.New(function()
+			arg0_34:RemoveRefreshTimer()
+			arg0_34:emit(GuildEventMediator.FORCE_REFRESH_MISSION, var0_34.id)
+		end, var3_34, 1)
 
-		arg0_33.refreshTimer:Start()
+		arg0_34.refreshTimer:Start()
 
-		local var4_33 = var0_33:GetRemainingTime()
+		local var4_34 = var0_34:GetRemainingTime()
 
-		if var4_33 > 0 then
-			arg0_33.cdTimer = Timer.New(function()
-				var4_33 = var4_33 - 1
+		if var4_34 > 0 then
+			arg0_34.cdTimer = Timer.New(function()
+				var4_34 = var4_34 - 1
 
-				if var4_33 <= 0 then
-					arg0_33:RemoveCdTimer()
-					setActive(arg0_33.timeTxt.gameObject.transform.parent, false)
+				if var4_34 <= 0 then
+					arg0_34:RemoveCdTimer()
+					setActive(arg0_34.timeTxt.gameObject.transform.parent, false)
 				else
-					arg0_33.timeTxt.text = pg.TimeMgr.GetInstance():DescCDTime(var4_33)
+					arg0_34.timeTxt.text = pg.TimeMgr.GetInstance():DescCDTime(var4_34)
 				end
 			end, 1, -1)
 
-			arg0_33.cdTimer:Start()
-			arg0_33.cdTimer.func()
+			arg0_34.cdTimer:Start()
+			arg0_34.cdTimer.func()
 		else
-			setActive(arg0_33.timeTxt.gameObject.transform.parent, false)
+			setActive(arg0_34.timeTxt.gameObject.transform.parent, false)
 		end
 	end
 
-	setActive(arg0_33.timeTxt.gameObject.transform.parent, var2_33)
+	setActive(arg0_34.timeTxt.gameObject.transform.parent, var2_34)
 end
 
-function var0_0.RemoveCdTimer(arg0_36)
-	if arg0_36.cdTimer then
-		arg0_36.cdTimer:Stop()
+function var0_0.RemoveCdTimer(arg0_37)
+	if arg0_37.cdTimer then
+		arg0_37.cdTimer:Stop()
 
-		arg0_36.cdTimer = nil
+		arg0_37.cdTimer = nil
 	end
 end
 
-function var0_0.ShowOrHideLogPanel(arg0_37, arg1_37, arg2_37)
-	arg2_37 = arg2_37 or 0.3
+function var0_0.getResource(arg0_38, arg1_38)
+	local var0_38 = var0_0.super.getResource(arg0_38, arg1_38)
 
-	if LeanTween.isTweening(arg0_37.logPanel) then
+	local function var1_38(arg0_39)
+		if not table.contains(var0_38, arg0_39) then
+			table.insert(var0_38, arg0_39)
+		end
+	end
+
+	var1_38("guildnode/box")
+	var1_38("guildnode/battle")
+	var1_38("ui/guildmissioninfoui_atlas")
+	var1_38("ui/guildformationui_atlas")
+
+	local var2_38 = ys.Battle.BattleResourceManager
+
+	table.insertto(var0_38, var2_38.GetDisplayCommonResource())
+	table.insertto(var0_38, var2_38.GetMapResource(var1_0))
+
+	local var3_38 = pg.enemy_data_statistics[10]
+
+	var1_38(var2_38.GetCharacterPath(var3_38.prefab))
+
+	local var4_38 = pg.enemy_data_statistics[1028]
+
+	var1_38(var2_38.GetCharacterPath(var4_38.prefab))
+
+	local var5_38 = getProxy(GuildProxy):getData():GetActiveEvent():GetMissions()
+
+	for iter0_38, iter1_38 in ipairs(var5_38) do
+		for iter2_38, iter3_38 in ipairs(iter1_38) do
+			local var6_38 = iter3_38:GetMyShips()
+
+			for iter4_38, iter5_38 in ipairs(var6_38) do
+				local var7_38 = getProxy(BayProxy):getShipById(iter5_38)
+
+				if var7_38 then
+					local var8_38 = var7_38:getPrefab()
+
+					table.insert(var0_38, "char/" .. var8_38)
+					table.insert(var0_38, "herohrzicon/" .. var8_38)
+				end
+			end
+		end
+	end
+
+	return var0_38
+end
+
+function var0_0.downloadBattleShipResList(arg0_40, arg1_40, arg2_40, arg3_40)
+	local var0_40 = ys.Battle.BattleResourceManager
+	local var1_40 = {}
+
+	if arg1_40 then
+		table.insert(var1_40, var0_40.GetCharacterPath(arg1_40:getPrefab()))
+
+		if arg1_40:getShipType() ~= ShipType.WeiXiu then
+			for iter0_40, iter1_40 in ipairs(arg2_40) do
+				if iter1_40 ~= 0 then
+					local var2_40 = ys.Battle.BattleDataFunction.GetWeaponDataFromID(iter1_40).weapon_id
+
+					for iter2_40, iter3_40 in ipairs(var2_40) do
+						local var3_40 = var0_40.GetWeaponResource(iter3_40)
+
+						for iter4_40, iter5_40 in ipairs(var3_40) do
+							if not table.contains(var1_40, iter5_40) and string.sub(iter5_40, -#"/") ~= "/" then
+								table.insert(var1_40, iter5_40)
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+
+	if #var1_40 == 0 then
+		arg3_40()
+
 		return
 	end
 
-	local var0_37 = arg0_37.logPanel.rect.width + 300
-	local var1_37 = arg1_37 and var0_37 or 0
-	local var2_37 = arg1_37 and 0 or var0_37
+	SplitPackConst.DownloadByLuaArr(var1_40, function()
+		if not arg0_40.loading then
+			return
+		end
 
-	LeanTween.value(arg0_37.logPanel.gameObject, var1_37, var2_37, arg2_37):setOnUpdate(System.Action_float(function(arg0_38)
-		setAnchoredPosition(arg0_37.logPanel, {
-			x = arg0_38
+		arg3_40()
+	end)
+end
+
+function var0_0.ShowOrHideLogPanel(arg0_42, arg1_42, arg2_42)
+	arg2_42 = arg2_42 or 0.3
+
+	if LeanTween.isTweening(arg0_42.logPanel) then
+		return
+	end
+
+	local var0_42 = arg0_42.logPanel.rect.width + 300
+	local var1_42 = arg1_42 and var0_42 or 0
+	local var2_42 = arg1_42 and 0 or var0_42
+
+	LeanTween.value(arg0_42.logPanel.gameObject, var1_42, var2_42, arg2_42):setOnUpdate(System.Action_float(function(arg0_43)
+		setAnchoredPosition(arg0_42.logPanel, {
+			x = arg0_43
 		})
 	end)):setOnComplete(System.Action(function()
-		if not arg1_37 then
-			setActive(arg0_37.logPanel, false)
+		if not arg1_42 then
+			setActive(arg0_42.logPanel, false)
 		end
 	end))
 
-	arg0_37.isShowLogPanel = arg1_37
+	arg0_42.isShowLogPanel = arg1_42
 
-	if arg1_37 then
-		setActive(arg0_37.logPanel, true)
-		arg0_37:InitLogs()
+	if arg1_42 then
+		setActive(arg0_42.logPanel, true)
+		arg0_42:InitLogs()
 	end
 end
 
-function var0_0.InitLogs(arg0_40)
-	local var0_40 = arg0_40.mission:GetLogs()
+function var0_0.InitLogs(arg0_45)
+	local var0_45 = arg0_45.mission:GetLogs()
 
-	arg0_40.logList:make(function(arg0_41, arg1_41, arg2_41)
-		if arg0_41 == UIItemList.EventUpdate then
-			setText(arg2_41, var0_40[arg1_41 + 1])
+	arg0_45.logList:make(function(arg0_46, arg1_46, arg2_46)
+		if arg0_46 == UIItemList.EventUpdate then
+			setText(arg2_46, var0_45[arg1_46 + 1])
 		end
 	end)
-	arg0_40.logList:align(#var0_40)
+	arg0_45.logList:align(#var0_45)
 end
 
-function var0_0.RemoveRefreshTimer(arg0_42)
-	if arg0_42.refreshTimer then
-		arg0_42.refreshTimer:Stop()
+function var0_0.RemoveRefreshTimer(arg0_47)
+	if arg0_47.refreshTimer then
+		arg0_47.refreshTimer:Stop()
 
 		refreshTimer = nil
 	end
 end
 
-function var0_0.Hide(arg0_43)
-	arg0_43:ShowOrHideLogPanel(false, 0)
-	var0_0.super.Hide(arg0_43)
+function var0_0.Hide(arg0_48)
+	arg0_48:ShowOrHideLogPanel(false, 0)
+	var0_0.super.Hide(arg0_48)
 
-	if arg0_43.battleView then
-		arg0_43.battleView:clear()
+	if arg0_48.battleView then
+		arg0_48.battleView:clear()
 
-		arg0_43.battleView = nil
+		arg0_48.battleView = nil
 	end
 
-	if arg0_43.timer then
-		arg0_43.timer:Stop()
+	if arg0_48.timer then
+		arg0_48.timer:Stop()
 
-		arg0_43.timer = nil
+		arg0_48.timer = nil
 	end
 
-	arg0_43:RemoveRefreshTimer()
-	arg0_43:RemoveCdTimer()
+	arg0_48:RemoveRefreshTimer()
+	arg0_48:RemoveCdTimer()
 end
 
 return var0_0

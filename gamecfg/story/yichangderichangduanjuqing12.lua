@@ -5,11 +5,12 @@ return {
 	scripts = {
 		{
 			expression = 1,
+			side = 2,
 			nameColor = "#A9F548FF",
-			actor = 201401,
 			hidePaintObj = true,
 			dir = 1,
-			side = 2,
+			NextIcon = 1,
+			actor = 201401,
 			say = "Commander, don't you wanna stay here?",
 			typewriter = {
 				speed = 0.05,
@@ -19,10 +20,11 @@ return {
 		{
 			expression = 1,
 			side = 2,
-			actor = 201401,
+			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			actor = 201401,
 			say = "Together with me... Forever and ever...",
 			typewriter = {
 				speed = 0.05,
@@ -42,11 +44,12 @@ return {
 		{
 			expression = 4,
 			side = 2,
-			actor = 201401,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 1,
+			actor = 201401,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "Heheh! Just kidding. I'm not THAT selfish~",
 			typewriter = {
 				speed = 0.05,
@@ -56,11 +59,12 @@ return {
 		{
 			expression = 2,
 			side = 2,
-			actor = 201401,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 2,
+			actor = 201401,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "Guess I'm still not cute enough...",
 			typewriter = {
 				speed = 0.05,

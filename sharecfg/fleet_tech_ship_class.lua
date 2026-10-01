@@ -352,6 +352,7 @@ pg.fleet_tech_ship_class.all = {
 	970110,
 	970111,
 	970112,
+	970113,
 	970201,
 	970202,
 	970203,
@@ -4612,6 +4613,17 @@ end)()
 			970112
 		}
 	}
+	pg.base.fleet_tech_ship_class[970113] = {
+		shiptype = 1,
+		name = "Soobrazitelny META",
+		nation = 97,
+		id = 970113,
+		t_level_1 = 6,
+		t_level = 4,
+		ships = {
+			970113
+		}
+	}
 	pg.base.fleet_tech_ship_class[970201] = {
 		shiptype = 2,
 		name = "Helena META",
@@ -5157,11 +5169,13 @@ end)()
 		nation = 97,
 		id = 970710,
 		t_level_1 = 1,
-		t_level = 2,
+		t_level = 1,
 		ships = {
 			970710
 		}
 	}
+end)()
+;(function()
 	pg.base.fleet_tech_ship_class[970801] = {
 		shiptype = 8,
 		name = "U-556 META",
@@ -5173,8 +5187,6 @@ end)()
 			970801
 		}
 	}
-end)()
-;(function()
 	pg.base.fleet_tech_ship_class[971201] = {
 		shiptype = 12,
 		name = "Vestal META",

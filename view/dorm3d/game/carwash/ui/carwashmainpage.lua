@@ -69,14 +69,14 @@ function var0_0.BindEvent(arg0_5)
 			return
 		end
 
-		arg0_5:Hide()
+		arg0_5:SetTimelineUIVisible(false)
 	end)
 	arg0_5:bind(CarWashTimelineSystem.TIMELINE_SEQUENCE_END, function(arg0_13, arg1_13)
 		if arg1_13 and arg1_13.data and arg1_13.data.hideUI == false then
 			return
 		end
 
-		arg0_5:Show()
+		arg0_5:SetTimelineUIVisible(true)
 	end)
 	arg0_5:bind(CarWashTimelineSystem.TRANSITION_BEGIN, function()
 		arg0_5:EnableBlock(true)
@@ -86,73 +86,112 @@ function var0_0.BindEvent(arg0_5)
 	end)
 end
 
-function var0_0.UpdatePOV(arg0_16)
-	local var0_16 = arg0_16.povLayer:Find("Move"):GetComponent(typeof(SlideController))
+function var0_0.SetTimelineUIVisible(arg0_16, arg1_16)
+	if arg1_16 then
+		for iter0_16, iter1_16 in ipairs(arg0_16.timelineUIGroups or {}) do
+			iter1_16.group.alpha = iter1_16.alpha
+			iter1_16.group.interactable = iter1_16.interactable
+			iter1_16.group.blocksRaycasts = iter1_16.blocksRaycasts
+		end
 
-	var0_16:AddBeginDragFunc(function(arg0_17, arg1_17)
-		arg0_16:emit(CarWashPovControlSystem.ON_STICK_MOVE_BEGIN, arg1_17)
-	end)
-	var0_16:SetStickFunc(function(arg0_18)
-		arg0_16:emit(CarWashPovControlSystem.ON_STICK_MOVE, arg0_18)
-	end)
-	var0_16:AddDragEndFunc(function(arg0_19, arg1_19)
-		arg0_16:emit(CarWashPovControlSystem.ON_STICK_MOVE_END, arg1_19)
-	end)
-	arg0_16.povLayer:Find("View"):GetComponent(typeof(SlideController)):SetStickFunc(function(arg0_20)
-		arg0_16:emit(CarWashPovControlSystem.ON_STICK_VIEW, arg0_20)
-	end)
-end
+		arg0_16.timelineUIGroups = nil
 
-function var0_0.Flush(arg0_21)
-	return
-end
-
-function var0_0.UpdateExpressionHUDPosition(arg0_22, arg1_22)
-	if not arg1_22 then
 		return
 	end
 
-	setActive(arg0_22.expressionRoot, arg1_22.visible)
+	if arg0_16.timelineUIGroups then
+		return
+	end
 
-	if arg1_22.visible then
-		setLocalPosition(arg0_22.expressionRoot, LuaHelper.ScreenToLocal(arg0_22.expressionRoot.parent, arg1_22.screenPosition, pg.UIMgr.GetInstance().uiCameraComp))
+	arg0_16.timelineUIGroups = {}
+
+	eachChild(arg0_16._tf, function(arg0_17)
+		if arg0_17.name == "HolyLightRoot" or arg0_17.name == "block" then
+			return
+		end
+
+		local var0_17 = GetOrAddComponent(arg0_17, typeof(CanvasGroup))
+
+		table.insert(arg0_16.timelineUIGroups, {
+			group = var0_17,
+			alpha = var0_17.alpha,
+			interactable = var0_17.interactable,
+			blocksRaycasts = var0_17.blocksRaycasts
+		})
+
+		var0_17.alpha = 0
+		var0_17.interactable = false
+		var0_17.blocksRaycasts = false
+	end)
+end
+
+function var0_0.UpdatePOV(arg0_18)
+	local var0_18 = arg0_18.povLayer:Find("Move"):GetComponent(typeof(SlideController))
+
+	var0_18:AddBeginDragFunc(function(arg0_19, arg1_19)
+		arg0_18:emit(CarWashPovControlSystem.ON_STICK_MOVE_BEGIN, arg1_19)
+	end)
+	var0_18:SetStickFunc(function(arg0_20)
+		arg0_18:emit(CarWashPovControlSystem.ON_STICK_MOVE, arg0_20)
+	end)
+	var0_18:AddDragEndFunc(function(arg0_21, arg1_21)
+		arg0_18:emit(CarWashPovControlSystem.ON_STICK_MOVE_END, arg1_21)
+	end)
+	arg0_18.povLayer:Find("View"):GetComponent(typeof(SlideController)):SetStickFunc(function(arg0_22)
+		arg0_18:emit(CarWashPovControlSystem.ON_STICK_VIEW, arg0_22)
+	end)
+end
+
+function var0_0.Flush(arg0_23)
+	return
+end
+
+function var0_0.UpdateExpressionHUDPosition(arg0_24, arg1_24)
+	if not arg1_24 then
+		return
+	end
+
+	setActive(arg0_24.expressionRoot, arg1_24.visible)
+
+	if arg1_24.visible then
+		setLocalPosition(arg0_24.expressionRoot, LuaHelper.ScreenToLocal(arg0_24.expressionRoot.parent, arg1_24.screenPosition, pg.UIMgr.GetInstance().uiCameraComp))
 	end
 end
 
-function var0_0.ShowHelpBox(arg0_23, arg1_23)
+function var0_0.ShowHelpBox(arg0_25, arg1_25)
 	pg.NewStyleMsgboxMgr.GetInstance():Show(pg.NewStyleMsgboxMgr.TYPE_MSGBOX, {
 		title = i18n("dorm3d_carwash_title"),
 		contentText = i18n("dorm3d_carwash_tiiiiiip"),
 		onConfirm = function()
-			existCall(arg1_23)
+			existCall(arg1_25)
 		end,
 		onClose = function()
-			existCall(arg1_23)
+			existCall(arg1_25)
 		end
 	})
 end
 
-function var0_0.EnableBlock(arg0_26, arg1_26)
-	setActive(arg0_26.blockLayer, arg1_26)
+function var0_0.EnableBlock(arg0_28, arg1_28)
+	setActive(arg0_28.blockLayer, arg1_28)
 end
 
-function var0_0.ShowBlackScreen(arg0_27, arg1_27, arg2_27)
-	local var0_27 = {
+function var0_0.ShowBlackScreen(arg0_29, arg1_29, arg2_29)
+	local var0_29 = {
 		color = "#000000",
 		time = 0.3,
-		delay = arg1_27 and 0 or 0.3
+		delay = arg1_29 and 0 or 0.3
 	}
 
-	setImageColor(arg0_27.blackLayer, Color.NewHex(var0_27.color))
-	setActive(arg0_27.blackLayer, true)
-	setCanvasGroupAlpha(arg0_27.blackLayer, arg1_27 and 0 or 1)
-	arg0_27:managedTween(LeanTween.alphaCanvas, function()
-		if not arg1_27 then
-			setActive(arg0_27.blackLayer, false)
+	setImageColor(arg0_29.blackLayer, Color.NewHex(var0_29.color))
+	setActive(arg0_29.blackLayer, true)
+	setCanvasGroupAlpha(arg0_29.blackLayer, arg1_29 and 0 or 1)
+	arg0_29:managedTween(LeanTween.alphaCanvas, function()
+		if not arg1_29 then
+			setActive(arg0_29.blackLayer, false)
 		end
 
-		existCall(arg2_27)
-	end, GetComponent(arg0_27.blackLayer, typeof(CanvasGroup)), arg1_27 and 1 or 0, var0_27.time):setDelay(var0_27.delay)
+		existCall(arg2_29)
+	end, GetComponent(arg0_29.blackLayer, typeof(CanvasGroup)), arg1_29 and 1 or 0, var0_29.time):setDelay(var0_29.delay)
 end
 
 return var0_0

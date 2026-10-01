@@ -470,7 +470,8 @@ pg.ship_skin_words_extra.all = {
 	203070,
 	201210,
 	501030,
-	501040
+	501040,
+	101480
 }
 pg.base = pg.base or {}
 pg.base.ship_skin_words_extra = {}
@@ -9311,7 +9312,6 @@ end)()
 		main = "",
 		upgrade = "",
 		mission_complete = "",
-		headtouch = "",
 		feeling2 = "",
 		hp_warning = "",
 		id = 403110,
@@ -9331,6 +9331,12 @@ end)()
 			{
 				1100,
 				"Tenacious and brave in the face of incoming attacks... I see. There's always so much to learn from your strategies."
+			}
+		},
+		headtouch = {
+			{
+				1100,
+				"Heheh... You'll have to do better than that~ Com-man-der~♪"
 			}
 		},
 		detail = {
@@ -15996,21 +16002,20 @@ end)()
 	pg.base.ship_skin_words_extra[9600030] = {
 		unlock = "",
 		feeling3 = "",
-		feeling4 = "",
-		feeling1 = "",
-		expedition = "",
-		profile = "",
-		mission = "",
-		skill = "",
 		mail = "",
-		lose = "",
 		main = "",
+		expedition = "",
 		upgrade = "",
 		mission_complete = "",
-		headtouch = "",
+		mission = "",
 		feeling2 = "",
+		profile = "",
+		skill = "",
 		hp_warning = "",
 		id = 9600030,
+		lose = "",
+		feeling1 = "",
+		feeling4 = "",
 		login = {
 			{
 				1100,
@@ -16033,6 +16038,12 @@ end)()
 			{
 				1100,
 				"It's too late once I've caught you~♡"
+			}
+		},
+		headtouch = {
+			{
+				1100,
+				"Commander, the way you touch me... I can't get enough of it~♡"
 			}
 		},
 		detail = {
@@ -32927,6 +32938,69 @@ end)()
 			{
 				1100,
 				"I'm not afraid anymore, and I'm done overthinking things... I'm ready to be with you now! So... c-could we go home together?"
+			}
+		}
+	}
+	pg.base.ship_skin_words_extra[101480] = {
+		unlock = "",
+		feeling3 = "",
+		feeling4 = "",
+		feeling1 = "",
+		expedition = "",
+		win_mvp = "",
+		profile = "",
+		mission = "",
+		battle = "",
+		skill = "",
+		mail = "",
+		lose = "",
+		main = "",
+		upgrade = "",
+		mission_complete = "",
+		feeling2 = "",
+		hp_warning = "",
+		id = 101480,
+		detail = "",
+		login = {
+			{
+				1100,
+				"That was a close call today. Having the alarm on repeat doesn't really seem to work, does it? Guess I'll have to go wake you up every morning personally, then."
+			}
+		},
+		home = {
+			{
+				1100,
+				"I arranged the office's equipment to better fit your work process while you were away. I think you'll be able to get through your work more efficiently, so give it a whirl."
+			}
+		},
+		headtouch = {
+			{
+				1100,
+				"I washed up properly, so I shouldn't smell like oil or anything... Ahem!"
+			}
+		},
+		main_extra = {
+			{
+				1100,
+				"That's weird. Everything I build lately is stuff I think you could use... Maybe it's nothing. I'm just overthinking.|Commander, do you mind if I measure you for a minute? I just had this new idea... There! Now sit tight and look forward to it!|I forgot to put on a sock on one of my feet again... Well, that's a bit embarrassing to admit in front of you of all people... Huh? I'm fine like this?"
+			}
+		},
+		touch = {
+			{
+				1100,
+				"Want a wrench or a caliper? Oh? You just wanna chill with me? Sure, that's cool."
+			}
+		},
+		touch2 = {
+			{
+				1100,
+				"So not even getting your nose clipped with the caliper helps you learn your lesson, huh? I'll have to think of something more impactful then. We're going to the workshop as soon as we're back."
+			}
+		},
+		feeling5 = {
+			{
+				1100,
+				"Lately, just being with you makes ideas flash in my mind like lightning strikes... And so, I think we need to spend even more time together!"
 			}
 		}
 	}

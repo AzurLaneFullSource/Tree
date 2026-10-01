@@ -5,10 +5,11 @@ return {
 	scripts = {
 		{
 			actor = 299035,
-			side = 2,
 			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			hidePaintObj = true,
 			dir = 1,
+			side = 2,
 			say = "Owner~ Look up~♪",
 			typewriter = {
 				speed = 0.05,
@@ -17,10 +18,11 @@ return {
 		},
 		{
 			actor = 299035,
-			side = 2,
 			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			hidePaintObj = true,
 			dir = 1,
+			side = 2,
 			say = "Welcome to my fairy tale maze!",
 			typewriter = {
 				speed = 0.05,
@@ -29,10 +31,11 @@ return {
 		},
 		{
 			actor = 299035,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
+			NextIcon = 1,
 			say = "You're not getting out of here until you play with me to my heart's content!",
 			typewriter = {
 				speed = 0.05,
@@ -51,11 +54,12 @@ return {
 		},
 		{
 			actor = 299035,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 1,
+			NextIcon = 1,
 			say = "Heehee! Yay! You're super sweet to me♪",
 			typewriter = {
 				speed = 0.05,
@@ -65,11 +69,12 @@ return {
 		{
 			expression = 2,
 			side = 2,
-			actor = 299035,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 2,
+			actor = 299035,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "Work? Geez!",
 			typewriter = {
 				speed = 0.05,
@@ -79,11 +84,12 @@ return {
 		{
 			expression = 2,
 			side = 2,
-			actor = 299035,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 2,
+			actor = 299035,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "What work could ever be more important than me?",
 			typewriter = {
 				speed = 0.05,

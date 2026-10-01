@@ -35,8 +35,9 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Manjuu Navigation Service",
 			dir = 1,
-			portrait = 900284,
 			nameColor = "#A9F548FF",
+			portrait = 900284,
+			NextIcon = 1,
 			actorName = "TB",
 			hidePaintObj = true,
 			say = "You have deviated from your route. Please recalculate a route home.",
@@ -46,10 +47,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "A robotic voice echoed through the secluded alleyway as Z14 timidly pressed on, ever clutching her Little Ihn plushie.",
 			typewriter = {
 				speed = 0.05,
@@ -63,6 +65,7 @@ return {
 			factiontag = "Manjuu Navigation Service",
 			dir = 1,
 			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			actorName = "TB",
 			hidePaintObj = true,
 			say = "Nighttime Advisory: Do not enter poorly lit areas alone.",
@@ -75,10 +78,11 @@ return {
 			expression = 1,
 			side = 2,
 			bgName = "star_level_bg_495",
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 401140,
+			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "I-I'll be fine... It's only for a minute.",
 			typewriter = {
 				speed = 0.05,
@@ -87,11 +91,12 @@ return {
 		},
 		{
 			actor = 401140,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			side = 2,
 			say = "Urk... It's just an alleyway. Why does it feel so long?",
 			typewriter = {
 				speed = 0.05,
@@ -99,10 +104,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "BZZZZZT!",
 			soundeffect = "event:/ui/didi",
 			typewriter = {
@@ -112,11 +118,12 @@ return {
 		},
 		{
 			actor = 401140,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			side = 2,
 			say = "Eep?! A phone call? I thought I had my phone on silent...",
 			typewriter = {
 				speed = 0.05,
@@ -124,13 +131,14 @@ return {
 			}
 		},
 		{
-			actor = 900559,
 			nameColor = "#FF9B93",
-			bgName = "star_level_bg_495",
-			hidePaintObj = true,
-			dir = 1,
-			actorName = "???",
 			side = 2,
+			bgName = "star_level_bg_495",
+			NextIcon = 1,
+			dir = 1,
+			actor = 900559,
+			actorName = "???",
+			hidePaintObj = true,
 			say = "...%￥#...*^...？",
 			typewriter = {
 				speed = 0.05,
@@ -141,10 +149,11 @@ return {
 			expression = 5,
 			side = 2,
 			bgName = "star_level_bg_495",
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 401140,
+			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "Wh-who's there?",
 			typewriter = {
 				speed = 0.05,
@@ -160,10 +169,11 @@ return {
 			expression = 7,
 			side = 2,
 			bgName = "star_level_bg_495",
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 401140,
+			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "Somebody... Help me! N-noooo!",
 			typewriter = {
 				speed = 0.05,
@@ -209,10 +219,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_150",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "The streets of New Era City No. 7 were an endless current of pedestrians. I stepped away from the crowd and entered the building that housed the Office of Paranormal Affairs.",
 			bgm = "story-richang-visioncity",
 			typewriter = {
@@ -236,10 +247,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_150",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Morning rush hour had just passed, but the lobby was still full of people waiting for elevators. As I waited, I leafed through a document from City Hall, requesting a joint investigation into recent disappearances of young women.",
 			typewriter = {
 				speed = 0.05,
@@ -247,12 +259,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_150",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "Most of these disappearances occur at night. No apparent pattern to the locations.",
 			typewriter = {
 				speed = 0.05,
@@ -260,12 +273,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_150",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "Some of the scenes involved signal tampering, surveillance malfunctions, and dazed witnesses...",
 			typewriter = {
 				speed = 0.05,
@@ -273,10 +287,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_150",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Under normal standards, these would have been classified as missing persons incidents.",
 			typewriter = {
 				speed = 0.05,
@@ -284,10 +299,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_150",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "But in this city, anything immediately unexplainable tends to get sent to the Office of Paranormal Affairs.",
 			typewriter = {
 				speed = 0.05,
@@ -295,13 +311,14 @@ return {
 			}
 		},
 		{
-			actor = 202380,
 			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_150",
-			hidePaintObj = true,
-			dir = 1,
-			actorName = "???",
 			side = 2,
+			bgName = "star_level_bg_150",
+			NextIcon = 1,
+			dir = 1,
+			actor = 202380,
+			actorName = "???",
+			hidePaintObj = true,
 			say = "The melody lingering about you... is just beautiful.",
 			typewriter = {
 				speed = 0.05,
@@ -314,6 +331,7 @@ return {
 			bgName = "star_level_bg_150",
 			actorName = "???",
 			dir = 1,
+			NextIcon = 1,
 			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -324,10 +342,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_150",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "A woman floating behind me drifts closer and gazes at me with smiling eyes.",
 			typewriter = {
 				speed = 0.05,
@@ -335,10 +354,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_150",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Nobody around us glances our way. It's as if nothing out of the ordinary is happening at all.",
 			typewriter = {
 				speed = 0.05,
@@ -352,6 +372,7 @@ return {
 			factiontag = "Poltergeist",
 			dir = 1,
 			actorName = "???",
+			NextIcon = 1,
 			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -362,12 +383,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_150",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "Why? Did you hear something?",
 			typewriter = {
 				speed = 0.05,
@@ -375,11 +397,12 @@ return {
 			}
 		},
 		{
-			actor = 202380,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_150",
 			factiontag = "Poltergeist",
 			dir = 1,
+			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "To put it in terms you'd understand, there are traces of a poltergeist left at the scene.",
@@ -389,11 +412,12 @@ return {
 			}
 		},
 		{
-			actor = 202380,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_150",
 			factiontag = "Poltergeist",
 			dir = 1,
+			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "But to me, it seemed more of a... discordant melody.",
@@ -408,6 +432,7 @@ return {
 			bgName = "star_level_bg_150",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -418,10 +443,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_150",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Tiger languidly runs her fingers through her hair. The tips of her long strands seem almost ethereal, only truly becoming \"corporeal\" when she speaks.",
 			typewriter = {
 				speed = 0.05,
@@ -429,12 +455,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_150",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "This isn't the best place to talk. Let's go upstairs first – the elevator's this way.",
 			typewriter = {
 				speed = 0.05,
@@ -442,10 +469,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_150",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "As the elevator arrives, an unusually spirited voice rings out from inside.",
 			typewriter = {
 				speed = 0.05,
@@ -453,11 +481,12 @@ return {
 			}
 		},
 		{
-			actor = 201210,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_150",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			actor = 201210,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Haaaah! Take this, evil poltergeist! This is for the sake of everybody's happy future!",
@@ -467,11 +496,12 @@ return {
 			}
 		},
 		{
-			actor = 201210,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_150",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			actor = 201210,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Bliss Breathing, First Form: Last-Second Power Up!",
@@ -481,10 +511,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_150",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "The moment the doors open, somebody lunges out with closed eyes and a fierce expression, smacking me square between the eyes with a rolled-up pamphlet.",
 			typewriter = {
 				speed = 0.05,
@@ -492,11 +523,12 @@ return {
 			}
 		},
 		{
-			actor = 201210,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_150",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			actor = 201210,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "...Huh?",
@@ -506,11 +538,12 @@ return {
 			}
 		},
 		{
-			actor = 201210,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_150",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			actor = 201210,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Whaaaaa?!",
@@ -530,10 +563,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_150",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Realizing she'd actually hit something, the assailant opens her eyes and turns bright red. Frantically, she hides the pamphlet behind her back.",
 			typewriter = {
 				speed = 0.05,
@@ -541,11 +575,12 @@ return {
 			}
 		},
 		{
-			actor = 201210,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_150",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			actor = 201210,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "L-l-listen, that wasn't, um... that wasn't me... I mean, it WAS me, okay, but I wasn't thinking straight, alright?!",
@@ -575,6 +610,7 @@ return {
 			}
 		},
 		{
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_150",
 			factiontag = "Newbie Operative",
@@ -590,6 +626,7 @@ return {
 			}
 		},
 		{
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_150",
 			factiontag = "Newbie Operative",
@@ -605,6 +642,7 @@ return {
 			}
 		},
 		{
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_150",
 			factiontag = "Newbie Operative",
@@ -620,12 +658,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_150",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "Huh? Aren't you the girl who joined after the telephone booth incident?",
 			typewriter = {
 				speed = 0.05,
@@ -637,8 +676,9 @@ return {
 			side = 2,
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
-			nameColor = "#A9F548FF",
 			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "This is the Office of Paranormal Affairs. Describe your location and the nature of your problem.",
 			typewriter = {
 				speed = 0.05,
@@ -672,10 +712,11 @@ return {
 			paintingNoise = true,
 			side = 2,
 			bgName = "star_level_bg_496",
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 201210,
+			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "Please, help me! I ran into a shadowy monster, and it's been chasing me ever since! I'm hiding in a phone booth right now, but it's still around!",
 			typewriter = {
 				speed = 0.05,
@@ -683,11 +724,12 @@ return {
 			}
 		},
 		{
-			actor = 201210,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_150",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			actor = 201210,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "My name is Javelin! I'm hardworking and diligent, and I'll do whatever it takes to work for you! I look forward to working with you!",
@@ -720,12 +762,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_150",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "I'm the Commander of the Office of Paranormal Affairs. Good to have you.",
 			typewriter = {
 				speed = 0.05,
@@ -733,12 +776,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_150",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "Let me show you to the right floor.",
 			typewriter = {
 				speed = 0.05,
@@ -747,10 +791,11 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "PA System",
+			nameColor = "#A9F548FF",
 			bgName = "bg_story_task",
 			hidePaintObj = true,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			actorName = "PA System",
 			say = "Arriving at the 9th floor.",
 			typewriter = {
 				speed = 0.05,
@@ -775,10 +820,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_story_task",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "The elevator door opens, and the last few yawning office workers exit.",
 			typewriter = {
 				speed = 0.05,
@@ -786,11 +832,12 @@ return {
 			}
 		},
 		{
-			actor = 201210,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_story_task",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			actor = 201210,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Umm... Commander, isn't this the top floor?",
@@ -800,12 +847,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "bg_story_task",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "Yeah. We're going higher, though.",
 			typewriter = {
 				speed = 0.05,
@@ -813,11 +861,12 @@ return {
 			}
 		},
 		{
-			actor = 201210,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_story_task",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			actor = 201210,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Huh...?",
@@ -827,10 +876,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_story_task",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "I press the 9 button on the panel a few more times. After a moment, the elevator ceases its descent and shudders slightly.",
 			typewriter = {
 				speed = 0.05,
@@ -838,10 +888,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_story_task",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "The floor display does not change, but we continue to rise silently toward a higher floor.",
 			typewriter = {
 				speed = 0.05,
@@ -849,11 +900,12 @@ return {
 			}
 		},
 		{
-			actor = 201210,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_story_task",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			actor = 201210,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "There are hidden floors?!",
@@ -873,6 +925,7 @@ return {
 			bgName = "bg_story_task",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -883,11 +936,12 @@ return {
 			}
 		},
 		{
-			actor = 201210,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_story_task",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			actor = 201210,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Thank you very... Huh?! C-Commander, there's someone b-behind you...",
@@ -897,12 +951,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "bg_story_task",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "Don't be afraid. She's been there this whole time – you just couldn't see her. Her name is Tiger.",
 			typewriter = {
 				speed = 0.05,
@@ -910,11 +965,12 @@ return {
 			}
 		},
 		{
-			actor = 201210,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_story_task",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			actor = 201210,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "I-it's a pleasure to meet you, ma'am! My name is Javelin! I look forward to working with you!",
@@ -924,10 +980,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_story_task",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "A few seconds later, the elevator dings, and the door opens. Thus, Javelin catches her first glimpse of another side of this world.",
 			typewriter = {
 				speed = 0.05,
@@ -935,11 +992,12 @@ return {
 			}
 		},
 		{
-			actor = 201210,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_496",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			actor = 201210,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Huh... It's kinda normal.",
@@ -966,11 +1024,12 @@ return {
 			}
 		},
 		{
-			actor = 201210,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_496",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			actor = 201210,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "There aren't any magic circles or weird specimens wriggling about... I guess I expected it to look like a secret organization's hideout.",
@@ -980,12 +1039,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "Even secret organizations have budgets.",
 			typewriter = {
 				speed = 0.05,
@@ -993,10 +1053,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "After completing her registration, I hand her a new ID badge and uniform.",
 			typewriter = {
 				speed = 0.05,
@@ -1004,12 +1065,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "Change into this uniform, and you'll officially be an operative. Sorry to put you to work already, but you'll have to go to the orientation room for onboarding.",
 			typewriter = {
 				speed = 0.05,
@@ -1017,11 +1079,12 @@ return {
 			}
 		},
 		{
-			actor = 201210,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_496",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			actor = 201210,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Change?",
@@ -1031,10 +1094,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "She looks down at her uniform and falls silent for a moment.",
 			typewriter = {
 				speed = 0.05,
@@ -1042,11 +1106,12 @@ return {
 			}
 		},
 		{
-			actor = 201210,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_496",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			actor = 201210,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "I-it's a little... flashy, for a uniform.",
@@ -1056,11 +1121,12 @@ return {
 			}
 		},
 		{
-			actor = 201210,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_496",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			actor = 201210,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "I mean, if anything, it looks more like a magical girl outfit!",
@@ -1075,12 +1141,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "It's a standard-issue uniform.",
 			typewriter = {
 				speed = 0.05,
@@ -1088,11 +1155,12 @@ return {
 			}
 		},
 		{
-			actor = 201210,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_496",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			actor = 201210,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "But it has RIBBONS!",
@@ -1102,12 +1170,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "All the easier to identify you.",
 			typewriter = {
 				speed = 0.05,
@@ -1115,11 +1184,12 @@ return {
 			}
 		},
 		{
-			actor = 201210,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_496",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			actor = 201210,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Explain the heart-shaped charm!",
@@ -1129,12 +1199,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "Also for identification purposes.",
 			typewriter = {
 				speed = 0.05,
@@ -1142,11 +1213,12 @@ return {
 			}
 		},
 		{
-			actor = 201210,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_496",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			actor = 201210,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "What about this wand, then? What could it POSSIBLY be for other than to be cute?!",
@@ -1156,12 +1228,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "That's... actually not for identification purposes. It's for self-defense.",
 			typewriter = {
 				speed = 0.05,
@@ -1169,11 +1242,12 @@ return {
 			}
 		},
 		{
-			actor = 201210,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_496",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			actor = 201210,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "What the heck is with this place?!",
@@ -1183,13 +1257,14 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_496",
 			factiontag = "Newbie Operative",
 			dir = 1,
-			actor = 231211,
 			stopbgm = true,
+			actor = 231211,
+			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "I-I think this should be good...",
 			typewriter = {
@@ -1224,6 +1299,7 @@ return {
 			bgName = "star_level_bg_496",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			NextIcon = 1,
 			soundeffect = "event:/ui/knockdoor1",
 			actor = 231211,
 			nameColor = "#A9F548FF",
@@ -1235,10 +1311,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_603",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "The orientation room was dimmer than the outside, with its curtains drawn tightly. The only illumination came from a few pendant lights.",
 			typewriter = {
 				speed = 0.05,
@@ -1268,6 +1345,7 @@ return {
 			bgName = "star_level_bg_603",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -1279,12 +1357,13 @@ return {
 		},
 		{
 			actor = 301192,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			bgName = "star_level_bg_603",
 			side = 2,
 			withoutActorName = true,
-			hideRecordIco = true,
+			nameColor = "#A9F548FF",
 			say = "A young girl sat in the middle of the room, head hanging over a desk. Her long hair covered most of her face.",
+			hideRecordIco = true,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -1296,6 +1375,7 @@ return {
 			bgName = "star_level_bg_603",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -1307,12 +1387,13 @@ return {
 		},
 		{
 			actor = 301192,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			bgName = "star_level_bg_603",
 			side = 2,
 			withoutActorName = true,
-			hideRecordIco = true,
+			nameColor = "#A9F548FF",
 			say = "Noticing Javelin's presence, she slowly scratched a coin across the desk, creating a grating sound.",
+			hideRecordIco = true,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -1320,26 +1401,28 @@ return {
 		},
 		{
 			actor = 301192,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			bgName = "star_level_bg_603",
 			side = 2,
 			withoutActorName = true,
-			hideRecordIco = true,
+			nameColor = "#A9F548FF",
 			say = "Once the coin reached the edge of the desk...",
+			hideRecordIco = true,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			actor = 301191,
+			hideRecordIco = true,
 			side = 2,
 			bgName = "star_level_bg_603",
-			hideRecordIco = true,
-			withoutActorName = true,
 			nameColor = "#A9F548FF",
-			say = "Two ghostly flames flared into existence, bathing the room in a terrifying red glow. The girl suddenly spoke.",
+			withoutActorName = true,
 			bgm = "theme-akagi-inside",
+			actor = 301191,
+			NextIcon = 1,
+			say = "Two ghostly flames flared into existence, bathing the room in a terrifying red glow. The girl suddenly spoke.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -1363,12 +1446,13 @@ return {
 			}
 		},
 		{
-			actor = 301191,
 			nameColor = "#FF9B93",
+			side = 2,
 			bgName = "star_level_bg_603",
 			factiontag = "Poltergeist",
 			dir = 1,
-			side = 2,
+			NextIcon = 1,
+			actor = 301191,
 			actorName = "???",
 			say = "...Heheh... ￥#&￥... Sacrifice...",
 			typewriter = {
@@ -1383,6 +1467,7 @@ return {
 			factiontag = "Poltergeist",
 			dir = 1,
 			actorName = "???",
+			NextIcon = 1,
 			actor = 301191,
 			nameColor = "#FF9B93",
 			say = "^&#&￥... All mine...",
@@ -1397,6 +1482,7 @@ return {
 			bgName = "star_level_bg_603",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,

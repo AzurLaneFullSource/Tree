@@ -151,7 +151,7 @@ function var0_0.EventCall(arg0_11, arg1_11, arg2_11, arg3_11, arg4_11)
 		end
 
 		for iter0_11, iter1_11 in ipairs(arg0_11:getRangeList(arg3_11, arg4_11)) do
-			for iter2_11, iter3_11 in ipairs(underscore.rest(var0_11[tostring(iter1_11)], 1)) do
+			for iter2_11, iter3_11 in ipairs(underscore.to_array(var0_11[tostring(iter1_11)])) do
 				iter3_11:React(arg1_11, arg2_11)
 			end
 		end

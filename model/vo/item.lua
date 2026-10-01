@@ -208,7 +208,7 @@ function var0_0.GetValidSkinList(arg0_28)
 	if Item.InTimeLimitSkinAssigned(arg0_28.id) then
 		return table.mergeArray(var0_28[2], var0_28[3], true)
 	else
-		return underscore.rest(var0_28[3], 1)
+		return underscore.to_array(var0_28[3])
 	end
 end
 

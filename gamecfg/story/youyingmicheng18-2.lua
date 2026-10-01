@@ -4,10 +4,11 @@ return {
 	fadeOut = 1.5,
 	scripts = {
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_108",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Tiger lunges at her fleeting afterimage, tearing open a path through the labyrinth.",
 			bgm = "story-visioncity-1",
 			typewriter = {
@@ -16,10 +17,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_108",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "As the containment device's glow engulfs her, Cheshire puffs out her cheeks, apparently unhappy with how quickly the game has ended.",
 			typewriter = {
 				speed = 0.05,
@@ -32,6 +34,7 @@ return {
 			bgName = "star_level_bg_108",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 299035,
 			nameColor = "#A9F548FF",
 			say = "Aww, guess I lose~",
@@ -42,11 +45,12 @@ return {
 		},
 		{
 			actor = 299035,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_108",
 			factiontag = "Poltergeist",
 			dir = 1,
-			nameColor = "#A9F548FF",
+			side = 2,
+			NextIcon = 1,
 			say = "But I'm glad you decided to play with me, my new owner!",
 			typewriter = {
 				speed = 0.05,
@@ -55,11 +59,12 @@ return {
 		},
 		{
 			actor = 317030,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			bgName = "star_level_bg_148",
 			hidePaintObj = true,
-			actorName = "Ordinary Rear Service Personnel",
 			side = 2,
+			actorName = "Ordinary Rear Service Personnel",
+			nameColor = "#A9F548FF",
 			say = "\"Today, I arrived at New Era City No. 6.\"",
 			typewriter = {
 				speed = 0.05,
@@ -91,10 +96,11 @@ return {
 			expression = 6,
 			side = 2,
 			bgName = "star_level_bg_148",
-			hidePaintObj = true,
-			actor = 317030,
 			actorName = "Ordinary Rear Service Personnel",
+			NextIcon = 1,
+			actor = 317030,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "\"Machines run ceaselessly, filling the air with the stench of oil at all times.\"",
 			typewriter = {
 				speed = 0.05,
@@ -102,10 +108,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_148",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "A tall, slender figure leans casually against a massive machine, as if waiting for the final act to begin.",
 			typewriter = {
 				speed = 0.05,
@@ -113,11 +120,12 @@ return {
 			}
 		},
 		{
-			actor = 205162,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_148",
 			factiontag = "Poltergeist",
 			dir = 1,
+			actor = 205162,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "Heheheh. You've done well to come this far.",
@@ -132,6 +140,7 @@ return {
 			bgName = "star_level_bg_148",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 205162,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -147,6 +156,7 @@ return {
 			bgName = "star_level_bg_148",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -162,6 +172,7 @@ return {
 			bgName = "star_level_bg_148",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 205162,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -177,6 +188,7 @@ return {
 			bgName = "star_level_bg_148",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 205162,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -192,6 +204,7 @@ return {
 			bgName = "star_level_bg_148",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -202,11 +215,12 @@ return {
 			}
 		},
 		{
-			actor = 205162,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_148",
 			factiontag = "Poltergeist",
 			dir = 1,
+			actor = 205162,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "I wonder. You wanna test how sharp my fangs are?",
@@ -221,6 +235,7 @@ return {
 			bgName = "star_level_bg_148",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -236,6 +251,7 @@ return {
 			bgName = "star_level_bg_148",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 205162,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -246,10 +262,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_148",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "A giant pair of scissors suddenly appears in Lion's hands. She rides atop a machine going haywire, charging toward us like a frenzied beast.",
 			typewriter = {
 				speed = 0.05,

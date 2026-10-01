@@ -7,14 +7,16 @@ return {
 	},
 	scripts = {
 		{
-			actor = 307053,
+			hideRecordIco = true,
 			side = 2,
 			bgName = "star_level_bg_153",
-			hideRecordIco = true,
+			spine = true,
 			withoutActorName = true,
 			nameColor = "#A9F548FF",
-			say = "I see a beautiful figure, clad in white robes and holding an umbrella. She's standing alone, facing the raging blizzard with an aura of pure and tender grace.",
 			bgm = "story-richang-quiet",
+			actor = 307053,
+			NextIcon = 1,
+			say = "I see a beautiful figure, clad in white robes and holding an umbrella. She's standing alone, facing the raging blizzard with an aura of pure and tender grace.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -29,12 +31,14 @@ return {
 			}
 		},
 		{
-			actor = 307053,
 			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_153",
 			side = 2,
+			bgName = "star_level_bg_153",
+			spine = true,
 			withoutActorName = true,
 			hideRecordIco = true,
+			actor = 307053,
+			NextIcon = 1,
 			say = "A thin layer of snow piles up on the cuffs of her kimono, and the edge of the umbrella hides half her face.",
 			typewriter = {
 				speed = 0.05,
@@ -43,10 +47,12 @@ return {
 		},
 		{
 			actor = 307053,
-			side = 2,
-			bgName = "star_level_bg_153",
 			nameColor = "#A9F548FF",
+			bgName = "star_level_bg_153",
+			spine = true,
 			dir = 1,
+			side = 2,
+			NextIcon = 1,
 			say = "Excuse me, kind traveler.",
 			typewriter = {
 				speed = 0.05,
@@ -55,11 +61,13 @@ return {
 		},
 		{
 			expression = 1,
-			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_153",
 			side = 2,
+			bgName = "star_level_bg_153",
+			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 307053,
+			nameColor = "#A9F548FF",
 			say = "Would you be so kind as to offer shelter to a crane stranded by this blizzard?",
 			typewriter = {
 				speed = 0.05,
@@ -67,12 +75,14 @@ return {
 			}
 		},
 		{
-			actor = 307053,
 			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_153",
 			side = 2,
+			bgName = "star_level_bg_153",
+			spine = true,
 			withoutActorName = true,
 			hideRecordIco = true,
+			actor = 307053,
+			NextIcon = 1,
 			say = "Her voice is faint, as if she is trying to avoid startling the swirling snowflakes. Still, I sense a smile that her tone can't quite conceal.",
 			typewriter = {
 				speed = 0.05,
@@ -83,11 +93,13 @@ return {
 			portrait = "zhihuiguan",
 			side = 2,
 			bgName = "star_level_bg_153",
+			spine = true,
 			actorName = "{playername}",
-			actor = 307053,
 			nameColor = "#A9F548FF",
-			say = "Shoukaku... Is this a new performance?",
 			hideRecordIco = true,
+			actor = 307053,
+			NextIcon = 1,
+			say = "Shoukaku... Is this a new performance?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -95,11 +107,13 @@ return {
 		},
 		{
 			expression = 7,
-			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_153",
 			side = 2,
+			bgName = "star_level_bg_153",
+			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 307053,
+			nameColor = "#A9F548FF",
 			say = "Heehee, so you saw right through my ruse.",
 			typewriter = {
 				speed = 0.05,
@@ -108,11 +122,13 @@ return {
 		},
 		{
 			expression = 3,
-			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_153",
 			side = 2,
+			bgName = "star_level_bg_153",
+			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 307053,
+			nameColor = "#A9F548FF",
 			say = "I thought I'd be able to fool you a bit longer with this outfit.",
 			typewriter = {
 				speed = 0.05,
@@ -120,12 +136,14 @@ return {
 			}
 		},
 		{
-			actor = 307053,
 			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_153",
 			side = 2,
+			bgName = "star_level_bg_153",
+			spine = true,
 			withoutActorName = true,
 			hideRecordIco = true,
+			actor = 307053,
+			NextIcon = 1,
 			say = "She comes closer and takes me under her umbrella.",
 			typewriter = {
 				speed = 0.05,
@@ -134,11 +152,13 @@ return {
 		},
 		{
 			expression = 5,
-			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_153",
 			side = 2,
+			bgName = "star_level_bg_153",
+			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 307053,
+			nameColor = "#A9F548FF",
 			say = "And yes. I'm performing a story called \"The Crane's Gratitude\"~♪",
 			typewriter = {
 				speed = 0.05,
@@ -147,11 +167,13 @@ return {
 		},
 		{
 			expression = 2,
-			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_153",
 			side = 2,
+			bgName = "star_level_bg_153",
+			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 307053,
+			nameColor = "#A9F548FF",
 			say = "In the legend, a rescued crane secretly weaves a beautiful brocade to present to her savior.",
 			typewriter = {
 				speed = 0.05,
@@ -160,11 +182,13 @@ return {
 		},
 		{
 			expression = 5,
-			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_153",
 			side = 2,
+			bgName = "star_level_bg_153",
+			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 307053,
+			nameColor = "#A9F548FF",
 			say = "I may not know how to weave fabrics, but I certainly can weave sweet dreams for you with my flute's melody. Will you stay and listen for a spell?",
 			typewriter = {
 				speed = 0.05,
@@ -175,23 +199,27 @@ return {
 			portrait = "zhihuiguan",
 			side = 2,
 			bgName = "star_level_bg_153",
+			spine = true,
 			actorName = "{playername}",
-			actor = 307053,
 			nameColor = "#A9F548FF",
-			say = "Of course, I'd love to.",
 			hideRecordIco = true,
+			actor = 307053,
+			NextIcon = 1,
+			say = "Of course, I'd love to.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			actor = 307053,
 			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_153",
 			side = 2,
+			bgName = "star_level_bg_153",
+			spine = true,
 			withoutActorName = true,
 			hideRecordIco = true,
+			actor = 307053,
+			NextIcon = 1,
 			say = "Shoukaku gives me a satisfied look and brings the flute to her lips. The sound cuts through the raging wings, echoing with pure grace like the falling snow.",
 			typewriter = {
 				speed = 0.05,
@@ -199,12 +227,14 @@ return {
 			}
 		},
 		{
-			actor = 307053,
 			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_153",
 			side = 2,
+			bgName = "star_level_bg_153",
+			spine = true,
 			withoutActorName = true,
 			hideRecordIco = true,
+			actor = 307053,
+			NextIcon = 1,
 			say = "The snow seems to dance along with her gentle melody, as if a glistening silver veil is being woven around us.",
 			typewriter = {
 				speed = 0.05,
@@ -212,12 +242,14 @@ return {
 			}
 		},
 		{
-			actor = 307053,
 			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_153",
 			side = 2,
+			bgName = "star_level_bg_153",
+			spine = true,
 			withoutActorName = true,
 			hideRecordIco = true,
+			actor = 307053,
+			NextIcon = 1,
 			say = "I hold the umbrella for her, and as my gaze lowers, I see her fingertips are bright red from the cold.",
 			typewriter = {
 				speed = 0.05,
@@ -228,11 +260,13 @@ return {
 			portrait = "zhihuiguan",
 			side = 2,
 			bgName = "star_level_bg_153",
+			spine = true,
 			actorName = "{playername}",
-			actor = 307053,
 			nameColor = "#A9F548FF",
-			say = "Aren't you cold?",
 			hideRecordIco = true,
+			actor = 307053,
+			NextIcon = 1,
+			say = "Aren't you cold?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -240,11 +274,13 @@ return {
 		},
 		{
 			expression = 4,
-			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_153",
 			side = 2,
+			bgName = "star_level_bg_153",
+			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 307053,
+			nameColor = "#A9F548FF",
 			say = "Heehee. How could I credibly ask for shelter if I did not feel the bite of the cold at all?",
 			typewriter = {
 				speed = 0.05,
@@ -253,11 +289,13 @@ return {
 		},
 		{
 			expression = 1,
-			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_153",
 			side = 2,
+			bgName = "star_level_bg_153",
+			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 307053,
+			nameColor = "#A9F548FF",
 			say = "This is just my way of showing you my gratitude. And it may be a little selfish of me to ask... but you don't think less of me for this, do you?",
 			typewriter = {
 				speed = 0.05,
@@ -265,12 +303,14 @@ return {
 			}
 		},
 		{
-			actor = 307053,
 			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_153",
 			side = 2,
+			bgName = "star_level_bg_153",
+			spine = true,
 			withoutActorName = true,
 			hideRecordIco = true,
+			actor = 307053,
+			NextIcon = 1,
 			say = "Instead of answering, I take her hand and pull her closer to me.",
 			typewriter = {
 				speed = 0.05,
@@ -279,11 +319,13 @@ return {
 		},
 		{
 			expression = 7,
-			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_153",
 			side = 2,
+			bgName = "star_level_bg_153",
+			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 307053,
+			nameColor = "#A9F548FF",
 			say = "...Does my pain make your heart ache?",
 			typewriter = {
 				speed = 0.05,
@@ -294,23 +336,27 @@ return {
 			portrait = "zhihuiguan",
 			side = 2,
 			bgName = "star_level_bg_153",
+			spine = true,
 			actorName = "{playername}",
-			actor = 307053,
 			nameColor = "#A9F548FF",
-			say = "I can't leave a defenseless crane alone in a blizzard.",
 			hideRecordIco = true,
+			actor = 307053,
+			NextIcon = 1,
+			say = "I can't leave a defenseless crane alone in a blizzard.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			actor = 307053,
 			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_153",
 			side = 2,
+			bgName = "star_level_bg_153",
+			spine = true,
 			withoutActorName = true,
 			hideRecordIco = true,
+			actor = 307053,
+			NextIcon = 1,
 			say = "Shoukaku seems flustered for a moment, but then she snuggles closer and accepts my embrace. Before long, her cold hands warm up in mine.",
 			typewriter = {
 				speed = 0.05,
@@ -319,11 +365,13 @@ return {
 		},
 		{
 			expression = 6,
-			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_153",
 			side = 2,
+			bgName = "star_level_bg_153",
+			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 307053,
+			nameColor = "#A9F548FF",
 			say = "Mmh, your hands are so warm, my savior♪",
 			typewriter = {
 				speed = 0.05,
@@ -332,11 +380,13 @@ return {
 		},
 		{
 			expression = 5,
-			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_153",
 			side = 2,
+			bgName = "star_level_bg_153",
+			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 307053,
+			nameColor = "#A9F548FF",
 			say = "But while my hands are warm now, there's another spot that's still rather chilly.",
 			typewriter = {
 				speed = 0.05,
@@ -347,11 +397,13 @@ return {
 			portrait = "zhihuiguan",
 			side = 2,
 			bgName = "star_level_bg_153",
+			spine = true,
 			actorName = "{playername}",
-			actor = 307053,
 			nameColor = "#A9F548FF",
-			say = "Where's that?",
 			hideRecordIco = true,
+			actor = 307053,
+			NextIcon = 1,
+			say = "Where's that?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -359,11 +411,13 @@ return {
 		},
 		{
 			expression = 4,
-			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_153",
 			side = 2,
+			bgName = "star_level_bg_153",
+			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 307053,
+			nameColor = "#A9F548FF",
 			say = "Right here♪",
 			typewriter = {
 				speed = 0.05,
@@ -371,12 +425,14 @@ return {
 			}
 		},
 		{
-			actor = 307053,
 			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_153",
 			side = 2,
+			bgName = "star_level_bg_153",
+			spine = true,
 			withoutActorName = true,
 			hideRecordIco = true,
+			actor = 307053,
+			NextIcon = 1,
 			say = "Her gratitude act melts away, and she simply smiles before imprinting her affections upon my lips with her own.",
 			typewriter = {
 				speed = 0.05,
@@ -384,12 +440,14 @@ return {
 			}
 		},
 		{
-			actor = 307053,
 			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_153",
 			side = 2,
+			bgName = "star_level_bg_153",
+			spine = true,
 			withoutActorName = true,
 			hideRecordIco = true,
+			actor = 307053,
+			NextIcon = 1,
 			say = "Her warmth is so intense that it leaves me breathless for a second.",
 			typewriter = {
 				speed = 0.05,
@@ -398,11 +456,13 @@ return {
 		},
 		{
 			expression = 6,
-			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_153",
 			side = 2,
+			bgName = "star_level_bg_153",
+			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 307053,
+			nameColor = "#A9F548FF",
 			say = "The night is still young. You can look forward to my gratitude even more... And in so many ways too♪",
 			typewriter = {
 				speed = 0.05,
@@ -410,12 +470,14 @@ return {
 			}
 		},
 		{
-			actor = 307053,
 			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_153",
 			side = 2,
+			bgName = "star_level_bg_153",
+			spine = true,
 			withoutActorName = true,
 			hideRecordIco = true,
+			actor = 307053,
+			NextIcon = 1,
 			say = "While the snow covers all around us, the sound of her flute keeps our little nest warm.",
 			typewriter = {
 				speed = 0.05,

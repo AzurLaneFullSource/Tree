@@ -13,6 +13,8 @@ function var0_0.InitConfig(arg0_2)
 	assert(arg0_2.posConfig, "CarWash phase2 pos config not found: " .. tostring(arg0_2.contextData.gameConfig.pos_phase2))
 
 	arg0_2.tipInfos = {}
+	arg0_2.displayTipInfos = {}
+	arg0_2.carTipInfo = nil
 	arg0_2.clickedTips = {}
 end
 
@@ -25,9 +27,15 @@ function var0_0.InitUI(arg0_3)
 
 		if arg0_4 == UIItemList.EventInit then
 			onButton(arg0_3, arg2_4, function()
-				local var0_5 = arg0_3.tipInfos[arg1_4]
+				local var0_5 = arg0_3.displayTipInfos[arg1_4]
 
 				if not var0_5 then
+					return
+				end
+
+				if var0_5.isCar then
+					arg0_3:emit(CarWashCarSystem.PLAY_PHASE2_REACTION)
+
 					return
 				end
 
@@ -64,31 +72,52 @@ function var0_0.BindEvent(arg0_6)
 
 		arg0_6:Flush()
 	end)
-	arg0_6:bind(CarWashGameFlowSystem.UPDATE_PHASE2_REACTION_PROGRESS, function(arg0_9, arg1_9)
-		arg0_6.clickedTips[arg1_9.animId] = true
+	arg0_6:bind(CarWashCarSystem.UPDATE_PHASE2_TIP, function(arg0_9, arg1_9)
+		if arg0_6.contextData.gameStatus.currentState ~= CarWashConst.GAME_STATE.PHASE_2 then
+			return
+		end
+
+		arg0_6.carTipInfo = arg1_9
+
+		arg0_6:Flush()
+	end)
+	arg0_6:bind(CarWashGameFlowSystem.UPDATE_PHASE2_REACTION_PROGRESS, function(arg0_10, arg1_10)
+		arg0_6.clickedTips[arg1_10.animId] = true
 
 		arg0_6:Flush()
 	end)
 end
 
-function var0_0.Flush(arg0_10)
-	arg0_10.tipList:align(#arg0_10.tipInfos)
+function var0_0.Flush(arg0_11)
+	arg0_11.displayTipInfos = {}
+
+	for iter0_11, iter1_11 in ipairs(arg0_11.tipInfos) do
+		table.insert(arg0_11.displayTipInfos, iter1_11)
+	end
+
+	if arg0_11.carTipInfo then
+		table.insert(arg0_11.displayTipInfos, arg0_11.carTipInfo)
+	end
+
+	arg0_11.tipList:align(#arg0_11.displayTipInfos)
 end
 
-function var0_0.UpdateTipItem(arg0_11, arg1_11, arg2_11)
-	local var0_11 = arg0_11.tipInfos[arg1_11]
+function var0_0.UpdateTipItem(arg0_12, arg1_12, arg2_12)
+	local var0_12 = arg0_12.displayTipInfos[arg1_12]
 
-	assert(var0_11, "CarWash phase2 tip info not found: " .. tostring(arg1_11))
-	setActive(arg2_11, var0_11.visible)
+	assert(var0_12, "CarWash phase2 tip info not found: " .. tostring(arg1_12))
+	setActive(arg2_12, var0_12.visible)
 
-	if var0_11.visible then
-		setLocalPosition(arg2_11, LuaHelper.ScreenToLocal(arg0_11.tipContainer, var0_11.screenPosition, pg.UIMgr.GetInstance().uiCameraComp))
+	if var0_12.visible then
+		setLocalPosition(arg2_12, LuaHelper.ScreenToLocal(arg0_12.tipContainer, var0_12.screenPosition, pg.UIMgr.GetInstance().uiCameraComp))
 	end
 end
 
-function var0_0.ResetTips(arg0_12)
-	arg0_12.tipInfos = {}
-	arg0_12.clickedTips = {}
+function var0_0.ResetTips(arg0_13)
+	arg0_13.tipInfos = {}
+	arg0_13.displayTipInfos = {}
+	arg0_13.carTipInfo = nil
+	arg0_13.clickedTips = {}
 end
 
 return var0_0

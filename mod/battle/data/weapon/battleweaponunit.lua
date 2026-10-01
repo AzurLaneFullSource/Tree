@@ -1061,7 +1061,9 @@ function var9_0.setBulletOrb(arg0_94, arg1_94)
 	local var0_94 = {
 		buff_id = arg0_94._orbID,
 		rant = arg0_94._orbRant,
-		level = arg0_94._orbLevel
+		level = arg0_94._orbLevel,
+		buff_level = arg0_94._orbBuffLevel,
+		group_level = arg0_94._orbGroupLevel
 	}
 
 	arg1_94:AppendAttachBuff(var0_94)
@@ -1071,6 +1073,8 @@ function var9_0.SetBulletOrbData(arg0_95, arg1_95)
 	arg0_95._orbID = arg1_95.buffID
 	arg0_95._orbRant = arg1_95.rant
 	arg0_95._orbLevel = arg1_95.level
+	arg0_95._orbBuffLevel = arg1_95.buff_level
+	arg0_95._orbGroupLevel = arg1_95.group_level
 end
 
 function var9_0.ShiftBarrage(arg0_96, arg1_96)

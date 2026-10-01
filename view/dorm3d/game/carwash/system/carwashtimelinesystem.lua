@@ -103,6 +103,13 @@ function var0_0.PlayTransition(arg0_10, arg1_10)
 	assert(arg1_10.type, "CarWash transition type is nil")
 	assert(var0_0.DEFAULT_TRANSITION_ASSETS[arg1_10.type], "CarWash transition asset config not found: " .. tostring(arg1_10.type))
 	assert(not arg0_10.isTransitionPlaying, "CarWash transition is already playing: " .. tostring(arg1_10.type))
+
+	arg0_10.isTransitionPlaying = true
+
+	arg0_10:Emit(var0_0.TRANSITION_BEGIN, {
+		type = arg1_10.type,
+		data = arg1_10
+	})
 	arg0_10:LoadTransitionAsset(arg1_10, function(arg0_11)
 		assert(not arg0_10.exited, "CarWash transition asset loaded after system disposed")
 
@@ -113,12 +120,7 @@ function var0_0.PlayTransition(arg0_10, arg1_10)
 			type = arg1_10.type,
 			data = arg1_10
 		}
-		arg0_10.isTransitionPlaying = true
 
-		arg0_10:Emit(var0_0.TRANSITION_BEGIN, {
-			type = arg1_10.type,
-			data = arg1_10
-		})
 		var0_11:SetTime(0)
 		var0_11:Start()
 	end)
@@ -241,6 +243,7 @@ function var0_0.PlayArtTimeline(arg0_19, arg1_19)
 		type = arg0_19.artContext.data.enter,
 		onHold = function(arg0_20)
 			arg0_19:LoadArtScene(arg1_19, function()
+				arg0_19:InitArtHX(arg1_19.sceneName)
 				arg0_19:Emit(var0_0.TIMELINE_SEQUENCE_BEGIN, {
 					data = arg1_19
 				})
@@ -266,154 +269,179 @@ function var0_0.LoadArtScene(arg0_22, arg1_22, arg2_22)
 	end)
 end
 
-function var0_0.StartArtPlayer(arg0_24, arg1_24)
-	local var0_24 = arg0_24:FindArtDirector(arg1_24)
+function var0_0.InitArtHX(arg0_24, arg1_24)
+	local var0_24 = {}
+	local var1_24 = SceneManager.GetSceneByName(arg1_24)
 
-	assert(var0_24, "CarWash art timeline director not found")
+	table.IpairsCArray(var1_24:GetRootGameObjects(), function(arg0_25, arg1_25)
+		local var0_25 = arg1_25:GetComponentsInChildren(typeof("BLHXCharacterPropertiesController"), true)
 
-	arg0_24.artDirector = var0_24
-	arg0_24.artDirector.playOnAwake = false
+		table.IpairsCArray(var0_25, function(arg0_26, arg1_26)
+			local var0_26 = arg1_26.transform
 
-	TimelineSupport.DisablePlayOnAwake(arg0_24.artDirector)
+			if not Dorm3dHxHelper.GetSkinIdByModelName(var0_26.name) then
+				return
+			end
 
-	arg0_24.artPlayer = TimelinePlayer.New(arg0_24.artDirector.transform, UnityEngine.Playables.DirectorWrapMode.Loop)
-
-	arg0_24.artPlayer:Register(nil, function(arg0_25, arg1_25, arg2_25)
-		arg0_24:OnArtTimelineSignal(arg1_25)
+			arg0_24:GetHxHelper():Apply(var0_26)
+			Dorm3dHxHelper.HideCharacterPart(var0_26, nil, true)
+			table.insert(var0_24, var0_26)
+		end)
 	end)
-	arg0_24.artPlayer:SetTime(arg1_24.time or 0)
-	arg0_24.artPlayer.comDirector:Evaluate()
-	arg0_24.artPlayer:Start()
+	Dorm3dHxHelper.ShowHolyLight(var0_24, arg0_24:GetHolyLightRoot())
 end
 
-function var0_0.FindArtDirector(arg0_26, arg1_26)
-	local var0_26 = arg1_26.sceneName
-	local var1_26 = arg1_26.sequencePath or var0_0.DEFAULT_SEQUENCE_PATH
-	local var2_26 = SceneManager.GetSceneByName(var0_26):GetRootGameObjects()
-	local var3_26
+function var0_0.StartArtPlayer(arg0_27, arg1_27)
+	local var0_27 = arg0_27:FindArtDirector(arg1_27)
 
-	table.IpairsCArray(var2_26, function(arg0_27, arg1_27)
-		if var3_26 then
+	assert(var0_27, "CarWash art timeline director not found")
+
+	arg0_27.artDirector = var0_27
+	arg0_27.artDirector.playOnAwake = false
+
+	TimelineSupport.DisablePlayOnAwake(arg0_27.artDirector)
+
+	arg0_27.artPlayer = TimelinePlayer.New(arg0_27.artDirector.transform, UnityEngine.Playables.DirectorWrapMode.Loop)
+
+	arg0_27.artPlayer:Register(nil, function(arg0_28, arg1_28, arg2_28)
+		arg0_27:OnArtTimelineSignal(arg1_28)
+	end)
+	arg0_27.artPlayer:SetTime(arg1_27.time or 0)
+	arg0_27.artPlayer.comDirector:Evaluate()
+	arg0_27.artPlayer:Start()
+end
+
+function var0_0.FindArtDirector(arg0_29, arg1_29)
+	local var0_29 = arg1_29.sceneName
+	local var1_29 = arg1_29.sequencePath or var0_0.DEFAULT_SEQUENCE_PATH
+	local var2_29 = SceneManager.GetSceneByName(var0_29):GetRootGameObjects()
+	local var3_29
+
+	table.IpairsCArray(var2_29, function(arg0_30, arg1_30)
+		if var3_29 then
 			return
 		end
 
-		local var0_27 = tf(arg1_27)
-		local var1_27 = var0_27.name == var1_26 and var0_27 or var0_27:Find(var1_26)
+		local var0_30 = tf(arg1_30)
+		local var1_30 = var0_30.name == var1_29 and var0_30 or var0_30:Find(var1_29)
 
-		if var1_27 then
-			var3_26 = var1_27:GetComponent(typeof(UnityEngine.Playables.PlayableDirector))
+		if var1_30 then
+			var3_29 = var1_30:GetComponent(typeof(UnityEngine.Playables.PlayableDirector))
 		end
 	end)
 
-	return var3_26
+	return var3_29
 end
 
-function var0_0.OnArtTimelineSignal(arg0_28, arg1_28)
-	assert(arg0_28.artContext, "CarWash art timeline context is nil")
+function var0_0.OnArtTimelineSignal(arg0_31, arg1_31)
+	assert(arg0_31.artContext, "CarWash art timeline context is nil")
 
-	local var0_28 = arg0_28.artContext.data
-	local var1_28 = arg1_28.stringParameter
+	local var0_31 = arg0_31.artContext.data
+	local var1_31 = arg1_31.stringParameter
 
-	arg0_28:Emit(var0_0.ART_TIMELINE_SIGNAL, {
-		data = var0_28,
-		event = arg1_28,
-		signal = var1_28
+	arg0_31:Emit(var0_0.ART_TIMELINE_SIGNAL, {
+		data = var0_31,
+		event = arg1_31,
+		signal = var1_31
 	})
 
-	if var1_28 == var0_0.SIGNAL.EXIT_TRANSITION then
-		arg0_28:StartArtExitTransition()
+	if var1_31 == var0_0.SIGNAL.EXIT_TRANSITION then
+		arg0_31:StartArtExitTransition()
 	else
-		assert(false, "Unknown CarWash art timeline signal: " .. tostring(var1_28))
+		assert(false, "Unknown CarWash art timeline signal: " .. tostring(var1_31))
 	end
 end
 
-function var0_0.StartArtExitTransition(arg0_29, arg1_29)
-	if not arg0_29.artContext then
-		if arg1_29 and arg1_29.onHold then
-			arg1_29.onHold(function()
-				if arg1_29.onFinish then
-					arg1_29.onFinish()
+function var0_0.StartArtExitTransition(arg0_32, arg1_32)
+	if not arg0_32.artContext then
+		if arg1_32 and arg1_32.onHold then
+			arg1_32.onHold(function()
+				if arg1_32.onFinish then
+					arg1_32.onFinish()
 				end
 			end)
-		elseif arg1_29 and arg1_29.onFinish then
-			arg1_29.onFinish()
+		elseif arg1_32 and arg1_32.onFinish then
+			arg1_32.onFinish()
 		end
 
 		return
 	end
 
-	assert(arg0_29.artContext, "CarWash art timeline context is nil")
-	assert(not arg0_29.artContext.exitTransitionStarted, "CarWash ExitTransition signal triggered more than once")
+	assert(arg0_32.artContext, "CarWash art timeline context is nil")
+	assert(not arg0_32.artContext.exitTransitionStarted, "CarWash ExitTransition signal triggered more than once")
 
-	arg0_29.artContext.exitTransitionStarted = true
+	arg0_32.artContext.exitTransitionStarted = true
 
-	local var0_29 = arg0_29.artContext.data
+	local var0_32 = arg0_32.artContext.data
 
-	arg0_29:PlayTransition({
+	arg0_32:PlayTransition({
 		waitHold = true,
-		type = arg0_29.artContext.data.exit,
-		onHold = function(arg0_31, arg1_31)
-			arg0_29:UnloadArtScene(function()
-				arg0_29:Emit(var0_0.TIMELINE_SEQUENCE_END, {
-					data = var0_29
+		type = arg0_32.artContext.data.exit,
+		onHold = function(arg0_34, arg1_34)
+			arg0_32:UnloadArtScene(function()
+				arg0_32:Emit(var0_0.TIMELINE_SEQUENCE_END, {
+					data = var0_32
 				})
 
-				if arg1_29 and arg1_29.onHold then
-					arg1_29.onHold(arg0_31, arg1_31)
+				if arg1_32 and arg1_32.onHold then
+					arg1_32.onHold(arg0_34, arg1_34)
 				else
-					arg0_31()
+					arg0_34()
 				end
 			end)
 		end,
-		onFinish = function(arg0_33)
-			if arg1_29 and arg1_29.onFinish then
-				arg1_29.onFinish(arg0_33)
+		onFinish = function(arg0_36)
+			if arg1_32 and arg1_32.onFinish then
+				arg1_32.onFinish(arg0_36)
 			end
 
-			arg0_29:FinishArtTimeline(arg0_33)
+			arg0_32:FinishArtTimeline(arg0_36)
 		end
 	})
 end
 
-function var0_0.UnloadArtScene(arg0_34, arg1_34)
-	arg0_34:DisposeArtPlayer()
-	assert(arg0_34.artSceneInfo, "CarWash art timeline scene info is nil")
+function var0_0.UnloadArtScene(arg0_37, arg1_37)
+	arg0_37:DisposeArtPlayer()
+	assert(arg0_37.artSceneInfo, "CarWash art timeline scene info is nil")
 
-	local var0_34 = arg0_34.artSceneInfo
+	local var0_37 = arg0_37.artSceneInfo
 
-	arg0_34.artSceneInfo = nil
+	arg0_37.artSceneInfo = nil
 
-	SceneOpMgr.Inst:UnloadSceneAsync(var0_34.path, var0_34.name, function()
-		existCall(arg1_34)
+	SceneOpMgr.Inst:UnloadSceneAsync(var0_37.path, var0_37.name, function()
+		Dorm3dHxHelper.ShowHolyLight({
+			arg0_37:GetLadyGO().transform
+		}, arg0_37:GetHolyLightRoot(), true)
+		existCall(arg1_37)
 	end)
 end
 
-function var0_0.DisposeArtPlayer(arg0_36)
-	if arg0_36.artPlayer then
-		if arg0_36.artPlayer.signalReceiver then
-			arg0_36.artPlayer.signalReceiver:SetCommonEvent(nil)
+function var0_0.DisposeArtPlayer(arg0_39)
+	if arg0_39.artPlayer then
+		if arg0_39.artPlayer.signalReceiver then
+			arg0_39.artPlayer.signalReceiver:SetCommonEvent(nil)
 		end
 
-		arg0_36.artPlayer:Stop()
-		arg0_36.artPlayer:Dispose()
+		arg0_39.artPlayer:Stop()
+		arg0_39.artPlayer:Dispose()
 
-		arg0_36.artPlayer = nil
+		arg0_39.artPlayer = nil
 	end
 
-	arg0_36.artDirector = nil
+	arg0_39.artDirector = nil
 end
 
-function var0_0.FinishArtTimeline(arg0_37, arg1_37)
-	local var0_37 = arg0_37.artContext
+function var0_0.FinishArtTimeline(arg0_40, arg1_40)
+	local var0_40 = arg0_40.artContext
 
-	assert(var0_37, "CarWash art timeline context is nil")
+	assert(var0_40, "CarWash art timeline context is nil")
 
-	local var1_37 = var0_37.data
+	local var1_40 = var0_40.data
 
-	arg0_37.artContext = nil
+	arg0_40.artContext = nil
 
-	if var1_37.onFinish then
-		var1_37.onFinish(arg1_37)
+	if var1_40.onFinish then
+		var1_40.onFinish(arg1_40)
 	end
 end
 

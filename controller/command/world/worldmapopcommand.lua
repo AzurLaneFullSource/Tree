@@ -128,7 +128,7 @@ function var0_0.BuildFleetMove(arg0_5, arg1_5, arg2_5)
 		table.insert(var0_5, var4_5)
 	end
 
-	arg2_5.path = _.rest(arg1_5, 1)
+	arg2_5.path = underscore.to_array(arg1_5)
 	arg2_5.childOps = var0_5
 end
 

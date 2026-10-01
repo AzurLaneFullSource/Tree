@@ -5,12 +5,13 @@ return {
 	scripts = {
 		{
 			actor = 317031,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			side = 2,
 			hidePaintObj = true,
 			withoutActorName = true,
-			hideRecordIco = true,
+			nameColor = "#A9F548FF",
 			say = "I-14 usually stays holed up in her room without interacting with others.",
+			hideRecordIco = true,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -18,10 +19,11 @@ return {
 		},
 		{
 			actor = 317031,
-			side = 2,
 			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			hidePaintObj = true,
 			dir = 1,
+			side = 2,
 			say = "Commander... You're here.",
 			typewriter = {
 				speed = 0.05,
@@ -30,10 +32,11 @@ return {
 		},
 		{
 			actor = 317031,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
+			NextIcon = 1,
 			say = "Is there anything you want from me?",
 			typewriter = {
 				speed = 0.05,
@@ -52,11 +55,12 @@ return {
 		},
 		{
 			actor = 317031,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 1,
+			NextIcon = 1,
 			say = "My thoughts?",
 			typewriter = {
 				speed = 0.05,
@@ -66,11 +70,12 @@ return {
 		{
 			expression = 8,
 			side = 2,
-			actor = 317031,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 1,
+			actor = 317031,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "I don't know... Where should I begin?",
 			typewriter = {
 				speed = 0.05,
@@ -79,11 +84,12 @@ return {
 		},
 		{
 			actor = 317031,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 2,
+			NextIcon = 1,
 			say = "Food... I'm not that hungry...",
 			typewriter = {
 				speed = 0.05,
@@ -93,11 +99,12 @@ return {
 		{
 			expression = 11,
 			side = 2,
-			actor = 317031,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 2,
+			actor = 317031,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "But thank you for thinking about me.",
 			typewriter = {
 				speed = 0.05,

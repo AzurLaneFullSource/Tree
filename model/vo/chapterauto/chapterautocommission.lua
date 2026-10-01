@@ -15,41 +15,52 @@ function var0_0.bindConfigTable(arg0_2)
 	return pg.chapter_auto_statistics
 end
 
-function var0_0.GetFinishTime(arg0_3)
-	return arg0_3.finishTime
+function var0_0.GetType(arg0_3)
+	return arg0_3.type
 end
 
-function var0_0.IsFinished(arg0_4)
-	return pg.TimeMgr.GetInstance():GetServerTime() >= arg0_4:GetFinishTime()
+function var0_0.GetFinishTime(arg0_4)
+	return arg0_4.finishTime
 end
 
-function var0_0.GetTicketTime(arg0_5)
-	return arg0_5.ticketTime
+function var0_0.GetStartTime(arg0_5)
+	return arg0_5.finishTime - arg0_5.costTime
 end
 
-function var0_0.UsedTicket(arg0_6)
-	return arg0_6:GetTicketTime() > 0
+function var0_0.IsFinished(arg0_6)
+	return pg.TimeMgr.GetInstance():GetServerTime() >= arg0_6:GetFinishTime()
 end
 
-function var0_0.GetCostTime(arg0_7)
-	return arg0_7.costTime
+function var0_0.GetTicketTime(arg0_7)
+	return arg0_7.ticketTime
 end
 
-function var0_0.GetClassExpAward(arg0_8)
-	return arg0_8:getConfig("base_class_exp") or 0
+function var0_0.UsedTicket(arg0_8)
+	return arg0_8:GetTicketTime() > 0
 end
 
-function var0_0.GetExpBookAward(arg0_9)
-	return arg0_9:getConfig("drop_expbook") or 0
+function var0_0.GetCostTime(arg0_9)
+	return arg0_9.costTime
 end
 
-function var0_0.GetOnceOil(arg0_10, arg1_10)
-	return switch(arg0_10, {
+function var0_0.GetClassExpAward(arg0_10)
+	return arg0_10:getConfig("base_class_exp") or 0
+end
+
+function var0_0.GetExpBookAward(arg0_11)
+	return arg0_11:getConfig("drop_expbook") or 0
+end
+
+function var0_0.GetOnceOil(arg0_12, arg1_12)
+	return switch(arg0_12, {
 		[ChapterAutoProxy.TYPE.SLG] = function()
-			return pg.chapter_auto_statistics[arg1_10].oil_limit
+			return pg.chapter_auto_statistics[arg1_12].oil_limit
+		end,
+		[ChapterAutoProxy.TYPE.WORLD] = function()
+			return pg.world_auto_statistics[arg1_12].oil_limit
 		end
 	}, function()
-		assert(false, "invalid chapter auto type: " .. tostring(arg0_10))
+		assert(false, "invalid chapter auto type: " .. tostring(arg0_12))
 	end)
 end
 

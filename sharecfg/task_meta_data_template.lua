@@ -394,6 +394,11 @@ pg.task_meta_data_template.all = {
 	100593,
 	100594,
 	100595,
+	100611,
+	100612,
+	100613,
+	100614,
+	100615,
 	200001,
 	200002,
 	200003,
@@ -597,7 +602,11 @@ pg.task_meta_data_template.all = {
 	200501,
 	200502,
 	200503,
-	200504
+	200504,
+	200521,
+	200522,
+	200523,
+	200524
 }
 pg.base = pg.base or {}
 pg.base.task_meta_data_template = {}
@@ -3729,6 +3738,46 @@ end)()
 		target_num = 1,
 		target_id = "100"
 	}
+	pg.base.task_meta_data_template[100611] = {
+		target_id_2 = "970113",
+		sub_type = 180,
+		desc = "Win 1 battle with Soobrazitelny META in your fleet.",
+		id = 100611,
+		target_num = 1,
+		target_id = ""
+	}
+	pg.base.task_meta_data_template[100612] = {
+		target_id_2 = "970113",
+		sub_type = 180,
+		desc = "Defeat a Lv. 30+ fleet with Soobrazitelny META in your fleet.",
+		id = 100612,
+		target_num = 1,
+		target_id = "30"
+	}
+	pg.base.task_meta_data_template[100613] = {
+		target_id_2 = "970113",
+		sub_type = 180,
+		desc = "Defeat a Lv. 55+ fleet with Soobrazitelny META in your fleet.",
+		id = 100613,
+		target_num = 1,
+		target_id = "55"
+	}
+	pg.base.task_meta_data_template[100614] = {
+		target_id_2 = "970113",
+		sub_type = 180,
+		desc = "Defeat a Lv. 80+ fleet with Soobrazitelny META in your fleet.",
+		id = 100614,
+		target_num = 1,
+		target_id = "80"
+	}
+	pg.base.task_meta_data_template[100615] = {
+		target_id_2 = "970113",
+		sub_type = 180,
+		desc = "Defeat a Lv. 100+ fleet with Soobrazitelny META in your fleet.",
+		id = 100615,
+		target_num = 1,
+		target_id = "100"
+	}
 	pg.base.task_meta_data_template[200001] = {
 		target_id_2 = "970101",
 		sub_type = 302,
@@ -3769,6 +3818,8 @@ end)()
 		target_num = 1,
 		target_id = "0"
 	}
+end)()
+;(function()
 	pg.base.task_meta_data_template[200022] = {
 		target_id_2 = "970102",
 		sub_type = 302,
@@ -3809,8 +3860,6 @@ end)()
 		target_num = 1,
 		target_id = "70"
 	}
-end)()
-;(function()
 	pg.base.task_meta_data_template[200033] = {
 		target_id_2 = "970503",
 		sub_type = 302,
@@ -4571,6 +4620,8 @@ end)()
 		target_num = 1,
 		target_id = "0"
 	}
+end)()
+;(function()
 	pg.base.task_meta_data_template[200272] = {
 		target_id_2 = "970705",
 		sub_type = 302,
@@ -4611,8 +4662,6 @@ end)()
 		target_num = 1,
 		target_id = "70"
 	}
-end)()
-;(function()
 	pg.base.task_meta_data_template[200283] = {
 		target_id_2 = "970305",
 		sub_type = 302,
@@ -5362,6 +5411,40 @@ end)()
 		sub_type = 302,
 		desc = "Defeat a Lv. 100+ fleet in Operation Siren with Saratoga META in your fleet.",
 		id = 200504,
+		target_num = 1,
+		target_id = "100"
+	}
+	pg.base.task_meta_data_template[200521] = {
+		target_id_2 = "970113",
+		sub_type = 302,
+		desc = "Win 1 Operation Siren battle with Soobrazitelny META in your fleet.",
+		id = 200521,
+		target_num = 1,
+		target_id = ""
+	}
+end)()
+;(function()
+	pg.base.task_meta_data_template[200522] = {
+		target_id_2 = "970113",
+		sub_type = 302,
+		desc = "Defeat a Lv. 70+ fleet in Operation Siren with Soobrazitelny META in your fleet.",
+		id = 200522,
+		target_num = 1,
+		target_id = "70"
+	}
+	pg.base.task_meta_data_template[200523] = {
+		target_id_2 = "970113",
+		sub_type = 302,
+		desc = "Defeat a Lv. 90+ fleet in Operation Siren with Soobrazitelny META in your fleet.",
+		id = 200523,
+		target_num = 1,
+		target_id = "90"
+	}
+	pg.base.task_meta_data_template[200524] = {
+		target_id_2 = "970113",
+		sub_type = 302,
+		desc = "Defeat a Lv. 100+ fleet in Operation Siren with Soobrazitelny META in your fleet.",
+		id = 200524,
 		target_num = 1,
 		target_id = "100"
 	}

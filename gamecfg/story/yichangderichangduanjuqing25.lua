@@ -5,9 +5,10 @@ return {
 	scripts = {
 		{
 			actor = 205162,
-			side = 2,
 			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			hidePaintObj = true,
+			side = 2,
 			say = "I'm patrolling an alleyway with Lion when a sudden night breeze blows through. She covers her face with both hands.",
 			typewriter = {
 				speed = 0.05,
@@ -16,10 +17,11 @@ return {
 		},
 		{
 			actor = 205162,
-			side = 2,
 			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			hidePaintObj = true,
 			dir = 1,
+			side = 2,
 			say = "Tsk, the wind blew my mask away for a second there...",
 			typewriter = {
 				speed = 0.05,
@@ -28,10 +30,11 @@ return {
 		},
 		{
 			actor = 205162,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
+			NextIcon = 1,
 			say = "Commander... Did you see anything just now?",
 			typewriter = {
 				speed = 0.05,
@@ -51,11 +54,12 @@ return {
 		{
 			expression = 5,
 			side = 2,
-			actor = 205162,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 1,
+			actor = 205162,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "Oh, you're such a flatterer.",
 			typewriter = {
 				speed = 0.05,
@@ -65,11 +69,12 @@ return {
 		{
 			expression = 5,
 			side = 2,
-			actor = 205162,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 1,
+			actor = 205162,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "If that's how you wanna play it... Don't run away if I come closer, okay?",
 			typewriter = {
 				speed = 0.05,
@@ -78,11 +83,12 @@ return {
 		},
 		{
 			actor = 205162,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 2,
+			NextIcon = 1,
 			say = "Really?",
 			typewriter = {
 				speed = 0.05,
@@ -91,11 +97,12 @@ return {
 		},
 		{
 			actor = 205162,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 2,
+			NextIcon = 1,
 			say = "Heh... Very well, then.",
 			typewriter = {
 				speed = 0.05,

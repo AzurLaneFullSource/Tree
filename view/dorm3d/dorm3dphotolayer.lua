@@ -1145,7 +1145,7 @@ function var0_0.UpdateCameraPanel(arg0_96)
 end
 
 function var0_0.RefreshCamera(arg0_117)
-	arg0_117.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "SettingCamera", arg0_117.cameraSettings)
+	arg0_117.scene:emit(Dorm3dLightingSystem.SET_CAMERA_SETTINGS, arg0_117.cameraSettings)
 end
 
 function var0_0.SetAllAnimSpeed(arg0_118, arg1_118)
@@ -1252,14 +1252,14 @@ function var0_0.UpdateLightingPanel(arg0_125)
 
 	local function var1_125()
 		if not arg0_125.settingFilterIndex then
-			arg0_125.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "RevertVolumeProfile")
+			arg0_125.scene:emit(Dorm3dLightingSystem.REVERT_VOLUME_PROFILE)
 
 			return
 		end
 
 		local var0_127 = pg.dorm3d_camera_volume_template[var0_125[arg0_125.settingFilterIndex]]
 
-		arg0_125.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "SetVolumeProfile", var0_127.volume, arg0_125.settingFilterStrength)
+		arg0_125.scene:emit(Dorm3dLightingSystem.SET_VOLUME_PROFILE, var0_127.volume, arg0_125.settingFilterStrength)
 	end
 
 	UIItemList.StaticAlign(arg0_125.panelLightning:Find("Layout/Filter/List"), arg0_125.panelLightning:Find("Layout/Filter/List"):GetChild(0), #var0_125, function(arg0_128, arg1_128, arg2_128)
@@ -1415,9 +1415,9 @@ function var0_0.willExit(arg0_135)
 	arg0_135.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "ResetSceneItemAnimators")
 	arg0_135.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "ResetCharacterExtraItem")
 	arg0_135.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "ResetTempHideSceneItems")
-	arg0_135.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "RevertCharacterLight")
-	arg0_135.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "RevertVolumeProfile")
-	arg0_135.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "RevertCameraSettings")
+	arg0_135.scene:emit(Dorm3dLightingSystem.REVERT_CHARACTER_LIGHT)
+	arg0_135.scene:emit(Dorm3dLightingSystem.REVERT_VOLUME_PROFILE)
+	arg0_135.scene:emit(Dorm3dLightingSystem.REVERT_CAMERA_SETTINGS)
 	arg0_135.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "ExitPhotoMode")
 end
 

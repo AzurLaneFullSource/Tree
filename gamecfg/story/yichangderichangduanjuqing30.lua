@@ -5,10 +5,11 @@ return {
 	scripts = {
 		{
 			actor = 201191,
-			side = 2,
 			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			hidePaintObj = true,
 			dir = 1,
+			side = 2,
 			say = "Commander, don't go into the bath alone. No matter what.",
 			typewriter = {
 				speed = 0.05,
@@ -17,10 +18,11 @@ return {
 		},
 		{
 			actor = 201191,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
+			NextIcon = 1,
 			say = "It'd be really bad if you lost track of time and got dizzy, so...",
 			typewriter = {
 				speed = 0.05,
@@ -40,11 +42,12 @@ return {
 		{
 			expression = 1,
 			side = 2,
-			actor = 201191,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 1,
+			actor = 201191,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "True enough. If I stay by your side and protect you at all times, you can bathe safely.",
 			typewriter = {
 				speed = 0.05,
@@ -54,11 +57,12 @@ return {
 		{
 			expression = 1,
 			side = 2,
-			actor = 201191,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 1,
+			actor = 201191,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "And so, I'll go together with you.",
 			typewriter = {
 				speed = 0.05,
@@ -67,11 +71,12 @@ return {
 		},
 		{
 			actor = 201191,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 2,
+			NextIcon = 1,
 			say = "You can't let your guard down even during a shower.",
 			typewriter = {
 				speed = 0.05,
@@ -80,11 +85,12 @@ return {
 		},
 		{
 			actor = 201191,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 2,
+			NextIcon = 1,
 			say = "It'd be dangerous if you slipped and hit your head.",
 			typewriter = {
 				speed = 0.05,
@@ -93,11 +99,12 @@ return {
 		},
 		{
 			actor = 201191,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 2,
+			NextIcon = 1,
 			say = "So just to be safe, I'll wait outside the bathroom.",
 			typewriter = {
 				speed = 0.05,

@@ -82,7 +82,7 @@ function var0_0.handleNotification(arg0_9, arg1_9)
 			arg0_9.viewComponent:updateMapWay()
 		end
 	elseif var0_9 == GAME.CRUSING_CMD_DONE then
-		arg0_9.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_9.awards)
+		arg0_9.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_9.awards, var1_9.callback)
 	elseif var0_9 == var0_0.UNFROZEN_MAP_UPDATE then
 		arg0_9.contextData.frozenMapUpdate = false
 

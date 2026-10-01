@@ -5,10 +5,11 @@ return {
 	scripts = {
 		{
 			actor = 299035,
-			side = 2,
 			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			hidePaintObj = true,
 			dir = 1,
+			side = 2,
 			say = "Now you don't see me... And now you see me~♪",
 			typewriter = {
 				speed = 0.05,
@@ -17,10 +18,11 @@ return {
 		},
 		{
 			actor = 299035,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
+			NextIcon = 1,
 			say = "Hee hee, do you like surprises like this?",
 			typewriter = {
 				speed = 0.05,
@@ -39,11 +41,12 @@ return {
 		},
 		{
 			actor = 299035,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 1,
+			NextIcon = 1,
 			say = "Whoa, you look a little shook...",
 			typewriter = {
 				speed = 0.05,
@@ -52,11 +55,12 @@ return {
 		},
 		{
 			actor = 299035,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 1,
+			NextIcon = 1,
 			say = "Seeing you all defenseless like that gets me a little frisky~♪",
 			typewriter = {
 				speed = 0.05,
@@ -65,11 +69,12 @@ return {
 		},
 		{
 			actor = 299035,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 2,
+			NextIcon = 1,
 			say = "I can keep going if you like it so much!",
 			typewriter = {
 				speed = 0.05,
@@ -78,11 +83,12 @@ return {
 		},
 		{
 			actor = 299035,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 2,
+			NextIcon = 1,
 			say = "Though... I really wanna snuggle together right now♪",
 			typewriter = {
 				speed = 0.05,

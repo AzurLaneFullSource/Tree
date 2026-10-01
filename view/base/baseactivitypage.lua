@@ -57,39 +57,58 @@ function var0_0.SwitchOut(arg0_7, arg1_7)
 	arg1_7()
 end
 
-function var0_0.OnInit(arg0_8)
+function var0_0.getResource(arg0_8)
+	local var0_8 = {
+		"ui/" .. arg0_8:getUIName()
+	}
+	local var1_8 = {}
+
+	arg0_8:emit(ActivityMainScene.GET_PAGE_BGM, arg0_8.__cname, var1_8)
+
+	if var1_8.bgm then
+		local var2_8 = ResPathSupport.GetSoundResList(var1_8.bgm)
+
+		_.each(var2_8, function(arg0_9)
+			table.insert(var0_8, arg0_9)
+		end)
+	end
+
+	return var0_8
+end
+
+function var0_0.OnInit(arg0_10)
 	return
 end
 
-function var0_0.OnDataSetting(arg0_9)
+function var0_0.OnDataSetting(arg0_11)
 	return
 end
 
-function var0_0.GetPageLink(arg0_10)
+function var0_0.GetPageLink(arg0_12)
 	return {}
 end
 
-function var0_0.OnFirstFlush(arg0_11)
+function var0_0.OnFirstFlush(arg0_13)
 	return
 end
 
-function var0_0.OnUpdateFlush(arg0_12)
+function var0_0.OnUpdateFlush(arg0_14)
 	return
 end
 
-function var0_0.OnHideFlush(arg0_13)
+function var0_0.OnHideFlush(arg0_15)
 	return
 end
 
-function var0_0.OnShowFlush(arg0_14)
+function var0_0.OnShowFlush(arg0_16)
 	return
 end
 
-function var0_0.OnDestroy(arg0_15)
+function var0_0.OnDestroy(arg0_17)
 	return
 end
 
-function var0_0.UseSecondPage(arg0_16, arg1_16)
+function var0_0.UseSecondPage(arg0_18, arg1_18)
 	return false
 end
 

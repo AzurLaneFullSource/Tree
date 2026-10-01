@@ -1,82 +1,92 @@
 local var0_0 = class("LevelAwardPage", import("...base.BaseActivityPage"))
 
-function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1._tf:Find("bg")
-	arg0_1.award = arg0_1._tf:Find("scroll/award")
-	arg0_1.content = arg0_1._tf:Find("scroll/content")
-	arg0_1.scrollTF = arg0_1._tf:Find("scroll")
-	arg0_1.pageSignDownTF = arg0_1._tf:Find("sign")
-	arg0_1.pageSignUpTF = arg0_1._tf:Find("sign_up")
+function var0_0.getResource(arg0_1, arg1_1)
+	local var0_1 = {
+		"ui/activityuipage/level_award_atlas"
+	}
+
+	table.insertto(var0_1, var0_0.super.getResource(arg0_1, arg1_1))
+
+	return var0_1
 end
 
-function var0_0.OnDataSetting(arg0_2)
-	arg0_2.config = pg.activity_level_award[arg0_2.activity:getConfig("config_id")]
+function var0_0.OnInit(arg0_2)
+	arg0_2.bg = arg0_2._tf:Find("bg")
+	arg0_2.award = arg0_2._tf:Find("scroll/award")
+	arg0_2.content = arg0_2._tf:Find("scroll/content")
+	arg0_2.scrollTF = arg0_2._tf:Find("scroll")
+	arg0_2.pageSignDownTF = arg0_2._tf:Find("sign")
+	arg0_2.pageSignUpTF = arg0_2._tf:Find("sign_up")
 end
 
-function var0_0.OnFirstFlush(arg0_3)
-	setActive(arg0_3.award, false)
+function var0_0.OnDataSetting(arg0_3)
+	arg0_3.config = pg.activity_level_award[arg0_3.activity:getConfig("config_id")]
+end
 
-	for iter0_3 = 1, #arg0_3.config.front_drops do
-		local var0_3 = arg0_3.config.front_drops[iter0_3]
-		local var1_3 = var0_3[1]
-		local var2_3 = cloneTplTo(arg0_3.award, arg0_3.content, "award" .. tostring(iter0_3))
-		local var3_3 = var2_3:Find("limit_label/labelLevel")
-		local var4_3 = var2_3:Find("btnAchieve")
-		local var5_3 = var2_3:Find("items")
-		local var6_3 = var2_3:Find("item")
+function var0_0.OnFirstFlush(arg0_4)
+	setActive(arg0_4.award, false)
 
-		setActive(var6_3, false)
-		GetImageSpriteFromAtlasAsync("ui/activityuipage/level_award_atlas", tostring(var1_3), var3_3, true)
+	for iter0_4 = 1, #arg0_4.config.front_drops do
+		local var0_4 = arg0_4.config.front_drops[iter0_4]
+		local var1_4 = var0_4[1]
+		local var2_4 = cloneTplTo(arg0_4.award, arg0_4.content, "award" .. tostring(iter0_4))
+		local var3_4 = var2_4:Find("limit_label/labelLevel")
+		local var4_4 = var2_4:Find("btnAchieve")
+		local var5_4 = var2_4:Find("items")
+		local var6_4 = var2_4:Find("item")
 
-		for iter1_3 = 2, #var0_3 do
-			local var7_3 = cloneTplTo(var6_3, var5_3)
-			local var8_3 = var0_3[iter1_3]
-			local var9_3 = {
-				type = var8_3[1],
-				id = var8_3[2],
-				count = var8_3[3]
+		setActive(var6_4, false)
+		GetImageSpriteFromAtlasAsync("ui/activityuipage/level_award_atlas", tostring(var1_4), var3_4, true)
+
+		for iter1_4 = 2, #var0_4 do
+			local var7_4 = cloneTplTo(var6_4, var5_4)
+			local var8_4 = var0_4[iter1_4]
+			local var9_4 = {
+				type = var8_4[1],
+				id = var8_4[2],
+				count = var8_4[3]
 			}
 
-			updateDrop(var7_3, var9_3)
-			onButton(arg0_3, var7_3, function()
-				arg0_3:emit(BaseUI.ON_DROP, var9_3)
+			updateDrop(var7_4, var9_4)
+			onButton(arg0_4, var7_4, function()
+				arg0_4:emit(BaseUI.ON_DROP, var9_4)
 			end, SFX_PANEL)
 		end
 
-		onButton(arg0_3, var4_3, function()
-			arg0_3:emit(ActivityMediator.EVENT_OPERATION, {
+		onButton(arg0_4, var4_4, function()
+			arg0_4:emit(ActivityMediator.EVENT_OPERATION, {
 				cmd = 1,
-				activity_id = arg0_3.activity.id,
-				arg1 = var1_3
+				activity_id = arg0_4.activity.id,
+				arg1 = var1_4
 			})
 		end, SFX_PANEL)
-		onScroll(arg0_3, arg0_3.scrollTF, function(arg0_6)
-			setActive(arg0_3.pageSignDownTF, arg0_6.y > 0.01)
-			setActive(arg0_3.pageSignUpTF, arg0_6.y < 0.99)
+		onScroll(arg0_4, arg0_4.scrollTF, function(arg0_7)
+			setActive(arg0_4.pageSignDownTF, arg0_7.y > 0.01)
+			setActive(arg0_4.pageSignUpTF, arg0_7.y < 0.99)
 		end)
 	end
 end
 
-function var0_0.OnUpdateFlush(arg0_7)
-	for iter0_7 = 1, #arg0_7.config.front_drops do
-		local var0_7 = arg0_7.config.front_drops[iter0_7]
-		local var1_7 = arg0_7.content:Find("award" .. tostring(iter0_7))
-		local var2_7 = var1_7:Find("btnAchieve")
-		local var3_7 = var1_7:Find("achieve_sign")
-		local var4_7 = _.include(arg0_7.activity.data1_list, var0_7[1])
+function var0_0.OnUpdateFlush(arg0_8)
+	for iter0_8 = 1, #arg0_8.config.front_drops do
+		local var0_8 = arg0_8.config.front_drops[iter0_8]
+		local var1_8 = arg0_8.content:Find("award" .. tostring(iter0_8))
+		local var2_8 = var1_8:Find("btnAchieve")
+		local var3_8 = var1_8:Find("achieve_sign")
+		local var4_8 = _.include(arg0_8.activity.data1_list, var0_8[1])
 
-		if var4_7 then
-			var1_7.transform:SetAsLastSibling()
+		if var4_8 then
+			var1_8.transform:SetAsLastSibling()
 		end
 
-		setGray(var1_7:Find("limit_label"), var4_7)
-		setGray(var1_7:Find("items"), var4_7)
-		setActive(var3_7, var4_7)
-		setActive(var2_7, arg0_7.shareData.player.level >= var0_7[1] and not var4_7)
+		setGray(var1_8:Find("limit_label"), var4_8)
+		setGray(var1_8:Find("items"), var4_8)
+		setActive(var3_8, var4_8)
+		setActive(var2_8, arg0_8.shareData.player.level >= var0_8[1] and not var4_8)
 	end
 end
 
-function var0_0.OnDestroy(arg0_8)
+function var0_0.OnDestroy(arg0_9)
 	return
 end
 

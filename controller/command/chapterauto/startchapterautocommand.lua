@@ -103,32 +103,38 @@ function var0_0.execute(arg0_1, arg1_1)
 end
 
 function var0_0.CheckOccupied()
-	if #getProxy(ChapterAutoProxy):GetCommissionList() > 0 then
-		local var0_4 = getProxy(ChapterProxy)
-		local var1_4 = var0_4:GetAutoChapterId()
+	local var0_4 = getProxy(ChapterAutoProxy):GetCommissionDoingType()
 
-		if var1_4 then
-			local var2_4 = var0_4:getChapterById(var1_4)
-
-			pg.MsgboxMgr.GetInstance():ShowMsgBox({
-				content = i18n("auto_drop_is_activation", var2_4:getConfig("name")),
-				onYes = function()
-					local var0_5 = var0_4:getActiveChapter()
-
-					pg.m02:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, {
-						chapterId = var0_5 and var0_5.id,
-						mapIdx = var0_5 and var0_5:getConfig("map")
-					})
-				end,
-				yesText = i18n("auto_drop_is_activation_go"),
-				noText = i18n("auto_drop_is_activation_cancle")
-			})
-		end
-
-		return true
+	if not var0_4 or var0_4 == ChapterAutoProxy.TYPE.WORLD then
+		return false
 	end
 
-	return false
+	switch(var0_4, {
+		[ChapterAutoProxy.TYPE.SLG] = function()
+			local var0_5 = getProxy(ChapterProxy)
+			local var1_5 = var0_5:GetAutoChapterId()
+
+			if var1_5 then
+				local var2_5 = var0_5:getChapterById(var1_5)
+
+				pg.MsgboxMgr.GetInstance():ShowMsgBox({
+					content = i18n("auto_drop_is_activation", var2_5:getConfig("name")),
+					onYes = function()
+						local var0_6 = var0_5:getActiveChapter()
+
+						pg.m02:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, {
+							chapterId = var0_6 and var0_6.id,
+							mapIdx = var0_6 and var0_6:getConfig("map")
+						})
+					end,
+					yesText = i18n("auto_drop_is_activation_go"),
+					noText = i18n("auto_drop_is_activation_cancle")
+				})
+			end
+
+			return true
+		end
+	})
 end
 
 return var0_0

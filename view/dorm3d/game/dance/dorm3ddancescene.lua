@@ -41,225 +41,244 @@ function var0_0.preload(arg0_2, arg1_2)
 	}, arg1_2)
 end
 
-function var0_0.init(arg0_7)
-	arg0_7:InitScene()
-	arg0_7:InitUI()
+function var0_0.getResource(arg0_7)
+	local var0_7 = var0_0.super.getResource(arg0_7)
+	local var1_7 = arg0_7.contextData.groupId
+	local var2_7 = pg.dorm3d_dance[var1_7]
+	local var3_7 = pg.dorm3d_dorm_template[var1_7]
+	local var4_7 = {
+		string.lower("dorm3d/scenesres/scenes/publiccafe/map_publiccafe_01_blue_scene"),
+		string.lower("dorm3d/character/" .. var3_7.asset_name .. "/timeline/" .. var2_7.timeline_scene .. "/" .. var2_7.timeline_scene .. "_scene")
+	}
 
-	arg0_7.gameState = Dorm3dDanceConst.GAME_STATE.NONE
-	arg0_7.criatomPlayer = CriWareMgr.Inst:GetChannelData("C_TIMELINE").channelPlayer.player
+	for iter0_7, iter1_7 in ipairs(var4_7) do
+		if not table.contains(var0_7, iter1_7) then
+			table.insert(var0_7, iter1_7)
+		end
+	end
 
-	local var0_7 = GameObject.Find("OverlayCamera").transform
+	return var0_7
+end
 
-	arg0_7.overlayCamera = var0_7:GetComponent(typeof(Camera))
-	arg0_7.canvas = var0_7:GetChild(0)
+function var0_0.init(arg0_8)
+	arg0_8:InitScene()
+	arg0_8:InitUI()
+
+	arg0_8.gameState = Dorm3dDanceConst.GAME_STATE.NONE
+	arg0_8.criatomPlayer = CriWareMgr.Inst:GetChannelData("C_TIMELINE").channelPlayer.player
+
+	local var0_8 = GameObject.Find("OverlayCamera").transform
+
+	arg0_8.overlayCamera = var0_8:GetComponent(typeof(Camera))
+	arg0_8.canvas = var0_8:GetChild(0)
 
 	pg.BgmMgr.GetInstance():StopPlay()
 
-	local var1_7 = Dorm3dHxHelper.GetTimelineMainCharacter()
+	local var1_8 = Dorm3dHxHelper.GetTimelineMainCharacter()
 
-	Dorm3dHxHelper.ReplaceCharacterParts(var1_7)
-	Dorm3dHxHelper.HideCharacterPart(var1_7, nil, true)
+	Dorm3dHxHelper.ReplaceCharacterParts(var1_8)
+	Dorm3dHxHelper.HideCharacterPart(var1_8, nil, true)
 	Dorm3dHxHelper.ShowHolyLight({
-		var1_7
-	}, arg0_7.holyLightRoot)
+		var1_8
+	}, arg0_8.holyLightRoot)
 end
 
-function var0_0.InitUI(arg0_8)
-	arg0_8.basePanel = arg0_8._tf:Find("Base")
+function var0_0.InitUI(arg0_9)
+	arg0_9.basePanel = arg0_9._tf:Find("Base")
 
-	onButton(arg0_8, arg0_8._tf:Find("Base/BackBtn"), function()
-		arg0_8:emit(BaseUI.ON_BACK)
+	onButton(arg0_9, arg0_9._tf:Find("Base/BackBtn"), function()
+		arg0_9:emit(BaseUI.ON_BACK)
 	end, SFX_DORM_BACK)
 
-	arg0_8.prepareView = Dorm3dDancePrepareSubView.New(arg0_8._tf:Find("Prepare"), arg0_8.event, setmetatable({}, {
-		__index = arg0_8.contextData
+	arg0_9.prepareView = Dorm3dDancePrepareSubView.New(arg0_9._tf:Find("Prepare"), arg0_9.event, setmetatable({}, {
+		__index = arg0_9.contextData
 	}))
-	arg0_8.gameView = Dorm3dDanceGameSubView.New(arg0_8._tf:Find("Game"), arg0_8.event, setmetatable({
-		onSwitchCamera = function(arg0_10)
-			arg0_8:SwtichCamera(arg0_10)
+	arg0_9.gameView = Dorm3dDanceGameSubView.New(arg0_9._tf:Find("Game"), arg0_9.event, setmetatable({
+		onSwitchCamera = function(arg0_11)
+			arg0_9:SwtichCamera(arg0_11)
 		end,
 		onTakePhoto = function()
-			arg0_8:TakePhoto()
+			arg0_9:TakePhoto()
 		end,
 		onEndGame = function()
-			arg0_8:EndGame()
+			arg0_9:EndGame()
 		end,
-		onShowOrHideBaseUI = function(arg0_13)
-			setActive(arg0_8.basePanel, arg0_13)
+		onShowOrHideBaseUI = function(arg0_14)
+			setActive(arg0_9.basePanel, arg0_14)
 		end,
-		onShowRealImage = function(arg0_14, arg1_14, arg2_14)
-			arg0_8:ShowRealImage(arg0_14, arg1_14, arg2_14)
+		onShowRealImage = function(arg0_15, arg1_15, arg2_15)
+			arg0_9:ShowRealImage(arg0_15, arg1_15, arg2_15)
 		end,
-		onShowPhotoWindow = function(arg0_15)
-			arg0_8:GamePause()
-			arg0_8.photoWindow:Show()
-			arg0_8.photoWindow:Flush(arg0_15)
+		onShowPhotoWindow = function(arg0_16)
+			arg0_9:GamePause()
+			arg0_9.photoWindow:Show()
+			arg0_9.photoWindow:Flush(arg0_16)
 		end
 	}, {
-		__index = arg0_8.contextData
+		__index = arg0_9.contextData
 	}))
-	arg0_8.resultView = Dorm3dDanceResultSubView.New(arg0_8._tf:Find("Result"), arg0_8.event, setmetatable({
+	arg0_9.resultView = Dorm3dDanceResultSubView.New(arg0_9._tf:Find("Result"), arg0_9.event, setmetatable({
 		onAgain = function()
-			arg0_8:InitData()
-			arg0_8:PrepareGame()
+			arg0_9:InitData()
+			arg0_9:PrepareGame()
 		end,
 		onExit = function()
-			arg0_8:emit(BaseUI.ON_BACK)
+			arg0_9:emit(BaseUI.ON_BACK)
 		end,
-		onShowRealImage = function(arg0_18, arg1_18, arg2_18)
-			arg0_8:ShowRealImage(arg0_18, arg1_18, arg2_18)
+		onShowRealImage = function(arg0_19, arg1_19, arg2_19)
+			arg0_9:ShowRealImage(arg0_19, arg1_19, arg2_19)
 		end
 	}, {
-		__index = arg0_8.contextData
+		__index = arg0_9.contextData
 	}))
-	arg0_8.viewDic = {
-		[Dorm3dDanceConst.VIEW_ENUM.PREPARE] = arg0_8.prepareView,
-		[Dorm3dDanceConst.VIEW_ENUM.GAME] = arg0_8.gameView,
-		[Dorm3dDanceConst.VIEW_ENUM.RESULT] = arg0_8.resultView
+	arg0_9.viewDic = {
+		[Dorm3dDanceConst.VIEW_ENUM.PREPARE] = arg0_9.prepareView,
+		[Dorm3dDanceConst.VIEW_ENUM.GAME] = arg0_9.gameView,
+		[Dorm3dDanceConst.VIEW_ENUM.RESULT] = arg0_9.resultView
 	}
-	arg0_8.photoWindow = Dorm3dDancePhotoWindow.New(arg0_8._tf:Find("Photo"), arg0_8.event, setmetatable({
+	arg0_9.photoWindow = Dorm3dDancePhotoWindow.New(arg0_9._tf:Find("Photo"), arg0_9.event, setmetatable({
 		onHide = function()
-			arg0_8:ShowOrHideUI(true)
-			arg0_8:GameResume()
+			arg0_9:ShowOrHideUI(true)
+			arg0_9:GameResume()
 		end,
-		onShowRealImage = function(arg0_20, arg1_20, arg2_20)
-			arg0_8:ShowRealImage(arg0_20, arg1_20, arg2_20)
+		onShowRealImage = function(arg0_21, arg1_21, arg2_21)
+			arg0_9:ShowRealImage(arg0_21, arg1_21, arg2_21)
 		end,
-		onSaveImage = function(arg0_21)
-			arg0_8:SaveImage(arg0_21)
+		onSaveImage = function(arg0_22)
+			arg0_9:SaveImage(arg0_22)
 		end
 	}, {
-		__index = arg0_8.contextData
+		__index = arg0_9.contextData
 	}))
-	arg0_8.holyLightRoot = arg0_8._tf:Find("HolyLightRoot")
+	arg0_9.holyLightRoot = arg0_9._tf:Find("HolyLightRoot")
 end
 
-function var0_0.InitScene(arg0_22)
-	local var0_22 = SceneManager.GetSceneByName(arg0_22.sceneName):GetRootGameObjects()
+function var0_0.InitScene(arg0_23)
+	local var0_23 = SceneManager.GetSceneByName(arg0_23.sceneName):GetRootGameObjects()
 
-	table.IpairsCArray(var0_22, function(arg0_23, arg1_23)
-		if arg1_23.name == "MainCamera" then
-			arg0_22.mainCamera = arg1_23.transform
+	table.IpairsCArray(var0_23, function(arg0_24, arg1_24)
+		if arg1_24.name == "MainCamera" then
+			arg0_23.mainCamera = arg1_24.transform
 		end
 	end)
 
-	local var1_22 = SceneManager.GetSceneByName(arg0_22.timelineSceneName):GetRootGameObjects()
+	local var1_23 = SceneManager.GetSceneByName(arg0_23.timelineSceneName):GetRootGameObjects()
 
-	table.IpairsCArray(var1_22, function(arg0_24, arg1_24)
-		if arg1_24.name == arg0_22.gameConfig.director_name then
-			arg0_22.timelinePlayer = TimelinePlayer.New(arg1_24)
-		elseif arg1_24.name == "all_con" then
-			arg0_22.timelineCamera = arg1_24.transform:GetComponentInChildren(typeof(Camera))
+	table.IpairsCArray(var1_23, function(arg0_25, arg1_25)
+		if arg1_25.name == arg0_23.gameConfig.director_name then
+			arg0_23.timelinePlayer = TimelinePlayer.New(arg1_25)
+		elseif arg1_25.name == "all_con" then
+			arg0_23.timelineCamera = arg1_25.transform:GetComponentInChildren(typeof(Camera))
 
-			setActive(arg0_22.timelineCamera, false)
+			setActive(arg0_23.timelineCamera, false)
 		end
 	end)
 
-	arg0_22.cmTracksDic = {}
+	arg0_23.cmTracksDic = {}
 
-	table.IpairsCArray(TimelineHelper.GetTimelineTracks(arg0_22.timelinePlayer.comDirector), function(arg0_25, arg1_25)
-		if _.detect(arg0_22.gameConfig.camera_tracks, function(arg0_26)
-			return arg0_26 == arg1_25.name
+	table.IpairsCArray(TimelineHelper.GetTimelineTracks(arg0_23.timelinePlayer.comDirector), function(arg0_26, arg1_26)
+		if _.detect(arg0_23.gameConfig.camera_tracks, function(arg0_27)
+			return arg0_27 == arg1_26.name
 		end) then
-			arg0_22.cmTracksDic[arg1_25.name] = arg1_25
+			arg0_23.cmTracksDic[arg1_26.name] = arg1_26
 		end
 	end)
-	arg0_22.timelinePlayer:Register(nil, function(arg0_27, arg1_27, arg2_27)
-		switch(arg1_27.stringParameter, {
+	arg0_23.timelinePlayer:Register(nil, function(arg0_28, arg1_28, arg2_28)
+		switch(arg1_28.stringParameter, {
 			StartGame = function()
-				if arg0_22.gameState == Dorm3dDanceConst.GAME_STATE.GAME then
+				if arg0_23.gameState == Dorm3dDanceConst.GAME_STATE.GAME then
 					return
 				end
 
-				arg0_22:StartGame()
+				arg0_23:StartGame()
 			end,
 			TimelinePlayOnTime = function()
-				arg0_27:RawSetTime(arg1_27.floatParameter)
+				arg0_28:RawSetTime(arg1_28.floatParameter)
 			end
 		})
 	end)
 end
 
-function var0_0.didEnter(arg0_30)
-	arg0_30:PrepareGame()
+function var0_0.didEnter(arg0_31)
+	arg0_31:PrepareGame()
 end
 
-function var0_0.EnterView(arg0_31, arg1_31)
-	for iter0_31, iter1_31 in pairs(arg0_31.viewDic) do
-		if iter0_31 == arg1_31 then
-			iter1_31:Show()
-			iter1_31:Flush()
+function var0_0.EnterView(arg0_32, arg1_32)
+	for iter0_32, iter1_32 in pairs(arg0_32.viewDic) do
+		if iter0_32 == arg1_32 then
+			iter1_32:Show()
+			iter1_32:Flush()
 
-			arg0_31.currentView = iter1_31
+			arg0_32.currentView = iter1_32
 		else
-			iter1_31:Hide()
+			iter1_32:Hide()
 		end
 	end
 end
 
-function var0_0.InitData(arg0_32)
-	arg0_32.contextData.cucoloris = {}
+function var0_0.InitData(arg0_33)
+	arg0_33.contextData.cucoloris = {}
 
-	for iter0_32 = 1, Dorm3dDanceConst.CUCOLORIS_COUNT do
-		local var0_32 = math.random(1, #arg0_32.gameConfig.cucoloris_group[iter0_32])
+	for iter0_33 = 1, Dorm3dDanceConst.CUCOLORIS_COUNT do
+		local var0_33 = math.random(1, #arg0_33.gameConfig.cucoloris_group[iter0_33])
 
-		table.insert(arg0_32.contextData.cucoloris, Dorm3dDanceCucoloris.New({
-			configId = arg0_32.gameConfig.cucoloris_group[iter0_32][var0_32]
+		table.insert(arg0_33.contextData.cucoloris, Dorm3dDanceCucoloris.New({
+			configId = arg0_33.gameConfig.cucoloris_group[iter0_33][var0_33]
 		}))
 	end
 
 	if IsUnityEditor then
 		warning("随机的剪影信息为：")
 
-		for iter1_32 = 1, Dorm3dDanceConst.CUCOLORIS_COUNT do
-			warning("ID" .. arg0_32.contextData.cucoloris[iter1_32].configId, "时间" .. arg0_32.contextData.cucoloris[iter1_32]:GetTime(), "相机" .. arg0_32.contextData.cucoloris[iter1_32]:GetCamera())
+		for iter1_33 = 1, Dorm3dDanceConst.CUCOLORIS_COUNT do
+			warning("ID" .. arg0_33.contextData.cucoloris[iter1_33].configId, "时间" .. arg0_33.contextData.cucoloris[iter1_33]:GetTime(), "相机" .. arg0_33.contextData.cucoloris[iter1_33]:GetCamera())
 		end
 	end
 
-	arg0_32.contextData.photoData = {}
-	arg0_32.contextData.curCamera = arg0_32.gameConfig.default_camera
+	arg0_33.contextData.photoData = {}
+	arg0_33.contextData.curCamera = arg0_33.gameConfig.default_camera
 end
 
-function var0_0.PrepareGame(arg0_33)
-	arg0_33.gameState = Dorm3dDanceConst.GAME_STATE.PREPARE
+function var0_0.PrepareGame(arg0_34)
+	arg0_34.gameState = Dorm3dDanceConst.GAME_STATE.PREPARE
 
-	arg0_33:InitData()
-	arg0_33:EnterView(Dorm3dDanceConst.VIEW_ENUM.PREPARE)
-	setActive(arg0_33.mainCamera, false)
-	setActive(arg0_33.timelineCamera, true)
-	arg0_33:SwtichCamera(arg0_33.gameConfig.default_camera)
-	arg0_33.timelinePlayer:Play()
+	arg0_34:InitData()
+	arg0_34:EnterView(Dorm3dDanceConst.VIEW_ENUM.PREPARE)
+	setActive(arg0_34.mainCamera, false)
+	setActive(arg0_34.timelineCamera, true)
+	arg0_34:SwtichCamera(arg0_34.gameConfig.default_camera)
+	arg0_34.timelinePlayer:Play()
 end
 
-function var0_0.StartGame(arg0_34)
-	arg0_34.gameView:ClearPhoto()
+function var0_0.StartGame(arg0_35)
+	arg0_35.gameView:ClearPhoto()
 
-	arg0_34.gameState = Dorm3dDanceConst.GAME_STATE.GAME
+	arg0_35.gameState = Dorm3dDanceConst.GAME_STATE.GAME
 
-	arg0_34:EnterView(Dorm3dDanceConst.VIEW_ENUM.GAME)
+	arg0_35:EnterView(Dorm3dDanceConst.VIEW_ENUM.GAME)
 end
 
-function var0_0.EndGame(arg0_35)
-	arg0_35:CalcScore()
-	setActive(arg0_35.mainCamera, true)
-	setActive(arg0_35.timelineCamera, false)
-	arg0_35.timelinePlayer:Stop()
+function var0_0.EndGame(arg0_36)
+	arg0_36:CalcScore()
+	setActive(arg0_36.mainCamera, true)
+	setActive(arg0_36.timelineCamera, false)
+	arg0_36.timelinePlayer:Stop()
 
-	arg0_35.gameState = Dorm3dDanceConst.GAME_STATE.RESULT
+	arg0_36.gameState = Dorm3dDanceConst.GAME_STATE.RESULT
 
-	arg0_35:EnterView(Dorm3dDanceConst.VIEW_ENUM.RESULT)
+	arg0_36:EnterView(Dorm3dDanceConst.VIEW_ENUM.RESULT)
 end
 
-function var0_0.CalcScore(arg0_36)
-	arg0_36.contextData.match = {}
+function var0_0.CalcScore(arg0_37)
+	arg0_37.contextData.match = {}
 
 	if IsUnityEditor then
 		warning("照片信息为：")
 
-		for iter0_36 = 1, Dorm3dDanceConst.PHOTO_TIMES do
-			local var0_36 = arg0_36.contextData.photoData[iter0_36]
+		for iter0_37 = 1, Dorm3dDanceConst.PHOTO_TIMES do
+			local var0_37 = arg0_37.contextData.photoData[iter0_37]
 
-			warning("ID " .. iter0_36 .. " 时间 " .. var0_36.time .. " 相机 " .. var0_36.camera)
+			warning("ID " .. iter0_37 .. " 时间 " .. var0_37.time .. " 相机 " .. var0_37.camera)
 		end
 	end
 
@@ -267,146 +286,146 @@ function var0_0.CalcScore(arg0_36)
 		warning("二分图信息为")
 	end
 
-	local var1_36 = {}
+	local var1_37 = {}
 
-	for iter1_36 = 1, Dorm3dDanceConst.CUCOLORIS_COUNT do
-		local var2_36 = arg0_36.contextData.cucoloris[iter1_36]
+	for iter1_37 = 1, Dorm3dDanceConst.CUCOLORIS_COUNT do
+		local var2_37 = arg0_37.contextData.cucoloris[iter1_37]
 
-		for iter2_36 = 1, Dorm3dDanceConst.PHOTO_TIMES do
-			local var3_36 = arg0_36.contextData.photoData[iter2_36]
-			local var4_36, var5_36, var6_36 = var2_36:CalcScore(var3_36)
+		for iter2_37 = 1, Dorm3dDanceConst.PHOTO_TIMES do
+			local var3_37 = arg0_37.contextData.photoData[iter2_37]
+			local var4_37, var5_37, var6_37 = var2_37:CalcScore(var3_37)
 
-			table.insert(var1_36, {
-				iter1_36,
-				iter2_36,
-				var4_36 + 1000 - var6_36
+			table.insert(var1_37, {
+				iter1_37,
+				iter2_37,
+				var4_37 + 1000 - var6_37
 			})
 
 			if IsUnityEditor then
-				warning("剪影ID " .. iter1_36 .. " 照片ID " .. iter2_36 .. " 分数 " .. var4_36 .. " 时间差 " .. var6_36)
+				warning("剪影ID " .. iter1_37 .. " 照片ID " .. iter2_37 .. " 分数 " .. var4_37 .. " 时间差 " .. var6_37)
 			end
 		end
 	end
 
-	local var7_36 = 0
-	local var8_36, var9_36 = AlgorithmHelper.KM(Dorm3dDanceConst.PHOTO_TIMES, var1_36)
+	local var7_37 = 0
+	local var8_37, var9_37 = AlgorithmHelper.KM(Dorm3dDanceConst.PHOTO_TIMES, var1_37)
 
-	for iter3_36 = 1, Dorm3dDanceConst.CUCOLORIS_COUNT do
-		arg0_36.contextData.match[iter3_36] = var9_36[iter3_36]
+	for iter3_37 = 1, Dorm3dDanceConst.CUCOLORIS_COUNT do
+		arg0_37.contextData.match[iter3_37] = var9_37[iter3_37]
 
-		local var10_36, var11_36, var12_36 = arg0_36.contextData.cucoloris[iter3_36]:CalcScore(arg0_36.contextData.photoData[var9_36[iter3_36]])
+		local var10_37, var11_37, var12_37 = arg0_37.contextData.cucoloris[iter3_37]:CalcScore(arg0_37.contextData.photoData[var9_37[iter3_37]])
 
-		var7_36 = var7_36 + var10_36
+		var7_37 = var7_37 + var10_37
 
 		if IsUnityEditor then
-			warning("剪影ID " .. iter3_36 .. " 匹配照片ID " .. var9_36[iter3_36])
+			warning("剪影ID " .. iter3_37 .. " 匹配照片ID " .. var9_37[iter3_37])
 		end
 	end
 
-	pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataDance(arg0_36.contextData.groupId, var7_36))
+	pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataDance(arg0_37.contextData.groupId, var7_37))
 end
 
-function var0_0.TakePhoto(arg0_37)
-	arg0_37:GamePause()
-	arg0_37:ShowOrHideUI(false)
+function var0_0.TakePhoto(arg0_38)
+	arg0_38:GamePause()
+	arg0_38:ShowOrHideUI(false)
 
-	local function var0_37(arg0_38)
-		table.insert(arg0_37.contextData.photoData, {
-			camera = arg0_37.contextData.curCamera,
-			time = arg0_37.timelinePlayer:GetTime(),
-			texture = arg0_38
+	local function var0_38(arg0_39)
+		table.insert(arg0_38.contextData.photoData, {
+			camera = arg0_38.contextData.curCamera,
+			time = arg0_38.timelinePlayer:GetTime(),
+			texture = arg0_39
 		})
-		arg0_37.photoWindow:Show()
-		arg0_37.photoWindow:Flush(#arg0_37.contextData.photoData, true)
-		arg0_37.gameView:Flush()
+		arg0_38.photoWindow:Show()
+		arg0_38.photoWindow:Flush(#arg0_38.contextData.photoData, true)
+		arg0_38.gameView:Flush()
 	end
 
-	local var1_37, var2_37 = Dorm3dHxHelper.GetHolyLightScreenShotInfo(arg0_37.holyLightRoot)
+	local var1_38, var2_38 = Dorm3dHxHelper.GetHolyLightScreenShotInfo(arg0_38.holyLightRoot)
 
-	GraphicsInterface.Instance:TakePhotoWithPost(arg0_37.timelineCamera, var1_37, var2_37, var0_37)
+	GraphicsInterface.Instance:TakePhotoWithPost(arg0_38.timelineCamera, var1_38, var2_38, var0_38)
 end
 
-function var0_0.GamePause(arg0_39)
-	arg0_39.timelinePlayer:SetSpeed(0)
-	arg0_39.criatomPlayer:SetVolume(0)
-	arg0_39.criatomPlayer:UpdateAll()
-end
-
-function var0_0.GameResume(arg0_40)
-	arg0_40.timelinePlayer:SetSpeed(1)
-	arg0_40.criatomPlayer:SetVolume(1)
+function var0_0.GamePause(arg0_40)
+	arg0_40.timelinePlayer:SetSpeed(0)
+	arg0_40.criatomPlayer:SetVolume(0)
 	arg0_40.criatomPlayer:UpdateAll()
 end
 
-function var0_0.ShowOrHideUI(arg0_41, arg1_41)
-	if arg1_41 then
-		arg0_41.currentView:Show()
+function var0_0.GameResume(arg0_41)
+	arg0_41.timelinePlayer:SetSpeed(1)
+	arg0_41.criatomPlayer:SetVolume(1)
+	arg0_41.criatomPlayer:UpdateAll()
+end
+
+function var0_0.ShowOrHideUI(arg0_42, arg1_42)
+	if arg1_42 then
+		arg0_42.currentView:Show()
 	else
-		arg0_41.currentView:Hide()
+		arg0_42.currentView:Hide()
 	end
 
-	setActive(arg0_41.basePanel, arg1_41)
+	setActive(arg0_42.basePanel, arg1_42)
 end
 
-function var0_0.SwtichCamera(arg0_42, arg1_42)
-	arg0_42.cmTracksDic[arg0_42.contextData.curCamera].muted = true
-	arg0_42.cmTracksDic[arg1_42].muted = false
+function var0_0.SwtichCamera(arg0_43, arg1_43)
+	arg0_43.cmTracksDic[arg0_43.contextData.curCamera].muted = true
+	arg0_43.cmTracksDic[arg1_43].muted = false
 
-	arg0_42.timelinePlayer:SetTime(arg0_42.timelinePlayer:GetTime())
+	arg0_43.timelinePlayer:SetTime(arg0_43.timelinePlayer:GetTime())
 
-	arg0_42.contextData.curCamera = arg1_42
+	arg0_43.contextData.curCamera = arg1_43
 end
 
-function var0_0.ShowRealImage(arg0_43, arg1_43, arg2_43, arg3_43)
-	local var0_43 = arg0_43.contextData.photoData[arg1_43].texture
+function var0_0.ShowRealImage(arg0_44, arg1_44, arg2_44, arg3_44)
+	local var0_44 = arg0_44.contextData.photoData[arg1_44].texture
 
-	arg2_43:GetComponent(typeof(RawImage)).texture = var0_43
-	arg2_43.sizeDelta = arg0_43.canvas.sizeDelta
+	arg2_44:GetComponent(typeof(RawImage)).texture = var0_44
+	arg2_44.sizeDelta = arg0_44.canvas.sizeDelta
 
-	local var1_43 = math.max(arg3_43.sizeDelta.x / arg0_43.canvas.sizeDelta.x, arg3_43.sizeDelta.y / arg0_43.canvas.sizeDelta.y)
+	local var1_44 = math.max(arg3_44.sizeDelta.x / arg0_44.canvas.sizeDelta.x, arg3_44.sizeDelta.y / arg0_44.canvas.sizeDelta.y)
 
-	arg2_43.localScale = Vector3(var1_43, var1_43, 1)
+	arg2_44.localScale = Vector3(var1_44, var1_44, 1)
 end
 
-function var0_0.SaveImage(arg0_44, arg1_44)
-	local function var0_44(arg0_45)
-		local var0_45 = arg1_44.sizeDelta.x / arg0_44.canvas.sizeDelta.x * Screen.width
-		local var1_45 = arg1_44.sizeDelta.y / arg0_44.canvas.sizeDelta.y * Screen.height
-		local var2_45 = UnityEngine.Texture2D.New(var0_45, var1_45)
-		local var3_45 = (Screen.width - var0_45) / 2
-		local var4_45 = (Screen.height - var1_45) / 2
-		local var5_45 = arg0_45:GetPixels(var3_45, var4_45, var0_45, var1_45)
+function var0_0.SaveImage(arg0_45, arg1_45)
+	local function var0_45(arg0_46)
+		local var0_46 = arg1_45.sizeDelta.x / arg0_45.canvas.sizeDelta.x * Screen.width
+		local var1_46 = arg1_45.sizeDelta.y / arg0_45.canvas.sizeDelta.y * Screen.height
+		local var2_46 = UnityEngine.Texture2D.New(var0_46, var1_46)
+		local var3_46 = (Screen.width - var0_46) / 2
+		local var4_46 = (Screen.height - var1_46) / 2
+		local var5_46 = arg0_46:GetPixels(var3_46, var4_46, var0_46, var1_46)
 
-		var2_45:SetPixels(var5_45)
-		var2_45:Apply()
+		var2_46:SetPixels(var5_46)
+		var2_46:Apply()
 
-		local var6_45 = Tex2DExtension.EncodeToJPG(var2_45)
+		local var6_46 = Tex2DExtension.EncodeToJPG(var2_46)
 
-		YSNormalTool.MediaTool.SaveImageWithBytes(var6_45, function(arg0_46, arg1_46)
-			if arg0_46 then
+		YSNormalTool.MediaTool.SaveImageWithBytes(var6_46, function(arg0_47, arg1_47)
+			if arg0_47 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("word_save_ok"))
 			end
 		end)
 	end
 
-	BLHX.Rendering.HotUpdate.ScreenShooterPass.TakePhoto(arg0_44.overlayCamera, var0_44)
+	BLHX.Rendering.HotUpdate.ScreenShooterPass.TakePhoto(arg0_45.overlayCamera, var0_45)
 end
 
-function var0_0.willExit(arg0_47)
-	for iter0_47, iter1_47 in pairs(arg0_47.viewDic) do
-		iter1_47:Dispose()
+function var0_0.willExit(arg0_48)
+	for iter0_48, iter1_48 in pairs(arg0_48.viewDic) do
+		iter1_48:Dispose()
 	end
 
-	arg0_47.photoWindow:Dispose()
+	arg0_48.photoWindow:Dispose()
 	pg.BgmMgr.GetInstance():ContinuePlay()
 
-	local var0_47 = underscore.map(arg0_47.sceneInfo, function(arg0_48)
-		return function(arg0_49)
-			SceneOpMgr.Inst:UnloadSceneAsync(arg0_48.path, arg0_48.name, arg0_49)
+	local var0_48 = underscore.map(arg0_48.sceneInfo, function(arg0_49)
+		return function(arg0_50)
+			SceneOpMgr.Inst:UnloadSceneAsync(arg0_49.path, arg0_49.name, arg0_50)
 		end
 	end)
 
-	seriesAsync(var0_47, function()
+	seriesAsync(var0_48, function()
 		return
 	end)
 end

@@ -170,7 +170,7 @@ function var0_0.doMove(arg0_15)
 	local var3_15
 
 	if #var1_15.move_path > 0 then
-		var3_15 = _.map(_.rest(var1_15.move_path, 1), function(arg0_16)
+		var3_15 = _.map(underscore.to_array(var1_15.move_path), function(arg0_16)
 			return {
 				row = arg0_16.row,
 				column = arg0_16.column

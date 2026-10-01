@@ -7883,7 +7883,7 @@ end)()
 		skin_id = 105099,
 		use_ship = 1,
 		level_limit = 85,
-		descrip = "",
+		descrip = "Retrofit complete. The following changes have been applied:\nAA +20, RLD +25.\nThe skill Big Seven is upgraded to Big Seven - Colorado.",
 		icon = "mt_yellow",
 		skill_id = 0,
 		condition_id = {
@@ -8350,7 +8350,7 @@ end)()
 		skin_id = 105109,
 		use_ship = 1,
 		level_limit = 85,
-		descrip = "Retrofit complete. The following changes have been applied:\n\nAA +20, RLD +25.\nThis ship's Big Seven skill has been upgraded to Big Seven - Maryland.",
+		descrip = "Retrofit complete. The following changes have been applied:\nAA +20, RLD +25.\nThe skill Big Seven is upgraded to Big Seven - Maryland.",
 		icon = "mt_yellow",
 		skill_id = 0,
 		condition_id = {

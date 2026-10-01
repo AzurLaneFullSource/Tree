@@ -5,12 +5,13 @@ return {
 	scripts = {
 		{
 			actor = 307053,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			side = 2,
 			hidePaintObj = true,
 			withoutActorName = true,
-			hideRecordIco = true,
+			nameColor = "#A9F548FF",
 			say = "Snowflakes dance as they're whipped up by the strong winds. In the middle of it all stands Shoukaku, with nothing but an umbrella to shield herself as she seems to wait for someone.",
+			hideRecordIco = true,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -18,10 +19,11 @@ return {
 		},
 		{
 			actor = 307053,
-			side = 2,
 			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			hidePaintObj = true,
 			dir = 1,
+			side = 2,
 			say = "Ah... Hello, good sir. Could you please assist me?",
 			typewriter = {
 				speed = 0.05,
@@ -30,10 +32,11 @@ return {
 		},
 		{
 			actor = 307053,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
+			NextIcon = 1,
 			say = "I've lost my way... And I can't seem to find my way back.",
 			typewriter = {
 				speed = 0.05,
@@ -52,11 +55,12 @@ return {
 		},
 		{
 			actor = 307053,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 1,
+			NextIcon = 1,
 			say = "You're such a kind soul.",
 			typewriter = {
 				speed = 0.05,
@@ -65,11 +69,12 @@ return {
 		},
 		{
 			actor = 307053,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 1,
+			NextIcon = 1,
 			say = "I may spend my whole life trying to repay this kindness...",
 			typewriter = {
 				speed = 0.05,
@@ -78,11 +83,12 @@ return {
 		},
 		{
 			actor = 307053,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 2,
+			NextIcon = 1,
 			say = "I see... Well, go right ahead.",
 			typewriter = {
 				speed = 0.05,
@@ -91,11 +97,12 @@ return {
 		},
 		{
 			actor = 307053,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 2,
+			NextIcon = 1,
 			say = "But I want to leave as well, so would you mind if I follow you?",
 			typewriter = {
 				speed = 0.05,

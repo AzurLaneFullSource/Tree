@@ -251,7 +251,8 @@ function var0_0.PaintingDownload(arg0_15)
 					dataList = {
 						var0_17
 					},
-					onFinish = arg0_17
+					onFinish = arg0_17,
+					showMask = arg0_15.showMask == true
 				}
 
 				pg.FileDownloadMgr.GetInstance():Main(var1_17)

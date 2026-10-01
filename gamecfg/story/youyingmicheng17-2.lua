@@ -4,10 +4,11 @@ return {
 	fadeOut = 1.5,
 	scripts = {
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Hakuhou lunged, sweeping her fox tails to attack. However, Tiger faced her head-on and tore through her white afterimage.",
 			bgm = "story-visioncity-1",
 			typewriter = {
@@ -16,10 +17,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "A Companion Ball flew forth and enveloped Hakuhou. Rather than resist, she gazed at me thoughtfully.",
 			typewriter = {
 				speed = 0.05,
@@ -32,6 +34,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 307162,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -47,6 +50,7 @@ return {
 			bgName = "star_level_bg_495",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 307162,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -58,11 +62,12 @@ return {
 		},
 		{
 			actor = 317030,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			bgName = "star_level_bg_523",
 			hidePaintObj = true,
-			actorName = "Ordinary Rear Service Personnel",
 			side = 2,
+			actorName = "Ordinary Rear Service Personnel",
+			nameColor = "#A9F548FF",
 			say = "\"Today, I arrived at New Era City No. 4.\"",
 			typewriter = {
 				speed = 0.05,
@@ -94,10 +99,11 @@ return {
 			expression = 6,
 			side = 2,
 			bgName = "star_level_bg_523",
-			hidePaintObj = true,
-			actor = 317030,
 			actorName = "Ordinary Rear Service Personnel",
+			NextIcon = 1,
+			actor = 317030,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "\"Here, people act like adults, using money to fill the void within.\"",
 			typewriter = {
 				speed = 0.05,
@@ -105,10 +111,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_523",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Giant advertising screens repeatedly played clichéd promotional messages. However, the city had not a trace of its formerly refined atmosphere.",
 			typewriter = {
 				speed = 0.05,
@@ -116,10 +123,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_523",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "A transparent figure draped in a soft, white veil stood quietly amidst it all.",
 			typewriter = {
 				speed = 0.05,
@@ -132,6 +140,7 @@ return {
 			bgName = "star_level_bg_523",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 900561,
 			nameColor = "#FF9B93",
 			say = "Sleep now, my lovely children...",
@@ -142,11 +151,12 @@ return {
 		},
 		{
 			actor = 900561,
-			side = 2,
+			nameColor = "#FF9B93",
 			bgName = "star_level_bg_523",
 			factiontag = "Poltergeist",
 			dir = 1,
-			nameColor = "#FF9B93",
+			side = 2,
+			NextIcon = 1,
 			say = "Let my singing voice guide you to dreamland.",
 			typewriter = {
 				speed = 0.05,
@@ -154,11 +164,12 @@ return {
 			}
 		},
 		{
-			actor = 408140,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_523",
 			factiontag = "Innocent Passerby",
 			dir = 1,
+			actor = 408140,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Eepy...",
@@ -168,11 +179,12 @@ return {
 			}
 		},
 		{
-			actor = 101310,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_523",
 			factiontag = "Innocent Passerby",
 			dir = 1,
+			actor = 101310,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Zzz...",
@@ -187,6 +199,7 @@ return {
 			bgName = "star_level_bg_523",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -212,6 +225,7 @@ return {
 			bgName = "star_level_bg_523",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 900561,
 			nameColor = "#FF9B93",
 			say = "You don't need to think or make decisions...",
@@ -226,6 +240,7 @@ return {
 			bgName = "star_level_bg_523",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 900561,
 			nameColor = "#FF9B93",
 			say = "To choose the right product, or seek a more respectable life...",
@@ -240,6 +255,7 @@ return {
 			bgName = "star_level_bg_523",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 900561,
 			nameColor = "#FF9B93",
 			say = "To worry about making the wrong decision or losing what you have...",
@@ -254,6 +270,7 @@ return {
 			bgName = "star_level_bg_523",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			actor = 900561,
 			nameColor = "#FF9B93",
 			say = "Can my gentle song soothe your pain, little ones?",
@@ -263,12 +280,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_523",
-			hidePaintObj = true,
 			portrait = "zhihuiguan",
 			side = 2,
+			bgName = "star_level_bg_523",
+			hidePaintObj = true,
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "I understand how you feel. You're worried that they won't be able to keep on living like this.",
 			typewriter = {
 				speed = 0.05,
@@ -276,12 +294,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_523",
-			hidePaintObj = true,
 			portrait = "zhihuiguan",
 			side = 2,
+			bgName = "star_level_bg_523",
+			hidePaintObj = true,
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "But that doesn't give you the right to deprive them of human emotion.",
 			typewriter = {
 				speed = 0.05,
@@ -289,10 +308,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_523",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "The poltergeist named Illustrious gazes kindly at me. Warm light spreads from her, as if to embrace every restless soul.",
 			typewriter = {
 				speed = 0.05,

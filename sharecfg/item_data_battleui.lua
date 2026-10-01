@@ -19,6 +19,7 @@ pg.item_data_battleui.all = {
 	114,
 	115,
 	116,
+	117,
 	201,
 	202,
 	203,
@@ -267,6 +268,21 @@ pg.base.item_data_battleui = {}
 		unlock = "Cruise Missions S30",
 		id = 116,
 		icon = "116",
+		scene = {},
+		rare_display = {
+			1
+		}
+	}
+	pg.base.item_data_battleui[117] = {
+		key = "SkinNormal_20260924",
+		name = "Bounties and Bullets",
+		desc = "Make each battle a melody of gunpowder, magazines, and bullet holes, echoing from a saloon lost to time – an invitation to an elegant yet dangerous romance.",
+		display_icon = "ui_117",
+		is_unlock = 1,
+		rare = 3,
+		unlock = "Cruise Missions S31",
+		id = 117,
+		icon = "117",
 		scene = {},
 		rare_display = {
 			1

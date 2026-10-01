@@ -9,6 +9,7 @@ return {
 			bgName = "star_level_bg_300",
 			factiontag = "Poltergeist",
 			dir = 1,
+			NextIcon = 1,
 			bgm = "story-antarctica-serious",
 			actor = 9600030,
 			nameColor = "#A9F548FF",
@@ -34,11 +35,12 @@ return {
 		},
 		{
 			actor = 317030,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			bgName = "star_level_bg_300",
 			hidePaintObj = true,
-			actorName = "Ordinary Rear Service Personnel",
 			side = 2,
+			actorName = "Ordinary Rear Service Personnel",
+			nameColor = "#A9F548FF",
 			say = "Commander, a call request just came in. If you would...",
 			typewriter = {
 				speed = 0.05,
@@ -46,10 +48,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_300",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "An unfamiliar face from the support staff walks up to us at a brisk pace carrying a file.",
 			typewriter = {
 				speed = 0.05,
@@ -58,11 +61,12 @@ return {
 		},
 		{
 			actor = 317030,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			bgName = "star_level_bg_300",
 			hidePaintObj = true,
-			actorName = "Ordinary Rear Service Personnel",
 			side = 2,
+			actorName = "Ordinary Rear Service Personnel",
+			nameColor = "#A9F548FF",
 			say = "Also... The meeting with Javelin and others has been going in circles for more than ten minutes now.",
 			typewriter = {
 				speed = 0.05,
@@ -70,12 +74,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_300",
-			hidePaintObj = true,
 			portrait = "zhihuiguan",
 			side = 2,
+			bgName = "star_level_bg_300",
+			hidePaintObj = true,
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "Alright. I'll take care of it.",
 			typewriter = {
 				speed = 0.05,
@@ -83,10 +88,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_300",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "The unremarkable looking rear service personnel nods and quickly shuffles out of the room.",
 			typewriter = {
 				speed = 0.05,
@@ -94,10 +100,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_blue_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Ten minutes ago...",
 			typewriter = {
 				speed = 0.05,
@@ -126,11 +133,12 @@ return {
 			}
 		},
 		{
-			actor = 202030,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_blue_n",
 			factiontag = "Staff Member",
 			dir = 1,
+			actor = 202030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Oh. Why is everyone so silent?",
@@ -140,11 +148,12 @@ return {
 			}
 		},
 		{
-			actor = 202030,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_blue_n",
 			factiontag = "Staff Member",
 			dir = 1,
+			actor = 202030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "If no one else wants to speak up, I'll set the situation straight myself.",
@@ -154,11 +163,12 @@ return {
 			}
 		},
 		{
-			actor = 202030,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_blue_n",
 			factiontag = "Staff Member",
 			dir = 1,
+			actor = 202030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "We're not just facing danger from the poltergeists right now; even the people we want to help have turned hostile to us. We can't move forward until we solve this.",
@@ -168,11 +178,12 @@ return {
 			}
 		},
 		{
-			actor = 301180,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_blue_n",
 			factiontag = "Staff Member",
 			dir = 1,
+			actor = 301180,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "We should just turn City No. 7 into a safe military and trade base. And then...",
@@ -187,6 +198,7 @@ return {
 			bgName = "bg_guild_blue_n",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -202,6 +214,7 @@ return {
 			bgName = "bg_guild_blue_n",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -217,6 +230,7 @@ return {
 			bgName = "bg_guild_blue_n",
 			factiontag = "Staff Member",
 			dir = 1,
+			NextIcon = 1,
 			actor = 602030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -227,11 +241,12 @@ return {
 			}
 		},
 		{
-			actor = 401231,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_blue_n",
 			factiontag = "Assistant Staff",
 			dir = 1,
+			actor = 401231,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Excuse me. Allow me to answer in Javelin's place.",
@@ -241,10 +256,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_blue_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Z23, who had been sitting at the back of the table taking notes and organizing documents, speaks up.",
 			typewriter = {
 				speed = 0.05,
@@ -252,11 +268,12 @@ return {
 			}
 		},
 		{
-			actor = 401231,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_blue_n",
 			factiontag = "Assistant Staff",
 			dir = 1,
+			actor = 401231,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "From a strategic standpoint, Azuchi's aim is to isolate us, as I'm sure you've all noticed by now.",
@@ -266,11 +283,12 @@ return {
 			}
 		},
 		{
-			actor = 401231,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_blue_n",
 			factiontag = "Assistant Staff",
 			dir = 1,
+			actor = 401231,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "If we let the enemy dictate our actions, we'll stay on the back foot.",
@@ -280,11 +298,12 @@ return {
 			}
 		},
 		{
-			actor = 202030,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_blue_n",
 			factiontag = "Staff Member",
 			dir = 1,
+			actor = 202030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Would YOU like to take charge of this meeting, assistant?",
@@ -294,11 +313,12 @@ return {
 			}
 		},
 		{
-			actor = 401231,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_blue_n",
 			factiontag = "Assistant Staff",
 			dir = 1,
+			actor = 401231,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Not at all. The purpose of this meeting is to make a decision. I just believe it wouldn't do to just present negative viewpoints during the discussion and rule out possible solutions.",
@@ -308,11 +328,12 @@ return {
 			}
 		},
 		{
-			actor = 401231,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_blue_n",
 			factiontag = "Assistant Staff",
 			dir = 1,
+			actor = 401231,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "That'd be no different than making decisions on emotions alone.",
@@ -322,11 +343,12 @@ return {
 			}
 		},
 		{
-			actor = 202030,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_blue_n",
 			factiontag = "Staff Member",
 			dir = 1,
+			actor = 202030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Heheh, now ain't that the truth? I see you in a different light now.",
@@ -336,11 +358,12 @@ return {
 			}
 		},
 		{
-			actor = 401231,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_blue_n",
 			factiontag = "Assistant Staff",
 			dir = 1,
+			actor = 401231,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "You flatter me.",
@@ -350,11 +373,12 @@ return {
 			}
 		},
 		{
-			actor = 202030,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_blue_n",
 			factiontag = "Staff Member",
 			dir = 1,
+			actor = 202030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Well, now is the time to simply accept the compliment.",
@@ -369,6 +393,7 @@ return {
 			bgName = "bg_guild_blue_n",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -384,6 +409,7 @@ return {
 			bgName = "bg_guild_blue_n",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -399,6 +425,7 @@ return {
 			bgName = "bg_guild_blue_n",
 			factiontag = "Staff Member",
 			dir = 1,
+			NextIcon = 1,
 			actor = 404070,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -414,6 +441,7 @@ return {
 			bgName = "bg_guild_blue_n",
 			factiontag = "Staff Member",
 			dir = 1,
+			NextIcon = 1,
 			actor = 404070,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -424,10 +452,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_blue_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "But just as the meeting is about to reach another impasse, breaking news flashes across the screen.",
 			typewriter = {
 				speed = 0.05,
@@ -435,14 +464,15 @@ return {
 			}
 		},
 		{
-			actor = 899050,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_605",
-			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
-			say = "Reception is all green. Let's start.",
 			bgm = "battle-eagleunion",
+			actor = 899050,
+			nameColor = "#A9F548FF",
+			hidePaintObj = true,
+			say = "Reception is all green. Let's start.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -466,10 +496,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_605",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Orage stands on top of a prefabricated podium. She looks weary, but there's a fire still burning in her eyes.",
 			typewriter = {
 				speed = 0.05,
@@ -477,11 +508,12 @@ return {
 			}
 		},
 		{
-			actor = 899050,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_605",
 			factiontag = "Interim Representative of the Syndicate",
 			dir = 1,
+			actor = 899050,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "This is New Era City No. 5. I am Orage, the interim representative of the City No. 5 syndicate.",
@@ -491,11 +523,12 @@ return {
 			}
 		},
 		{
-			actor = 899050,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_605",
 			factiontag = "Interim Representative of the Syndicate",
 			dir = 1,
+			actor = 899050,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "I have an important announcement to all cities. Akashi, the former representative of the syndicate, has been stripped of her authority and titles.",
@@ -505,11 +538,12 @@ return {
 			}
 		},
 		{
-			actor = 899050,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_605",
 			factiontag = "Interim Representative of the Syndicate",
 			dir = 1,
+			actor = 899050,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "We have taken over and are maintaining our fight against the poltergeist running amok in the city.",
@@ -519,11 +553,12 @@ return {
 			}
 		},
 		{
-			actor = 899050,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_605",
 			factiontag = "Interim Representative of the Syndicate",
 			dir = 1,
+			actor = 899050,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "City No. 5 is officially requesting a mutual cooperation agreement with City No. 7.",
@@ -533,11 +568,12 @@ return {
 			}
 		},
 		{
-			actor = 899050,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_605",
 			factiontag = "Interim Representative of the Syndicate",
 			dir = 1,
+			actor = 899050,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "If you still wish to help us, we will reciprocate by providing safe passageways, as well as sharing supplies and intel.",
@@ -547,10 +583,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_605",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "After a short pause, Orage seems to remember one last thing to add.",
 			typewriter = {
 				speed = 0.05,
@@ -563,6 +600,7 @@ return {
 			bgName = "star_level_bg_605",
 			factiontag = "Interim Representative of the Syndicate",
 			dir = 1,
+			NextIcon = 1,
 			actor = 899050,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -573,11 +611,12 @@ return {
 			}
 		},
 		{
-			actor = 899050,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_605",
 			factiontag = "Interim Representative of the Syndicate",
 			dir = 1,
+			actor = 899050,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "She's doing well. She's just been asked to learn in person that meetings alone don't improve bad situations.",
@@ -587,10 +626,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_blue_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "The silence after the transmission is short lived, as someone can't keep themselves from letting out a small chuckle.",
 			typewriter = {
 				speed = 0.05,
@@ -615,11 +655,12 @@ return {
 			}
 		},
 		{
-			actor = 102030,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_blue_n",
 			factiontag = "Staff Member",
 			dir = 1,
+			actor = 102030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "To think there was someone with enough guts left in City No. 5.",
@@ -629,11 +670,12 @@ return {
 			}
 		},
 		{
-			actor = 301180,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_blue_n",
 			factiontag = "Staff Member",
 			dir = 1,
+			actor = 301180,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "The market moves at a dizzying pace, indeed...",
@@ -648,6 +690,7 @@ return {
 			bgName = "bg_guild_blue_n",
 			factiontag = "Staff Member",
 			dir = 1,
+			NextIcon = 1,
 			actor = 404070,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -663,6 +706,7 @@ return {
 			bgName = "bg_guild_blue_n",
 			factiontag = "Staff Member",
 			dir = 1,
+			NextIcon = 1,
 			actor = 602030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -678,6 +722,7 @@ return {
 			bgName = "bg_guild_blue_n",
 			factiontag = "Newbie Operative",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -688,12 +733,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "bg_guild_blue_n",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "Well said.",
 			typewriter = {
 				speed = 0.05,
@@ -701,10 +747,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_blue_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "I enter the conference room with new information in hand. All eyes turn to me.",
 			typewriter = {
 				speed = 0.05,
@@ -712,12 +759,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "bg_guild_blue_n",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "We have formally requested a cooperation agreement with City No. 5. We're gonna be working together to get through this mess.",
 			typewriter = {
 				speed = 0.05,
@@ -725,12 +773,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "bg_guild_blue_n",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "And I have more good news. What happened in City No. 5 has pushed other cities to action as well. We should be getting a lot more support going forward.",
 			typewriter = {
 				speed = 0.05,
@@ -738,12 +787,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "bg_guild_blue_n",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "If Azuchi wants to see us cowering in our corner, paralyzed with doubt and fear...",
 			typewriter = {
 				speed = 0.05,
@@ -751,12 +801,13 @@ return {
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "bg_guild_blue_n",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "Well, she's in for a surprise.",
 			typewriter = {
 				speed = 0.05,
@@ -764,10 +815,11 @@ return {
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_blue_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "The silence in the room is no longer a sign of doubt and apprehension, but a silent manifestation of everyone's shared determination.",
 			typewriter = {
 				speed = 0.05,
@@ -780,6 +832,7 @@ return {
 			bgName = "bg_guild_blue_n",
 			factiontag = "Staff Member",
 			dir = 1,
+			NextIcon = 1,
 			actor = 602030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -795,6 +848,7 @@ return {
 			bgName = "bg_guild_blue_n",
 			factiontag = "Staff Member",
 			dir = 1,
+			NextIcon = 1,
 			actor = 404070,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -805,11 +859,12 @@ return {
 			}
 		},
 		{
-			actor = 102030,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_blue_n",
 			factiontag = "Staff Member",
 			dir = 1,
+			actor = 102030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Leave the diplomacy and document writing to me.",
@@ -819,11 +874,12 @@ return {
 			}
 		},
 		{
-			actor = 301180,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_blue_n",
 			factiontag = "Staff Member",
 			dir = 1,
+			actor = 301180,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "We'll sell any urgent military supplies needed at a 20% discount from the market price to City No. 5.",
@@ -833,11 +889,12 @@ return {
 			}
 		},
 		{
-			actor = 301180,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_blue_n",
 			factiontag = "Staff Member",
 			dir = 1,
+			actor = 301180,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "...Why are you all staring at me like that?",

@@ -15,125 +15,151 @@ function var0_0.getUIName(arg0_1)
 	return "TechnologyTreeUI"
 end
 
-function var0_0.init(arg0_2)
-	arg0_2:initData()
-	arg0_2:findUI()
-	arg0_2:initNationToggleUIList()
-	arg0_2:initTecClassUIList()
+function var0_0.getResource(arg0_2, arg1_2)
+	local var0_2 = {
+		"ui/Technologytreeui",
+		"ui/technologytreeui_atlas",
+		"tecclasslevelicon",
+		"tecnation",
+		"shipraritybaseicon",
+		"tecnation"
+	}
+	local var1_2 = {}
+
+	for iter0_2, iter1_2 in ipairs(pg.fleet_tech_ship_class.all) do
+		local var2_2 = pg.fleet_tech_ship_class[iter1_2]
+
+		for iter2_2, iter3_2 in ipairs(var2_2.ships) do
+			local var3_2 = ShipGroup.getDefaultSkin(iter3_2)
+
+			if var3_2 then
+				table.insertto(var1_2, ResPathSupport.GetShipSkinSpineShipModelList(var3_2.id))
+			end
+		end
+	end
+
+	return ResPathSupport.MergeLuaArr(var0_0.super.getResource(arg0_2, arg1_2), var0_2, var1_2)
 end
 
-function var0_0.didEnter(arg0_3)
-	arg0_3:initTypeToggleUIList()
-	arg0_3:updateTecItemList()
-	arg0_3:addBtnListener()
-	setText(arg0_3.pointNumText, arg0_3.point)
-	arg0_3:updateRedPoint(getProxy(TechnologyNationProxy):getShowRedPointTag())
+function var0_0.init(arg0_3)
+	arg0_3:initData()
+	arg0_3:findUI()
+	arg0_3:initNationToggleUIList()
+	arg0_3:initTecClassUIList()
+end
+
+function var0_0.didEnter(arg0_4)
+	arg0_4:initTypeToggleUIList()
+	arg0_4:updateTecItemList()
+	arg0_4:addBtnListener()
+	setText(arg0_4.pointNumText, arg0_4.point)
+	arg0_4:updateRedPoint(getProxy(TechnologyNationProxy):getShowRedPointTag())
 
 	if not PlayerPrefs.HasKey("first_comein_technologytree") then
-		triggerButton(arg0_3.helpBtn)
+		triggerButton(arg0_4.helpBtn)
 		PlayerPrefs.SetInt("first_comein_technologytree", 1)
 		PlayerPrefs.Save()
 	end
 end
 
-function var0_0.updateRedPoint(arg0_4, arg1_4)
-	setActive(arg0_4.redPointImg, arg1_4)
+function var0_0.updateRedPoint(arg0_5, arg1_5)
+	setActive(arg0_5.redPointImg, arg1_5)
 end
 
-function var0_0.willExit(arg0_5)
-	arg0_5:UnOverlayPanel(arg0_5.blurPanel, arg0_5._tf)
+function var0_0.willExit(arg0_6)
+	arg0_6:UnOverlayPanel(arg0_6.blurPanel, arg0_6._tf)
 
-	arg0_5.rightLSC.onReturnItem = nil
+	arg0_6.rightLSC.onReturnItem = nil
 
-	if arg0_5.emptyPage then
-		arg0_5.emptyPage:Destroy()
+	if arg0_6.emptyPage then
+		arg0_6.emptyPage:Destroy()
 
-		arg0_5.emptyPage = nil
+		arg0_6.emptyPage = nil
 	end
 end
 
-function var0_0.initData(arg0_6)
+function var0_0.initData(arg0_7)
 	TechnologyConst.CreateMetaClassConfig()
 
-	arg0_6.nationToggleList = {}
-	arg0_6.typeToggleList = {}
-	arg0_6.nationSelectedList = {}
-	arg0_6.typeSelectedList = {}
-	arg0_6.nationSelectedCount = 0
-	arg0_6.typeSelectedCount = 0
-	arg0_6.lastNationTrige = nil
-	arg0_6.lastTypeTrige = nil
-	arg0_6.countInEveryRow = 5
-	arg0_6.collectionProxy = getProxy(CollectionProxy)
-	arg0_6.nationProxy = getProxy(TechnologyNationProxy)
-	arg0_6.curClassIDList = nil
-	arg0_6.groupIDGotList = {}
+	arg0_7.nationToggleList = {}
+	arg0_7.typeToggleList = {}
+	arg0_7.nationSelectedList = {}
+	arg0_7.typeSelectedList = {}
+	arg0_7.nationSelectedCount = 0
+	arg0_7.typeSelectedCount = 0
+	arg0_7.lastNationTrige = nil
+	arg0_7.lastTypeTrige = nil
+	arg0_7.countInEveryRow = 5
+	arg0_7.collectionProxy = getProxy(CollectionProxy)
+	arg0_7.nationProxy = getProxy(TechnologyNationProxy)
+	arg0_7.curClassIDList = nil
+	arg0_7.groupIDGotList = {}
 
-	local var0_6 = arg0_6.collectionProxy.shipGroups
+	local var0_7 = arg0_7.collectionProxy.shipGroups
 
-	for iter0_6, iter1_6 in pairs(var0_6) do
-		arg0_6.groupIDGotList[#arg0_6.groupIDGotList + 1] = iter1_6.id
+	for iter0_7, iter1_7 in pairs(var0_7) do
+		arg0_7.groupIDGotList[#arg0_7.groupIDGotList + 1] = iter1_7.id
 	end
 
-	arg0_6.point = arg0_6.nationProxy:getPoint()
-	arg0_6.expanded = {}
+	arg0_7.point = arg0_7.nationProxy:getPoint()
+	arg0_7.expanded = {}
 end
 
-function var0_0.findUI(arg0_7)
-	arg0_7.nationAllToggle = nil
-	arg0_7.nationAllToggleCom = nil
-	arg0_7.nationMetaToggle = arg0_7._tf:Find("Adapt/Left/MetaToggle")
-	arg0_7.nationMetaToggleCom = GetComponent(arg0_7.nationMetaToggle, "Toggle")
-	arg0_7.nationMotToggle = arg0_7._tf:Find("Adapt/Left/MotToggle")
-	arg0_7.nationMotToggleCom = GetComponent(arg0_7.nationMotToggle, "Toggle")
-	arg0_7.typeAllToggle = nil
-	arg0_7.typeAllToggleCom = nil
-	arg0_7.blurPanel = arg0_7._tf:Find("blur_panel")
-	arg0_7.adapt = arg0_7.blurPanel:Find("adapt")
-	arg0_7.backBtn = arg0_7.adapt:Find("top/back")
-	arg0_7.homeBtn = arg0_7.adapt:Find("top/option")
-	arg0_7.additionDetailBtn = arg0_7.adapt:Find("AdditionDetailBtn")
-	arg0_7.switchBtn = arg0_7.adapt:Find("SwitchToggle")
-	arg0_7.pointTF = arg0_7.adapt:Find("PointCount")
-	arg0_7.pointNumText = arg0_7.adapt:Find("PointCount/PointNumText")
-	arg0_7.redPointImg = arg0_7.switchBtn:Find("RedPoint")
-	arg0_7.helpBtn = arg0_7.adapt:Find("help_btn")
-	arg0_7.leftContainer = arg0_7._tf:Find("Adapt/Left/Scroll View/Content")
-	arg0_7.selectNationItem = arg0_7._tf:Find("SelectCampItem")
-	arg0_7.bottomContainer = arg0_7._tf:Find("Adapt/Bottom/Content")
-	arg0_7.selectTypeItem = arg0_7._tf:Find("SelectTypeItem")
-	arg0_7.rightContainer = arg0_7._tf:Find("Adapt/Right/Container")
-	arg0_7.rightLSC = arg0_7.rightContainer:GetComponent("LScrollRect")
-	arg0_7.rightLayoutGroup = arg0_7.rightContainer:GetComponent("VerticalLayoutGroup")
-	arg0_7.headItem = arg0_7._tf:Find("HeadItem")
-	arg0_7.rowHeight = arg0_7.headItem.rect.height
-	arg0_7.maxRowHeight = 853.5
-	arg0_7.emptyPage = BaseEmptyListPage.New(arg0_7._tf:Find("Adapt/Right/ViewPort"), arg0_7.event)
+function var0_0.findUI(arg0_8)
+	arg0_8.nationAllToggle = nil
+	arg0_8.nationAllToggleCom = nil
+	arg0_8.nationMetaToggle = arg0_8._tf:Find("Adapt/Left/MetaToggle")
+	arg0_8.nationMetaToggleCom = GetComponent(arg0_8.nationMetaToggle, "Toggle")
+	arg0_8.nationMotToggle = arg0_8._tf:Find("Adapt/Left/MotToggle")
+	arg0_8.nationMotToggleCom = GetComponent(arg0_8.nationMotToggle, "Toggle")
+	arg0_8.typeAllToggle = nil
+	arg0_8.typeAllToggleCom = nil
+	arg0_8.blurPanel = arg0_8._tf:Find("blur_panel")
+	arg0_8.adapt = arg0_8.blurPanel:Find("adapt")
+	arg0_8.backBtn = arg0_8.adapt:Find("top/back")
+	arg0_8.homeBtn = arg0_8.adapt:Find("top/option")
+	arg0_8.additionDetailBtn = arg0_8.adapt:Find("AdditionDetailBtn")
+	arg0_8.switchBtn = arg0_8.adapt:Find("SwitchToggle")
+	arg0_8.pointTF = arg0_8.adapt:Find("PointCount")
+	arg0_8.pointNumText = arg0_8.adapt:Find("PointCount/PointNumText")
+	arg0_8.redPointImg = arg0_8.switchBtn:Find("RedPoint")
+	arg0_8.helpBtn = arg0_8.adapt:Find("help_btn")
+	arg0_8.leftContainer = arg0_8._tf:Find("Adapt/Left/Scroll View/Content")
+	arg0_8.selectNationItem = arg0_8._tf:Find("SelectCampItem")
+	arg0_8.bottomContainer = arg0_8._tf:Find("Adapt/Bottom/Content")
+	arg0_8.selectTypeItem = arg0_8._tf:Find("SelectTypeItem")
+	arg0_8.rightContainer = arg0_8._tf:Find("Adapt/Right/Container")
+	arg0_8.rightLSC = arg0_8.rightContainer:GetComponent("LScrollRect")
+	arg0_8.rightLayoutGroup = arg0_8.rightContainer:GetComponent("VerticalLayoutGroup")
+	arg0_8.headItem = arg0_8._tf:Find("HeadItem")
+	arg0_8.rowHeight = arg0_8.headItem.rect.height
+	arg0_8.maxRowHeight = 853.5
+	arg0_8.emptyPage = BaseEmptyListPage.New(arg0_8._tf:Find("Adapt/Right/ViewPort"), arg0_8.event)
 end
 
-function var0_0.onBackPressed(arg0_8)
-	triggerButton(arg0_8.backBtn)
+function var0_0.onBackPressed(arg0_9)
+	triggerButton(arg0_9.backBtn)
 end
 
-function var0_0.addBtnListener(arg0_9)
-	onButton(arg0_9, arg0_9.backBtn, function()
-		arg0_9:closeView()
+function var0_0.addBtnListener(arg0_10)
+	onButton(arg0_10, arg0_10.backBtn, function()
+		arg0_10:closeView()
 	end, SFX_CANCEL)
-	onButton(arg0_9, arg0_9.additionDetailBtn, function()
-		arg0_9:emit(TechnologyConst.OPEN_ALL_BUFF_DETAIL)
+	onButton(arg0_10, arg0_10.additionDetailBtn, function()
+		arg0_10:emit(TechnologyConst.OPEN_ALL_BUFF_DETAIL)
 	end)
-	onToggle(arg0_9, arg0_9.switchBtn, function(arg0_12)
-		if arg0_12 then
-			setActive(arg0_9.pointTF, false)
-			arg0_9:OverlayPanel(arg0_9.blurPanel)
-			arg0_9:emit(TechnologyConst.OPEN_TECHNOLOGY_NATION_LAYER)
+	onToggle(arg0_10, arg0_10.switchBtn, function(arg0_13)
+		if arg0_13 then
+			setActive(arg0_10.pointTF, false)
+			arg0_10:OverlayPanel(arg0_10.blurPanel)
+			arg0_10:emit(TechnologyConst.OPEN_TECHNOLOGY_NATION_LAYER)
 		else
-			setActive(arg0_9.pointTF, true)
-			arg0_9:UnOverlayPanel(arg0_9.blurPanel, arg0_9._tf)
-			arg0_9:emit(TechnologyConst.CLOSE_TECHNOLOGY_NATION_LAYER)
+			setActive(arg0_10.pointTF, true)
+			arg0_10:UnOverlayPanel(arg0_10.blurPanel, arg0_10._tf)
+			arg0_10:emit(TechnologyConst.CLOSE_TECHNOLOGY_NATION_LAYER)
 		end
 	end, SFX_PANEL)
-	onButton(arg0_9, arg0_9.helpBtn, function()
+	onButton(arg0_10, arg0_10.helpBtn, function()
 		if pg.gametip.help_technologytree then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				type = MSGBOX_TYPE_HELP,
@@ -143,540 +169,540 @@ function var0_0.addBtnListener(arg0_9)
 	end, SFX_PANEL)
 end
 
-function var0_0.initNationToggleUIList(arg0_14)
-	arg0_14.nationAllToggle = nil
-	arg0_14.nationAllToggleCom = nil
-	arg0_14.nationMetaToggle = arg0_14._tf:Find("Adapt/Left/MetaToggle")
-	arg0_14.nationMetaToggleCom = GetComponent(arg0_14.nationMetaToggle, "Toggle")
-	arg0_14.nationMotToggle = arg0_14._tf:Find("Adapt/Left/MotToggle")
-	arg0_14.nationMotToggleCom = GetComponent(arg0_14.nationMotToggle, "Toggle")
+function var0_0.initNationToggleUIList(arg0_15)
+	arg0_15.nationAllToggle = nil
+	arg0_15.nationAllToggleCom = nil
+	arg0_15.nationMetaToggle = arg0_15._tf:Find("Adapt/Left/MetaToggle")
+	arg0_15.nationMetaToggleCom = GetComponent(arg0_15.nationMetaToggle, "Toggle")
+	arg0_15.nationMotToggle = arg0_15._tf:Find("Adapt/Left/MotToggle")
+	arg0_15.nationMotToggleCom = GetComponent(arg0_15.nationMotToggle, "Toggle")
 
-	setActive(arg0_14.nationMetaToggle, not LOCK_TEC_META)
+	setActive(arg0_15.nationMetaToggle, not LOCK_TEC_META)
 
 	if LOCK_TEC_META then
-		local var0_14 = arg0_14._tf:Find("Adapt/Left/Scroll View")
+		local var0_15 = arg0_15._tf:Find("Adapt/Left/Scroll View")
 
-		var0_14.offsetMin = Vector2.New(var0_14.offsetMin.x, 0)
+		var0_15.offsetMin = Vector2.New(var0_15.offsetMin.x, 0)
 	end
 
-	local var1_14 = UIItemList.New(arg0_14.leftContainer, arg0_14.selectNationItem)
+	local var1_15 = UIItemList.New(arg0_15.leftContainer, arg0_15.selectNationItem)
 
-	var1_14:make(function(arg0_15, arg1_15, arg2_15)
-		if arg0_15 == UIItemList.EventUpdate then
-			arg2_15:Find("UnSelectedImg"):GetComponent("Image").sprite, arg2_15:Find("SelectedImg"):GetComponent("Image").sprite = TechnologyConst.GetNationSpriteByIndex(arg1_15 + 1)
+	var1_15:make(function(arg0_16, arg1_16, arg2_16)
+		if arg0_16 == UIItemList.EventUpdate then
+			arg2_16:Find("UnSelectedImg"):GetComponent("Image").sprite, arg2_16:Find("SelectedImg"):GetComponent("Image").sprite = TechnologyConst.GetNationSpriteByIndex(arg1_16 + 1)
 
-			if arg1_15 == 0 then
-				arg0_14.nationAllToggle = arg2_15
-				arg0_14.nationAllToggleCom = GetComponent(arg2_15, "Toggle")
-				arg0_14.nationAllToggleCom.interactable = false
+			if arg1_16 == 0 then
+				arg0_15.nationAllToggle = arg2_16
+				arg0_15.nationAllToggleCom = GetComponent(arg2_16, "Toggle")
+				arg0_15.nationAllToggleCom.interactable = false
 
-				triggerToggle(arg2_15, true)
+				triggerToggle(arg2_16, true)
 			else
-				arg0_14.nationToggleList[arg1_15] = arg2_15
+				arg0_15.nationToggleList[arg1_16] = arg2_16
 
-				triggerToggle(arg2_15, false)
+				triggerToggle(arg2_16, false)
 			end
 
-			setActive(arg2_15, true)
+			setActive(arg2_16, true)
 		end
 	end)
-	var1_14:align(#TechnologyConst.NationResName)
-	setActive(arg0_14.nationMotToggle, not LOCK_TEC_MOT)
+	var1_15:align(#TechnologyConst.NationResName)
+	setActive(arg0_15.nationMotToggle, not LOCK_TEC_MOT)
 
 	if not LOCK_TEC_MOT then
-		setParent(arg0_14.nationMotToggle, arg0_14.leftContainer)
+		setParent(arg0_15.nationMotToggle, arg0_15.leftContainer)
 	end
 
-	onToggle(arg0_14, arg0_14.nationAllToggle, function(arg0_16)
-		if arg0_16 == true then
-			arg0_14.lastNationTrige = var0_0.NationTrige.All
-			arg0_14.nationAllToggleCom.interactable = false
-			arg0_14.nationSelectedCount = 0
-			arg0_14.nationSelectedList = {}
-
-			arg0_14:updateTecItemList()
-			arg0_14:updateNationToggleUIList()
-		else
-			arg0_14.nationAllToggleCom.interactable = true
-		end
-	end, SFX_PANEL)
-	onToggle(arg0_14, arg0_14.nationMetaToggle, function(arg0_17)
+	onToggle(arg0_15, arg0_15.nationAllToggle, function(arg0_17)
 		if arg0_17 == true then
-			arg0_14.lastNationTrige = var0_0.NationTrige.Meta
-			arg0_14.nationMetaToggleCom.interactable = false
-			arg0_14.nationSelectedCount = 0
-			arg0_14.nationSelectedList = {}
+			arg0_15.lastNationTrige = var0_0.NationTrige.All
+			arg0_15.nationAllToggleCom.interactable = false
+			arg0_15.nationSelectedCount = 0
+			arg0_15.nationSelectedList = {}
 
-			arg0_14:updateTecItemList()
-			arg0_14:updateNationToggleUIList()
+			arg0_15:updateTecItemList()
+			arg0_15:updateNationToggleUIList()
 		else
-			arg0_14.nationMetaToggleCom.interactable = true
+			arg0_15.nationAllToggleCom.interactable = true
 		end
 	end, SFX_PANEL)
-	onToggle(arg0_14, arg0_14.nationMotToggle, function(arg0_18)
+	onToggle(arg0_15, arg0_15.nationMetaToggle, function(arg0_18)
 		if arg0_18 == true then
-			arg0_14.lastNationTrige = var0_0.NationTrige.Mot
-			arg0_14.nationMotToggleCom.interactable = false
-			arg0_14.nationSelectedCount = 0
-			arg0_14.nationSelectedList = {}
+			arg0_15.lastNationTrige = var0_0.NationTrige.Meta
+			arg0_15.nationMetaToggleCom.interactable = false
+			arg0_15.nationSelectedCount = 0
+			arg0_15.nationSelectedList = {}
 
-			arg0_14:updateTecItemList()
-			arg0_14:updateNationToggleUIList()
+			arg0_15:updateTecItemList()
+			arg0_15:updateNationToggleUIList()
 		else
-			arg0_14.nationMotToggleCom.interactable = true
+			arg0_15.nationMetaToggleCom.interactable = true
+		end
+	end, SFX_PANEL)
+	onToggle(arg0_15, arg0_15.nationMotToggle, function(arg0_19)
+		if arg0_19 == true then
+			arg0_15.lastNationTrige = var0_0.NationTrige.Mot
+			arg0_15.nationMotToggleCom.interactable = false
+			arg0_15.nationSelectedCount = 0
+			arg0_15.nationSelectedList = {}
+
+			arg0_15:updateTecItemList()
+			arg0_15:updateNationToggleUIList()
+		else
+			arg0_15.nationMotToggleCom.interactable = true
 		end
 	end, SFX_PANEL)
 
-	for iter0_14, iter1_14 in ipairs(arg0_14.nationToggleList) do
-		onToggle(arg0_14, iter1_14, function(arg0_19)
-			if arg0_19 == true then
-				arg0_14.lastNationTrige = var0_0.NationTrige.Other
-				arg0_14.nationSelectedCount = arg0_14.nationSelectedCount + 1
+	for iter0_15, iter1_15 in ipairs(arg0_15.nationToggleList) do
+		onToggle(arg0_15, iter1_15, function(arg0_20)
+			if arg0_20 == true then
+				arg0_15.lastNationTrige = var0_0.NationTrige.Other
+				arg0_15.nationSelectedCount = arg0_15.nationSelectedCount + 1
 
-				table.insert(arg0_14.nationSelectedList, TechnologyConst.NationOrder[iter0_14])
+				table.insert(arg0_15.nationSelectedList, TechnologyConst.NationOrder[iter0_15])
 
-				if arg0_14.nationSelectedCount < #arg0_14.nationToggleList then
-					arg0_14:updateNationToggleUIList()
-					arg0_14:updateTecItemList()
-				elseif arg0_14.nationSelectedCount == #arg0_14.nationToggleList then
-					arg0_14:updateNationToggleUIList()
+				if arg0_15.nationSelectedCount < #arg0_15.nationToggleList then
+					arg0_15:updateNationToggleUIList()
+					arg0_15:updateTecItemList()
+				elseif arg0_15.nationSelectedCount == #arg0_15.nationToggleList then
+					arg0_15:updateNationToggleUIList()
 				end
-			elseif arg0_14.nationSelectedCount > 0 then
-				arg0_14.nationSelectedCount = arg0_14.nationSelectedCount - 1
+			elseif arg0_15.nationSelectedCount > 0 then
+				arg0_15.nationSelectedCount = arg0_15.nationSelectedCount - 1
 
-				local var0_19 = table.indexof(arg0_14.nationSelectedList, TechnologyConst.NationOrder[iter0_14], 1)
+				local var0_20 = table.indexof(arg0_15.nationSelectedList, TechnologyConst.NationOrder[iter0_15], 1)
 
-				if var0_19 then
-					table.remove(arg0_14.nationSelectedList, var0_19)
+				if var0_20 then
+					table.remove(arg0_15.nationSelectedList, var0_20)
 				end
 
-				if arg0_14.nationSelectedCount > 0 then
-					arg0_14:updateNationToggleUIList()
-					arg0_14:updateTecItemList()
-				elseif arg0_14.nationSelectedCount == 0 then
-					arg0_14:updateNationToggleUIList()
+				if arg0_15.nationSelectedCount > 0 then
+					arg0_15:updateNationToggleUIList()
+					arg0_15:updateTecItemList()
+				elseif arg0_15.nationSelectedCount == 0 then
+					arg0_15:updateNationToggleUIList()
 				end
 			end
 		end, SFX_PANEL)
 	end
 end
 
-function var0_0.updateNationToggleUIList(arg0_20)
-	if arg0_20.lastNationTrige == var0_0.NationTrige.All then
-		_.each(arg0_20.nationToggleList, function(arg0_21)
-			triggerToggle(arg0_21, false)
+function var0_0.updateNationToggleUIList(arg0_21)
+	if arg0_21.lastNationTrige == var0_0.NationTrige.All then
+		_.each(arg0_21.nationToggleList, function(arg0_22)
+			triggerToggle(arg0_22, false)
 			onNextTick(function()
-				local var0_22 = arg0_21:Find("UnSelectedImg")
+				local var0_23 = arg0_22:Find("UnSelectedImg")
 
-				setActive(var0_22, true)
+				setActive(var0_23, true)
 			end)
 		end)
-		triggerToggle(arg0_20.nationMetaToggle, false)
-		triggerToggle(arg0_20.nationMotToggle, false)
-	elseif arg0_20.lastNationTrige == var0_0.NationTrige.Meta then
-		triggerToggle(arg0_20.nationAllToggle, false)
-		_.each(arg0_20.nationToggleList, function(arg0_23)
-			triggerToggle(arg0_23, false)
-		end)
-		triggerToggle(arg0_20.nationMotToggle, false)
-	elseif arg0_20.lastNationTrige == var0_0.NationTrige.Mot then
-		triggerToggle(arg0_20.nationAllToggle, false)
-		_.each(arg0_20.nationToggleList, function(arg0_24)
+		triggerToggle(arg0_21.nationMetaToggle, false)
+		triggerToggle(arg0_21.nationMotToggle, false)
+	elseif arg0_21.lastNationTrige == var0_0.NationTrige.Meta then
+		triggerToggle(arg0_21.nationAllToggle, false)
+		_.each(arg0_21.nationToggleList, function(arg0_24)
 			triggerToggle(arg0_24, false)
 		end)
-		triggerToggle(arg0_20.nationMetaToggle, false)
-	elseif arg0_20.lastNationTrige == var0_0.NationTrige.Other then
-		if arg0_20.nationSelectedCount <= 0 or arg0_20.nationSelectedCount >= #arg0_20.nationToggleList then
-			triggerToggle(arg0_20.nationAllToggle, true)
+		triggerToggle(arg0_21.nationMotToggle, false)
+	elseif arg0_21.lastNationTrige == var0_0.NationTrige.Mot then
+		triggerToggle(arg0_21.nationAllToggle, false)
+		_.each(arg0_21.nationToggleList, function(arg0_25)
+			triggerToggle(arg0_25, false)
+		end)
+		triggerToggle(arg0_21.nationMetaToggle, false)
+	elseif arg0_21.lastNationTrige == var0_0.NationTrige.Other then
+		if arg0_21.nationSelectedCount <= 0 or arg0_21.nationSelectedCount >= #arg0_21.nationToggleList then
+			triggerToggle(arg0_21.nationAllToggle, true)
 		else
-			triggerToggle(arg0_20.nationAllToggle, false)
-			triggerToggle(arg0_20.nationMetaToggle, false)
-			triggerToggle(arg0_20.nationMotToggle, false)
+			triggerToggle(arg0_21.nationAllToggle, false)
+			triggerToggle(arg0_21.nationMetaToggle, false)
+			triggerToggle(arg0_21.nationMotToggle, false)
 		end
 	end
 end
 
-function var0_0.initTypeToggleUIList(arg0_25)
-	arg0_25.typeAllToggle = nil
-	arg0_25.typeAllToggleCom = nil
+function var0_0.initTypeToggleUIList(arg0_26)
+	arg0_26.typeAllToggle = nil
+	arg0_26.typeAllToggleCom = nil
 
-	local var0_25 = UIItemList.New(arg0_25.bottomContainer, arg0_25.selectTypeItem)
+	local var0_26 = UIItemList.New(arg0_26.bottomContainer, arg0_26.selectTypeItem)
 
-	var0_25:make(function(arg0_26, arg1_26, arg2_26)
-		if arg0_26 == UIItemList.EventUpdate then
-			arg2_26:Find("UnSelectedImg"):GetComponent("Image").sprite, arg2_26:Find("SelectedImg"):GetComponent("Image").sprite = TechnologyConst.GetTypeSpriteByIndex(arg1_26 + 1)
-			arg1_26 = arg1_26 + 1
+	var0_26:make(function(arg0_27, arg1_27, arg2_27)
+		if arg0_27 == UIItemList.EventUpdate then
+			arg2_27:Find("UnSelectedImg"):GetComponent("Image").sprite, arg2_27:Find("SelectedImg"):GetComponent("Image").sprite = TechnologyConst.GetTypeSpriteByIndex(arg1_27 + 1)
+			arg1_27 = arg1_27 + 1
 
-			if arg1_26 == #TechnologyConst.TypeResName then
-				arg0_25.typeAllToggle = arg2_26
-				arg0_25.typeAllToggleCom = GetComponent(arg2_26, "Toggle")
-				arg0_25.typeAllToggleCom.interactable = false
+			if arg1_27 == #TechnologyConst.TypeResName then
+				arg0_26.typeAllToggle = arg2_27
+				arg0_26.typeAllToggleCom = GetComponent(arg2_27, "Toggle")
+				arg0_26.typeAllToggleCom.interactable = false
 
-				triggerToggle(arg2_26, true)
+				triggerToggle(arg2_27, true)
 			else
-				arg0_25.typeToggleList[arg1_26] = arg2_26
+				arg0_26.typeToggleList[arg1_27] = arg2_27
 
-				triggerToggle(arg2_26, false)
+				triggerToggle(arg2_27, false)
 			end
 
-			setActive(arg2_26, true)
+			setActive(arg2_27, true)
 		end
 	end)
-	var0_25:align(#TechnologyConst.TypeResName)
-	onToggle(arg0_25, arg0_25.typeAllToggle, function(arg0_27)
-		arg0_25.lastTypeTrige = var0_0.TypeTrige.All
+	var0_26:align(#TechnologyConst.TypeResName)
+	onToggle(arg0_26, arg0_26.typeAllToggle, function(arg0_28)
+		arg0_26.lastTypeTrige = var0_0.TypeTrige.All
 
-		if arg0_27 == true then
-			arg0_25.typeAllToggleCom.interactable = false
-			arg0_25.typeSelectedCount = 0
-			arg0_25.typeSelectedList = {}
+		if arg0_28 == true then
+			arg0_26.typeAllToggleCom.interactable = false
+			arg0_26.typeSelectedCount = 0
+			arg0_26.typeSelectedList = {}
 
-			arg0_25:updateTecItemList()
-			arg0_25:updateTypeToggleUIList()
+			arg0_26:updateTecItemList()
+			arg0_26:updateTypeToggleUIList()
 		else
-			arg0_25.typeAllToggleCom.interactable = true
+			arg0_26.typeAllToggleCom.interactable = true
 		end
 	end)
 
-	for iter0_25, iter1_25 in ipairs(arg0_25.typeToggleList) do
-		onToggle(arg0_25, iter1_25, function(arg0_28)
-			arg0_25.lastTypeTrige = var0_0.TypeTrige.Other
+	for iter0_26, iter1_26 in ipairs(arg0_26.typeToggleList) do
+		onToggle(arg0_26, iter1_26, function(arg0_29)
+			arg0_26.lastTypeTrige = var0_0.TypeTrige.Other
 
-			if arg0_28 == true then
-				arg0_25.typeSelectedCount = arg0_25.typeSelectedCount + 1
+			if arg0_29 == true then
+				arg0_26.typeSelectedCount = arg0_26.typeSelectedCount + 1
 
-				for iter0_28, iter1_28 in ipairs(TechnologyConst.TypeOrder[iter0_25]) do
-					table.insert(arg0_25.typeSelectedList, iter1_28)
+				for iter0_29, iter1_29 in ipairs(TechnologyConst.TypeOrder[iter0_26]) do
+					table.insert(arg0_26.typeSelectedList, iter1_29)
 				end
 
-				if arg0_25.typeSelectedCount < #arg0_25.typeToggleList then
-					arg0_25:updateTypeToggleUIList()
-					arg0_25:updateTecItemList()
-				elseif arg0_25.typeSelectedCount == #arg0_25.typeToggleList then
-					arg0_25:updateTypeToggleUIList()
+				if arg0_26.typeSelectedCount < #arg0_26.typeToggleList then
+					arg0_26:updateTypeToggleUIList()
+					arg0_26:updateTecItemList()
+				elseif arg0_26.typeSelectedCount == #arg0_26.typeToggleList then
+					arg0_26:updateTypeToggleUIList()
 				end
-			elseif arg0_25.typeSelectedCount > 0 then
-				arg0_25.typeSelectedCount = arg0_25.typeSelectedCount - 1
+			elseif arg0_26.typeSelectedCount > 0 then
+				arg0_26.typeSelectedCount = arg0_26.typeSelectedCount - 1
 
-				for iter2_28, iter3_28 in ipairs(TechnologyConst.TypeOrder[iter0_25]) do
-					local var0_28 = table.indexof(arg0_25.typeSelectedList, iter3_28, 1)
+				for iter2_29, iter3_29 in ipairs(TechnologyConst.TypeOrder[iter0_26]) do
+					local var0_29 = table.indexof(arg0_26.typeSelectedList, iter3_29, 1)
 
-					if var0_28 then
-						table.remove(arg0_25.typeSelectedList, var0_28)
+					if var0_29 then
+						table.remove(arg0_26.typeSelectedList, var0_29)
 					end
 				end
 
-				if arg0_25.typeSelectedCount > 0 then
-					arg0_25:updateTypeToggleUIList()
-					arg0_25:updateTecItemList()
-				elseif arg0_25.typeSelectedCount == 0 then
-					arg0_25:updateTypeToggleUIList()
+				if arg0_26.typeSelectedCount > 0 then
+					arg0_26:updateTypeToggleUIList()
+					arg0_26:updateTecItemList()
+				elseif arg0_26.typeSelectedCount == 0 then
+					arg0_26:updateTypeToggleUIList()
 				end
 			end
 		end, SFX_PANEL)
 	end
 end
 
-function var0_0.updateTypeToggleUIList(arg0_29)
-	if arg0_29.lastTypeTrige == var0_0.TypeTrige.All then
-		_.each(arg0_29.typeToggleList, function(arg0_30)
-			triggerToggle(arg0_30, false)
+function var0_0.updateTypeToggleUIList(arg0_30)
+	if arg0_30.lastTypeTrige == var0_0.TypeTrige.All then
+		_.each(arg0_30.typeToggleList, function(arg0_31)
+			triggerToggle(arg0_31, false)
 			onNextTick(function()
-				local var0_31 = arg0_30:Find("UnSelectedImg")
+				local var0_32 = arg0_31:Find("UnSelectedImg")
 
-				setActive(var0_31, true)
+				setActive(var0_32, true)
 			end)
 		end)
-	elseif arg0_29.lastTypeTrige == var0_0.TypeTrige.Other then
-		if arg0_29.typeSelectedCount <= 0 or arg0_29.typeSelectedCount >= #arg0_29.typeToggleList then
-			triggerToggle(arg0_29.typeAllToggle, true)
+	elseif arg0_30.lastTypeTrige == var0_0.TypeTrige.Other then
+		if arg0_30.typeSelectedCount <= 0 or arg0_30.typeSelectedCount >= #arg0_30.typeToggleList then
+			triggerToggle(arg0_30.typeAllToggle, true)
 		else
-			triggerToggle(arg0_29.typeAllToggle, false)
+			triggerToggle(arg0_30.typeAllToggle, false)
 		end
 	end
 end
 
-function var0_0.updatePreferredHeight(arg0_32, arg1_32, arg2_32)
-	local var0_32 = tf(arg1_32):Find("ShipScrollView/ShipContainer")
-	local var1_32 = arg2_32 + arg0_32.rowHeight
+function var0_0.updatePreferredHeight(arg0_33, arg1_33, arg2_33)
+	local var0_33 = tf(arg1_33):Find("ShipScrollView/ShipContainer")
+	local var1_33 = arg2_33 + arg0_33.rowHeight
 
-	arg0_32.rightLayoutGroup.padding.bottom = arg0_32.rightLayoutGroup.padding.bottom + var1_32 - GetComponent(arg1_32, "LayoutElement").preferredHeight
-	GetComponent(arg1_32, "LayoutElement").preferredHeight = var1_32
+	arg0_33.rightLayoutGroup.padding.bottom = arg0_33.rightLayoutGroup.padding.bottom + var1_33 - GetComponent(arg1_33, "LayoutElement").preferredHeight
+	GetComponent(arg1_33, "LayoutElement").preferredHeight = var1_33
 
-	local var2_32 = tf(arg1_32):Find("ClickBtn/ArrowBtn")
+	local var2_33 = tf(arg1_33):Find("ClickBtn/ArrowBtn")
 
-	setLocalRotation(var2_32, {
-		z = arg2_32 > 0 and 0 or 180
+	setLocalRotation(var2_33, {
+		z = arg2_33 > 0 and 0 or 180
 	})
 end
 
-function var0_0.onClassItemUpdate(arg0_33, arg1_33, arg2_33)
-	local var0_33 = tf(arg2_33):Find("Name/NameText")
-	local var1_33 = tf(arg2_33):Find("CampBG")
-	local var2_33 = tf(arg2_33):Find("Level/LevelImg")
-	local var3_33 = tf(arg2_33):Find("Level/TypeTextImg")
-	local var4_33 = tf(arg2_33):Find("ClickBtn")
-	local var5_33 = var4_33:Find("ArrowBtn")
-	local var6_33 = arg0_33:getClassConfigForShow(arg1_33 + 1)
-	local var7_33 = var6_33.name
-	local var8_33 = var6_33.nation
-	local var9_33 = var6_33.shiptype
-	local var10_33 = var6_33.t_level
-	local var11_33 = var6_33.ships
-	local var12_33 = arg0_33:isMetaOn()
-	local var13_33 = arg0_33:isMotOn()
+function var0_0.onClassItemUpdate(arg0_34, arg1_34, arg2_34)
+	local var0_34 = tf(arg2_34):Find("Name/NameText")
+	local var1_34 = tf(arg2_34):Find("CampBG")
+	local var2_34 = tf(arg2_34):Find("Level/LevelImg")
+	local var3_34 = tf(arg2_34):Find("Level/TypeTextImg")
+	local var4_34 = tf(arg2_34):Find("ClickBtn")
+	local var5_34 = var4_34:Find("ArrowBtn")
+	local var6_34 = arg0_34:getClassConfigForShow(arg1_34 + 1)
+	local var7_34 = var6_34.name
+	local var8_34 = var6_34.nation
+	local var9_34 = var6_34.shiptype
+	local var10_34 = var6_34.t_level
+	local var11_34 = var6_34.ships
+	local var12_34 = arg0_34:isMetaOn()
+	local var13_34 = arg0_34:isMotOn()
 
-	setText(var0_33, var7_33)
+	setText(var0_34, var7_34)
 
-	local var14_33
+	local var14_34
 
-	if var12_33 or var13_33 then
-		setActive(var2_33, false)
-		setActive(var3_33, false)
+	if var12_34 or var13_34 then
+		setActive(var2_34, false)
+		setActive(var3_34, false)
 
-		if var12_33 then
-			var14_33 = GetSpriteFromAtlas("TecNation", "bg_nation_meta")
-		elseif var13_33 then
-			var14_33 = GetSpriteFromAtlas("TecNation", "bg_nation_mot")
+		if var12_34 then
+			var14_34 = GetSpriteFromAtlas("TecNation", "bg_nation_meta")
+		elseif var13_34 then
+			var14_34 = GetSpriteFromAtlas("TecNation", "bg_nation_mot")
 		end
 	else
-		setImageSprite(var2_33, GetSpriteFromAtlas("TecClassLevelIcon", "T" .. var10_33), true)
-		setImageSprite(var3_33, GetSpriteFromAtlas("ShipType", "ch_title_" .. var9_33), true)
-		setActive(var2_33, true)
-		setActive(var3_33, true)
+		setImageSprite(var2_34, GetSpriteFromAtlas("TecClassLevelIcon", "T" .. var10_34), true)
+		setImageSprite(var3_34, GetSpriteFromAtlas("ShipType", "ch_title_" .. var9_34), true)
+		setActive(var2_34, true)
+		setActive(var3_34, true)
 
-		var14_33 = GetSpriteFromAtlas("TecNation", "bg_nation_" .. var8_33)
+		var14_34 = GetSpriteFromAtlas("TecNation", "bg_nation_" .. var8_34)
 	end
 
-	setImageSprite(var1_33, var14_33)
+	setImageSprite(var1_34, var14_34)
 
-	local var15_33 = tf(arg2_33):Find("ClickBtn/ArrowBtn")
+	local var15_34 = tf(arg2_34):Find("ClickBtn/ArrowBtn")
 
-	setLocalRotation(var15_33, {
+	setLocalRotation(var15_34, {
 		z = 180
 	})
 
-	local var16_33 = tf(arg2_33):Find("ShipScrollView/ShipContainer")
+	local var16_34 = tf(arg2_34):Find("ShipScrollView/ShipContainer")
 
-	arg0_33:updateShipItemList(var11_33, var16_33)
+	arg0_34:updateShipItemList(var11_34, var16_34)
 
-	arg0_33.expanded[arg1_33] = 0
+	arg0_34.expanded[arg1_34] = 0
 
-	arg0_33:updatePreferredHeight(arg2_33, arg0_33.expanded[arg1_33])
-	setActive(var4_33, #var11_33 > 5)
-	onButton(arg0_33, var4_33, function()
-		if defaultValue(arg0_33.expanded[arg1_33], 0) > 0 then
-			arg0_33.expanded[arg1_33] = 0
+	arg0_34:updatePreferredHeight(arg2_34, arg0_34.expanded[arg1_34])
+	setActive(var4_34, #var11_34 > 5)
+	onButton(arg0_34, var4_34, function()
+		if defaultValue(arg0_34.expanded[arg1_34], 0) > 0 then
+			arg0_34.expanded[arg1_34] = 0
 		else
-			arg0_33.expanded[arg1_33] = var16_33.rect.height - arg0_33.rowHeight
+			arg0_34.expanded[arg1_34] = var16_34.rect.height - arg0_34.rowHeight
 		end
 
-		arg0_33:updatePreferredHeight(arg2_33, arg0_33.expanded[arg1_33])
+		arg0_34:updatePreferredHeight(arg2_34, arg0_34.expanded[arg1_34])
 	end, SFX_PANEL)
 end
 
-function var0_0.onClassItemReturn(arg0_35, arg1_35, arg2_35)
-	if defaultValue(arg0_35.expanded[arg1_35], 0) > 0 then
-		arg0_35.expanded[arg1_35] = 0
+function var0_0.onClassItemReturn(arg0_36, arg1_36, arg2_36)
+	if defaultValue(arg0_36.expanded[arg1_36], 0) > 0 then
+		arg0_36.expanded[arg1_36] = 0
 
-		arg0_35:updatePreferredHeight(arg2_35, arg0_35.expanded[arg1_35])
+		arg0_36:updatePreferredHeight(arg2_36, arg0_36.expanded[arg1_36])
 	end
 end
 
-function var0_0.initTecClassUIList(arg0_36)
-	function arg0_36.rightLSC.onUpdateItem(arg0_37, arg1_37)
-		arg0_36:onClassItemUpdate(arg0_37, arg1_37)
+function var0_0.initTecClassUIList(arg0_37)
+	function arg0_37.rightLSC.onUpdateItem(arg0_38, arg1_38)
+		arg0_37:onClassItemUpdate(arg0_38, arg1_38)
 	end
 
-	function arg0_36.rightLSC.onReturnItem(arg0_38, arg1_38)
-		arg0_36:onClassItemReturn(arg0_38, arg1_38)
-	end
-end
-
-function var0_0.updateTecItemList(arg0_39)
-	arg0_39.expanded = {}
-
-	local var0_39 = arg0_39:getClassIDListForShow()
-
-	if arg0_39.rightLSC.totalCount ~= 0 then
-		arg0_39.rightLSC:SetTotalCount(0)
-	end
-
-	arg0_39.rightLSC:SetTotalCount(#var0_39)
-	arg0_39.rightLSC:BeginLayout()
-	arg0_39.rightLSC:EndLayout()
-
-	local var1_39 = #var0_39
-
-	if var1_39 <= 0 then
-		arg0_39.emptyPage:ExecuteAction("ShowOrHide", true)
-		arg0_39.emptyPage:ExecuteAction("SetEmptyText", i18n("technology_filter_placeholder"))
-	elseif var1_39 > 0 and arg0_39.emptyPage:GetLoaded() then
-		arg0_39.emptyPage:ExecuteAction("ShowOrHide", false)
+	function arg0_37.rightLSC.onReturnItem(arg0_39, arg1_39)
+		arg0_37:onClassItemReturn(arg0_39, arg1_39)
 	end
 end
 
-function var0_0.updateShipItemList(arg0_40, arg1_40, arg2_40)
-	local var0_40 = UIItemList.New(arg2_40, arg0_40.headItem)
+function var0_0.updateTecItemList(arg0_40)
+	arg0_40.expanded = {}
 
-	var0_40:make(function(arg0_41, arg1_41, arg2_41)
-		if arg0_41 == UIItemList.EventUpdate then
-			local var0_41 = arg2_41:Find("BaseImg")
-			local var1_41 = arg2_41:Find("BaseImg/CharImg")
-			local var2_41 = arg2_41:Find("NameBG")
-			local var3_41 = var2_41:Find("NameText")
-			local var4_41 = arg2_41:Find("Frame")
-			local var5_41 = arg2_41:Find("Star")
-			local var6_41 = arg2_41:Find("Star/StarImg")
-			local var7_41 = arg2_41:Find("Info")
-			local var8_41 = var7_41:Find("PointText")
-			local var9_41 = var7_41:Find("BuffGet")
-			local var10_41 = var9_41:Find("TypeIcon")
-			local var11_41 = var10_41:Find("AttrIcon")
-			local var12_41 = var10_41:Find("NumText")
-			local var13_41 = var7_41:Find("Lock")
-			local var14_41 = var7_41:Find("BuffComplete")
-			local var15_41 = var14_41:Find("TypeIcon")
-			local var16_41 = var15_41:Find("AttrIcon")
-			local var17_41 = var15_41:Find("NumText")
-			local var18_41 = arg2_41:Find("BottomBG")
-			local var19_41 = arg2_41:Find("BottomBG/StatusUnknow")
-			local var20_41 = arg2_41:Find("BottomBG/StatusResearching")
-			local var21_41 = arg2_41:Find("ViewIcon")
-			local var22_41 = arg2_41:Find("keyansaohguang")
-			local var23_41 = arg1_40[arg1_41 + 1]
+	local var0_40 = arg0_40:getClassIDListForShow()
 
-			setText(var3_41, shortenString(ShipGroup.getDefaultShipNameByGroupID(var23_41), 6))
+	if arg0_40.rightLSC.totalCount ~= 0 then
+		arg0_40.rightLSC:SetTotalCount(0)
+	end
 
-			local var24_41 = var23_41 * 10 + 1
+	arg0_40.rightLSC:SetTotalCount(#var0_40)
+	arg0_40.rightLSC:BeginLayout()
+	arg0_40.rightLSC:EndLayout()
 
-			setImageSprite(var0_41, GetSpriteFromAtlas("shipraritybaseicon", "base_" .. pg.ship_data_statistics[var24_41].rarity))
-			LoadSpriteAsync("shipmodels/" .. Ship.getPaintingName(var24_41), function(arg0_42)
-				if arg0_42 and not arg0_40.exited then
-					setImageSprite(var1_41, arg0_42, true)
+	local var1_40 = #var0_40
 
-					rtf(var1_41).pivot = getSpritePivot(arg0_42)
+	if var1_40 <= 0 then
+		arg0_40.emptyPage:ExecuteAction("ShowOrHide", true)
+		arg0_40.emptyPage:ExecuteAction("SetEmptyText", i18n("technology_filter_placeholder"))
+	elseif var1_40 > 0 and arg0_40.emptyPage:GetLoaded() then
+		arg0_40.emptyPage:ExecuteAction("ShowOrHide", false)
+	end
+end
+
+function var0_0.updateShipItemList(arg0_41, arg1_41, arg2_41)
+	local var0_41 = UIItemList.New(arg2_41, arg0_41.headItem)
+
+	var0_41:make(function(arg0_42, arg1_42, arg2_42)
+		if arg0_42 == UIItemList.EventUpdate then
+			local var0_42 = arg2_42:Find("BaseImg")
+			local var1_42 = arg2_42:Find("BaseImg/CharImg")
+			local var2_42 = arg2_42:Find("NameBG")
+			local var3_42 = var2_42:Find("NameText")
+			local var4_42 = arg2_42:Find("Frame")
+			local var5_42 = arg2_42:Find("Star")
+			local var6_42 = arg2_42:Find("Star/StarImg")
+			local var7_42 = arg2_42:Find("Info")
+			local var8_42 = var7_42:Find("PointText")
+			local var9_42 = var7_42:Find("BuffGet")
+			local var10_42 = var9_42:Find("TypeIcon")
+			local var11_42 = var10_42:Find("AttrIcon")
+			local var12_42 = var10_42:Find("NumText")
+			local var13_42 = var7_42:Find("Lock")
+			local var14_42 = var7_42:Find("BuffComplete")
+			local var15_42 = var14_42:Find("TypeIcon")
+			local var16_42 = var15_42:Find("AttrIcon")
+			local var17_42 = var15_42:Find("NumText")
+			local var18_42 = arg2_42:Find("BottomBG")
+			local var19_42 = arg2_42:Find("BottomBG/StatusUnknow")
+			local var20_42 = arg2_42:Find("BottomBG/StatusResearching")
+			local var21_42 = arg2_42:Find("ViewIcon")
+			local var22_42 = arg2_42:Find("keyansaohguang")
+			local var23_42 = arg1_41[arg1_42 + 1]
+
+			setText(var3_42, shortenString(ShipGroup.getDefaultShipNameByGroupID(var23_42), 6))
+
+			local var24_42 = var23_42 * 10 + 1
+
+			setImageSprite(var0_42, GetSpriteFromAtlas("shipraritybaseicon", "base_" .. pg.ship_data_statistics[var24_42].rarity))
+			LoadSpriteAsync("shipmodels/" .. Ship.getPaintingName(var24_42), function(arg0_43)
+				if arg0_43 and not arg0_41.exited then
+					setImageSprite(var1_42, arg0_43, true)
+
+					rtf(var1_42).pivot = getSpritePivot(arg0_43)
 				end
 			end)
 
-			if table.indexof(arg0_40.groupIDGotList, var23_41, 1) then
-				local var25_41 = pg.fleet_tech_ship_template[var23_41].add_get_shiptype[1]
-				local var26_41 = pg.fleet_tech_ship_template[var23_41].add_get_attr
-				local var27_41 = pg.fleet_tech_ship_template[var23_41].add_get_value
+			if table.indexof(arg0_41.groupIDGotList, var23_42, 1) then
+				local var25_42 = pg.fleet_tech_ship_template[var23_42].add_get_shiptype[1]
+				local var26_42 = pg.fleet_tech_ship_template[var23_42].add_get_attr
+				local var27_42 = pg.fleet_tech_ship_template[var23_42].add_get_value
 
-				setImageSprite(var10_41, GetSpriteFromAtlas("ui/technologytreeui_atlas", "label_" .. var25_41))
-				setImageSprite(var11_41, GetSpriteFromAtlas("attricon", pg.attribute_info_by_type[var26_41].name))
-				setText(var12_41, "+" .. var27_41)
-				setActive(var9_41, true)
+				setImageSprite(var10_42, GetSpriteFromAtlas("ui/technologytreeui_atlas", "label_" .. var25_42))
+				setImageSprite(var11_42, GetSpriteFromAtlas("attricon", pg.attribute_info_by_type[var26_42].name))
+				setText(var12_42, "+" .. var27_42)
+				setActive(var9_42, true)
 
-				local var28_41 = arg0_40.collectionProxy:getShipGroup(var23_41)
+				local var28_42 = arg0_41.collectionProxy:getShipGroup(var23_42)
 
-				if var28_41.maxLV < TechnologyConst.SHIP_LEVEL_FOR_BUFF then
-					setActive(var20_41, true)
-					setActive(var19_41, false)
-					setActive(var14_41, false)
-					setImageSprite(var4_41, GetSpriteFromAtlas("ui/technologytreeui_atlas", "card_bg_normal"))
-					setActive(var18_41, true)
-					setActive(var21_41, true)
-					setActive(var13_41, true)
-					setActive(var22_41, false)
+				if var28_42.maxLV < TechnologyConst.SHIP_LEVEL_FOR_BUFF then
+					setActive(var20_42, true)
+					setActive(var19_42, false)
+					setActive(var14_42, false)
+					setImageSprite(var4_42, GetSpriteFromAtlas("ui/technologytreeui_atlas", "card_bg_normal"))
+					setActive(var18_42, true)
+					setActive(var21_42, true)
+					setActive(var13_42, true)
+					setActive(var22_42, false)
 
-					if var28_41.star == pg.fleet_tech_ship_template[var23_41].max_star then
-						setText(var8_41, "+" .. pg.fleet_tech_ship_template[var23_41].pt_get + pg.fleet_tech_ship_template[var23_41].pt_upgrage)
+					if var28_42.star == pg.fleet_tech_ship_template[var23_42].max_star then
+						setText(var8_42, "+" .. pg.fleet_tech_ship_template[var23_42].pt_get + pg.fleet_tech_ship_template[var23_42].pt_upgrage)
 					else
-						setText(var8_41, "+" .. pg.fleet_tech_ship_template[var23_41].pt_get)
+						setText(var8_42, "+" .. pg.fleet_tech_ship_template[var23_42].pt_get)
 					end
 				else
-					local var29_41 = pg.fleet_tech_ship_template[var23_41].add_level_shiptype[1]
-					local var30_41 = pg.fleet_tech_ship_template[var23_41].add_level_attr
-					local var31_41 = pg.fleet_tech_ship_template[var23_41].add_level_value
+					local var29_42 = pg.fleet_tech_ship_template[var23_42].add_level_shiptype[1]
+					local var30_42 = pg.fleet_tech_ship_template[var23_42].add_level_attr
+					local var31_42 = pg.fleet_tech_ship_template[var23_42].add_level_value
 
-					setImageSprite(var15_41, GetSpriteFromAtlas("ui/technologytreeui_atlas", "label_" .. var29_41))
-					setImageSprite(var16_41, GetSpriteFromAtlas("attricon", pg.attribute_info_by_type[var30_41].name))
-					setText(var17_41, "+" .. var31_41)
-					setActive(var14_41, true)
+					setImageSprite(var15_42, GetSpriteFromAtlas("ui/technologytreeui_atlas", "label_" .. var29_42))
+					setImageSprite(var16_42, GetSpriteFromAtlas("attricon", pg.attribute_info_by_type[var30_42].name))
+					setText(var17_42, "+" .. var31_42)
+					setActive(var14_42, true)
 
-					if var28_41.star == pg.fleet_tech_ship_template[var23_41].max_star then
-						setText(var8_41, "+" .. pg.fleet_tech_ship_template[var23_41].pt_get + pg.fleet_tech_ship_template[var23_41].pt_level + pg.fleet_tech_ship_template[var23_41].pt_upgrage)
-						setImageSprite(var4_41, GetSpriteFromAtlas("ui/technologytreeui_atlas", "card_bg_finished"))
-						setActive(var18_41, false)
-						setActive(var21_41, false)
-						setActive(var20_41, false)
-						setActive(var19_41, false)
-						setActive(var22_41, true)
+					if var28_42.star == pg.fleet_tech_ship_template[var23_42].max_star then
+						setText(var8_42, "+" .. pg.fleet_tech_ship_template[var23_42].pt_get + pg.fleet_tech_ship_template[var23_42].pt_level + pg.fleet_tech_ship_template[var23_42].pt_upgrage)
+						setImageSprite(var4_42, GetSpriteFromAtlas("ui/technologytreeui_atlas", "card_bg_finished"))
+						setActive(var18_42, false)
+						setActive(var21_42, false)
+						setActive(var20_42, false)
+						setActive(var19_42, false)
+						setActive(var22_42, true)
 					else
-						setText(var8_41, "+" .. pg.fleet_tech_ship_template[var23_41].pt_get + pg.fleet_tech_ship_template[var23_41].pt_level)
-						setImageSprite(var4_41, GetSpriteFromAtlas("ui/technologytreeui_atlas", "card_bg_normal"))
-						setActive(var18_41, true)
-						setActive(var21_41, true)
-						setActive(var20_41, true)
-						setActive(var19_41, false)
-						setActive(var22_41, false)
+						setText(var8_42, "+" .. pg.fleet_tech_ship_template[var23_42].pt_get + pg.fleet_tech_ship_template[var23_42].pt_level)
+						setImageSprite(var4_42, GetSpriteFromAtlas("ui/technologytreeui_atlas", "card_bg_normal"))
+						setActive(var18_42, true)
+						setActive(var21_42, true)
+						setActive(var20_42, true)
+						setActive(var19_42, false)
+						setActive(var22_42, false)
 					end
 
-					setActive(var13_41, false)
+					setActive(var13_42, false)
 				end
 
-				setImageColor(var1_41, Color.New(1, 1, 1, 1))
-				setActive(var2_41, true)
-				setActive(var7_41, true)
-				setActive(var5_41, true)
+				setImageColor(var1_42, Color.New(1, 1, 1, 1))
+				setActive(var2_42, true)
+				setActive(var7_42, true)
+				setActive(var5_42, true)
 
-				if var28_41.star == pg.fleet_tech_ship_template[var23_41].max_star then
-					setActive(var6_41, true)
+				if var28_42.star == pg.fleet_tech_ship_template[var23_42].max_star then
+					setActive(var6_42, true)
 				else
-					setActive(var6_41, false)
+					setActive(var6_42, false)
 				end
 
-				onButton(arg0_40, arg2_41, function()
-					arg0_40:emit(TechnologyConst.OPEN_SHIP_BUFF_DETAIL, var23_41, var28_41.maxLV, var28_41.star)
+				onButton(arg0_41, arg2_42, function()
+					arg0_41:emit(TechnologyConst.OPEN_SHIP_BUFF_DETAIL, var23_42, var28_42.maxLV, var28_42.star)
 				end)
 			else
-				setImageSprite(var4_41, GetSpriteFromAtlas("ui/technologytreeui_atlas", "card_bg_normal"))
-				setImageColor(var1_41, Color.New(0, 0, 0, 0.4))
-				setActive(var21_41, false)
-				setActive(var2_41, false)
-				setActive(var7_41, false)
-				setActive(var20_41, false)
-				setActive(var19_41, true)
-				setActive(var5_41, false)
-				setActive(var13_41, false)
-				setActive(var22_41, false)
-				removeOnButton(arg2_41)
+				setImageSprite(var4_42, GetSpriteFromAtlas("ui/technologytreeui_atlas", "card_bg_normal"))
+				setImageColor(var1_42, Color.New(0, 0, 0, 0.4))
+				setActive(var21_42, false)
+				setActive(var2_42, false)
+				setActive(var7_42, false)
+				setActive(var20_42, false)
+				setActive(var19_42, true)
+				setActive(var5_42, false)
+				setActive(var13_42, false)
+				setActive(var22_42, false)
+				removeOnButton(arg2_42)
 			end
 
-			setActive(arg2_41, true)
+			setActive(arg2_42, true)
 		end
 	end)
-	var0_40:align(#arg1_40)
+	var0_41:align(#arg1_41)
 end
 
-function var0_0.getClassIDListForShow(arg0_44, arg1_44, arg2_44)
-	arg1_44 = arg1_44 or arg0_44.nationSelectedList
-	arg2_44 = arg2_44 or arg0_44.typeSelectedList
+function var0_0.getClassIDListForShow(arg0_45, arg1_45, arg2_45)
+	arg1_45 = arg1_45 or arg0_45.nationSelectedList
+	arg2_45 = arg2_45 or arg0_45.typeSelectedList
 
-	local var0_44 = arg0_44:isMetaOn()
-	local var1_44 = arg0_44:isMotOn()
+	local var0_45 = arg0_45:isMetaOn()
+	local var1_45 = arg0_45:isMotOn()
 
-	if not var0_44 and not var1_44 then
-		local var2_44 = TechnologyConst.GetOrderClassList()
-		local var3_44
+	if not var0_45 and not var1_45 then
+		local var2_45 = TechnologyConst.GetOrderClassList()
+		local var3_45
 
-		if #arg1_44 == 0 and #arg2_44 == 0 then
-			var3_44 = var2_44
+		if #arg1_45 == 0 and #arg2_45 == 0 then
+			var3_45 = var2_45
 		else
-			local var4_44 = #arg1_44 == 0 and TechnologyConst.NationOrder or arg1_44
+			local var4_45 = #arg1_45 == 0 and TechnologyConst.NationOrder or arg1_45
 
-			var3_44 = _.select(var2_44, function(arg0_45)
-				local var0_45 = pg.fleet_tech_ship_class[arg0_45].nation
+			var3_45 = _.select(var2_45, function(arg0_46)
+				local var0_46 = pg.fleet_tech_ship_class[arg0_46].nation
 
-				if table.contains(var4_44, var0_45) then
-					if #arg0_44.typeSelectedList == 0 then
+				if table.contains(var4_45, var0_46) then
+					if #arg0_45.typeSelectedList == 0 then
 						return true
 					else
-						local var1_45 = pg.fleet_tech_ship_class[arg0_45].shiptype
+						local var1_46 = pg.fleet_tech_ship_class[arg0_46].shiptype
 
-						return table.contains(arg0_44.typeSelectedList, var1_45)
+						return table.contains(arg0_45.typeSelectedList, var1_46)
 					end
 				else
 					return false
@@ -684,57 +710,57 @@ function var0_0.getClassIDListForShow(arg0_44, arg1_44, arg2_44)
 			end)
 		end
 
-		arg0_44.curClassIDList = var3_44
+		arg0_45.curClassIDList = var3_45
 
-		return var3_44
-	elseif var0_44 then
-		arg0_44.curMetaClassIDList = TechnologyConst.GetOrderMetaClassList(arg2_44)
+		return var3_45
+	elseif var0_45 then
+		arg0_45.curMetaClassIDList = TechnologyConst.GetOrderMetaClassList(arg2_45)
 
-		return arg0_44.curMetaClassIDList
-	elseif var1_44 then
-		arg0_44.curMotClassIDList = TechnologyConst.GetOrderMotClassList(arg2_44)
+		return arg0_45.curMetaClassIDList
+	elseif var1_45 then
+		arg0_45.curMotClassIDList = TechnologyConst.GetOrderMotClassList(arg2_45)
 
-		return arg0_44.curMotClassIDList
+		return arg0_45.curMotClassIDList
 	end
 end
 
-function var0_0.getClassConfigForShow(arg0_46, arg1_46)
-	local var0_46 = arg0_46:isMetaOn()
-	local var1_46 = arg0_46:isMotOn()
+function var0_0.getClassConfigForShow(arg0_47, arg1_47)
+	local var0_47 = arg0_47:isMetaOn()
+	local var1_47 = arg0_47:isMotOn()
 
-	if not var0_46 and not var1_46 then
-		local var2_46 = arg0_46.curClassIDList[arg1_46]
+	if not var0_47 and not var1_47 then
+		local var2_47 = arg0_47.curClassIDList[arg1_47]
 
-		return pg.fleet_tech_ship_class[var2_46]
-	elseif var0_46 then
-		local var3_46 = arg0_46.curMetaClassIDList[arg1_46]
+		return pg.fleet_tech_ship_class[var2_47]
+	elseif var0_47 then
+		local var3_47 = arg0_47.curMetaClassIDList[arg1_47]
 
-		return TechnologyConst.GetMetaClassConfig(var3_46, arg0_46.typeSelectedList)
-	elseif var1_46 then
-		local var4_46 = arg0_46.curMotClassIDList[arg1_46]
+		return TechnologyConst.GetMetaClassConfig(var3_47, arg0_47.typeSelectedList)
+	elseif var1_47 then
+		local var4_47 = arg0_47.curMotClassIDList[arg1_47]
 
-		return TechnologyConst.GetMotClassConfig(var4_46, arg0_46.typeSelectedList)
+		return TechnologyConst.GetMotClassConfig(var4_47, arg0_47.typeSelectedList)
 	end
 end
 
-function var0_0.isMetaOn(arg0_47)
-	if arg0_47.lastNationTrige == var0_0.NationTrige.All then
-		return false
-	elseif arg0_47.lastNationTrige == var0_0.NationTrige.Mot then
-		return false
-	end
-
-	return arg0_47.nationMetaToggleCom.isOn
-end
-
-function var0_0.isMotOn(arg0_48)
+function var0_0.isMetaOn(arg0_48)
 	if arg0_48.lastNationTrige == var0_0.NationTrige.All then
 		return false
-	elseif arg0_48.lastNationTrige == var0_0.NationTrige.Meta then
+	elseif arg0_48.lastNationTrige == var0_0.NationTrige.Mot then
 		return false
 	end
 
-	return arg0_48.nationMotToggleCom.isOn
+	return arg0_48.nationMetaToggleCom.isOn
+end
+
+function var0_0.isMotOn(arg0_49)
+	if arg0_49.lastNationTrige == var0_0.NationTrige.All then
+		return false
+	elseif arg0_49.lastNationTrige == var0_0.NationTrige.Meta then
+		return false
+	end
+
+	return arg0_49.nationMotToggleCom.isOn
 end
 
 return var0_0

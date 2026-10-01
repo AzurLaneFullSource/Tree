@@ -103,7 +103,7 @@ function var0_0.GetUnreadyHireStory()
 	for iter0_13, iter1_13 in pairs(var1_13:GetFavorabilityList()) do
 		local var2_13 = pg.activity_chasing_character[iter0_13]
 
-		if var2_13.love_level[1][2] == iter1_13 and not pg.NewStoryMgr.GetInstance():IsPlayed(var2_13.love_level_show[1]) then
+		if iter1_13 >= var2_13.love_level[1][2] and not pg.NewStoryMgr.GetInstance():IsPlayed(var2_13.love_level_show[1]) then
 			table.insert(var0_13, iter0_13)
 		end
 	end

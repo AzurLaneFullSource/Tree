@@ -4,387 +4,427 @@ function var0_0.getUIName(arg0_1)
 	return "Dorm3dInstagramUI"
 end
 
-function var0_0.GetInstagramList(arg0_2)
-	local var0_2 = arg0_2.contextData.apartmentGroupId
+function var0_0.getResource(arg0_2, arg1_2)
+	local var0_2 = {
+		"ui/instagramui_atlas"
+	}
+	local var1_2 = arg1_2 or arg0_2.contextData or {}
 
-	assert(var0_2, "groupId can not be nil")
+	local function var2_2(arg0_3)
+		if noEmptyStr(arg0_3) and not table.contains(var0_2, arg0_3) then
+			table.insert(var0_2, arg0_3)
+		end
+	end
 
-	return getProxy(Dorm3dInsProxy):GetInstagramList(var0_2)
+	local function var3_2(arg0_4, arg1_4)
+		if noEmptyStr(arg1_4) then
+			var2_2(arg0_4 .. arg1_4)
+		end
+	end
+
+	local function var4_2(arg0_5)
+		for iter0_5, iter1_5 in ipairs(arg0_5 or {}) do
+			var3_2("qicon/", iter1_5:GetIcon())
+
+			if iter1_5.GetReplyedList then
+				var4_2(iter1_5:GetReplyedList())
+			end
+		end
+	end
+
+	local var5_2 = getProxy(Dorm3dInsProxy):GetInstagramList(var1_2.apartmentGroupId) or {}
+
+	for iter0_2, iter1_2 in ipairs(var5_2) do
+		var3_2("dorm3dins/", iter1_2:GetPicture())
+		var3_2("dorm3dins/", iter1_2:GetBackground())
+		var3_2("qicon/", iter1_2:GetIcon())
+		var4_2(iter1_2:GetReplyedList())
+	end
+
+	return table.insertto(var0_2, var0_0.super.getResource(arg0_2, arg1_2))
 end
 
-function var0_0.init(arg0_3)
-	arg0_3.listTF = arg0_3._tf:Find("list")
-	arg0_3.mainTF = arg0_3._tf:Find("main")
-	arg0_3.closeBtn = arg0_3._tf:Find("closeBtn")
-	arg0_3.noMsgTF = arg0_3._tf:Find("list/bg/no_msg")
-	arg0_3.scrollBarTF = arg0_3._tf:Find("list/bg/scroll_bar")
-	arg0_3.list = arg0_3._tf:Find("list/bg/scrollrect"):GetComponent("LScrollRect")
-	arg0_3.mainBg = arg0_3._tf:Find("main/left_panel/bg")
-	arg0_3.imageTF = arg0_3._tf:Find("main/left_panel/mask/Image"):GetComponent(typeof(Image))
-	arg0_3.likeBtn = arg0_3._tf:Find("main/left_panel/heart")
-	arg0_3.bubbleTF = arg0_3._tf:Find("main/left_panel/bubble")
-	arg0_3.planeTF = arg0_3._tf:Find("main/left_panel/plane")
-	arg0_3.likeCntTxt = arg0_3._tf:Find("main/left_panel/zan"):GetComponent(typeof(Text))
-	arg0_3.pushTimeTxt = arg0_3._tf:Find("main/left_panel/time"):GetComponent(typeof(Text))
-	arg0_3.iconTF = arg0_3._tf:Find("main/right_panel/top/head/icon")
-	arg0_3.nameTxt = arg0_3._tf:Find("main/right_panel/top/name"):GetComponent(typeof(Text))
-	arg0_3.centerTF = arg0_3._tf:Find("main/right_panel/center")
-	arg0_3.contentTxt = arg0_3._tf:Find("main/right_panel/center/Text/Text"):GetComponent(typeof(Text))
-	arg0_3.commentList = UIItemList.New(arg0_3._tf:Find("main/right_panel/center/bottom/scroll/content"), arg0_3._tf:Find("main/right_panel/center/bottom/scroll/content/tpl"))
-	arg0_3.commentPanel = arg0_3._tf:Find("main/right_panel/last/bg2")
-	arg0_3.optionalPanel = arg0_3._tf:Find("main/right_panel/last/bg2/option")
-	arg0_3.scroll = arg0_3._tf:Find("main/right_panel/center/bottom/scroll")
+function var0_0.GetInstagramList(arg0_6)
+	local var0_6 = arg0_6.contextData.apartmentGroupId
 
-	setText(arg0_3._tf:Find("main_bg/Text"), i18n("dorm3d_privatechat_topics"))
-	setText(arg0_3.noMsgTF:Find("Text"), i18n("dorm3d_ins_no_msg"))
-	arg0_3:OverlayPanel(arg0_3._tf)
+	assert(var0_6, "groupId can not be nil")
+
+	return getProxy(Dorm3dInsProxy):GetInstagramList(var0_6)
 end
 
-function var0_0.didEnter(arg0_4)
-	setActive(arg0_4.listTF, true)
-	setActive(arg0_4.mainTF, false)
-	onButton(arg0_4, arg0_4.closeBtn, function()
-		if arg0_4.inDetail then
-			arg0_4:ExitDetail()
+function var0_0.init(arg0_7)
+	arg0_7.listTF = arg0_7._tf:Find("list")
+	arg0_7.mainTF = arg0_7._tf:Find("main")
+	arg0_7.closeBtn = arg0_7._tf:Find("closeBtn")
+	arg0_7.noMsgTF = arg0_7._tf:Find("list/bg/no_msg")
+	arg0_7.scrollBarTF = arg0_7._tf:Find("list/bg/scroll_bar")
+	arg0_7.list = arg0_7._tf:Find("list/bg/scrollrect"):GetComponent("LScrollRect")
+	arg0_7.mainBg = arg0_7._tf:Find("main/left_panel/bg")
+	arg0_7.imageTF = arg0_7._tf:Find("main/left_panel/mask/Image"):GetComponent(typeof(Image))
+	arg0_7.likeBtn = arg0_7._tf:Find("main/left_panel/heart")
+	arg0_7.bubbleTF = arg0_7._tf:Find("main/left_panel/bubble")
+	arg0_7.planeTF = arg0_7._tf:Find("main/left_panel/plane")
+	arg0_7.likeCntTxt = arg0_7._tf:Find("main/left_panel/zan"):GetComponent(typeof(Text))
+	arg0_7.pushTimeTxt = arg0_7._tf:Find("main/left_panel/time"):GetComponent(typeof(Text))
+	arg0_7.iconTF = arg0_7._tf:Find("main/right_panel/top/head/icon")
+	arg0_7.nameTxt = arg0_7._tf:Find("main/right_panel/top/name"):GetComponent(typeof(Text))
+	arg0_7.centerTF = arg0_7._tf:Find("main/right_panel/center")
+	arg0_7.contentTxt = arg0_7._tf:Find("main/right_panel/center/Text/Text"):GetComponent(typeof(Text))
+	arg0_7.commentList = UIItemList.New(arg0_7._tf:Find("main/right_panel/center/bottom/scroll/content"), arg0_7._tf:Find("main/right_panel/center/bottom/scroll/content/tpl"))
+	arg0_7.commentPanel = arg0_7._tf:Find("main/right_panel/last/bg2")
+	arg0_7.optionalPanel = arg0_7._tf:Find("main/right_panel/last/bg2/option")
+	arg0_7.scroll = arg0_7._tf:Find("main/right_panel/center/bottom/scroll")
+
+	setText(arg0_7._tf:Find("main_bg/Text"), i18n("dorm3d_privatechat_topics"))
+	setText(arg0_7.noMsgTF:Find("Text"), i18n("dorm3d_ins_no_msg"))
+	arg0_7:OverlayPanel(arg0_7._tf)
+end
+
+function var0_0.didEnter(arg0_8)
+	setActive(arg0_8.listTF, true)
+	setActive(arg0_8.mainTF, false)
+	onButton(arg0_8, arg0_8.closeBtn, function()
+		if arg0_8.inDetail then
+			arg0_8:ExitDetail()
 
 			return
 		end
 
-		arg0_4:emit(var0_0.ON_CLOSE)
+		arg0_8:emit(var0_0.ON_CLOSE)
 	end, SFX_PANEL)
 
-	arg0_4.cards = {}
+	arg0_8.cards = {}
 
-	function arg0_4.list.onInitItem(arg0_6)
-		arg0_4:OnInitItem(arg0_6)
+	function arg0_8.list.onInitItem(arg0_10)
+		arg0_8:OnInitItem(arg0_10)
 	end
 
-	function arg0_4.list.onUpdateItem(arg0_7, arg1_7)
-		arg0_4:OnUpdateItem(arg0_7, arg1_7)
+	function arg0_8.list.onUpdateItem(arg0_11, arg1_11)
+		arg0_8:OnUpdateItem(arg0_11, arg1_11)
 	end
 
-	arg0_4:InitCards()
+	arg0_8:InitCards()
 end
 
-function var0_0.OnInitItem(arg0_8, arg1_8)
-	local var0_8 = Dorm3dInstagramCard.New(arg1_8)
+function var0_0.OnInitItem(arg0_12, arg1_12)
+	local var0_12 = Dorm3dInstagramCard.New(arg1_12)
 
-	onButton(arg0_8, var0_8._go, function()
-		if var0_8.instagram:IsLock() then
+	onButton(arg0_12, var0_12._go, function()
+		if var0_12.instagram:IsLock() then
 			return
 		end
 
-		arg0_8:EnterDetail(var0_8.instagram)
+		arg0_12:EnterDetail(var0_12.instagram)
 	end, SFX_PANEL)
 
-	arg0_8.cards[arg1_8] = var0_8
+	arg0_12.cards[arg1_12] = var0_12
 end
 
-function var0_0.OnUpdateItem(arg0_10, arg1_10, arg2_10)
-	local var0_10 = arg0_10.cards[arg2_10]
+function var0_0.OnUpdateItem(arg0_14, arg1_14, arg2_14)
+	local var0_14 = arg0_14.cards[arg2_14]
 
-	if not var0_10 then
-		var0_10 = Dorm3dInstagramCard.New(arg2_10)
-		arg0_10.cards[arg2_10] = var0_10
+	if not var0_14 then
+		var0_14 = Dorm3dInstagramCard.New(arg2_14)
+		arg0_14.cards[arg2_14] = var0_14
 	end
 
-	local var1_10 = arg0_10.display[arg1_10 + 1]
+	local var1_14 = arg0_14.display[arg1_14 + 1]
 
-	var0_10:Update(var1_10)
+	var0_14:Update(var1_14)
 end
 
-function var0_0.InitCards(arg0_11)
-	local var0_11 = arg0_11:GetInstagramList()
+function var0_0.InitCards(arg0_15)
+	local var0_15 = arg0_15:GetInstagramList()
 
-	arg0_11.display = {}
+	arg0_15.display = {}
 
-	for iter0_11, iter1_11 in ipairs(var0_11) do
-		if not iter1_11:IsLock() and iter1_11:CanShow() then
-			table.insert(arg0_11.display, iter1_11)
+	for iter0_15, iter1_15 in ipairs(var0_15) do
+		if not iter1_15:IsLock() and iter1_15:CanShow() then
+			table.insert(arg0_15.display, iter1_15)
 		end
 	end
 
-	table.sort(arg0_11.display, function(arg0_12, arg1_12)
-		local var0_12 = arg0_12:LockState()
-		local var1_12 = arg1_12:LockState()
+	table.sort(arg0_15.display, function(arg0_16, arg1_16)
+		local var0_16 = arg0_16:LockState()
+		local var1_16 = arg1_16:LockState()
 
-		if var0_12 == var1_12 then
-			return var1_12 < var0_12
+		if var0_16 == var1_16 then
+			return var1_16 < var0_16
 		else
-			return arg0_12.id > arg1_12.id
+			return arg0_16.id > arg1_16.id
 		end
 	end)
 
-	if isActive(arg0_11.listTF) then
-		arg0_11.list:SetTotalCount(#arg0_11.display)
+	if isActive(arg0_15.listTF) then
+		arg0_15.list:SetTotalCount(#arg0_15.display)
 	end
 
-	setActive(arg0_11.noMsgTF, #arg0_11.display == 0)
-	setActive(arg0_11.scrollBarTF, not #arg0_11.display == 0)
+	setActive(arg0_15.noMsgTF, #arg0_15.display == 0)
+	setActive(arg0_15.scrollBarTF, not #arg0_15.display == 0)
 end
 
-function var0_0.EnterDetail(arg0_13, arg1_13)
-	arg0_13.contextData.instagram = arg1_13
+function var0_0.EnterDetail(arg0_17, arg1_17)
+	arg0_17.contextData.instagram = arg1_17
 
-	arg0_13:InitDetailPage()
+	arg0_17:InitDetailPage()
 
-	arg0_13.inDetail = true
+	arg0_17.inDetail = true
 
-	setActive(arg0_13.listTF, false)
-	setActive(arg0_13.mainTF, true)
-	scrollTo(arg0_13.scroll, 0, 1)
+	setActive(arg0_17.listTF, false)
+	setActive(arg0_17.mainTF, true)
+	scrollTo(arg0_17.scroll, 0, 1)
 end
 
-function var0_0.ExitDetail(arg0_14)
-	arg0_14:emit(Dorm3dInstagramMediator.ON_EXIT, arg0_14.contextData.instagram.id)
+function var0_0.ExitDetail(arg0_18)
+	arg0_18:emit(Dorm3dInstagramMediator.ON_EXIT, arg0_18.contextData.instagram.id)
 
-	arg0_14.contextData.instagram = nil
-	arg0_14.inDetail = false
+	arg0_18.contextData.instagram = nil
+	arg0_18.inDetail = false
 
-	setActive(arg0_14.listTF, true)
-	setActive(arg0_14.mainTF, false)
-	arg0_14:ClosePlayerCommentPanel()
+	setActive(arg0_18.listTF, true)
+	setActive(arg0_18.mainTF, false)
+	arg0_18:ClosePlayerCommentPanel()
 end
 
-function var0_0.MarkRead(arg0_15, arg1_15)
-	if arg1_15 and not arg1_15:IsRead() then
-		arg0_15:emit(Dorm3dInstagramMediator.ON_READ, arg1_15.id)
+function var0_0.MarkRead(arg0_19, arg1_19)
+	if arg1_19 and not arg1_19:IsRead() then
+		arg0_19:emit(Dorm3dInstagramMediator.ON_READ, arg1_19.id)
 	end
 end
 
-function var0_0.InitDetailPage(arg0_16)
-	local var0_16 = arg0_16.contextData.instagram
+function var0_0.InitDetailPage(arg0_20)
+	local var0_20 = arg0_20.contextData.instagram
 
-	arg0_16:MarkRead(var0_16)
+	arg0_20:MarkRead(var0_20)
 
-	arg0_16.pushTimeTxt.text = var0_16:GetPushTime()
+	arg0_20.pushTimeTxt.text = var0_20:GetPushTime()
 
-	LoadSpriteAsync("Dorm3dIns/" .. var0_16:GetPicture(), function(arg0_17)
-		setImageSprite(arg0_16.imageTF, arg0_17, false)
+	LoadSpriteAsync("Dorm3dIns/" .. var0_20:GetPicture(), function(arg0_21)
+		setImageSprite(arg0_20.imageTF, arg0_21, false)
 	end)
 
-	local var1_16 = var0_16:GetBackground()
+	local var1_20 = var0_20:GetBackground()
 
-	if var1_16 and var1_16 ~= "" then
-		LoadSpriteAsync("Dorm3dIns/" .. var1_16, function(arg0_18)
-			setImageSprite(arg0_16.mainBg, arg0_18, false)
+	if var1_20 and var1_20 ~= "" then
+		LoadSpriteAsync("Dorm3dIns/" .. var1_20, function(arg0_22)
+			setImageSprite(arg0_20.mainBg, arg0_22, false)
 		end)
 	end
 
-	setImageSprite(arg0_16.iconTF, LoadSprite("qicon/" .. var0_16:GetIcon()), false)
+	setImageSprite(arg0_20.iconTF, LoadSprite("qicon/" .. var0_20:GetIcon()), false)
 
-	arg0_16.nameTxt.text = var0_16:GetName()
-	arg0_16.contentTxt.text = var0_16:GetText()
+	arg0_20.nameTxt.text = var0_20:GetName()
+	arg0_20.contentTxt.text = var0_20:GetText()
 
-	onToggle(arg0_16, arg0_16.commentPanel, function(arg0_19)
-		if arg0_19 then
-			arg0_16:OpenPlayerCommentPanel()
+	onToggle(arg0_20, arg0_20.commentPanel, function(arg0_23)
+		if arg0_23 then
+			arg0_20:OpenPlayerCommentPanel()
 		else
-			arg0_16:ClosePlayerCommentPanel()
+			arg0_20:ClosePlayerCommentPanel()
 		end
 	end, SFX_PANEL)
-	arg0_16:UpdateLikeBtn()
-	arg0_16:UpdateShareBtn()
-	arg0_16:UpdateCommentList()
+	arg0_20:UpdateLikeBtn()
+	arg0_20:UpdateShareBtn()
+	arg0_20:UpdateCommentList()
 end
 
-function var0_0.UpdateShareBtn(arg0_20)
-	local var0_20 = arg0_20.contextData.instagram
+function var0_0.UpdateShareBtn(arg0_24)
+	local var0_24 = arg0_24.contextData.instagram
 
-	onButton(arg0_20, arg0_20.planeTF, function()
-		arg0_20:emit(Dorm3dInstagramMediator.ON_SHARE, var0_20.id)
+	onButton(arg0_24, arg0_24.planeTF, function()
+		arg0_24:emit(Dorm3dInstagramMediator.ON_SHARE, var0_24.id)
 	end, SFX_PANEL)
 end
 
-function var0_0.UpdateLikeBtn(arg0_22)
-	local var0_22 = arg0_22.contextData.instagram
+function var0_0.UpdateLikeBtn(arg0_26)
+	local var0_26 = arg0_26.contextData.instagram
 
-	if not var0_22 then
+	if not var0_26 then
 		return
 	end
 
-	local var1_22 = var0_22:IsGood()
+	local var1_26 = var0_26:IsGood()
 
-	if not var1_22 then
-		onButton(arg0_22, arg0_22.likeBtn, function()
-			arg0_22:emit(Dorm3dInstagramMediator.ON_LIKE, var0_22.id)
+	if not var1_26 then
+		onButton(arg0_26, arg0_26.likeBtn, function()
+			arg0_26:emit(Dorm3dInstagramMediator.ON_LIKE, var0_26.id)
 		end, SFX_PANEL)
 	else
-		removeOnButton(arg0_22.likeBtn)
+		removeOnButton(arg0_26.likeBtn)
 	end
 
-	setActive(arg0_22.likeBtn:Find("heart"), var1_22)
+	setActive(arg0_26.likeBtn:Find("heart"), var1_26)
 
-	arg0_22.likeBtn:GetComponent(typeof(Image)).enabled = not var1_22
+	arg0_26.likeBtn:GetComponent(typeof(Image)).enabled = not var1_26
 end
 
-function var0_0.OnLikeInstagram(arg0_24)
-	local var0_24 = arg0_24.contextData.instagram
+function var0_0.OnLikeInstagram(arg0_28)
+	local var0_28 = arg0_28.contextData.instagram
 
-	if not var0_24 then
+	if not var0_28 then
 		return
 	end
 
-	arg0_24:UpdateLikeBtn()
+	arg0_28:UpdateLikeBtn()
 
-	for iter0_24, iter1_24 in pairs(arg0_24.cards) do
-		if iter1_24.instagram.id == var0_24.id then
-			iter1_24:Update(var0_24)
+	for iter0_28, iter1_28 in pairs(arg0_28.cards) do
+		if iter1_28.instagram.id == var0_28.id then
+			iter1_28:Update(var0_28)
 
 			break
 		end
 	end
 end
 
-local function var1_0(arg0_25, arg1_25, arg2_25)
-	setText(arg1_25:Find("main/reply"), "reply")
+local function var1_0(arg0_29, arg1_29, arg2_29)
+	setText(arg1_29:Find("main/reply"), "reply")
 
-	local var0_25 = SwitchSpecialChar(arg2_25:GetText())
+	local var0_29 = SwitchSpecialChar(arg2_29:GetText())
 
-	setText(arg1_25:Find("main/content"), HXSet.hxLan(var0_25))
-	setText(arg1_25:Find("main/time"), arg2_25:GetPushTime())
+	setText(arg1_29:Find("main/content"), HXSet.hxLan(var0_29))
+	setText(arg1_29:Find("main/time"), arg2_29:GetPushTime())
 
-	if isa(arg2_25, InstagramPlayerComment3Dorm) then
-		setImageSprite(arg1_25:Find("main/head/icon"), GetSpriteFromAtlas("ui/InstagramUI_atlas", "txdi_3"))
+	if isa(arg2_29, InstagramPlayerComment3Dorm) then
+		setImageSprite(arg1_29:Find("main/head/icon"), GetSpriteFromAtlas("ui/InstagramUI_atlas", "txdi_3"))
 	else
-		setImageSprite(arg1_25:Find("main/head/icon"), LoadSprite("qicon/" .. arg2_25:GetIcon()), false)
+		setImageSprite(arg1_29:Find("main/head/icon"), LoadSprite("qicon/" .. arg2_29:GetIcon()), false)
 	end
 end
 
-local function var2_0(arg0_26, arg1_26, arg2_26)
-	local var0_26 = arg2_26:GetReplyedList()
-	local var1_26 = _.select(var0_26, function(arg0_27)
-		return arg0_27:CanShow()
+local function var2_0(arg0_30, arg1_30, arg2_30)
+	local var0_30 = arg2_30:GetReplyedList()
+	local var1_30 = _.select(var0_30, function(arg0_31)
+		return arg0_31:CanShow()
 	end)
-	local var2_26 = UIItemList.New(arg1_26:Find("replys"), arg1_26:Find("replys/sub"))
+	local var2_30 = UIItemList.New(arg1_30:Find("replys"), arg1_30:Find("replys/sub"))
 
-	table.sort(var1_26, function(arg0_28, arg1_28)
-		if arg0_28.time == arg1_28.time then
-			return arg0_28.id < arg1_28.id
+	table.sort(var1_30, function(arg0_32, arg1_32)
+		if arg0_32.time == arg1_32.time then
+			return arg0_32.id < arg1_32.id
 		else
-			return arg0_28.time < arg1_28.time
+			return arg0_32.time < arg1_32.time
 		end
 	end)
-	var2_26:make(function(arg0_29, arg1_29, arg2_29)
-		if arg0_29 == UIItemList.EventUpdate then
-			local var0_29 = var1_26[arg1_29 + 1]
+	var2_30:make(function(arg0_33, arg1_33, arg2_33)
+		if arg0_33 == UIItemList.EventUpdate then
+			local var0_33 = var1_30[arg1_33 + 1]
 
-			setImageSprite(arg2_29:Find("head/icon"), LoadSprite("qicon/" .. var0_29:GetIcon()), false)
+			setImageSprite(arg2_33:Find("head/icon"), LoadSprite("qicon/" .. var0_33:GetIcon()), false)
 
-			local var1_29 = SwitchSpecialChar(var0_29:GetText())
+			local var1_33 = SwitchSpecialChar(var0_33:GetText())
 
-			setText(arg2_29:Find("content"), HXSet.hxLan(var1_29))
+			setText(arg2_33:Find("content"), HXSet.hxLan(var1_33))
 		end
 	end)
-	var2_26:align(#var1_26)
+	var2_30:align(#var1_30)
 end
 
-local function var3_0(arg0_30, arg1_30, arg2_30)
-	local var0_30 = arg2_30:ExistAnyReplay()
+local function var3_0(arg0_34, arg1_34, arg2_34)
+	local var0_34 = arg2_34:ExistAnyReplay()
 
-	if var0_30 then
-		onToggle(arg0_30, arg1_30:Find("main/bubble"), function(arg0_31)
-			setActive(arg1_30:Find("replys"), arg0_31)
+	if var0_34 then
+		onToggle(arg0_34, arg1_34:Find("main/bubble"), function(arg0_35)
+			setActive(arg1_34:Find("replys"), arg0_35)
 		end, SFX_PANEL)
-		var2_0(arg0_30, arg1_30, arg2_30)
+		var2_0(arg0_34, arg1_34, arg2_34)
 	else
-		setActive(arg1_30:Find("replys"), false)
+		setActive(arg1_34:Find("replys"), false)
 	end
 
-	triggerToggle(arg1_30:Find("main/bubble"), var0_30)
+	triggerToggle(arg1_34:Find("main/bubble"), var0_34)
 
-	arg1_30:Find("main/bubble"):GetComponent(typeof(Toggle)).enabled = var0_30
+	arg1_34:Find("main/bubble"):GetComponent(typeof(Toggle)).enabled = var0_34
 end
 
-function var0_0.UpdateCommentList(arg0_32)
-	local var0_32 = arg0_32.contextData.instagram
-
-	if not var0_32 then
-		return
-	end
-
-	local var1_32 = var0_32:GetReplyedList()
-	local var2_32 = _.select(var1_32, function(arg0_33)
-		return arg0_33:CanShow()
-	end)
-
-	table.sort(var2_32, function(arg0_34, arg1_34)
-		return arg0_34.time < arg1_34.time
-	end)
-	arg0_32.commentList:make(function(arg0_35, arg1_35, arg2_35)
-		if arg0_35 == UIItemList.EventUpdate then
-			local var0_35 = var2_32[arg1_35 + 1]
-
-			var1_0(arg0_32, arg2_35, var0_35)
-			var3_0(arg0_32, arg2_35, var0_35)
-		end
-	end)
-	setActive(arg0_32.centerTF, false)
-	setActive(arg0_32.centerTF, true)
-	Canvas.ForceUpdateCanvases()
-	arg0_32.commentList:align(#var2_32)
-end
-
-function var0_0.OpenPlayerCommentPanel(arg0_36)
+function var0_0.UpdateCommentList(arg0_36)
 	local var0_36 = arg0_36.contextData.instagram
 
-	if not var0_36:ExistAnyReplyable() then
+	if not var0_36 then
 		return
 	end
 
-	setActive(arg0_36.optionalPanel, true)
+	local var1_36 = var0_36:GetReplyedList()
+	local var2_36 = _.select(var1_36, function(arg0_37)
+		return arg0_37:CanShow()
+	end)
 
-	local var1_36 = var0_36:GetReplyableList()
+	table.sort(var2_36, function(arg0_38, arg1_38)
+		return arg0_38.time < arg1_38.time
+	end)
+	arg0_36.commentList:make(function(arg0_39, arg1_39, arg2_39)
+		if arg0_39 == UIItemList.EventUpdate then
+			local var0_39 = var2_36[arg1_39 + 1]
 
-	arg0_36.commentPanel:GetComponent(typeof(Image)).enabled = true
-	arg0_36.commentPanel.sizeDelta = Vector2(0, #var1_36 * 142 + 60)
+			var1_0(arg0_36, arg2_39, var0_39)
+			var3_0(arg0_36, arg2_39, var0_39)
+		end
+	end)
+	setActive(arg0_36.centerTF, false)
+	setActive(arg0_36.centerTF, true)
+	Canvas.ForceUpdateCanvases()
+	arg0_36.commentList:align(#var2_36)
+end
 
-	local var2_36 = UIItemList.New(arg0_36.optionalPanel, arg0_36.optionalPanel:Find("option1"))
+function var0_0.OpenPlayerCommentPanel(arg0_40)
+	local var0_40 = arg0_40.contextData.instagram
 
-	var2_36:make(function(arg0_37, arg1_37, arg2_37)
-		if arg0_37 == UIItemList.EventUpdate then
-			local var0_37 = var1_36[arg1_37 + 1]
-			local var1_37 = var0_37:GetText()
-			local var2_37 = var0_37.id
-			local var3_37 = var0_37.index
+	if not var0_40:ExistAnyReplyable() then
+		return
+	end
 
-			setText(arg2_37:Find("Text"), HXSet.hxLan(var1_37))
-			onButton(arg0_36, arg2_37, function()
-				arg0_36:emit(Dorm3dInstagramMediator.ON_DISCUSS, var0_36.id, var2_37, var3_37)
-				arg0_36:ClosePlayerCommentPanel()
+	setActive(arg0_40.optionalPanel, true)
+
+	local var1_40 = var0_40:GetReplyableList()
+
+	arg0_40.commentPanel:GetComponent(typeof(Image)).enabled = true
+	arg0_40.commentPanel.sizeDelta = Vector2(0, #var1_40 * 142 + 60)
+
+	local var2_40 = UIItemList.New(arg0_40.optionalPanel, arg0_40.optionalPanel:Find("option1"))
+
+	var2_40:make(function(arg0_41, arg1_41, arg2_41)
+		if arg0_41 == UIItemList.EventUpdate then
+			local var0_41 = var1_40[arg1_41 + 1]
+			local var1_41 = var0_41:GetText()
+			local var2_41 = var0_41.id
+			local var3_41 = var0_41.index
+
+			setText(arg2_41:Find("Text"), HXSet.hxLan(var1_41))
+			onButton(arg0_40, arg2_41, function()
+				arg0_40:emit(Dorm3dInstagramMediator.ON_DISCUSS, var0_40.id, var2_41, var3_41)
+				arg0_40:ClosePlayerCommentPanel()
 			end, SFX_PANEL)
 		end
 	end)
-	var2_36:align(#var1_36)
+	var2_40:align(#var1_40)
 end
 
-function var0_0.ClosePlayerCommentPanel(arg0_39)
-	arg0_39.commentPanel:GetComponent(typeof(Image)).enabled = false
-	arg0_39.commentPanel.sizeDelta = Vector2(0, 0)
+function var0_0.ClosePlayerCommentPanel(arg0_43)
+	arg0_43.commentPanel:GetComponent(typeof(Image)).enabled = false
+	arg0_43.commentPanel.sizeDelta = Vector2(0, 0)
 
-	setActive(arg0_39.optionalPanel, false)
+	setActive(arg0_43.optionalPanel, false)
 end
 
-function var0_0.onBackPressed(arg0_40)
-	if arg0_40.inDetail then
-		arg0_40:ExitDetail()
+function var0_0.onBackPressed(arg0_44)
+	if arg0_44.inDetail then
+		arg0_44:ExitDetail()
 
 		return
 	end
 
-	var0_0.super.onBackPressed(arg0_40)
+	var0_0.super.onBackPressed(arg0_44)
 end
 
-function var0_0.willExit(arg0_41)
-	if arg0_41.inDetail then
-		arg0_41:ExitDetail()
+function var0_0.willExit(arg0_45)
+	if arg0_45.inDetail then
+		arg0_45:ExitDetail()
 	end
 
-	for iter0_41, iter1_41 in pairs(arg0_41.cards) do
-		iter1_41:Dispose()
+	for iter0_45, iter1_45 in pairs(arg0_45.cards) do
+		iter1_45:Dispose()
 	end
 
-	arg0_41.cards = {}
+	arg0_45.cards = {}
 end
 
 return var0_0

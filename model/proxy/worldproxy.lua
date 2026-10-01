@@ -10,8 +10,8 @@ function var0_0.register(arg0_1)
 
 		arg0_1:BuildWorld(World.TypeBase)
 
-		arg0_1.world.baseShipIds = underscore.rest(arg0_2.ship_id_list, 1)
-		arg0_1.world.baseCmdIds = underscore.rest(arg0_2.cmd_id_list, 1)
+		arg0_1.world.baseShipIds = underscore.to_array(arg0_2.ship_id_list)
+		arg0_1.world.baseCmdIds = underscore.to_array(arg0_2.cmd_id_list)
 
 		arg0_1.world:UpdateProgress(arg0_2.progress)
 		pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inWorld")
@@ -195,8 +195,9 @@ function var0_0.NetUpdateWorld(arg0_19, arg1_19, arg2_19, arg3_19)
 
 	local var1_19 = var0_19:GetAtlas()
 
-	var1_19:SetCostMapList(_.rest(arg1_19.chapter_list, 1))
-	var1_19:SetSairenEntranceList(_.rest(arg1_19.sairen_chapter, 1))
+	var1_19:SetCostMapList(underscore.to_array(arg1_19.chapter_list))
+	var1_19:SetSairenEntranceList(underscore.to_array(arg1_19.sairen_chapter))
+	var1_19:SetDelegatedMarkList(underscore.to_array(arg1_19.random_map_id_list_by_auto))
 	var1_19:InitWorldNShopGoods(arg1_19.goods_list)
 	var0_19:SetFleets(arg0_19:NetBuildMapFleetList(arg1_19.group_list))
 
@@ -389,7 +390,7 @@ function var0_0.NetUpdateMapPort(arg0_36, arg1_36, arg2_36)
 	local var1_36 = var0_36:GetPort(arg2_36.port_id)
 
 	assert(var1_36, "port not exist: " .. arg2_36.port_id)
-	var1_36:UpdateTaskIds(_.rest(arg2_36.task_list, 1))
+	var1_36:UpdateTaskIds(underscore.to_array(arg2_36.task_list))
 	var1_36:UpdateGoods(_.map(arg2_36.goods_list, function(arg0_37)
 		local var0_37 = WPool:Get(WorldGoods)
 
@@ -635,13 +636,13 @@ function var0_0.ApplyShipUpdate(arg0_71, arg1_71)
 end
 
 function var0_0.NetUpdateWorldSairenChapter(arg0_73, arg1_73)
-	local var0_73 = _.rest(arg1_73, 1)
+	local var0_73 = underscore.to_array(arg1_73)
 
 	arg0_73.world:GetAtlas():SetSairenEntranceList(var0_73)
 end
 
 function var0_0.NetUpdateWorldMapPressing(arg0_74, arg1_74)
-	local var0_74 = _.rest(arg1_74, 1)
+	local var0_74 = underscore.to_array(arg1_74)
 
 	arg0_74.world:GetAtlas():SetPressingMarkList(var0_74)
 	arg0_74.world:GetAtlas():InitPortMarkNShopList()
@@ -691,6 +692,20 @@ function var0_0.ApplySalvageUpdate(arg0_81, arg1_81)
 		assert(var0_82, "fleet not exit: " .. arg0_82.id)
 		var0_82:UpdateCatSalvage(arg0_82.step, arg0_82.list, arg0_82.mapId)
 	end)
+end
+
+function var0_0.RecordDelegateAward(arg0_83, arg1_83)
+	assert(not arg0_83.delegateInfo)
+
+	arg0_83.delegateInfo = arg1_83
+end
+
+function var0_0.RemoveDelegateAward(arg0_84)
+	arg0_84.delegateInfo = nil
+end
+
+function var0_0.GetDelegateAward(arg0_85)
+	return arg0_85.delegateInfo
 end
 
 return var0_0

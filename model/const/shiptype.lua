@@ -200,6 +200,10 @@ var0_0.BundleList = {
 		var0_0.FengFanS,
 		var0_0.FengFanV,
 		var0_0.FengFanM
+	},
+	qianpaiquzhu = {
+		var0_0.QuZhu,
+		var0_0.DaoQuV
 	}
 }
 
@@ -207,9 +211,10 @@ function var0_0.BundleType2CNLabel(arg0_5)
 	if not var0_0.bundleLabel then
 		var0_0.bundleLabel = {
 			zhong = "label_13",
-			qian = "label_8",
+			qianpaiquzhu = "label_1",
 			zhan = "label_11",
 			fanqian = "label_55",
+			qian = "label_8",
 			hang = "label_12",
 			quzhu = "label_1"
 		}

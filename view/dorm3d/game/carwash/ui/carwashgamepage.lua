@@ -26,8 +26,6 @@ end
 function var0_0.InitUI(arg0_6)
 	onButton(arg0_6, arg0_6._tf:Find("bottom/btn_shoot"), function()
 		arg0_6:emit(CarWashGameFlowSystem.SWITCH_SHOOTING)
-		setActive(arg0_6._tf:Find("bottom/btn_shoot/on"), arg0_6.contextData.gameStatus.isShooting)
-		setActive(arg0_6._tf:Find("bottom/btn_shoot/off"), not arg0_6.contextData.gameStatus.isShooting)
 	end)
 
 	arg0_6.gunList = UIItemList.New(arg0_6._tf:Find("bottom/guns"), arg0_6._tf:Find("bottom/guns/gun1"))
@@ -118,80 +116,111 @@ function var0_0.InitUI(arg0_6)
 end
 
 function var0_0.BindEvent(arg0_14)
-	arg0_14:bind(CarWashGameFlowSystem.UPDATE_COUNTDOWN, function(arg0_15, arg1_15)
-		arg0_14:UpdateTimeText(arg1_15.remainingSeconds)
+	arg0_14:bind(CarWashGameFlowSystem.GAME_RESET, function()
+		arg0_14:InitConfig()
+		arg0_14:Flush()
+
+		arg0_14.needsRelock = true
 	end)
-	arg0_14:bind(CarWashGameFlowSystem.UPDATE_HEART_BEAT_VALUE, function(arg0_16, arg1_16)
-		for iter0_16, iter1_16 in ipairs(arg0_14.posConfig) do
-			if not arg0_14.posUnlock[iter0_16] and iter1_16.mood_value <= arg1_16.newValue then
-				arg0_14.posUnlock[iter0_16] = true
+	arg0_14:bind(CarWashGameFlowSystem.UPDATE_IS_SHOOTING, function()
+		arg0_14:FlushShooting()
+	end)
+	arg0_14:bind(CarWashGameFlowSystem.UPDATE_COUNTDOWN, function(arg0_17, arg1_17)
+		arg0_14:UpdateTimeText(arg1_17.remainingSeconds)
+	end)
+	arg0_14:bind(CarWashGameFlowSystem.UPDATE_HEART_BEAT_VALUE, function(arg0_18, arg1_18)
+		for iter0_18, iter1_18 in ipairs(arg0_14.posConfig) do
+			if not arg0_14.posUnlock[iter0_18] and iter1_18.mood_value <= arg1_18.newValue then
+				arg0_14.posUnlock[iter0_18] = true
 
-				local var0_16 = arg0_14._tf:Find("left/cams"):GetChild(iter0_16 - 1)
+				local var0_18 = arg0_14._tf:Find("left/cams"):GetChild(iter0_18 - 1)
 
-				triggerButton(var0_16)
-				var0_16:GetComponent(typeof(Animation)):Play("anim_Dorm3dCarWashUI_lock_out")
+				triggerButton(var0_18)
+				var0_18:GetComponent(typeof(Animation)):Play("anim_Dorm3dCarWashUI_lock_out")
 			end
 		end
 
 		arg0_14:Flush()
 	end)
-	arg0_14:bind(CarWashGameFlowSystem.UPDATE_STAINS_COUNT, function(arg0_17, arg1_17)
+	arg0_14:bind(CarWashGameFlowSystem.UPDATE_STAINS_COUNT, function(arg0_19, arg1_19)
 		arg0_14:FlushCleanPersent()
 	end)
-	arg0_14:bind(CarWashGameFlowSystem.UPDATE_CURRENT_GUN_TYPE, function(arg0_18, arg1_18)
+	arg0_14:bind(CarWashGameFlowSystem.UPDATE_CURRENT_GUN_TYPE, function(arg0_20, arg1_20)
 		arg0_14:Flush()
 	end)
-	arg0_14:bind(CarWashGameFlowSystem.UPDATE_GAME_STATE, function(arg0_19, arg1_19)
-		if arg1_19.newValue == CarWashConst.GAME_STATE.PHASE_1 then
+	arg0_14:bind(CarWashGameFlowSystem.UPDATE_GAME_STATE, function(arg0_21, arg1_21)
+		if arg1_21.newValue == CarWashConst.GAME_STATE.PHASE_1 then
 			arg0_14:Show()
-		elseif arg1_19.newValue == CarWashConst.GAME_STATE.PHASE_2 or arg1_19.newValue == CarWashConst.GAME_STATE.END then
+
+			if arg0_14.needsRelock then
+				arg0_14.needsRelock = false
+
+				arg0_14:PlayRelockAnim()
+			end
+		elseif arg1_21.newValue == CarWashConst.GAME_STATE.PHASE_2 or arg1_21.newValue == CarWashConst.GAME_STATE.END then
 			arg0_14:Hide()
 		end
 	end)
 end
 
-function var0_0.UpdateTimeText(arg0_20, arg1_20)
-	setText(arg0_20.timeText, arg0_20:FormatTime(arg1_20))
+function var0_0.PlayRelockAnim(arg0_22)
+	local var0_22 = arg0_22._tf:Find("left/cams")
+
+	for iter0_22, iter1_22 in ipairs(arg0_22.posUnlock) do
+		if not iter1_22 then
+			var0_22:GetChild(iter0_22 - 1):GetComponent(typeof(Animation)):Play("anim_Dorm3dCarWashUI_relock")
+		end
+	end
 end
 
-function var0_0.FormatTime(arg0_21, arg1_21)
-	arg1_21 = math.max(arg1_21 or 0, 0)
-
-	local var0_21 = math.floor(arg1_21 / 60)
-	local var1_21 = arg1_21 % 60
-
-	return string.format("%02d:%02d", var0_21, var1_21)
+function var0_0.UpdateTimeText(arg0_23, arg1_23)
+	setText(arg0_23.timeText, arg0_23:FormatTime(arg1_23))
 end
 
-function var0_0.Flush(arg0_22)
-	arg0_22.gunList:align(var0_0.GUN_COUNT)
-	arg0_22.camsList:align(#arg0_22.posConfig)
-	arg0_22.favorList:align(#arg0_22.heartBeatDotVals - 1)
-	arg0_22:FlushCleanPersent()
+function var0_0.FormatTime(arg0_24, arg1_24)
+	arg1_24 = math.max(arg1_24 or 0, 0)
+
+	local var0_24 = math.floor(arg1_24 / 60)
+	local var1_24 = arg1_24 % 60
+
+	return string.format("%02d:%02d", var0_24, var1_24)
 end
 
-function var0_0.FlushCleanPersent(arg0_23)
-	local var0_23 = arg0_23:GetCleanPersent()
-	local var1_23 = arg0_23:GetRank(var0_23)
+function var0_0.FlushShooting(arg0_25)
+	setActive(arg0_25._tf:Find("bottom/btn_shoot/on"), arg0_25.contextData.gameStatus.isShooting)
+	setActive(arg0_25._tf:Find("bottom/btn_shoot/off"), not arg0_25.contextData.gameStatus.isShooting)
+end
 
-	setText(arg0_23.cleanPersentText, var0_23 .. "%")
-	eachChild(arg0_23.cleanRank, function(arg0_24)
-		setActive(arg0_24, arg0_24.name == var1_23)
+function var0_0.Flush(arg0_26)
+	arg0_26:FlushShooting()
+	arg0_26.gunList:align(var0_0.GUN_COUNT)
+	arg0_26.camsList:align(#arg0_26.posConfig)
+	arg0_26.favorList:align(#arg0_26.heartBeatDotVals - 1)
+	arg0_26:FlushCleanPersent()
+end
+
+function var0_0.FlushCleanPersent(arg0_27)
+	local var0_27 = arg0_27:GetCleanPersent()
+	local var1_27 = arg0_27:GetRank(var0_27)
+
+	setText(arg0_27.cleanPersentText, var0_27 .. "%")
+	eachChild(arg0_27.cleanRank, function(arg0_28)
+		setActive(arg0_28, arg0_28.name == var1_27)
 	end)
 end
 
-function var0_0.GetCleanPersent(arg0_25)
-	if arg0_25.contextData.gameStatus.stainsCountMax == 0 then
+function var0_0.GetCleanPersent(arg0_29)
+	if arg0_29.contextData.gameStatus.stainsCountMax == 0 then
 		return 0
 	end
 
-	local var0_25 = 1 - arg0_25.contextData.gameStatus.stainsCount / arg0_25.contextData.gameStatus.stainsCountMax
+	local var0_29 = 1 - arg0_29.contextData.gameStatus.stainsCount / arg0_29.contextData.gameStatus.stainsCountMax
 
-	return (math.floor(var0_25 * 100))
+	return (math.floor(var0_29 * 100))
 end
 
-function var0_0.GetRank(arg0_26, arg1_26)
-	return CarWashConst.GetScoreRank(arg1_26)
+function var0_0.GetRank(arg0_30, arg1_30)
+	return CarWashConst.GetScoreRank(arg1_30)
 end
 
 return var0_0

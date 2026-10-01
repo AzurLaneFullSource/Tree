@@ -5,10 +5,11 @@ return {
 	scripts = {
 		{
 			actor = 317031,
-			side = 2,
 			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			hidePaintObj = true,
 			dir = 1,
+			side = 2,
 			say = "You want me to stop using my disguise powers?",
 			typewriter = {
 				speed = 0.05,
@@ -18,10 +19,11 @@ return {
 		{
 			expression = 6,
 			side = 2,
-			actor = 317031,
+			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			actor = 317031,
 			say = "Why?",
 			typewriter = {
 				speed = 0.05,
@@ -41,11 +43,12 @@ return {
 		{
 			expression = 7,
 			side = 2,
-			actor = 317031,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 1,
+			actor = 317031,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "...Okay. I promise not to do it again.",
 			typewriter = {
 				speed = 0.05,
@@ -54,11 +57,12 @@ return {
 		},
 		{
 			actor = 317031,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 2,
+			NextIcon = 1,
 			say = "...Whatever. I was planning on not using them again anyway.",
 			typewriter = {
 				speed = 0.05,

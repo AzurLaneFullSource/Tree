@@ -96,6 +96,8 @@ pg.pay_data_display.all = {
 	9019,
 	9021,
 	9022,
+	9023,
+	9024,
 	100,
 	101,
 	102,
@@ -197,6 +199,7 @@ pg.pay_data_display.all = {
 	1027,
 	1028,
 	1029,
+	1030,
 	1301,
 	2001,
 	2002,
@@ -284,7 +287,8 @@ pg.pay_data_display.all = {
 	5015,
 	5016,
 	5017,
-	70001
+	70001,
+	70002
 }
 pg.pay_data_display.get_id_list_by_extra_service = {
 	[0] = {
@@ -384,6 +388,8 @@ pg.pay_data_display.get_id_list_by_extra_service = {
 		9019,
 		9021,
 		9022,
+		9023,
+		9024,
 		100,
 		101,
 		102,
@@ -573,10 +579,12 @@ pg.pay_data_display.get_id_list_by_extra_service = {
 		1027,
 		1028,
 		1029,
+		1030,
 		1301
 	},
 	[6] = {
-		70001
+		70001,
+		70002
 	}
 }
 pg.base = pg.base or {}
@@ -11986,6 +11994,276 @@ pg.base.pay_data_display = {}
 			}
 		}
 	}
+	pg.base.pay_data_display[9023] = {
+		limit_group = 0,
+		name = "Eerie Talismans Lucky Bag B",
+		descrip_extra = "*The contents of the Lucky Bag will be sent to your in-game inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
+		type = 1,
+		second_text = "Many Rewards",
+		id = 9023,
+		subject = "Eerie Talismans Lucky Bag B",
+		first_text = "Random Skin & Abundant Gems",
+		package_sort_id = 0,
+		tip = "",
+		money = 2999,
+		tip_open = 0,
+		tag = 2,
+		cash_show = 0,
+		gem = 0,
+		descrip = "Contains 1 random skin, 2026 Gems, and supplies.",
+		name_display = "Eerie Talismans Lucky Bag B",
+		limit_type = 2,
+		type_order = 2,
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "fudai39",
+		extra_service = 3,
+		skin_inquire_relation = 86231,
+		limit_arg = 1,
+		id_str = "com.yostaren.azurlane.luckybag95",
+		first_pay_double = 0,
+		extra_gem = 0,
+		show_group = "",
+		package_tag_open = 0,
+		airijp_id = "com.yostaren.azurlane.luckybag95",
+		extra_service_item = {
+			{
+				2,
+				86231,
+				1
+			},
+			{
+				1,
+				14,
+				2026
+			},
+			{
+				2,
+				42086,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					9,
+					17
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					9,
+					30
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				42086,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81239,
+				1
+			}
+		},
+		first_icon = {
+			{
+				2,
+				86231,
+				1
+			},
+			{
+				1,
+				14,
+				2026
+			}
+		}
+	}
+	pg.base.pay_data_display[9024] = {
+		limit_group = 0,
+		name = "Ninja Castle Lucky Box B Rerun",
+		descrip_extra = "*The contents of the Lucky Bag will be sent to your in-game inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
+		type = 1,
+		second_text = "Many Rewards",
+		id = 9024,
+		subject = "Ninja Castle Lucky Box B Rerun",
+		first_text = "Random Skin & Abundant Gems",
+		package_sort_id = 0,
+		tip = "",
+		money = 2999,
+		tip_open = 0,
+		tag = 2,
+		cash_show = 0,
+		gem = 0,
+		descrip = "Contains 1 random skin, 2025 Gems, and supplies.",
+		name_display = "Ninja Castle Lucky Box B Rerun",
+		limit_type = 2,
+		type_order = 2,
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "fudai28",
+		extra_service = 3,
+		skin_inquire_relation = 86218,
+		limit_arg = 1,
+		id_str = "com.yostaren.azurlane.luckybag96",
+		first_pay_double = 0,
+		extra_gem = 0,
+		show_group = "",
+		package_tag_open = 0,
+		airijp_id = "com.yostaren.azurlane.luckybag96",
+		extra_service_item = {
+			{
+				2,
+				86218,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			},
+			{
+				2,
+				42076,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					9,
+					17
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					9,
+					30
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				42076,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81218,
+				1
+			}
+		},
+		first_icon = {
+			{
+				2,
+				86218,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			}
+		}
+	}
 	pg.base.pay_data_display[100] = {
 		limit_group = 0,
 		name = "Nep's Lucky Bag ",
@@ -12659,6 +12937,8 @@ pg.base.pay_data_display = {}
 		limit_args = {},
 		drop_item = {}
 	}
+end)()
+;(function()
 	pg.base.pay_data_display[106] = {
 		limit_group = 0,
 		name = "Lunar New Year Lucky Bag (2019)",
@@ -12890,8 +13170,6 @@ pg.base.pay_data_display = {}
 		limit_args = {},
 		drop_item = {}
 	}
-end)()
-;(function()
 	pg.base.pay_data_display[108] = {
 		limit_group = 0,
 		name = "Hanami Lucky Bag ",
@@ -23267,6 +23545,92 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
+	pg.base.pay_data_display[1030] = {
+		limit_group = 0,
+		name = "Fair Winds Cruise Pass (2026.10)",
+		descrip_extra = "You must complete certain missions to obtain these rewards.",
+		type = 0,
+		second_text = "Unlock Special Rewards",
+		id = 1030,
+		subject = "Fair Winds Cruise Pass",
+		first_text = "",
+		package_sort_id = 0,
+		first_icon = "",
+		money = 999,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		cash_show = 0,
+		descrip = "Purchase to immediately gain 1,500 Progress Points, and also unlock additional Fair Winds Cruise rewards.",
+		limit_type = 2,
+		name_display = "Fair Winds Cruise Pass",
+		type_order = 6,
+		package_tag = "",
+		picture = "battlepass_1",
+		akashi_pick = 1,
+		skin_inquire_relation = 0,
+		extra_service = 4,
+		id_str = "com.yostaren.azurlane.passport34",
+		first_pay_double = 0,
+		extra_gem = 0,
+		show_group = "",
+		limit_arg = 1,
+		package_tag_open = 0,
+		airijp_id = "com.yostaren.azurlane.passport34",
+		extra_service_item = {
+			{
+				1,
+				4031,
+				1500
+			},
+			{
+				8,
+				65121,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					10,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					11,
+					30
+				},
+				{
+					22,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				8,
+				59599,
+				1500
+			}
+		},
+		sub_display = {
+			7031,
+			1500
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	}
 	pg.base.pay_data_display[1301] = {
 		limit_group = 0,
 		name = "Black Friday Cruise Pass",
@@ -23560,6 +23924,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.pay_data_display[2004] = {
 		limit_group = 1,
 		name = "PR Blueprint Pack - Series 1",
@@ -23767,8 +24133,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.pay_data_display[2007] = {
 		limit_group = 2,
 		name = "PR Voucher - Series 2",
@@ -30943,6 +31307,78 @@ end)()
 					2026,
 					9,
 					8
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					9,
+					30
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		limit_args = {},
+		drop_item = {}
+	}
+	pg.base.pay_data_display[70002] = {
+		descrip_extra = "Dual-Form Skin Purchase (Golden Hind)",
+		name = "The Pale Phantom's Smile",
+		ignorePlatform = "",
+		type = 0,
+		second_text = "",
+		limit_group = 0,
+		subject = "The Pale Phantom's Smile",
+		type_order = 0,
+		package_sort_id = 0,
+		tip = "",
+		money = 1999,
+		tip_open = 0,
+		cash_show = 2799,
+		descrip = "The Pale Phantom's Smile",
+		gem = 0,
+		name_display = "The Pale Phantom's Smile",
+		limit_arg = 1,
+		limit_type = 2,
+		package_tag = "",
+		picture = "",
+		id_str = "com.yostaren.azurlane.pack51",
+		extra_gem = 0,
+		id = 70002,
+		airijp_id = "com.yostaren.azurlane.pack51",
+		display = "",
+		first_icon = "",
+		first_text = "",
+		tag = 0,
+		akashi_pick = 1,
+		sub_display = "",
+		skin_inquire_relation = 0,
+		first_pay_double = 0,
+		extra_service = 6,
+		show_group = "",
+		package_tag_open = 0,
+		extra_service_item = {
+			{
+				7,
+				9600033,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					9,
+					17
 				},
 				{
 					0,
