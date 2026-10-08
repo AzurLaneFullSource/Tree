@@ -636,7 +636,7 @@ function var0_0.InitSwitch()
 
 					return switch(var0_117:getConfig("type"), {
 						[ActivityConst.ACTIVITY_TYPE_PT_BUFF_MARK2] = function()
-							return var0_117:GetTotalPtCount()
+							return var0_117.data4
 						end
 					}, function()
 						assert(false)

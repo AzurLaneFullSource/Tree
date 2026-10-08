@@ -32486,222 +32486,222 @@ cs.gametip = {
 	},
 	act_remaster_open_tip = {
 		1458938,
-		359
+		340
 	},
 	act_remaster_active_erro = {
-		1459297,
+		1459278,
 		125
 	},
 	act_remaster_tip_1 = {
-		1459422,
+		1459403,
 		232
 	},
 	act_remaster_tip_2 = {
-		1459654,
+		1459635,
 		84
 	},
 	act_remaster_extend_time = {
-		1459738,
+		1459719,
 		120
 	},
 	act_remaster_time_desc = {
-		1459858,
+		1459839,
 		105
 	},
 	act_remaster_time_desc_with_hours = {
-		1459963,
+		1459944,
 		119
 	},
 	act_remaster_time_desc_with_hours_without_ch = {
-		1460082,
+		1460063,
 		128
 	},
 	outpost_20250904_Sidebar6 = {
-		1460210,
+		1460191,
 		114
 	},
 	ActivityRemasterCore_re6_1 = {
-		1460324,
-		100
-	},
-	ActivityRemasterCore_re6_2 = {
-		1460424,
+		1460305,
 		99
 	},
+	ActivityRemasterCore_re6_2 = {
+		1460404,
+		100
+	},
 	ActivityRemasterCore_re6_3 = {
-		1460523,
+		1460504,
 		102
 	},
 	ActivityRemasterCore_re6_4 = {
-		1460625,
+		1460606,
 		103
 	},
 	ActivityRemasterCore_re6_5 = {
-		1460728,
+		1460709,
 		98
 	},
 	ActivityRemasterCore_re6_6 = {
-		1460826,
+		1460807,
 		101
 	},
 	ActivityRemasterCore_re5_1 = {
-		1460927,
+		1460908,
 		100
 	},
 	ActivityRemasterCore_re5_2 = {
-		1461027,
+		1461008,
 		99
 	},
 	ActivityRemasterCore_re5_3 = {
-		1461126,
+		1461107,
 		102
 	},
 	ActivityRemasterCore_re5_4 = {
-		1461228,
+		1461209,
 		103
 	},
 	ActivityRemasterCore_re5_5 = {
-		1461331,
+		1461312,
 		98
 	},
 	ActivityRemasterCore_re4_1 = {
-		1461429,
-		100
-	},
-	ActivityRemasterCore_re4_2 = {
-		1461529,
+		1461410,
 		99
 	},
+	ActivityRemasterCore_re4_2 = {
+		1461509,
+		100
+	},
 	ActivityRemasterCore_re4_3 = {
-		1461628,
+		1461609,
 		102
 	},
 	ActivityRemasterCore_re4_4 = {
-		1461730,
+		1461711,
 		103
 	},
 	ActivityRemasterCore_re4_5 = {
-		1461833,
+		1461814,
 		98
 	},
 	ActivityRemasterCore_re4_6 = {
-		1461931,
+		1461912,
 		101
 	},
 	ActivityRemasterCore_re3_1 = {
-		1462032,
+		1462013,
 		100
 	},
 	ActivityRemasterCore_re3_2 = {
-		1462132,
-		99
+		1462113,
+		100
 	},
 	ActivityRemasterCore_re3_3 = {
-		1462231,
+		1462213,
 		102
 	},
 	ActivityRemasterCore_re3_4 = {
-		1462333,
+		1462315,
 		103
 	},
 	ActivityRemasterCore_re3_5 = {
-		1462436,
+		1462418,
 		98
 	},
 	ActivityRemasterCore_re2_1 = {
-		1462534,
-		100
-	},
-	ActivityRemasterCore_re2_2 = {
-		1462634,
+		1462516,
 		99
 	},
+	ActivityRemasterCore_re2_2 = {
+		1462615,
+		100
+	},
 	ActivityRemasterCore_re2_3 = {
-		1462733,
+		1462715,
 		102
 	},
 	ActivityRemasterCore_re2_4 = {
-		1462835,
+		1462817,
 		103
 	},
 	ActivityRemasterCore_re2_5 = {
-		1462938,
+		1462920,
 		98
 	},
 	ActivityRemasterCore_re7_1 = {
-		1463036,
+		1463018,
 		98
 	},
 	ActivityRemasterCore_re7_2 = {
-		1463134,
+		1463116,
 		98
 	},
 	ActivityRemasterCore_award_preview_btn = {
-		1463232,
+		1463214,
 		109
 	},
 	ActivityRemasterCore_award_preview_title = {
-		1463341,
+		1463323,
 		119
 	},
 	ActivityRemasterCore_award_preview_ship = {
-		1463460,
+		1463442,
 		118
 	},
 	ActivityRemasterCore_award_preview_es = {
-		1463578,
+		1463560,
 		116
 	},
 	ActivityRemasterCore_award_preview_other = {
-		1463694,
+		1463676,
 		114
 	},
 	ActivityRemasterCore_award_own_desc = {
-		1463808,
+		1463790,
 		140
 	},
 	dorm3d_yuanchou_table = {
-		1463948,
+		1463930,
 		90
 	},
 	dorm3d_yuanchou_chair = {
-		1464038,
+		1464020,
 		96
 	},
 	dorm3d_yuanchou_bed = {
-		1464134,
+		1464116,
 		90
 	},
 	auto_download_tip = {
-		1464224,
+		1464206,
 		243
 	},
 	auto_download_btn = {
-		1464467,
+		1464449,
 		95
 	},
 	setting_download_basic_assets = {
-		1464562,
+		1464544,
 		114
 	},
 	setting_restart_download_btn = {
-		1464676,
+		1464658,
 		107
 	},
 	loading_flow_tip = {
-		1464783,
+		1464765,
 		160
 	},
 	ActivityRemasterCoreActivityAdaptUI_TITLE = {
-		1464943,
+		1464925,
 		110
 	},
 	ActivityRemasterCoreActivityAdaptUI_TITLE_EN = {
-		1465053,
+		1465035,
 		116
 	},
 	ActivityRemaster_NoticeJump_AlreadySelected = {
-		1465169,
+		1465151,
 		200
 	}
 }

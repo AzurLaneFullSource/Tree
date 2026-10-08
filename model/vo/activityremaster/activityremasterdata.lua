@@ -216,66 +216,73 @@ function var0_0.GetFurnitureTotalCnt(arg0_27)
 	return 1
 end
 
-function var0_0.GetActivityTimeDesc(arg0_28, arg1_28, arg2_28)
+function var0_0.GetStartTime(arg0_28, arg1_28)
 	local var0_28 = getProxy(ActivityRemasterProxy).actTimeID
+	local var1_28 = pg.activity_re_timer[var0_28].timer[2]
 
-	if not pg.activity_re_timer[var0_28] then
+	return pg.TimeMgr.GetInstance():parseTimeFromConfig(var1_28)
+end
+
+function var0_0.GetActivityTimeDesc(arg0_29, arg1_29, arg2_29)
+	local var0_29 = getProxy(ActivityRemasterProxy).actTimeID
+
+	if not pg.activity_re_timer[var0_29] then
 		return ""
 	end
 
-	local var1_28 = arg0_28:getConfig("act_time")
-	local var2_28
+	local var1_29 = arg0_29:getConfig("act_time")
+	local var2_29
 
-	for iter0_28, iter1_28 in ipairs(var1_28) do
-		if iter1_28[1] == arg1_28 then
-			var2_28 = iter1_28
+	for iter0_29, iter1_29 in ipairs(var1_29) do
+		if iter1_29[1] == arg1_29 then
+			var2_29 = iter1_29
 
 			break
 		end
 	end
 
-	if not var2_28 then
+	if not var2_29 then
 		return ""
 	end
 
-	local var3_28 = getProxy(ActivityProxy):RawGetActivityById(arg1_28)
+	local var3_29 = getProxy(ActivityProxy):RawGetActivityById(arg1_29)
 
-	if not var3_28 or var3_28:isEnd() then
+	if not var3_29 or var3_29:isEnd() then
 		return ""
 	end
 
-	local var4_28 = pg.TimeMgr.GetInstance():STimeDescC(var3_28.stopTime, "%Y/%m/%d/%H/%M/%S")
-	local var5_28 = string.split(var4_28, "/")
-	local var6_28 = pg.activity_re_timer[var0_28].timer[2]
-	local var7_28 = var2_28[1]
-	local var8_28 = var2_28[2]
-	local var9_28 = var2_28[3]
-	local var10_28 = pg.activity_re_timer[var0_28].is_maintain == var0_0.MAINTAIN
+	local var4_29 = pg.TimeMgr.GetInstance():STimeDescC(var3_29.stopTime, "%Y/%m/%d/%H/%M/%S")
+	local var5_29 = string.split(var4_29, "/")
+	local var6_29 = pg.activity_re_timer[var0_29].timer[2]
+	local var7_29 = var2_29[1]
+	local var8_29 = var2_29[2]
+	local var9_29 = var2_29[3]
+	local var10_29 = pg.activity_re_timer[var0_29].is_maintain == var0_0.MAINTAIN
 
-	return GetActTimeDesc(arg2_28, var10_28, var6_28[1][2], var6_28[1][3], var5_28[2], var5_28[3], var5_28[4], var5_28[5], var5_28[6])
+	return GetActTimeDesc(arg2_29, var10_29, var6_29[1][2], var6_29[1][3], var5_29[2], var5_29[3], var5_29[4], var5_29[5], var5_29[6])
 end
 
-function var0_0.GetActivityTimeDescByBanner(arg0_29, arg1_29, arg2_29)
-	local var0_29 = arg0_29:getConfig("act_time")
-	local var1_29
+function var0_0.GetActivityTimeDescByBanner(arg0_30, arg1_30, arg2_30)
+	local var0_30 = arg0_30:getConfig("act_time")
+	local var1_30
 
-	for iter0_29, iter1_29 in ipairs(var0_29) do
-		if iter1_29[3] == arg1_29 then
-			var1_29 = iter1_29[1]
+	for iter0_30, iter1_30 in ipairs(var0_30) do
+		if iter1_30[3] == arg1_30 then
+			var1_30 = iter1_30[1]
 
 			break
 		end
 	end
 
-	if not var1_29 then
+	if not var1_30 then
 		return ""
 	end
 
-	return arg0_29:GetActivityTimeDesc(var1_29, arg2_29)
+	return arg0_30:GetActivityTimeDesc(var1_30, arg2_30)
 end
 
-function var0_0.GetName(arg0_30)
-	return arg0_30:getConfig("name") or ""
+function var0_0.GetName(arg0_31)
+	return arg0_31:getConfig("name") or ""
 end
 
 return var0_0

@@ -26,7 +26,7 @@ end
 function var0_0.GetTotalPtCount(arg0_6)
 	assert(arg0_6:getConfig("type") == ActivityConst.ACTIVITY_TYPE_PT_BUFF_MARK2)
 
-	return arg0_6.data4
+	return arg0_6.data1
 end
 
 return var0_0

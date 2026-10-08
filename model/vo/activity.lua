@@ -1261,14 +1261,20 @@ end
 
 function var0_0.getStartTime(arg0_116)
 	if arg0_116:getConfig("time") == "stop" then
-		return pg.TimeMgr.GetInstance():GetServerTime()
-	else
-		local var0_116, var1_116 = parseTimeConfig(arg0_116:getConfig("time"))
+		local var0_116 = getProxy(ActivityRemasterProxy):GetActivaingReamsterData()
 
-		if var1_116 and var1_116[1] == "newuser" then
-			return arg0_116.stopTime - var1_116[3] * 86400
+		if not var0_116 then
+			return ""
+		end
+
+		return var0_116:GetStartTime(arg0_116.id)
+	else
+		local var1_116, var2_116 = parseTimeConfig(arg0_116:getConfig("time"))
+
+		if var2_116 and var2_116[1] == "newuser" then
+			return arg0_116.stopTime - var2_116[3] * 86400
 		else
-			return pg.TimeMgr.GetInstance():parseTimeFromConfig(var0_116[2])
+			return pg.TimeMgr.GetInstance():parseTimeFromConfig(var1_116[2])
 		end
 	end
 end

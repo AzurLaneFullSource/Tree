@@ -11,7 +11,7 @@ pg.base.activity_re_timer = {}
 ;(function()
 	pg.base.activity_re_timer[1] = {
 		id = 1,
-		is_maintain = 0,
+		is_maintain = 1,
 		timer = {
 			"timer",
 			{
