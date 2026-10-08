@@ -40,7 +40,7 @@ function var0_0.Show(arg0_7)
 	local var2_7 = arg0_7.ptData.level
 	local var3_7 = arg0_7.ptData.count
 
-	arg0_7:updateResIcon(arg0_7.ptData.resId, arg0_7.ptData.resIcon, arg0_7.ptData.type)
+	arg0_7:updateResIcon(Drop.New(arg0_7.ptData:GetRes()), arg0_7.ptData.type)
 	arg0_7:UpdateList(var0_7, var1_7, var2_7)
 
 	arg0_7.totalTxt.text = var3_7
@@ -164,16 +164,24 @@ function var0_0.UpdateList(arg0_8, arg1_8, arg2_8, arg3_8)
 	end
 end
 
-function var0_0.updateResIcon(arg0_14, arg1_14, arg2_14, arg3_14)
-	if arg3_14 == 2 or arg3_14 ~= 3 and arg3_14 ~= 4 and arg3_14 ~= 5 and arg3_14 ~= 6 then
-		if arg1_14 then
-			arg0_14.resIcon = Drop.New({
-				type = DROP_TYPE_RESOURCE,
-				id = arg1_14
-			}):getIcon()
-		elseif arg2_14 then
-			arg0_14.resIcon = arg2_14
-		end
+local var1_0 = {
+	nil,
+	true,
+	false,
+	false,
+	false,
+	false
+}
+
+function var0_0.updateResIcon(arg0_14, arg1_14, arg2_14)
+	if defaultValue(var1_0[arg2_14], true) then
+		arg0_14.resIcon = arg1_14:getIcon()
+	end
+
+	setActive(arg0_14.ptIcon, arg0_14.resIcon)
+
+	if arg0_14.resIcon then
+		LoadImageSpriteAsync(arg0_14.resIcon, arg0_14.totalTitleIcon, false)
 	end
 end
 

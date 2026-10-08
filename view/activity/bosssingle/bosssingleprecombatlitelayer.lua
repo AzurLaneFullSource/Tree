@@ -267,27 +267,35 @@ function var0_0.SetStageID(arg0_22, arg1_22)
 		local var3_22 = getProxy(ActivityProxy)
 
 		for iter0_22 = #var2_22, 1, -1 do
-			local var4_22 = var3_22:getActivityById(var2_22[iter0_22][1])
+			local var4_22, var5_22, var6_22, var7_22 = unpack(var2_22)
+			local var8_22 = var3_22:getActivityById(var4_22)
 
-			if var4_22 and not var4_22:isEnd() then
-				table.insert(var1_22, 1, {
-					2,
-					id2ItemId(var2_22[iter0_22][2])
-				})
+			if var8_22 and not var8_22:isEnd() then
+				if var5_22 == DROP_TYPE_RESOURCE then
+					table.insert(var1_22, 1, {
+						DROP_TYPE_ITEM,
+						id2ItemId(var6_22)
+					})
+				else
+					table.insert(var1_22, 1, {
+						var5_22,
+						var6_22
+					})
+				end
 			end
 		end
 	end
 
 	if arg0_22.contextData.system ~= SYSTEM_BOSS_EXPERIMENT then
 		for iter1_22, iter2_22 in ipairs(var1_22) do
-			local var5_22 = cloneTplTo(arg0_22._item, arg0_22._spoilsContainer)
-			local var6_22 = {
+			local var9_22 = cloneTplTo(arg0_22._item, arg0_22._spoilsContainer)
+			local var10_22 = {
 				id = iter2_22[2],
 				type = iter2_22[1]
 			}
 
-			updateDrop(var5_22, var6_22)
-			onButton(arg0_22, var5_22, function()
+			updateDrop(var9_22, var10_22)
+			onButton(arg0_22, var9_22, function()
 				local var0_23 = Item.getConfigData(iter2_22[2])
 
 				if var0_23 and var2_0[var0_23.type] then
@@ -311,13 +319,13 @@ function var0_0.SetStageID(arg0_22, arg1_22)
 						content = var0_23.display
 					})
 				else
-					arg0_22:emit(var0_0.ON_DROP, var6_22)
+					arg0_22:emit(var0_0.ON_DROP, var10_22)
 				end
 			end, SFX_PANEL)
 		end
 	end
 
-	local function var7_22(arg0_24, arg1_24)
+	local function var11_22(arg0_24, arg1_24)
 		if type(arg0_24) == "table" then
 			setActive(arg1_24, true)
 
@@ -329,35 +337,35 @@ function var0_0.SetStageID(arg0_22, arg1_22)
 		end
 	end
 
-	local var8_22 = {
+	local var12_22 = {
 		findTF(arg0_22._goals, "goal_tpl"),
 		findTF(arg0_22._goals, "goal_sink"),
 		findTF(arg0_22._goals, "goal_time")
 	}
-	local var9_22 = {
+	local var13_22 = {
 		var0_22.objective_1,
 		var0_22.objective_2,
 		var0_22.objective_3
 	}
-	local var10_22 = 1
+	local var14_22 = 1
 
-	for iter3_22, iter4_22 in ipairs(var9_22) do
+	for iter3_22, iter4_22 in ipairs(var13_22) do
 		if type(iter4_22) ~= "string" then
-			var7_22(iter4_22, var8_22[var10_22])
+			var11_22(iter4_22, var12_22[var14_22])
 
-			var10_22 = var10_22 + 1
+			var14_22 = var14_22 + 1
 		end
 	end
 
-	for iter5_22 = var10_22, #var8_22 do
-		var7_22("", var8_22[iter5_22])
+	for iter5_22 = var14_22, #var12_22 do
+		var11_22("", var12_22[iter5_22])
 	end
 
-	local var11_22 = var0_22.guide_desc and #var0_22.guide_desc > 0
+	local var15_22 = var0_22.guide_desc and #var0_22.guide_desc > 0
 
-	setActive(arg0_22.guideDesc, var11_22)
+	setActive(arg0_22.guideDesc, var15_22)
 
-	if var11_22 then
+	if var15_22 then
 		setText(arg0_22.guideDesc, var0_22.guide_desc)
 	end
 end

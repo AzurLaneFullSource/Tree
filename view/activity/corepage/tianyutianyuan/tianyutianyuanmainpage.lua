@@ -19,102 +19,101 @@ function var0_0.OnInit(arg0_1)
 	SetActive(arg0_1.shop_bgtime, false)
 end
 
-function var0_0.OnDataSetting(arg0_2)
-	arg0_2.timeMgr = pg.TimeMgr.GetInstance()
+function var0_0.findTF(arg0_2, arg1_2, arg2_2)
+	return findTF(arg2_2 or arg0_2._tf, arg1_2)
 end
 
-function var0_0.OnFirstFlush(arg0_3)
-	onButton(arg0_3, arg0_3.Manual, function()
-		local var0_4 = Context.New({
+function var0_0.OnDataSetting(arg0_3)
+	arg0_3.timeMgr = pg.TimeMgr.GetInstance()
+end
+
+function var0_0.OnFirstFlush(arg0_4)
+	onButton(arg0_4, arg0_4.Manual, function()
+		local var0_5 = Context.New({
 			mediator = MedalAlbumTemplateMediator,
 			viewComponent = TianYuTianYuanMedalAlbumView
 		})
 
-		arg0_3:emit(ActivityMediator.ON_ADD_SUBLAYER, var0_4)
+		arg0_4:emit(ActivityMediator.ON_ADD_SUBLAYER, var0_5)
 	end)
-	arg0_3:updateUI()
+	arg0_4:updateUI()
 end
 
-function var0_0.OnUpdateFlush(arg0_5)
-	arg0_5:updateUI()
+function var0_0.OnUpdateFlush(arg0_6)
+	arg0_6:updateUI()
 end
 
-function var0_0.updateUI(arg0_6)
-	local var0_6, var1_6 = arg0_6.timeMgr:inTime(ShopConst.GetShopConfig(var1_0).time)
-	local var2_6
+function var0_0.updateUI(arg0_7)
+	local var0_7, var1_7 = arg0_7.timeMgr:inTime(ShopConst.GetShopConfig(var1_0).time)
+	local var2_7
 
-	if var1_6 then
-		local var3_6 = arg0_6.timeMgr:Table2ServerTime(var1_6)
+	if var1_7 then
+		local var3_7 = arg0_7.timeMgr:Table2ServerTime(var1_7)
 
-		var2_6 = var0_0:skinCommdityTimeStamps(var3_6)
+		var2_7 = var0_0:skinCommdityTimeStamps(var3_7)
 	end
 
-	setActive(arg0_6.shop_bgtime, var2_6 and var2_6 ~= 0)
-	setText(arg0_6.shop_time, var2_6)
+	setActive(arg0_7.shop_bgtime, var2_7 and var2_7 ~= 0)
+	setText(arg0_7.shop_time, var2_7)
 
-	local var4_6, var5_6 = arg0_6.timeMgr:inTime(pg.activity_template[var3_0].time)
-	local var6_6
+	local var4_7 = arg0_7.activity.stopTime
 
-	if var5_6 then
-		local var7_6 = arg0_6.timeMgr:Table2ServerTime(var5_6)
+	buildLastTime = var0_0:skinCommdityTimeStamps(var4_7)
 
-		var6_6 = var0_0:skinCommdityTimeStamps(var7_6)
-	end
-
-	setActive(arg0_6.build_bgtime, var6_6 and var6_6 ~= 0)
-	setText(arg0_6.build_time, i18n("tolovemainpage_build_countdown"))
-	onButton(arg0_6, arg0_6.shop, function()
-		if var2_6 == nil then
+	setActive(arg0_7.build_bgtime, buildLastTime and buildLastTime ~= 0)
+	setText(arg0_7.build_time, i18n("tolovemainpage_build_countdown"))
+	onButton(arg0_7, arg0_7.shop, function()
+		if var2_7 == nil then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 			return
 		end
 
-		arg0_6:emit(ActivityMediator.GO_CHANGE_SHOP)
+		arg0_7:emit(ActivityMediator.GO_CHANGE_SHOP)
 	end)
-	onButton(arg0_6, arg0_6.build, function()
-		if var6_6 == nil then
+	onButton(arg0_7, arg0_7.build, function()
+		if buildLastTime == nil then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 			return
 		end
 
-		arg0_6:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
+		arg0_7:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
 			page = BuildShipScene.PAGE_BUILD,
 			projectName = BuildShipScene.PROJECTS.ACTIVITY
 		})
 	end)
-	onButton(arg0_6, arg0_6.fight, function()
-		arg0_6:emit(ActivityMediator.BATTLE_OPERA)
+	onButton(arg0_7, arg0_7.fight, function()
+		arg0_7:emit(ActivityMediator.BATTLE_OPERA)
 	end)
 end
 
-function var0_0.skinCommdityTimeStamps(arg0_10, arg1_10)
-	local var0_10 = pg.TimeMgr.GetInstance():GetServerTime()
-	local var1_10 = math.max(arg1_10 - var0_10, 0)
+function var0_0.skinCommdityTimeStamps(arg0_11, arg1_11)
+	local var0_11 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var1_11 = math.max(arg1_11 - var0_11, 0)
 
-	if math.floor(var1_10 / 86400) > 0 then
+	if math.floor(var1_11 / 86400) > 0 then
 		return 0
 	else
-		local var2_10 = math.floor(var1_10 / 3600)
+		local var2_11 = math.floor(var1_11 / 3600)
 
-		if var2_10 > 0 then
-			return i18n("shop_new_during_hour", var2_10)
+		if var2_11 > 0 then
+			return i18n("shop_new_during_hour", var2_11)
 		else
-			local var3_10 = math.floor(var1_10 / 60)
+			local var3_11 = math.floor(var1_11 / 60)
 
-			if var3_10 > 0 then
-				return i18n("shop_new_during_minite", var3_10)
+			if var3_11 > 0 then
+				return i18n("shop_new_during_minite", var3_11)
 			end
 		end
 	end
 end
 
-function var0_0.OnDestroy(arg0_11)
-	if arg0_11.camEventId then
-		pg.CameraFixMgr.GetInstance():disconnect(arg0_11.camEventId)
+function var0_0.OnDestroy(arg0_12)
+	if arg0_12.camEventId then
+		pg.CameraFixMgr.GetInstance():disconnect(arg0_12.camEventId)
 
-		arg0_11.camEventId = nil
+		arg0_12.camEventId = nil
 	end
 end
 

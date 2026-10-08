@@ -18,108 +18,112 @@ function var0_0.OnInit(arg0_1)
 	SetActive(arg0_1.shop_bgtime, false)
 end
 
-function var0_0.OnDataSetting(arg0_2)
-	arg0_2.timeMgr = pg.TimeMgr.GetInstance()
+function var0_0.findTF(arg0_2, arg1_2, arg2_2)
+	return findTF(arg2_2 or arg0_2._tf, arg1_2)
 end
 
-function var0_0.OnFirstFlush(arg0_3)
-	onButton(arg0_3, arg0_3.Manual, function()
-		local var0_4 = Context.New({
+function var0_0.OnDataSetting(arg0_3)
+	arg0_3.timeMgr = pg.TimeMgr.GetInstance()
+end
+
+function var0_0.OnFirstFlush(arg0_4)
+	onButton(arg0_4, arg0_4.Manual, function()
+		local var0_5 = Context.New({
 			mediator = MedalAlbumTemplateMediator,
 			viewComponent = CamouflageCityMedalAlbumView
 		})
 
-		arg0_3:emit(ActivityMediator.ON_ADD_SUBLAYER, var0_4)
+		arg0_4:emit(ActivityMediator.ON_ADD_SUBLAYER, var0_5)
 	end)
-	arg0_3:updateUI()
-	eachChild(arg0_3.btnList, function(arg0_5)
-		arg0_3.btnFuncList[arg0_5.name](arg0_5)
+	arg0_4:updateUI()
+	eachChild(arg0_4.btnList, function(arg0_6)
+		arg0_4.btnFuncList[arg0_6.name](arg0_6)
 	end)
 end
 
-function var0_0.OnUpdateFlush(arg0_6)
-	arg0_6:updateUI()
+function var0_0.OnUpdateFlush(arg0_7)
+	arg0_7:updateUI()
 end
 
-function var0_0.updateUI(arg0_7)
-	local var0_7, var1_7 = arg0_7.timeMgr:inTime(ShopConst.GetShopConfig(var1_0).time)
-	local var2_7
+function var0_0.updateUI(arg0_8)
+	local var0_8, var1_8 = arg0_8.timeMgr:inTime(ShopConst.GetShopConfig(var1_0).time)
+	local var2_8
 
-	if var1_7 then
-		local var3_7 = arg0_7.timeMgr:Table2ServerTime(var1_7)
+	if var1_8 then
+		local var3_8 = arg0_8.timeMgr:Table2ServerTime(var1_8)
 
-		var2_7 = var0_0:skinCommdityTimeStamps(var3_7)
+		var2_8 = var0_0:skinCommdityTimeStamps(var3_8)
 	end
 
-	setActive(arg0_7.shop_bgtime, var2_7 and var2_7 ~= 0)
-	setText(arg0_7.shop_time, var2_7)
+	setActive(arg0_8.shop_bgtime, var2_8 and var2_8 ~= 0)
+	setText(arg0_8.shop_time, var2_8)
 
-	local var4_7, var5_7 = arg0_7.timeMgr:inTime(pg.activity_template[var3_0].time)
-	local var6_7
+	local var4_8, var5_8 = arg0_8.timeMgr:inTime(pg.activity_template[var3_0].time)
+	local var6_8
 
-	if var5_7 then
-		local var7_7 = arg0_7.timeMgr:Table2ServerTime(var5_7)
+	if var5_8 then
+		local var7_8 = arg0_8.timeMgr:Table2ServerTime(var5_8)
 
-		var6_7 = var0_0:skinCommdityTimeStamps(var7_7)
+		var6_8 = var0_0:skinCommdityTimeStamps(var7_8)
 	end
 
-	setActive(arg0_7.build_bgtime, var6_7 and var6_7 ~= 0)
-	setText(arg0_7.build_time, i18n("tolovemainpage_build_countdown"))
+	setActive(arg0_8.build_bgtime, var6_8 and var6_8 ~= 0)
+	setText(arg0_8.build_time, i18n("tolovemainpage_build_countdown"))
 
-	local var8_7 = arg0_7.activity:getConfig("config_client")
+	local var8_8 = arg0_8.activity:getConfig("config_client")
 
-	arg0_7.btnFuncList = {
-		shop = function(arg0_8)
-			onButton(arg0_7, arg0_8, function()
-				if var2_7 == nil then
+	arg0_8.btnFuncList = {
+		shop = function(arg0_9)
+			onButton(arg0_8, arg0_9, function()
+				if var2_8 == nil then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 					return
 				end
 
-				arg0_7:emit(ActivityMediator.GO_CHANGE_SHOP)
+				arg0_8:emit(ActivityMediator.GO_CHANGE_SHOP)
 			end)
 		end,
-		build = function(arg0_10)
-			onButton(arg0_7, arg0_10, function()
-				if var6_7 == nil then
+		build = function(arg0_11)
+			onButton(arg0_8, arg0_11, function()
+				if var6_8 == nil then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 					return
 				end
 
-				arg0_7:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
+				arg0_8:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
 					page = BuildShipScene.PAGE_BUILD,
 					projectName = BuildShipScene.PROJECTS.ACTIVITY
 				})
 			end)
 		end,
-		fight = function(arg0_12)
-			onButton(arg0_7, arg0_12, function()
-				arg0_7:emit(ActivityMediator.ON_BOSSRUSH_MAP)
+		fight = function(arg0_13)
+			onButton(arg0_8, arg0_13, function()
+				arg0_8:emit(ActivityMediator.ON_BOSSRUSH_MAP)
 			end)
 		end
 	}
 end
 
-function var0_0.skinCommdityTimeStamps(arg0_14, arg1_14)
-	local var0_14 = pg.TimeMgr.GetInstance():GetServerTime()
-	local var1_14 = math.max(arg1_14 - var0_14, 0)
+function var0_0.skinCommdityTimeStamps(arg0_15, arg1_15)
+	local var0_15 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var1_15 = math.max(arg1_15 - var0_15, 0)
 
-	if math.floor(var1_14 / 86400) > 0 then
+	if math.floor(var1_15 / 86400) > 0 then
 		return 0
 	else
-		local var2_14 = math.floor(var1_14 / 3600)
+		local var2_15 = math.floor(var1_15 / 3600)
 
-		if var2_14 > 0 then
-			return var2_14 .. i18n("word_hour")
+		if var2_15 > 0 then
+			return var2_15 .. i18n("word_hour")
 		else
-			local var3_14 = math.floor(var1_14 / 60)
+			local var3_15 = math.floor(var1_15 / 60)
 
-			if var3_14 > 0 then
-				return var3_14 .. i18n("word_minute")
+			if var3_15 > 0 then
+				return var3_15 .. i18n("word_minute")
 			else
-				return var1_14 .. i18n("word_second")
+				return var1_15 .. i18n("word_second")
 			end
 		end
 	end

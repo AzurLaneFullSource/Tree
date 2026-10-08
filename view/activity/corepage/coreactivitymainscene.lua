@@ -110,7 +110,7 @@ function var0_0.updateActivity(arg0_17, arg1_17)
 
 		table.sort(arg0_17.activities, CompareFuncs({
 			function(arg0_18)
-				return -arg0_18:getShowPriority()
+				return arg0_18:getShowPriority()
 			end,
 			function(arg0_19)
 				return -arg0_19.id
@@ -238,58 +238,66 @@ function var0_0.selectActivity(arg0_25, arg1_25)
 
 		var0_30:ActionInvoke("ShowOrHide", true)
 		var0_30:ActionInvoke("Flush", arg0_25.activity)
+
+		local var1_30 = table.indexof(arg0_25.activities, arg0_25.activity)
+
+		arg0_25:OnPageSwitchDone(var0_30, var1_30)
 	end)
 end
 
-function var0_0.verifyTabs(arg0_31, arg1_31)
-	local var0_31 = arg0_31.activities[arg0_31:getActivityIndex(arg1_31) or arg0_31:getActivityIndex(arg0_31:GetActiveActivity()) or 1]
+function var0_0.OnPageSwitchDone(arg0_31, arg1_31, arg2_31)
+	return
+end
 
-	if var0_31 == nil then
+function var0_0.verifyTabs(arg0_32, arg1_32)
+	local var0_32 = arg0_32.activities[arg0_32:getActivityIndex(arg1_32) or arg0_32:getActivityIndex(arg0_32:GetActiveActivity()) or 1]
+
+	if var0_32 == nil then
 		return
 	end
 
-	local var1_31 = var0_31:getConfig("is_show")
-	local var2_31 = arg0_31.tabs:Find(tostring(var1_31))
+	local var1_32 = var0_32:getConfig("is_show")
+	local var2_32 = arg0_32.tabs:Find(tostring(var1_32))
 
-	if var2_31 then
-		triggerToggle(var2_31, true)
+	if var2_32 then
+		triggerToggle(var2_32, true)
 	end
 end
 
-function var0_0.GetActiveActivity(arg0_32)
-	for iter0_32, iter1_32 in ipairs(arg0_32.activities) do
-		if not iter1_32:isEnd() then
-			return iter1_32.id
+function var0_0.GetActiveActivity(arg0_33)
+	for iter0_33, iter1_33 in ipairs(arg0_33.activities) do
+		if not iter1_33:isEnd() then
+			return iter1_33.id
 		end
 	end
 end
 
-function var0_0.GetActivityIdByPageClass(arg0_33, arg1_33)
-	for iter0_33, iter1_33 in ipairs(arg0_33.activities or {}) do
-		local var0_33 = iter1_33:getConfig("page_info")
+function var0_0.GetActivityIdByPageClass(arg0_34, arg1_34)
+	for iter0_34, iter1_34 in ipairs(arg0_34.activities or {}) do
+		local var0_34 = iter1_34:getConfig("page_info")
 
-		if var0_33 and var0_33.class_name == arg1_33 then
-			return iter1_33.id
+		if var0_34 and var0_34.class_name == arg1_34 then
+			return iter1_34.id
 		end
 	end
 
 	return nil
 end
 
-function var0_0.onBackPressed(arg0_34)
-	local var0_34 = arg0_34.pageDic[arg0_34.activity.id]
+function var0_0.onBackPressed(arg0_35)
+	local var0_35 = arg0_35.pageDic[arg0_35.activity.id]
 
-	if var0_34:IsShowingPopWindow() then
-		var0_34:ClosePopWindow()
+	if var0_35:IsShowingPopWindow() then
+		var0_35:ClosePopWindow()
 
 		return
 	end
 
-	var0_0.super.onBackPressed(arg0_34)
+	var0_0.super.onBackPressed(arg0_35)
 end
 
-function var0_0.getActClass(arg0_35, arg1_35)
-	return _G[arg1_35]
+function var0_0.getActClass(arg0_36, arg1_36)
+	return _G[arg1_36]
 end
 
 return var0_0

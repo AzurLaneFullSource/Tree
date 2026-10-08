@@ -314,6 +314,10 @@ function var0_0.execute(arg0_1, arg1_1)
 		{
 			ReversePacmanDormProxy,
 			true
+		},
+		{
+			ActivityRemasterProxy,
+			true
 		}
 	})
 	pg.ConnectionMgr.GetInstance():setPacketIdx(1)

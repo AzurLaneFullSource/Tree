@@ -7,10 +7,7 @@ function var0_0.OnUpdateFlush(arg0_1)
 
 	setText(arg0_1.progress, setColorStr(var0_1, "#915167") .. "/" .. var1_1)
 
-	local var3_1 = Drop.New({
-		type = DROP_TYPE_RESOURCE,
-		id = arg0_1.ptData.resId
-	}):getIcon()
+	local var3_1 = Drop.New(arg0_1.ptData:GetRes()):getIcon()
 
 	LoadImageSpriteAsync(var3_1, arg0_1._tf:Find("AD/icon"), false)
 end

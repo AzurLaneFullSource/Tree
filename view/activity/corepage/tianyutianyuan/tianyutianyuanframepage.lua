@@ -1,7 +1,7 @@
 local var0_0 = class("TianYuTianYuanFramePage", import("view.activity.CorePage.CoreNewFrameTemplatePage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.super.OnInit(arg0_1)
+	var0_0.super.OnInit(arg0_1)
 
 	arg0_1.switchBtn = arg0_1._tf:Find("AD/switcher/switch_btn")
 end

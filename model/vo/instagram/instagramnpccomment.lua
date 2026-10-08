@@ -21,7 +21,15 @@ function var0_0.bindConfigTable(arg0_2)
 end
 
 function var0_0.GetName(arg0_3)
-	return arg0_3.config.name
+	local var0_3 = arg0_3.config.name
+
+	if type(var0_3) == "table" then
+		local var1_3 = getProxy(PlayerProxy):getData()
+
+		return var1_3 and var1_3.name or ""
+	end
+
+	return var0_3
 end
 
 function var0_0.GetPainting(arg0_4)

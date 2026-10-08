@@ -51,26 +51,11 @@ function var0_0.getProgress(arg0_6)
 
 			var0_6 = 0
 		end
-	elseif arg0_6.type == 6 and arg0_6.subType == TASK_SUB_TYPE_PT then
-		local var5_6 = tonumber(arg0_6:getConfig("target_id_2"))
-		local var6_6 = getProxy(ActivityProxy):getActivityById(var5_6)
 
-		if var6_6 then
-			var0_6 = var6_6.data1 or 0
-		else
-			warning("找不到活动数据中物品得的数量", arg0_6.id)
-
-			var0_6 = 0
-		end
+		return var0_6 or 0
 	else
-		var0_6 = arg0_6.progress
-
-		if var0_6 > arg0_6:getConfig("target_num") then
-			var0_6 = arg0_6:getConfig("target_num")
-		end
+		return var0_0.super.getProgress(arg0_6)
 	end
-
-	return var0_6 or 0
 end
 
 function var0_0.getTarget(arg0_7)

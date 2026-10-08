@@ -21,20 +21,7 @@ function var0_0.OnUpdatePlayer(arg0_4)
 end
 
 function var0_0.GetResDataList(arg0_5)
-	local var0_5 = {}
-	local var1_5 = arg0_5.shop:GetResList()
-
-	for iter0_5, iter1_5 in ipairs(var1_5) do
-		local var2_5 = arg0_5.player:getResource(PlayerConst.ResGuildCoin)
-
-		table.insert(var0_5, {
-			type = DROP_TYPE_RESOURCE,
-			resID = iter1_5,
-			cnt = var2_5
-		})
-	end
-
-	return var0_5
+	return arg0_5.shop:GetResList()
 end
 
 function var0_0.OnSetUp(arg0_6)

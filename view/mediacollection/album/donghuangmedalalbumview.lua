@@ -2,7 +2,6 @@ local var0_0 = class("DonghuangMedalAlbumView", import(".MedalAlbumTemplateView"
 
 var0_0.GROUP_ID = 50405
 var0_0.MEDAL_COUNT = 8
-var0_0.HELP_TIPS = "help_starLightAlbum"
 var0_0.setColorstateText = "#b1b1b1"
 var0_0.setColorstate = "#b1b1b1"
 

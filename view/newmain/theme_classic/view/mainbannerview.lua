@@ -6,6 +6,8 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	arg0_1.scrollSnap = BannerScrollRect.New(findTF(arg1_1, "mask/content"), findTF(arg1_1, "dots"))
 	arg0_1.downloadmgr = BulletinBoardMgr.Inst
 	arg0_1.rawImages = {}
+	arg0_1.prefabCaches = {}
+	arg0_1.imageTrs = {}
 end
 
 function var0_0.Init(arg0_2)
@@ -92,41 +94,131 @@ function var0_0.UpdateItemImage(arg0_8, arg1_8, arg2_8)
 			table.insert(arg0_8.rawImages, var0_9)
 		end))
 	else
-		LoadImageSpriteAsync("activitybanner/" .. var2_8, var1_8)
+		arg0_8:ReturnItemPrefabCache(var1_8)
+		pg.PoolMgr.GetInstance():GetPrefab("MainUIBanner/" .. var2_8, "", true, function(arg0_10)
+			setParent(arg0_10.transform, var1_8)
+			onNextTick(function()
+				arg0_8:LayoutBannerItem(arg0_10)
+			end)
+
+			local var0_10 = arg0_10.transform:Find("Text")
+			local var1_10 = arg0_8:IsImpactFont(var0_10)
+
+			setText(var0_10, arg0_8:GetBannerShowTimeStr(arg1_8, var1_10))
+
+			arg0_8.prefabCaches[arg0_10] = var2_8
+		end)
 	end
+
+	arg0_8.imageTrs[var1_8] = true
 end
 
-function var0_0.Tracking(arg0_10, arg1_10)
-	pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildTouchBanner(arg1_10))
+function var0_0.IsImpactFont(arg0_12, arg1_12)
+	return arg1_12:GetComponent(typeof(Text)).font.name == pg.FontMgr.FONT_NAME_IMPACT
 end
 
-function var0_0.GetDirection(arg0_11)
+function var0_0.LayoutBannerItem(arg0_13, arg1_13)
+	arg1_13.transform.localScale = Vector3(1, 1, 1)
+	arg1_13.transform.anchorMin = Vector2.zero
+	arg1_13.transform.anchorMax = Vector2.one
+	arg1_13.transform.offsetMin = Vector2.zero
+	arg1_13.transform.offsetMax = Vector2.zero
+end
+
+function var0_0.WhenRecycleBanner(arg0_14, arg1_14)
+	return
+end
+
+function var0_0.ReturnItemPrefabCache(arg0_15, arg1_15)
+	if IsNil(arg1_15) then
+		return
+	end
+
+	eachChild(arg1_15, function(arg0_16)
+		local var0_16 = arg0_15.prefabCaches[arg0_16.gameObject]
+
+		if var0_16 then
+			arg0_15:WhenRecycleBanner(arg0_16.gameObject)
+			pg.PoolMgr.GetInstance():ReturnPrefab("MainUIBanner/" .. var0_16, "", arg0_16.gameObject)
+
+			arg0_15.prefabCaches[arg0_16.gameObject] = nil
+		else
+			Destroy(arg0_16.gameObject)
+		end
+	end)
+end
+
+local function var1_0(arg0_17)
+	if arg0_17.time == "stop" then
+		return true
+	end
+
+	if arg0_17.param[1] == "scene get boat" and arg0_17.param[2].projectName == "new" then
+		return true
+	end
+
+	if arg0_17.param[1] == "scene charge" and arg0_17.param[2].wrap == 2 then
+		return true
+	end
+
+	if arg0_17.param[1] == "scene shop" and arg0_17.param[2].wrap == "shopstreet" then
+		return true
+	end
+
+	return false
+end
+
+function var0_0.GetBannerShowTimeStr(arg0_18, arg1_18, arg2_18)
+	local var0_18 = ""
+
+	if var1_0(arg1_18) then
+		local var1_18 = getProxy(ActivityRemasterProxy):GetActivaingReamsterData()
+
+		if var1_18 then
+			var0_18 = var1_18:GetActivityTimeDescByBanner(arg1_18.id, arg2_18)
+		end
+	end
+
+	return var0_18
+end
+
+function var0_0.Tracking(arg0_19, arg1_19)
+	pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildTouchBanner(arg1_19))
+end
+
+function var0_0.GetDirection(arg0_20)
 	return Vector2(1, 0)
 end
 
-function var0_0.Disable(arg0_12)
-	arg0_12.scrollSnap:Pause()
+function var0_0.Disable(arg0_21)
+	arg0_21.scrollSnap:Pause()
 end
 
-function var0_0.Clear(arg0_13)
-	arg0_13.scrollSnap:Reset()
+function var0_0.Clear(arg0_22)
+	arg0_22.scrollSnap:Reset()
 end
 
-function var0_0.Dispose(arg0_14)
-	var0_0.super.Dispose(arg0_14)
+function var0_0.Dispose(arg0_23)
+	var0_0.super.Dispose(arg0_23)
 
-	for iter0_14, iter1_14 in ipairs(arg0_14.rawImages) do
-		iter1_14.texture = nil
+	for iter0_23, iter1_23 in ipairs(arg0_23.rawImages) do
+		iter1_23.texture = nil
 	end
 
-	arg0_14.rawImages = nil
+	arg0_23.rawImages = nil
 
-	arg0_14:Clear()
-	arg0_14.scrollSnap:Dispose()
+	for iter2_23, iter3_23 in pairs(arg0_23.imageTrs) do
+		arg0_23:ReturnItemPrefabCache(iter2_23)
+	end
 
-	arg0_14.scrollSnap = nil
-	arg0_14.exited = true
-	arg0_14.downloadmgr = nil
+	arg0_23.imageTrs = nil
+
+	arg0_23:Clear()
+	arg0_23.scrollSnap:Dispose()
+
+	arg0_23.scrollSnap = nil
+	arg0_23.exited = true
+	arg0_23.downloadmgr = nil
 end
 
 return var0_0

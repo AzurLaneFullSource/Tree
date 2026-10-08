@@ -9,7 +9,6 @@ var0_0.NORMAL_GROUP_LIST_UPDATED = "ShopsProxy:NORMAL_GROUP_LIST_UPDATED"
 var0_0.ACTIVITY_SHOP_UPDATED = "ShopsProxy:ACTIVITY_SHOP_UPDATED"
 var0_0.GUILD_SHOP_ADDED = "ShopsProxy:GUILD_SHOP_ADDED"
 var0_0.GUILD_SHOP_UPDATED = "ShopsProxy:GUILD_SHOP_UPDATED"
-var0_0.ACTIVITY_SHOPS_UPDATED = "ShopsProxy:ACTIVITY_SHOPS_UPDATED"
 var0_0.SHAM_SHOP_UPDATED = "ShopsProxy:SHAM_SHOP_UPDATED"
 var0_0.FRAGMENT_SHOP_UPDATED = "ShopsProxy:FRAGMENT_SHOP_UPDATED"
 var0_0.ACTIVITY_SHOP_GOODS_UPDATED = "ShopsProxy:ACTIVITY_SHOP_GOODS_UPDATED"
@@ -55,6 +54,7 @@ function var0_0.register(arg0_1)
 	end
 
 	arg0_1.newServerShopList = {}
+	arg0_1.activityShops = {}
 end
 
 function var0_0.timeCall(arg0_4)
@@ -232,524 +232,517 @@ function var0_0.getGroupLimit(arg0_23, arg1_23)
 	return 0
 end
 
-function var0_0.addActivityShops(arg0_24, arg1_24)
-	arg0_24.activityShops = arg1_24
+function var0_0.getActivityShopById(arg0_24, arg1_24)
+	if not arg0_24.activityShops[arg1_24] then
+		local var0_24 = getProxy(ActivityProxy):getActivityById(arg1_24)
+		local var1_24 = var0_24 and not var0_24:isEnd() and ActivityShop.New(var0_24)
 
-	arg0_24:sendNotification(var0_0.ACTIVITY_SHOPS_UPDATED)
+		arg0_24.activityShops[arg1_24] = var1_24
+	end
+
+	return arg0_24.activityShops[arg1_24]
 end
 
-function var0_0.getActivityShopById(arg0_25, arg1_25)
-	assert(arg0_25.activityShops[arg1_25], "activity shop should exist" .. arg1_25)
+function var0_0.updateActivityShop(arg0_25, arg1_25, arg2_25)
+	assert(arg0_25.activityShops, "activityShops can not be nil")
 
-	return arg0_25.activityShops[arg1_25]
+	arg0_25.activityShops[arg1_25] = arg2_25:sendselfNotification(var0_0.ACTIVITY_SHOP_UPDATED, {
+		activityId = arg1_25,
+		shop = arg2_25:clone()
+	})
 end
 
-function var0_0.updateActivityShop(arg0_26, arg1_26, arg2_26)
-	assert(arg0_26.activityShops, "activityShops can not be nil")
+function var0_0.UpdateActivityGoods(arg0_26, arg1_26, arg2_26, arg3_26)
+	local var0_26 = arg0_26:getActivityShopById(arg1_26)
 
-	arg0_26.activityShops[arg1_26] = arg2_26
+	var0_26:getGoodsById(arg2_26):addBuyCount(arg3_26)
 
-	arg0_26:sendNotification(var0_0.ACTIVITY_SHOP_UPDATED, {
+	arg0_26.activityShops[arg1_26] = var0_26
+
+	arg0_26:sendNotification(var0_0.ACTIVITY_SHOP_GOODS_UPDATED, {
 		activityId = arg1_26,
-		shop = arg2_26:clone()
+		goodsId = arg2_26
 	})
 end
 
-function var0_0.UpdateActivityGoods(arg0_27, arg1_27, arg2_27, arg3_27)
-	local var0_27 = arg0_27:getActivityShopById(arg1_27)
+function var0_0.setFirstChargeList(arg0_27, arg1_27)
+	arg0_27.firstChargeList = arg1_27
 
-	var0_27:getGoodsById(arg2_27):addBuyCount(arg3_27)
-
-	arg0_27.activityShops[arg1_27] = var0_27
-
-	arg0_27:sendNotification(var0_0.ACTIVITY_SHOP_GOODS_UPDATED, {
-		activityId = arg1_27,
-		goodsId = arg2_27
-	})
+	arg0_27:sendNotification(var0_0.FIRST_CHARGE_IDS_UPDATED, Clone(arg1_27))
 end
 
-function var0_0.getActivityShops(arg0_28)
-	return arg0_28.activityShops
+function var0_0.getFirstChargeList(arg0_28)
+	return Clone(arg0_28.firstChargeList)
 end
 
-function var0_0.setFirstChargeList(arg0_29, arg1_29)
-	arg0_29.firstChargeList = arg1_29
+function var0_0.setChargedList(arg0_29, arg1_29)
+	arg0_29.chargeList = arg1_29
 
-	arg0_29:sendNotification(var0_0.FIRST_CHARGE_IDS_UPDATED, Clone(arg1_29))
+	arg0_29:sendNotification(var0_0.CHARGED_LIST_UPDATED, Clone(arg1_29))
 end
 
-function var0_0.getFirstChargeList(arg0_30)
-	return Clone(arg0_30.firstChargeList)
-end
-
-function var0_0.setChargedList(arg0_31, arg1_31)
-	arg0_31.chargeList = arg1_31
-
-	arg0_31:sendNotification(var0_0.CHARGED_LIST_UPDATED, Clone(arg1_31))
-end
-
-function var0_0.getChargedList(arg0_32)
-	return Clone(arg0_32.chargeList)
+function var0_0.getChargedList(arg0_30)
+	return Clone(arg0_30.chargeList)
 end
 
 local var1_0 = 3
 local var2_0 = 10
 
-function var0_0.chargeFailed(arg0_33, arg1_33, arg2_33)
-	if not arg0_33.timers[arg1_33] then
+function var0_0.chargeFailed(arg0_31, arg1_31, arg2_31)
+	if not arg0_31.timers[arg1_31] then
 		pg.UIMgr.GetInstance():LoadingOn()
 
-		arg0_33.timers[arg1_33] = Timer.New(function()
-			if arg0_33.timers[arg1_33].loop == 1 then
+		arg0_31.timers[arg1_31] = Timer.New(function()
+			if arg0_31.timers[arg1_31].loop == 1 then
 				pg.UIMgr.GetInstance():LoadingOff()
 			end
 
-			PaySuccess(arg1_33, arg2_33)
+			PaySuccess(arg1_31, arg2_31)
 		end, var1_0, var2_0)
 
-		arg0_33.timers[arg1_33]:Start()
+		arg0_31.timers[arg1_31]:Start()
 	end
 end
 
-function var0_0.removeChargeTimer(arg0_35, arg1_35)
-	if arg0_35.timers[arg1_35] then
+function var0_0.removeChargeTimer(arg0_33, arg1_33)
+	if arg0_33.timers[arg1_33] then
 		pg.UIMgr.GetInstance():LoadingOff()
-		arg0_35.timers[arg1_35]:Stop()
+		arg0_33.timers[arg1_33]:Stop()
 
-		arg0_35.timers[arg1_35] = nil
+		arg0_33.timers[arg1_33] = nil
 	end
 end
 
-function var0_0.addWaitTimer(arg0_36)
+function var0_0.addWaitTimer(arg0_34)
 	pg.UIMgr.GetInstance():LoadingOn()
 
-	arg0_36.waitBiliTimer = Timer.New(function()
-		arg0_36:removeWaitTimer()
+	arg0_34.waitBiliTimer = Timer.New(function()
+		arg0_34:removeWaitTimer()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			hideNo = true,
 			content = i18n("charge_time_out")
 		})
 	end, 25, 1)
 
-	arg0_36.waitBiliTimer:Start()
+	arg0_34.waitBiliTimer:Start()
 end
 
-function var0_0.removeWaitTimer(arg0_38)
-	if arg0_38.waitBiliTimer then
+function var0_0.removeWaitTimer(arg0_36)
+	if arg0_36.waitBiliTimer then
 		pg.UIMgr.GetInstance():LoadingOff()
-		arg0_38.waitBiliTimer:Stop()
+		arg0_36.waitBiliTimer:Stop()
 
-		arg0_38.waitBiliTimer = nil
+		arg0_36.waitBiliTimer = nil
 	end
 end
 
-function var0_0.setGuildShop(arg0_39, arg1_39)
+function var0_0.setGuildShop(arg0_37, arg1_37)
+	assert(isa(arg1_37, GuildShop), "shop should instance of GuildShop")
+	assert(arg0_37.guildShop == nil, "shop already exist")
+
+	arg0_37.guildShop = arg1_37
+
+	arg0_37:sendNotification(var0_0.GUILD_SHOP_ADDED, arg0_37.guildShop)
+end
+
+function var0_0.getGuildShop(arg0_38)
+	return arg0_38.guildShop
+end
+
+function var0_0.updateGuildShop(arg0_39, arg1_39, arg2_39)
 	assert(isa(arg1_39, GuildShop), "shop should instance of GuildShop")
-	assert(arg0_39.guildShop == nil, "shop already exist")
+	assert(arg0_39.guildShop, "should exist shop")
 
 	arg0_39.guildShop = arg1_39
 
-	arg0_39:sendNotification(var0_0.GUILD_SHOP_ADDED, arg0_39.guildShop)
-end
-
-function var0_0.getGuildShop(arg0_40)
-	return arg0_40.guildShop
-end
-
-function var0_0.updateGuildShop(arg0_41, arg1_41, arg2_41)
-	assert(isa(arg1_41, GuildShop), "shop should instance of GuildShop")
-	assert(arg0_41.guildShop, "should exist shop")
-
-	arg0_41.guildShop = arg1_41
-
-	arg0_41:sendNotification(var0_0.GUILD_SHOP_UPDATED, {
-		shop = arg0_41.guildShop,
-		reset = arg2_41
+	arg0_39:sendNotification(var0_0.GUILD_SHOP_UPDATED, {
+		shop = arg0_39.guildShop,
+		reset = arg2_39
 	})
 end
 
-function var0_0.AddShamShop(arg0_42, arg1_42)
-	arg0_42.shamShop = arg1_42
+function var0_0.AddShamShop(arg0_40, arg1_40)
+	arg0_40.shamShop = arg1_40
 
-	arg0_42:sendNotification(var0_0.SHAM_SHOP_UPDATED, arg1_42)
+	arg0_40:sendNotification(var0_0.SHAM_SHOP_UPDATED, arg1_40)
 end
 
-function var0_0.updateShamShop(arg0_43, arg1_43)
-	arg0_43.shamShop = arg1_43
+function var0_0.updateShamShop(arg0_41, arg1_41)
+	arg0_41.shamShop = arg1_41
 end
 
-function var0_0.getShamShop(arg0_44)
-	return arg0_44.shamShop
+function var0_0.getShamShop(arg0_42)
+	return arg0_42.shamShop
 end
 
-function var0_0.AddFragmentShop(arg0_45, arg1_45)
-	arg0_45.fragmentShop = arg1_45
+function var0_0.AddFragmentShop(arg0_43, arg1_43)
+	arg0_43.fragmentShop = arg1_43
 
-	arg0_45:sendNotification(var0_0.FRAGMENT_SHOP_UPDATED, arg1_45)
+	arg0_43:sendNotification(var0_0.FRAGMENT_SHOP_UPDATED, arg1_43)
 end
 
-function var0_0.updateFragmentShop(arg0_46, arg1_46)
-	arg0_46.fragmentShop = arg1_46
+function var0_0.updateFragmentShop(arg0_44, arg1_44)
+	arg0_44.fragmentShop = arg1_44
 end
 
-function var0_0.getFragmentShop(arg0_47)
-	return arg0_47.fragmentShop
+function var0_0.getFragmentShop(arg0_45)
+	return arg0_45.fragmentShop
 end
 
-function var0_0.AddMetaShop(arg0_48, arg1_48)
-	arg0_48.metaShop = arg1_48
+function var0_0.AddMetaShop(arg0_46, arg1_46)
+	arg0_46.metaShop = arg1_46
 end
 
-function var0_0.GetMetaShop(arg0_49)
-	return arg0_49.metaShop
+function var0_0.GetMetaShop(arg0_47)
+	return arg0_47.metaShop
 end
 
-function var0_0.UpdateMetaShopGoods(arg0_50, arg1_50, arg2_50)
-	arg0_50:GetMetaShop():getGoodsById(arg1_50):addBuyCount(arg2_50)
-	arg0_50:sendNotification(var0_0.META_SHOP_GOODS_UPDATED, {
-		goodsId = arg1_50
+function var0_0.UpdateMetaShopGoods(arg0_48, arg1_48, arg2_48)
+	arg0_48:GetMetaShop():getGoodsById(arg1_48):addBuyCount(arg2_48)
+	arg0_48:sendNotification(var0_0.META_SHOP_GOODS_UPDATED, {
+		goodsId = arg1_48
 	})
 end
 
-function var0_0.SetNewServerShop(arg0_51, arg1_51, arg2_51)
-	arg0_51.newServerShopList[arg1_51] = arg2_51
+function var0_0.SetNewServerShop(arg0_49, arg1_49, arg2_49)
+	arg0_49.newServerShopList[arg1_49] = arg2_49
 end
 
-function var0_0.GetNewServerShop(arg0_52, arg1_52)
-	return arg0_52.newServerShopList[arg1_52]
+function var0_0.GetNewServerShop(arg0_50, arg1_50)
+	return arg0_50.newServerShopList[arg1_50]
 end
 
-function var0_0.SetMedalShop(arg0_53, arg1_53)
-	arg0_53.medalShop = arg1_53
+function var0_0.SetMedalShop(arg0_51, arg1_51)
+	arg0_51.medalShop = arg1_51
 end
 
-function var0_0.UpdateMedalShop(arg0_54, arg1_54)
-	arg0_54.medalShop = arg1_54
+function var0_0.UpdateMedalShop(arg0_52, arg1_52)
+	arg0_52.medalShop = arg1_52
 
-	arg0_54:sendNotification(var0_0.MEDAL_SHOP_UPDATED, arg1_54)
+	arg0_52:sendNotification(var0_0.MEDAL_SHOP_UPDATED, arg1_52)
 end
 
-function var0_0.GetMedalShop(arg0_55)
-	return arg0_55.medalShop
+function var0_0.GetMedalShop(arg0_53)
+	return arg0_53.medalShop
 end
 
-function var0_0.setQuotaShop(arg0_56, arg1_56)
+function var0_0.setQuotaShop(arg0_54, arg1_54)
+	arg0_54.quotaShop = arg1_54
+end
+
+function var0_0.getQuotaShop(arg0_55)
+	return arg0_55.quotaShop
+end
+
+function var0_0.updateQuotaShop(arg0_56, arg1_56, arg2_56)
 	arg0_56.quotaShop = arg1_56
-end
 
-function var0_0.getQuotaShop(arg0_57)
-	return arg0_57.quotaShop
-end
-
-function var0_0.updateQuotaShop(arg0_58, arg1_58, arg2_58)
-	arg0_58.quotaShop = arg1_58
-
-	arg0_58:sendNotification(var0_0.QUOTA_SHOP_UPDATED, {
-		shop = arg0_58.quotaShop,
-		reset = arg2_58
+	arg0_56:sendNotification(var0_0.QUOTA_SHOP_UPDATED, {
+		shop = arg0_56.quotaShop,
+		reset = arg2_56
 	})
 end
 
-function var0_0.SetCruiseShop(arg0_59, arg1_59)
-	arg0_59.cruiseShop = arg1_59
+function var0_0.SetCruiseShop(arg0_57, arg1_57)
+	arg0_57.cruiseShop = arg1_57
 end
 
-function var0_0.UpdateCruiseShop(arg0_60)
-	arg0_60.cruiseShop = CruiseShop.New(arg0_60:GetNormalList(), arg0_60:GetNormalGroupList())
+function var0_0.UpdateCruiseShop(arg0_58)
+	arg0_58.cruiseShop = CruiseShop.New(arg0_58:GetNormalList(), arg0_58:GetNormalGroupList())
 
-	arg0_60:sendNotification(var0_0.CRUISE_SHOP_UPDATED, {
-		shop = arg0_60.cruiseShop
+	arg0_58:sendNotification(var0_0.CRUISE_SHOP_UPDATED, {
+		shop = arg0_58.cruiseShop
 	})
 end
 
-function var0_0.GetCruiseShop(arg0_61)
-	return arg0_61.cruiseShop
+function var0_0.GetCruiseShop(arg0_59)
+	return arg0_59.cruiseShop
 end
 
-function var0_0.remove(arg0_62)
-	for iter0_62, iter1_62 in pairs(arg0_62.timers) do
-		iter1_62:Stop()
+function var0_0.remove(arg0_60)
+	for iter0_60, iter1_60 in pairs(arg0_60.timers) do
+		iter1_60:Stop()
 	end
 
-	arg0_62.timers = nil
+	arg0_60.timers = nil
 
-	arg0_62:removeWaitTimer()
+	arg0_60:removeWaitTimer()
 end
 
-function var0_0.ShouldRefreshChargeList(arg0_63)
-	local var0_63 = arg0_63:getFirstChargeList()
-	local var1_63 = arg0_63:getChargedList()
-	local var2_63 = arg0_63:GetNormalList()
-	local var3_63 = arg0_63:GetNormalGroupList()
+function var0_0.ShouldRefreshChargeList(arg0_61)
+	local var0_61 = arg0_61:getFirstChargeList()
+	local var1_61 = arg0_61:getChargedList()
+	local var2_61 = arg0_61:GetNormalList()
+	local var3_61 = arg0_61:GetNormalGroupList()
 
-	return not var0_63 or not var1_63 or not var2_63 or not var3_63 or arg0_63.refreshChargeList
+	return not var0_61 or not var1_61 or not var2_61 or not var3_61 or arg0_61.refreshChargeList
 end
 
-function var0_0.GetRecommendCommodities(arg0_64)
-	local var0_64 = arg0_64:getChargedList()
-	local var1_64 = arg0_64:GetNormalList()
-	local var2_64 = arg0_64:GetNormalGroupList()
+function var0_0.GetRecommendCommodities(arg0_62)
+	local var0_62 = arg0_62:getChargedList()
+	local var1_62 = arg0_62:GetNormalList()
+	local var2_62 = arg0_62:GetNormalGroupList()
 
-	if not var0_64 or not var1_64 or not var2_64 then
+	if not var0_62 or not var1_62 or not var2_62 then
 		return {}
 	end
 
-	local var3_64 = {}
+	local var3_62 = {}
 
-	for iter0_64, iter1_64 in ipairs(pg.recommend_shop.all) do
-		local var4_64 = pg.recommend_shop[iter1_64].time
+	for iter0_62, iter1_62 in ipairs(pg.recommend_shop.all) do
+		local var4_62 = pg.recommend_shop[iter1_62].time
 
-		if pg.TimeMgr.GetInstance():inTime(var4_64) then
-			local var5_64 = RecommendCommodity.New({
-				id = iter1_64,
-				chargedList = var0_64,
-				normalList = var1_64,
-				normalGroupList = var2_64
+		if pg.TimeMgr.GetInstance():inTime(var4_62) then
+			local var5_62 = RecommendCommodity.New({
+				id = iter1_62,
+				chargedList = var0_62,
+				normalList = var1_62,
+				normalGroupList = var2_62
 			})
 
-			if var5_64:CanShow() then
-				table.insert(var3_64, var5_64)
+			if var5_62:CanShow() then
+				table.insert(var3_62, var5_62)
 			end
 		end
 	end
 
-	table.sort(var3_64, function(arg0_65, arg1_65)
-		return arg0_65:GetOrder() < arg1_65:GetOrder()
+	table.sort(var3_62, function(arg0_63, arg1_63)
+		return arg0_63:GetOrder() < arg1_63:GetOrder()
 	end)
 
-	return var3_64
+	return var3_62
 end
 
-function var0_0.GetGiftCommodity(arg0_66, arg1_66, arg2_66)
-	local var0_66 = Goods.Create({
-		shop_id = arg1_66
-	}, arg2_66)
+function var0_0.GetGiftCommodity(arg0_64, arg1_64, arg2_64)
+	local var0_64 = Goods.Create({
+		shop_id = arg1_64
+	}, arg2_64)
 
-	if var0_66:isChargeType() then
-		local var1_66 = ChargeConst.getBuyCount(arg0_66.chargeList, var0_66.id)
+	if var0_64:isChargeType() then
+		local var1_64 = ChargeConst.getBuyCount(arg0_64.chargeList, var0_64.id)
 
-		var0_66:updateBuyCount(var1_66)
+		var0_64:updateBuyCount(var1_64)
 	else
-		local var2_66 = ChargeConst.getBuyCount(arg0_66.normalList, var0_66.id)
+		local var2_64 = ChargeConst.getBuyCount(arg0_64.normalList, var0_64.id)
 
-		var0_66:updateBuyCount(var2_66)
+		var0_64:updateBuyCount(var2_64)
 
-		local var3_66 = var0_66:getConfig("group") or 0
+		local var3_64 = var0_64:getConfig("group") or 0
 
-		if var3_66 > 0 then
-			local var4_66 = ChargeConst.getGroupLimit(arg0_66.normalGroupList, var3_66)
+		if var3_64 > 0 then
+			local var4_64 = ChargeConst.getGroupLimit(arg0_64.normalGroupList, var3_64)
 
-			var0_66:updateGroupCount(var4_66)
+			var0_64:updateGroupCount(var4_64)
 		end
 	end
 
-	return var0_66
+	return var0_64
 end
 
-function var0_0.GetGroupPayCount(arg0_67, arg1_67)
-	for iter0_67, iter1_67 in ipairs(arg0_67.normalGroupList) do
-		if iter1_67.shop_id == arg1_67 then
-			return arg0_67.normalGroupList[iter0_67].pay_count or 0
+function var0_0.GetGroupPayCount(arg0_65, arg1_65)
+	for iter0_65, iter1_65 in ipairs(arg0_65.normalGroupList) do
+		if iter1_65.shop_id == arg1_65 then
+			return arg0_65.normalGroupList[iter0_65].pay_count or 0
 		end
 	end
 
 	return 0
 end
 
-function var0_0.SpecialBannerBlockCheck(arg0_68, arg1_68)
+function var0_0.SpecialBannerBlockCheck(arg0_66, arg1_66)
 	if not LOCK_SHOP_BANNER_US then
 		return true
 	end
 
-	local var0_68, var1_68 = unpack(getGameset("levellimit_shopbanner"))
+	local var0_66, var1_66 = unpack(getGameset("levellimit_shopbanner"))
 
-	return var0_68 <= arg1_68.level or arg0_68.name ~= "banner_big" or table.contains(var1_68, arg0_68.id)
+	return var0_66 <= arg1_66.level or arg0_66.name ~= "banner_big" or table.contains(var1_66, arg0_66.id)
 end
 
-function var0_0.GiftPackageRedDotTip(arg0_69, arg1_69, arg2_69)
-	local var0_69 = {}
+function var0_0.GiftPackageRedDotTip(arg0_67, arg1_67, arg2_67)
+	local var0_67 = {}
 
-	if arg0_69:ShouldRefreshChargeList() then
-		table.insert(var0_69, function(arg0_70)
+	if arg0_67:ShouldRefreshChargeList() then
+		table.insert(var0_67, function(arg0_68)
 			pg.m02:sendNotification(GAME.GET_CHARGE_LIST, {
-				callback = arg0_70
+				callback = arg0_68
 			})
 		end)
 	end
 
-	seriesAsync(var0_69, function()
-		local var0_71 = underscore.any(arg0_69:GetAllShowGiftPackages(arg2_69), function(arg0_72)
-			return arg0_72:isTip()
+	seriesAsync(var0_67, function()
+		local var0_69 = underscore.any(arg0_67:GetAllShowGiftPackages(arg2_67), function(arg0_70)
+			return arg0_70:isTip()
 		end)
 
-		for iter0_71, iter1_71 in ipairs(arg1_69) do
-			setActive(iter1_71, var0_71)
+		for iter0_69, iter1_69 in ipairs(arg1_67) do
+			setActive(iter1_69, var0_69)
 		end
 	end)
 end
 
-function var0_0.GetAllShowGiftPackages(arg0_73, arg1_73)
-	assert(not arg0_73:ShouldRefreshChargeList())
+function var0_0.GetAllShowGiftPackages(arg0_71, arg1_71)
+	assert(not arg0_71:ShouldRefreshChargeList())
 
-	local var0_73 = {}
-	local var1_73 = RefluxShopView.getAllRefluxPackID()
-	local var2_73 = getProxy(PlayerProxy):getRawData()
-	local var3_73 = pg.pay_data_display
+	local var0_71 = {}
+	local var1_71 = RefluxShopView.getAllRefluxPackID()
+	local var2_71 = getProxy(PlayerProxy):getRawData()
+	local var3_71 = pg.pay_data_display
 
-	for iter0_73, iter1_73 in pairs(var3_73.all) do
-		if not table.contains(var1_73, iter1_73) then
-			local var4_73 = var3_73[iter1_73]
-			local var5_73 = var4_73.extra_service
-			local var6_73 = var4_73.akashi_pick > 0
+	for iter0_71, iter1_71 in pairs(var3_71.all) do
+		if not table.contains(var1_71, iter1_71) then
+			local var4_71 = var3_71[iter1_71]
+			local var5_71 = var4_71.extra_service
+			local var6_71 = var4_71.akashi_pick > 0
 
-			if (arg1_73 == nil or var6_73 == arg1_73) and (var5_73 == Goods.ITEM_BOX or var5_73 == Goods.PASS_ITEM) then
-				local var7_73 = Goods.Create({
-					shop_id = iter1_73
+			if (arg1_71 == nil or var6_71 == arg1_71) and (var5_71 == Goods.ITEM_BOX or var5_71 == Goods.PASS_ITEM) then
+				local var7_71 = Goods.Create({
+					shop_id = iter1_71
 				}, Goods.TYPE_CHARGE)
 
-				if arg0_73:filterLimitTypeGoods(var7_73, var2_73) and arg0_73:IsVaildBattlePass(var7_73) then
-					table.insert(var0_73, var7_73)
+				if arg0_71:filterLimitTypeGoods(var7_71, var2_71) and arg0_71:IsVaildBattlePass(var7_71) then
+					table.insert(var0_71, var7_71)
 				end
 			end
 		end
 	end
 
-	for iter2_73, iter3_73 in ipairs(pg.shop_template.get_id_list_by_genre[ShopArgs.GiftPackage] or {}) do
-		local var8_73 = ShopConst.GetShopConfig(iter3_73).akashi_pick > 0
+	for iter2_71, iter3_71 in ipairs(pg.shop_template.get_id_list_by_genre[ShopArgs.GiftPackage] or {}) do
+		local var8_71 = ShopConst.GetShopConfig(iter3_71).akashi_pick > 0
 
-		if (arg1_73 == nil or var8_73 == arg1_73) and not table.contains(var1_73, iter3_73) then
-			local var9_73 = Goods.Create({
-				shop_id = iter3_73
+		if (arg1_71 == nil or var8_71 == arg1_71) and not table.contains(var1_71, iter3_71) then
+			local var9_71 = Goods.Create({
+				shop_id = iter3_71
 			}, Goods.TYPE_GIFT_PACKAGE)
 
-			table.insert(var0_73, var9_73)
+			table.insert(var0_71, var9_71)
 		end
 	end
 
-	for iter4_73, iter5_73 in ipairs(pg.shop_template.get_id_list_by_genre[ShopArgs.GiftActPackage] or {}) do
-		local var10_73 = ShopConst.GetShopConfig(iter5_73).akashi_pick > 0
+	for iter4_71, iter5_71 in ipairs(pg.shop_template.get_id_list_by_genre[ShopArgs.GiftActPackage] or {}) do
+		local var10_71 = ShopConst.GetShopConfig(iter5_71).akashi_pick > 0
 
-		if (arg1_73 == nil or var10_73 == arg1_73) and not table.contains(var1_73, iter5_73) then
-			local var11_73 = Goods.Create({
-				shop_id = iter5_73
+		if (arg1_71 == nil or var10_71 == arg1_71) and not table.contains(var1_71, iter5_71) then
+			local var11_71 = Goods.Create({
+				shop_id = iter5_71
 			}, Goods.TYPE_GIFT_PACKAGE_ACT)
 
-			table.insert(var0_73, var11_73)
+			table.insert(var0_71, var11_71)
 		end
 	end
 
-	local var12_73 = {}
-	local var13_73 = {}
+	local var12_71 = {}
+	local var13_71 = {}
 
-	for iter6_73, iter7_73 in ipairs(var0_73) do
-		if iter7_73:isChargeType() then
-			local var14_73 = ChargeConst.getBuyCount(arg0_73.chargeList, iter7_73.id)
+	for iter6_71, iter7_71 in ipairs(var0_71) do
+		if iter7_71:isChargeType() then
+			local var14_71 = ChargeConst.getBuyCount(arg0_71.chargeList, iter7_71.id)
 
-			iter7_73:updateBuyCount(var14_73)
+			iter7_71:updateBuyCount(var14_71)
 
-			if iter7_73:canPurchase() and iter7_73:inTime() then
-				table.insert(var12_73, iter7_73)
+			if iter7_71:canPurchase() and iter7_71:inTime() then
+				table.insert(var12_71, iter7_71)
 			end
-		elseif not iter7_73:isLevelLimit(var2_73.level, true) then
-			local var15_73 = ChargeConst.getBuyCount(arg0_73.normalList, iter7_73.id)
+		elseif not iter7_71:isLevelLimit(var2_71.level, true) then
+			local var15_71 = ChargeConst.getBuyCount(arg0_71.normalList, iter7_71.id)
 
-			iter7_73:updateBuyCount(var15_73)
+			iter7_71:updateBuyCount(var15_71)
 
-			local var16_73 = iter7_73:getConfig("group") or 0
-			local var17_73 = false
+			local var16_71 = iter7_71:getConfig("group") or 0
+			local var17_71 = false
 
-			if var16_73 > 0 then
-				local var18_73 = iter7_73:getConfig("group_limit")
-				local var19_73 = ChargeConst.getGroupLimit(arg0_73.normalGroupList, var16_73)
+			if var16_71 > 0 then
+				local var18_71 = iter7_71:getConfig("group_limit")
+				local var19_71 = ChargeConst.getGroupLimit(arg0_71.normalGroupList, var16_71)
 
-				iter7_73:updateGroupCount(var19_73)
+				iter7_71:updateGroupCount(var19_71)
 
-				var17_73 = var18_73 > 0 and var18_73 <= var19_73
-			end
-
-			local var20_73, var21_73 = pg.TimeMgr.GetInstance():inTime(iter7_73:getConfig("time"))
-
-			if iter7_73.id == 69999 then
-				warning(PrintTable(iter7_73:getConfig("time")), iter7_73.__cname)
-				warning(var20_73, var21_73, iter7_73:canPurchase(), var17_73)
+				var17_71 = var18_71 > 0 and var18_71 <= var19_71
 			end
 
-			if var21_73 then
-				table.insert(var13_73, iter7_73)
+			local var20_71, var21_71 = pg.TimeMgr.GetInstance():inTime(iter7_71:getConfig("time"))
+
+			if iter7_71.id == 69999 then
+				warning(PrintTable(iter7_71:getConfig("time")), iter7_71.__cname)
+				warning(var20_71, var21_71, iter7_71:canPurchase(), var17_71)
 			end
 
-			if var20_73 and iter7_73:canPurchase() and not var17_73 then
-				table.insert(var12_73, iter7_73)
+			if var21_71 then
+				table.insert(var13_71, iter7_71)
+			end
+
+			if var20_71 and iter7_71:canPurchase() and not var17_71 then
+				table.insert(var12_71, iter7_71)
 			end
 		end
 	end
 
-	return var12_73, var13_73
+	return var12_71, var13_71
 end
 
-function var0_0.IsVaildBattlePass(arg0_74, arg1_74)
-	if not arg1_74:isPassItem() then
+function var0_0.IsVaildBattlePass(arg0_72, arg1_72)
+	if not arg1_72:isPassItem() then
 		return true
 	end
 
-	local var0_74 = arg1_74:getConfig("sub_display")[1]
-	local var1_74 = getProxy(ActivityProxy):RawGetActivityById(var0_74)
+	local var0_72 = arg1_72:getConfig("sub_display")[1]
+	local var1_72 = getProxy(ActivityProxy):RawGetActivityById(var0_72)
 
-	if var1_74 and not var1_74:isEnd() then
+	if var1_72 and not var1_72:isEnd() then
 		return true
 	end
 
-	local var2_74, var3_74 = PrevPeriodCrusingActivity.StaticExistPrevPeriodCrusingActivity()
+	local var2_72, var3_72 = PrevPeriodCrusingActivity.StaticExistPrevPeriodCrusingActivity()
 
-	if var2_74 and var0_74 == var3_74 then
+	if var2_72 and var0_72 == var3_72 then
 		return true
 	end
 
 	return false
 end
 
-function var0_0.filterLimitTypeGoods(arg0_75, arg1_75, arg2_75)
-	local var0_75 = arg1_75:getConfig("limit_type")
+function var0_0.filterLimitTypeGoods(arg0_73, arg1_73, arg2_73)
+	local var0_73 = arg1_73:getConfig("limit_type")
 
-	return switch(var0_75, {
+	return switch(var0_73, {
 		[3] = function()
-			if arg1_75:getConfig("limit_arg") ~= 0 or arg1_75:isLevelLimit(arg2_75.level, true) then
+			if arg1_73:getConfig("limit_arg") ~= 0 or arg1_73:isLevelLimit(arg2_73.level, true) then
 				return false
 			end
 
-			local var0_76
-			local var1_76
-			local var2_76
+			local var0_74
+			local var1_74
+			local var2_74
 
-			for iter0_76, iter1_76 in ipairs(arg1_75:getSameLimitGroupTecGoods()) do
-				if iter1_76:getConfig("limit_arg") == 1 then
-					var1_76 = iter1_76
-				elseif iter1_76:getConfig("limit_arg") == 2 then
-					var0_76 = iter1_76
-				elseif iter1_76:getConfig("limit_arg") == 3 then
-					var2_76 = iter1_76
+			for iter0_74, iter1_74 in ipairs(arg1_73:getSameLimitGroupTecGoods()) do
+				if iter1_74:getConfig("limit_arg") == 1 then
+					var1_74 = iter1_74
+				elseif iter1_74:getConfig("limit_arg") == 2 then
+					var0_74 = iter1_74
+				elseif iter1_74:getConfig("limit_arg") == 3 then
+					var2_74 = iter1_74
 				end
 			end
 
-			local var3_76 = ChargeConst.getBuyCount(arg0_75.chargeList, var0_76.id)
-			local var4_76 = ChargeConst.getBuyCount(arg0_75.chargeList, var1_76.id)
-			local var5_76 = ChargeConst.getBuyCount(arg0_75.chargeList, var2_76.id)
+			local var3_74 = ChargeConst.getBuyCount(arg0_73.chargeList, var0_74.id)
+			local var4_74 = ChargeConst.getBuyCount(arg0_73.chargeList, var1_74.id)
+			local var5_74 = ChargeConst.getBuyCount(arg0_73.chargeList, var2_74.id)
 
-			if var4_76 > 0 then
+			if var4_74 > 0 then
 				return false
-			elseif var3_76 > 0 and var5_76 > 0 then
+			elseif var3_74 > 0 and var5_74 > 0 then
 				return false
 			else
 				return true
 			end
 		end,
 		[5] = function()
-			if arg1_75:getConfig("limit_arg") ~= 0 or arg1_75:isLevelLimit(arg2_75.level, true) then
+			if arg1_73:getConfig("limit_arg") ~= 0 or arg1_73:isLevelLimit(arg2_73.level, true) then
 				return false
 			end
 
-			for iter0_77, iter1_77 in ipairs(arg1_75:getSameLimitGroupTecGoods()) do
-				if iter1_77:getConfig("limit_arg") ~= 0 and ChargeConst.getBuyCount(arg0_75.chargeList, iter1_77.id) > 0 then
+			for iter0_75, iter1_75 in ipairs(arg1_73:getSameLimitGroupTecGoods()) do
+				if iter1_75:getConfig("limit_arg") ~= 0 and ChargeConst.getBuyCount(arg0_73.chargeList, iter1_75.id) > 0 then
 					return false
 				end
 			end
@@ -761,23 +754,23 @@ function var0_0.filterLimitTypeGoods(arg0_75, arg1_75, arg2_75)
 	end)
 end
 
-function var0_0.CanPurchasedByCharge(arg0_79, arg1_79)
-	local var0_79 = pg.pay_data_display.get_id_list_by_extra_service[Goods.NON_MAIL] or {}
+function var0_0.CanPurchasedByCharge(arg0_77, arg1_77)
+	local var0_77 = pg.pay_data_display.get_id_list_by_extra_service[Goods.NON_MAIL] or {}
 
-	for iter0_79, iter1_79 in ipairs(var0_79) do
-		local var1_79 = pg.pay_data_display[iter1_79].extra_service_item
+	for iter0_77, iter1_77 in ipairs(var0_77) do
+		local var1_77 = pg.pay_data_display[iter1_77].extra_service_item
 
-		if type(var1_79) == "string" then
-			var1_79 = {}
+		if type(var1_77) == "string" then
+			var1_77 = {}
 		end
 
-		for iter2_79, iter3_79 in ipairs(var1_79) do
-			local var2_79 = iter3_79[1]
-			local var3_79 = iter3_79[2]
-			local var4_79 = iter3_79[3]
+		for iter2_77, iter3_77 in ipairs(var1_77) do
+			local var2_77 = iter3_77[1]
+			local var3_77 = iter3_77[2]
+			local var4_77 = iter3_77[3]
 
-			if var2_79 == DROP_TYPE_SKIN and var3_79 == arg1_79 then
-				return true, iter1_79
+			if var2_77 == DROP_TYPE_SKIN and var3_77 == arg1_77 then
+				return true, iter1_77
 			end
 		end
 	end
@@ -785,24 +778,24 @@ function var0_0.CanPurchasedByCharge(arg0_79, arg1_79)
 	return false
 end
 
-function var0_0.IsSkinTypeCharge(arg0_80, arg1_80)
-	local var0_80 = pg.pay_data_display[arg1_80]
+function var0_0.IsSkinTypeCharge(arg0_78, arg1_78)
+	local var0_78 = pg.pay_data_display[arg1_78]
 
-	assert(var0_80, "pay_data_display" .. arg1_80)
+	assert(var0_78, "pay_data_display" .. arg1_78)
 
-	local var1_80 = var0_80.extra_service_item
+	local var1_78 = var0_78.extra_service_item
 
-	if type(var1_80) == "string" then
-		var1_80 = {}
+	if type(var1_78) == "string" then
+		var1_78 = {}
 	end
 
-	for iter0_80, iter1_80 in ipairs(var1_80) do
-		local var2_80 = iter1_80[1]
-		local var3_80 = iter1_80[2]
-		local var4_80 = iter1_80[3]
+	for iter0_78, iter1_78 in ipairs(var1_78) do
+		local var2_78 = iter1_78[1]
+		local var3_78 = iter1_78[2]
+		local var4_78 = iter1_78[3]
 
-		if var2_80 == DROP_TYPE_SKIN then
-			return true, var3_80
+		if var2_78 == DROP_TYPE_SKIN then
+			return true, var3_78
 		end
 	end
 

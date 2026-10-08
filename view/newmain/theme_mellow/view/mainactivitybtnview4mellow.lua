@@ -5,6 +5,8 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 
 	arg0_1.mapEventTr = arg1_1:Find("right/1/act/act_battle")
 	arg0_1.mapBtn = MainActivityBtnMellowAdapt.New(MainActMapBtn.New(arg0_1.mapEventTr, arg0_1.event, true, true))
+	arg0_1.mapRemasterEventTr = arg1_1:Find("right/1/act/act_battle_remaster")
+	arg0_1.mapRemasterBtn = MainActivityRemasterBtnMellowAdapt.New(MainActRemasterMapBtn.New(arg0_1.mapRemasterEventTr, arg0_1.event, true, true))
 	arg0_1.mapSubEventTr = arg1_1:Find("right/1/act/act_sub_battle")
 	arg0_1.mapSubBtn = MainActivityBtnMellowAdapt.New(MainActSubMapBtn.New(arg0_1.mapSubEventTr, arg0_1.event, true, true))
 	arg0_1.voteEventTr = arg1_1:Find("right/1/act/act_vote")
@@ -19,7 +21,7 @@ function var0_0.InitBtns(arg0_2)
 	var0_0.super.InitBtns(arg0_2)
 
 	local var0_2 = _.select(arg0_2.activityBtns, function(arg0_3)
-		return not isa(arg0_3, MainActMapBtn)
+		return not isa(arg0_3, MainActMapBtn) and not isa(arg0_3, MainActRemasterMapBtn)
 	end)
 
 	arg0_2.activityBtns = _.map(var0_2, function(arg0_4)
@@ -92,6 +94,12 @@ function var0_0.Flush(arg0_7)
 	else
 		arg0_7.subActBtn:Clear()
 	end
+
+	if arg0_7.mapRemasterBtn:InShowTime() then
+		arg0_7.mapRemasterBtn:Init()
+	else
+		arg0_7.mapRemasterBtn:Clear()
+	end
 end
 
 function var0_0.GetDirection(arg0_8)
@@ -115,6 +123,10 @@ function var0_0.Dispose(arg0_9)
 	arg0_9.subActBtn:Dispose()
 
 	arg0_9.subActBtn = nil
+
+	arg0_9.mapRemasterBtn:Dispose()
+
+	arg0_9.mapRemasterBtn = nil
 end
 
 return var0_0

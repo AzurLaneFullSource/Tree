@@ -68,7 +68,7 @@ function var0_0.InitBtn(arg0_5)
 			targets = arg0_5.ptData.targets,
 			level = arg0_5.ptData.level,
 			count = arg0_5.ptData.count,
-			resId = arg0_5.ptData.resId,
+			resDrop = Drop.New(arg0_5.ptData:GetRes()),
 			unlockStamps = arg0_5.ptData:GetDayUnlockStamps()
 		})
 	end, SFX_PANEL)

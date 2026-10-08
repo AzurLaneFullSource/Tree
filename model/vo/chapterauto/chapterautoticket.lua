@@ -122,6 +122,15 @@ function var0_0.GetExpireTimeByArg(arg0_11)
 					day = 1,
 					year = var0_16
 				})
+			end,
+			act = function()
+				local var0_17 = getProxy(ActivityProxy):getActivityById(var1_11)
+
+				if not var0_17 or var0_17:isEnd() then
+					return 0
+				else
+					return var0_17.stopTime
+				end
 			end
 		}, function()
 			return var0_0.FOREVER_TIME

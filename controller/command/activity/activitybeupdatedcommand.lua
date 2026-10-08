@@ -3,7 +3,10 @@ local var0_0 = class("ActivityBeUpdatedCommand", pm.SimpleCommand)
 function var0_0.execute(arg0_1, arg1_1)
 	local var0_1 = arg1_1:getBody().activity
 
-	if var0_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_PT_BUFF and arg0_1:IsLinkVoteAct(var0_1) then
+	if ({
+		[ActivityConst.ACTIVITY_TYPE_PT_BUFF] = true,
+		[ActivityConst.ACTIVITY_TYPE_PT_BUFF_MARK2] = true
+	})[var0_1:getConfig("type")] and arg0_1:IsLinkVoteAct(var0_1) then
 		local var1_1 = ActivityPtData.New(var0_1)
 
 		if var1_1:CanGetAward() then

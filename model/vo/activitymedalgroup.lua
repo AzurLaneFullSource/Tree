@@ -33,9 +33,7 @@ function var0_0.GetMedalIds(arg0_4)
 end
 
 function var0_0.IsMedalGroupCollectionGrey(arg0_5)
-	player = getProxy(PlayerProxy):getData()
-
-	return not player:getActivityMedalGroup()[arg0_5]
+	return not getProxy(PlayerProxy):getData():getActivityMedalGroup()[arg0_5]
 end
 
 function var0_0.GetMedalGroupStateByID(arg0_6)

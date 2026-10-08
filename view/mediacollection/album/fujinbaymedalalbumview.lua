@@ -2,7 +2,6 @@ local var0_0 = class("FujinBayMedalAlbumView", import(".MedalAlbumTemplateView")
 
 var0_0.GROUP_ID = 50616
 var0_0.MEDAL_COUNT = 7
-var0_0.HELP_TIPS = "help_starLightAlbum"
 
 function var0_0.getUIName(arg0_1)
 	return "MedalAlbumFujinBayPage"

@@ -142,18 +142,19 @@ function var0_0.GetTotalRefList(arg0_18)
 		return {}
 	end
 
-	local var0_18 = ResourceMgr.Inst:GetFullDependencies(arg0_18)
+	local var0_18 = ResourceMgr.Inst:GetFullDependencies(arg0_18):ToTable()
 	local var1_18 = {}
+	local var2_18 = {}
 
-	for iter0_18 = 0, var0_18.Length - 1 do
-		local var2_18 = var0_18[iter0_18]
+	for iter0_18, iter1_18 in ipairs(var0_18) do
+		if not var1_18[iter1_18] then
+			var1_18[iter1_18] = true
 
-		if not table.contains(var1_18, var2_18) then
-			table.insert(var1_18, var0_18[iter0_18])
+			table.insert(var2_18, iter1_18)
 		end
 	end
 
-	return var1_18
+	return var2_18
 end
 
 return var0_0

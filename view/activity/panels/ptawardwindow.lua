@@ -82,7 +82,7 @@ function var0_0.Show(arg0_7, arg1_7)
 	local var1_7 = arg1_7.targets
 	local var2_7 = arg1_7.level
 	local var3_7 = arg1_7.count
-	local var4_7 = arg1_7.resId
+	local var4_7 = arg1_7.resDrop
 	local var5_7 = arg1_7.type
 
 	arg0_7.blur = arg1_7.blur
@@ -92,7 +92,7 @@ function var0_0.Show(arg0_7, arg1_7)
 	arg0_7.resIcon = nil
 
 	arg0_7:UpdateTitle(var5_7)
-	arg0_7:updateResIcon(arg1_7.resId, arg1_7.resIcon, arg1_7.type)
+	arg0_7:updateResIcon(arg1_7.resDrop, arg1_7.type)
 	arg0_7:UpdateList(var0_7, var1_7, var2_7, var6_7)
 
 	arg0_7.totalTxt.text = var3_7
@@ -109,57 +109,68 @@ end
 function var0_0.UpdateTitle(arg0_8, arg1_8)
 	local var0_8 = ""
 
-	if arg1_8 == 2 then
-		arg0_8.resTitle, arg0_8.cntTitle = i18n("pt_cosume", var0_8), i18n("pt_total_count", i18n("pt_cosume", var0_8))
-		arg0_8.cntTitle = string.gsub(arg0_8.cntTitle, "：", "")
-	elseif arg1_8 == 3 then
-		arg0_8.resTitle, arg0_8.cntTitle = i18n("pt_ship_goal"), i18n("pt_ship_now")
-	elseif arg1_8 == 4 then
-		arg0_8.resTitle, arg0_8.cntTitle = i18n("cumulative_victory_target_tip"), i18n("cumulative_victory_now_tip")
-	elseif arg1_8 == 5 then
-		arg0_8.resTitle, arg0_8.cntTitle = i18n("npcfriendly_count"), i18n("npcfriendly_total_count")
-	elseif arg1_8 == 6 then
-		arg0_8.resTitle, arg0_8.cntTitle = i18n("activity_yanhua_tip2"), i18n("activity_yanhua_tip3")
-	else
+	switch(arg1_8, {
+		function()
+			arg0_8.resTitle, arg0_8.cntTitle = i18n("target_get_tip"), i18n("pt_total_count", var0_8)
+			arg0_8.cntTitle = string.gsub(arg0_8.cntTitle, "：", "")
+		end,
+		function()
+			arg0_8.resTitle, arg0_8.cntTitle = i18n("pt_cosume", var0_8), i18n("pt_total_count", i18n("pt_cosume", var0_8))
+			arg0_8.cntTitle = string.gsub(arg0_8.cntTitle, "：", "")
+		end,
+		function()
+			arg0_8.resTitle, arg0_8.cntTitle = i18n("pt_ship_goal"), i18n("pt_ship_now")
+		end,
+		function()
+			arg0_8.resTitle, arg0_8.cntTitle = i18n("cumulative_victory_target_tip"), i18n("cumulative_victory_now_tip")
+		end,
+		function()
+			arg0_8.resTitle, arg0_8.cntTitle = i18n("npcfriendly_count"), i18n("npcfriendly_total_count")
+		end,
+		function()
+			arg0_8.resTitle, arg0_8.cntTitle = i18n("activity_yanhua_tip2"), i18n("activity_yanhua_tip3")
+		end,
+		[9] = 2,
+		[8] = 1
+	}, function()
 		arg0_8.resTitle, arg0_8.cntTitle = i18n("target_get_tip"), i18n("pt_total_count", var0_8)
 		arg0_8.cntTitle = string.gsub(arg0_8.cntTitle, "：", "")
+	end)
+end
+
+local var1_0 = {
+	nil,
+	true,
+	false,
+	false,
+	false,
+	false
+}
+
+function var0_0.updateResIcon(arg0_16, arg1_16, arg2_16)
+	if defaultValue(var1_0[arg2_16], true) then
+		arg0_16.resIcon = arg1_16:getIcon()
+	end
+
+	setActive(arg0_16.ptIcon, arg0_16.resIcon)
+
+	if arg0_16.resIcon then
+		LoadImageSpriteAsync(arg0_16.resIcon, arg0_16.totalTitleIcon, false)
 	end
 end
 
-function var0_0.updateResIcon(arg0_9, arg1_9, arg2_9, arg3_9)
-	if arg3_9 == 2 or arg3_9 ~= 3 and arg3_9 ~= 4 and arg3_9 ~= 5 and arg3_9 ~= 6 then
-		if arg1_9 then
-			arg0_9.resIcon = Drop.New({
-				type = DROP_TYPE_RESOURCE,
-				id = arg1_9
-			}):getIcon()
-		elseif arg2_9 then
-			arg0_9.resIcon = arg2_9
-		end
-
-		if arg0_9.ptIcon and arg0_9.resIcon and arg0_9.resIcon ~= "" then
-			setActive(arg0_9.ptIcon, true)
-			LoadImageSpriteAsync(arg0_9.resIcon, arg0_9.totalTitleIcon, false)
-		else
-			setActive(arg0_9.ptIcon, false)
-		end
-	else
-		setActive(arg0_9.ptIcon, false)
-	end
-end
-
-function var0_0.Hide(arg0_10)
-	if arg0_10.blur then
-		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_10._tf)
+function var0_0.Hide(arg0_17)
+	if arg0_17.blur then
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_17._tf)
 	end
 
-	setActive(arg0_10._tf, false)
+	setActive(arg0_17._tf, false)
 end
 
-function var0_0.Dispose(arg0_11)
-	arg0_11:Hide()
-	removeOnButton(arg0_11._tf)
-	removeOnButton(arg0_11.closeBtn)
+function var0_0.Dispose(arg0_18)
+	arg0_18:Hide()
+	removeOnButton(arg0_18._tf)
+	removeOnButton(arg0_18.closeBtn)
 end
 
 return var0_0

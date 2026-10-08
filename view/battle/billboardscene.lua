@@ -143,7 +143,7 @@ function var0_0.init(arg0_5)
 	arg0_5.ptToggles = {}
 
 	local var0_5 = _.filter(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_RANK), function(arg0_6)
-		return not arg0_6:isEnd() and tonumber(arg0_6:getConfig("config_data")) > 0
+		return not arg0_6:isEnd() and arg0_6:IsShowRank()
 	end)
 
 	if #var0_5 > 1 then

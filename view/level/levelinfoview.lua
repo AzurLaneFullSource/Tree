@@ -581,38 +581,23 @@ function var0_0.getChapterAwards(arg0_48)
 	local var4_48 = {}
 	local var5_48 = {}
 
-	local function var6_48(arg0_49)
-		for iter0_49, iter1_49 in ipairs(var4_48) do
-			if iter1_49 == arg0_49 then
-				return false
-			end
-		end
-
-		return true
-	end
-
-	local var7_48 = {}
-
 	for iter1_48, iter2_48 in ipairs(var3_48) do
-		local var8_48 = checkExist(pg.expedition_activity_template[iter2_48], {
+		local var6_48 = checkExist(pg.expedition_activity_template[iter2_48], {
 			"pt_drop_display"
 		})
 
-		if var8_48 and type(var8_48) == "table" then
-			for iter3_48, iter4_48 in ipairs(var8_48) do
-				local var9_48 = iter4_48[1]
-				local var10_48 = iter4_48[2]
-				local var11_48 = iter4_48[3]
+		if var6_48 and type(var6_48) == "table" then
+			for iter3_48, iter4_48 in ipairs(var6_48) do
+				local var7_48, var8_48, var9_48, var10_48 = unpack(iter4_48)
+				local var11_48 = var8_48 .. "_" .. var9_48
 
-				if var6_48(var10_48) then
-					table.insert(var4_48, var10_48)
+				if not var5_48[var11_48] then
+					var5_48[var11_48] = {}
 
-					var5_48[var10_48] = {}
+					table.insert(var4_48, var11_48)
 				end
 
-				var5_48[var10_48][var9_48] = true
-				var7_48[var10_48] = var7_48[var10_48] or {}
-				var7_48[var10_48][var9_48] = var11_48
+				var5_48[var11_48][var7_48] = var10_48
 			end
 		end
 	end
@@ -620,14 +605,28 @@ function var0_0.getChapterAwards(arg0_48)
 	local var12_48 = getProxy(ActivityProxy)
 
 	for iter5_48 = #var4_48, 1, -1 do
-		for iter6_48, iter7_48 in pairs(var5_48[var4_48[iter5_48]]) do
-			local var13_48 = var12_48:getActivityById(iter6_48)
+		local var13_48, var14_48 = unpack(underscore.map(string.split(var4_48[iter5_48], "_"), function(arg0_49)
+			return tonumber(arg0_49)
+		end))
 
-			if var13_48 and not var13_48:isEnd() then
+		for iter6_48, iter7_48 in pairs(var5_48[var4_48[iter5_48]]) do
+			local var15_48 = var12_48:getActivityById(iter6_48)
+
+			if var15_48 and not var15_48:isEnd() then
+				if var13_48 == DROP_TYPE_RESOURCE then
+					table.insert(var0_48, 1, {
+						DROP_TYPE_ITEM,
+						id2ItemId(var14_48),
+						iter7_48
+					})
+
+					break
+				end
+
 				table.insert(var0_48, 1, {
-					DROP_TYPE_ITEM,
-					id2ItemId(var4_48[iter5_48]),
-					var7_48[var4_48[iter5_48]][iter6_48]
+					var13_48,
+					var14_48,
+					iter7_48
 				})
 
 				break

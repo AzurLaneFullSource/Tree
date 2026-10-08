@@ -423,13 +423,19 @@ end
 function var0_0.getActivitiesByTypes(arg0_44, arg1_44)
 	local var0_44 = {}
 
-	for iter0_44, iter1_44 in pairs(arg0_44.data) do
-		if table.contains(arg1_44, iter1_44:getConfig("type")) then
-			table.insert(var0_44, iter1_44)
+	for iter0_44, iter1_44 in ipairs(arg1_44) do
+		var0_44[iter1_44] = true
+	end
+
+	local var1_44 = {}
+
+	for iter2_44, iter3_44 in pairs(arg0_44.data) do
+		if var0_44[iter3_44:getConfig("type")] then
+			table.insert(var1_44, iter3_44)
 		end
 	end
 
-	return var0_44
+	return var1_44
 end
 
 function var0_0.getMilitaryExerciseActivity(arg0_45)
@@ -548,11 +554,22 @@ function var0_0.checkHxActivity(arg0_55, arg1_55)
 end
 
 function var0_0.getBannerDisplays(arg0_56)
-	return _(pg.activity_banner.all):chain():map(function(arg0_57)
+	local var0_56 = _(pg.activity_banner.all):chain():map(function(arg0_57)
 		return pg.activity_banner[arg0_57]
 	end):filter(function(arg0_58)
 		return pg.TimeMgr.GetInstance():inTime(arg0_58.time) and arg0_58.type ~= GAMEUI_BANNER_9 and arg0_58.type ~= GAMEUI_BANNER_11 and arg0_58.type ~= GAMEUI_BANNER_10 and arg0_58.type ~= GAMEUI_BANNER_12 and arg0_58.type ~= GAMEUI_BANNER_13
 	end):value()
+	local var1_56 = getProxy(ActivityRemasterProxy):GetBanners()
+
+	for iter0_56, iter1_56 in ipairs(var1_56) do
+		local var2_56 = pg.activity_banner[iter1_56]
+
+		if not table.contains(var0_56, var2_56) then
+			table.insert(var0_56, var2_56)
+		end
+	end
+
+	return var0_56
 end
 
 function var0_0.getActiveBannerByType(arg0_59, arg1_59)
@@ -1215,7 +1232,10 @@ end
 
 function var0_0.GetActBossLinkPTActID(arg0_122, arg1_122)
 	local var0_122 = table.Find(arg0_122.data, function(arg0_123, arg1_123)
-		if arg1_123:getConfig("type") ~= ActivityConst.ACTIVITY_TYPE_PT_BUFF then
+		if not ({
+			[ActivityConst.ACTIVITY_TYPE_PT_BUFF] = true,
+			[ActivityConst.ACTIVITY_TYPE_PT_BUFF_MARK2] = true
+		})[arg1_123:getConfig("type")] then
 			return
 		end
 
@@ -1309,6 +1329,67 @@ function var0_0.GetFakeGiftPackActivity(arg0_131, arg1_131)
 			return iter1_131
 		end
 	end
+end
+
+function var0_0.UpdatePTRank(arg0_138, arg1_138)
+	local var0_138 = {}
+
+	for iter0_138, iter1_138 in ipairs(arg0_138:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_RANK)) do
+		local var1_138 = iter1_138:GetPTDrop()
+
+		if iter1_138 and not iter1_138:isEnd() then
+			assert(not var0_138[var1_138.type .. "_" .. var1_138.id])
+
+			var0_138[var1_138.type .. "_" .. var1_138.id] = iter1_138
+		end
+	end
+
+	for iter2_138, iter3_138 in ipairs(arg1_138) do
+		local var2_138 = var0_138[iter3_138.type .. "_" .. iter3_138.id]
+
+		if var2_138 then
+			var2_138.data1 = var2_138.data1 + iter3_138.count
+
+			arg0_138:updateActivity(var2_138)
+		end
+	end
+end
+
+function var0_0.GetShopActivityByRes(arg0_139, arg1_139)
+	local var0_139 = getProxy(ShopsProxy)
+
+	for iter0_139, iter1_139 in ipairs(arg0_139:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHOP)) do
+		local var1_139 = var0_139:getActivityShopById(iter1_139.id)
+
+		if underscore.any(var1_139:GetResList(), function(arg0_140)
+			return arg0_140.type == arg1_139.type and arg0_140.id == arg1_139.id
+		end) then
+			return iter1_139
+		end
+	end
+
+	return nil
+end
+
+function var0_0.GetPTActivityByRes(arg0_141, arg1_141)
+	if arg1_141.type == DROP_TYPE_VITEM then
+		local var0_141 = arg1_141:getConfig("link_id")
+
+		return var0_141 and arg0_141:getActivityById(var0_141) or nil
+	else
+		for iter0_141, iter1_141 in ipairs(arg0_141:getActivitiesByTypes({
+			ActivityConst.ACTIVITY_TYPE_PT_RANK,
+			ActivityConst.ACTIVITY_TYPE_PT_BUFF_MARK2
+		})) do
+			local var1_141 = iter1_141:GetPTDrop()
+
+			if var1_141 and var1_141.type == arg1_141.type and var1_141.id == arg1_141.id then
+				return iter1_141
+			end
+		end
+	end
+
+	return nil
 end
 
 return var0_0

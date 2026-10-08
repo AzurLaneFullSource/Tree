@@ -36,30 +36,28 @@ function var0_0.register(arg0_1)
 
 	arg0_1.viewComponent:SetUpgradeActvity(var2_1)
 
-	local var3_1 = var1_1:getConfig("config_client").PTID
+	local var3_1 = var1_1:GetConfigClientPTActivity()
 
-	arg0_1.viewComponent:SetPTActivity(underscore.detect(var0_1:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_RANK), function(arg0_4)
-		return arg0_4:getConfig("config_id") == var3_1
-	end))
+	arg0_1.viewComponent:SetPTActivity(var3_1)
 	arg0_1:sendNotification(GAME.COLLABRATE_BOSS_RUSH_REQUEST_DATA, {
 		actId = var1_1.id
 	})
-	arg0_1.viewComponent:addbubbleMsgBox(function(arg0_5)
+	arg0_1.viewComponent:addbubbleMsgBox(function(arg0_4)
 		if getProxy(ContextProxy):getCurrentContext():getContextByMediator(BossRushTotalRewardPanelMediator) then
 			return
 		end
 
-		arg0_5()
+		arg0_4()
 	end)
-	arg0_1.viewComponent:addbubbleMsgBox(function(arg0_6)
-		pg.GuildMsgBoxMgr.GetInstance():NotificationForBattle(arg0_6)
+	arg0_1.viewComponent:addbubbleMsgBox(function(arg0_5)
+		pg.GuildMsgBoxMgr.GetInstance():NotificationForBattle(arg0_5)
 	end)
-	arg0_1:bind(var0_0.ON_UPGRADE, function(arg0_7, arg1_7)
-		arg0_1:sendNotification(GAME.ACTIVITY_OPERATION, arg1_7)
+	arg0_1:bind(var0_0.ON_UPGRADE, function(arg0_6, arg1_6)
+		arg0_1:sendNotification(GAME.ACTIVITY_OPERATION, arg1_6)
 	end)
 end
 
-function var0_0.listNotificationInterests(arg0_8)
+function var0_0.listNotificationInterests(arg0_7)
 	return {
 		ActivityProxy.ACTIVITY_UPDATED,
 		GAME.SUBMIT_TASK_DONE,
@@ -70,47 +68,47 @@ function var0_0.listNotificationInterests(arg0_8)
 	}
 end
 
-function var0_0.handleNotification(arg0_9, arg1_9)
-	local var0_9 = arg1_9:getName()
-	local var1_9 = arg1_9:getBody()
-	local var2_9 = arg1_9:getType()
+function var0_0.handleNotification(arg0_8, arg1_8)
+	local var0_8 = arg1_8:getName()
+	local var1_8 = arg1_8:getBody()
+	local var2_8 = arg1_8:getType()
 
-	if var0_9 == nil then
+	if var0_8 == nil then
 		-- block empty
-	elseif var0_9 == GAME.BEGIN_STAGE_DONE then
+	elseif var0_8 == GAME.BEGIN_STAGE_DONE then
 		if not getProxy(ContextProxy):getContextByMediator(BossRushPreCombatMediator) then
-			arg0_9:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var1_9)
+			arg0_8:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var1_8)
 		end
-	elseif var0_9 == ActivityProxy.ACTIVITY_UPDATED then
-		local var3_9 = var1_9
+	elseif var0_8 == ActivityProxy.ACTIVITY_UPDATED then
+		local var3_8 = var1_8
 
-		if var3_9 then
-			if var3_9.id == arg0_9.viewComponent.activity.id then
-				arg0_9.viewComponent:SetActivity(var3_9)
-				arg0_9.viewComponent:UpdateView()
+		if var3_8 then
+			if var3_8.id == arg0_8.viewComponent.activity.id then
+				arg0_8.viewComponent:SetActivity(var3_8)
+				arg0_8.viewComponent:UpdateView()
 			end
 
-			if var3_9:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF then
-				arg0_9.viewComponent.upgradeView:SetData(var3_9)
-				arg0_9.viewComponent.upgradeView:UpdateView()
+			if var3_8:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF then
+				arg0_8.viewComponent.upgradeView:SetData(var3_8)
+				arg0_8.viewComponent.upgradeView:UpdateView()
 			end
 		end
-	elseif var0_9 == GAME.SUBMIT_ACTIVITY_TASK_DONE then
-		arg0_9.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_9.awards, function()
-			arg0_9.viewComponent:UpdateTasks(var2_9)
+	elseif var0_8 == GAME.SUBMIT_ACTIVITY_TASK_DONE then
+		arg0_8.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_8.awards, function()
+			arg0_8.viewComponent:UpdateTasks(var2_8)
 		end)
-	elseif var0_9 == BossRushTotalRewardPanelMediator.ON_WILL_EXIT then
-		arg0_9.viewComponent:resumeBubble()
-		arg0_9.viewComponent:UpdateView()
-	elseif var0_9 == GAME.COLLABRATE_BOSS_RUSH_REQUEST_DATA_DONE then
-		local var4_9 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSS_RUSH_DAL_COLLAB)
+	elseif var0_8 == BossRushTotalRewardPanelMediator.ON_WILL_EXIT then
+		arg0_8.viewComponent:resumeBubble()
+		arg0_8.viewComponent:UpdateView()
+	elseif var0_8 == GAME.COLLABRATE_BOSS_RUSH_REQUEST_DATA_DONE then
+		local var4_8 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSS_RUSH_DAL_COLLAB)
 
-		arg0_9.viewComponent:SetActivity(var4_9)
-		arg0_9.viewComponent:UpdateView()
+		arg0_8.viewComponent:SetActivity(var4_8)
+		arg0_8.viewComponent:UpdateView()
 	end
 end
 
-function var0_0.remove(arg0_11)
+function var0_0.remove(arg0_10)
 	return
 end
 

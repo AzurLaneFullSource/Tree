@@ -127,28 +127,33 @@ function var0_0.setAfterResDownload(arg0_10, arg1_10, arg2_10, arg3_10)
 			setActive(var6_10, var8_10)
 
 			if var8_10 then
-				local var9_10 = getProxy(ChapterProxy):getMapById(var7_10:getConfig("map")):getConfig("type") == Map.ACTIVITY_HARD and "bonus_us_hard" or "bonus_us"
+				GetImageSpriteFromAtlasAsync("ui/levelmainscene_atlas", "bonusX" .. var7_10:GetDailyBonusRate(), var6_10:Find("Image"), true)
 
-				arg0_10.loader:GetSprite("ui/levelmainscene_atlas", var9_10, var6_10:Find("Image"))
+				local var9_10 = getProxy(ChapterProxy):getMapById(var7_10:getConfig("map"))
+				local var10_10 = getProxy(ActivityProxy):getActivityById(var9_10:getConfig("on_activity"))
+				local var11_10 = var10_10 and var10_10:GetConfigClientPTActivity() or nil
+				local var12_10 = var11_10 and var11_10:GetPTDrop()
+
+				GetImageSpriteFromAtlasAsync(var12_10:getIcon(), "", var6_10:Find("Image/icon"), true)
 			end
 		end
 	end
 
-	local var10_10 = var2_10 == 1 and Color.NewHex("FFDE38") or Color.white
+	local var13_10 = var2_10 == 1 and Color.NewHex("FFDE38") or Color.white
 
-	setTextColor(arg0_10.txTitle:Find("title_index"), var10_10)
-	setTextColor(arg0_10.txTitle:Find("title"), var10_10)
-	setTextColor(arg0_10.txTitle:Find("title_en"), var10_10)
+	setTextColor(arg0_10.txTitle:Find("title_index"), var13_10)
+	setTextColor(arg0_10.txTitle:Find("title"), var13_10)
+	setTextColor(arg0_10.txTitle:Find("title_en"), var13_10)
 
-	local var11_10 = arg3_10:getConfig("boss_expedition_id")
+	local var14_10 = arg3_10:getConfig("boss_expedition_id")
 
 	if arg3_10:getPlayType() == ChapterConst.TypeMultiStageBoss then
-		var11_10 = pg.chapter_model_multistageboss[arg3_10.id].boss_expedition_id
+		var14_10 = pg.chapter_model_multistageboss[arg3_10.id].boss_expedition_id
 	end
 
-	local var12_10 = pg.expedition_data_template[var11_10[#var11_10]].level
+	local var15_10 = pg.expedition_data_template[var14_10[#var14_10]].level
 
-	setText(arg0_10.levelBanner:Find("Text"), "LV " .. var12_10)
+	setText(arg0_10.levelBanner:Find("Text"), "LV " .. var15_10)
 	onButton(arg0_10, arg0_10.btnSwitchNormal:Find("Switch"), function()
 		setActive(arg0_10.btnAnimNormal, false)
 		setActive(arg0_10.btnAnimLoopNormal, false)

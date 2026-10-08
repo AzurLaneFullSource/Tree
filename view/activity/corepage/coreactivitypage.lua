@@ -33,79 +33,87 @@ function var0_0.Flush(arg0_5, arg1_5)
 	arg0_5:OnUpdateFlush()
 end
 
-function var0_0.ShowOrHide(arg0_6, arg1_6)
-	SetActive(arg0_6._go, arg1_6)
+function var0_0.GetAwardPreviewPos(arg0_6)
+	if not arg0_6.activity then
+		return nil
+	end
 
-	if arg1_6 then
-		local var0_6 = {}
+	return arg0_6.activity:getConfig("config_client").AwardPreviewPos
+end
 
-		arg0_6:emit(ActivityMainScene.GET_PAGE_BGM, arg0_6.__cname, var0_6)
+function var0_0.ShowOrHide(arg0_7, arg1_7)
+	SetActive(arg0_7._go, arg1_7)
 
-		if var0_6.bgm then
-			pg.BgmMgr.GetInstance():Push(ActivityMainScene.__cname, var0_6.bgm)
+	if arg1_7 then
+		local var0_7 = {}
+
+		arg0_7:emit(ActivityMainScene.GET_PAGE_BGM, arg0_7.__cname, var0_7)
+
+		if var0_7.bgm then
+			pg.BgmMgr.GetInstance():Push(ActivityMainScene.__cname, var0_7.bgm)
 		end
 
-		arg0_6:OnShowFlush()
+		arg0_7:OnShowFlush()
 	else
-		arg0_6:OnHideFlush()
+		arg0_7:OnHideFlush()
 	end
 end
 
-function var0_0.BindPageLink(arg0_7)
-	for iter0_7, iter1_7 in ipairs(arg0_7:GetPageLink()) do
-		ActivityConst.PageIdLink[iter1_7] = arg0_7.activity.id
+function var0_0.BindPageLink(arg0_8)
+	for iter0_8, iter1_8 in ipairs(arg0_8:GetPageLink()) do
+		ActivityConst.PageIdLink[iter1_8] = arg0_8.activity.id
 	end
 end
 
-function var0_0.SwitchOut(arg0_8, arg1_8)
-	arg1_8()
+function var0_0.SwitchOut(arg0_9, arg1_9)
+	arg1_9()
 end
 
-function var0_0.OnInit(arg0_9)
+function var0_0.OnInit(arg0_10)
 	return
 end
 
-function var0_0.OnDataSetting(arg0_10)
+function var0_0.OnDataSetting(arg0_11)
 	return
 end
 
-function var0_0.GetPageLink(arg0_11)
+function var0_0.GetPageLink(arg0_12)
 	return {}
 end
 
-function var0_0.OnFirstFlush(arg0_12)
+function var0_0.OnFirstFlush(arg0_13)
 	return
 end
 
-function var0_0.OnUpdateFlush(arg0_13)
+function var0_0.OnUpdateFlush(arg0_14)
 	return
 end
 
-function var0_0.OnHideFlush(arg0_14)
+function var0_0.OnHideFlush(arg0_15)
 	return
 end
 
-function var0_0.OnShowFlush(arg0_15)
+function var0_0.OnShowFlush(arg0_16)
 	return
 end
 
-function var0_0.OnDestroy(arg0_16)
+function var0_0.OnDestroy(arg0_17)
 	return
 end
 
-function var0_0.UseSecondPage(arg0_17, arg1_17)
+function var0_0.UseSecondPage(arg0_18, arg1_18)
 	return false
 end
 
-function var0_0.IsShowingPopWindow(arg0_18)
+function var0_0.IsShowingPopWindow(arg0_19)
 	return false
 end
 
-function var0_0.ClosePopWindow(arg0_19)
+function var0_0.ClosePopWindow(arg0_20)
 	return
 end
 
-function var0_0.IsShowReminder(arg0_20)
+function var0_0.IsShowReminder(arg0_21)
 	return nil
 end
 

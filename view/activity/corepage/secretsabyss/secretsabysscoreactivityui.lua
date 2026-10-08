@@ -27,8 +27,7 @@ function var0_0.init(arg0_2, ...)
 			elseif not arg0_2.pageDic[var0_3.id] then
 				warning(string.format("without page in act:", var0_3.id))
 			else
-				setText(arg2_3:Find("off/name"), i18n("masaina_main_sheet" .. var0_3:getConfig("is_show")))
-				setText(arg2_3:Find("on/name"), i18n("masaina_main_sheet" .. var0_3:getConfig("is_show")))
+				arg0_2:UpdateBtnText(var0_3, arg2_3)
 
 				if arg0_2.pageDic[var0_3.id] ~= nil then
 					setActive(arg2_3:Find("tip"), var0_3:readyToAchieve())
@@ -58,23 +57,37 @@ function var0_0.init(arg0_2, ...)
 	end, SOUND_BACK)
 end
 
-function var0_0.UpdateAdapt(arg0_8)
-	local var0_8 = 1.33333333333333
-	local var1_8 = 2.16666666666667
-	local var2_8 = pg.CameraFixMgr.GetInstance()
-	local var3_8 = var2_8.currentWidth / var2_8.currentHeight
-	local var4_8 = math.clamp(var3_8, var0_8, var1_8)
+function var0_0.UpdateBtnText(arg0_8, arg1_8, arg2_8)
+	local var0_8 = arg1_8:getConfig("title_res_tag")
 
-	arg0_8._tf:GetComponent(typeof(AspectRatioFitter)).aspectRatio = var4_8
+	if pg.gametip[var0_8] then
+		local var1_8 = i18n(var0_8)
+
+		setText(arg2_8:Find("off/name"), var1_8)
+		setText(arg2_8:Find("on/name"), var1_8)
+	else
+		setText(arg2_8:Find("off/name"), i18n("masaina_main_sheet" .. arg1_8:getConfig("is_show")))
+		setText(arg2_8:Find("on/name"), i18n("masaina_main_sheet" .. arg1_8:getConfig("is_show")))
+	end
 end
 
-function var0_0.willExit(arg0_9)
-	var0_0.super.willExit(arg0_9)
+function var0_0.UpdateAdapt(arg0_9)
+	local var0_9 = 1.33333333333333
+	local var1_9 = 2.16666666666667
+	local var2_9 = pg.CameraFixMgr.GetInstance()
+	local var3_9 = var2_9.currentWidth / var2_9.currentHeight
+	local var4_9 = math.clamp(var3_9, var0_9, var1_9)
 
-	if arg0_9.camEventId then
-		pg.CameraFixMgr.GetInstance():disconnect(arg0_9.camEventId)
+	arg0_9._tf:GetComponent(typeof(AspectRatioFitter)).aspectRatio = var4_9
+end
 
-		arg0_9.camEventId = nil
+function var0_0.willExit(arg0_10)
+	var0_0.super.willExit(arg0_10)
+
+	if arg0_10.camEventId then
+		pg.CameraFixMgr.GetInstance():disconnect(arg0_10.camEventId)
+
+		arg0_10.camEventId = nil
 	end
 end
 

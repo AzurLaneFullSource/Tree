@@ -115,31 +115,35 @@ function var0_0.getShipGroup(arg0_10, arg1_10)
 	return Clone(arg0_10.shipGroups[arg1_10])
 end
 
-function var0_0.updateShipGroup(arg0_11, arg1_11)
-	assert(arg1_11, "update ship group: group cannot be nil.")
-
-	arg0_11.shipGroups[arg1_11.id] = Clone(arg1_11)
+function var0_0.RawGetShipGroup(arg0_11, arg1_11)
+	return arg0_11.shipGroups[arg1_11]
 end
 
-function var0_0.getGroups(arg0_12)
-	return Clone(arg0_12.shipGroups)
+function var0_0.updateShipGroup(arg0_12, arg1_12)
+	assert(arg1_12, "update ship group: group cannot be nil.")
+
+	arg0_12.shipGroups[arg1_12.id] = Clone(arg1_12)
 end
 
-function var0_0.RawgetGroups(arg0_13)
-	return arg0_13.shipGroups
+function var0_0.getGroups(arg0_13)
+	return Clone(arg0_13.shipGroups)
 end
 
-function var0_0.getAwards(arg0_14)
-	return Clone(arg0_14.awards)
+function var0_0.RawgetGroups(arg0_14)
+	return arg0_14.shipGroups
 end
 
-function var0_0.hasFinish(arg0_15)
-	local var0_15 = pg.storeup_data_template
+function var0_0.getAwards(arg0_15)
+	return Clone(arg0_15.awards)
+end
 
-	for iter0_15, iter1_15 in ipairs(var0_15.all) do
+function var0_0.hasFinish(arg0_16)
+	local var0_16 = pg.storeup_data_template
+
+	for iter0_16, iter1_16 in ipairs(var0_16.all) do
 		if Favorite.New({
-			id = iter1_15
-		}):canGetRes(arg0_15.shipGroups, arg0_15.awards) then
+			id = iter1_16
+		}):canGetRes(arg0_16.shipGroups, arg0_16.awards) then
 			return true
 		end
 	end
@@ -147,201 +151,201 @@ function var0_0.hasFinish(arg0_15)
 	return false
 end
 
-function var0_0.getCollectionRate(arg0_16)
-	local var0_16 = arg0_16:getCollectionCount()
-	local var1_16 = arg0_16:getCollectionTotal()
+function var0_0.getCollectionRate(arg0_17)
+	local var0_17 = arg0_17:getCollectionCount()
+	local var1_17 = arg0_17:getCollectionTotal()
 
-	return string.format("%0.3f", var0_16 / var1_16), var0_16, var1_16
+	return string.format("%0.3f", var0_17 / var1_17), var0_17, var1_17
 end
 
-function var0_0.getCollectionCount(arg0_17)
-	return _.reduce(_.values(arg0_17.shipGroups), 0, function(arg0_18, arg1_18)
-		return arg0_18 + (Nation.IsLinkType(arg1_18:getNation()) and 0 or arg1_18.trans and 2 or 1)
+function var0_0.getCollectionCount(arg0_18)
+	return _.reduce(_.values(arg0_18.shipGroups), 0, function(arg0_19, arg1_19)
+		return arg0_19 + (Nation.IsLinkType(arg1_19:getNation()) and 0 or arg1_19.trans and 2 or 1)
 	end)
 end
 
-function var0_0.getCollectionTotal(arg0_19)
-	return _.reduce(pg.ship_data_group.all, 0, function(arg0_20, arg1_20)
-		local var0_20 = pg.ship_data_group[arg1_20].group_type
-		local var1_20 = ShipGroup.getDefaultShipConfig(var0_20)
+function var0_0.getCollectionTotal(arg0_20)
+	return _.reduce(pg.ship_data_group.all, 0, function(arg0_21, arg1_21)
+		local var0_21 = pg.ship_data_group[arg1_21].group_type
+		local var1_21 = ShipGroup.getDefaultShipConfig(var0_21)
 
-		return arg0_20 + (Nation.IsLinkType(var1_20.nationality) and 0 or 1)
+		return arg0_21 + (Nation.IsLinkType(var1_21.nationality) and 0 or 1)
 	end) + #pg.ship_data_trans.all
 end
 
-function var0_0.getLinkCollectionCount(arg0_21)
-	return _.reduce(_.values(arg0_21.shipGroups), 0, function(arg0_22, arg1_22)
-		return arg0_22 + (Nation.IsLinkType(arg1_22:getNation()) and 1 or 0)
+function var0_0.getLinkCollectionCount(arg0_22)
+	return _.reduce(_.values(arg0_22.shipGroups), 0, function(arg0_23, arg1_23)
+		return arg0_23 + (Nation.IsLinkType(arg1_23:getNation()) and 1 or 0)
 	end)
 end
 
-function var0_0.flushCollection(arg0_23, arg1_23)
-	local var0_23 = arg0_23:getShipGroup(arg1_23.groupId)
-	local var1_23
+function var0_0.flushCollection(arg0_24, arg1_24)
+	local var0_24 = arg0_24:getShipGroup(arg1_24.groupId)
+	local var1_24
 
-	if not var0_23 then
-		var0_23 = ShipGroup.New({
+	if not var0_24 then
+		var0_24 = ShipGroup.New({
 			heart_count = 0,
 			heart_flag = 0,
 			lv_max = 1,
-			id = arg1_23.groupId,
-			star = arg1_23:getStar(),
-			marry_flag = arg1_23.propose and 1 or 0,
-			intimacy_max = arg1_23.intimacy
+			id = arg1_24.groupId,
+			star = arg1_24:getStar(),
+			marry_flag = arg1_24.propose and 1 or 0,
+			intimacy_max = arg1_24.intimacy
 		})
 
-		if OPEN_TEC_TREE_SYSTEM and table.indexof(pg.fleet_tech_ship_template.all, arg1_23.groupId, 1) then
-			var1_23 = true
+		if OPEN_TEC_TREE_SYSTEM and table.indexof(pg.fleet_tech_ship_template.all, arg1_24.groupId, 1) then
+			var1_24 = true
 		end
 	else
-		if OPEN_TEC_TREE_SYSTEM and table.indexof(pg.fleet_tech_ship_template.all, arg1_23.groupId, 1) then
-			if var0_23.star < arg1_23:getStar() and arg1_23:getStar() == pg.fleet_tech_ship_template[arg1_23.groupId].max_star then
-				var1_23 = true
+		if OPEN_TEC_TREE_SYSTEM and table.indexof(pg.fleet_tech_ship_template.all, arg1_24.groupId, 1) then
+			if var0_24.star < arg1_24:getStar() and arg1_24:getStar() == pg.fleet_tech_ship_template[arg1_24.groupId].max_star then
+				var1_24 = true
 
-				local var2_23 = pg.fleet_tech_ship_template[arg1_23.groupId].pt_upgrage
+				local var2_24 = pg.fleet_tech_ship_template[arg1_24.groupId].pt_upgrage
 
 				pg.ToastMgr.GetInstance():ShowToast(pg.ToastMgr.TYPE_TECPOINT, {
-					point = var2_23
+					point = var2_24
 				})
 			end
 
-			if var0_23.maxLV < arg1_23.level and arg1_23.level == TechnologyConst.SHIP_LEVEL_FOR_BUFF then
-				var1_23 = true
+			if var0_24.maxLV < arg1_24.level and arg1_24.level == TechnologyConst.SHIP_LEVEL_FOR_BUFF then
+				var1_24 = true
 
-				local var3_23 = pg.fleet_tech_ship_template[arg1_23.groupId].pt_level
-				local var4_23 = ShipType.FilterOverQuZhuType(pg.fleet_tech_ship_template[arg1_23.groupId].add_level_shiptype)
-				local var5_23 = pg.fleet_tech_ship_template[arg1_23.groupId].add_level_attr
-				local var6_23 = pg.fleet_tech_ship_template[arg1_23.groupId].add_level_value
+				local var3_24 = pg.fleet_tech_ship_template[arg1_24.groupId].pt_level
+				local var4_24 = ShipType.FilterOverQuZhuType(pg.fleet_tech_ship_template[arg1_24.groupId].add_level_shiptype)
+				local var5_24 = pg.fleet_tech_ship_template[arg1_24.groupId].add_level_attr
+				local var6_24 = pg.fleet_tech_ship_template[arg1_24.groupId].add_level_value
 
 				pg.ToastMgr.GetInstance():ShowToast(pg.ToastMgr.TYPE_TECPOINT, {
-					point = var3_23,
-					typeList = var4_23,
-					attr = var5_23,
-					value = var6_23
+					point = var3_24,
+					typeList = var4_24,
+					attr = var5_24,
+					value = var6_24
 				})
 			end
 		end
 
-		var0_23.star = math.max(var0_23.star, arg1_23:getStar())
-		var0_23.maxIntimacy = math.max(var0_23.maxIntimacy, arg1_23.intimacy)
-		var0_23.married = math.max(var0_23.married, arg1_23.propose and 1 or 0)
-		var0_23.maxLV = math.max(var0_23.maxLV, arg1_23.level)
+		var0_24.star = math.max(var0_24.star, arg1_24:getStar())
+		var0_24.maxIntimacy = math.max(var0_24.maxIntimacy, arg1_24.intimacy)
+		var0_24.married = math.max(var0_24.married, arg1_24.propose and 1 or 0)
+		var0_24.maxLV = math.max(var0_24.maxLV, arg1_24.level)
 	end
 
-	arg0_23:updateShipGroup(var0_23)
+	arg0_24:updateShipGroup(var0_24)
 
-	if var1_23 then
+	if var1_24 then
 		getProxy(TechnologyNationProxy):flushData()
 	end
 end
 
-function var0_0.updateTrophyClaim(arg0_24, arg1_24, arg2_24)
-	arg0_24.trophy[arg1_24]:updateTimeStamp(arg2_24)
+function var0_0.updateTrophyClaim(arg0_25, arg1_25, arg2_25)
+	arg0_25.trophy[arg1_25]:updateTimeStamp(arg2_25)
 end
 
-function var0_0.unlockNewTrophy(arg0_25, arg1_25)
-	for iter0_25, iter1_25 in ipairs(arg1_25) do
-		arg0_25.trophy[iter1_25.id] = iter1_25
+function var0_0.unlockNewTrophy(arg0_26, arg1_26)
+	for iter0_26, iter1_26 in ipairs(arg1_26) do
+		arg0_26.trophy[iter1_26.id] = iter1_26
 	end
 
-	arg0_25:bindTrophyGroup()
-	arg0_25:bindComplexTrophy()
-	arg0_25:hiddenTrophyAutoClaim()
+	arg0_26:bindTrophyGroup()
+	arg0_26:bindComplexTrophy()
+	arg0_26:hiddenTrophyAutoClaim()
 end
 
-function var0_0.getTrophyGroup(arg0_26)
-	return Clone(arg0_26.trophyGroup)
+function var0_0.getTrophyGroup(arg0_27)
+	return Clone(arg0_27.trophyGroup)
 end
 
-function var0_0.getTrophys(arg0_27)
-	local var0_27 = Clone(arg0_27.trophy)
+function var0_0.getTrophys(arg0_28)
+	local var0_28 = Clone(arg0_28.trophy)
 
-	for iter0_27, iter1_27 in pairs(arg0_27.trophy) do
-		iter1_27:clearNew()
+	for iter0_28, iter1_28 in pairs(arg0_28.trophy) do
+		iter1_28:clearNew()
 	end
 
-	return var0_27
+	return var0_28
 end
 
-function var0_0.GetTrophyById(arg0_28, arg1_28)
-	return arg0_28.trophy[arg1_28]
+function var0_0.GetTrophyById(arg0_29, arg1_29)
+	return arg0_29.trophy[arg1_29]
 end
 
-function var0_0.hiddenTrophyAutoClaim(arg0_29)
-	for iter0_29, iter1_29 in pairs(arg0_29.trophy) do
-		if iter1_29:getHideType() ~= Trophy.ALWAYS_SHOW and iter1_29:getHideType() ~= Trophy.COMING_SOON and iter1_29:canClaimed() and not iter1_29:isClaimed() then
-			arg0_29:sendNotification(GAME.TROPHY_CLAIM, {
-				trophyID = iter0_29
+function var0_0.hiddenTrophyAutoClaim(arg0_30)
+	for iter0_30, iter1_30 in pairs(arg0_30.trophy) do
+		if iter1_30:getHideType() ~= Trophy.ALWAYS_SHOW and iter1_30:getHideType() ~= Trophy.COMING_SOON and iter1_30:canClaimed() and not iter1_30:isClaimed() then
+			arg0_30:sendNotification(GAME.TROPHY_CLAIM, {
+				trophyID = iter0_30
 			})
 		end
 	end
 end
 
-function var0_0.unclaimTrophyCount(arg0_30)
-	local var0_30 = 0
+function var0_0.unclaimTrophyCount(arg0_31)
+	local var0_31 = 0
 
-	for iter0_30, iter1_30 in pairs(arg0_30.trophy) do
-		if iter1_30:getHideType() == Trophy.ALWAYS_SHOW and iter1_30:canClaimed() and not iter1_30:isClaimed() then
-			var0_30 = var0_30 + 1
+	for iter0_31, iter1_31 in pairs(arg0_31.trophy) do
+		if iter1_31:getHideType() == Trophy.ALWAYS_SHOW and iter1_31:canClaimed() and not iter1_31:isClaimed() then
+			var0_31 = var0_31 + 1
 		end
 	end
 
-	return var0_30
+	return var0_31
 end
 
-function var0_0.updateTrophy(arg0_31)
-	arg0_31:sendNotification(var0_0.TROPHY_UPDATE, Clone(arg0_31.trophy))
+function var0_0.updateTrophy(arg0_32)
+	arg0_32:sendNotification(var0_0.TROPHY_UPDATE, Clone(arg0_32.trophy))
 end
 
-function var0_0.dispatchClaimRemind(arg0_32, arg1_32)
+function var0_0.dispatchClaimRemind(arg0_33, arg1_33)
 	pg.ToastMgr.GetInstance():ShowToast(pg.ToastMgr.TYPE_TROPHY, {
-		id = arg1_32
+		id = arg1_33
 	})
 end
 
-function var0_0.bindComplexTrophy(arg0_33)
-	for iter0_33, iter1_33 in pairs(arg0_33.trophyGroup) do
-		local var0_33 = iter1_33:getTrophyList()
+function var0_0.bindComplexTrophy(arg0_34)
+	for iter0_34, iter1_34 in pairs(arg0_34.trophyGroup) do
+		local var0_34 = iter1_34:getTrophyList()
 
-		for iter2_33, iter3_33 in pairs(var0_33) do
-			if iter3_33:isComplexTrophy() then
-				for iter4_33, iter5_33 in ipairs(iter3_33:getTargetID()) do
-					local var1_33 = arg0_33.trophy[iter5_33] or Trophy.generateDummyTrophy(iter5_33)
+		for iter2_34, iter3_34 in pairs(var0_34) do
+			if iter3_34:isComplexTrophy() then
+				for iter4_34, iter5_34 in ipairs(iter3_34:getTargetID()) do
+					local var1_34 = arg0_34.trophy[iter5_34] or Trophy.generateDummyTrophy(iter5_34)
 
-					iter3_33:bindTrophys(var1_33)
+					iter3_34:bindTrophys(var1_34)
 				end
 			end
 		end
 	end
 end
 
-function var0_0.bindTrophyGroup(arg0_34)
-	local var0_34 = pg.medal_template
+function var0_0.bindTrophyGroup(arg0_35)
+	local var0_35 = pg.medal_template
 
-	for iter0_34, iter1_34 in ipairs(var0_34.all) do
-		if var0_34[iter1_34].hide == Trophy.ALWAYS_SHOW then
-			local var1_34 = math.floor(iter1_34 / 10)
+	for iter0_35, iter1_35 in ipairs(var0_35.all) do
+		if var0_35[iter1_35].hide == Trophy.ALWAYS_SHOW then
+			local var1_35 = math.floor(iter1_35 / 10)
 
-			if not arg0_34.trophyGroup[var1_34] then
-				arg0_34.trophyGroup[var1_34] = TrophyGroup.New(var1_34)
+			if not arg0_35.trophyGroup[var1_35] then
+				arg0_35.trophyGroup[var1_35] = TrophyGroup.New(var1_35)
 			end
 
-			local var2_34 = arg0_34.trophyGroup[var1_34]
+			local var2_35 = arg0_35.trophyGroup[var1_35]
 
-			if arg0_34.trophy[iter1_34] then
-				var2_34:addTrophy(arg0_34.trophy[iter1_34])
+			if arg0_35.trophy[iter1_35] then
+				var2_35:addTrophy(arg0_35.trophy[iter1_35])
 			else
-				var2_34:addDummyTrophy(iter1_34)
+				var2_35:addDummyTrophy(iter1_35)
 			end
 		end
 	end
 
-	for iter2_34, iter3_34 in pairs(arg0_34.trophyGroup) do
-		iter3_34:sortGroup()
+	for iter2_35, iter3_35 in pairs(arg0_35.trophyGroup) do
+		iter3_35:sortGroup()
 	end
 
-	table.sort(arg0_34.trophyGroup, function(arg0_35, arg1_35)
-		return arg0_35:getGroupID() < arg1_35:getGroupID()
+	table.sort(arg0_35.trophyGroup, function(arg0_36, arg1_36)
+		return arg0_36:getGroupID() < arg1_36:getGroupID()
 	end)
 end
 

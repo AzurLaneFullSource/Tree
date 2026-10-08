@@ -40,10 +40,9 @@ function var0_0.OnFirstFlush(arg0_3)
 end
 
 function var0_0.OnUpdateFlush(arg0_7)
-	local var0_7 = pg.activity_template[arg0_7.shopId].config_client.pt_id
-	local var1_7 = getProxy(PlayerProxy):getData()
+	local var0_7 = getProxy(ShopsProxy):getActivityShopById(arg0_7.shopId):GetResList()[1]
 
-	arg0_7.resNum.text = var1_7:getResource(var0_7)
+	arg0_7.resNum.text = var0_7:getOwnedCount()
 end
 
 return var0_0

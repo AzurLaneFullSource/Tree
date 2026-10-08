@@ -74,20 +74,7 @@ function var0_0.OnUpdatePlayer(arg0_11)
 end
 
 function var0_0.GetResDataList(arg0_12)
-	local var0_12 = {}
-	local var1_12 = arg0_12.shop:GetResList()
-
-	for iter0_12, iter1_12 in ipairs(var1_12) do
-		local var2_12 = arg0_12.player:getResource(iter1_12)
-
-		table.insert(var0_12, {
-			type = DROP_TYPE_RESOURCE,
-			resID = iter1_12,
-			cnt = var2_12
-		})
-	end
-
-	return var0_12
+	return arg0_12.shop:GetResList()
 end
 
 function var0_0.OnSetUp(arg0_13)
@@ -97,6 +84,7 @@ end
 
 function var0_0.OnUpdateAll(arg0_14)
 	arg0_14:InitCommodities()
+	arg0_14:RefreshResItemList()
 end
 
 function var0_0.OnUpdateCommodity(arg0_15, arg1_15)
@@ -115,6 +103,8 @@ function var0_0.OnUpdateCommodity(arg0_15, arg1_15)
 
 		var0_15:update(arg1_15, nil, var2_15, var3_15)
 	end
+
+	arg0_15:RefreshResItemList()
 end
 
 function var0_0.SetResIcon(arg0_16, arg1_16)

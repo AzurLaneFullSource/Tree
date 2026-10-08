@@ -73,7 +73,10 @@ function var0_0.didEnter(arg0_3)
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 16)
 	end)
 
-	local var1_3 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_PT_BUFF)
+	local var1_3 = getProxy(ActivityProxy):getActivitiesByTypes({
+		ActivityConst.ACTIVITY_TYPE_PT_BUFF,
+		ActivityConst.ACTIVITY_TYPE_PT_BUFF_MARK2
+	})[1]
 
 	arg0_3:InitFacilityCross(arg0_3._map, arg0_3._upper, "leijipt", function()
 		arg0_3:emit(MusicFestivalMediator.GO_SCENE, SCENE.ACTIVITY, {
@@ -121,7 +124,10 @@ function var0_0.UpdateView(arg0_14)
 
 	setActive(arg0_14.modelTip, var6_14)
 
-	local var7_14 = var0_14:getActivityByType(ActivityConst.ACTIVITY_TYPE_PT_BUFF)
+	local var7_14 = var0_14:getActivitiesByTypes({
+		ActivityConst.ACTIVITY_TYPE_PT_BUFF,
+		ActivityConst.ACTIVITY_TYPE_PT_BUFF_MARK2
+	})[1]
 	local var8_14 = arg0_14.upper_leijipt:Find("tip")
 	local var9_14 = var7_14:readyToAchieve()
 
@@ -212,7 +218,10 @@ function var0_0.IsShowMainTip(arg0_20)
 	assert(var1_20)
 
 	local function var2_20()
-		local var0_21 = var0_20:getActivityByType(ActivityConst.ACTIVITY_TYPE_PT_BUFF)
+		local var0_21 = var0_20:getActivitiesByTypes({
+			ActivityConst.ACTIVITY_TYPE_PT_BUFF,
+			ActivityConst.ACTIVITY_TYPE_PT_BUFF_MARK2
+		})[1]
 
 		return var0_21 and not var0_21:isEnd() and var0_21:readyToAchieve()
 	end

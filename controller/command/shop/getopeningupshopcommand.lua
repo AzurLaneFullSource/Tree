@@ -161,176 +161,165 @@ end
 
 function var0_0.GetActivityShops(arg0_29, arg1_29)
 	local var0_29 = {}
-	local var1_29 = arg0_29.shopsProxy:getActivityShops()
+	local var1_29 = {}
 
-	if not var1_29 or #var1_29 == 0 then
-		table.insert(var0_29, function(arg0_30)
-			arg0_29:sendNotification(GAME.GET_ACTIVITY_SHOP, {
-				callback = arg0_30
-			})
-		end)
-	else
-		table.insert(var0_29, function(arg0_31)
-			arg0_31(var1_29)
-		end)
+	for iter0_29, iter1_29 in ipairs(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHOP)) do
+		table.insert(var0_29, arg0_29.shopsProxy:getActivityShopById(iter1_29.id))
+
+		var1_29[iter1_29.id] = iter1_29:getStartTime()
 	end
 
-	table.insert(var0_29, function(arg0_32, arg1_32)
-		if arg1_32 and table.getCount(arg1_32) > 0 then
-			arg0_29.shopList[ShopConst.TYPE_ACTIVITY] = {}
+	if #var0_29 > 0 then
+		arg0_29.shopList[ShopConst.TYPE_ACTIVITY] = {}
 
-			for iter0_32, iter1_32 in pairs(arg1_32) do
-				if not iter1_32:IsHide() then
-					table.insert(arg0_29.shopList[ShopConst.TYPE_ACTIVITY], iter1_32)
-				end
-			end
-
-			local var0_32 = getProxy(ActivityProxy):getRawData()
-
-			table.sort(arg0_29.shopList[ShopConst.TYPE_ACTIVITY], CompareFuncs({
-				function(arg0_33)
-					return var0_32[arg0_33.activityId]:getStartTime()
-				end
-			}))
+		for iter2_29, iter3_29 in ipairs(var0_29) do
+			table.insert(arg0_29.shopList[ShopConst.TYPE_ACTIVITY], iter3_29)
 		end
 
-		arg0_32()
-	end)
-	seriesAsync(var0_29, arg1_29)
+		local var2_29 = getProxy(ActivityProxy):getRawData()
+
+		table.sort(arg0_29.shopList[ShopConst.TYPE_ACTIVITY], CompareFuncs({
+			function(arg0_30)
+				return var1_29[arg0_30.activityId]
+			end
+		}))
+	end
+
+	arg1_29()
 end
 
-function var0_0.GetMetaShops(arg0_34, arg1_34)
-	local var0_34 = {}
-	local var1_34 = arg0_34.shopsProxy:GetMetaShop()
+function var0_0.GetMetaShops(arg0_31, arg1_31)
+	local var0_31 = {}
+	local var1_31 = arg0_31.shopsProxy:GetMetaShop()
 
-	if not var1_34 then
-		table.insert(var0_34, function(arg0_35)
-			local var0_35 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHOP_SELECTABLE)
+	if not var1_31 then
+		table.insert(var0_31, function(arg0_32)
+			local var0_32 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHOP_SELECTABLE)
 
-			for iter0_35, iter1_35 in ipairs(var0_35) do
-				if iter1_35 and not iter1_35:isEnd() and iter1_35:getConfig("config_id") == 1 then
-					local var1_35 = MetaShop.New(iter1_35)
+			for iter0_32, iter1_32 in ipairs(var0_32) do
+				if iter1_32 and not iter1_32:isEnd() and iter1_32:getConfig("config_id") == 1 then
+					local var1_32 = MetaShop.New(iter1_32)
 
-					arg0_34.shopsProxy:AddMetaShop(var1_35)
+					arg0_31.shopsProxy:AddMetaShop(var1_32)
 
 					break
 				end
 			end
 
-			arg0_35(arg0_34.shopsProxy:GetMetaShop())
+			arg0_32(arg0_31.shopsProxy:GetMetaShop())
 		end)
 	else
-		table.insert(var0_34, function(arg0_36)
-			arg0_36(var1_34)
+		table.insert(var0_31, function(arg0_33)
+			arg0_33(var1_31)
 		end)
 	end
 
-	table.insert(var0_34, function(arg0_37, arg1_37)
-		if arg1_37 then
-			arg0_34.shopList[ShopConst.TYPE_META] = {}
+	table.insert(var0_31, function(arg0_34, arg1_34)
+		if arg1_34 then
+			arg0_31.shopList[ShopConst.TYPE_META] = {}
 
-			table.insert(arg0_34.shopList[ShopConst.TYPE_META], arg1_37)
+			table.insert(arg0_31.shopList[ShopConst.TYPE_META], arg1_34)
 		end
 
-		arg0_37()
+		arg0_34()
 	end)
-	seriesAsync(var0_34, arg1_34)
+	seriesAsync(var0_31, arg1_31)
 end
 
-function var0_0.GetMedalShops(arg0_38, arg1_38)
-	local var0_38 = {}
-	local var1_38 = arg0_38.shopsProxy:GetMedalShop()
+function var0_0.GetMedalShops(arg0_35, arg1_35)
+	local var0_35 = {}
+	local var1_35 = arg0_35.shopsProxy:GetMedalShop()
 
-	if not var1_38 then
-		table.insert(var0_38, function(arg0_39)
-			arg0_38:sendNotification(GAME.GET_MEDALSHOP, {
-				callback = arg0_39
+	if not var1_35 then
+		table.insert(var0_35, function(arg0_36)
+			arg0_35:sendNotification(GAME.GET_MEDALSHOP, {
+				callback = arg0_36
 			})
 		end)
 	else
-		table.insert(var0_38, function(arg0_40)
-			arg0_40(var1_38)
+		table.insert(var0_35, function(arg0_37)
+			arg0_37(var1_35)
 		end)
 	end
 
-	table.insert(var0_38, function(arg0_41, arg1_41)
-		if arg1_41 then
-			arg0_38.shopList[ShopConst.TYPE_MEDAL] = {}
+	table.insert(var0_35, function(arg0_38, arg1_38)
+		if arg1_38 then
+			arg0_35.shopList[ShopConst.TYPE_MEDAL] = {}
 
-			table.insert(arg0_38.shopList[ShopConst.TYPE_MEDAL], arg1_41)
+			table.insert(arg0_35.shopList[ShopConst.TYPE_MEDAL], arg1_38)
 		end
 
-		arg0_41()
+		arg0_38()
 	end)
-	seriesAsync(var0_38, arg1_38)
+	seriesAsync(var0_35, arg1_35)
 end
 
-function var0_0.GetMiniShops(arg0_42, arg1_42)
+function var0_0.GetMiniShops(arg0_39, arg1_39)
 	if LOCK_MINIGAME_HALL then
-		if arg1_42 then
-			arg1_42()
+		if arg1_39 then
+			arg1_39()
 		end
 
 		return
 	end
 
-	local var0_42 = {}
-	local var1_42 = arg0_42.shopsProxy:getMiniShop()
+	local var0_39 = {}
+	local var1_39 = arg0_39.shopsProxy:getMiniShop()
 
-	if not var1_42 then
-		table.insert(var0_42, function(arg0_43)
-			arg0_42:sendNotification(GAME.GET_MINI_GAME_SHOP, {
-				callback = arg0_43
+	if not var1_39 then
+		table.insert(var0_39, function(arg0_40)
+			arg0_39:sendNotification(GAME.GET_MINI_GAME_SHOP, {
+				callback = arg0_40
 			})
 		end)
 	else
-		table.insert(var0_42, function(arg0_44)
-			if var1_42:checkShopFlash() then
-				arg0_42:sendNotification(GAME.MINI_GAME_SHOP_FLUSH, {
-					callback = arg0_44
+		table.insert(var0_39, function(arg0_41)
+			if var1_39:checkShopFlash() then
+				arg0_39:sendNotification(GAME.MINI_GAME_SHOP_FLUSH, {
+					callback = arg0_41
 				})
 			else
-				arg0_44(var1_42)
+				arg0_41(var1_39)
 			end
 		end)
 	end
 
-	table.insert(var0_42, function(arg0_45, arg1_45)
-		arg0_42.shopList[ShopConst.TYPE_MINI_GAME] = {}
+	table.insert(var0_39, function(arg0_42, arg1_42)
+		arg0_39.shopList[ShopConst.TYPE_MINI_GAME] = {}
 
-		table.insert(arg0_42.shopList[ShopConst.TYPE_MINI_GAME], arg1_45)
-		arg0_45()
+		table.insert(arg0_39.shopList[ShopConst.TYPE_MINI_GAME], arg1_42)
+		arg0_42()
 	end)
-	seriesAsync(var0_42, arg1_42)
+	seriesAsync(var0_39, arg1_39)
 end
 
-function var0_0.GetQuotaShop(arg0_46, arg1_46)
+function var0_0.GetQuotaShop(arg0_43, arg1_43)
 	if LOCK_QUOTA_SHOP then
-		arg1_46()
+		arg1_43()
 
 		return
 	end
 
-	local var0_46 = {}
-	local var1_46 = arg0_46.shopsProxy:getQuotaShop()
+	local var0_43 = {}
+	local var1_43 = arg0_43.shopsProxy:getQuotaShop()
 
-	if not var1_46 then
-		var1_46 = QuotaShop.New()
+	if not var1_43 then
+		var1_43 = QuotaShop.New()
 
-		arg0_46.shopsProxy:setQuotaShop(var1_46)
+		arg0_43.shopsProxy:setQuotaShop(var1_43)
 	else
-		table.insert(var0_46, function(arg0_47)
-			arg0_47(var1_46)
+		table.insert(var0_43, function(arg0_44)
+			arg0_44(var1_43)
 		end)
 	end
 
-	table.insert(var0_46, function(arg0_48)
-		arg0_46.shopList[ShopConst.TYPE_QUOTA] = {}
+	table.insert(var0_43, function(arg0_45)
+		arg0_43.shopList[ShopConst.TYPE_QUOTA] = {}
 
-		table.insert(arg0_46.shopList[ShopConst.TYPE_QUOTA], var1_46)
-		arg0_48()
+		table.insert(arg0_43.shopList[ShopConst.TYPE_QUOTA], var1_43)
+		arg0_45()
 	end)
-	seriesAsync(var0_46, arg1_46)
+	seriesAsync(var0_43, arg1_43)
 end
 
 return var0_0

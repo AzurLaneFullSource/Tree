@@ -92,6 +92,7 @@ function var0_0.GenBuffsForActivity(arg0_1)
 				table.insert(var0_1, ActivityBuff.New(arg0_1.id, iter1_10))
 			end
 		end,
+		[ActivityConst.ACTIVITY_TYPE_PT_BUFF_MARK2] = ActivityConst.ACTIVITY_TYPE_PT_BUFF,
 		[ActivityConst.ACTIVITY_TYPE_ATELIER_LINK] = function()
 			local var0_11 = arg0_1:GetSlots()
 

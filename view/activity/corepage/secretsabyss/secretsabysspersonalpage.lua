@@ -1,7 +1,7 @@
 local var0_0 = class("SecretsAbyssPersonalPage", import("view.activity.BackHills.OtherWorld.TerminalPersonalPage"))
 local var1_0 = "otherworld_personal_name"
 
-var0_0.BIND_EVENT_ACT_ID = 50094
+var0_0.BIND_EVENT_ACT_ID = 1000112
 var0_0.config = pg.roll_attr
 var0_0.NAME_ID = 1001
 var0_0.LV_ID = 1002

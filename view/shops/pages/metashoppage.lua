@@ -28,23 +28,7 @@ function var0_0.OnUpdateItems(arg0_7)
 end
 
 function var0_0.GetResDataList(arg0_8)
-	local var0_8 = {}
-	local var1_8 = arg0_8.shop:GetResList()
-
-	for iter0_8, iter1_8 in ipairs(var1_8) do
-		local var2_8 = (arg0_8.items[iter1_8] or Item.New({
-			count = 0,
-			id = iter1_8
-		})).count
-
-		table.insert(var0_8, {
-			type = DROP_TYPE_ITEM,
-			resID = iter1_8,
-			cnt = var2_8
-		})
-	end
-
-	return var0_8
+	return arg0_8.shop:GetResList()
 end
 
 function var0_0.RefreshUI(arg0_9)

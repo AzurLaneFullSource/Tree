@@ -417,7 +417,9 @@ function var0_0.showRewardInfo(arg0_24)
 		if var2_26 and not var2_26:isEnd() then
 			local var3_26 = var2_26:getConfig("config_client").pt_id
 			local var4_26 = _.detect(var1_26:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_RANK), function(arg0_27)
-				return arg0_27:getConfig("config_id") == var3_26
+				local var0_27 = arg0_27:GetPTDrop()
+
+				return var0_27.type == DROP_TYPE_RESOURCE and var0_27.id == var3_26
 			end):getData1()
 
 			if var4_26 >= 1500 then

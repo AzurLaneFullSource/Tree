@@ -6,9 +6,10 @@ function var0_0.OnInit(arg0_1)
 end
 
 function var0_0.OnFirstFlush(arg0_2)
-	local var0_2 = _.detect(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHOP), function(arg0_3)
-		return arg0_3:getConfig("config_client").pt_id == arg0_2.activity:getConfig("config_client").pt_id
-	end)
+	local var0_2 = getProxy(ActivityProxy):GetShopActivityByRes(Drop.New({
+		type = DROP_TYPE_RESOURCE,
+		id = arg0_2.activity:getConfig("config_client").pt_id
+	}))
 
 	onButton(arg0_2, arg0_2.shop, function()
 		arg0_2:emit(ActivityMediator.GO_SHOPS_LAYER, {

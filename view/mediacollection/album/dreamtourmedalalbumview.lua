@@ -2,7 +2,6 @@ local var0_0 = class("DreamTourMedalAlbumView", import("view.mediaCollection.alb
 
 var0_0.GROUP_ID = 50659
 var0_0.MEDAL_COUNT = 8
-var0_0.HELP_TIPS = "help_starLightAlbum"
 
 function var0_0.getUIName(arg0_1)
 	return "MedalAlbumDreamTourPage"

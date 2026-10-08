@@ -362,20 +362,28 @@ function var0_0.updateStageView(arg0_33, arg1_33)
 		local var6_33 = getProxy(ActivityProxy)
 
 		for iter0_33 = #var5_33, 1, -1 do
-			local var7_33 = var6_33:getActivityById(var5_33[iter0_33][1])
+			local var7_33, var8_33, var9_33, var10_33 = unpack(var5_33)
+			local var11_33 = var6_33:getActivityById(var7_33)
 
-			if var7_33 and not var7_33:isEnd() then
-				table.insert(var4_33, 1, {
-					2,
-					id2ItemId(var5_33[iter0_33][2])
-				})
+			if var11_33 and not var11_33:isEnd() then
+				if var8_33 == DROP_TYPE_RESOURCE then
+					table.insert(var4_33, 1, {
+						DROP_TYPE_ITEM,
+						id2ItemId(var9_33)
+					})
+				else
+					table.insert(var4_33, 1, {
+						var8_33,
+						var9_33
+					})
+				end
 			end
 		end
 	end
 
-	local var8_33 = UIItemList.New(arg0_33._spoilsContainer, arg0_33._item)
+	local var12_33 = UIItemList.New(arg0_33._spoilsContainer, arg0_33._item)
 
-	var8_33:make(function(arg0_34, arg1_34, arg2_34)
+	var12_33:make(function(arg0_34, arg1_34, arg2_34)
 		local var0_34 = arg2_34
 		local var1_34 = var4_33[arg1_34 + 1]
 		local var2_34 = {
@@ -417,9 +425,9 @@ function var0_0.updateStageView(arg0_33, arg1_33)
 			end
 		end, SFX_PANEL)
 	end)
-	var8_33:align(math.min(#var4_33, 6))
+	var12_33:align(math.min(#var4_33, 6))
 
-	local function var9_33(arg0_37, arg1_37)
+	local function var13_33(arg0_37, arg1_37)
 		if type(arg0_37) == "table" then
 			setActive(arg1_37, true)
 
@@ -431,28 +439,28 @@ function var0_0.updateStageView(arg0_33, arg1_33)
 		end
 	end
 
-	local var10_33 = {
+	local var14_33 = {
 		arg0_33._goals:Find("goal_tpl"),
 		arg0_33._goals:Find("goal_sink"),
 		arg0_33._goals:Find("goal_time")
 	}
-	local var11_33 = {
+	local var15_33 = {
 		var0_33.objective_1,
 		var0_33.objective_2,
 		var0_33.objective_3
 	}
-	local var12_33 = 1
+	local var16_33 = 1
 
-	for iter1_33, iter2_33 in ipairs(var11_33) do
+	for iter1_33, iter2_33 in ipairs(var15_33) do
 		if type(iter2_33) ~= "string" then
-			var9_33(iter2_33, var10_33[var12_33])
+			var13_33(iter2_33, var14_33[var16_33])
 
-			var12_33 = var12_33 + 1
+			var16_33 = var16_33 + 1
 		end
 	end
 
-	for iter3_33 = var12_33, #var10_33 do
-		var9_33("", var10_33[iter3_33])
+	for iter3_33 = var16_33, #var14_33 do
+		var13_33("", var14_33[iter3_33])
 	end
 end
 

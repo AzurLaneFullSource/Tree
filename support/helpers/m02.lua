@@ -5150,53 +5150,87 @@ function StringStartsWith(arg0_374, arg1_374)
 	return string.sub(arg0_374, 1, string.len(arg1_374)) == arg1_374
 end
 
-function addSubLayer(arg0_375, arg1_375, arg2_375, arg3_375, arg4_375)
-	if arg2_375 then
-		while arg1_375.parent do
-			arg1_375 = arg1_375.parent
+function GetActTimeDesc(arg0_375, arg1_375, arg2_375, arg3_375, arg4_375, arg5_375, arg6_375, arg7_375, arg8_375)
+	if arg0_375 then
+		arg1_375 = false
+	end
+
+	if arg1_375 then
+		return i18n("act_remaster_time_desc", arg2_375, arg3_375, arg4_375, arg5_375)
+	else
+		local var0_375 = arg6_375
+		local var1_375 = arg7_375
+		local var2_375 = arg8_375
+		local var3_375 = var0_375
+		local var4_375 = var1_375
+		local var5_375 = var2_375
+
+		if var0_375 == "23" and var1_375 == "59" and var2_375 == "59" then
+			var3_375 = "24"
+
+			local var6_375 = "0"
+			local var7_375 = "0"
+		end
+
+		if arg0_375 then
+			if var0_375 == "00" and var1_375 == "00" and var2_375 == "00" then
+				return i18n("act_remaster_time_desc_with_hours_without_ch", arg2_375, arg3_375, arg4_375, arg5_375 - 1, "23", "59", "59")
+			else
+				return i18n("act_remaster_time_desc_with_hours_without_ch", arg2_375, arg3_375, arg4_375, arg5_375, var0_375, var1_375, var2_375)
+			end
+		else
+			return i18n("act_remaster_time_desc_with_hours", arg2_375, arg3_375, arg4_375, arg5_375, var3_375)
+		end
+	end
+end
+
+function addSubLayer(arg0_376, arg1_376, arg2_376, arg3_376, arg4_376)
+	if arg2_376 then
+		while arg1_376.parent do
+			arg1_376 = arg1_376.parent
 		end
 	end
 
-	local var0_375 = {
-		parentContext = arg1_375,
-		context = arg0_375,
-		callback = arg3_375
+	local var0_376 = {
+		parentContext = arg1_376,
+		context = arg0_376,
+		callback = arg3_376
 	}
 
-	var0_375 = arg4_375 and table.merge(var0_375, arg4_375) or var0_375
+	var0_376 = arg4_376 and table.merge(var0_376, arg4_376) or var0_376
 
-	pg.m02:sendNotification(GAME.LOAD_LAYERS, var0_375)
+	pg.m02:sendNotification(GAME.LOAD_LAYERS, var0_376)
 end
 
-function PackIntToString(arg0_376, arg1_376)
-	return tostring(arg0_376) .. "," .. tostring(arg1_376)
+function PackIntToString(arg0_377, arg1_377)
+	return tostring(arg0_377) .. "," .. tostring(arg1_377)
 end
 
-function UnpackIntFromString(arg0_377)
-	local var0_377, var1_377 = string.match(arg0_377, "(%-?%d+),(%-?%d+)")
+function UnpackIntFromString(arg0_378)
+	local var0_378, var1_378 = string.match(arg0_378, "(%-?%d+),(%-?%d+)")
 
-	return tonumber(var0_377), tonumber(var1_377)
+	return tonumber(var0_378), tonumber(var1_378)
 end
 
-function getRandomIdxByWeights(arg0_378)
-	local var0_378 = 0
+function getRandomIdxByWeights(arg0_379)
+	local var0_379 = 0
 
-	for iter0_378, iter1_378 in ipairs(arg0_378) do
-		var0_378 = var0_378 + iter1_378
+	for iter0_379, iter1_379 in ipairs(arg0_379) do
+		var0_379 = var0_379 + iter1_379
 	end
 
-	assert(var0_378 ~= 0, "总权重为0")
+	assert(var0_379 ~= 0, "总权重为0")
 
-	local var1_378 = math.random(1, var0_378)
-	local var2_378 = 0
+	local var1_379 = math.random(1, var0_379)
+	local var2_379 = 0
 
-	for iter2_378, iter3_378 in ipairs(arg0_378) do
-		var2_378 = var2_378 + iter3_378
+	for iter2_379, iter3_379 in ipairs(arg0_379) do
+		var2_379 = var2_379 + iter3_379
 
-		if var1_378 <= var2_378 then
-			return iter2_378
+		if var1_379 <= var2_379 then
+			return iter2_379
 		end
 	end
 
-	return #arg0_378
+	return #arg0_379
 end

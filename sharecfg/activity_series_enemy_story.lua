@@ -289,7 +289,7 @@ pg.base.activity_series_enemy_story = {}
 		change_background = "",
 		en_name = "",
 		story = "JIDIFENGBAO7",
-		pos_y = "-0.343750",
+		pos_y = "-0.34375",
 		change_bgm = "",
 		line = 6,
 		params = "",
@@ -410,7 +410,7 @@ pg.base.activity_series_enemy_story = {}
 		change_background = "",
 		en_name = "",
 		story = "JIDIFENGBAO12",
-		pos_y = "0.656250",
+		pos_y = "0.65625",
 		change_bgm = "",
 		line = 0,
 		params = "",
@@ -766,7 +766,7 @@ pg.base.activity_series_enemy_story = {}
 		change_background = "",
 		en_name = "",
 		story = "HUANYINLAIDAOTONGXINXUEYUAN6",
-		pos_y = "-0.343750",
+		pos_y = "-0.34375",
 		change_bgm = "",
 		line = 0,
 		params = "",
@@ -1065,7 +1065,7 @@ pg.base.activity_series_enemy_story = {}
 		change_background = "bg_yumia_story_mode_1",
 		en_name = "",
 		story = "YOUMIYAGUANQIAPIAN1",
-		pos_y = "0.007130",
+		pos_y = "0.00713",
 		change_bgm = "Yumia-az-theme-pv",
 		line = 0,
 		params = "",
@@ -1113,7 +1113,7 @@ pg.base.activity_series_enemy_story = {}
 		change_background = "bg_yumia_story_mode_2",
 		en_name = "",
 		story = "YOUMIYAGUANQIAPIAN3",
-		pos_y = "-0.285000",
+		pos_y = "-0.285",
 		change_bgm = "Yumia-1",
 		line = 0,
 		params = "",
@@ -1130,7 +1130,7 @@ pg.base.activity_series_enemy_story = {}
 		}
 	}
 	pg.base.activity_series_enemy_story[51] = {
-		pos_x = "-0.326510",
+		pos_x = "-0.32651",
 		name = "EP1-1 Sea of Beginnings",
 		label_key = "",
 		type = 1,
@@ -1180,7 +1180,7 @@ pg.base.activity_series_enemy_story = {}
 		}
 	}
 	pg.base.activity_series_enemy_story[53] = {
-		pos_x = "0.113000",
+		pos_x = "0.113",
 		name = "EP1-3 The Rocky Beach",
 		label_key = "",
 		type = 1,
@@ -1188,7 +1188,7 @@ pg.base.activity_series_enemy_story = {}
 		change_background = "bg_yumia_story_mode_2",
 		en_name = "",
 		story = "YOUMIYAGUANQIAPIAN6",
-		pos_y = "-0.128000",
+		pos_y = "-0.128",
 		change_bgm = "Yumia-1",
 		line = 0,
 		params = "",
@@ -1213,7 +1213,7 @@ pg.base.activity_series_enemy_story = {}
 		change_background = "bg_yumia_story_mode_2",
 		en_name = "",
 		story = "YOUMIYAGUANQIAPIAN7",
-		pos_y = "-0.234630",
+		pos_y = "-0.23463",
 		change_bgm = "Yumia-1",
 		line = 0,
 		params = "",
@@ -1447,7 +1447,7 @@ pg.base.activity_series_enemy_story = {}
 		change_background = "bg_yumia_story_mode_3",
 		en_name = "",
 		story = "YOUMIYAGUANQIAPIAN16",
-		pos_y = "0.250000",
+		pos_y = "0.25",
 		change_bgm = "Yumia-7",
 		line = 0,
 		params = "",
@@ -1999,7 +1999,7 @@ pg.base.activity_series_enemy_story = {}
 		change_background = "",
 		en_name = "",
 		story = "",
-		pos_y = "-0.229630",
+		pos_y = "-0.22963",
 		change_bgm = "",
 		line = 0,
 		params = "",
@@ -2049,7 +2049,7 @@ pg.base.activity_series_enemy_story = {}
 		change_background = "",
 		en_name = "",
 		story = "",
-		pos_y = "-0.104630",
+		pos_y = "-0.10463",
 		change_bgm = "",
 		line = 0,
 		params = "",
@@ -2199,7 +2199,7 @@ pg.base.activity_series_enemy_story = {}
 		change_background = "",
 		en_name = "",
 		story = "",
-		pos_y = "0.195370",
+		pos_y = "0.19537",
 		change_bgm = "",
 		line = 0,
 		params = "",
@@ -2224,7 +2224,7 @@ pg.base.activity_series_enemy_story = {}
 		change_background = "",
 		en_name = "",
 		story = "",
-		pos_y = "-0.004630",
+		pos_y = "-0.00463",
 		change_bgm = "",
 		line = 0,
 		params = "",
@@ -2266,7 +2266,7 @@ pg.base.activity_series_enemy_story = {}
 		}
 	}
 	pg.base.activity_series_enemy_story[95] = {
-		pos_x = "0.137500",
+		pos_x = "0.1375",
 		name = "Great Rift Valley",
 		label_key = "",
 		type = 4,
@@ -2299,7 +2299,7 @@ pg.base.activity_series_enemy_story = {}
 		change_background = "",
 		en_name = "",
 		story = "",
-		pos_y = "-0.170370",
+		pos_y = "-0.17037",
 		change_bgm = "",
 		line = 0,
 		params = "",
@@ -2445,7 +2445,7 @@ pg.base.activity_series_enemy_story = {}
 		change_background = "",
 		en_name = "",
 		story = "",
-		pos_y = "-0.229630",
+		pos_y = "-0.22963",
 		change_bgm = "",
 		line = 0,
 		params = "",
@@ -2491,7 +2491,7 @@ pg.base.activity_series_enemy_story = {}
 		change_background = "",
 		en_name = "",
 		story = "",
-		pos_y = "-0.104630",
+		pos_y = "-0.10463",
 		change_bgm = "",
 		line = 0,
 		params = "",
@@ -2631,7 +2631,7 @@ end)()
 		change_background = "",
 		en_name = "",
 		story = "",
-		pos_y = "0.195370",
+		pos_y = "0.19537",
 		change_bgm = "",
 		line = 0,
 		params = "",
@@ -2654,7 +2654,7 @@ end)()
 		change_background = "",
 		en_name = "",
 		story = "",
-		pos_y = "-0.004630",
+		pos_y = "-0.00463",
 		change_bgm = "",
 		line = 0,
 		params = "",
@@ -2692,7 +2692,7 @@ end)()
 		}
 	}
 	pg.base.activity_series_enemy_story[113] = {
-		pos_x = "0.137500",
+		pos_x = "0.1375",
 		name = "Great Rift Valley",
 		label_key = "",
 		type = 4,
@@ -2723,7 +2723,7 @@ end)()
 		change_background = "",
 		en_name = "",
 		story = "",
-		pos_y = "-0.170370",
+		pos_y = "-0.17037",
 		change_bgm = "",
 		line = 0,
 		params = "",
@@ -3074,7 +3074,7 @@ end)()
 		}
 	}
 	pg.base.activity_series_enemy_story[129] = {
-		pos_x = "-0.200000",
+		pos_x = "-0.2",
 		name = "EP2-5 Relic of the Past",
 		label_key = "",
 		type = 1,
@@ -3124,7 +3124,7 @@ end)()
 		}
 	}
 	pg.base.activity_series_enemy_story[131] = {
-		pos_x = "-0.268750",
+		pos_x = "-0.26875",
 		name = "EP2-7 Frostheim",
 		label_key = "",
 		type = 1,
@@ -3257,7 +3257,7 @@ end)()
 		change_background = "bg_masaina_story_mode_4",
 		en_name = "",
 		story = "QIYUANXIADEMIMI17",
-		pos_y = "0.050000",
+		pos_y = "0.05",
 		change_bgm = "story-enzecheng-theme",
 		line = 0,
 		params = "",
@@ -3357,7 +3357,7 @@ end)()
 		change_background = "",
 		en_name = "",
 		story = "QIYUANXIADEMIMI21",
-		pos_y = "-0.195370",
+		pos_y = "-0.19537",
 		change_bgm = "story-enzecheng-theme",
 		line = 0,
 		params = "",
@@ -3474,7 +3474,7 @@ end)()
 		}
 	}
 	pg.base.activity_series_enemy_story[145] = {
-		pos_x = "0.350000",
+		pos_x = "0.35",
 		name = "EP4-9 Realm of Slumber",
 		label_key = "",
 		type = 1,
@@ -3768,7 +3768,7 @@ end)()
 		change_background = "",
 		en_name = "DerelictusHold",
 		story = "",
-		pos_y = "0.242000",
+		pos_y = "0.242",
 		change_bgm = "",
 		line = 0,
 		params = "",
@@ -4046,7 +4046,7 @@ end)()
 		}
 	}
 	pg.base.activity_series_enemy_story[169] = {
-		pos_x = "-0.062500",
+		pos_x = "-0.0625",
 		name = "VR-2",
 		label_key = "",
 		type = 1,
@@ -4074,7 +4074,7 @@ end)()
 		}
 	}
 	pg.base.activity_series_enemy_story[170] = {
-		pos_x = "-0.218750",
+		pos_x = "-0.21875",
 		name = "VR-3",
 		label_key = "",
 		type = 1,
@@ -4133,7 +4133,7 @@ end)()
 		}
 	}
 	pg.base.activity_series_enemy_story[172] = {
-		pos_x = "-0.193750",
+		pos_x = "-0.19375",
 		name = "VR-5",
 		pos_y = "0.387037",
 		type = 1,

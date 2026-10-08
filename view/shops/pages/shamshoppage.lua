@@ -13,22 +13,7 @@ function var0_0.OnUpdateItems(arg0_3)
 end
 
 function var0_0.GetResDataList(arg0_4)
-	local var0_4 = {}
-	local var1_4 = arg0_4.shop:GetResList()
-
-	for iter0_4, iter1_4 in ipairs(var1_4) do
-		local var2_4
-		local var3_4 = arg0_4.items[ChapterConst.ShamMoneyItem]
-		local var4_4 = not var3_4 and 0 or var3_4.count
-
-		table.insert(var0_4, {
-			type = DROP_TYPE_ITEM,
-			resID = iter1_4,
-			cnt = var4_4
-		})
-	end
-
-	return var0_4
+	return arg0_4.shop:GetResList()
 end
 
 function var0_0.OnUpdateCommodity(arg0_5, arg1_5)

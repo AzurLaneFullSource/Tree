@@ -11,7 +11,6 @@ var0_0.MINI_GAME_ACT = 8
 
 function var0_0.OnInit(arg0_1)
 	arg0_1.shopProxy = getProxy(ShopsProxy)
-	arg0_1.playerProxy = getProxy(PlayerProxy)
 	arg0_1.taskProxy = getProxy(TaskProxy)
 	arg0_1.shopProxy = getProxy(ShopsProxy)
 	arg0_1._tasksTF = arg0_1._tf:Find("AD/tasks")
@@ -38,8 +37,8 @@ end
 function var0_0.OnDataSetting(arg0_2)
 	arg0_2.config = arg0_2.activity:getConfig("config_client")
 	arg0_2.taskConfig = arg0_2.config.taskConfig
-	arg0_2.ptId = arg0_2.config.ptId
-	arg0_2.uPtId = arg0_2.config.uPtId
+	arg0_2.ptDrop = arg0_2.activity:GetConfigClientPTDrop()
+	arg0_2.uptDrop = arg0_2.activity:GetConfigClientURPTDrop()
 	arg0_2.goodsId = arg0_2.config.goodsId
 	arg0_2.shopId = arg0_2.config.shopId
 	arg0_2.length = #arg0_2.goodsId + 1
@@ -314,8 +313,7 @@ function var0_0.GetGoodsResCnt(arg0_34, arg1_34)
 end
 
 function var0_0.UpdateExchangeStatus(arg0_35)
-	arg0_35.player = arg0_35.playerProxy:getData()
-	arg0_35.ptCount = arg0_35.player:getResource(arg0_35.uPtId)
+	arg0_35.ptCount = arg0_35.uptDrop:getOwnedCount()
 	arg0_35.restExchange = _.reduce(arg0_35.goodsId, 0, function(arg0_36, arg1_36)
 		return arg0_36 + arg0_35.actShop:GetCommodityById(arg1_36):GetPurchasableCnt()
 	end)

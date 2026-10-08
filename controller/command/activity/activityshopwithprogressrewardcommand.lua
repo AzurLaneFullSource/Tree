@@ -14,11 +14,16 @@ function var0_0.execute(arg0_1, arg1_1)
 			local var3_1 = getProxy(PlayerProxy):getData()
 			local var4_1 = pg.activity_shop_template[var0_1.arg1]
 			local var5_1 = var0_1.arg2 or 1
+			local var6_1 = Drop.New({
+				type = var4_1.resource_category,
+				id = var4_1.resource_type,
+				count = var4_1.resource_num * var5_1
+			})
 
-			if var3_1[id2res(var4_1.resource_type)] < var4_1.resource_num * var5_1 then
+			if var6_1:getOwnedCount() < var6_1.count then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
-				return
+				return true
 			end
 
 			if var4_1.commodity_type == 1 then
@@ -143,13 +148,19 @@ function var0_0.updateActivityData(arg0_5, arg1_5, arg2_5, arg3_5, arg4_5)
 			end
 
 			local var3_5 = pg.activity_shop_template[arg1_5.arg1]
-			local var4_5 = var3_5.resource_num * arg1_5.arg2
-			local var5_5 = var1_5:getData()
-
-			var5_5:consume({
-				[id2res(var3_5.resource_type)] = var4_5
+			local var4_5 = Drop.New({
+				type = var3_5.resource_category,
+				id = var3_5.resource_type,
+				count = var3_5.resource_num * arg1_5.arg2
 			})
-			var1_5:updatePlayer(var5_5)
+
+			if var4_5:getOwnedCount() < var4_5.count then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
+
+				return true
+			end
+
+			reducePlayerOwn(var4_5)
 		elseif arg1_5.cmd == 2 then
 			table.insert(arg3_5.data3_list, arg1_5.arg1)
 		end

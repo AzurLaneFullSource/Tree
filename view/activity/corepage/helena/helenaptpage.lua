@@ -50,7 +50,7 @@ function var0_0.OnFirstFlush(arg0_4)
 			targets = arg0_4.ptData.targets,
 			level = arg0_4.ptData.level,
 			count = arg0_4.ptData.count,
-			resId = arg0_4.ptData.resId,
+			resDrop = Drop.New(arg0_4.ptData:GetRes()),
 			unlockStamps = arg0_4.ptData:GetDayUnlockStamps()
 		})
 	end, SFX_PANEL)

@@ -164,59 +164,57 @@ function var0_0.UpdateSwitchMapButtons(arg0_8)
 	setActive(arg0_8.sceneParent.actExchangeShopBtn, not ActivityConst.HIDE_PT_PANELS and not inRemasterMap and arg0_8.sceneParent:IsActShopActive())
 
 	local var6_8 = arg0_8.contextData.map and getProxy(ActivityProxy):getActivityById(arg0_8.contextData.map:getConfig("on_activity")) or nil
-	local var7_8 = var6_8 and not var6_8:isEnd() and var6_8:GetConfigClientSetting("PTID")
+	local var7_8 = var6_8 and var6_8:GetConfigClientPTActivity() or nil
 
-	arg0_8.sceneParent:updatePtActivity(underscore.detect(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_RANK), function(arg0_13)
-		return arg0_13:getConfig("config_id") == var7_8
-	end))
+	arg0_8.sceneParent:updatePtActivity(var7_8)
 	setActive(arg0_8.sceneParent.ptTotal, not ActivityConst.HIDE_PT_PANELS and not inRemasterMap and var2_8 and arg0_8.sceneParent.ptActivity and not arg0_8.sceneParent.ptActivity:isEnd() and var0_8)
 	arg0_8.sceneParent:updateCountDown()
 end
 
-function var0_0.PlayEnterAnim(arg0_14)
-	local var0_14 = arg0_14.contextData.map
-	local var1_14 = arg0_14:getMaps()
+function var0_0.PlayEnterAnim(arg0_13)
+	local var0_13 = arg0_13.contextData.map
+	local var1_13 = arg0_13:getMaps()
 
-	if #var1_14 > 1 then
-		UIItemList.StaticAlign(arg0_14.mapSwitchList, arg0_14.mapSwitchList:GetChild(0), #var1_14, function(arg0_15, arg1_15, arg2_15)
-			if arg0_15 ~= UIItemList.EventUpdate then
+	if #var1_13 > 1 then
+		UIItemList.StaticAlign(arg0_13.mapSwitchList, arg0_13.mapSwitchList:GetChild(0), #var1_13, function(arg0_14, arg1_14, arg2_14)
+			if arg0_14 ~= UIItemList.EventUpdate then
 				return
 			end
 
-			local var0_15 = var1_14[arg1_15 + 1]
-			local var1_15, var2_15 = var0_15:isUnlock()
-			local var3_15 = getProxy(PlayerProxy):getRawData().id
-			local var4_15
+			local var0_14 = var1_13[arg1_14 + 1]
+			local var1_14, var2_14 = var0_14:isUnlock()
+			local var3_14 = getProxy(PlayerProxy):getRawData().id
+			local var4_14
 
-			if var1_15 then
-				var4_15 = PlayerPrefs.GetInt("MapFirstUnlock" .. var0_15.id .. "_" .. var3_15, 0) == 0
+			if var1_14 then
+				var4_14 = PlayerPrefs.GetInt("MapFirstUnlock" .. var0_14.id .. "_" .. var3_14, 0) == 0
 			end
 
-			setActive(arg2_15:Find("Unselect/Lock"), not var1_15 or var4_15)
+			setActive(arg2_14:Find("Unselect/Lock"), not var1_14 or var4_14)
 
-			if var4_15 then
-				quickPlayAnimation(arg2_15:Find("Unselect"), "anim_spfullui_unlock")
-				PlayerPrefs.SetInt("MapFirstUnlock" .. var0_15.id .. "_" .. var3_15, 1)
+			if var4_14 then
+				quickPlayAnimation(arg2_14:Find("Unselect"), "anim_spfullui_unlock")
+				PlayerPrefs.SetInt("MapFirstUnlock" .. var0_14.id .. "_" .. var3_14, 1)
 			end
 		end)
 	else
-		setActive(arg0_14._tf:Find("Battle/MapItems"), false)
+		setActive(arg0_13._tf:Find("Battle/MapItems"), false)
 	end
 end
 
-function var0_0.getMaps(arg0_16)
-	local var0_16 = arg0_16.contextData.map
-	local var1_16 = var0_16:isRemaster()
-	local var2_16
+function var0_0.getMaps(arg0_15)
+	local var0_15 = arg0_15.contextData.map
+	local var1_15 = var0_15:isRemaster()
+	local var2_15
 
-	if var1_16 then
-		var2_16 = getProxy(ChapterProxy):getRemasterMaps(var0_16.remasterId)
+	if var1_15 then
+		var2_15 = getProxy(ChapterProxy):getRemasterMaps(var0_15.remasterId)
 	else
-		var2_16 = getProxy(ChapterProxy):getMapsByActivities(var0_16:getConfig("on_activity"))
+		var2_15 = getProxy(ChapterProxy):getMapsByActivities(var0_15:getConfig("on_activity"))
 	end
 
-	return (_.select(var2_16, function(arg0_17)
-		return arg0_17:getMapType() ~= Map.ACTIVITY_HARD
+	return (_.select(var2_15, function(arg0_16)
+		return arg0_16:getMapType() ~= Map.ACTIVITY_HARD
 	end))
 end
 

@@ -62,13 +62,15 @@ end
 
 function var0_0.GetResDataList(arg0_9)
 	local var0_9 = {}
-	local var1_9 = arg0_9.player:getResource(PlayerConst.ResGold)
-
-	table.insert(var0_9, {
+	local var1_9 = Drop.New({
+		count = 0,
 		type = DROP_TYPE_RESOURCE,
-		resID = PlayerConst.ResGold,
-		cnt = var1_9
+		id = PlayerConst.ResGold
 	})
+
+	var1_9.count = var1_9:getOwnedCount()
+
+	table.insert(var0_9, var1_9)
 
 	return var0_9
 end

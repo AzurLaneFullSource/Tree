@@ -45,77 +45,80 @@ function var0_0.OnFirstFlush(arg0_3)
 
 		arg0_3:Switch(arg0_6)
 	end, SFX_PANEL)
-
-	arg0_3.inPhase2 = arg0_3.timeStamp and pg.TimeMgr.GetInstance():GetServerTime() - arg0_3.timeStamp > 0
-
-	triggerToggle(arg0_3.switchBtn, arg0_3.inPhase2)
+	arg0_3:CheckSwitch2Phase2()
 
 	if not IsNil(arg0_3.gotTag:Find("Text")) then
 		setText(arg0_3.gotTag:Find("Text"), i18n("avatarframe_got"))
 	end
 end
 
-function var0_0.OnUpdateFlush(arg0_7)
-	local var0_7 = arg0_7.activity.data1
-	local var1_7 = arg0_7.avatarConfig.target
+function var0_0.CheckSwitch2Phase2(arg0_7, ...)
+	arg0_7.inPhase2 = arg0_7.timeStamp and pg.TimeMgr.GetInstance():GetServerTime() - arg0_7.timeStamp > 0
 
-	var0_7 = var1_7 < var0_7 and var1_7 or var0_7
-
-	local var2_7 = var0_7 / var1_7
-
-	setText(arg0_7.cur, var2_7 >= 1 and var0_7 or var0_7)
-	setText(arg0_7.target, "/" .. var1_7)
-	setFillAmount(arg0_7.bar, var2_7)
-
-	local var3_7 = var1_7 <= var0_7
-	local var4_7 = arg0_7.activity.data2 >= 1
-
-	setActive(arg0_7.battleBtn, arg0_7.inPhase2 and not var3_7)
-	setActive(arg0_7.getBtn, arg0_7.inPhase2 and not var4_7 and var3_7)
-	setActive(arg0_7.gotBtn, arg0_7.inPhase2 and var4_7)
-	setActive(arg0_7.gotTag, arg0_7.inPhase2 and var4_7)
-	setActive(arg0_7.cur, not var4_7)
-	setActive(arg0_7.target, not var4_7)
+	triggerToggle(arg0_7.switchBtn, arg0_7.inPhase2)
 end
 
-function var0_0.Switch(arg0_8, arg1_8)
-	arg0_8.isSwitching = true
+function var0_0.OnUpdateFlush(arg0_8)
+	local var0_8 = arg0_8.activity.data1
+	local var1_8 = arg0_8.avatarConfig.target
 
-	setToggleEnabled(arg0_8.switchBtn, false)
+	var0_8 = var1_8 < var0_8 and var1_8 or var0_8
 
-	local var0_8
-	local var1_8
+	local var2_8 = var0_8 / var1_8
 
-	if arg1_8 then
-		var0_8, var1_8 = arg0_8.phases[1], arg0_8.phases[2]
+	setText(arg0_8.cur, var2_8 >= 1 and var0_8 or var0_8)
+	setText(arg0_8.target, "/" .. var1_8)
+	setFillAmount(arg0_8.bar, var2_8)
+
+	local var3_8 = var1_8 <= var0_8
+	local var4_8 = arg0_8.activity.data2 >= 1
+
+	setActive(arg0_8.battleBtn, arg0_8.inPhase2 and not var3_8)
+	setActive(arg0_8.getBtn, arg0_8.inPhase2 and not var4_8 and var3_8)
+	setActive(arg0_8.gotBtn, arg0_8.inPhase2 and var4_8)
+	setActive(arg0_8.gotTag, arg0_8.inPhase2 and var4_8)
+	setActive(arg0_8.cur, not var4_8)
+	setActive(arg0_8.target, not var4_8)
+end
+
+function var0_0.Switch(arg0_9, arg1_9)
+	arg0_9.isSwitching = true
+
+	setToggleEnabled(arg0_9.switchBtn, false)
+
+	local var0_9
+	local var1_9
+
+	if arg1_9 then
+		var0_9, var1_9 = arg0_9.phases[1], arg0_9.phases[2]
 	else
-		var0_8, var1_8 = arg0_8.phases[2], arg0_8.phases[1]
+		var0_9, var1_9 = arg0_9.phases[2], arg0_9.phases[1]
 	end
 
-	local var2_8 = GetOrAddComponent(var0_8, typeof(CanvasGroup))
-	local var3_8 = var0_8.localPosition
-	local var4_8 = var1_8.localPosition
+	local var2_9 = GetOrAddComponent(var0_9, typeof(CanvasGroup))
+	local var3_9 = var0_9.localPosition
+	local var4_9 = var1_9.localPosition
 
-	var1_8:SetAsLastSibling()
-	setActive(var0_8:Find("Image"), false)
-	LeanTween.moveLocal(go(var0_8), var4_8, 0.4):setOnComplete(System.Action(function()
-		setActive(var0_8:Find("label"), true)
+	var1_9:SetAsLastSibling()
+	setActive(var0_9:Find("Image"), false)
+	LeanTween.moveLocal(go(var0_9), var4_9, 0.4):setOnComplete(System.Action(function()
+		setActive(var0_9:Find("label"), true)
 	end))
-	LeanTween.value(go(var0_8), 0, 1, 0.4):setOnUpdate(System.Action_float(function(arg0_10)
-		var2_8.alpha = arg0_10
+	LeanTween.value(go(var0_9), 0, 1, 0.4):setOnUpdate(System.Action_float(function(arg0_11)
+		var2_9.alpha = arg0_11
 	end))
-	setActive(var1_8:Find("Image"), true)
+	setActive(var1_9:Find("Image"), true)
 
-	local var5_8 = GetOrAddComponent(var1_8, typeof(CanvasGroup))
+	local var5_9 = GetOrAddComponent(var1_9, typeof(CanvasGroup))
 
-	LeanTween.value(go(var1_8), 0, 1, 0.4):setOnUpdate(System.Action_float(function(arg0_11)
-		var5_8.alpha = arg0_11
+	LeanTween.value(go(var1_9), 0, 1, 0.4):setOnUpdate(System.Action_float(function(arg0_12)
+		var5_9.alpha = arg0_12
 	end))
-	setActive(var1_8:Find("label"), false)
-	LeanTween.moveLocal(go(var1_8), var3_8, 0.4):setOnComplete(System.Action(function()
-		arg0_8.isSwitching = nil
+	setActive(var1_9:Find("label"), false)
+	LeanTween.moveLocal(go(var1_9), var3_9, 0.4):setOnComplete(System.Action(function()
+		arg0_9.isSwitching = nil
 
-		setToggleEnabled(arg0_8.switchBtn, true)
+		setToggleEnabled(arg0_9.switchBtn, true)
 	end))
 end
 
