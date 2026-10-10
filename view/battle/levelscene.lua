@@ -503,7 +503,7 @@ function var0_0.updateActivityRes(arg0_38)
 	local var1_38 = findTF(arg0_38.ptTotal, "icon/Image")
 
 	if var0_38 and var1_38 and arg0_38.ptActivity then
-		setText(var0_38, "x" .. arg0_38.ptActivity.data1)
+		setText(var0_38, "x" .. arg0_38.ptActivity:GetTotalPtCount())
 
 		local var2_38 = arg0_38.ptActivity:GetPTDrop():getIcon()
 

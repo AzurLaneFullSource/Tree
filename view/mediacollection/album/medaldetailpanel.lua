@@ -10,7 +10,6 @@ end
 function var0_0.Ctor(arg0_2, arg1_2, arg2_2)
 	arg0_2._go = arg1_2
 	arg0_2._tf = arg1_2.transform
-	arg0_2.cg = arg0_2._tf:GetComponent(typeof(CanvasGroup))
 	arg0_2._parent = arg2_2
 
 	pg.DelegateInfo.New(arg0_2)
@@ -123,8 +122,6 @@ function var0_0.UpdateMedal(arg0_12)
 end
 
 function var0_0.SetActive(arg0_13, arg1_13)
-	arg0_13.cg.alpha = 1
-
 	SetActive(arg0_13._go, arg1_13)
 
 	arg0_13._active = arg1_13

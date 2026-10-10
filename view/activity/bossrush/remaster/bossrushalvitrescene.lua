@@ -38,9 +38,10 @@ function var0_0.init(arg0_2)
 	arg0_2.ticketText = arg0_2._tf:Find("tickets/Text")
 end
 
-function var0_0.SetActivity(arg0_3, arg1_3)
-	var0_0.super.SetActivity(arg0_3, arg1_3)
-	arg0_3:SetPtActivity(arg0_3:CreateVirtualPtActivity(arg1_3))
+function var0_0.SetPtActivity(arg0_3, arg1_3)
+	arg1_3 = arg1_3 or arg0_3:CreateVirtualPtActivity(arg0_3.activity)
+
+	var0_0.super.SetPtActivity(arg0_3, arg1_3)
 end
 
 function var0_0.UpdateBattle(arg0_4)
