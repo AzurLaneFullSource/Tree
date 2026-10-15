@@ -4,9 +4,9 @@ function var0_0.getUIName(arg0_1)
 	return "MetaSkillDetailBoxUI"
 end
 
-function var0_0.getResource(arg0_2, arg1_2)
+function var0_0.getResource(arg0_2)
 	local var0_2 = {}
-	local var1_2 = getProxy(BayProxy):getShipById(arg1_2.metaShipID)
+	local var1_2 = getProxy(BayProxy):getShipById(arg0_2.contextData.metaShipID)
 	local var2_2 = MetaCharacterConst.getTacticsSkillIDListByShipConfigID(var1_2.configId)
 
 	for iter0_2 = 1, #var2_2 do

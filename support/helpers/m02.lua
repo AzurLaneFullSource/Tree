@@ -5009,52 +5009,66 @@ function buildEquipCode(arg0_359)
 	return base64.enc(table.concat(var1_359, "\\"))
 end
 
-function setDirectorSpeed(arg0_361, arg1_361)
-	GetComponent(arg0_361, typeof(TimelineSpeed)):SetTimelineSpeed(arg1_361)
+function buildEquipAndSpCode(arg0_361, arg1_361)
+	local var0_361 = underscore.map(arg0_361, function(arg0_362)
+		return ConversionBase(32, arg0_362 and arg0_362.id or 0)
+	end)
+	local var1_361 = {
+		table.concat(var0_361, "/"),
+		ConversionBase(32, checkExist(arg1_361, {
+			"id"
+		}) or 0)
+	}
+
+	return base64.enc(table.concat(var1_361, "\\"))
 end
 
-function setDefaultZeroMetatable(arg0_362)
-	return setmetatable(arg0_362, {
-		__index = function(arg0_363, arg1_363)
-			if rawget(arg0_363, arg1_363) == nil then
-				arg0_363[arg1_363] = 0
+function setDirectorSpeed(arg0_363, arg1_363)
+	GetComponent(arg0_363, typeof(TimelineSpeed)):SetTimelineSpeed(arg1_363)
+end
+
+function setDefaultZeroMetatable(arg0_364)
+	return setmetatable(arg0_364, {
+		__index = function(arg0_365, arg1_365)
+			if rawget(arg0_365, arg1_365) == nil then
+				arg0_365[arg1_365] = 0
 			end
 
-			return arg0_363[arg1_363]
+			return arg0_365[arg1_365]
 		end
 	})
 end
 
-function checkABExist(arg0_364)
+function checkABExist(arg0_366)
 	if EDITOR_TOOL then
-		return ResourceMgr.Inst:AssetExist(arg0_364)
+		return ResourceMgr.Inst:AssetExist(arg0_366)
 	else
-		return PathMgr.FileExists(PathMgr.getAssetBundle(arg0_364))
+		return PathMgr.FileExists(PathMgr.getAssetBundle(arg0_366))
 	end
 end
 
-function compareNumber(arg0_365, arg1_365, arg2_365)
-	return switch(arg1_365, {
+function compareNumber(arg0_367, arg1_367, arg2_367)
+	return switch(arg1_367, {
 		[">"] = function()
-			return arg0_365 > arg2_365
+			return arg0_367 > arg2_367
 		end,
 		[">="] = function()
-			return arg0_365 >= arg2_365
+			return arg0_367 >= arg2_367
 		end,
 		["="] = function()
-			return arg0_365 == arg2_365
+			return arg0_367 == arg2_367
 		end,
 		["<"] = function()
-			return arg0_365 < arg2_365
+			return arg0_367 < arg2_367
 		end,
 		["<="] = function()
-			return arg0_365 <= arg2_365
+			return arg0_367 <= arg2_367
 		end
 	})
 end
 
-function ArabicToRoman(arg0_371)
-	local var0_371 = {
+function ArabicToRoman(arg0_373)
+	local var0_373 = {
 		{
 			1000,
 			"M"
@@ -5109,128 +5123,128 @@ function ArabicToRoman(arg0_371)
 		}
 	}
 
-	local function var1_371(arg0_372, arg1_372)
-		return select(2, arg0_372:gsub(arg1_372, ""))
+	local function var1_373(arg0_374, arg1_374)
+		return select(2, arg0_374:gsub(arg1_374, ""))
 	end
 
-	local var2_371 = ""
+	local var2_373 = ""
 
-	while arg0_371 > 0 do
-		for iter0_371, iter1_371 in pairs(var0_371) do
-			local var3_371 = iter1_371[2]
-			local var4_371 = iter1_371[1]
+	while arg0_373 > 0 do
+		for iter0_373, iter1_373 in pairs(var0_373) do
+			local var3_373 = iter1_373[2]
+			local var4_373 = iter1_373[1]
 
-			while var4_371 <= arg0_371 do
-				var2_371 = var2_371 .. var3_371
-				arg0_371 = arg0_371 - var4_371
+			while var4_373 <= arg0_373 do
+				var2_373 = var2_373 .. var3_373
+				arg0_373 = arg0_373 - var4_373
 			end
 		end
 	end
 
-	if arg0_371 > 10000 then
-		local var5_371 = var1_371(var2_371, "M")
+	if arg0_373 > 10000 then
+		local var5_373 = var1_373(var2_373, "M")
 
-		var2_371 = "M*" .. var5_371 .. " " .. var2_371
+		var2_373 = "M*" .. var5_373 .. " " .. var2_373
 	end
 
-	return var2_371
+	return var2_373
 end
 
-function stringInset(arg0_373, ...)
-	for iter0_373, iter1_373 in ipairs({
+function stringInset(arg0_375, ...)
+	for iter0_375, iter1_375 in ipairs({
 		...
 	}) do
-		arg0_373 = string.gsub(arg0_373, "$" .. iter0_373, iter1_373)
+		arg0_375 = string.gsub(arg0_375, "$" .. iter0_375, iter1_375)
 	end
 
-	return arg0_373
+	return arg0_375
 end
 
-function StringStartsWith(arg0_374, arg1_374)
-	return string.sub(arg0_374, 1, string.len(arg1_374)) == arg1_374
+function StringStartsWith(arg0_376, arg1_376)
+	return string.sub(arg0_376, 1, string.len(arg1_376)) == arg1_376
 end
 
-function GetActTimeDesc(arg0_375, arg1_375, arg2_375, arg3_375, arg4_375, arg5_375, arg6_375, arg7_375, arg8_375)
-	if arg0_375 then
-		arg1_375 = false
+function GetActTimeDesc(arg0_377, arg1_377, arg2_377, arg3_377, arg4_377, arg5_377, arg6_377, arg7_377, arg8_377)
+	if arg0_377 then
+		arg1_377 = false
 	end
 
-	if arg1_375 then
-		return i18n("act_remaster_time_desc", arg2_375, arg3_375, arg4_375, arg5_375)
+	if arg1_377 then
+		return i18n("act_remaster_time_desc", arg2_377, arg3_377, arg4_377, arg5_377)
 	else
-		local var0_375 = arg6_375
-		local var1_375 = arg7_375
-		local var2_375 = arg8_375
-		local var3_375 = var0_375
-		local var4_375 = var1_375
-		local var5_375 = var2_375
+		local var0_377 = arg6_377
+		local var1_377 = arg7_377
+		local var2_377 = arg8_377
+		local var3_377 = var0_377
+		local var4_377 = var1_377
+		local var5_377 = var2_377
 
-		if var0_375 == "23" and var1_375 == "59" and var2_375 == "59" then
-			var3_375 = "24"
+		if var0_377 == "23" and var1_377 == "59" and var2_377 == "59" then
+			var3_377 = "24"
 
-			local var6_375 = "0"
-			local var7_375 = "0"
+			local var6_377 = "0"
+			local var7_377 = "0"
 		end
 
-		if arg0_375 then
-			if var0_375 == "00" and var1_375 == "00" and var2_375 == "00" then
-				return i18n("act_remaster_time_desc_with_hours_without_ch", arg2_375, arg3_375, arg4_375, arg5_375 - 1, "23", "59", "59")
+		if arg0_377 then
+			if var0_377 == "00" and var1_377 == "00" and var2_377 == "00" then
+				return i18n("act_remaster_time_desc_with_hours_without_ch", arg2_377, arg3_377, arg4_377, arg5_377 - 1, "23", "59", "59")
 			else
-				return i18n("act_remaster_time_desc_with_hours_without_ch", arg2_375, arg3_375, arg4_375, arg5_375, var0_375, var1_375, var2_375)
+				return i18n("act_remaster_time_desc_with_hours_without_ch", arg2_377, arg3_377, arg4_377, arg5_377, var0_377, var1_377, var2_377)
 			end
 		else
-			return i18n("act_remaster_time_desc_with_hours", arg2_375, arg3_375, arg4_375, arg5_375, var3_375)
+			return i18n("act_remaster_time_desc_with_hours", arg2_377, arg3_377, arg4_377, arg5_377, var3_377)
 		end
 	end
 end
 
-function addSubLayer(arg0_376, arg1_376, arg2_376, arg3_376, arg4_376)
-	if arg2_376 then
-		while arg1_376.parent do
-			arg1_376 = arg1_376.parent
+function addSubLayer(arg0_378, arg1_378, arg2_378, arg3_378, arg4_378)
+	if arg2_378 then
+		while arg1_378.parent do
+			arg1_378 = arg1_378.parent
 		end
 	end
 
-	local var0_376 = {
-		parentContext = arg1_376,
-		context = arg0_376,
-		callback = arg3_376
+	local var0_378 = {
+		parentContext = arg1_378,
+		context = arg0_378,
+		callback = arg3_378
 	}
 
-	var0_376 = arg4_376 and table.merge(var0_376, arg4_376) or var0_376
+	var0_378 = arg4_378 and table.merge(var0_378, arg4_378) or var0_378
 
-	pg.m02:sendNotification(GAME.LOAD_LAYERS, var0_376)
+	pg.m02:sendNotification(GAME.LOAD_LAYERS, var0_378)
 end
 
-function PackIntToString(arg0_377, arg1_377)
-	return tostring(arg0_377) .. "," .. tostring(arg1_377)
+function PackIntToString(arg0_379, arg1_379)
+	return tostring(arg0_379) .. "," .. tostring(arg1_379)
 end
 
-function UnpackIntFromString(arg0_378)
-	local var0_378, var1_378 = string.match(arg0_378, "(%-?%d+),(%-?%d+)")
+function UnpackIntFromString(arg0_380)
+	local var0_380, var1_380 = string.match(arg0_380, "(%-?%d+),(%-?%d+)")
 
-	return tonumber(var0_378), tonumber(var1_378)
+	return tonumber(var0_380), tonumber(var1_380)
 end
 
-function getRandomIdxByWeights(arg0_379)
-	local var0_379 = 0
+function getRandomIdxByWeights(arg0_381)
+	local var0_381 = 0
 
-	for iter0_379, iter1_379 in ipairs(arg0_379) do
-		var0_379 = var0_379 + iter1_379
+	for iter0_381, iter1_381 in ipairs(arg0_381) do
+		var0_381 = var0_381 + iter1_381
 	end
 
-	assert(var0_379 ~= 0, "总权重为0")
+	assert(var0_381 ~= 0, "总权重为0")
 
-	local var1_379 = math.random(1, var0_379)
-	local var2_379 = 0
+	local var1_381 = math.random(1, var0_381)
+	local var2_381 = 0
 
-	for iter2_379, iter3_379 in ipairs(arg0_379) do
-		var2_379 = var2_379 + iter3_379
+	for iter2_381, iter3_381 in ipairs(arg0_381) do
+		var2_381 = var2_381 + iter3_381
 
-		if var1_379 <= var2_379 then
-			return iter2_379
+		if var1_381 <= var2_381 then
+			return iter2_381
 		end
 	end
 
-	return #arg0_379
+	return #arg0_381
 end

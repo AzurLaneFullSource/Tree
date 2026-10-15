@@ -222,8 +222,8 @@ function var0_0.InitPageFooter(arg0_19)
 	setActive(arg0_19.btnTpl, false)
 end
 
-function var0_0.getResource(arg0_23, arg1_23)
-	local var0_23 = var0_0.super.getResource(arg0_23, arg1_23)
+function var0_0.getResource(arg0_23)
+	local var0_23 = var0_0.super.getResource(arg0_23)
 	local var1_23 = {}
 
 	for iter0_23, iter1_23 in ipairs(var0_23) do

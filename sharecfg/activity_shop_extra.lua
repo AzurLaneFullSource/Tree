@@ -119,6 +119,8 @@ pg.activity_shop_extra.all = {
 	144,
 	145,
 	148,
+	149,
+	150,
 	5007,
 	5008,
 	5009
@@ -241,6 +243,8 @@ pg.activity_shop_extra.get_id_list_by_commodity_type = {
 		144,
 		145,
 		148,
+		149,
+		150,
 		5007,
 		5008,
 		5009
@@ -4780,6 +4784,82 @@ end)()
 					23,
 					59,
 					59
+				}
+			}
+		}
+	}
+	pg.base.activity_shop_extra[149] = {
+		commodity_id = 903023,
+		activity = 51201,
+		scene = "",
+		id = 149,
+		num = 1,
+		num_limit = 1,
+		end_by_maintenance = 1,
+		commodity_type = 7,
+		shop_tag = 2,
+		order = 14,
+		time = {
+			{
+				{
+					2026,
+					10,
+					15
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					12,
+					0,
+					0
+				}
+			}
+		}
+	}
+	pg.base.activity_shop_extra[150] = {
+		commodity_id = 301052,
+		activity = 51204,
+		scene = "",
+		id = 150,
+		num = 1,
+		num_limit = 1,
+		end_by_maintenance = 1,
+		commodity_type = 7,
+		shop_tag = 2,
+		order = 13,
+		time = {
+			{
+				{
+					2026,
+					10,
+					15
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					10,
+					22
+				},
+				{
+					12,
+					0,
+					0
 				}
 			}
 		}

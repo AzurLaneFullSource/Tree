@@ -7,25 +7,25 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.backBtn = arg0_2._tf:Find("top/back")
-	arg0_2.favorBtn = arg0_2._tf:Find("top/favor_bg")
-	arg0_2.levelTxt = arg0_2._tf:Find("top/favor_bg/level"):GetComponent(typeof(Text))
-	arg0_2.expTxt = arg0_2._tf:Find("top/favor_bg/Text"):GetComponent(typeof(Text))
-	arg0_2.charTr = arg0_2._tf:Find("bottom/char")
+	arg0_2.backBtn = arg0_2._tf:Find("adapt/top/back")
+	arg0_2.favorBtn = arg0_2._tf:Find("adapt/top/favor_bg")
+	arg0_2.levelTxt = arg0_2._tf:Find("adapt/top/favor_bg/level"):GetComponent(typeof(Text))
+	arg0_2.expTxt = arg0_2._tf:Find("adapt/top/favor_bg/Text"):GetComponent(typeof(Text))
+	arg0_2.charTr = arg0_2._tf:Find("adapt/bottom/char")
 	arg0_2.chatTxt = arg0_2.charTr:Find("dialogue/Text"):GetComponent(typeof(Text))
-	arg0_2.trendBtn = arg0_2._tf:Find("trend_btn")
+	arg0_2.trendBtn = arg0_2._tf:Find("adapt/trend_btn")
 	arg0_2.trendIco = arg0_2.trendBtn:Find("difficulty"):GetComponent(typeof(Image))
 	arg0_2.trendTxt = arg0_2.trendBtn:Find("Text"):GetComponent(typeof(Text))
 	arg0_2.orderContainer = arg0_2._tf:Find("map")
 	arg0_2.upgradePage = IslandOrderUpgradePage.New(arg0_2._parentTf)
-	arg0_2.countTxt = arg0_2._tf:Find("count_bg/Text"):GetComponent(typeof(Text))
+	arg0_2.countTxt = arg0_2._tf:Find("adapt/count_bg/Text"):GetComponent(typeof(Text))
 	arg0_2.orderTplPool = OrderTplPool.New(arg0_2._tf:Find("root/orderTpl"), 3, 6)
 	arg0_2.orderTpls = {}
 	arg0_2.timers = {}
 	arg0_2.disappearTimers = {}
 
 	setActive(arg0_2.charTr, false)
-	setText(arg0_2._tf:Find("top/title/Text"), i18n("island_order_title"))
+	setText(arg0_2._tf:Find("adapt/top/title/Text"), i18n("island_order_title"))
 end
 
 function var0_0.OnHide(arg0_3)
@@ -36,7 +36,7 @@ function var0_0.OnHide(arg0_3)
 end
 
 function var0_0.OnInit(arg0_4)
-	onButton(arg0_4, arg0_4._tf:Find("top/title/help"), function()
+	onButton(arg0_4, arg0_4._tf:Find("adapt/top/title/help"), function()
 		arg0_4:ShowMsgBox({
 			type = IslandMsgBox.TYPE_WHITOUT_BTN,
 			content = i18n("island_helpbtn_order")

@@ -8,7 +8,7 @@ function var0_0.getUIName(arg0_1)
 	return "NewServerCarnivalUI"
 end
 
-function var0_0.getResource(arg0_2, arg1_2)
+function var0_0.getResource(arg0_2)
 	local var0_2 = {
 		"ui/newservershopui_atlas",
 		"ui/iconcolorful",
@@ -50,7 +50,7 @@ function var0_0.getResource(arg0_2, arg1_2)
 		end
 	end
 
-	table.insertto(var0_2, var0_0.super.getResource(arg0_2, arg1_2))
+	table.insertto(var0_2, var0_0.super.getResource(arg0_2))
 
 	return var0_2
 end

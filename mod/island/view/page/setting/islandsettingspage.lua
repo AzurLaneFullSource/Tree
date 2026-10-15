@@ -44,7 +44,7 @@ function var0_0.GetPage(arg0_7, arg1_7)
 end
 
 function var0_0.OnLoaded(arg0_8)
-	arg0_8.backBtn = arg0_8._tf:Find("top/closeBtn")
+	arg0_8.backBtn = arg0_8._tf:Find("adapt/top/closeBtn")
 
 	local var0_8 = arg0_8._tf:Find("pages")
 
@@ -67,8 +67,8 @@ function var0_0.OnLoaded(arg0_8)
 	var1_8(arg0_8._tf:Find("adapt/left_length/imageQuality"), i18n("grapihcs3d_setting_3Dquality"))
 	var1_8(arg0_8._tf:Find("adapt/left_length/operation"), i18n("grapihcs3d_setting_control"))
 	var1_8(arg0_8._tf:Find("adapt/left_length/common"), i18n("grapihcs3d_setting_general"))
-	setText(arg0_8._tf:Find("top/title/Text"), i18n("island_settings"))
-	setText(arg0_8._tf:Find("top/title/Text/en"), i18n("island_settings_en"))
+	setText(arg0_8._tf:Find("adapt/top/title/Text"), i18n("island_settings"))
+	setText(arg0_8._tf:Find("adapt/top/title/Text/en"), i18n("island_settings_en"))
 end
 
 function var0_0.OnShow(arg0_10)

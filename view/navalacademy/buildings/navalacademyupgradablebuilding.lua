@@ -22,7 +22,7 @@ function var0_0.OnInit(arg0_2)
 end
 
 function var0_0.FloatAni(arg0_3)
-	LeanTween.moveLocalY(go(arg0_3.bubble), arg0_3.heigh + 20, 2):setFrom(arg0_3.heigh):setLoopPingPong()
+	LeanTween.moveLocalY(go(arg0_3.bubble), arg0_3.heigh + 10, 2):setFrom(arg0_3.heigh):setLoopPingPong()
 end
 
 function var0_0.UpdateBubble(arg0_4)

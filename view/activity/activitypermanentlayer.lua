@@ -1,6 +1,6 @@
 local var0_0 = class("ActivityPermanentLayer", import("..base.BaseUI"))
 
-function var0_0.getResource(arg0_1, arg1_1)
+function var0_0.getResource(arg0_1)
 	local var0_1 = {}
 	local var1_1 = getProxy(ActivityPermanentProxy):getActivityIdsByType(ActivityPermanentProxy.TYPE_NORMAL_ACTIVITY)
 
@@ -10,7 +10,7 @@ function var0_0.getResource(arg0_1, arg1_1)
 		table.insert(var0_1, "activitybanner/" .. var2_1.banner_route)
 	end
 
-	table.insertto(var0_1, var0_0.super.getResource(arg0_1, arg1_1))
+	table.insertto(var0_1, var0_0.super.getResource(arg0_1))
 
 	return var0_1
 end

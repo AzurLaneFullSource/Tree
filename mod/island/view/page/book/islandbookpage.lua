@@ -5,21 +5,21 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	setText(arg0_2._tf:Find("top/title/Text"), i18n("island_guide"))
-	setText(arg0_2._tf:Find("top/title/Text/en"), i18n("island_guide_en"))
+	setText(arg0_2._tf:Find("adapt/top/title/Text"), i18n("island_guide"))
+	setText(arg0_2._tf:Find("adapt/top/title/Text/en"), i18n("island_guide_en"))
 
-	arg0_2.charBtn = arg0_2._tf:Find("view/content/char")
+	arg0_2.charBtn = arg0_2._tf:Find("adapt/view/content/char")
 	arg0_2.charTip = arg0_2.charBtn:Find("tip")
-	arg0_2.npcBtn = arg0_2._tf:Find("view/content/npc")
+	arg0_2.npcBtn = arg0_2._tf:Find("adapt/view/content/npc")
 	arg0_2.npcTip = arg0_2.npcBtn:Find("tip")
-	arg0_2.itemBtn = arg0_2._tf:Find("view/content/item")
+	arg0_2.itemBtn = arg0_2._tf:Find("adapt/view/content/item")
 	arg0_2.itemTip = arg0_2.itemBtn:Find("tip")
-	arg0_2.fishBtn = arg0_2._tf:Find("view/content/fish")
+	arg0_2.fishBtn = arg0_2._tf:Find("adapt/view/content/fish")
 	arg0_2.fishTip = arg0_2.fishBtn:Find("tip")
 end
 
 function var0_0.OnInit(arg0_3)
-	onButton(arg0_3, arg0_3._tf:Find("top/back"), function()
+	onButton(arg0_3, arg0_3._tf:Find("adapt/top/back"), function()
 		arg0_3:Hide()
 	end, SFX_PANEL)
 	onButton(arg0_3, arg0_3.charBtn, function()

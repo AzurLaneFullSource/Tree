@@ -88,7 +88,7 @@ function var0_0.getUIName(arg0_2)
 	return "CollectionUI"
 end
 
-function var0_0.getResource(arg0_3, arg1_3)
+function var0_0.getResource(arg0_3)
 	local var0_3 = {
 		"ui/collectionui",
 		"ui/share/index_atlas"
@@ -202,96 +202,70 @@ function var0_0.getResource(arg0_3, arg1_3)
 	local function var4_3()
 		local var0_8 = {}
 
-		for iter0_8, iter1_8 in ipairs(pg.cartoon.all) do
-			local var1_8 = MangaConst.GetMangaPicPathByID(iter1_8)
+		for iter0_8, iter1_8 in ipairs(pg.music_album.all) do
+			local var1_8 = pg.music_album[iter1_8].cover
 
-			if var1_8 then
-				table.insert(var0_8, var1_8)
+			if var1_8 and var1_8 ~= "" then
+				table.insert(var0_8, MusicCollectionConst.MUSIC_COVER_PATH_PREFIX .. var1_8)
 			end
+		end
+
+		for iter2_8, iter3_8 in ipairs(pg.music_collect_config.all) do
+			local var2_8 = pg.music_collect_config[iter3_8].music
+			local var3_8 = MusicCollectionConst.MUSIC_SONG_PATH_PREFIX .. var2_8 .. ".b"
+
+			table.insert(var0_8, var3_8)
 		end
 
 		return var0_8
 	end
 
-	local function var5_3()
-		local var0_9 = {}
-
-		for iter0_9, iter1_9 in ipairs(pg.gallery_config.all) do
-			local var1_9 = GalleryConst.GetGalleryPicPathByID(iter1_9)
-			local var2_9 = GalleryConst.GetGalleryPreviewPicPathByID(iter1_9)
-
-			if var1_9 then
-				table.insert(var0_9, var1_9)
-			end
-
-			if var2_9 then
-				table.insert(var0_9, var2_9)
-			end
-		end
-
-		return var0_9
-	end
-
-	local function var6_3()
-		local var0_10 = {}
-
-		for iter0_10, iter1_10 in ipairs(pg.music_album.all) do
-			local var1_10 = pg.music_album[iter1_10].cover
-
-			if var1_10 and var1_10 ~= "" then
-				table.insert(var0_10, MusicCollectionConst.MUSIC_COVER_PATH_PREFIX .. var1_10)
-			end
-		end
-
-		return var0_10
-	end
-
-	return ResPathSupport.UniqueLuaArr(ResPathSupport.MergeLuaArr(var0_0.super.getResource(arg0_3, arg1_3), var0_3, var1_3(), var3_3(), var2_3(), var4_3(), var5_3(), var6_3()))
+	return ResPathSupport.UniqueLuaArr(ResPathSupport.MergeLuaArr(var0_0.super.getResource(arg0_3), var0_3, var1_3(), var3_3(), var2_3(), var4_3()))
 end
 
-function var0_0.setShipGroups(arg0_11, arg1_11)
-	arg0_11.shipGroups = arg1_11
+function var0_0.setShipGroups(arg0_9, arg1_9)
+	arg0_9.shipGroups = arg1_9
 end
 
-function var0_0.setAwards(arg0_12, arg1_12)
-	arg0_12.awards = arg1_12
+function var0_0.setAwards(arg0_10, arg1_10)
+	arg0_10.awards = arg1_10
 end
 
-function var0_0.setCollectionRate(arg0_13, arg1_13, arg2_13, arg3_13)
-	arg0_13.rate = arg1_13
-	arg0_13.count = arg2_13
-	arg0_13.totalCount = arg3_13
+function var0_0.setCollectionRate(arg0_11, arg1_11, arg2_11, arg3_11)
+	arg0_11.rate = arg1_11
+	arg0_11.count = arg2_11
+	arg0_11.totalCount = arg3_11
 end
 
-function var0_0.setLinkCollectionCount(arg0_14, arg1_14)
-	arg0_14.linkCount = arg1_14
+function var0_0.setLinkCollectionCount(arg0_12, arg1_12)
+	arg0_12.linkCount = arg1_12
 end
 
-function var0_0.setPlayer(arg0_15, arg1_15)
-	arg0_15.player = arg1_15
+function var0_0.setPlayer(arg0_13, arg1_13)
+	arg0_13.player = arg1_13
 end
 
-function var0_0.setProposeList(arg0_16, arg1_16)
-	arg0_16.proposeList = arg1_16
+function var0_0.setProposeList(arg0_14, arg1_14)
+	arg0_14.proposeList = arg1_14
 end
 
-function var0_0.init(arg0_17)
-	arg0_17:initEvents()
+function var0_0.init(arg0_15)
+	arg0_15:initEvents()
 
-	arg0_17.blurPanel = arg0_17._tf:Find("blur_panel")
-	arg0_17.top = arg0_17._tf:Find("blur_panel/adapt/top")
-	arg0_17.leftPanel = arg0_17._tf:Find("blur_panel/adapt/left_length")
-	arg0_17.backBtn = findTF(arg0_17.top, "back_btn")
-	arg0_17.contextData.toggle = arg0_17.contextData.toggle or 2
-	arg0_17.toggles = {
-		arg0_17.leftPanel:Find("frame/tagRoot/card"),
-		arg0_17.leftPanel:Find("frame/tagRoot/display"),
-		arg0_17.leftPanel:Find("frame/tagRoot/trans"),
-		arg0_17.leftPanel:Find("frame/tagRoot/manga"),
-		arg0_17.leftPanel:Find("frame/tagRoot/gallery"),
-		arg0_17.leftPanel:Find("frame/tagRoot/music")
+	arg0_15.blurPanel = arg0_15._tf:Find("blur_panel")
+	arg0_15.top = arg0_15._tf:Find("blur_panel/adapt/top")
+	arg0_15.leftPanel = arg0_15._tf:Find("blur_panel/adapt/left_length")
+	arg0_15.backBtn = findTF(arg0_15.top, "back_btn")
+	arg0_15.contextData.toggle = arg0_15.contextData.toggle or 2
+	arg0_15.toggles = {
+		arg0_15.leftPanel:Find("frame/tagRoot/card"),
+		arg0_15.leftPanel:Find("frame/tagRoot/display"),
+		arg0_15.leftPanel:Find("frame/tagRoot/trans"),
+		arg0_15.leftPanel:Find("frame/tagRoot/manga"),
+		arg0_15.leftPanel:Find("frame/tagRoot/gallery"),
+		arg0_15.leftPanel:Find("frame/tagRoot/music")
 	}
-	arg0_17.toggleUpdates = {
+	arg0_15.toggleUpdates = {
 		"initCardPanel",
 		"initDisplayPanel",
 		"initCardPanel",
@@ -299,109 +273,123 @@ function var0_0.init(arg0_17)
 		"initGalleryPanel",
 		"initMusicPanel"
 	}
-	arg0_17.cardList = arg0_17._tf:Find("main/list_card/scroll"):GetComponent("LScrollRect")
+	arg0_15.cardList = arg0_15._tf:Find("main/list_card/scroll"):GetComponent("LScrollRect")
 
-	function arg0_17.cardList.onInitItem(arg0_18)
-		arg0_17:onInitCard(arg0_18)
+	function arg0_15.cardList.onInitItem(arg0_16)
+		arg0_15:onInitCard(arg0_16)
 	end
 
-	function arg0_17.cardList.onUpdateItem(arg0_19, arg1_19)
-		arg0_17:onUpdateCard(arg0_19, arg1_19)
+	function arg0_15.cardList.onUpdateItem(arg0_17, arg1_17)
+		arg0_15:onUpdateCard(arg0_17, arg1_17)
 	end
 
-	function arg0_17.cardList.onReturnItem(arg0_20, arg1_20)
-		arg0_17:onReturnCard(arg0_20, arg1_20)
+	function arg0_15.cardList.onReturnItem(arg0_18, arg1_18)
+		arg0_15:onReturnCard(arg0_18, arg1_18)
 	end
 
-	arg0_17.cardItems = {}
-	arg0_17.cardContent = tf(arg0_17.cardList):Find("ships")
-	arg0_17.contextData.cardToggle = arg0_17.contextData.cardToggle or 1
-	arg0_17.cardToggleGroup = arg0_17._tf:Find("main/list_card/types")
-	arg0_17.cardToggles = {
-		arg0_17.cardToggleGroup:Find("char"),
-		arg0_17.cardToggleGroup:Find("link"),
-		arg0_17.cardToggleGroup:Find("blueprint"),
-		arg0_17.cardToggleGroup:Find("meta")
+	arg0_15.cardItems = {}
+	arg0_15.cardContent = tf(arg0_15.cardList):Find("ships")
+	arg0_15.contextData.cardToggle = arg0_15.contextData.cardToggle or 1
+	arg0_15.cardToggleGroup = arg0_15._tf:Find("main/list_card/types")
+	arg0_15.cardToggles = {
+		arg0_15.cardToggleGroup:Find("char"),
+		arg0_15.cardToggleGroup:Find("link"),
+		arg0_15.cardToggleGroup:Find("blueprint"),
+		arg0_15.cardToggleGroup:Find("meta")
 	}
-	arg0_17.cardList.decelerationRate = 0.07
-	arg0_17.bonusPanel = arg0_17._tf:Find("bonus_panel")
-	arg0_17.charTpl = arg0_17:getTpl("chartpl")
-	arg0_17.tip = arg0_17.toggles[2]:Find("tip")
+	arg0_15.cardList.decelerationRate = 0.07
 
-	local var0_17 = pg.storeup_data_template
+	local var0_15 = arg0_15.cardContent:GetComponentInChildren(typeof(GridLayoutGroup))
+	local var1_15 = tf(arg0_15.cardList).rect.width
+	local var2_15 = var0_15.cellSize.x
+	local var3_15 = var0_15.spacing.x
+	local var4_15 = var1_15 - var0_15.padding.left - var0_15.padding.right
+	local var5_15 = var2_15 + var3_15
 
-	arg0_17.favoriteVOs = {}
+	if var5_15 > 0 then
+		local var6_15 = math.floor((var4_15 + var3_15) / var5_15)
 
-	for iter0_17, iter1_17 in ipairs(var0_17.all) do
-		local var1_17 = Favorite.New({
-			id = iter0_17
+		var0_15.constraintCount = math.max(6, var6_15)
+	end
+
+	arg0_15.bonusPanel = arg0_15._tf:Find("bonus_panel")
+	arg0_15.charTpl = arg0_15:getTpl("chartpl")
+	arg0_15.tip = arg0_15.toggles[2]:Find("tip")
+
+	local var7_15 = pg.storeup_data_template
+
+	arg0_15.favoriteVOs = {}
+
+	for iter0_15, iter1_15 in ipairs(var7_15.all) do
+		local var8_15 = Favorite.New({
+			id = iter0_15
 		})
 
-		table.insert(arg0_17.favoriteVOs, var1_17)
+		table.insert(arg0_15.favoriteVOs, var8_15)
 	end
 
-	arg0_17.memoryGroups = _.map(pg.memory_group.all, function(arg0_21)
-		return pg.memory_group[arg0_21]
+	arg0_15.memoryGroups = _.map(pg.memory_group.all, function(arg0_19)
+		return pg.memory_group[arg0_19]
 	end)
-	arg0_17.memories = nil
-	arg0_17.memoryList = arg0_17._tf:Find("main/list_memory"):GetComponent("LScrollRect")
+	arg0_15.memories = nil
+	arg0_15.memoryList = arg0_15._tf:Find("main/list_memory"):GetComponent("LScrollRect")
 
-	function arg0_17.memoryList.onInitItem(arg0_22)
-		arg0_17:onInitMemory(arg0_22)
+	function arg0_15.memoryList.onInitItem(arg0_20)
+		arg0_15:onInitMemory(arg0_20)
 	end
 
-	function arg0_17.memoryList.onUpdateItem(arg0_23, arg1_23)
-		arg0_17:onUpdateMemory(arg0_23, arg1_23)
+	function arg0_15.memoryList.onUpdateItem(arg0_21, arg1_21)
+		arg0_15:onUpdateMemory(arg0_21, arg1_21)
 	end
 
-	function arg0_17.memoryList.onReturnItem(arg0_24, arg1_24)
-		arg0_17:onReturnMemory(arg0_24, arg1_24)
+	function arg0_15.memoryList.onReturnItem(arg0_22, arg1_22)
+		arg0_15:onReturnMemory(arg0_22, arg1_22)
 	end
 
-	arg0_17.memoryViewport = arg0_17._tf:Find("main/list_memory/viewport")
-	arg0_17.memoriesGrid = arg0_17._tf:Find("main/list_memory/viewport/memories"):GetComponent(typeof(GridLayoutGroup))
-	arg0_17.memoryItems = {}
+	arg0_15.memoryViewport = arg0_15._tf:Find("main/list_memory/viewport")
+	arg0_15.memoriesGrid = arg0_15._tf:Find("main/list_memory/viewport/memories"):GetComponent(typeof(GridLayoutGroup))
+	arg0_15.memoryItems = {}
 
-	local var2_17 = tf(arg0_17.memoryList):Find("memory")
+	local var9_15 = tf(arg0_15.memoryList):Find("memory")
 
-	arg0_17.memoryMask = arg0_17._tf:Find("blur_panel/story_mask")
+	arg0_15.memoryMask = arg0_15._tf:Find("blur_panel/story_mask")
 
-	setActive(var2_17, false)
-	setActive(arg0_17.memoryMask, false)
+	setActive(var9_15, false)
+	setActive(arg0_15.memoryMask, false)
 
-	arg0_17.memoryTogGroup = arg0_17.top:Find("memory")
+	arg0_15.memoryTogGroup = arg0_15.top:Find("memory")
 
-	setActive(arg0_17.memoryTogGroup, false)
+	setActive(arg0_15.memoryTogGroup, false)
 
-	arg0_17.memoryToggles = {
-		arg0_17.top:Find("memory/0"),
-		arg0_17.top:Find("memory/1"),
-		arg0_17.top:Find("memory/2"),
-		arg0_17.top:Find("memory/3")
+	arg0_15.memoryToggles = {
+		arg0_15.top:Find("memory/0"),
+		arg0_15.top:Find("memory/1"),
+		arg0_15.top:Find("memory/2"),
+		arg0_15.top:Find("memory/3")
 	}
-	arg0_17.memoryFilterIndex = {
+	arg0_15.memoryFilterIndex = {
 		true,
 		true,
 		true
 	}
-	arg0_17.galleryPanelContainer = arg0_17._tf:Find("main/GalleryContainer")
-	arg0_17.musicPanelContainer = arg0_17._tf:Find("main/MusicContainer")
-	arg0_17.mangaPanelContainer = arg0_17._tf:Find("main/MangaContainer")
+	arg0_15.galleryPanelContainer = arg0_15._tf:Find("main/GalleryContainer")
+	arg0_15.musicPanelContainer = arg0_15._tf:Find("main/MusicContainer")
+	arg0_15.mangaPanelContainer = arg0_15._tf:Find("main/MangaContainer")
 
-	arg0_17:initIndexPanel()
+	arg0_15:initIndexPanel()
 end
 
-function var0_0.didEnter(arg0_25)
-	onButton(arg0_25, arg0_25.backBtn, function()
-		arg0_25.contextData.cardScrollValue = 0
+function var0_0.didEnter(arg0_23)
+	onButton(arg0_23, arg0_23.backBtn, function()
+		arg0_23.contextData.cardScrollValue = 0
 
-		arg0_25:emit(var0_0.ON_BACK)
+		arg0_23:emit(var0_0.ON_BACK)
 	end, SFX_CANCEL)
 
-	arg0_25.helpBtn = arg0_25.leftPanel:Find("help_btn")
+	arg0_23.helpBtn = arg0_23.leftPanel:Find("help_btn")
 
-	onButton(arg0_25, arg0_25.helpBtn, function()
-		if arg0_25.contextData.toggle == var0_0.MUSIC_INDEX then
+	onButton(arg0_23, arg0_23.helpBtn, function()
+		if arg0_23.contextData.toggle == var0_0.MUSIC_INDEX then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				type = MSGBOX_TYPE_HELP,
 				helps = pg.gametip.NewMusic_help.tip
@@ -414,69 +402,69 @@ function var0_0.didEnter(arg0_25)
 		end
 	end, SFX_PANEL)
 
-	local var0_25 = arg0_25.top:Find("stamp")
+	local var0_23 = arg0_23.top:Find("stamp")
 
-	setActive(var0_25, getProxy(TaskProxy):mingshiTouchFlagEnabled())
-	onButton(arg0_25, var0_25, function()
+	setActive(var0_23, getProxy(TaskProxy):mingshiTouchFlagEnabled())
+	onButton(arg0_23, var0_23, function()
 		getProxy(TaskProxy):dealMingshiTouchFlag(8)
 	end, SFX_CONFIRM)
 
-	for iter0_25, iter1_25 in ipairs(arg0_25.toggles) do
-		if PLATFORM_CODE == PLATFORM_CH and (iter0_25 == 1 or iter0_25 == 3) and LOCK_COLLECTION then
-			setActive(iter1_25, false)
+	for iter0_23, iter1_23 in ipairs(arg0_23.toggles) do
+		if PLATFORM_CODE == PLATFORM_CH and (iter0_23 == 1 or iter0_23 == 3) and LOCK_COLLECTION then
+			setActive(iter1_23, false)
 		else
-			onToggle(arg0_25, iter1_25, function(arg0_29)
-				if arg0_29 then
-					if arg0_25.contextData.toggle ~= iter0_25 then
-						if arg0_25.contextData.toggle == var0_0.SHIPCOLLECTION_INDEX then
-							setActive(arg0_25.helpBtn, false)
+			onToggle(arg0_23, iter1_23, function(arg0_27)
+				if arg0_27 then
+					if arg0_23.contextData.toggle ~= iter0_23 then
+						if arg0_23.contextData.toggle == var0_0.SHIPCOLLECTION_INDEX then
+							setActive(arg0_23.helpBtn, false)
 
-							if arg0_25.bulinTip then
-								arg0_25.bulinTip.buffer:Hide()
+							if arg0_23.bulinTip then
+								arg0_23.bulinTip.buffer:Hide()
 							end
 
-							if arg0_25.contextData.cardToggle == 1 then
-								arg0_25.contextData.cardScrollValue = arg0_25.cardList.value
+							if arg0_23.contextData.cardToggle == 1 then
+								arg0_23.contextData.cardScrollValue = arg0_23.cardList.value
 							end
 						end
 
-						arg0_25.contextData.toggle = iter0_25
+						arg0_23.contextData.toggle = iter0_23
 
-						if arg0_25.toggleUpdates[iter0_25] then
-							arg0_25[arg0_25.toggleUpdates[iter0_25]](arg0_25)
-							arg0_25:calFavoriteRate()
+						if arg0_23.toggleUpdates[iter0_23] then
+							arg0_23[arg0_23.toggleUpdates[iter0_23]](arg0_23)
+							arg0_23:calFavoriteRate()
 						end
 					end
 
-					if iter0_25 == var0_0.SHIPCOLLECTION_INDEX then
-						setActive(arg0_25.helpBtn, true)
+					if iter0_23 == var0_0.SHIPCOLLECTION_INDEX then
+						setActive(arg0_23.helpBtn, true)
 
-						local var0_29 = getProxy(SettingsProxy)
+						local var0_27 = getProxy(SettingsProxy)
 
-						if not var0_29:IsShowCollectionHelp() then
-							triggerButton(arg0_25.helpBtn)
-							var0_29:SetCollectionHelpFlag(true)
+						if not var0_27:IsShowCollectionHelp() then
+							triggerButton(arg0_23.helpBtn)
+							var0_27:SetCollectionHelpFlag(true)
 						end
 
-						if arg0_25.bulinTip then
-							arg0_25.bulinTip.buffer:Show()
+						if arg0_23.bulinTip then
+							arg0_23.bulinTip.buffer:Show()
 						else
-							arg0_25.bulinTip = AprilFoolBulinSubView.ShowAprilFoolBulin(arg0_25, arg0_25._tf:Find("main"))
+							arg0_23.bulinTip = AprilFoolBulinSubView.ShowAprilFoolBulin(arg0_23, arg0_23._tf:Find("main"))
 						end
 					end
 
-					if iter0_25 ~= var0_0.MUSIC_INDEX then
-						if arg0_25.musicView and arg0_25.musicView:CheckState(BaseSubView.STATES.INITED) then
-							arg0_25.musicView:tryPauseMusic()
-							arg0_25.musicView:closeAlbumListPanel()
+					if iter0_23 ~= var0_0.MUSIC_INDEX then
+						if arg0_23.musicView and arg0_23.musicView:CheckState(BaseSubView.STATES.INITED) then
+							arg0_23.musicView:tryPauseMusic()
+							arg0_23.musicView:closeAlbumListPanel()
 						end
 
 						pg.BgmMgr.GetInstance():ContinuePlay()
-					elseif iter0_25 == var0_0.MUSIC_INDEX then
+					elseif iter0_23 == var0_0.MUSIC_INDEX then
 						pg.BgmMgr.GetInstance():StopPlay()
 
-						if arg0_25.musicView and arg0_25.musicView:CheckState(BaseSubView.STATES.INITED) then
-							arg0_25.musicView:tryPlayMusic()
+						if arg0_23.musicView and arg0_23.musicView:CheckState(BaseSubView.STATES.INITED) then
+							arg0_23.musicView:tryPlayMusic()
 						end
 					end
 				end
@@ -484,747 +472,747 @@ function var0_0.didEnter(arg0_25)
 		end
 	end
 
-	for iter2_25, iter3_25 in ipairs(arg0_25.memoryToggles) do
-		onToggle(arg0_25, iter3_25, function(arg0_30)
-			if arg0_30 then
-				if iter2_25 == 1 then
-					arg0_25.memoryFilterIndex = {
+	for iter2_23, iter3_23 in ipairs(arg0_23.memoryToggles) do
+		onToggle(arg0_23, iter3_23, function(arg0_28)
+			if arg0_28 then
+				if iter2_23 == 1 then
+					arg0_23.memoryFilterIndex = {
 						true,
 						true,
 						true
 					}
 				else
-					for iter0_30 in ipairs(arg0_25.memoryFilterIndex) do
-						arg0_25.memoryFilterIndex[iter0_30] = iter2_25 - 1 == iter0_30
+					for iter0_28 in ipairs(arg0_23.memoryFilterIndex) do
+						arg0_23.memoryFilterIndex[iter0_28] = iter2_23 - 1 == iter0_28
 					end
 				end
 
-				arg0_25:memoryFilter()
+				arg0_23:memoryFilter()
 			end
 		end, SFX_UI_TAG)
 	end
 
-	local var1_25 = arg0_25.contextData.toggle
+	local var1_23 = arg0_23.contextData.toggle
 
-	arg0_25.contextData.toggle = -1
+	arg0_23.contextData.toggle = -1
 
-	triggerToggle(arg0_25.toggles[var1_25], true)
+	triggerToggle(arg0_23.toggles[var1_23], true)
 
-	local var2_25 = arg0_25.contextData.memoryGroup
+	local var2_23 = arg0_23.contextData.memoryGroup
 
-	if var2_25 and pg.memory_group[var2_25] then
-		arg0_25:showSubMemories(pg.memory_group[var2_25])
+	if var2_23 and pg.memory_group[var2_23] then
+		arg0_23:showSubMemories(pg.memory_group[var2_23])
 	else
-		triggerToggle(arg0_25.memoryToggles[1], true)
+		triggerToggle(arg0_23.memoryToggles[1], true)
 	end
 
-	for iter4_25, iter5_25 in ipairs(arg0_25.cardToggles) do
-		triggerToggle(iter5_25, arg0_25.contextData.cardToggle == iter4_25)
-		onToggle(arg0_25, iter5_25, function(arg0_31)
-			if arg0_31 and arg0_25.contextData.cardToggle ~= iter4_25 then
-				if arg0_25.contextData.cardToggle == 1 then
-					arg0_25.contextData.cardScrollValue = arg0_25.cardList.value
+	for iter4_23, iter5_23 in ipairs(arg0_23.cardToggles) do
+		triggerToggle(iter5_23, arg0_23.contextData.cardToggle == iter4_23)
+		onToggle(arg0_23, iter5_23, function(arg0_29)
+			if arg0_29 and arg0_23.contextData.cardToggle ~= iter4_23 then
+				if arg0_23.contextData.cardToggle == 1 then
+					arg0_23.contextData.cardScrollValue = arg0_23.cardList.value
 				end
 
-				arg0_25.contextData.cardToggle = iter4_25
+				arg0_23.contextData.cardToggle = iter4_23
 
-				arg0_25:initCardPanel()
-				arg0_25:calFavoriteRate()
+				arg0_23:initCardPanel()
+				arg0_23:calFavoriteRate()
 			end
 		end)
 	end
 
-	arg0_25:calFavoriteRate()
-	arg0_25:OverlayPanel(arg0_25.blurPanel)
-	onButton(arg0_25, arg0_25.bonusPanel, function()
-		arg0_25:closeBonus()
+	arg0_23:calFavoriteRate()
+	arg0_23:OverlayPanel(arg0_23.blurPanel)
+	onButton(arg0_23, arg0_23.bonusPanel, function()
+		arg0_23:closeBonus()
 	end, SFX_PANEL)
 end
 
-function var0_0.updateCollectNotices(arg0_33, arg1_33)
-	setActive(arg0_33.tip, arg1_33)
-	setActive(arg0_33.toggles[var0_0.GALLERY_INDEX]:Find("tip"), getProxy(AppreciateProxy):isGalleryHaveNewRes())
-	setActive(arg0_33.toggles[var0_0.MUSIC_INDEX]:Find("tip"), getProxy(AppreciateProxy):isMusicHaveNewRes())
-	setActive(arg0_33.toggles[var0_0.MANGA_INDEX]:Find("tip"), getProxy(AppreciateProxy):isMangaHaveNewRes())
+function var0_0.updateCollectNotices(arg0_31, arg1_31)
+	setActive(arg0_31.tip, arg1_31)
+	setActive(arg0_31.toggles[var0_0.GALLERY_INDEX]:Find("tip"), getProxy(AppreciateProxy):isGalleryHaveNewRes())
+	setActive(arg0_31.toggles[var0_0.MUSIC_INDEX]:Find("tip"), getProxy(AppreciateProxy):isMusicHaveNewRes())
+	setActive(arg0_31.toggles[var0_0.MANGA_INDEX]:Find("tip"), getProxy(AppreciateProxy):isMangaHaveNewRes())
 end
 
-function var0_0.calFavoriteRate(arg0_34)
-	local var0_34 = arg0_34.contextData.toggle == 1 and arg0_34.contextData.cardToggle == 2
+function var0_0.calFavoriteRate(arg0_32)
+	local var0_32 = arg0_32.contextData.toggle == 1 and arg0_32.contextData.cardToggle == 2
 
-	setActive(arg0_34.top:Find("total/char"), not var0_34)
-	setActive(arg0_34.top:Find("total/link"), var0_34)
-	setText(arg0_34.top:Find("total/char/rate/Text"), arg0_34.rate * 100 .. "%")
-	setText(arg0_34.top:Find("total/char/count/Text"), arg0_34.count .. "/" .. arg0_34.totalCount)
-	setText(arg0_34.top:Find("total/link/count/Text"), arg0_34.linkCount)
+	setActive(arg0_32.top:Find("total/char"), not var0_32)
+	setActive(arg0_32.top:Find("total/link"), var0_32)
+	setText(arg0_32.top:Find("total/char/rate/Text"), arg0_32.rate * 100 .. "%")
+	setText(arg0_32.top:Find("total/char/count/Text"), arg0_32.count .. "/" .. arg0_32.totalCount)
+	setText(arg0_32.top:Find("total/link/count/Text"), arg0_32.linkCount)
 end
 
-function var0_0.initCardPanel(arg0_35)
-	local var0_35 = arg0_35:isDefaultStatus() and "shaixuan_off" or "shaixuan_on"
+function var0_0.initCardPanel(arg0_33)
+	local var0_33 = arg0_33:isDefaultStatus() and "shaixuan_off" or "shaixuan_on"
 
-	GetSpriteFromAtlasAsync("ui/share/index_atlas", var0_35, function(arg0_36)
-		setImageSprite(arg0_35.indexBtn, arg0_36, true)
+	GetSpriteFromAtlasAsync("ui/share/index_atlas", var0_33, function(arg0_34)
+		setImageSprite(arg0_33.indexBtn, arg0_34, true)
 	end)
 
-	if arg0_35.contextData.toggle == 1 then
-		setActive(arg0_35.cardToggleGroup, true)
-		arg0_35:cardFilter()
-	elseif arg0_35.contextData.toggle == 3 then
-		setActive(arg0_35.cardToggleGroup, false)
-		arg0_35:transFilter()
+	if arg0_33.contextData.toggle == 1 then
+		setActive(arg0_33.cardToggleGroup, true)
+		arg0_33:cardFilter()
+	elseif arg0_33.contextData.toggle == 3 then
+		setActive(arg0_33.cardToggleGroup, false)
+		arg0_33:transFilter()
 	end
 
-	table.sort(arg0_35.codeShips, function(arg0_37, arg1_37)
-		return arg0_37.index_id < arg1_37.index_id
+	table.sort(arg0_33.codeShips, function(arg0_35, arg1_35)
+		return arg0_35.index_id < arg1_35.index_id
 	end)
-	arg0_35.cardList:SetTotalCount(#arg0_35.codeShips, arg0_35.contextData.cardScrollValue or 0)
+	arg0_33.cardList:SetTotalCount(#arg0_33.codeShips, arg0_33.contextData.cardScrollValue or 0)
 end
 
-function var0_0.initIndexPanel(arg0_38)
-	arg0_38.indexBtn = arg0_38.top:Find("index_button")
+function var0_0.initIndexPanel(arg0_36)
+	arg0_36.indexBtn = arg0_36.top:Find("index_button")
 
-	onButton(arg0_38, arg0_38.indexBtn, function()
-		local var0_39 = Clone(var0_0.ShipIndexData)
+	onButton(arg0_36, arg0_36.indexBtn, function()
+		local var0_37 = Clone(var0_0.ShipIndexData)
 
-		if arg0_38.contextData.toggle == 1 and arg0_38.contextData.cardToggle == 2 then
-			var0_39.customPanels.campIndex = nil
-			var0_39.groupList[2] = nil
+		if arg0_36.contextData.toggle == 1 and arg0_36.contextData.cardToggle == 2 then
+			var0_37.customPanels.campIndex = nil
+			var0_37.groupList[2] = nil
 		end
 
-		var0_39.indexDatas = Clone(var0_0.ShipIndex)
+		var0_37.indexDatas = Clone(var0_0.ShipIndex)
 
-		function var0_39.callback(arg0_40)
-			var0_0.ShipIndex.typeIndex = arg0_40.typeIndex
+		function var0_37.callback(arg0_38)
+			var0_0.ShipIndex.typeIndex = arg0_38.typeIndex
 
-			if arg0_40.campIndex then
-				var0_0.ShipIndex.campIndex = arg0_40.campIndex
+			if arg0_38.campIndex then
+				var0_0.ShipIndex.campIndex = arg0_38.campIndex
 			end
 
-			var0_0.ShipIndex.rarityIndex = arg0_40.rarityIndex
-			var0_0.ShipIndex.collExtraIndex = arg0_40.collExtraIndex
+			var0_0.ShipIndex.rarityIndex = arg0_38.rarityIndex
+			var0_0.ShipIndex.collExtraIndex = arg0_38.collExtraIndex
 
-			arg0_38:initCardPanel()
+			arg0_36:initCardPanel()
 		end
 
-		arg0_38:emit(var0_0.ON_INDEX, var0_39)
+		arg0_36:emit(var0_0.ON_INDEX, var0_37)
 	end, SFX_PANEL)
 end
 
-function var0_0.onInitCard(arg0_41, arg1_41)
-	if arg0_41.exited then
+function var0_0.onInitCard(arg0_39, arg1_39)
+	if arg0_39.exited then
 		return
 	end
 
-	local var0_41 = CollectionShipCard.New(arg1_41)
+	local var0_39 = CollectionShipCard.New(arg1_39)
 
-	onButton(arg0_41, var0_41.go, function()
-		if not arg0_41.isClicked then
-			arg0_41.isClicked = true
+	onButton(arg0_39, var0_39.go, function()
+		if not arg0_39.isClicked then
+			arg0_39.isClicked = true
 
 			LeanTween.delayedCall(0.2, System.Action(function()
-				arg0_41.isClicked = false
+				arg0_39.isClicked = false
 
-				if not var0_41:getIsInited() then
+				if not var0_39:getIsInited() then
 					return
 				end
 
-				if var0_41.state == ShipGroup.STATE_UNLOCK then
-					arg0_41.contextData.cardScrollValue = arg0_41.cardList.value
+				if var0_39.state == ShipGroup.STATE_UNLOCK then
+					arg0_39.contextData.cardScrollValue = arg0_39.cardList.value
 
-					arg0_41:emit(var0_0.SHOW_DETAIL, var0_41.showTrans, var0_41.shipGroup.id)
-				elseif var0_41.state == ShipGroup.STATE_NOTGET then
-					if var0_41.showTrans == true and var0_41.shipGroup.trans == true then
+					arg0_39:emit(var0_0.SHOW_DETAIL, var0_39.showTrans, var0_39.shipGroup.id)
+				elseif var0_39.state == ShipGroup.STATE_NOTGET then
+					if var0_39.showTrans == true and var0_39.shipGroup.trans == true then
 						return
 					end
 
-					if var0_41.config then
-						arg0_41:showObtain(var0_41.config.description, var0_41.shipGroup:getShipConfigId())
+					if var0_39.config then
+						arg0_39:showObtain(var0_39.config.description, var0_39.shipGroup:getShipConfigId())
 					end
 				end
 			end))
 		end
 	end, SOUND_BACK)
 
-	arg0_41.cardItems[arg1_41] = var0_41
+	arg0_39.cardItems[arg1_39] = var0_39
 end
 
-function var0_0.showObtain(arg0_44, arg1_44, arg2_44)
-	local var0_44 = {
+function var0_0.showObtain(arg0_42, arg1_42, arg2_42)
+	local var0_42 = {
 		type = MSGBOX_TYPE_OBTAIN,
-		shipId = arg2_44,
-		list = arg1_44,
+		shipId = arg2_42,
+		list = arg1_42,
 		mediatorName = CollectionMediator.__cname
 	}
 
 	if PLATFORM_CODE == PLATFORM_CH and HXSet.isHx() then
-		var0_44.unknown_small = true
+		var0_42.unknown_small = true
 	end
 
-	arg0_44.contextData.cardScrollValue = arg0_44.cardList.value
+	arg0_42.contextData.cardScrollValue = arg0_42.cardList.value
 
-	pg.MsgboxMgr.GetInstance():ShowMsgBox(var0_44)
+	pg.MsgboxMgr.GetInstance():ShowMsgBox(var0_42)
 end
 
-function var0_0.skipIn(arg0_45, arg1_45, arg2_45)
-	arg0_45.contextData.displayGroupId = arg2_45
+function var0_0.skipIn(arg0_43, arg1_43, arg2_43)
+	arg0_43.contextData.displayGroupId = arg2_43
 
-	triggerToggle(arg0_45.toggles[arg1_45], true)
+	triggerToggle(arg0_43.toggles[arg1_43], true)
 end
 
-function var0_0.onUpdateCard(arg0_46, arg1_46, arg2_46)
-	if arg0_46.exited then
+function var0_0.onUpdateCard(arg0_44, arg1_44, arg2_44)
+	if arg0_44.exited then
 		return
 	end
 
-	local var0_46 = arg0_46.cardItems[arg2_46]
+	local var0_44 = arg0_44.cardItems[arg2_44]
 
-	if not var0_46 then
-		arg0_46:onInitCard(arg2_46)
+	if not var0_44 then
+		arg0_44:onInitCard(arg2_44)
 
-		var0_46 = arg0_46.cardItems[arg2_46]
+		var0_44 = arg0_44.cardItems[arg2_44]
 	end
 
-	local var1_46 = arg1_46 + 1
-	local var2_46 = arg0_46.codeShips[var1_46]
+	local var1_44 = arg1_44 + 1
+	local var2_44 = arg0_44.codeShips[var1_44]
 
-	if not var2_46 then
+	if not var2_44 then
 		return
 	end
 
-	local var3_46 = false
+	local var3_44 = false
 
-	if var2_46.group then
-		var3_46 = arg0_46.proposeList[var2_46.group.id]
+	if var2_44.group then
+		var3_44 = arg0_44.proposeList[var2_44.group.id]
 	end
 
-	var0_46:update(var2_46.code, var2_46.group, var2_46.showTrans, var3_46, var2_46.id)
+	var0_44:update(var2_44.code, var2_44.group, var2_44.showTrans, var3_44, var2_44.id)
 end
 
-function var0_0.onReturnCard(arg0_47, arg1_47, arg2_47)
-	if arg0_47.exited then
+function var0_0.onReturnCard(arg0_45, arg1_45, arg2_45)
+	if arg0_45.exited then
 		return
 	end
 
-	local var0_47 = arg0_47.cardItems[arg2_47]
+	local var0_45 = arg0_45.cardItems[arg2_45]
 
-	if var0_47 then
-		var0_47:clear()
+	if var0_45 then
+		var0_45:clear()
 	end
 end
 
-function var0_0.cardFilter(arg0_48)
+function var0_0.cardFilter(arg0_46)
+	arg0_46.codeShips = {}
+
+	local var0_46 = _.filter(pg.ship_data_group.all, function(arg0_47)
+		return pg.ship_data_group[arg0_47].handbook_type == arg0_46.contextData.cardToggle - 1
+	end)
+
+	table.sort(var0_46)
+
+	for iter0_46, iter1_46 in ipairs(var0_46) do
+		local var1_46 = pg.ship_data_group[iter1_46]
+		local var2_46 = arg0_46.shipGroups[var1_46.group_type] or ShipGroup.New({
+			id = var1_46.group_type
+		})
+
+		if ShipIndexConst.filterByType(var2_46, var0_0.ShipIndex.typeIndex) and (arg0_46.contextData.cardToggle == 2 or ShipIndexConst.filterByCamp(var2_46, var0_0.ShipIndex.campIndex)) and arg0_46.contextData.cardToggle == 4 == Nation.IsMeta(ShipGroup.getDefaultShipConfig(var1_46.group_type).nationality) and ShipIndexConst.filterByRarity(var2_46, var0_0.ShipIndex.rarityIndex) and ShipIndexConst.filterByCollExtra(var2_46, var0_0.ShipIndex.collExtraIndex) then
+			arg0_46.codeShips[#arg0_46.codeShips + 1] = {
+				showTrans = false,
+				id = iter1_46,
+				code = iter1_46 - (arg0_46.contextData.cardToggle - 1) * 10000,
+				group = arg0_46.shipGroups[var1_46.group_type],
+				index_id = var1_46.index_id
+			}
+		end
+	end
+end
+
+function var0_0.transFilter(arg0_48)
 	arg0_48.codeShips = {}
 
 	local var0_48 = _.filter(pg.ship_data_group.all, function(arg0_49)
-		return pg.ship_data_group[arg0_49].handbook_type == arg0_48.contextData.cardToggle - 1
+		return pg.ship_data_group[arg0_49].handbook_type == 0
 	end)
 
 	table.sort(var0_48)
 
 	for iter0_48, iter1_48 in ipairs(var0_48) do
 		local var1_48 = pg.ship_data_group[iter1_48]
-		local var2_48 = arg0_48.shipGroups[var1_48.group_type] or ShipGroup.New({
-			id = var1_48.group_type
-		})
 
-		if ShipIndexConst.filterByType(var2_48, var0_0.ShipIndex.typeIndex) and (arg0_48.contextData.cardToggle == 2 or ShipIndexConst.filterByCamp(var2_48, var0_0.ShipIndex.campIndex)) and arg0_48.contextData.cardToggle == 4 == Nation.IsMeta(ShipGroup.getDefaultShipConfig(var1_48.group_type).nationality) and ShipIndexConst.filterByRarity(var2_48, var0_0.ShipIndex.rarityIndex) and ShipIndexConst.filterByCollExtra(var2_48, var0_0.ShipIndex.collExtraIndex) then
-			arg0_48.codeShips[#arg0_48.codeShips + 1] = {
-				showTrans = false,
-				id = iter1_48,
-				code = iter1_48 - (arg0_48.contextData.cardToggle - 1) * 10000,
-				group = arg0_48.shipGroups[var1_48.group_type],
-				index_id = var1_48.index_id
-			}
-		end
-	end
-end
-
-function var0_0.transFilter(arg0_50)
-	arg0_50.codeShips = {}
-
-	local var0_50 = _.filter(pg.ship_data_group.all, function(arg0_51)
-		return pg.ship_data_group[arg0_51].handbook_type == 0
-	end)
-
-	table.sort(var0_50)
-
-	for iter0_50, iter1_50 in ipairs(var0_50) do
-		local var1_50 = pg.ship_data_group[iter1_50]
-
-		if pg.ship_data_trans[var1_50.group_type] then
-			local var2_50 = arg0_50.shipGroups[var1_50.group_type] or ShipGroup.New({
+		if pg.ship_data_trans[var1_48.group_type] then
+			local var2_48 = arg0_48.shipGroups[var1_48.group_type] or ShipGroup.New({
 				remoulded = true,
-				id = var1_50.group_type
+				id = var1_48.group_type
 			})
 
-			if ShipIndexConst.filterByType(var2_50, var0_0.ShipIndex.typeIndex) and ShipIndexConst.filterByCamp(var2_50, var0_0.ShipIndex.campIndex) and ShipIndexConst.filterByRarity(var2_50, var0_0.ShipIndex.rarityIndex) and ShipIndexConst.filterByCollExtra(var2_50, var0_0.ShipIndex.collExtraIndex) then
-				arg0_50.codeShips[#arg0_50.codeShips + 1] = {
+			if ShipIndexConst.filterByType(var2_48, var0_0.ShipIndex.typeIndex) and ShipIndexConst.filterByCamp(var2_48, var0_0.ShipIndex.campIndex) and ShipIndexConst.filterByRarity(var2_48, var0_0.ShipIndex.rarityIndex) and ShipIndexConst.filterByCollExtra(var2_48, var0_0.ShipIndex.collExtraIndex) then
+				arg0_48.codeShips[#arg0_48.codeShips + 1] = {
 					showTrans = true,
-					id = iter1_50,
-					code = 3000 + iter1_50,
-					group = var2_50.trans and var2_50 or nil,
-					index_id = var1_50.index_id
+					id = iter1_48,
+					code = 3000 + iter1_48,
+					group = var2_48.trans and var2_48 or nil,
+					index_id = var1_48.index_id
 				}
 			end
 		end
 	end
 end
 
-function var0_0.sortDisplay(arg0_52)
-	table.sort(arg0_52.favoriteVOs, function(arg0_53, arg1_53)
-		local var0_53 = arg0_53:getState(arg0_52.shipGroups, arg0_52.awards)
-		local var1_53 = arg1_53:getState(arg0_52.shipGroups, arg0_52.awards)
+function var0_0.sortDisplay(arg0_50)
+	table.sort(arg0_50.favoriteVOs, function(arg0_51, arg1_51)
+		local var0_51 = arg0_51:getState(arg0_50.shipGroups, arg0_50.awards)
+		local var1_51 = arg1_51:getState(arg0_50.shipGroups, arg0_50.awards)
 
-		if var0_53 == var1_53 then
-			return arg0_53.id < arg1_53.id
+		if var0_51 == var1_51 then
+			return arg0_51.id < arg1_51.id
 		else
-			return var0_53 < var1_53
+			return var0_51 < var1_51
 		end
 	end)
 
-	local var0_52 = 0
-	local var1_52 = arg0_52.contextData.displayGroupId
+	local var0_50 = 0
+	local var1_50 = arg0_50.contextData.displayGroupId
 
-	for iter0_52, iter1_52 in ipairs(arg0_52.favoriteVOs) do
-		if iter1_52:containShipGroup(var1_52) then
-			var0_52 = iter0_52
+	for iter0_50, iter1_50 in ipairs(arg0_50.favoriteVOs) do
+		if iter1_50:containShipGroup(var1_50) then
+			var0_50 = iter0_50
 
 			break
 		end
 	end
 
-	arg0_52.displayRect:SetTotalCount(#arg0_52.favoriteVOs, arg0_52.displayRect:HeadIndexToValue(var0_52 - 1))
+	arg0_50.displayRect:SetTotalCount(#arg0_50.favoriteVOs, arg0_50.displayRect:HeadIndexToValue(var0_50 - 1))
 end
 
-function var0_0.initDisplayPanel(arg0_54)
-	if not arg0_54.isInitDisplay then
-		arg0_54.isInitDisplay = true
-		arg0_54.displayRect = arg0_54._tf:Find("main/list_display"):GetComponent("LScrollRect")
-		arg0_54.displayRect.decelerationRate = 0.07
+function var0_0.initDisplayPanel(arg0_52)
+	if not arg0_52.isInitDisplay then
+		arg0_52.isInitDisplay = true
+		arg0_52.displayRect = arg0_52._tf:Find("main/list_display"):GetComponent("LScrollRect")
+		arg0_52.displayRect.decelerationRate = 0.07
 
-		function arg0_54.displayRect.onInitItem(arg0_55)
-			arg0_54:initFavoriteCard(arg0_55)
+		function arg0_52.displayRect.onInitItem(arg0_53)
+			arg0_52:initFavoriteCard(arg0_53)
 		end
 
-		function arg0_54.displayRect.onUpdateItem(arg0_56, arg1_56)
-			arg0_54:updateFavoriteCard(arg0_56, arg1_56)
+		function arg0_52.displayRect.onUpdateItem(arg0_54, arg1_54)
+			arg0_52:updateFavoriteCard(arg0_54, arg1_54)
 		end
 
-		arg0_54.favoriteCards = {}
+		arg0_52.favoriteCards = {}
 	end
 
-	arg0_54:sortDisplay()
+	arg0_52:sortDisplay()
 end
 
-function var0_0.initFavoriteCard(arg0_57, arg1_57)
-	if arg0_57.exited then
+function var0_0.initFavoriteCard(arg0_55, arg1_55)
+	if arg0_55.exited then
 		return
 	end
 
-	local var0_57 = FavoriteCard.New(arg1_57, arg0_57.charTpl)
+	local var0_55 = FavoriteCard.New(arg1_55, arg0_55.charTpl)
 
-	onButton(arg0_57, var0_57.awardTF, function()
-		if var0_57.state == Favorite.STATE_AWARD then
-			arg0_57:emit(var0_0.GET_AWARD, var0_57.favoriteVO.id, var0_57.favoriteVO:getNextAwardIndex(var0_57.awards))
-		elseif var0_57.state == Favorite.STATE_LOCK then
+	onButton(arg0_55, var0_55.awardTF, function()
+		if var0_55.state == Favorite.STATE_AWARD then
+			arg0_55:emit(var0_0.GET_AWARD, var0_55.favoriteVO.id, var0_55.favoriteVO:getNextAwardIndex(var0_55.awards))
+		elseif var0_55.state == Favorite.STATE_LOCK then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("collection_lock"))
-		elseif var0_57.state == Favorite.STATE_FETCHED then
+		elseif var0_55.state == Favorite.STATE_FETCHED then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("collection_fetched"))
-		elseif var0_57.state == Favorite.STATE_STATE_WAIT then
+		elseif var0_55.state == Favorite.STATE_STATE_WAIT then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("collection_nostar"))
 		end
 	end, SFX_PANEL)
-	onButton(arg0_57, var0_57.box, function()
-		arg0_57:openBonus(var0_57.favoriteVO)
+	onButton(arg0_55, var0_55.box, function()
+		arg0_55:openBonus(var0_55.favoriteVO)
 	end, SFX_PANEL)
 
-	arg0_57.favoriteCards[arg1_57] = var0_57
+	arg0_55.favoriteCards[arg1_55] = var0_55
 end
 
-function var0_0.updateFavoriteCard(arg0_60, arg1_60, arg2_60)
-	if arg0_60.exited then
+function var0_0.updateFavoriteCard(arg0_58, arg1_58, arg2_58)
+	if arg0_58.exited then
 		return
 	end
 
-	local var0_60 = arg0_60.favoriteCards[arg2_60]
+	local var0_58 = arg0_58.favoriteCards[arg2_58]
 
-	if not var0_60 then
-		arg0_60:initFavoriteCard(arg2_60)
+	if not var0_58 then
+		arg0_58:initFavoriteCard(arg2_58)
 
-		var0_60 = arg0_60.favoriteCards[arg2_60]
+		var0_58 = arg0_58.favoriteCards[arg2_58]
 	end
 
-	local var1_60 = arg0_60.favoriteVOs[arg1_60 + 1]
+	local var1_58 = arg0_58.favoriteVOs[arg1_58 + 1]
 
-	var0_60:update(var1_60, arg0_60.shipGroups, arg0_60.awards)
+	var0_58:update(var1_58, arg0_58.shipGroups, arg0_58.awards)
 end
 
-function var0_0.openBonus(arg0_61, arg1_61)
-	if not arg0_61.isInitBound then
-		arg0_61.isInitBound = true
-		arg0_61.boundName = findTF(arg0_61.bonusPanel, "frame/name/Text"):GetComponent(typeof(Text))
-		arg0_61.progressSlider = findTF(arg0_61.bonusPanel, "frame/process"):GetComponent(typeof(Slider))
+function var0_0.openBonus(arg0_59, arg1_59)
+	if not arg0_59.isInitBound then
+		arg0_59.isInitBound = true
+		arg0_59.boundName = findTF(arg0_59.bonusPanel, "frame/name/Text"):GetComponent(typeof(Text))
+		arg0_59.progressSlider = findTF(arg0_59.bonusPanel, "frame/process"):GetComponent(typeof(Slider))
 	end
 
-	pg.UIMgr.GetInstance():BlurPanel(arg0_61.bonusPanel)
-	setActive(arg0_61.bonusPanel, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_59.bonusPanel)
+	setActive(arg0_59.bonusPanel, true)
 
-	arg0_61.boundName.text = arg1_61:getConfig("name")
+	arg0_59.boundName.text = arg1_59:getConfig("name")
 
-	local var0_61 = arg1_61:getConfig("award_display")
-	local var1_61 = arg1_61:getConfig("level")
+	local var0_59 = arg1_59:getConfig("award_display")
+	local var1_59 = arg1_59:getConfig("level")
 
-	for iter0_61, iter1_61 in ipairs(var1_61) do
-		local var2_61 = var0_61[iter0_61]
-		local var3_61 = findTF(arg0_61.bonusPanel, "frame/awards/award" .. iter0_61)
+	for iter0_59, iter1_59 in ipairs(var1_59) do
+		local var2_59 = var0_59[iter0_59]
+		local var3_59 = findTF(arg0_59.bonusPanel, "frame/awards/award" .. iter0_59)
 
-		setText(findTF(var3_61, "process"), iter1_61)
+		setText(findTF(var3_59, "process"), iter1_59)
 
-		local var4_61 = arg1_61:getAwardState(arg0_61.shipGroups, arg0_61.awards, iter0_61)
+		local var4_59 = arg1_59:getAwardState(arg0_59.shipGroups, arg0_59.awards, iter0_59)
 
-		setActive(findTF(var3_61, "item_tpl/unfinish"), var4_61 == Favorite.STATE_WAIT)
-		setActive(findTF(var3_61, "item_tpl/get"), var4_61 == Favorite.STATE_AWARD)
-		setActive(findTF(var3_61, "item_tpl/got"), var4_61 == Favorite.STATE_FETCHED)
-		setActive(findTF(var3_61, "item_tpl/lock"), var4_61 == Favorite.STATE_LOCK)
-		setActive(findTF(var3_61, "item_tpl/icon_bg"), var4_61 ~= Favorite.STATE_LOCK)
-		setActive(findTF(var3_61, "item_tpl/bg"), var4_61 ~= Favorite.STATE_LOCK)
+		setActive(findTF(var3_59, "item_tpl/unfinish"), var4_59 == Favorite.STATE_WAIT)
+		setActive(findTF(var3_59, "item_tpl/get"), var4_59 == Favorite.STATE_AWARD)
+		setActive(findTF(var3_59, "item_tpl/got"), var4_59 == Favorite.STATE_FETCHED)
+		setActive(findTF(var3_59, "item_tpl/lock"), var4_59 == Favorite.STATE_LOCK)
+		setActive(findTF(var3_59, "item_tpl/icon_bg"), var4_59 ~= Favorite.STATE_LOCK)
+		setActive(findTF(var3_59, "item_tpl/bg"), var4_59 ~= Favorite.STATE_LOCK)
 
-		if var2_61 then
-			local var5_61 = {
+		if var2_59 then
+			local var5_59 = {
 				count = 0,
-				type = var2_61[1],
-				id = var2_61[2]
+				type = var2_59[1],
+				id = var2_59[2]
 			}
 
-			updateDrop(findTF(var3_61, "item_tpl"), var5_61)
+			updateDrop(findTF(var3_59, "item_tpl"), var5_59)
 
-			var5_61.count = var2_61[3]
+			var5_59.count = var2_59[3]
 
-			onButton(arg0_61, var3_61, function()
-				arg0_61:emit(var0_0.ON_DROP, var5_61)
+			onButton(arg0_59, var3_59, function()
+				arg0_59:emit(var0_0.ON_DROP, var5_59)
 			end, SFX_PANEL)
 		else
-			GetOrAddComponent(var3_61, typeof(Button)).onClick:RemoveAllListeners()
+			GetOrAddComponent(var3_59, typeof(Button)).onClick:RemoveAllListeners()
 		end
 	end
 
-	local var6_61 = arg1_61:getStarCount(arg0_61.shipGroups)
+	local var6_59 = arg1_59:getStarCount(arg0_59.shipGroups)
 
-	arg0_61.progressSlider.value = var6_61 / var1_61[#var1_61]
+	arg0_59.progressSlider.value = var6_59 / var1_59[#var1_59]
 end
 
-function var0_0.closeBonus(arg0_63)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_63.bonusPanel, arg0_63._tf)
-	setActive(arg0_63.bonusPanel, false)
+function var0_0.closeBonus(arg0_61)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_61.bonusPanel, arg0_61._tf)
+	setActive(arg0_61.bonusPanel, false)
 end
 
-function var0_0.showSubMemories(arg0_64, arg1_64)
-	arg0_64.contextData.memoryGroup = arg1_64.id
-	arg0_64.memories = _.map(arg1_64.memories, function(arg0_65)
-		return pg.memory_template[arg0_65]
+function var0_0.showSubMemories(arg0_62, arg1_62)
+	arg0_62.contextData.memoryGroup = arg1_62.id
+	arg0_62.memories = _.map(arg1_62.memories, function(arg0_63)
+		return pg.memory_template[arg0_63]
 	end)
 
-	for iter0_64 in ipairs(arg0_64.memories) do
-		arg0_64.memories[iter0_64].index = iter0_64
+	for iter0_62 in ipairs(arg0_62.memories) do
+		arg0_62.memories[iter0_62].index = iter0_62
 	end
 
-	arg0_64.memoryList:SetTotalCount(#arg0_64.memories, 0)
-	setActive(arg0_64.top:Find("memory"), false)
+	arg0_62.memoryList:SetTotalCount(#arg0_62.memories, 0)
+	setActive(arg0_62.top:Find("memory"), false)
 end
 
 local var1_0 = 3
 
-function var0_0.return2MemoryGroup(arg0_66)
-	local var0_66 = arg0_66.contextData.memoryGroup
+function var0_0.return2MemoryGroup(arg0_64)
+	local var0_64 = arg0_64.contextData.memoryGroup
 
-	arg0_66.contextData.memoryGroup = nil
-	arg0_66.memories = nil
+	arg0_64.contextData.memoryGroup = nil
+	arg0_64.memories = nil
 
-	local var1_66 = 0
+	local var1_64 = 0
 
-	if var0_66 then
-		local var2_66 = 0
+	if var0_64 then
+		local var2_64 = 0
 
-		for iter0_66, iter1_66 in ipairs(arg0_66.memoryGroups) do
-			if iter1_66.id == var0_66 then
-				var2_66 = iter0_66
+		for iter0_64, iter1_64 in ipairs(arg0_64.memoryGroups) do
+			if iter1_64.id == var0_64 then
+				var2_64 = iter0_64
 
 				break
 			end
 		end
 
-		if var2_66 >= 0 then
-			local var3_66 = arg0_66.memoryList
-			local var4_66 = arg0_66.memoriesGrid.cellSize.y + arg0_66.memoriesGrid.spacing.y
-			local var5_66 = var4_66 * math.ceil(#arg0_66.memoryGroups / var1_0)
+		if var2_64 >= 0 then
+			local var3_64 = arg0_64.memoryList
+			local var4_64 = arg0_64.memoriesGrid.cellSize.y + arg0_64.memoriesGrid.spacing.y
+			local var5_64 = var4_64 * math.ceil(#arg0_64.memoryGroups / var1_0)
 
-			var1_66 = (var4_66 * math.floor((var2_66 - 1) / var1_0) + var3_66.paddingFront) / (var5_66 - arg0_66.memoryViewport.rect.height)
-			var1_66 = Mathf.Clamp01(var1_66)
+			var1_64 = (var4_64 * math.floor((var2_64 - 1) / var1_0) + var3_64.paddingFront) / (var5_64 - arg0_64.memoryViewport.rect.height)
+			var1_64 = Mathf.Clamp01(var1_64)
 		end
 	end
 
-	arg0_66.memoryList:SetTotalCount(#arg0_66.memoryGroups, var1_66)
-	setActive(arg0_66.top:Find("memory"), true)
+	arg0_64.memoryList:SetTotalCount(#arg0_64.memoryGroups, var1_64)
+	setActive(arg0_64.top:Find("memory"), true)
 end
 
-function var0_0.initMemoryPanel(arg0_67)
-	local var0_67 = getProxy(ActivityProxy):getActivityById(ActivityConst.QIXI_ACTIVITY_ID)
+function var0_0.initMemoryPanel(arg0_65)
+	local var0_65 = getProxy(ActivityProxy):getActivityById(ActivityConst.QIXI_ACTIVITY_ID)
 
-	if var0_67 and not var0_67:isEnd() then
-		local var1_67 = var0_67:getConfig("config_data")
-		local var2_67 = _.flatten(var1_67)
-		local var3_67 = var2_67[#var2_67]
-		local var4_67 = getProxy(TaskProxy):getTaskById(var3_67)
+	if var0_65 and not var0_65:isEnd() then
+		local var1_65 = var0_65:getConfig("config_data")
+		local var2_65 = _.flatten(var1_65)
+		local var3_65 = var2_65[#var2_65]
+		local var4_65 = getProxy(TaskProxy):getTaskById(var3_65)
 
-		if var4_67 and not var4_67:isFinish() then
+		if var4_65 and not var4_65:isFinish() then
 			pg.NewStoryMgr.GetInstance():Play("HOSHO8", function()
-				arg0_67:emit(CollectionScene.ACTIVITY_OP, {
+				arg0_65:emit(CollectionScene.ACTIVITY_OP, {
 					cmd = 2,
-					activity_id = var0_67.id
+					activity_id = var0_65.id
 				})
 			end, true)
 		end
 	end
 
-	arg0_67:memoryFilter()
+	arg0_65:memoryFilter()
 end
 
-function var0_0.onInitMemory(arg0_69, arg1_69)
-	if arg0_69.exited then
+function var0_0.onInitMemory(arg0_67, arg1_67)
+	if arg0_67.exited then
 		return
 	end
 
-	local var0_69 = MemoryCard.New(arg1_69)
+	local var0_67 = MemoryCard.New(arg1_67)
 
-	onButton(arg0_69, var0_69.go, function()
-		if var0_69.info then
-			if var0_69.isGroup then
-				arg0_69:showSubMemories(var0_69.info)
-			elseif var0_69.info.is_open == 1 or pg.NewStoryMgr.GetInstance():IsPlayed(var0_69.info.unlock_pre, true) then
-				arg0_69:playMemory(var0_69.info)
+	onButton(arg0_67, var0_67.go, function()
+		if var0_67.info then
+			if var0_67.isGroup then
+				arg0_67:showSubMemories(var0_67.info)
+			elseif var0_67.info.is_open == 1 or pg.NewStoryMgr.GetInstance():IsPlayed(var0_67.info.unlock_pre, true) then
+				arg0_67:playMemory(var0_67.info)
 			end
 		end
 	end, SOUND_BACK)
 
-	arg0_69.memoryItems[arg1_69] = var0_69
+	arg0_67.memoryItems[arg1_67] = var0_67
 end
 
-function var0_0.onUpdateMemory(arg0_71, arg1_71, arg2_71)
+function var0_0.onUpdateMemory(arg0_69, arg1_69, arg2_69)
+	if arg0_69.exited then
+		return
+	end
+
+	local var0_69 = arg0_69.memoryItems[arg2_69]
+
+	if not var0_69 then
+		arg0_69:onInitMemory(arg2_69)
+
+		var0_69 = arg0_69.memoryItems[arg2_69]
+	end
+
+	if arg0_69.memories then
+		var0_69:update(false, arg0_69.memories[arg1_69 + 1])
+	else
+		var0_69:update(true, arg0_69.memoryGroups[arg1_69 + 1])
+	end
+
+	local var1_69 = {
+		var0_69.lock,
+		var0_69.normal,
+		var0_69.group
+	}
+
+	_.any(var1_69, function(arg0_70)
+		local var0_70 = isActive(arg0_70)
+
+		if var0_70 then
+			var0_69.go:GetComponent(typeof(Button)).targetGraphic = arg0_70:GetComponent(typeof(Image))
+		end
+
+		return var0_70
+	end)
+end
+
+function var0_0.onReturnMemory(arg0_71, arg1_71, arg2_71)
 	if arg0_71.exited then
 		return
 	end
 
 	local var0_71 = arg0_71.memoryItems[arg2_71]
 
-	if not var0_71 then
-		arg0_71:onInitMemory(arg2_71)
-
-		var0_71 = arg0_71.memoryItems[arg2_71]
-	end
-
-	if arg0_71.memories then
-		var0_71:update(false, arg0_71.memories[arg1_71 + 1])
-	else
-		var0_71:update(true, arg0_71.memoryGroups[arg1_71 + 1])
-	end
-
-	local var1_71 = {
-		var0_71.lock,
-		var0_71.normal,
-		var0_71.group
-	}
-
-	_.any(var1_71, function(arg0_72)
-		local var0_72 = isActive(arg0_72)
-
-		if var0_72 then
-			var0_71.go:GetComponent(typeof(Button)).targetGraphic = arg0_72:GetComponent(typeof(Image))
-		end
-
-		return var0_72
-	end)
-end
-
-function var0_0.onReturnMemory(arg0_73, arg1_73, arg2_73)
-	if arg0_73.exited then
-		return
-	end
-
-	local var0_73 = arg0_73.memoryItems[arg2_73]
-
-	if var0_73 then
-		var0_73:clear()
+	if var0_71 then
+		var0_71:clear()
 	end
 end
 
-function var0_0.playMemory(arg0_74, arg1_74)
-	if arg1_74.type == 1 then
-		local var0_74 = findTF(arg0_74.memoryMask, "pic")
+function var0_0.playMemory(arg0_72, arg1_72)
+	if arg1_72.type == 1 then
+		local var0_72 = findTF(arg0_72.memoryMask, "pic")
 
-		if string.len(arg1_74.mask) > 0 then
-			setActive(var0_74, true)
+		if string.len(arg1_72.mask) > 0 then
+			setActive(var0_72, true)
 
-			var0_74:GetComponent(typeof(Image)).sprite = LoadSprite(arg1_74.mask)
+			var0_72:GetComponent(typeof(Image)).sprite = LoadSprite(arg1_72.mask)
 		else
-			setActive(var0_74, false)
+			setActive(var0_72, false)
 		end
 
-		setActive(arg0_74.memoryMask, true)
-		pg.NewStoryMgr.GetInstance():Play(arg1_74.story, function()
-			setActive(arg0_74.memoryMask, false)
+		setActive(arg0_72.memoryMask, true)
+		pg.NewStoryMgr.GetInstance():Play(arg1_72.story, function()
+			setActive(arg0_72.memoryMask, false)
 		end, true)
-	elseif arg1_74.type == 2 then
-		local var1_74 = pg.NewStoryMgr.GetInstance():StoryName2StoryId(arg1_74.story)
+	elseif arg1_72.type == 2 then
+		local var1_72 = pg.NewStoryMgr.GetInstance():StoryName2StoryId(arg1_72.story)
 
-		arg0_74:emit(var0_0.BEGIN_STAGE, {
+		arg0_72:emit(var0_0.BEGIN_STAGE, {
 			memory = true,
 			system = SYSTEM_PERFORM,
-			stageId = var1_74
+			stageId = var1_72
 		})
 	end
 end
 
-function var0_0.memoryFilter(arg0_76)
-	arg0_76.memoryGroups = {}
+function var0_0.memoryFilter(arg0_74)
+	arg0_74.memoryGroups = {}
 
-	for iter0_76, iter1_76 in ipairs(pg.memory_group.all) do
-		local var0_76 = pg.memory_group[iter1_76]
+	for iter0_74, iter1_74 in ipairs(pg.memory_group.all) do
+		local var0_74 = pg.memory_group[iter1_74]
 
-		if arg0_76.memoryFilterIndex[var0_76.type] then
-			table.insert(arg0_76.memoryGroups, var0_76)
+		if arg0_74.memoryFilterIndex[var0_74.type] then
+			table.insert(arg0_74.memoryGroups, var0_74)
 		end
 	end
 
-	table.sort(arg0_76.memoryGroups, function(arg0_77, arg1_77)
-		return arg0_77.id < arg1_77.id
+	table.sort(arg0_74.memoryGroups, function(arg0_75, arg1_75)
+		return arg0_75.id < arg1_75.id
 	end)
-	arg0_76.memoryList:SetTotalCount(#arg0_76.memoryGroups, 0)
+	arg0_74.memoryList:SetTotalCount(#arg0_74.memoryGroups, 0)
 end
 
-function var0_0.willExit(arg0_78)
-	if arg0_78.bulinTip then
-		arg0_78.bulinTip:Destroy()
+function var0_0.willExit(arg0_76)
+	if arg0_76.bulinTip then
+		arg0_76.bulinTip:Destroy()
 
-		arg0_78.bulinTip = nil
+		arg0_76.bulinTip = nil
 	end
 
-	if arg0_78.tweens then
-		cancelTweens(arg0_78.tweens)
+	if arg0_76.tweens then
+		cancelTweens(arg0_76.tweens)
 	end
 
-	arg0_78:UnOverlayPanel(arg0_78.blurPanel, arg0_78._tf)
+	arg0_76:UnOverlayPanel(arg0_76.blurPanel, arg0_76._tf)
 
-	if arg0_78.bonusPanel.gameObject.activeSelf then
-		arg0_78:closeBonus()
+	if arg0_76.bonusPanel.gameObject.activeSelf then
+		arg0_76:closeBonus()
 	end
 
-	Destroy(arg0_78.bonusPanel)
+	Destroy(arg0_76.bonusPanel)
 
-	arg0_78.bonusPanel = nil
+	arg0_76.bonusPanel = nil
 
-	for iter0_78, iter1_78 in pairs(arg0_78.cardItems) do
-		iter1_78:clear()
+	for iter0_76, iter1_76 in pairs(arg0_76.cardItems) do
+		iter1_76:clear()
 	end
 
-	if arg0_78.resPanel then
-		arg0_78.resPanel:exit()
+	if arg0_76.resPanel then
+		arg0_76.resPanel:exit()
 
-		arg0_78.resPanel = nil
+		arg0_76.resPanel = nil
 	end
 
-	if arg0_78.galleryView then
-		arg0_78.galleryView:Destroy()
+	if arg0_76.galleryView then
+		arg0_76.galleryView:Destroy()
 
-		arg0_78.galleryView = nil
+		arg0_76.galleryView = nil
 	end
 
-	if arg0_78.musicView then
-		arg0_78.musicView:Destroy()
+	if arg0_76.musicView then
+		arg0_76.musicView:Destroy()
 
-		arg0_78.musicView = nil
+		arg0_76.musicView = nil
 	end
 
-	if arg0_78.mangaView then
-		arg0_78.mangaView:Destroy()
+	if arg0_76.mangaView then
+		arg0_76.mangaView:Destroy()
 
-		arg0_78.mangaView = nil
-	end
-end
-
-function var0_0.initGalleryPanel(arg0_79)
-	if not arg0_79.galleryView then
-		arg0_79.galleryView = GalleryView.New(arg0_79.galleryPanelContainer, arg0_79.event, arg0_79.contextData)
-
-		arg0_79.galleryView:RegisterView(arg0_79)
-		arg0_79.galleryView:Reset()
-		arg0_79.galleryView:Load()
+		arg0_76.mangaView = nil
 	end
 end
 
-function var0_0.initMusicPanel(arg0_80)
-	if not arg0_80.musicView then
-		arg0_80.musicView = MusicCollectionView.New(arg0_80.musicPanelContainer, arg0_80.event, arg0_80.contextData)
+function var0_0.initGalleryPanel(arg0_77)
+	if not arg0_77.galleryView then
+		arg0_77.galleryView = GalleryView.New(arg0_77.galleryPanelContainer, arg0_77.event, arg0_77.contextData)
 
-		arg0_80.musicView:Reset()
-		arg0_80.musicView:Load()
+		arg0_77.galleryView:RegisterView(arg0_77)
+		arg0_77.galleryView:Reset()
+		arg0_77.galleryView:Load()
+	end
+end
+
+function var0_0.initMusicPanel(arg0_78)
+	if not arg0_78.musicView then
+		arg0_78.musicView = MusicCollectionView.New(arg0_78.musicPanelContainer, arg0_78.event, arg0_78.contextData)
+
+		arg0_78.musicView:Reset()
+		arg0_78.musicView:Load()
 		pg.CriMgr.GetInstance():StopBGM()
 	end
 end
 
-function var0_0.initMangaPanel(arg0_81)
-	if not arg0_81.mangaView then
-		arg0_81.mangaView = MangaView.New(arg0_81.mangaPanelContainer, arg0_81.event, arg0_81.contextData)
+function var0_0.initMangaPanel(arg0_79)
+	if not arg0_79.mangaView then
+		arg0_79.mangaView = MangaView.New(arg0_79.mangaPanelContainer, arg0_79.event, arg0_79.contextData)
 
-		arg0_81.mangaView:Reset()
-		arg0_81.mangaView:Load()
+		arg0_79.mangaView:Reset()
+		arg0_79.mangaView:Load()
 	end
 end
 
-function var0_0.initEvents(arg0_82)
-	arg0_82:bind(var0_0.UPDATE_RED_POINT, function()
-		arg0_82:updateCollectNotices()
+function var0_0.initEvents(arg0_80)
+	arg0_80:bind(var0_0.UPDATE_RED_POINT, function()
+		arg0_80:updateCollectNotices()
 	end)
 end
 
-function var0_0.onBackPressed(arg0_84)
+function var0_0.onBackPressed(arg0_82)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 
-	if arg0_84.bonusPanel.gameObject.activeSelf then
-		arg0_84:closeBonus()
+	if arg0_82.bonusPanel.gameObject.activeSelf then
+		arg0_82:closeBonus()
 
 		return
 	end
 
-	if arg0_84.galleryView then
-		if arg0_84.galleryView:onBackPressed() == true then
-			arg0_84.galleryView:Destroy()
+	if arg0_82.galleryView then
+		if arg0_82.galleryView:onBackPressed() == true then
+			arg0_82.galleryView:Destroy()
 
-			arg0_84.galleryView = nil
+			arg0_82.galleryView = nil
 		else
 			return
 		end
 	end
 
-	if arg0_84.musicView then
-		if arg0_84.musicView:onBackPressed() == true then
-			arg0_84.musicView:Destroy()
+	if arg0_82.musicView then
+		if arg0_82.musicView:onBackPressed() == true then
+			arg0_82.musicView:Destroy()
 
-			arg0_84.musicView = nil
+			arg0_82.musicView = nil
 		else
 			return
 		end
 	end
 
-	if arg0_84.mangaView then
-		if arg0_84.mangaView:onBackPressed() == true then
-			arg0_84.mangaView:Destroy()
+	if arg0_82.mangaView then
+		if arg0_82.mangaView:onBackPressed() == true then
+			arg0_82.mangaView:Destroy()
 
-			arg0_84.mangaView = nil
+			arg0_82.mangaView = nil
 		else
 			return
 		end
 	end
 
-	triggerButton(arg0_84.backBtn)
+	triggerButton(arg0_82.backBtn)
 end
 
 return var0_0

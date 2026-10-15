@@ -6,7 +6,7 @@ function var0_0.getUIName(arg0_1)
 	return "MilitaryExerciseUI"
 end
 
-function var0_0.getResource(arg0_2, arg1_2)
+function var0_0.getResource(arg0_2)
 	local var0_2 = {
 		"weaponframes",
 		"shiptype",
@@ -87,7 +87,7 @@ function var0_0.getResource(arg0_2, arg1_2)
 		end
 	end
 
-	return table.insertto(var0_2, var0_0.super.getResource(arg0_2, arg1_2))
+	return table.insertto(var0_2, var0_0.super.getResource(arg0_2))
 end
 
 function var0_0.ResUISettings(arg0_6)

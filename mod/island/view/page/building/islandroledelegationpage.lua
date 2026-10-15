@@ -23,8 +23,8 @@ end
 local var2_0 = Vector3(0, 0, 0)
 
 function var0_0.OnLoaded(arg0_4)
-	arg0_4.backBtn = arg0_4._tf:Find("top/back")
-	arg0_4.title = arg0_4._tf:Find("top/title")
+	arg0_4.backBtn = arg0_4._tf:Find("adapt/top/back")
+	arg0_4.title = arg0_4._tf:Find("adapt/top/title")
 	arg0_4.content = arg0_4._tf:Find("content")
 	arg0_4.delegationList = UIItemList.New(arg0_4.content, arg0_4.content:Find("tpl"))
 
@@ -65,7 +65,7 @@ function var0_0.OnInit(arg0_8)
 		arg0_8:Hide()
 		IslandCameraMgr.instance:ActiveVirtualCamera(IslandConst.FOLLOW_CAMERA_NAME)
 	end, SFX_PANEL)
-	onButton(arg0_8, arg0_8._tf:Find("top/title/help"), function()
+	onButton(arg0_8, arg0_8._tf:Find("adapt/top/title/help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.island_help_commission.tip
@@ -233,8 +233,8 @@ function var0_0.OnShow(arg0_22, arg1_22, arg2_22)
 
 	arg0_22:StopTimer()
 	arg0_22:StartTimer()
-	setText(arg0_22._tf:Find("top/title/Text"), arg0_22.placeCfg.name)
-	setText(arg0_22._tf:Find("top/title/Text/en"), "PRODUCTING")
+	setText(arg0_22._tf:Find("adapt/top/title/Text"), arg0_22.placeCfg.name)
+	setText(arg0_22._tf:Find("adapt/top/title/Text/en"), "PRODUCTING")
 end
 
 function var0_0.DefaultTargetTabIndex(arg0_23)

@@ -13,8 +13,8 @@ function var0_0.GetHelpTip(arg0_3)
 end
 
 function var0_0.OnLoaded(arg0_4)
-	setText(arg0_4._tf:Find("top/title/Text"), i18n("island_guide"))
-	setText(arg0_4._tf:Find("top/title/Text/en"), i18n("island_guide_en"))
+	setText(arg0_4._tf:Find("adapt/top/title/Text"), i18n("island_guide"))
+	setText(arg0_4._tf:Find("adapt/top/title/Text/en"), i18n("island_guide_en"))
 
 	arg0_4.viewTF = arg0_4._tf:Find("view")
 
@@ -43,7 +43,7 @@ function var0_0.OnLoaded(arg0_4)
 
 	setText(arg0_4.getPointBtn:Find("Text"), i18n("island_guide_collectionpoint"))
 
-	arg0_4.pointPanel = arg0_4._tf:Find("point_panel")
+	arg0_4.pointPanel = arg0_4._tf:Find("adapt/point_panel")
 	arg0_4.pointLevelTF = arg0_4.pointPanel:Find("Text")
 	arg0_4.pointAwardTF = arg0_4.pointPanel:Find("award")
 	arg0_4.pointAwardIcon = arg0_4.pointPanel:Find("award/icon")
@@ -63,7 +63,7 @@ function var0_0.OnLoaded(arg0_4)
 end
 
 function var0_0.OnInit(arg0_8)
-	onButton(arg0_8, arg0_8._tf:Find("top/back"), function()
+	onButton(arg0_8, arg0_8._tf:Find("adapt/top/back"), function()
 		arg0_8:Hide()
 	end, SFX_PANEL)
 	onButton(arg0_8, arg0_8.unlockBtn, function()
@@ -85,7 +85,7 @@ function var0_0.OnInit(arg0_8)
 		arg0_8.pointAwardTF:GetComponent(typeof(Animation)):Play()
 		arg0_8:emit(IslandMediator.GET_POINT_AWARD, arg0_8.curLevelId)
 	end, SFX_PANEL)
-	onButton(arg0_8, arg0_8._tf:Find("top/help"), function()
+	onButton(arg0_8, arg0_8._tf:Find("adapt/top/help"), function()
 		arg0_8:ShowMsgBox({
 			type = IslandMsgBox.TYPE_WHITOUT_BTN,
 			content = arg0_8:GetHelpTip(),

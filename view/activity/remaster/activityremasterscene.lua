@@ -15,15 +15,15 @@ function var0_0.init(arg0_2)
 		arg0_2:OnUpdateItem(arg0_4, arg1_4)
 	end
 
-	setText(arg0_2._tf:Find("top/title/Text"), i18n("act_remaster_title"))
+	setText(arg0_2._tf:Find("adapt/top/title/Text"), i18n("act_remaster_title"))
 	changeToScrollText(arg0_2._tf:Find("prints/tip/Text"), i18n("act_remaster_tip_1"))
 end
 
 function var0_0.didEnter(arg0_5)
-	onButton(arg0_5, arg0_5._tf:Find("top/closeBtn"), function()
+	onButton(arg0_5, arg0_5._tf:Find("adapt/top/closeBtn"), function()
 		arg0_5:emit(BaseUI.ON_BACK)
 	end, SFX_PANEL)
-	onButton(arg0_5, arg0_5._tf:Find("top/homeBtn"), function()
+	onButton(arg0_5, arg0_5._tf:Find("adapt/top/homeBtn"), function()
 		arg0_5:emit(BaseUI.ON_HOME)
 	end, SFX_PANEL)
 
@@ -114,7 +114,7 @@ function var0_0.InitList(arg0_13)
 	local var0_13 = {}
 	local var1_13 = {}
 
-	for iter0_13, iter1_13 in ipairs(arg0_13.activityRemasterDataList) do
+	for iter0_13, iter1_13 in pairs(arg0_13.activityRemasterDataList) do
 		if iter1_13:IsSpecial() then
 			table.insert(var0_13, iter1_13)
 		else

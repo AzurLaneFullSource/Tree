@@ -9,8 +9,8 @@ function var0_0.getGroupName(arg0_2)
 	return "ShipMainScene"
 end
 
-function var0_0.getResource(arg0_3, arg1_3)
-	local var0_3 = getProxy(BayProxy):getShipById(arg1_3.shipId)
+function var0_0.getResource(arg0_3)
+	local var0_3 = getProxy(BayProxy):getShipById(arg0_3.contextData.shipId)
 	local var1_3 = ys.Battle.BattleResourceManager.GetInstance()
 	local var2_3 = var1_3.GetMapResource(40000)
 
@@ -36,7 +36,7 @@ function var0_0.getResource(arg0_3, arg1_3)
 		end
 	end
 
-	return table.insertto(var2_3, var0_0.super.getResource(arg0_3, arg1_3))
+	return table.insertto(var2_3, var0_0.super.getResource(arg0_3))
 end
 
 function var0_0.setItems(arg0_4, arg1_4)

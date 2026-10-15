@@ -12,7 +12,7 @@ function var0_0.getGroupName(arg0_2)
 	return "NewShopMainScene"
 end
 
-function var0_0.getResource(arg0_3, arg1_3)
+function var0_0.getResource(arg0_3)
 	local var0_3 = {
 		"ui/NewRecommendationShopUI"
 	}
@@ -133,7 +133,7 @@ function var0_0.getResource(arg0_3, arg1_3)
 		end
 	end
 
-	return ResPathSupport.UniqueLuaArr(ResPathSupport.MergeLuaArr(var0_0.super.getResource(arg0_3, arg1_3), var0_3, var11_3, var12_3))
+	return ResPathSupport.UniqueLuaArr(ResPathSupport.MergeLuaArr(var0_0.super.getResource(arg0_3), var0_3, var11_3, var12_3))
 end
 
 function var0_0.init(arg0_7)

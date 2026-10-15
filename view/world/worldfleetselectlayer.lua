@@ -4,15 +4,15 @@ function var0_0.getUIName(arg0_1)
 	return "WorldFleetSelect"
 end
 
-function var0_0.getResource(arg0_2, arg1_2)
+function var0_0.getResource(arg0_2)
 	local var0_2 = {
 		"weaponframes",
 		"shiptype"
 	}
 
-	table.insertto(var0_2, arg0_2:getFleetSelectResList(arg1_2 and arg1_2.fleets))
+	table.insertto(var0_2, arg0_2:getFleetSelectResList(arg0_2.contextData.fleets))
 
-	return table.insertto(var0_2, var0_0.super.getResource(arg0_2, arg1_2))
+	return table.insertto(var0_2, var0_0.super.getResource(arg0_2))
 end
 
 function var0_0.insertFleetSelectRes(arg0_3, arg1_3, arg2_3)

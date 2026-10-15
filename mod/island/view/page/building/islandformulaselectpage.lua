@@ -5,8 +5,8 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.backBtn = arg0_2._tf:Find("top/back")
-	arg0_2.title = arg0_2._tf:Find("top/title")
+	arg0_2.backBtn = arg0_2._tf:Find("adapt/top/back")
+	arg0_2.title = arg0_2._tf:Find("adapt/top/title")
 	arg0_2.rightInfo = arg0_2._tf:Find("rightInfo")
 	arg0_2.rightInfoEmpty = arg0_2._tf:Find("rightInfo_empty")
 	arg0_2.currentformulaIcon = arg0_2._tf:Find("rightInfo/formula/currentformula")
@@ -29,7 +29,7 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.uiList = UIItemList.New(arg0_2._tf:Find("formulaView/content"), arg0_2._tf:Find("formulaView/content/tpl"))
 	arg0_2.costuiList = UIItemList.New(arg0_2._tf:Find("rightInfo/formula/needItem/content"), arg0_2._tf:Find("rightInfo/formula/needItem/content/IslandItemTpl"))
 
-	setText(arg0_2._tf:Find("top/title/Text"), i18n("island_select_product"))
+	setText(arg0_2._tf:Find("adapt/top/title/Text"), i18n("island_select_product"))
 	setText(arg0_2.formulaItem:Find("tips"), i18n("island_production_count"))
 
 	arg0_2.baseEffectSpeed = pg.island_set.base_efficiency.key_value_int
@@ -60,7 +60,7 @@ function var0_0.RemoveListeners(arg0_4)
 end
 
 function var0_0.OnInit(arg0_5)
-	onButton(arg0_5, arg0_5._tf:Find("top/title/help"), function()
+	onButton(arg0_5, arg0_5._tf:Find("adapt/top/title/help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.island_help_commission.tip

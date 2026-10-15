@@ -4,7 +4,7 @@ function var0_0.getUIName(arg0_1)
 	return "EquipmentDesignUI"
 end
 
-function var0_0.getResource(arg0_2, arg1_2)
+function var0_0.getResource(arg0_2)
 	local var0_2 = {
 		"ui/equipmentdesignui",
 		"ui/equipmentdesignui_atlas",

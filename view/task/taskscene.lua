@@ -52,7 +52,7 @@ local var1_0 = {
 	}
 }
 
-function var0_0.getResource(arg0_1, arg1_1)
+function var0_0.getResource(arg0_1)
 	local var0_1 = {
 		"ui/taskui_atlas",
 		"ui/iconcolorful",
@@ -64,7 +64,7 @@ function var0_0.getResource(arg0_1, arg1_1)
 
 	table.insertto(var0_1, arg0_1:GetTaskResourceList())
 
-	return table.insertto(var0_1, var0_0.super.getResource(arg0_1, arg1_1))
+	return table.insertto(var0_1, var0_0.super.getResource(arg0_1))
 end
 
 function var0_0.GetTaskResourceList(arg0_2)

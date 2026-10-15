@@ -40,8 +40,16 @@ return {
 				uiset = {}
 			},
 			ui = {
-				path = "OverlayCamera/Overlay/UIMain/LevelStageInfoView(Clone)/panel/auto_button",
-				pathIndex = -1
+				pathIndex = -1,
+				dynamicPath = function()
+					local var0_1 = "OverlayCamera/Overlay/UIMain/LevelStageInfoView(Clone)"
+
+					if not IsNil(GameObject.Find(var0_1)) then
+						return "OverlayCamera/Overlay/UIMain/LevelStageInfoView(Clone)/panel/auto_button"
+					end
+
+					return "OverlayCamera/Overlay/UIMain/LevelInfoSPUI(Clone)/panel/auto_button"
+				end
 			}
 		}
 	}

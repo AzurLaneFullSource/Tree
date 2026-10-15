@@ -587,8 +587,8 @@ function var0_0.CalcScoreAddition(arg0_43, arg1_43)
 	return var4_43, var5_43, var6_43
 end
 
-function var0_0.getResource(arg0_45, arg1_45)
-	local var0_45 = var0_0.super.getResource(arg0_45, arg1_45)
+function var0_0.getResource(arg0_45)
+	local var0_45 = var0_0.super.getResource(arg0_45)
 	local var1_45 = getProxy(GuildProxy):getData():GetActiveEvent():GetMissions()
 
 	for iter0_45, iter1_45 in ipairs(var1_45) do

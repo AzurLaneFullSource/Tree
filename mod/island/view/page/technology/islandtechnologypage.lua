@@ -5,7 +5,7 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.rtTop = arg0_2._tf:Find("top")
+	arg0_2.rtTop = arg0_2._tf:Find("adapt/top")
 
 	setText(arg0_2.rtTop:Find("title/Text"), i18n("island_technology_title"))
 

@@ -566,7 +566,6 @@ function var0_0.GetShipAllRes(arg0_52)
 	local var14_52 = var0_0.GetShipSkinPaintingSquareIconList(var1_52)
 	local var15_52 = var0_0.GetShipSkinPaintingHeroHrzIconList(var1_52)
 	local var16_52 = var0_0.GetShipSkinEffectList(var1_52)
-	local var17_52 = var0_0.GetShipSkinLive2DList(var1_52)
 
-	return (var0_0.MergeLuaArr(var2_52, var3_52, var4_52, var5_52, var6_52, var7_52, var8_52, var9_52, var10_52, var11_52, var12_52, var13_52, var14_52, var15_52, var16_52, var17_52))
+	return (var0_0.MergeLuaArr(var2_52, var3_52, var4_52, var5_52, var6_52, var7_52, var8_52, var9_52, var10_52, var11_52, var12_52, var13_52, var14_52, var15_52, var16_52))
 end

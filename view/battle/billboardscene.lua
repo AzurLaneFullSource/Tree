@@ -10,8 +10,9 @@ function var0_0.getUIName(arg0_1)
 	return "BillboardUI"
 end
 
-function var0_0.getResource(arg0_2, arg1_2)
-	local var0_2 = {
+function var0_0.getResource(arg0_2)
+	local var0_2 = arg0_2.contextData
+	local var1_2 = {
 		"commonbg/bg_fengshan",
 		"billboardframe",
 		"weaponframes",
@@ -19,66 +20,66 @@ function var0_0.getResource(arg0_2, arg1_2)
 		"ui/iconcolorful"
 	}
 
-	local function var1_2(arg0_3)
-		if noEmptyStr(arg0_3) and not table.contains(var0_2, arg0_3) then
-			table.insert(var0_2, arg0_3)
+	local function var2_2(arg0_3)
+		if noEmptyStr(arg0_3) and not table.contains(var1_2, arg0_3) then
+			table.insert(var1_2, arg0_3)
 		end
 	end
 
 	for iter0_2, iter1_2 in pairs(PowerRank.typeInfo) do
-		local var2_2 = iter1_2.score_icon
+		local var3_2 = iter1_2.score_icon
 
-		if var2_2 and var2_2[1] then
-			var1_2(var2_2[1])
+		if var3_2 and var3_2[1] then
+			var2_2(var3_2[1])
 		end
 	end
 
-	local var3_2 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_RANK)
+	local var4_2 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_RANK)
 
-	for iter2_2, iter3_2 in ipairs(var3_2) do
+	for iter2_2, iter3_2 in ipairs(var4_2) do
 		if not iter3_2:isEnd() and tonumber(iter3_2:getConfig("config_data")) > 0 then
-			local var4_2 = iter3_2:getConfig("config_id")
-			local var5_2 = Drop.New({
+			local var5_2 = iter3_2:getConfig("config_id")
+			local var6_2 = Drop.New({
 				type = DROP_TYPE_RESOURCE,
-				id = var4_2
+				id = var5_2
 			}):getIcon()
 
-			var1_2(var5_2)
+			var2_2(var6_2)
 		end
 	end
 
-	local var6_2 = checkExist(arg1_2, {
+	local var7_2 = checkExist(var0_2, {
 		"page"
 	}) or PowerRank.TYPE_POWER
-	local var7_2 = checkExist(arg1_2, {
+	local var8_2 = checkExist(var0_2, {
 		"act_id"
-	}) or checkExist(PowerRank:getActivityByRankType(var6_2), {
+	}) or checkExist(PowerRank:getActivityByRankType(var7_2), {
 		"id"
 	})
-	local var8_2 = getProxy(BillboardProxy):getRankList(var6_2, var7_2)
+	local var9_2 = getProxy(BillboardProxy):getRankList(var7_2, var8_2)
 
-	for iter4_2, iter5_2 in ipairs(var8_2 or {}) do
-		var1_2("emblem/" .. iter5_2.arenaRank)
-		var1_2("emblem/n_" .. iter5_2.arenaRank)
+	for iter4_2, iter5_2 in ipairs(var9_2 or {}) do
+		var2_2("emblem/" .. iter5_2.arenaRank)
+		var2_2("emblem/n_" .. iter5_2.arenaRank)
 	end
 
-	if not var8_2 then
+	if not var9_2 then
 		for iter6_2 = 1, #pg.arena_data_rank.all do
-			var1_2("emblem/" .. iter6_2)
-			var1_2("emblem/n_" .. iter6_2)
+			var2_2("emblem/" .. iter6_2)
+			var2_2("emblem/n_" .. iter6_2)
 		end
 	end
 
-	local var9_2 = getProxy(MilitaryExerciseProxy):RawGetSeasonInfo()
+	local var10_2 = getProxy(MilitaryExerciseProxy):RawGetSeasonInfo()
 
-	if var9_2 then
-		local var10_2 = SeasonInfo.getEmblem(var9_2.score, var9_2.rank)
+	if var10_2 then
+		local var11_2 = SeasonInfo.getEmblem(var10_2.score, var10_2.rank)
 
-		var1_2("emblem/" .. var10_2)
-		var1_2("emblem/n_" .. var10_2)
+		var2_2("emblem/" .. var11_2)
+		var2_2("emblem/n_" .. var11_2)
 	end
 
-	return table.insertto(var0_2, var0_0.super.getResource(arg0_2, arg1_2))
+	return table.insertto(var1_2, var0_0.super.getResource(arg0_2))
 end
 
 function var0_0.updateRankList(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4)

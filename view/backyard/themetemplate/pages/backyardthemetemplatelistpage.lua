@@ -19,7 +19,7 @@ function var0_0.OnInit(arg0_3)
 		arg0_3._tf:Find("tip2"),
 		arg0_3._tf:Find("tip3")
 	}
-	arg0_3.goBtn = arg0_3._tf:Find("go_btn")
+	arg0_3.goBtn = arg0_3._tf:Find("adpter/go_btn")
 	arg0_3.helpBtn = arg0_3._tf:Find("adpter/help")
 	arg0_3.rawImage = arg0_3._tf:Find("preview_raw"):GetComponent(typeof(RawImage))
 	arg0_3.listRect = arg0_3._tf:Find("list/frame")

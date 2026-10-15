@@ -4,7 +4,7 @@ function var0_0.getUIName(arg0_1)
 	return "PublicGuildMainUI"
 end
 
-function var0_0.getResource(arg0_2, arg1_2)
+function var0_0.getResource(arg0_2)
 	local var0_2 = {
 		"guildtechnology",
 		"ui/guildrespanel",
@@ -12,7 +12,7 @@ function var0_0.getResource(arg0_2, arg1_2)
 		"guildpainting/guild_office_blue"
 	}
 
-	return table.insertto(var0_2, var0_0.super.getResource(arg0_2, arg1_2))
+	return table.insertto(var0_2, var0_0.super.getResource(arg0_2))
 end
 
 function var0_0.OnUpdateDonateList(arg0_3)

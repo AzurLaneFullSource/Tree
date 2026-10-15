@@ -1,11 +1,11 @@
 local var0_0 = class("Day7LoginPage", import("...base.BaseActivityPage"))
 
-function var0_0.getResource(arg0_1, arg1_1)
+function var0_0.getResource(arg0_1)
 	local var0_1 = {
 		"ui/activityuipage/day7_login_atlas"
 	}
 
-	table.insertto(var0_1, var0_0.super.getResource(arg0_1, arg1_1))
+	table.insertto(var0_1, var0_0.super.getResource(arg0_1))
 
 	return var0_1
 end

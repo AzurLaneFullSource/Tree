@@ -389,8 +389,8 @@ function var0_0.RemoveCdTimer(arg0_37)
 	end
 end
 
-function var0_0.getResource(arg0_38, arg1_38)
-	local var0_38 = var0_0.super.getResource(arg0_38, arg1_38)
+function var0_0.getResource(arg0_38)
+	local var0_38 = var0_0.super.getResource(arg0_38)
 
 	local function var1_38(arg0_39)
 		if not table.contains(var0_38, arg0_39) then

@@ -46,7 +46,7 @@ function var0_0.getBGM(arg0_3)
 	return var0_0.super.getBGM(arg0_3)
 end
 
-function var0_0.getResource(arg0_4, arg1_4)
+function var0_0.getResource(arg0_4)
 	local var0_4 = {
 		"scenes/worldmap3d",
 		"model/worldmapmodel",
@@ -71,7 +71,7 @@ function var0_0.getResource(arg0_4, arg1_4)
 		"shiptype"
 	}
 
-	return table.insertto(var0_4, var0_0.super.getResource(arg0_4, arg1_4))
+	return table.insertto(var0_4, var0_0.super.getResource(arg0_4))
 end
 
 function var0_0.insertResToList(arg0_5, arg1_5, arg2_5)

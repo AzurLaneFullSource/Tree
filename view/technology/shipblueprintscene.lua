@@ -2574,7 +2574,7 @@ function var0_0.onBackPressed(arg0_184)
 	end
 end
 
-function var0_0.getResource(arg0_185, arg1_185)
+function var0_0.getResource(arg0_185)
 	local var0_185 = {
 		"ui/shipblueprintui_atlas",
 		"shipdesignicon/empty",
@@ -2625,7 +2625,7 @@ function var0_0.getResource(arg0_185, arg1_185)
 		end
 	end
 
-	return table.insertto(var0_185, var0_0.super.getResource(arg0_185, arg1_185))
+	return table.insertto(var0_185, var0_0.super.getResource(arg0_185))
 end
 
 function var0_0.willExit(arg0_186)

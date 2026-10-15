@@ -42,8 +42,8 @@ function var0_0.getUIName(arg0_3)
 end
 
 function var0_0.OnLoaded(arg0_4)
-	arg0_4.backBtn = arg0_4._tf:Find("top/back")
-	arg0_4.giftTipTxt = arg0_4._tf:Find("top/gift_tip/Text"):GetComponent(typeof(Text))
+	arg0_4.backBtn = arg0_4._tf:Find("adapt/top/back")
+	arg0_4.giftTipTxt = arg0_4._tf:Find("adapt/top/gift_tip/Text"):GetComponent(typeof(Text))
 	arg0_4.uiToggleList = UIItemList.New(arg0_4._tf:Find("adapt/toggles/content"), arg0_4._tf:Find("adapt/toggles/content/tpl"))
 	arg0_4.mainTr = arg0_4._tf:Find("adapt/main")
 	arg0_4.pages = {
@@ -57,7 +57,7 @@ function var0_0.OnLoaded(arg0_4)
 		[var8_0] = IslandFriendSettingPage.New(arg0_4.mainTr, arg0_4.event)
 	}
 
-	setText(arg0_4._tf:Find("top/title/Text"), i18n("island_btn_label_visit"))
+	setText(arg0_4._tf:Find("adapt/top/title/Text"), i18n("island_btn_label_visit"))
 end
 
 function var0_0.AddListeners(arg0_5)
@@ -158,7 +158,7 @@ function var0_0.OnShowMsg(arg0_14, arg1_14)
 end
 
 function var0_0.OnInit(arg0_15)
-	onButton(arg0_15, arg0_15._tf:Find("top/title/help"), function()
+	onButton(arg0_15, arg0_15._tf:Find("adapt/top/title/help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.island_help_friends.tip

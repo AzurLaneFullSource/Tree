@@ -605,6 +605,11 @@ function var0_0.initNotificationHandleDic(arg0_42)
 			local var2_79 = var0_79.callback
 
 			arg0_79.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_79, var2_79)
+		end,
+		[ActivityProxy.ACTIVITY_END] = function(arg0_80, arg1_80)
+			local var0_80 = arg1_80:getBody()
+
+			arg0_80.viewComponent:RefreshActivityEnd()
 		end
 	}
 end

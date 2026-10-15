@@ -87,6 +87,8 @@ function var0_0.timeCall(arg0_4)
 					getProxy(BagProxy):ClearLimitCnt(var2_5)
 				end
 			end
+
+			pg.m02:sendNotification(GAME.GET_CHARGE_LIST)
 		end
 	}
 end

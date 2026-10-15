@@ -11,7 +11,7 @@ function var0_0.getUIName(arg0_1)
 	return "TrophyGalleryUI"
 end
 
-function var0_0.getResource(arg0_2, arg1_2)
+function var0_0.getResource(arg0_2)
 	local var0_2 = {
 		"ui/trophygalleryui",
 		"ui/iconcolorful",
@@ -79,7 +79,7 @@ function var0_0.getResource(arg0_2, arg1_2)
 		return ResPathSupport.MergeLuaArr(var1_4, var0_4, var2_4)
 	end
 
-	return ResPathSupport.MergeLuaArr(var0_0.super.getResource(arg0_2, arg1_2), var0_2, var1_2(), var2_2())
+	return ResPathSupport.MergeLuaArr(var0_0.super.getResource(arg0_2), var0_2, var1_2(), var2_2())
 end
 
 function var0_0.setTrophyGroups(arg0_5, arg1_5)
@@ -270,7 +270,7 @@ function var0_0.didEnter(arg0_17)
 	}, function(arg0_23)
 		local var0_23 = getProxy(LoveLetterProxy)
 
-		setActive(arg0_23, var0_23:IsTipLevelUp() or var0_23:IsTipAllLevelReward())
+		setActive(arg0_23, var0_23:IsTipRealizeGift() or var0_23:IsTipLevelUp() or var0_23:IsTipAllLevelReward())
 	end)
 	pg.EasyRedDotMgr.GetInstance():RegisterRedDot(arg0_17.rtCountLevelPanel:Find("info/icon/tip"), {
 		"love_letter_level_up",

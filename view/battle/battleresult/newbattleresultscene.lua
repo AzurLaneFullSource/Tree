@@ -8,7 +8,7 @@ function var0_0.getGroupName(arg0_2)
 	return "BattleScene"
 end
 
-function var0_0.getResource(arg0_3, arg1_3)
+function var0_0.getResource(arg0_3)
 	local var0_3 = {
 		"ui/battleresult_atlas",
 		"battleresultitems/resulteffect",
@@ -25,9 +25,9 @@ function var0_0.getResource(arg0_3, arg1_3)
 	}
 
 	if NewBattleResultYumiaMaterialPage.NeedShowYumiaMaterailDrop(arg0_3.contextData.drops) then
-		table.insertto(var0_3, arg0_3:GetYumiaMaterialRes(arg1_3))
+		table.insertto(var0_3, arg0_3:GetYumiaMaterialRes())
 	else
-		table.insertto(var0_3, arg0_3:GetNormalRes(arg1_3))
+		table.insertto(var0_3, arg0_3:GetNormalRes())
 	end
 
 	table.insertto(var0_3, var0_0.super.getResource(arg0_3))
@@ -35,25 +35,25 @@ function var0_0.getResource(arg0_3, arg1_3)
 	return var0_3
 end
 
-function var0_0.GetYumiaMaterialRes(arg0_4, arg1_4)
+function var0_0.GetYumiaMaterialRes(arg0_4)
 	local var0_4 = {}
 
 	table.insertto(var0_4, arg0_4:GetGradePageRes())
 	table.insertto(var0_4, arg0_4:GetDisplayAwardPageRes())
-	table.insertto(var0_4, arg0_4:GetDisplayPaintingsPageRes(arg1_4))
-	table.insertto(var0_4, arg0_4:GetStatisticsPageRes(arg1_4))
+	table.insertto(var0_4, arg0_4:GetDisplayPaintingsPageRes())
+	table.insertto(var0_4, arg0_4:GetStatisticsPageRes())
 	table.insertto(var0_4, arg0_4:GetYumiaMaterialPageRes())
 
 	return var0_4
 end
 
-function var0_0.GetNormalRes(arg0_5, arg1_5)
+function var0_0.GetNormalRes(arg0_5)
 	local var0_5 = {}
 
 	table.insertto(var0_5, arg0_5:GetGradePageRes())
 	table.insertto(var0_5, arg0_5:GetDisplayAwardPageRes())
-	table.insertto(var0_5, arg0_5:GetDisplayPaintingsPageRes(arg1_5))
-	table.insertto(var0_5, arg0_5:GetStatisticsPageRes(arg1_5))
+	table.insertto(var0_5, arg0_5:GetDisplayPaintingsPageRes())
+	table.insertto(var0_5, arg0_5:GetStatisticsPageRes())
 
 	return var0_5
 end
@@ -89,47 +89,49 @@ function var0_0.GetDisplayAwardPageRes(arg0_7)
 	return {}
 end
 
-function var0_0.GetDisplayPaintingsPageRes(arg0_8, arg1_8)
-	local var0_8 = {
+function var0_0.GetDisplayPaintingsPageRes(arg0_8)
+	local var0_8 = arg0_8.contextData
+	local var1_8 = {
 		"ui/newbattleresultdisplaypaintingspages"
 	}
-	local var1_8 = arg1_8.oldMainShips
+	local var2_8 = var0_8.oldMainShips
 
-	for iter0_8, iter1_8 in ipairs(var1_8) do
-		local var2_8 = iter1_8:getPainting()
+	for iter0_8, iter1_8 in ipairs(var2_8) do
+		local var3_8 = iter1_8:getPainting()
 
-		table.insert(var0_8, "painting/" .. var2_8 .. "_n")
-		table.insert(var0_8, "paintingface/" .. var2_8)
-		table.insert(var0_8, "squareicon/" .. var2_8)
+		table.insert(var1_8, "painting/" .. var3_8 .. "_n")
+		table.insert(var1_8, "paintingface/" .. var3_8)
+		table.insert(var1_8, "squareicon/" .. var3_8)
 	end
 
-	return var0_8
+	return var1_8
 end
 
-function var0_0.GetStatisticsPageRes(arg0_9, arg1_9)
-	local var0_9 = {
+function var0_0.GetStatisticsPageRes(arg0_9)
+	local var0_9 = arg0_9.contextData
+	local var1_9 = {
 		"ui/newbattleresultstatisticspage",
 		"battleresultitems/commander",
 		"ui/BattleResultMetaExpUI"
 	}
-	local var1_9 = arg1_9.oldMainShips
+	local var2_9 = var0_9.oldMainShips
 
-	for iter0_9, iter1_9 in ipairs(var1_9) do
-		local var2_9 = iter1_9:getPainting()
+	for iter0_9, iter1_9 in ipairs(var2_9) do
+		local var3_9 = iter1_9:getPainting()
 
-		table.insert(var0_9, "herohrzicon/" .. var2_9)
+		table.insert(var1_9, "herohrzicon/" .. var3_9)
 	end
 
-	local var3_9 = arg1_9.commanderExps or {}
-	local var4_9 = var3_9.surfaceCMD or var3_9.submarineCMD or {}
+	local var4_9 = var0_9.commanderExps or {}
+	local var5_9 = var4_9.surfaceCMD or var4_9.submarineCMD or {}
 
-	for iter2_9 = 1, #var4_9 do
-		local var5_9 = getProxy(CommanderProxy):getCommanderById(var4_9[iter2_9].commander_id)
+	for iter2_9 = 1, #var5_9 do
+		local var6_9 = getProxy(CommanderProxy):getCommanderById(var5_9[iter2_9].commander_id)
 
-		table.insert(var0_9, "commandericon/" .. var5_9:getPainting())
+		table.insert(var1_9, "commandericon/" .. var6_9:getPainting())
 	end
 
-	return var0_9
+	return var1_9
 end
 
 function var0_0.GetYumiaMaterialPageRes(arg0_10)

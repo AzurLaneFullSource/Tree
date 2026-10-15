@@ -9,23 +9,24 @@ function var0_0.getUIName(arg0_1)
 	return "EvaluationUI"
 end
 
-function var0_0.getResource(arg0_2, arg1_2)
+function var0_0.getResource(arg0_2)
 	local var0_2 = {
 		"shipyardicon/unknown",
 		"shiptype",
 		"shipframe"
 	}
-	local var1_2 = arg1_2.groupId
-	local var2_2 = arg1_2.showTrans
-	local var3_2 = getProxy(CollectionProxy):getShipGroup(var1_2)
-	local var4_2 = var3_2:getPainting(var2_2)
-	local var5_2 = var3_2:rarity2bgPrint(var2_2)
+	local var1_2 = arg0_2.contextData
+	local var2_2 = var1_2.groupId
+	local var3_2 = var1_2.showTrans
+	local var4_2 = getProxy(CollectionProxy):getShipGroup(var2_2)
+	local var5_2 = var4_2:getPainting(var3_2)
+	local var6_2 = var4_2:rarity2bgPrint(var3_2)
 
-	table.insert(var0_2, "bg/star_level_card_" .. var5_2)
+	table.insert(var0_2, "bg/star_level_card_" .. var6_2)
 
-	local var6_2 = ResPathSupport.GetPaintingShipYardIconListByPaintingName(var4_2)
+	local var7_2 = ResPathSupport.GetPaintingShipYardIconListByPaintingName(var5_2)
 
-	table.insertto(var0_2, var6_2)
+	table.insertto(var0_2, var7_2)
 
 	return table.insertto(var0_2, var0_0.super.getResource(arg0_2))
 end

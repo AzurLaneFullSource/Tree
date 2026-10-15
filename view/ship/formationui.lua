@@ -32,7 +32,7 @@ function var0_0.preloadUIList(arg0_2)
 	}
 end
 
-function var0_0.getResource(arg0_3, arg1_3)
+function var0_0.getResource(arg0_3)
 	local var0_3 = {
 		"shiptype",
 		"energy",
@@ -40,7 +40,7 @@ function var0_0.getResource(arg0_3, arg1_3)
 		"ui/proposeshipcard"
 	}
 
-	return table.insertto(var0_3, var0_0.super.getResource(arg0_3, arg1_3))
+	return table.insertto(var0_3, var0_0.super.getResource(arg0_3))
 end
 
 function var0_0.getFleetShipResList(arg0_4, arg1_4)
@@ -198,6 +198,10 @@ function var0_0.init(arg0_9)
 	setText(arg0_9._adapt:Find("gear_score/main/line/Image/text1"), i18n("pre_combat_main"))
 	setText(arg0_9._adapt:Find("gear_score/vanguard/line/Image/text1"), i18n("pre_combat_vanguard"))
 	setText(arg0_9._adapt:Find("gear_score/submarine/line/Image/text1"), i18n("pre_combat_submarine"))
+
+	arg0_9.uiSuggestionBtn = arg0_9._tf:Find("blur_panel/suggestionBtn")
+
+	setText(arg0_9.uiSuggestionBtn:Find("Text"), i18n("formation_suggestion"))
 end
 
 function var0_0.setShips(arg0_10, arg1_10)
@@ -531,580 +535,584 @@ function var0_0.didEnter(arg0_26)
 			helps = pg.gametip.fleet_antisub_range_tip.tip
 		})
 	end, SFX_PANEL)
+	onButton(arg0_26, arg0_26.uiSuggestionBtn, function()
+		arg0_26:emit(BaseUI.ON_GO_SCENE, SCENE.FORMATION_SUGGESTION)
+	end, SFX_PANEL)
+	setActive(arg0_26.uiSuggestionBtn, LevelTools.HasUnlockSuggestionMap())
 end
 
-function var0_0.SetCurrentFleetID(arg0_53, arg1_53)
-	arg0_53._currentFleetVO = arg0_53:getFleetById(arg1_53)
+function var0_0.SetCurrentFleetID(arg0_54, arg1_54)
+	arg0_54._currentFleetVO = arg0_54:getFleetById(arg1_54)
 
-	arg0_53._formationLogic:SetFleetVO(arg0_53._currentFleetVO)
-	arg0_53:updateCommanderFormation()
+	arg0_54._formationLogic:SetFleetVO(arg0_54._currentFleetVO)
+	arg0_54:updateCommanderFormation()
 end
 
-function var0_0.updateCommanderFormation(arg0_54)
-	if arg0_54.isOpenCommander then
-		arg0_54.commanderFormationPanel:Load()
-		arg0_54.commanderFormationPanel:ActionInvoke("Update", arg0_54._currentFleetVO, arg0_54.commanderPrefabFleets)
+function var0_0.updateCommanderFormation(arg0_55)
+	if arg0_55.isOpenCommander then
+		arg0_55.commanderFormationPanel:Load()
+		arg0_55.commanderFormationPanel:ActionInvoke("Update", arg0_55._currentFleetVO, arg0_55.commanderPrefabFleets)
 	end
 end
 
-function var0_0.selectFleetByStep(arg0_55, arg1_55)
-	local var0_55 = table.indexof(arg0_55._fleetVOs, arg0_55._currentFleetVO)
+function var0_0.selectFleetByStep(arg0_56, arg1_56)
+	local var0_56 = table.indexof(arg0_56._fleetVOs, arg0_56._currentFleetVO)
 
 	while true do
-		var0_55 = var0_55 + arg1_55
+		var0_56 = var0_56 + arg1_56
 
-		if var0_55 < 1 or var0_55 > #arg0_55._fleetVOs then
+		if var0_56 < 1 or var0_56 > #arg0_56._fleetVOs then
 			break
 		end
 
-		local var1_55 = arg0_55._fleetVOs[var0_55]
+		local var1_56 = arg0_56._fleetVOs[var0_56]
 
-		if var1_55:isUnlock() then
-			return var1_55.id
+		if var1_56:isUnlock() then
+			return var1_56.id
 		end
 	end
 end
 
-function var0_0.updateToggleList(arg0_56, arg1_56)
-	local var0_56 = arg0_56.fleetToggleList:GetComponent(typeof(ToggleGroup))
+function var0_0.updateToggleList(arg0_57, arg1_57)
+	local var0_57 = arg0_57.fleetToggleList:GetComponent(typeof(ToggleGroup))
 
-	var0_56.allowSwitchOff = true
+	var0_57.allowSwitchOff = true
 
-	local var1_56 = arg0_56._currentFleetVO.id
+	local var1_57 = arg0_57._currentFleetVO.id
 
-	for iter0_56 = 1, #arg0_56.fleetToggles do
-		local var2_56 = arg0_56.fleetToggles[iter0_56]
-		local var3_56 = arg1_56[iter0_56]
+	for iter0_57 = 1, #arg0_57.fleetToggles do
+		local var2_57 = arg0_57.fleetToggles[iter0_57]
+		local var3_57 = arg1_57[iter0_57]
 
-		setActive(var2_56, var3_56)
+		setActive(var2_57, var3_57)
 
-		if var3_56 then
-			local var4_56 = var2_56:GetComponent(typeof(Toggle))
-			local var5_56 = var2_56:Find("lock")
-			local var6_56, var7_56 = var3_56:isUnlock()
+		if var3_57 then
+			local var4_57 = var2_57:GetComponent(typeof(Toggle))
+			local var5_57 = var2_57:Find("lock")
+			local var6_57, var7_57 = var3_57:isUnlock()
 
-			setToggleEnabled(var2_56, var6_56)
-			setActive(var5_56, not var6_56)
-			setActive(var2_56:Find("on"), var6_56 and var1_56 == var3_56.id)
-			setActive(var2_56:Find("off"), var6_56 and var1_56 ~= var3_56.id)
+			setToggleEnabled(var2_57, var6_57)
+			setActive(var5_57, not var6_57)
+			setActive(var2_57:Find("on"), var6_57 and var1_57 == var3_57.id)
+			setActive(var2_57:Find("off"), var6_57 and var1_57 ~= var3_57.id)
 
-			if var6_56 then
-				var4_56.isOn = var3_56.id == var1_56
+			if var6_57 then
+				var4_57.isOn = var3_57.id == var1_57
 
-				onToggle(arg0_56, var2_56, function(arg0_57)
-					if arg0_57 then
-						setActive(arg0_56.fleetToggleMask, false)
-						arg0_56:tweenTabArrow(true)
+				onToggle(arg0_57, var2_57, function(arg0_58)
+					if arg0_58 then
+						setActive(arg0_57.fleetToggleMask, false)
+						arg0_57:tweenTabArrow(true)
 
-						if var3_56.id ~= var1_56 then
-							arg0_56:ForceDropChar()
-							arg0_56:emit(FormationMediator.ON_CHANGE_FLEET, var3_56.id)
+						if var3_57.id ~= var1_57 then
+							arg0_57:ForceDropChar()
+							arg0_57:emit(FormationMediator.ON_CHANGE_FLEET, var3_57.id)
 						end
 					end
 				end, SFX_UI_TAG)
 			else
-				onButton(arg0_56, var5_56, function()
-					pg.TipsMgr.GetInstance():ShowTips(var7_56)
+				onButton(arg0_57, var5_57, function()
+					pg.TipsMgr.GetInstance():ShowTips(var7_57)
 				end, SFX_UI_CLICK)
 			end
 		end
 	end
 
-	var0_56.allowSwitchOff = false
+	var0_57.allowSwitchOff = false
 end
 
-function var0_0.resetFormationComponent(arg0_59)
-	SetActive(arg0_59._gridTFs.main[1]:Find("flag"), #arg0_59._currentFleetVO:getTeamByName(TeamType.Main) ~= 0)
-	SetActive(arg0_59._gridTFs.submarine[1]:Find("flag"), #arg0_59._currentFleetVO:getTeamByName(TeamType.Submarine) ~= 0)
+function var0_0.resetFormationComponent(arg0_60)
+	SetActive(arg0_60._gridTFs.main[1]:Find("flag"), #arg0_60._currentFleetVO:getTeamByName(TeamType.Main) ~= 0)
+	SetActive(arg0_60._gridTFs.submarine[1]:Find("flag"), #arg0_60._currentFleetVO:getTeamByName(TeamType.Submarine) ~= 0)
 end
 
-function var0_0.sortCardSiblingIndex(arg0_60)
-	local var0_60 = {
+function var0_0.sortCardSiblingIndex(arg0_61)
+	local var0_61 = {
 		TeamType.Main,
 		TeamType.Vanguard,
 		TeamType.Submarine
 	}
 
-	_.each(var0_60, function(arg0_61)
-		local var0_61 = arg0_60._cards[arg0_61]
+	_.each(var0_61, function(arg0_62)
+		local var0_62 = arg0_61._cards[arg0_62]
 
-		if #var0_61 > 0 then
-			for iter0_61 = 1, #var0_61 do
-				var0_61[iter0_61].tr:SetSiblingIndex(iter0_61 - 1)
+		if #var0_62 > 0 then
+			for iter0_62 = 1, #var0_62 do
+				var0_62[iter0_62].tr:SetSiblingIndex(iter0_62 - 1)
 			end
 		end
 	end)
 end
 
-function var0_0.displayFleetInfo(arg0_62)
-	SetActive(arg0_62._prevPage, arg0_62:selectFleetByStep(-1))
-	SetActive(arg0_62._nextPage, arg0_62:selectFleetByStep(1))
-	setActive(arg0_62._adapt:Find("gear_score"), true)
-	setActive(arg0_62._vanguardGS, false)
-	setActive(arg0_62._mainGS, false)
-	setActive(arg0_62._subGS, false)
+function var0_0.displayFleetInfo(arg0_63)
+	SetActive(arg0_63._prevPage, arg0_63:selectFleetByStep(-1))
+	SetActive(arg0_63._nextPage, arg0_63:selectFleetByStep(1))
+	setActive(arg0_63._adapt:Find("gear_score"), true)
+	setActive(arg0_63._vanguardGS, false)
+	setActive(arg0_63._mainGS, false)
+	setActive(arg0_63._subGS, false)
 
-	local var0_62 = arg0_62._currentFleetVO:GetPropertiesSum()
-	local var1_62 = math.floor(arg0_62._currentFleetVO:GetGearScoreSum(TeamType.Vanguard))
-	local var2_62 = math.floor(arg0_62._currentFleetVO:GetGearScoreSum(TeamType.Main))
-	local var3_62 = math.floor(arg0_62._currentFleetVO:GetGearScoreSum(TeamType.Submarine))
-	local var4_62 = arg0_62._currentFleetVO:GetCostSum()
+	local var0_63 = arg0_63._currentFleetVO:GetPropertiesSum()
+	local var1_63 = math.floor(arg0_63._currentFleetVO:GetGearScoreSum(TeamType.Vanguard))
+	local var2_63 = math.floor(arg0_63._currentFleetVO:GetGearScoreSum(TeamType.Main))
+	local var3_63 = math.floor(arg0_63._currentFleetVO:GetGearScoreSum(TeamType.Submarine))
+	local var4_63 = arg0_63._currentFleetVO:GetCostSum()
 
-	arg0_62.tweenNumText(arg0_62._cannonPower, var0_62.cannon)
-	arg0_62.tweenNumText(arg0_62._torpedoPower, var0_62.torpedo)
-	arg0_62.tweenNumText(arg0_62._AAPower, var0_62.antiAir)
-	arg0_62.tweenNumText(arg0_62._airPower, var0_62.air)
-	arg0_62.tweenNumText(arg0_62._cost, var4_62.oil)
+	arg0_63.tweenNumText(arg0_63._cannonPower, var0_63.cannon)
+	arg0_63.tweenNumText(arg0_63._torpedoPower, var0_63.torpedo)
+	arg0_63.tweenNumText(arg0_63._AAPower, var0_63.antiAir)
+	arg0_63.tweenNumText(arg0_63._airPower, var0_63.air)
+	arg0_63.tweenNumText(arg0_63._cost, var4_63.oil)
 
 	if OPEN_AIR_DOMINANCE then
-		setActive(arg0_62._airDominance.parent, true)
-		arg0_62.tweenNumText(arg0_62._airDominance, arg0_62._currentFleetVO:getFleetAirDominanceValue())
+		setActive(arg0_63._airDominance.parent, true)
+		arg0_63.tweenNumText(arg0_63._airDominance, arg0_63._currentFleetVO:getFleetAirDominanceValue())
 	else
-		setActive(arg0_62._airDominance.parent, false)
+		setActive(arg0_63._airDominance.parent, false)
 	end
 
-	local var5_62 = arg0_62._currentFleetVO:getFleetType()
+	local var5_63 = arg0_63._currentFleetVO:getFleetType()
 
-	if var5_62 == FleetType.Normal then
-		setActive(arg0_62._vanguardGS, true)
-		setActive(arg0_62._mainGS, true)
-		setActive(arg0_62._arrUpVan, false)
-		setActive(arg0_62._arrDownVan, false)
-		setActive(arg0_62._arrUpMain, false)
-		setActive(arg0_62._arrDownMain, false)
+	if var5_63 == FleetType.Normal then
+		setActive(arg0_63._vanguardGS, true)
+		setActive(arg0_63._mainGS, true)
+		setActive(arg0_63._arrUpVan, false)
+		setActive(arg0_63._arrDownVan, false)
+		setActive(arg0_63._arrUpMain, false)
+		setActive(arg0_63._arrDownMain, false)
 
-		arg0_62.prevVanGS = tonumber(arg0_62._vanGSTxt.text)
+		arg0_63.prevVanGS = tonumber(arg0_63._vanGSTxt.text)
 
-		arg0_62.tweenNumText(arg0_62._vanguardGS:Find("Text"), var1_62)
+		arg0_63.tweenNumText(arg0_63._vanguardGS:Find("Text"), var1_63)
 
-		if arg0_62.VanGSInited then
-			setActive(arg0_62._arrUpVan, var1_62 > arg0_62.prevVanGS)
-			setActive(arg0_62._arrDownVan, var1_62 < arg0_62.prevVanGS)
+		if arg0_63.VanGSInited then
+			setActive(arg0_63._arrUpVan, var1_63 > arg0_63.prevVanGS)
+			setActive(arg0_63._arrDownVan, var1_63 < arg0_63.prevVanGS)
 		end
 
-		arg0_62.prevMainGS = tonumber(arg0_62._mainGSTxt.text)
+		arg0_63.prevMainGS = tonumber(arg0_63._mainGSTxt.text)
 
-		arg0_62.tweenNumText(arg0_62._mainGS:Find("Text"), var2_62)
+		arg0_63.tweenNumText(arg0_63._mainGS:Find("Text"), var2_63)
 
-		if arg0_62.mainGSInited then
-			setActive(arg0_62._arrUpMain, var2_62 > arg0_62.prevMainGS)
-			setActive(arg0_62._arrDownMain, var2_62 < arg0_62.prevMainGS)
+		if arg0_63.mainGSInited then
+			setActive(arg0_63._arrUpMain, var2_63 > arg0_63.prevMainGS)
+			setActive(arg0_63._arrDownMain, var2_63 < arg0_63.prevMainGS)
 		end
 
-		arg0_62.contextData.mainGS = var2_62
-		arg0_62.contextData.vanGS = var1_62
-		arg0_62.mainGSInited = true
-		arg0_62.VanGSInited = true
+		arg0_63.contextData.mainGS = var2_63
+		arg0_63.contextData.vanGS = var1_63
+		arg0_63.mainGSInited = true
+		arg0_63.VanGSInited = true
 
-		local var6_62 = arg0_62._currentFleetVO:GetFleetSonarRange()
+		local var6_63 = arg0_63._currentFleetVO:GetFleetSonarRange()
 
-		setActive(arg0_62._vanguardGS:Find("SonarActive"), var6_62 > 0)
-		setActive(arg0_62._vanguardGS:Find("SonarInactive"), var6_62 <= 0)
+		setActive(arg0_63._vanguardGS:Find("SonarActive"), var6_63 > 0)
+		setActive(arg0_63._vanguardGS:Find("SonarInactive"), var6_63 <= 0)
 
-		local function var7_62()
+		local function var7_63()
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				type = MSGBOX_TYPE_HELP,
 				helps = pg.gametip.fleet_antisub_range_tip.tip
 			})
 		end
 
-		if var6_62 > 0 then
-			setText(arg0_62._vanguardGS:Find("SonarActive/Text"), math.floor(var6_62))
-			onButton(arg0_62, arg0_62._vanguardGS:Find("SonarActive"), var7_62, SFX_PANEL)
+		if var6_63 > 0 then
+			setText(arg0_63._vanguardGS:Find("SonarActive/Text"), math.floor(var6_63))
+			onButton(arg0_63, arg0_63._vanguardGS:Find("SonarActive"), var7_63, SFX_PANEL)
 		else
-			onButton(arg0_62, arg0_62._vanguardGS:Find("SonarInactive"), var7_62, SFX_PANEL)
+			onButton(arg0_63, arg0_63._vanguardGS:Find("SonarInactive"), var7_63, SFX_PANEL)
 		end
-	elseif var5_62 == FleetType.Submarine then
-		setActive(arg0_62._arrUpSub, false)
-		setActive(arg0_62._arrDownSub, false)
-		setActive(arg0_62._subGS, true)
+	elseif var5_63 == FleetType.Submarine then
+		setActive(arg0_63._arrUpSub, false)
+		setActive(arg0_63._arrDownSub, false)
+		setActive(arg0_63._subGS, true)
 
-		arg0_62.prevSubGS = tonumber(arg0_62._subGSTxt.text)
+		arg0_63.prevSubGS = tonumber(arg0_63._subGSTxt.text)
 
-		arg0_62.tweenNumText(arg0_62._subGS:Find("Text"), var3_62)
+		arg0_63.tweenNumText(arg0_63._subGS:Find("Text"), var3_63)
 
-		if arg0_62.SubGSInited then
-			setActive(arg0_62._arrUpSub, var3_62 > arg0_62.prevSubGS)
-			setActive(arg0_62._arrDownSub, var3_62 < arg0_62.prevSubGS)
+		if arg0_63.SubGSInited then
+			setActive(arg0_63._arrUpSub, var3_63 > arg0_63.prevSubGS)
+			setActive(arg0_63._arrDownSub, var3_63 < arg0_63.prevSubGS)
 		end
 
-		arg0_62.contextData.subGS = var3_62
-		arg0_62.SubGSInited = true
+		arg0_63.contextData.subGS = var3_63
+		arg0_63.SubGSInited = true
 	end
 
-	arg0_62:SetFleetNameLabel()
-	setText(arg0_62._fleetNumText, arg0_62._currentFleetVO:getIndex())
+	arg0_63:SetFleetNameLabel()
+	setText(arg0_63._fleetNumText, arg0_63._currentFleetVO:getIndex())
 end
 
-function var0_0.DisplayRenamePanel(arg0_64, arg1_64)
-	SetActive(arg0_64._renamePanel, arg1_64)
+function var0_0.DisplayRenamePanel(arg0_65, arg1_65)
+	SetActive(arg0_65._renamePanel, arg1_65)
 
-	if arg1_64 then
-		pg.UIMgr.GetInstance():BlurPanel(arg0_64._renamePanel)
+	if arg1_65 then
+		pg.UIMgr.GetInstance():BlurPanel(arg0_65._renamePanel)
 
-		local var0_64 = getText(arg0_64._fleetNameText)
+		local var0_65 = getText(arg0_65._fleetNameText)
 
-		setInputText(findTF(arg0_64._renamePanel, "frame/name_field"), var0_64)
+		setInputText(findTF(arg0_65._renamePanel, "frame/name_field"), var0_65)
 	else
-		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_64._renamePanel, arg0_64._tf)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_65._renamePanel, arg0_65._tf)
 	end
 end
 
-function var0_0.hideAttrFrame(arg0_65)
-	SetActive(arg0_65._attrFrame, false)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_65._blurLayer, arg0_65._tf)
+function var0_0.hideAttrFrame(arg0_66)
+	SetActive(arg0_66._attrFrame, false)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_66._blurLayer, arg0_66._tf)
 end
 
-function var0_0.displayAttrFrame(arg0_66)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_66._blurLayer)
-	SetActive(arg0_66._attrFrame, true)
-	arg0_66:initAttrFrame()
+function var0_0.displayAttrFrame(arg0_67)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_67._blurLayer)
+	SetActive(arg0_67._attrFrame, true)
+	arg0_67:initAttrFrame()
 end
 
-function var0_0.initAttrFrame(arg0_67)
-	local var0_67 = {
-		[TeamType.Main] = arg0_67._currentFleetVO.mainShips,
-		[TeamType.Vanguard] = arg0_67._currentFleetVO.vanguardShips,
-		[TeamType.Submarine] = arg0_67._currentFleetVO.subShips
-	}
-	local var1_67 = false
-
-	for iter0_67, iter1_67 in pairs(var0_67) do
-		local var2_67 = arg0_67._cards[iter0_67]
-
-		if #var2_67 == 0 then
-			local var3_67 = arg0_67._attrFrame:Find(iter0_67 .. "/list")
-
-			for iter2_67 = 1, 3 do
-				local var4_67 = cloneTplTo(arg0_67._cardTpl, var3_67).gameObject
-
-				table.insert(var2_67, FormationDetailCard.New(var4_67))
-			end
-
-			var1_67 = true
-		end
-	end
-
-	if var1_67 then
-		arg0_67:updateAttrFrame()
-	end
-end
-
-function var0_0.updateAttrFrame(arg0_68)
+function var0_0.initAttrFrame(arg0_68)
 	local var0_68 = {
 		[TeamType.Main] = arg0_68._currentFleetVO.mainShips,
 		[TeamType.Vanguard] = arg0_68._currentFleetVO.vanguardShips,
 		[TeamType.Submarine] = arg0_68._currentFleetVO.subShips
 	}
-	local var1_68 = arg0_68._currentFleetVO:getFleetType()
+	local var1_68 = false
 
 	for iter0_68, iter1_68 in pairs(var0_68) do
 		local var2_68 = arg0_68._cards[iter0_68]
 
-		if #var2_68 > 0 then
-			local var3_68 = var1_68 == FleetType.Submarine and iter0_68 == TeamType.Vanguard
+		if #var2_68 == 0 then
+			local var3_68 = arg0_68._attrFrame:Find(iter0_68 .. "/list")
 
 			for iter2_68 = 1, 3 do
-				if iter2_68 <= #iter1_68 then
-					local var4_68 = arg0_68.shipVOs[iter1_68[iter2_68]]
+				local var4_68 = cloneTplTo(arg0_68._cardTpl, var3_68).gameObject
 
-					var2_68[iter2_68]:update(var4_68, var3_68)
-					var2_68[iter2_68]:updateProps(arg0_68:getCardAttrProps(var4_68))
+				table.insert(var2_68, FormationDetailCard.New(var4_68))
+			end
+
+			var1_68 = true
+		end
+	end
+
+	if var1_68 then
+		arg0_68:updateAttrFrame()
+	end
+end
+
+function var0_0.updateAttrFrame(arg0_69)
+	local var0_69 = {
+		[TeamType.Main] = arg0_69._currentFleetVO.mainShips,
+		[TeamType.Vanguard] = arg0_69._currentFleetVO.vanguardShips,
+		[TeamType.Submarine] = arg0_69._currentFleetVO.subShips
+	}
+	local var1_69 = arg0_69._currentFleetVO:getFleetType()
+
+	for iter0_69, iter1_69 in pairs(var0_69) do
+		local var2_69 = arg0_69._cards[iter0_69]
+
+		if #var2_69 > 0 then
+			local var3_69 = var1_69 == FleetType.Submarine and iter0_69 == TeamType.Vanguard
+
+			for iter2_69 = 1, 3 do
+				if iter2_69 <= #iter1_69 then
+					local var4_69 = arg0_69.shipVOs[iter1_69[iter2_69]]
+
+					var2_69[iter2_69]:update(var4_69, var3_69)
+					var2_69[iter2_69]:updateProps(arg0_69:getCardAttrProps(var4_69))
 				else
-					var2_68[iter2_68]:update(nil, var3_68)
+					var2_69[iter2_69]:update(nil, var3_69)
 				end
 
-				arg0_68:detachOnCardButton(var2_68[iter2_68])
+				arg0_69:detachOnCardButton(var2_69[iter2_69])
 
-				if not var3_68 then
-					arg0_68:attachOnCardButton(var2_68[iter2_68], iter0_68)
+				if not var3_69 then
+					arg0_69:attachOnCardButton(var2_69[iter2_69], iter0_69)
 				end
 			end
 		end
 	end
 
-	setActive(arg0_68._attrFrame:Find(TeamType.Main), var1_68 == FleetType.Normal)
-	setActive(arg0_68._attrFrame:Find(TeamType.Submarine), var1_68 == FleetType.Submarine)
-	setActive(arg0_68._attrFrame:Find(TeamType.Vanguard .. "/vanguard"), var1_68 ~= FleetType.Submarine)
-	arg0_68:updateUltimateTitle()
+	setActive(arg0_69._attrFrame:Find(TeamType.Main), var1_69 == FleetType.Normal)
+	setActive(arg0_69._attrFrame:Find(TeamType.Submarine), var1_69 == FleetType.Submarine)
+	setActive(arg0_69._attrFrame:Find(TeamType.Vanguard .. "/vanguard"), var1_69 ~= FleetType.Submarine)
+	arg0_69:updateUltimateTitle()
 end
 
-function var0_0.updateUltimateTitle(arg0_69)
-	local var0_69 = arg0_69._cards[TeamType.Main]
-	local var1_69 = arg0_69._currentFleetVO.mainShips
+function var0_0.updateUltimateTitle(arg0_70)
+	local var0_70 = arg0_70._cards[TeamType.Main]
+	local var1_70 = arg0_70._currentFleetVO.mainShips
 
-	if #var0_69 > 0 then
-		for iter0_69 = 1, #var0_69 do
-			go(var0_69[iter0_69].shipState):SetActive(iter0_69 == 1)
+	if #var0_70 > 0 then
+		for iter0_70 = 1, #var0_70 do
+			go(var0_70[iter0_70].shipState):SetActive(iter0_70 == 1)
 		end
 	end
 end
 
-function var0_0.getCardAttrProps(arg0_70, arg1_70)
-	local var0_70 = arg1_70:getProperties()
-	local var1_70 = arg1_70:getShipCombatPower()
-	local var2_70 = arg1_70:getBattleTotalExpend()
+function var0_0.getCardAttrProps(arg0_71, arg1_71)
+	local var0_71 = arg1_71:getProperties()
+	local var1_71 = arg1_71:getShipCombatPower()
+	local var2_71 = arg1_71:getBattleTotalExpend()
 
 	return {
 		{
 			i18n("word_attr_durability"),
-			tostring(math.floor(var0_70.durability))
+			tostring(math.floor(var0_71.durability))
 		},
 		{
 			i18n("word_attr_luck"),
-			"" .. tostring(math.floor(var2_70))
+			"" .. tostring(math.floor(var2_71))
 		},
 		{
 			i18n("word_synthesize_power"),
-			"<color=#ffff00>" .. var1_70 .. "</color>"
+			"<color=#ffff00>" .. var1_71 .. "</color>"
 		}
 	}
 end
 
-function var0_0.detachOnCardButton(arg0_71, arg1_71)
-	local var0_71 = GetOrAddComponent(arg1_71.go, "EventTriggerListener")
-
-	var0_71:RemovePointClickFunc()
-	var0_71:RemoveBeginDragFunc()
-	var0_71:RemoveDragFunc()
-	var0_71:RemoveDragEndFunc()
-end
-
-function var0_0.attachOnCardButton(arg0_72, arg1_72, arg2_72)
+function var0_0.detachOnCardButton(arg0_72, arg1_72)
 	local var0_72 = GetOrAddComponent(arg1_72.go, "EventTriggerListener")
 
-	arg0_72.eventTriggers[var0_72] = true
+	var0_72:RemovePointClickFunc()
+	var0_72:RemoveBeginDragFunc()
+	var0_72:RemoveDragFunc()
+	var0_72:RemoveDragEndFunc()
+end
 
-	var0_72:AddPointClickFunc(function(arg0_73, arg1_73)
-		if not arg0_72.carddrag and arg0_73 == arg1_72.go then
-			if arg1_72.shipVO then
-				arg0_72:emit(FormationMediator.OPEN_SHIP_INFO, arg1_72.shipVO.id, arg0_72._currentFleetVO, var0_0.TOGGLE_DETAIL)
+function var0_0.attachOnCardButton(arg0_73, arg1_73, arg2_73)
+	local var0_73 = GetOrAddComponent(arg1_73.go, "EventTriggerListener")
+
+	arg0_73.eventTriggers[var0_73] = true
+
+	var0_73:AddPointClickFunc(function(arg0_74, arg1_74)
+		if not arg0_73.carddrag and arg0_74 == arg1_73.go then
+			if arg1_73.shipVO then
+				arg0_73:emit(FormationMediator.OPEN_SHIP_INFO, arg1_73.shipVO.id, arg0_73._currentFleetVO, var0_0.TOGGLE_DETAIL)
 			else
-				arg0_72:emit(FormationMediator.CHANGE_FLEET_SHIP, arg1_72.shipVO, arg0_72._currentFleetVO, var0_0.TOGGLE_DETAIL, arg2_72)
+				arg0_73:emit(FormationMediator.CHANGE_FLEET_SHIP, arg1_73.shipVO, arg0_73._currentFleetVO, var0_0.TOGGLE_DETAIL, arg2_73)
 			end
 
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_PANEL)
 		end
 	end)
 
-	if arg1_72.shipVO then
-		local var1_72 = arg0_72._cards[arg2_72]
-		local var2_72 = arg1_72.tr.parent:GetComponent("ContentSizeFitter")
-		local var3_72 = arg1_72.tr.parent:GetComponent("HorizontalLayoutGroup")
-		local var4_72 = arg1_72.tr.rect.width * 0.5
-		local var5_72 = {}
+	if arg1_73.shipVO then
+		local var1_73 = arg0_73._cards[arg2_73]
+		local var2_73 = arg1_73.tr.parent:GetComponent("ContentSizeFitter")
+		local var3_73 = arg1_73.tr.parent:GetComponent("HorizontalLayoutGroup")
+		local var4_73 = arg1_73.tr.rect.width * 0.5
+		local var5_73 = {}
 
-		var0_72:AddBeginDragFunc(function()
-			if arg0_72.carddrag then
+		var0_73:AddBeginDragFunc(function()
+			if arg0_73.carddrag then
 				return
 			end
 
-			arg0_72._currentDragDelegate = var0_72
-			arg0_72.carddrag = arg1_72
-			var2_72.enabled = false
-			var3_72.enabled = false
+			arg0_73._currentDragDelegate = var0_73
+			arg0_73.carddrag = arg1_73
+			var2_73.enabled = false
+			var3_73.enabled = false
 
-			arg1_72.tr:SetSiblingIndex(#var1_72)
+			arg1_73.tr:SetSiblingIndex(#var1_73)
 
-			for iter0_74 = 1, #var1_72 do
-				if var1_72[iter0_74] == arg1_72 then
-					arg0_72._shiftIndex = iter0_74
+			for iter0_75 = 1, #var1_73 do
+				if var1_73[iter0_75] == arg1_73 then
+					arg0_73._shiftIndex = iter0_75
 				end
 
-				var5_72[iter0_74] = var1_72[iter0_74].tr.anchoredPosition
+				var5_73[iter0_75] = var1_73[iter0_75].tr.anchoredPosition
 			end
 
-			LeanTween.scale(arg1_72.paintingTr, Vector3(1.1, 1.1, 0), 0.3)
+			LeanTween.scale(arg1_73.paintingTr, Vector3(1.1, 1.1, 0), 0.3)
 		end)
-		var0_72:AddDragFunc(function(arg0_75, arg1_75)
-			if arg0_72.carddrag ~= arg1_72 then
+		var0_73:AddDragFunc(function(arg0_76, arg1_76)
+			if arg0_73.carddrag ~= arg1_73 then
 				return
 			end
 
-			local var0_75 = arg1_72.tr.localPosition
+			local var0_76 = arg1_73.tr.localPosition
 
-			var0_75.x = arg0_72:change2ScrPos(arg1_72.tr.parent, arg1_75.position).x
-			arg1_72.tr.localPosition = var0_75
+			var0_76.x = arg0_73:change2ScrPos(arg1_73.tr.parent, arg1_76.position).x
+			arg1_73.tr.localPosition = var0_76
 
-			local var1_75 = 1
+			local var1_76 = 1
 
-			for iter0_75 = 1, #var1_72 do
-				if var1_72[iter0_75] ~= arg1_72 and var1_72[iter0_75].shipVO and arg1_72.tr.localPosition.x > var1_72[iter0_75].tr.localPosition.x + (var1_75 < arg0_72._shiftIndex and 1.1 or -1.1) * var4_72 then
-					var1_75 = var1_75 + 1
+			for iter0_76 = 1, #var1_73 do
+				if var1_73[iter0_76] ~= arg1_73 and var1_73[iter0_76].shipVO and arg1_73.tr.localPosition.x > var1_73[iter0_76].tr.localPosition.x + (var1_76 < arg0_73._shiftIndex and 1.1 or -1.1) * var4_73 then
+					var1_76 = var1_76 + 1
 				end
 			end
 
-			if arg0_72._shiftIndex ~= var1_75 then
-				arg0_72._formationLogic:Shift(arg0_72._shiftIndex, var1_75, arg2_72)
-				arg0_72:shiftCard(arg0_72._shiftIndex, var1_75, arg2_72)
+			if arg0_73._shiftIndex ~= var1_76 then
+				arg0_73._formationLogic:Shift(arg0_73._shiftIndex, var1_76, arg2_73)
+				arg0_73:shiftCard(arg0_73._shiftIndex, var1_76, arg2_73)
 
-				for iter1_75 = 1, #var1_72 do
-					if var1_72[iter1_75] and var1_72[iter1_75] ~= arg1_72 then
-						var1_72[iter1_75].tr.anchoredPosition = var5_72[iter1_75]
+				for iter1_76 = 1, #var1_73 do
+					if var1_73[iter1_76] and var1_73[iter1_76] ~= arg1_73 then
+						var1_73[iter1_76].tr.anchoredPosition = var5_73[iter1_76]
 					end
 				end
 			end
 		end)
-		var0_72:AddDragEndFunc(function(arg0_76, arg1_76)
-			if arg0_72.carddrag ~= arg1_72 then
+		var0_73:AddDragEndFunc(function(arg0_77, arg1_77)
+			if arg0_73.carddrag ~= arg1_73 then
 				return
 			end
 
 			function resetCard()
-				for iter0_77 = 1, #var1_72 do
-					var1_72[iter0_77].tr.anchoredPosition = var5_72[iter0_77]
+				for iter0_78 = 1, #var1_73 do
+					var1_73[iter0_78].tr.anchoredPosition = var5_73[iter0_78]
 				end
 
-				var2_72.enabled = true
-				var3_72.enabled = true
-				arg0_72._shiftIndex = nil
+				var2_73.enabled = true
+				var3_73.enabled = true
+				arg0_73._shiftIndex = nil
 
-				arg0_72:updateUltimateTitle()
-				arg0_72._formationLogic:SortSiblingIndex()
-				arg0_72:sortCardSiblingIndex()
-				arg0_72:emit(FormationMediator.CHANGE_FLEET_SHIPS_ORDER, arg0_72._currentFleetVO)
+				arg0_73:updateUltimateTitle()
+				arg0_73._formationLogic:SortSiblingIndex()
+				arg0_73:sortCardSiblingIndex()
+				arg0_73:emit(FormationMediator.CHANGE_FLEET_SHIPS_ORDER, arg0_73._currentFleetVO)
 
-				var0_72.enabled = true
-				arg0_72.carddrag = nil
+				var0_73.enabled = true
+				arg0_73.carddrag = nil
 			end
 
-			local var0_76 = arg0_72._forceDropCharacter
+			local var0_77 = arg0_73._forceDropCharacter
 
-			arg0_72._forceDropCharacter = nil
-			arg0_72._currentDragDelegate = nil
-			var0_72.enabled = false
+			arg0_73._forceDropCharacter = nil
+			arg0_73._currentDragDelegate = nil
+			var0_73.enabled = false
 
-			if var0_76 then
+			if var0_77 then
 				resetCard()
 
-				arg1_72.paintingTr.localScale = Vector3(1, 1, 0)
+				arg1_73.paintingTr.localScale = Vector3(1, 1, 0)
 			else
-				local var1_76 = math.min(math.abs(arg1_72.tr.anchoredPosition.x - var5_72[arg0_72._shiftIndex].x) / 200, 1) * 0.3
+				local var1_77 = math.min(math.abs(arg1_73.tr.anchoredPosition.x - var5_73[arg0_73._shiftIndex].x) / 200, 1) * 0.3
 
-				LeanTween.value(arg1_72.go, arg1_72.tr.anchoredPosition.x, var5_72[arg0_72._shiftIndex].x, var1_76):setEase(LeanTweenType.easeOutCubic):setOnUpdate(System.Action_float(function(arg0_78)
-					local var0_78 = arg1_72.tr.anchoredPosition
+				LeanTween.value(arg1_73.go, arg1_73.tr.anchoredPosition.x, var5_73[arg0_73._shiftIndex].x, var1_77):setEase(LeanTweenType.easeOutCubic):setOnUpdate(System.Action_float(function(arg0_79)
+					local var0_79 = arg1_73.tr.anchoredPosition
 
-					var0_78.x = arg0_78
-					arg1_72.tr.anchoredPosition = var0_78
+					var0_79.x = arg0_79
+					arg1_73.tr.anchoredPosition = var0_79
 				end)):setOnComplete(System.Action(function()
 					resetCard()
-					LeanTween.scale(arg1_72.paintingTr, Vector3(1, 1, 0), 0.3)
+					LeanTween.scale(arg1_73.paintingTr, Vector3(1, 1, 0), 0.3)
 				end))
 			end
 		end)
 	end
 end
 
-function var0_0.shiftCard(arg0_80, arg1_80, arg2_80, arg3_80)
-	local var0_80 = arg0_80._cards[arg3_80]
+function var0_0.shiftCard(arg0_81, arg1_81, arg2_81, arg3_81)
+	local var0_81 = arg0_81._cards[arg3_81]
 
-	if #var0_80 > 0 then
-		var0_80[arg1_80], var0_80[arg2_80] = var0_80[arg2_80], var0_80[arg1_80]
+	if #var0_81 > 0 then
+		var0_81[arg1_81], var0_81[arg2_81] = var0_81[arg2_81], var0_81[arg1_81]
 	end
 
-	arg0_80._shiftIndex = arg2_80
+	arg0_81._shiftIndex = arg2_81
 end
 
-function var0_0.change2ScrPos(arg0_81, arg1_81, arg2_81)
-	local var0_81 = pg.UIMgr.GetInstance().overlayCameraComp
+function var0_0.change2ScrPos(arg0_82, arg1_82, arg2_82)
+	local var0_82 = pg.UIMgr.GetInstance().overlayCameraComp
 
-	return (LuaHelper.ScreenToLocal(arg1_81, arg2_81, var0_81))
+	return (LuaHelper.ScreenToLocal(arg1_82, arg2_82, var0_82))
 end
 
-function var0_0.tweenNumText(arg0_82, arg1_82, arg2_82, arg3_82, arg4_82)
-	LeanTween.value(go(arg0_82), arg4_82 or 0, math.floor(arg1_82), arg2_82 or 0.7):setOnUpdate(System.Action_float(function(arg0_83)
-		setText(arg0_82, math.floor(arg0_83))
+function var0_0.tweenNumText(arg0_83, arg1_83, arg2_83, arg3_83, arg4_83)
+	LeanTween.value(go(arg0_83), arg4_83 or 0, math.floor(arg1_83), arg2_83 or 0.7):setOnUpdate(System.Action_float(function(arg0_84)
+		setText(arg0_83, math.floor(arg0_84))
 	end)):setOnComplete(System.Action(function()
-		if arg3_82 then
-			arg3_82()
+		if arg3_83 then
+			arg3_83()
 		end
 	end))
 end
 
-function var0_0.defaultFleetName(arg0_85)
-	if arg0_85.name == "" or arg0_85.name == nil then
-		return Fleet.DEFAULT_NAME[arg0_85.id]
+function var0_0.defaultFleetName(arg0_86)
+	if arg0_86.name == "" or arg0_86.name == nil then
+		return Fleet.DEFAULT_NAME[arg0_86.id]
 	else
-		return arg0_85.name
+		return arg0_86.name
 	end
 end
 
-function var0_0.GetFleetCount(arg0_86)
-	local var0_86 = 0
+function var0_0.GetFleetCount(arg0_87)
+	local var0_87 = 0
 
-	for iter0_86, iter1_86 in pairs(arg0_86._fleetVOs) do
-		var0_86 = var0_86 + 1
+	for iter0_87, iter1_87 in pairs(arg0_87._fleetVOs) do
+		var0_87 = var0_87 + 1
 	end
 
-	return var0_86
+	return var0_87
 end
 
-function var0_0.tweenTabArrow(arg0_87, arg1_87)
-	local var0_87 = arg0_87.btnRegular:Find("arr")
-	local var1_87 = arg0_87.btnSub:Find("arr")
+function var0_0.tweenTabArrow(arg0_88, arg1_88)
+	local var0_88 = arg0_88.btnRegular:Find("arr")
+	local var1_88 = arg0_88.btnSub:Find("arr")
 
-	setActive(var0_87, arg1_87)
-	setActive(var1_87, arg1_87)
+	setActive(var0_88, arg1_88)
+	setActive(var1_88, arg1_88)
 
-	if arg1_87 then
-		LeanTween.moveLocalY(go(var0_87), var0_87.localPosition.y + 8, 0.8):setEase(LeanTweenType.easeInOutSine):setLoopPingPong(-1)
-		LeanTween.moveLocalY(go(var1_87), var1_87.localPosition.y + 8, 0.8):setEase(LeanTweenType.easeInOutSine):setLoopPingPong(-1)
+	if arg1_88 then
+		LeanTween.moveLocalY(go(var0_88), var0_88.localPosition.y + 8, 0.8):setEase(LeanTweenType.easeInOutSine):setLoopPingPong(-1)
+		LeanTween.moveLocalY(go(var1_88), var1_88.localPosition.y + 8, 0.8):setEase(LeanTweenType.easeInOutSine):setLoopPingPong(-1)
 	else
-		LeanTween.cancel(go(var0_87))
-		LeanTween.cancel(go(var1_87))
+		LeanTween.cancel(go(var0_88))
+		LeanTween.cancel(go(var1_88))
 
-		local var2_87 = var0_87.localPosition
+		local var2_88 = var0_88.localPosition
 
-		var2_87.y = 80
-		var0_87.localPosition = var2_87
+		var2_88.y = 80
+		var0_88.localPosition = var2_88
 
-		local var3_87 = var1_87.localPosition
+		local var3_88 = var1_88.localPosition
 
-		var3_87.y = 80
-		var1_87.localPosition = var3_87
+		var3_88.y = 80
+		var1_88.localPosition = var3_88
 	end
 end
 
-function var0_0.recyclePainting(arg0_88)
-	for iter0_88, iter1_88 in pairs(arg0_88._cards) do
-		for iter2_88, iter3_88 in ipairs(iter1_88) do
-			iter3_88:clear()
+function var0_0.recyclePainting(arg0_89)
+	for iter0_89, iter1_89 in pairs(arg0_89._cards) do
+		for iter2_89, iter3_89 in ipairs(iter1_89) do
+			iter3_89:clear()
 		end
 	end
 end
 
-function var0_0.onBackPressed(arg0_89)
+function var0_0.onBackPressed(arg0_90)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 
-	if isActive(arg0_89._renamePanel) then
-		arg0_89:DisplayRenamePanel(false)
+	if isActive(arg0_90._renamePanel) then
+		arg0_90:DisplayRenamePanel(false)
 	else
-		triggerButton(arg0_89.backBtn)
+		triggerButton(arg0_90.backBtn)
 	end
 end
 
-function var0_0.willExit(arg0_90)
-	arg0_90.commanderFormationPanel:Destroy()
+function var0_0.willExit(arg0_91)
+	arg0_91.commanderFormationPanel:Destroy()
 
-	if arg0_90._attrFrame.gameObject.activeSelf then
-		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_90._blurLayer, arg0_90._tf)
+	if arg0_91._attrFrame.gameObject.activeSelf then
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_91._blurLayer, arg0_91._tf)
 	end
 
-	arg0_90._formationLogic:Destroy()
-	arg0_90:recyclePainting()
-	arg0_90:DisplayRenamePanel(false)
-	arg0_90:tweenTabArrow(false)
+	arg0_91._formationLogic:Destroy()
+	arg0_91:recyclePainting()
+	arg0_91:DisplayRenamePanel(false)
+	arg0_91:tweenTabArrow(false)
 
-	if arg0_90.tweens then
-		cancelTweens(arg0_90.tweens)
+	if arg0_91.tweens then
+		cancelTweens(arg0_91.tweens)
 	end
 
-	if arg0_90.eventTriggers then
-		for iter0_90, iter1_90 in pairs(arg0_90.eventTriggers) do
-			ClearEventTrigger(iter0_90)
+	if arg0_91.eventTriggers then
+		for iter0_91, iter1_91 in pairs(arg0_91.eventTriggers) do
+			ClearEventTrigger(iter0_91)
 		end
 
-		arg0_90.eventTriggers = nil
+		arg0_91.eventTriggers = nil
 	end
 end
 

@@ -4,9 +4,9 @@ function var0_0.getUIName(arg0_1)
 	return "CommanderSkillUI"
 end
 
-function var0_0.getResource(arg0_2, arg1_2)
+function var0_0.getResource(arg0_2)
 	local var0_2 = {}
-	local var1_2 = arg1_2 and arg1_2.skill
+	local var1_2 = arg0_2.contextData.skill
 
 	if var1_2 then
 		local var2_2 = ResPathSupport.CombinePath(ResPathSupport.ConstPath.Commander.CommanderSkillIcon, var1_2:getConfig("icon"))
@@ -14,7 +14,7 @@ function var0_0.getResource(arg0_2, arg1_2)
 		table.insert(var0_2, var2_2)
 	end
 
-	return table.insertto(var0_2, var0_0.super.getResource(arg0_2, arg1_2))
+	return table.insertto(var0_2, var0_0.super.getResource(arg0_2))
 end
 
 function var0_0.init(arg0_3)

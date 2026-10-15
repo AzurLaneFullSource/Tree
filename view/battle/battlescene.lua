@@ -51,28 +51,29 @@ function var0_0.getBGM(arg0_3)
 	return var0_0.super.getBGM(arg0_3)
 end
 
-function var0_0.getResource(arg0_4, arg1_4)
-	local var0_4 = {}
-	local var1_4 = ResPathSupport.CombinePath(ResPathSupport.ConstPath.UI.Base, arg0_4:getUIName())
-	local var2_4 = var1_4 .. ResPathSupport.ConstPath.UI.Atlas
+function var0_0.getResource(arg0_4)
+	local var0_4 = arg0_4.contextData
+	local var1_4 = {}
+	local var2_4 = ResPathSupport.CombinePath(ResPathSupport.ConstPath.UI.Base, arg0_4:getUIName())
+	local var3_4 = var2_4 .. ResPathSupport.ConstPath.UI.Atlas
 
-	table.insert(var0_4, var1_4)
-	table.insert(var0_4, var2_4)
+	table.insert(var1_4, var2_4)
+	table.insert(var1_4, var3_4)
 
-	local var3_4 = {}
+	local var4_4 = {}
 
-	table.insert(var3_4, arg1_4.system == SYSTEM_WORLD and checkExist(pg.world_expedition_data[arg0_4.contextData.stageId], {
+	table.insert(var4_4, var0_4.system == SYSTEM_WORLD and checkExist(pg.world_expedition_data[arg0_4.contextData.stageId], {
 		"bgm"
 	}) or "")
-	table.insert(var3_4, pg.expedition_data_template[arg1_4.stageId].bgm)
-	table.insert(var3_4, var0_0.super.getBGM(arg0_4))
-	_.each(var3_4, function(arg0_5)
+	table.insert(var4_4, pg.expedition_data_template[var0_4.stageId].bgm)
+	table.insert(var4_4, var0_0.super.getBGM(arg0_4))
+	_.each(var4_4, function(arg0_5)
 		if arg0_5 ~= "" then
-			table.insertto(var0_4, ResPathSupport.GetSoundResList(arg0_5))
+			table.insertto(var1_4, ResPathSupport.GetSoundResList(arg0_5))
 		end
 	end)
 
-	return var0_4
+	return var1_4
 end
 
 function var0_0.init(arg0_6)

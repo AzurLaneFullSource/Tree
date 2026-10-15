@@ -5,7 +5,7 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	setText(arg0_2._tf:Find("top/title/Text"), i18n("island_achievement_title"))
+	setText(arg0_2._tf:Find("adapt/top/title/Text"), i18n("island_achievement_title"))
 	setText(arg0_2._tf:Find("total/Text"), i18n("island_achv_total"))
 
 	arg0_2.totalTF = arg0_2._tf:Find("total/value")
@@ -30,7 +30,7 @@ function var0_0.OnLoaded(arg0_2)
 end
 
 function var0_0.OnInit(arg0_5)
-	onButton(arg0_5, arg0_5._tf:Find("top/back"), function()
+	onButton(arg0_5, arg0_5._tf:Find("adapt/top/back"), function()
 		arg0_5:Hide()
 	end, SFX_PANEL)
 	arg0_5.typeUIList:make(function(arg0_7, arg1_7, arg2_7)

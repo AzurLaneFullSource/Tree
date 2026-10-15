@@ -26,7 +26,7 @@ function var0_0.InitSubViews(arg0_3)
 	}, {
 		__index = arg0_3.contextData
 	}))
-	arg0_3.aimIKView = Dorm3dAimIKView.New(arg0_3._tf:Find("AimIKControl"), arg0_3.event, setmetatable({}, {
+	arg0_3.aimIKView = Dorm3dAimIKView.New(arg0_3._tf, arg0_3.event, setmetatable({}, {
 		__index = arg0_3.contextData
 	}))
 	arg0_3.ikView = Dorm3dIKView.New(arg0_3._tf, arg0_3.event, {
@@ -2499,6 +2499,12 @@ function var0_0.willExit(arg0_305)
 	arg0_305.canTriggerAccompanyPerformance = nil
 
 	arg0_305.videoPlayer:Destroy()
+
+	if arg0_305.aimIKView then
+		arg0_305.aimIKView:Dispose()
+
+		arg0_305.aimIKView = nil
+	end
 
 	if arg0_305.ikView then
 		arg0_305.ikView:Dispose()

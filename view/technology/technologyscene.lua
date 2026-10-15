@@ -153,12 +153,12 @@ function var0_0.init(arg0_11)
 	arg0_11.basePage = arg0_11._tf:Find("main/base_page")
 	arg0_11.srcollView = arg0_11.basePage:Find("srcoll_rect/content")
 	arg0_11.srcollViewCG = arg0_11.srcollView:GetComponent(typeof(CanvasGroup))
-	arg0_11.helpBtn = arg0_11.basePage:Find("help_btn")
-	arg0_11.refreshBtn = arg0_11.basePage:Find("refresh_btn")
+	arg0_11.helpBtn = arg0_11.basePage:Find("adapt/help_btn")
+	arg0_11.refreshBtn = arg0_11.basePage:Find("adapt/refresh_btn")
 
 	setText(arg0_11.refreshBtn:Find("Text"), i18n("technology_daily_refresh"))
 
-	arg0_11.settingsBtn = arg0_11.basePage:Find("settings_btn")
+	arg0_11.settingsBtn = arg0_11.basePage:Find("adapt/settings_btn")
 	arg0_11.selectetPanel = arg0_11.basePage:Find("selecte_panel")
 
 	setActive(arg0_11.selectetPanel, false)

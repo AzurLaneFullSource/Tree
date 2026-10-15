@@ -22,7 +22,7 @@ function var0_0.getBGM(arg0_2)
 	end
 end
 
-function var0_0.getResource(arg0_3, arg1_3)
+function var0_0.getResource(arg0_3)
 	local var0_3 = {
 		"ui/worldmediacollectionui",
 		"ui/worldmediacollectionmemoryui_atlas",
@@ -158,7 +158,7 @@ function var0_0.getResource(arg0_3, arg1_3)
 		return ResPathSupport.MergeLuaArr(var1_13, var0_13, var2_13)
 	end
 
-	return ResPathSupport.UniqueLuaArr(ResPathSupport.MergeLuaArr(var0_0.super.getResource(arg0_3, arg1_3), var0_3, var1_3(), var2_3(), var3_3(), var4_3(), var6_3(), var5_3()))
+	return ResPathSupport.UniqueLuaArr(ResPathSupport.MergeLuaArr(var0_0.super.getResource(arg0_3), var0_3, var1_3(), var2_3(), var3_3(), var4_3(), var6_3(), var5_3()))
 end
 
 function var0_0.init(arg0_14)

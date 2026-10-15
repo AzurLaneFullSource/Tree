@@ -4,9 +4,9 @@ function var0_0.getUIName(arg0_1)
 	return "Dorm3dRoomUnlockWindow"
 end
 
-function var0_0.getResource(arg0_2, arg1_2)
+function var0_0.getResource(arg0_2)
 	local var0_2 = {}
-	local var1_2 = arg1_2 or arg0_2.contextData or {}
+	local var1_2 = arg0_2.contextData or {}
 
 	local function var2_2(arg0_3)
 		if noEmptyStr(arg0_3) and not table.contains(var0_2, arg0_3) then
@@ -30,7 +30,7 @@ function var0_0.getResource(arg0_2, arg1_2)
 		var2_2("dorm3dbanner/" .. string.lower(var3_2:getConfig("assets_prefix")))
 	end
 
-	return table.insertto(var0_2, var0_0.super.getResource(arg0_2, arg1_2))
+	return table.insertto(var0_2, var0_0.super.getResource(arg0_2))
 end
 
 function var0_0.init(arg0_4)

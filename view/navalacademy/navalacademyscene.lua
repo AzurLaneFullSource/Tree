@@ -16,7 +16,7 @@ function var0_0.getUIName(arg0_1)
 	return var4_1 and var4_1.resource_path or "NavalAcademyUI"
 end
 
-function var0_0.getResource(arg0_3, arg1_3)
+function var0_0.getResource(arg0_3)
 	local var0_3 = {
 		"ui/xueyuan02",
 		"ui/resourcefieldui_atlas"
@@ -40,7 +40,7 @@ function var0_0.getResource(arg0_3, arg1_3)
 	end)()
 	local var2_3 = NavalAcademyShipsView.GetCharResList()
 
-	return ResPathSupport.MergeLuaArr(var0_0.super.getResource(arg0_3, arg1_3), var0_3, var1_3, var2_3)
+	return ResPathSupport.MergeLuaArr(var0_0.super.getResource(arg0_3), var0_3, var1_3, var2_3)
 end
 
 function var0_0.ResUISettings(arg0_5)

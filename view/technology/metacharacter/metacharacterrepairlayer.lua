@@ -81,11 +81,11 @@ function var0_0.findUI(arg0_8)
 	arg0_8.attrTFList.torpedo = arg0_8.attrTorpedoTF
 	arg0_8.attrTFList.air = arg0_8.attrAirTF
 	arg0_8.attrTFList.reload = arg0_8.attrReloadTF
-	arg0_8.repairPercentText = arg0_8.repairPanel:Find("SynProgressPanel/SynRate/NumTextText")
+	arg0_8.repairPercentText = arg0_8.repairPanel:Find("SynProgressPanel/adapt/SynRate/NumTextText")
 	arg0_8.repairSliderTF = arg0_8.repairPanel:Find("SynProgressPanel/Slider")
-	arg0_8.repairBtn = arg0_8.repairPanel:Find("RepairBtn")
-	arg0_8.repairBtnDisable = arg0_8.repairPanel:Find("RepairBtnDisable")
-	arg0_8.showDetailLine = arg0_8._tf:Find("ShowDetailLine")
+	arg0_8.repairBtn = arg0_8.repairPanel:Find("adapt/RepairBtn")
+	arg0_8.repairBtnDisable = arg0_8.repairPanel:Find("adapt/RepairBtnDisable")
+	arg0_8.showDetailLine = arg0_8._tf:Find("adapt/ShowDetailLine")
 	arg0_8.showDetailBtn = arg0_8.showDetailLine:Find("ShowDetailBtn")
 	arg0_8.detailPanel = arg0_8._tf:Find("Detail")
 	arg0_8.detailBG = arg0_8.detailPanel:Find("BG")

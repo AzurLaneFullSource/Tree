@@ -7,50 +7,51 @@ function var0_0.getUIName(arg0_1)
 	return "CombatLoadUI"
 end
 
-function var0_0.getResource(arg0_2, arg1_2)
-	local var0_2 = {}
-	local var1_2
+function var0_0.getResource(arg0_2)
+	local var0_2 = arg0_2.contextData
+	local var1_2 = {}
 	local var2_2
+	local var3_2
 
-	if arg1_2.system == SYSTEM_BOSS_RUSH_COLLABRATE then
-		var1_2 = AppreciatePicConst.TYPE_GALLERY
-		var2_2 = "bg/star_level_bg_211"
+	if var0_2.system == SYSTEM_BOSS_RUSH_COLLABRATE then
+		var2_2 = AppreciatePicConst.TYPE_GALLERY
+		var3_2 = "bg/star_level_bg_211"
 	else
-		local var3_2 = AppreciatePicConst.getRandomLoadingPic()
+		local var4_2 = AppreciatePicConst.getRandomLoadingPic()
 
-		if var3_2 then
-			var1_2 = var3_2.type
-			var2_2 = var3_2.path
+		if var4_2 then
+			var2_2 = var4_2.type
+			var3_2 = var4_2.path
 		else
-			var1_2 = AppreciatePicConst.TYPE_GALLERY
-			var2_2 = "loadingbg/login"
+			var2_2 = AppreciatePicConst.TYPE_GALLERY
+			var3_2 = "loadingbg/login"
 		end
 	end
 
-	if var2_2 then
-		table.insert(var0_2, var2_2)
+	if var3_2 then
+		table.insert(var1_2, var3_2)
 	end
 
-	local var4_2 = HXSet.HxPath(var2_2)
+	local var5_2 = HXSet.HxPath(var3_2)
 
-	arg1_2._combatLoadPicData = {
-		type = var1_2,
-		path = var4_2
+	var0_2._combatLoadPicData = {
+		type = var2_2,
+		path = var5_2
 	}
-	arg0_2._preloadPicType = var1_2
-	arg0_2._preloadPicPath = var4_2
+	arg0_2._preloadPicType = var2_2
+	arg0_2._preloadPicPath = var5_2
 
-	local var5_2, var6_2, var7_2 = CombatLoadUI.GetTotalResourceList(arg1_2)
+	local var6_2, var7_2, var8_2 = CombatLoadUI.GetTotalResourceList(var0_2)
 
-	if var5_2 and #var5_2 > 0 then
-		for iter0_2, iter1_2 in ipairs(var5_2) do
+	if var6_2 and #var6_2 > 0 then
+		for iter0_2, iter1_2 in ipairs(var6_2) do
 			iter1_2 = string.lower(iter1_2)
 
-			table.insert(var0_2, iter1_2)
+			table.insert(var1_2, iter1_2)
 		end
 	end
 
-	return table.insertto(var0_2, var0_0.super.getResource(arg0_2))
+	return table.insertto(var1_2, var0_0.super.getResource(arg0_2))
 end
 
 function var0_0.preload(arg0_3, arg1_3)

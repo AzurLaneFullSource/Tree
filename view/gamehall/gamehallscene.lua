@@ -6,7 +6,7 @@ function var0_0.getUIName(arg0_1)
 	return "GameHallUI"
 end
 
-function var0_0.getResource(arg0_2, arg1_2)
+function var0_0.getResource(arg0_2)
 	local var0_2 = {
 		"char/mingshi",
 		"weaponframes"
@@ -53,7 +53,7 @@ function var0_0.getResource(arg0_2, arg1_2)
 		var1_2(var7_2.icon)
 	end
 
-	return table.insertto(var0_2, var0_0.super.getResource(arg0_2, arg1_2))
+	return table.insertto(var0_2, var0_0.super.getResource(arg0_2))
 end
 
 function var0_0.init(arg0_4)
@@ -171,8 +171,8 @@ function var0_0.ResUISettings(arg0_17)
 end
 
 function var0_0.initHomeUI(arg0_18)
-	arg0_18.btnShop = findTF(arg0_18._tf, "ad/btnShop")
-	arg0_18.btnPlay = findTF(arg0_18._tf, "ad/btnPlay")
+	arg0_18.btnShop = findTF(arg0_18._tf, "ad/adapt/btnShop")
+	arg0_18.btnPlay = findTF(arg0_18._tf, "ad/adapt/btnPlay")
 
 	onButton(arg0_18, arg0_18.btnPlay, function()
 		arg0_18.listPanel:setVisible(true)

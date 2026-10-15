@@ -6,7 +6,7 @@ function var0_0.getUIName(arg0_1)
 	return "EquipmentTransformTreeUI"
 end
 
-function var0_0.getResource(arg0_2, arg1_2)
+function var0_0.getResource(arg0_2)
 	local var0_2 = {
 		var2_0,
 		"weaponframes",
@@ -15,7 +15,7 @@ function var0_0.getResource(arg0_2, arg1_2)
 
 	table.insertto(var0_2, arg0_2:getEquipmentResList())
 
-	return table.insertto(var0_2, var0_0.super.getResource(arg0_2, arg1_2))
+	return table.insertto(var0_2, var0_0.super.getResource(arg0_2))
 end
 
 function var0_0.getEquipmentResList(arg0_3)

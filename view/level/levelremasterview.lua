@@ -4,7 +4,7 @@ function var0_0.getUIName(arg0_1)
 	return "LevelRemasterView"
 end
 
-function var0_0.getResource(arg0_2, arg1_2)
+function var0_0.getResource(arg0_2)
 	local var0_2 = {}
 
 	local function var1_2(arg0_3, arg1_3)
@@ -85,7 +85,7 @@ function var0_0.getResource(arg0_2, arg1_2)
 		end)
 	end)
 
-	return ResPathSupport.UniqueLuaArr(table.insertto(var0_2, var0_0.super.getResource(arg0_2, arg1_2)))
+	return ResPathSupport.UniqueLuaArr(table.insertto(var0_2, var0_0.super.getResource(arg0_2)))
 end
 
 function var0_0.OnInit(arg0_12)

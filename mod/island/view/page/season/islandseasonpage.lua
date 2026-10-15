@@ -20,7 +20,7 @@ end
 function var0_0.OnLoaded(arg0_3)
 	arg0_3.blurTF = arg0_3._tf:Find("blur")
 
-	setText(arg0_3.blurTF:Find("top/title/Text"), i18n("island_season_title"))
+	setText(arg0_3.blurTF:Find("adapt/top/title/Text"), i18n("island_season_title"))
 
 	arg0_3.ptTitleTF = arg0_3.blurTF:Find("pt_title")
 	arg0_3.otherTitleTF = arg0_3.blurTF:Find("other_title")
@@ -98,12 +98,12 @@ function var0_0.Close(arg0_9, arg1_9)
 end
 
 function var0_0.OnInit(arg0_10)
-	local var0_10 = arg0_10.blurTF:Find("top/back")
+	local var0_10 = arg0_10.blurTF:Find("adapt/top/back")
 
 	onButton(arg0_10, var0_10, function()
 		arg0_10:Close(true)
 	end, SFX_PANEL)
-	onButton(arg0_10, arg0_10.blurTF:Find("top/help"), function()
+	onButton(arg0_10, arg0_10.blurTF:Find("adapt/top/help"), function()
 		arg0_10:ShowMsgBox({
 			type = IslandMsgBox.TYPE_WHITOUT_BTN,
 			content = i18n("island_season_help")

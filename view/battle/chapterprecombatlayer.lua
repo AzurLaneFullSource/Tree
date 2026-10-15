@@ -16,14 +16,14 @@ function var0_0.ResUISettings(arg0_2)
 	return true
 end
 
-function var0_0.getResource(arg0_3, arg1_3)
-	local var0_3 = ResList.ChapterPreCombatLayer.GetConstResource()
+function var0_0.getResource(arg0_3)
+	local var0_3 = ResList.ChapterPreCombatLayerResConst.GetConstResource()
 
-	return table.insertto(var0_3, var0_0.super.getResource(arg0_3, arg1_3))
+	return table.insertto(var0_3, var0_0.super.getResource(arg0_3))
 end
 
 function var0_0.downloadChapterPreCombatRes(arg0_4, arg1_4, arg2_4)
-	local var0_4 = ResList.ChapterPreCombatLayer.GetResource(arg1_4)
+	local var0_4 = ResList.ChapterPreCombatLayerResConst.GetResource(arg1_4)
 
 	SplitPackConst.DownloadByLuaArr(var0_4, function()
 		if arg0_4.exited or arg0_4.chapter ~= arg1_4 then

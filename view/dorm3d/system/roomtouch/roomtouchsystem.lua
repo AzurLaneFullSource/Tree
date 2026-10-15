@@ -230,33 +230,40 @@ function var0_0.ExitTouchMode(arg0_29)
 	local var2_29 = {}
 
 	arg0_29.touchTriggerRunner:CancelAllTouchPress()
+	table.insert(var2_29, function(arg0_30)
+		if not arg0_29:IsTouchTransitionActive(var1_29, var0_0.MODE_STATE.EXITING) then
+			return
+		end
+
+		arg0_29:Emit(AimIKSystem.ON_EXIT_TOUCH_MODE, arg0_30)
+	end)
 
 	if arg0_29.inTouchGame then
-		table.insert(var2_29, function(arg0_30)
-			if not arg0_29:IsTouchTransitionActive(var1_29, var0_0.MODE_STATE.EXITING) then
-				return
-			end
-
-			arg0_29:Emit(Dorm3dRoomTemplateScene.SHOW_BLOCK)
-			arg0_29:Emit(var0_0.UPDATE_TOUCH_PANEL, false, true, arg0_30)
-		end)
 		table.insert(var2_29, function(arg0_31)
 			if not arg0_29:IsTouchTransitionActive(var1_29, var0_0.MODE_STATE.EXITING) then
 				return
 			end
 
-			local var0_31 = 0
+			arg0_29:Emit(Dorm3dRoomTemplateScene.SHOW_BLOCK)
+			arg0_29:Emit(var0_0.UPDATE_TOUCH_PANEL, false, true, arg0_31)
+		end)
+		table.insert(var2_29, function(arg0_32)
+			if not arg0_29:IsTouchTransitionActive(var1_29, var0_0.MODE_STATE.EXITING) then
+				return
+			end
 
-			for iter0_31, iter1_31 in ipairs(arg0_29.touchConfig.heartbeat_favor) do
-				if iter1_31[1] > arg0_29.topCount then
+			local var0_32 = 0
+
+			for iter0_32, iter1_32 in ipairs(arg0_29.touchConfig.heartbeat_favor) do
+				if iter1_32[1] > arg0_29.topCount then
 					break
 				else
-					var0_31 = iter1_31[2]
+					var0_32 = iter1_32[2]
 				end
 			end
 
-			if var0_31 > 0 then
-				arg0_29:Emit(Dorm3dRoomMediator.TRIGGER_FAVOR, arg0_29:GetApartment().configId, var0_31)
+			if var0_32 > 0 then
+				arg0_29:Emit(Dorm3dRoomMediator.TRIGGER_FAVOR, arg0_29:GetApartment().configId, var0_32)
 			end
 
 			arg0_29.touchCount = nil
@@ -272,47 +279,47 @@ function var0_0.ExitTouchMode(arg0_29)
 			arg0_29.inTouchGame = false
 
 			Shader.SetGlobalFloat("_ScreenClipOff", 1)
-			arg0_31()
+			arg0_32()
 		end)
 	else
-		table.insert(var2_29, function(arg0_32)
+		table.insert(var2_29, function(arg0_33)
 			if not arg0_29:IsTouchTransitionActive(var1_29, var0_0.MODE_STATE.EXITING) then
 				return
 			end
 
 			arg0_29:Emit(Dorm3dRoomTemplateScene.SHOW_BLOCK)
 
-			local var0_32 = arg0_29.touchConfig.default_favor
+			local var0_33 = arg0_29.touchConfig.default_favor
 
-			if var0_32 > 0 then
-				arg0_29:Emit(Dorm3dRoomMediator.TRIGGER_FAVOR, arg0_29:GetApartment().configId, var0_32)
+			if var0_33 > 0 then
+				arg0_29:Emit(Dorm3dRoomMediator.TRIGGER_FAVOR, arg0_29:GetApartment().configId, var0_33)
 			end
 
 			Shader.SetGlobalFloat("_ScreenClipOff", 1)
-			arg0_32()
+			arg0_33()
 		end)
 	end
 
-	table.insert(var2_29, function(arg0_33)
-		if not arg0_29:IsTouchTransitionActive(var1_29, var0_0.MODE_STATE.EXITING) then
-			return
-		end
-
-		local var0_33 = {
-			character_position = arg0_29:GetLadyBaseZone(arg0_29:GetApartment():GetConfigID()),
-			character_action = arg0_29.touchConfig.finish_action
-		}
-
-		arg0_29:Emit(Dorm3dStockingMgr.ON_EXIT_TOUCH_MODE)
-		arg0_29:Emit(RoomIKSystem.EXIT_IK_WITH_RETURN, var0_33, arg0_33)
-	end)
 	table.insert(var2_29, function(arg0_34)
 		if not arg0_29:IsTouchTransitionActive(var1_29, var0_0.MODE_STATE.EXITING) then
 			return
 		end
 
+		local var0_34 = {
+			character_position = arg0_29:GetLadyBaseZone(arg0_29:GetApartment():GetConfigID()),
+			character_action = arg0_29.touchConfig.finish_action
+		}
+
+		arg0_29:Emit(Dorm3dStockingMgr.ON_EXIT_TOUCH_MODE)
+		arg0_29:Emit(RoomIKSystem.EXIT_IK_WITH_RETURN, var0_34, arg0_34)
+	end)
+	table.insert(var2_29, function(arg0_35)
+		if not arg0_29:IsTouchTransitionActive(var1_29, var0_0.MODE_STATE.EXITING) then
+			return
+		end
+
 		arg0_29:Emit(RoomIKSystem.SET_IK_SPECIAL_CALL, nil)
-		arg0_29:Emit(Dorm3dRoomScene.EXTRA_SET_UI, arg0_34, "back")
+		arg0_29:Emit(Dorm3dRoomScene.EXTRA_SET_UI, arg0_35, "back")
 	end)
 	seriesAsync(var2_29, function()
 		if not arg0_29:IsTouchTransitionActive(var1_29, var0_0.MODE_STATE.EXITING) then
@@ -324,150 +331,155 @@ function var0_0.ExitTouchMode(arg0_29)
 
 		arg0_29.touchConfig = nil
 
-		local var0_35 = arg0_29.touchExitCall
+		local var0_36 = arg0_29.touchExitCall
 
 		arg0_29.touchExitCall = nil
 		arg0_29.modeState = var0_0.MODE_STATE.IDLE
 
-		existCall(var0_35)
+		existCall(var0_36)
 	end)
 end
 
-function var0_0.TouchModeAction(arg0_36, arg1_36, arg2_36, arg3_36, ...)
-	return switch(arg3_36, {
-		function(arg0_37, arg1_37)
-			return function(arg0_38)
+function var0_0.TouchModeAction(arg0_37, arg1_37, arg2_37, arg3_37, ...)
+	return switch(arg3_37, {
+		function(arg0_38, arg1_38)
+			return function(arg0_39)
 				seriesAsync({
-					function(arg0_39)
-						if not arg1_37 or arg1_37 == "" then
-							return arg0_39()
+					function(arg0_40)
+						if not arg1_38 or arg1_38 == "" then
+							return arg0_40()
 						end
 
-						arg0_36:Emit(Dorm3dRoomTemplateScene.EXTRA_PLAY_SINGLE_ACTION, arg1_36, arg1_37, arg0_39)
+						arg0_37:Emit(Dorm3dRoomTemplateScene.EXTRA_PLAY_SINGLE_ACTION, arg1_37, arg1_38, arg0_40)
 					end,
-					function(arg0_40)
-						arg0_36:Emit(RoomIKSystem.REPLACE_IK_STATUS, arg0_37, arg0_40)
+					function(arg0_41)
+						arg0_37:Emit(RoomIKSystem.REPLACE_IK_STATUS, arg0_38, arg0_41)
 					end,
-					arg0_38
+					arg0_39
 				})
 			end
 		end,
 		function()
 			return function()
-				local var0_42 = {}
+				local var0_43 = {}
 
-				arg0_36:Emit(RoomIKSystem.CONSUME_IK_SPECIAL_CALL, var0_42)
+				arg0_37:Emit(RoomIKSystem.CONSUME_IK_SPECIAL_CALL, var0_43)
 
-				if var0_42.consumed then
+				if var0_43.consumed then
 					return
 				end
 
-				arg0_36:ExitTouchMode()
+				arg0_37:ExitTouchMode()
 			end
 		end,
-		function(arg0_43, arg1_43)
-			return function(arg0_44)
-				arg0_36:Emit(Dorm3dRoomTemplateScene.EXTRA_PLAY_SINGLE_ACTION, arg1_36, arg1_43, arg0_44)
+		function(arg0_44, arg1_44)
+			return function(arg0_45)
+				arg0_37:Emit(Dorm3dRoomTemplateScene.EXTRA_PLAY_SINGLE_ACTION, arg1_37, arg1_44, arg0_45)
 			end
 		end,
-		function(arg0_45, arg1_45, arg2_45)
-			return function(arg0_46)
+		function(arg0_46, arg1_46, arg2_46)
+			return function(arg0_47)
 				seriesAsync({
-					function(arg0_47)
-						arg0_36:Emit(Dorm3dRoomScene.EXTRA_DO_TALK, arg1_45, arg0_47)
-					end,
 					function(arg0_48)
-						if not arg2_45 or arg2_45 == 0 then
-							return arg0_48()
+						arg0_37:Emit(Dorm3dRoomScene.EXTRA_DO_TALK, arg1_46, arg0_48)
+					end,
+					function(arg0_49)
+						if not arg2_46 or arg2_46 == 0 then
+							return arg0_49()
 						end
 
-						arg0_36:Emit(RoomIKSystem.REPLACE_IK_STATUS, arg2_45, arg0_48)
+						arg0_37:Emit(RoomIKSystem.REPLACE_IK_STATUS, arg2_46, arg0_49)
 					end,
-					arg0_46
+					arg0_47
 				})
 			end
 		end,
-		function(arg0_49, arg1_49, arg2_49, arg3_49)
-			return function(arg0_50)
-				arg0_36:Emit(Dorm3dRoomTemplateScene.EXTRA_PLAY_SCENE_ITEM_ANIM, arg2_49, arg3_49)
-				arg0_36:Emit(Dorm3dRoomTemplateScene.EXTRA_PLAY_SINGLE_ACTION, arg1_36, arg1_49, arg0_50)
+		function(arg0_50, arg1_50, arg2_50, arg3_50)
+			return function(arg0_51)
+				arg0_37:Emit(Dorm3dRoomTemplateScene.EXTRA_PLAY_SCENE_ITEM_ANIM, arg2_50, arg3_50)
+				arg0_37:Emit(Dorm3dRoomTemplateScene.EXTRA_PLAY_SINGLE_ACTION, arg1_37, arg1_50, arg0_51)
 			end
 		end,
-		function(arg0_51)
-			return function(arg0_52)
-				local var0_52 = pg.dorm3d_ik_touch[arg2_36]
+		function(arg0_52)
+			return function(arg0_53)
+				local var0_53 = pg.dorm3d_ik_touch[arg2_37]
 
-				if #var0_52.scene_item == 0 then
+				if #var0_53.scene_item == 0 then
 					return
 				end
 
-				local var1_52 = arg0_36:GetSceneItem(var0_52.scene_item)
+				local var1_53 = arg0_37:GetSceneItem(var0_53.scene_item)
 
-				if not var1_52 then
-					warning(string.format("dorm3d_ik_touch:%d without scene_item:%s", arg2_36, var0_52.scene_item))
+				if not var1_53 then
+					warning(string.format("dorm3d_ik_touch:%d without scene_item:%s", arg2_37, var0_53.scene_item))
 
 					return
 				end
 
-				local var2_52 = var1_52:Find(arg0_51)
+				local var2_53 = var1_53:Find(arg0_52)
 
-				if not IsNil(var2_52) then
-					setActive(var2_52, false)
-					setActive(var2_52, true)
+				if not IsNil(var2_53) then
+					setActive(var2_53, false)
+					setActive(var2_53, true)
 				end
 
-				arg0_52()
+				arg0_53()
 			end
 		end,
-		function(arg0_53)
-			local var0_53 = pg.dorm3d_ik_touch_move[arg0_53]
+		function(arg0_54)
+			local var0_54 = pg.dorm3d_ik_touch_move[arg0_54]
 
-			assert(var0_53, "Missing dorm3d_ik_touch_move config: " .. tostring(arg0_53))
+			assert(var0_54, "Missing dorm3d_ik_touch_move config: " .. tostring(arg0_54))
 
-			local var1_53 = var0_53.target_ik
-			local var2_53 = var0_53.move_time
-			local var3_53 = var0_53.ik_point
-			local var4_53 = var0_53.touch_step
-			local var5_53 = arg0_36.touchForceMove
+			local var1_54 = var0_54.target_ik
+			local var2_54 = var0_54.move_time
+			local var3_54 = var0_54.ik_point
+			local var4_54 = var0_54.touch_step
+			local var5_54 = arg0_37.touchForceMove
 
-			assert(var5_53, "Missing touch force move runtime")
+			assert(var5_54, "Missing touch force move runtime")
 
-			var5_53[var1_53] = var5_53[var1_53] or {}
-			var5_53[var1_53].count = var5_53[var1_53].count or 0
+			var5_54[var1_54] = var5_54[var1_54] or {}
+			var5_54[var1_54].count = var5_54[var1_54].count or 0
 
-			return function(arg0_54)
+			return function(arg0_55)
 				seriesAsync({
-					function(arg0_55)
-						if var5_53[var1_53].count >= #var4_53 then
-							return arg0_55()
+					function(arg0_56)
+						if var5_54[var1_54].count >= #var4_54 then
+							return arg0_56()
 						end
 
-						local var0_55 = var5_53[var1_53].count
+						local var0_56 = var5_54[var1_54].count
 
-						var5_53[var1_53].count = var0_55 + 1
+						var5_54[var1_54].count = var0_56 + 1
 
-						arg0_36:Emit(RoomIKSystem.PLAY_TOUCH_IK_MOVE, var1_53, var3_53, var4_53[var0_55 + 1], var2_53, function()
-							var5_53[var1_53].count = 0
+						arg0_37:Emit(RoomIKSystem.PLAY_TOUCH_IK_MOVE, var1_54, var3_54, var4_54[var0_56 + 1], var2_54, function()
+							var5_54[var1_54].count = 0
 
-							arg0_55()
+							arg0_56()
 						end)
 					end,
-					arg0_54
+					arg0_55
 				})
 			end
 		end,
-		function(arg0_57)
-			return function(arg0_58)
-				arg0_36:Emit(Dorm3dStockingMgr.SET_STOCKING_STATUS, arg0_57)
+		function(arg0_58)
+			return function(arg0_59)
+				arg0_37:Emit(Dorm3dStockingMgr.SET_STOCKING_STATUS, arg0_58)
 			end
 		end,
-		function(arg0_59, arg1_59)
+		function(arg0_60, arg1_60)
 			return function()
-				local var0_60 = arg0_36:GetApartment():GetConfigID()
+				local var0_61 = arg0_37:GetApartment():GetConfigID()
 
-				arg0_36:Emit(RoomIKSystem.SET_IK_SWITCH_SKIN_ID, arg0_36:GetApartment():GetCurSkinId())
-				arg1_36:SwitchCharacterSkin(var0_60, arg0_59)
-				arg0_36:Emit(RoomIKSystem.REPLACE_IK_STATUS, arg1_59)
+				arg0_37:Emit(RoomIKSystem.SET_IK_SWITCH_SKIN_ID, arg0_37:GetApartment():GetCurSkinId())
+				arg1_37:SwitchCharacterSkin(var0_61, arg0_60)
+				arg0_37:Emit(RoomIKSystem.REPLACE_IK_STATUS, arg1_60)
+			end
+		end,
+		function(arg0_62)
+			return function()
+				arg0_37:Emit(AimIKSystem.ENTER_TOUCH_AIMIK_STATUS, arg0_62)
 			end
 		end
 	}, function()
@@ -477,146 +489,146 @@ function var0_0.TouchModeAction(arg0_36, arg1_36, arg2_36, arg3_36, ...)
 	end, ...)
 end
 
-function var0_0.TriggerTouchInfo(arg0_63, arg1_63)
-	local var0_63 = arg0_63:GetCurrentLadyEnv()
-	local var1_63, var2_63, var3_63 = unpack(arg1_63)
-	local var4_63 = arg0_63.touchTriggerRunner:AssertTouchConfig(var1_63)
-	local var5_63 = var4_63.action_emote
+function var0_0.TriggerTouchInfo(arg0_66, arg1_66)
+	local var0_66 = arg0_66:GetCurrentLadyEnv()
+	local var1_66, var2_66, var3_66 = unpack(arg1_66)
+	local var4_66 = arg0_66.touchTriggerRunner:AssertTouchConfig(var1_66)
+	local var5_66 = var4_66.action_emote
 
-	if #var5_63 > 0 then
-		arg0_63:Emit(Dorm3dRoomTemplateScene.EXTRA_PLAY_FACE_ANIM, var0_63, var5_63)
+	if #var5_66 > 0 then
+		arg0_66:Emit(Dorm3dRoomTemplateScene.EXTRA_PLAY_FACE_ANIM, var0_66, var5_66)
 	end
 
-	local var6_63 = var4_63.vibrate
+	local var6_66 = var4_66.vibrate
 
-	if type(var6_63) == "table" and VibrateMgr.Instance:IsSupport() then
-		local var7_63 = {}
-		local var8_63 = {}
-		local var9_63 = {}
+	if type(var6_66) == "table" and VibrateMgr.Instance:IsSupport() then
+		local var7_66 = {}
+		local var8_66 = {}
+		local var9_66 = {}
 
-		underscore.each(var6_63, function(arg0_64)
-			local var0_64 = arg0_64[1]
+		underscore.each(var6_66, function(arg0_67)
+			local var0_67 = arg0_67[1]
 
 			if PLATFORM == PLATFORM_IPHONEPLAYER then
-				var0_64 = var0_64 / 1000
+				var0_67 = var0_67 / 1000
 			end
 
-			table.insert(var7_63, var0_64)
-			table.insert(var8_63, arg0_64[2])
-			table.insert(var9_63, 1)
+			table.insert(var7_66, var0_67)
+			table.insert(var8_66, arg0_67[2])
+			table.insert(var9_66, 1)
 		end)
 
 		if PLATFORM == PLATFORM_ANDROID then
-			VibrateMgr.Instance:VibrateWaveform(var7_63, var8_63)
+			VibrateMgr.Instance:VibrateWaveform(var7_66, var8_66)
 		elseif PLATFORM == PLATFORM_IPHONEPLAYER then
-			VibrateMgr.Instance:VibrateWaveform(var7_63, var8_63, var9_63)
+			VibrateMgr.Instance:VibrateWaveform(var7_66, var8_66, var9_66)
 		end
 	end
 
-	arg0_63:Emit(RoomIKSystem.SET_IK_BLOCK, true)
-	arg0_63:TouchModeAction(var0_63, var1_63, unpack(var3_63))(function()
-		arg0_63:Emit(RoomIKSystem.RESET_IK_TIP_TIMER)
-		arg0_63:Emit(RoomIKSystem.SET_IK_BLOCK, nil)
+	arg0_66:Emit(RoomIKSystem.SET_IK_BLOCK, true)
+	arg0_66:TouchModeAction(var0_66, var1_66, unpack(var3_66))(function()
+		arg0_66:Emit(RoomIKSystem.RESET_IK_TIP_TIMER)
+		arg0_66:Emit(RoomIKSystem.SET_IK_BLOCK, nil)
 	end)
 end
 
-function var0_0.UpdateTouchCount(arg0_66, arg1_66)
-	if not arg0_66:IsTouchModeActive() then
+function var0_0.UpdateTouchCount(arg0_69, arg1_69)
+	if not arg0_69:IsTouchModeActive() then
 		return
 	end
 
-	if arg0_66.touchLevel > 1 then
-		arg1_66 = math.min(0, arg1_66)
+	if arg0_69.touchLevel > 1 then
+		arg1_69 = math.min(0, arg1_69)
 	end
 
-	local var0_66 = arg0_66.touchLevel > 1 and 100 or 0
-	local var1_66 = arg0_66.touchLevel > 1 and 200 or 100
+	local var0_69 = arg0_69.touchLevel > 1 and 100 or 0
+	local var1_69 = arg0_69.touchLevel > 1 and 200 or 100
 
-	arg0_66.touchCount = math.clamp(arg0_66.touchCount + arg1_66, var0_66, var1_66)
+	arg0_69.touchCount = math.clamp(arg0_69.touchCount + arg1_69, var0_69, var1_69)
 
-	local var2_66
+	local var2_69
 
-	if arg0_66.touchLevel == 1 and arg0_66.touchCount >= 100 then
-		var2_66 = 2
-	elseif arg0_66.touchLevel > 1 and arg0_66.touchCount <= 100 then
-		var2_66 = 1
+	if arg0_69.touchLevel == 1 and arg0_69.touchCount >= 100 then
+		var2_69 = 2
+	elseif arg0_69.touchLevel > 1 and arg0_69.touchCount <= 100 then
+		var2_69 = 1
 	end
 
-	if var2_66 and var2_66 ~= arg0_66.touchLevel then
-		local var3_66 = {}
+	if var2_69 and var2_69 ~= arg0_69.touchLevel then
+		local var3_69 = {}
 
-		arg0_66:Emit(RoomIKSystem.GET_IK_BLOCK, var3_66)
+		arg0_69:Emit(RoomIKSystem.GET_IK_BLOCK, var3_69)
 
-		if var3_66.blockIK then
-			arg0_66:Emit(var0_0.UPDATE_TOUCH_COUNT, arg0_66.touchCount)
+		if var3_69.blockIK then
+			arg0_69:Emit(var0_0.UPDATE_TOUCH_COUNT, arg0_69.touchCount)
 
-			arg0_66.topCount = math.max(arg0_66.topCount, arg0_66.touchCount)
+			arg0_69.topCount = math.max(arg0_69.topCount, arg0_69.touchCount)
 
 			return
 		end
 
-		arg0_66.touchLevel = var2_66
+		arg0_69.touchLevel = var2_69
 
-		local var4_66 = arg0_66.touchConfig.ik_status[var2_66]
+		local var4_69 = arg0_69.touchConfig.ik_status[var2_69]
 
-		if var4_66 then
-			if var2_66 > 1 then
-				arg0_66.touchCount = 200
-			elseif var2_66 == 1 then
-				arg0_66.touchCount = 0
+		if var4_69 then
+			if var2_69 > 1 then
+				arg0_69.touchCount = 200
+			elseif var2_69 == 1 then
+				arg0_69.touchCount = 0
 			end
 
-			local var5_66 = arg0_66:GetCurrentLadyEnv()
+			local var5_69 = arg0_69:GetCurrentLadyEnv()
 
 			seriesAsync({
-				function(arg0_67)
-					arg0_66:Emit(Dorm3dRoomTemplateScene.EXTRA_SHOW_BLACK_SCREEN, true, arg0_67)
+				function(arg0_70)
+					arg0_69:Emit(Dorm3dRoomTemplateScene.EXTRA_SHOW_BLACK_SCREEN, true, arg0_70)
 				end,
-				function(arg0_68)
-					arg0_66:Emit(RoomIKSystem.REPLACE_IK_STATUS, var4_66, arg0_68)
+				function(arg0_71)
+					arg0_69:Emit(RoomIKSystem.REPLACE_IK_STATUS, var4_69, arg0_71)
 
-					if var2_66 > 1 and arg0_66.touchConfig.heartbeat_enter_anim ~= "" then
-						arg0_66:Emit(Dorm3dRoomTemplateScene.EXTRA_SWITCH_ANIM, var5_66, arg0_66.touchConfig.heartbeat_enter_anim)
+					if var2_69 > 1 and arg0_69.touchConfig.heartbeat_enter_anim ~= "" then
+						arg0_69:Emit(Dorm3dRoomTemplateScene.EXTRA_SWITCH_ANIM, var5_69, arg0_69.touchConfig.heartbeat_enter_anim)
 					end
 				end,
-				function(arg0_69)
-					arg0_66:Emit(Dorm3dRoomTemplateScene.EXTRA_SHOW_BLACK_SCREEN, false, arg0_69)
+				function(arg0_72)
+					arg0_69:Emit(Dorm3dRoomTemplateScene.EXTRA_SHOW_BLACK_SCREEN, false, arg0_72)
 				end
 			})
 		end
 
-		arg0_66:Emit(var0_0.UPDATE_TOUCH_DISPLAY, arg0_66.touchLevel, arg0_66.touchCount)
+		arg0_69:Emit(var0_0.UPDATE_TOUCH_DISPLAY, arg0_69.touchLevel, arg0_69.touchCount)
 	else
-		arg0_66:Emit(var0_0.UPDATE_TOUCH_COUNT, arg0_66.touchCount)
+		arg0_69:Emit(var0_0.UPDATE_TOUCH_COUNT, arg0_69.touchCount)
 	end
 
-	arg0_66.topCount = math.max(arg0_66.topCount, arg0_66.touchCount)
+	arg0_69.topCount = math.max(arg0_69.topCount, arg0_69.touchCount)
 end
 
-function var0_0.ExitHeartbeatMode(arg0_70)
-	if not arg0_70.touchLevel or arg0_70.touchLevel == 1 then
+function var0_0.ExitHeartbeatMode(arg0_73)
+	if not arg0_73.touchLevel or arg0_73.touchLevel == 1 then
 		return
 	end
 
-	arg0_70.touchCount = 0
+	arg0_73.touchCount = 0
 
-	arg0_70:UpdateTouchCount(0)
+	arg0_73:UpdateTouchCount(0)
 end
 
-function var0_0.DoTouch(arg0_71, arg1_71, arg2_71)
-	if arg0_71.inTouchGame then
-		switch(arg2_71, {
+function var0_0.DoTouch(arg0_74, arg1_74, arg2_74)
+	if arg0_74.inTouchGame then
+		switch(arg2_74, {
 			function()
-				arg0_71:UpdateTouchCount(pg.dorm3d_set.rapport_heartbeat.key_value_int)
+				arg0_74:UpdateTouchCount(pg.dorm3d_set.rapport_heartbeat.key_value_int)
 			end,
 			function()
-				arg0_71:UpdateTouchCount(pg.dorm3d_set.rapport_heartbeat.key_value_int)
+				arg0_74:UpdateTouchCount(pg.dorm3d_set.rapport_heartbeat.key_value_int)
 			end,
 			function()
-				arg0_71:UpdateTouchCount(pg.dorm3d_set.rapport_heartbeat.key_value_int)
+				arg0_74:UpdateTouchCount(pg.dorm3d_set.rapport_heartbeat.key_value_int)
 			end,
 			function()
-				arg0_71:UpdateTouchCount(pg.dorm3d_set.rapport_heartbeat_trriger.key_value_int)
+				arg0_74:UpdateTouchCount(pg.dorm3d_set.rapport_heartbeat_trriger.key_value_int)
 			end
 		})
 	end

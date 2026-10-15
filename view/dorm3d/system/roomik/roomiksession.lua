@@ -8,6 +8,7 @@ function var0_0.Ctor(arg0_1)
 	arg0_1.currentIkConfig = nil
 	arg0_1.currentIkTimelineStatus = nil
 	arg0_1.stockingCachedIkStatus = nil
+	arg0_1.aimIKCachedIkStatus = nil
 	arg0_1.ikSpecialCall = nil
 	arg0_1.ikActionDict = nil
 	arg0_1.readyIKLayers = nil
@@ -126,6 +127,7 @@ function var0_0.Invalidate(arg0_12)
 	arg0_12:ClearRuntime()
 
 	arg0_12.stockingCachedIkStatus = nil
+	arg0_12.aimIKCachedIkStatus = nil
 	arg0_12.ikSpecialCall = nil
 	arg0_12.ikTimelineColliderStates = nil
 	arg0_12.ikSwitchSkinId = nil

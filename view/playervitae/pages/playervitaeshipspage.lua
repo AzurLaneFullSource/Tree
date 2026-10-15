@@ -50,14 +50,15 @@ function var0_0.getUIName(arg0_4)
 	return "PlayerVitaeShipsPage"
 end
 
-function var0_0.getResource(arg0_5, arg1_5)
-	local var0_5 = {
+function var0_0.getResource(arg0_5)
+	local var0_5 = arg0_5.contextData
+	local var1_5 = {
 		"ui/proposeShipCard"
 	}
-	local var1_5 = var0_0.super.getResource(arg0_5)
-	local var2_5 = arg1_5 and arg1_5.showTrans
+	local var2_5 = var0_0.super.getResource(arg0_5)
+	local var3_5 = var0_5.showTrans
 
-	local function var3_5(arg0_6)
+	local function var4_5(arg0_6)
 		local var0_6 = getProxy(BayProxy):GetShipPhantom(arg0_6)
 		local var1_6 = getProxy(ShipSkinProxy):GetAllSkinForShip(var0_6)
 		local var2_6 = getProxy(ShipSkinProxy):GetShareSkinsForShip(var0_6)
@@ -73,52 +74,52 @@ function var0_0.getResource(arg0_5, arg1_5)
 			if var4_6 ~= "unknown" then
 				local var5_6 = ResPathSupport.GetPaintingListByPaintingName(var4_6)
 
-				table.insertto(var1_5, var5_6)
+				table.insertto(var2_5, var5_6)
 			end
 		end
 	end
 
-	local function var4_5(arg0_8)
+	local function var5_5(arg0_8)
 		if not arg0_8 then
 			return
 		end
 
-		local var0_8 = arg0_8:rarity2bgPrint(var2_5)
+		local var0_8 = arg0_8:rarity2bgPrint(var3_5)
 
-		table.insert(var1_5, string.format(ResPathSupport.ConstPath.BG.ShipCard, var0_8))
+		table.insert(var2_5, string.format(ResPathSupport.ConstPath.BG.ShipCard, var0_8))
 
 		local var1_8, var2_8 = arg0_8:GetFrameAndEffect(true)
 
 		if noEmptyStr(var2_8) then
-			table.insert(var1_5, ResPathSupport.CombinePath(ResPathSupport.ConstPath.UI.Effect, var2_8))
+			table.insert(var2_5, ResPathSupport.CombinePath(ResPathSupport.ConstPath.UI.Effect, var2_8))
 		end
 	end
 
-	local function var5_5(arg0_9)
+	local function var6_5(arg0_9)
 		local var0_9 = getProxy(BayProxy):GetShipPhantom(arg0_9)
 
-		var4_5(var0_9)
+		var5_5(var0_9)
 	end
 
 	for iter0_5, iter1_5 in ipairs(getProxy(PlayerProxy):getRawData():GetShipPhantomMarks()) do
-		var5_5(iter1_5)
-		var3_5(iter1_5)
+		var6_5(iter1_5)
+		var4_5(iter1_5)
 	end
 
 	for iter2_5, iter3_5 in ipairs(getProxy(SettingsProxy):GetRandomFlagShipList()) do
-		var5_5(iter3_5)
-		var3_5(iter3_5)
+		var6_5(iter3_5)
+		var4_5(iter3_5)
 	end
 
-	local var6_5 = getProxy(PlayerProxy):getRawData()
+	local var7_5 = getProxy(PlayerProxy):getRawData()
 
-	if var6_5:ExistEducateChar() then
-		local var7_5 = VirtualEducateCharShip.New(var6_5:GetEducateCharacter())
+	if var7_5:ExistEducateChar() then
+		local var8_5 = VirtualEducateCharShip.New(var7_5:GetEducateCharacter())
 
-		table.insert(var1_5, "painting/" .. var7_5:getPainting())
+		table.insert(var2_5, "painting/" .. var8_5:getPainting())
 	end
 
-	return ResPathSupport.UniqueLuaArr(ResPathSupport.MergeLuaArr(var1_5, var0_5))
+	return ResPathSupport.UniqueLuaArr(ResPathSupport.MergeLuaArr(var2_5, var1_5))
 end
 
 function var0_0.UpdateCard(arg0_10, arg1_10)

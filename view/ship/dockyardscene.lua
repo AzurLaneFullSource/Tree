@@ -25,7 +25,7 @@ function var0_0.getUIName(arg0_1)
 	return "DockyardUI"
 end
 
-function var0_0.getResource(arg0_2, arg1_2)
+function var0_0.getResource(arg0_2)
 	local var0_2 = {
 		"ui/dockyardui_atlas",
 		"energy",
@@ -39,59 +39,60 @@ function var0_0.getResource(arg0_2, arg1_2)
 		"ui/recordablesearchbarui"
 	}
 
-	table.insertto(var0_2, arg0_2:getDockyardShipResList(arg1_2))
+	table.insertto(var0_2, arg0_2:getDockyardShipResList())
 
-	return table.insertto(var0_2, var0_0.super.getResource(arg0_2, arg1_2))
+	return table.insertto(var0_2, var0_0.super.getResource(arg0_2))
 end
 
-function var0_0.getDockyardShipResList(arg0_3, arg1_3)
-	local var0_3 = {}
+function var0_0.getDockyardShipResList(arg0_3)
+	local var0_3 = arg0_3.contextData
 	local var1_3 = {}
+	local var2_3 = {}
 
-	if arg1_3 and arg1_3.shipVOs then
-		for iter0_3, iter1_3 in ipairs(arg1_3.shipVOs) do
-			var1_3[iter1_3.id] = iter1_3
+	if var0_3 and var0_3.shipVOs then
+		for iter0_3, iter1_3 in ipairs(var0_3.shipVOs) do
+			var2_3[iter1_3.id] = iter1_3
 		end
-	elseif arg1_3 and arg1_3.mode == var0_0.MODE_WORLD then
+	elseif var0_3 and var0_3.mode == var0_0.MODE_WORLD then
 		for iter2_3, iter3_3 in ipairs(nowWorld():GetShipVOs()) do
-			var1_3[iter3_3.id] = iter3_3
+			var2_3[iter3_3.id] = iter3_3
 		end
 	else
-		local var2_3 = getProxy(BayProxy)
+		local var3_3 = getProxy(BayProxy)
 
-		for iter4_3, iter5_3 in pairs(var2_3.data) do
-			var1_3[iter4_3] = iter5_3
+		for iter4_3, iter5_3 in pairs(var3_3.data) do
+			var2_3[iter4_3] = iter5_3
 		end
 	end
 
-	if arg1_3 and arg1_3.ignoredIds then
-		for iter6_3, iter7_3 in ipairs(arg1_3.ignoredIds) do
-			var1_3[iter7_3] = nil
+	if var0_3 and var0_3.ignoredIds then
+		for iter6_3, iter7_3 in ipairs(var0_3.ignoredIds) do
+			var2_3[iter7_3] = nil
 		end
 	end
 
-	for iter8_3, iter9_3 in pairs(var1_3) do
-		arg0_3:insertDockyardShipItemRes(var0_3, iter9_3)
+	for iter8_3, iter9_3 in pairs(var2_3) do
+		arg0_3:insertDockyardShipItemRes(var1_3, iter9_3)
 	end
 
-	if arg1_3 and arg1_3.mode == var0_0.MODE_SHIP_PHANTOM then
-		local var3_3 = getProxy(TechnologyProxy)
-		local var4_3 = getProxy(BayProxy)
+	if var0_3 and var0_3.mode == var0_0.MODE_SHIP_PHANTOM then
+		local var4_3 = getProxy(TechnologyProxy)
+		local var5_3 = getProxy(BayProxy)
 
-		for iter10_3, iter11_3 in ipairs(var3_3:getAllBluePrintShipIds()) do
-			local var5_3 = var4_3:getShipById(iter11_3)
+		for iter10_3, iter11_3 in ipairs(var4_3:getAllBluePrintShipIds()) do
+			local var6_3 = var5_3:getShipById(iter11_3)
 
-			if var5_3 and #var5_3:getAllShipPhantomMarks() > 1 then
-				_.each(var5_3:getAllShipPhantom(), function(arg0_4)
+			if var6_3 and #var6_3:getAllShipPhantomMarks() > 1 then
+				_.each(var6_3:getAllShipPhantom(), function(arg0_4)
 					local var0_4 = ResPathSupport.GetPaintingShipYardIconListByPaintingName(arg0_4:getPainting())
 
-					table.insertto(var0_3, var0_4)
+					table.insertto(var1_3, var0_4)
 				end)
 			end
 		end
 	end
 
-	return var0_3
+	return var1_3
 end
 
 function var0_0.insertDockyardShipItemRes(arg0_5, arg1_5, arg2_5)
@@ -199,7 +200,8 @@ function var0_0.init(arg0_6)
 	arg0_6.modLeveFilter = arg0_6.topPanel:Find("mod_flter_level")
 	arg0_6.energyDescTF = arg0_6._tf:Find("energy_desc")
 	arg0_6.energyDescTextTF = arg0_6.energyDescTF:Find("Text")
-	arg0_6.selectPanel = arg0_6.blurPanel:Find("select_panel")
+	arg0_6.selectPanel = arg0_6.blurPanel:Find("select_panel_adapt/select_panel")
+	arg0_6.selectPanelBg = arg0_6.blurPanel:Find("select_panel_bg")
 	arg0_6.bottomTipsText = arg0_6.selectPanel:Find("tip")
 	arg0_6.bottomTipsWithFrame = arg0_6.selectPanel:Find("tipwithframe")
 
@@ -248,24 +250,28 @@ function var0_0.init(arg0_6)
 	}, function()
 		arg0_6.selecteEnabled = true
 	end)
-	setActive(arg0_6.selectPanel, arg0_6.selecteEnabled and arg0_6.contextData.mode ~= var0_0.MODE_WORLD)
+
+	local var1_6 = arg0_6.selecteEnabled and arg0_6.contextData.mode ~= var0_0.MODE_WORLD
+
+	setActive(arg0_6.selectPanel, var1_6)
+	setActive(arg0_6.selectPanelBg, var1_6)
 	setActive(arg0_6.worldPanel, arg0_6.contextData.mode == var0_0.MODE_WORLD)
 
-	local var1_6 = arg0_6.contextData.mode == var0_0.MODE_DESTROY
+	local var2_6 = arg0_6.contextData.mode == var0_0.MODE_DESTROY
 
-	setActive(arg0_6.settingBtn, var1_6)
-	setActive(arg0_6.selectPanel:Find("quick_select"), var1_6)
+	setActive(arg0_6.settingBtn, var2_6)
+	setActive(arg0_6.selectPanel:Find("quick_select"), var2_6)
 
 	if arg0_6.contextData.priorEquipUpShipIDList and arg0_6.contextData.priorMode then
 		setActive(arg0_6.tipPanel, true)
 
-		local var2_6 = arg0_6.tipPanel:Find("EquipUP")
-		local var3_6 = arg0_6.tipPanel:Find("ShipUP")
+		local var3_6 = arg0_6.tipPanel:Find("EquipUP")
+		local var4_6 = arg0_6.tipPanel:Find("ShipUP")
 
-		setText(var2_6, i18n("fightfail_choiceequip"))
-		setText(var3_6, i18n("fightfail_choicestrengthen"))
-		setActive(var2_6, arg0_6.contextData.priorMode == var0_0.PRIOR_MODE_EQUIP_UP)
-		setActive(var3_6, arg0_6.contextData.priorMode == var0_0.PRIOR_MODE_SHIP_UP)
+		setText(var3_6, i18n("fightfail_choiceequip"))
+		setText(var4_6, i18n("fightfail_choicestrengthen"))
+		setActive(var3_6, arg0_6.contextData.priorMode == var0_0.PRIOR_MODE_EQUIP_UP)
+		setActive(var4_6, arg0_6.contextData.priorMode == var0_0.PRIOR_MODE_SHIP_UP)
 	end
 
 	arg0_6.togglePhantom = arg0_6._tf:Find("blur_panel/adapt/left_length/frame/toggle_phantom")
@@ -288,10 +294,10 @@ function var0_0.init(arg0_6)
 		})
 	end, SFX_PANEL)
 
-	local var4_6 = arg0_6.contextData.mode == var0_0.MODE_SHIP_PHANTOM and "phantom" or "dockyard"
+	local var5_6 = arg0_6.contextData.mode == var0_0.MODE_SHIP_PHANTOM and "phantom" or "dockyard"
 
 	eachChild(arg0_6.topPanel:Find("titles"), function(arg0_23, arg1_23)
-		setActive(arg0_23, arg0_23.name == var4_6)
+		setActive(arg0_23, arg0_23.name == var5_6)
 	end)
 
 	arg0_6.listEmptyTF = arg0_6._tf:Find("empty")
@@ -581,7 +587,18 @@ function var0_0.SwitchContainerDisplay(arg0_32)
 				end)
 			end
 
-			arg0_32.shipContainer:GetComponentInChildren(typeof(GridLayoutGroup)).constraintCount = 7
+			local var5_41 = arg0_32.shipContainer:GetComponentInChildren(typeof(GridLayoutGroup))
+			local var6_41 = arg0_32._tf:Find("main/ship_container").rect.width
+			local var7_41 = var5_41.cellSize.x
+			local var8_41 = var5_41.spacing.x
+			local var9_41 = var6_41 - var5_41.padding.left - var5_41.padding.right
+			local var10_41 = var7_41 + var8_41
+
+			if var10_41 > 0 then
+				local var11_41 = math.floor((var9_41 + var8_41) / var10_41) - 1
+
+				var5_41.constraintCount = math.max(7, var11_41)
+			end
 
 			arg0_32:filter()
 		end

@@ -59,7 +59,7 @@ function var0_0.getResource(arg0_2)
 		return var1_4
 	end
 
-	local function var3_2()
+	local var3_2 = (function()
 		local var0_5 = {}
 
 		local function var1_5(arg0_6)
@@ -105,111 +105,94 @@ function var0_0.getResource(arg0_2)
 		end
 
 		return var0_5
-	end
+	end)()
+	local var4_2 = var2_2()
+	local var5_2 = CombatPreviewLayer.PushAllResource()
 
-	local function var4_2()
-		local var0_7 = {}
-
-		for iter0_7, iter1_7 in ipairs(pg.gallery_config.all) do
-			var1_2(var0_7, GalleryConst.GetGalleryPicPathByID(iter1_7))
-		end
-
-		for iter2_7, iter3_7 in ipairs(pg.cartoon.all) do
-			var1_2(var0_7, MangaConst.GetMangaPicPathByID(iter3_7))
-		end
-
-		return var0_7
-	end
-
-	local var5_2 = var3_2()
-	local var6_2 = var2_2()
-	local var7_2 = var4_2()
-	local var8_2 = CombatPreviewLayer.PushAllResource()
-
-	return ResPathSupport.MergeLuaArr(var0_2, var6_2, var5_2, var7_2, var8_2)
+	return ResPathSupport.MergeLuaArr(var0_2, var4_2, var3_2, var5_2)
 end
 
-function var0_0.setAttires(arg0_8, arg1_8)
-	arg0_8.rawAttireVOs = arg1_8
+function var0_0.setAttires(arg0_7, arg1_7)
+	arg0_7.rawAttireVOs = arg1_7
 
-	arg0_8:updateTips(getProxy(AttireProxy):needTip(arg1_8))
+	arg0_7:updateTips(getProxy(AttireProxy):needTip(arg1_7))
 end
 
-function var0_0.setPlayer(arg0_9, arg1_9)
-	arg0_9.playerVO = arg1_9
+function var0_0.setPlayer(arg0_8, arg1_8)
+	arg0_8.playerVO = arg1_8
 end
 
-function var0_0.init(arg0_10)
-	arg0_10.backBtn = arg0_10._tf:Find("blur_panel/adapt/top/back_btn")
-	arg0_10.blurPanel = arg0_10._tf:Find("blur_panel")
-	arg0_10.toggles = {
-		arg0_10.blurPanel:Find("adapt/left_length/frame/tagRoot/iconframe"),
-		arg0_10.blurPanel:Find("adapt/left_length/frame/tagRoot/chatframe"),
-		arg0_10.blurPanel:Find("adapt/left_length/frame/tagRoot/achievement"),
-		arg0_10.blurPanel:Find("adapt/left_length/frame/tagRoot/combatUI"),
-		arg0_10.blurPanel:Find("adapt/left_length/frame/tagRoot/loadingpic")
+function var0_0.init(arg0_9)
+	arg0_9.backBtn = arg0_9._tf:Find("blur_panel/adapt/top/back_btn")
+	arg0_9.blurPanel = arg0_9._tf:Find("blur_panel")
+	arg0_9.toggles = {
+		arg0_9.blurPanel:Find("adapt/left_length/frame/tagRoot/iconframe"),
+		arg0_9.blurPanel:Find("adapt/left_length/frame/tagRoot/chatframe"),
+		arg0_9.blurPanel:Find("adapt/left_length/frame/tagRoot/achievement"),
+		arg0_9.blurPanel:Find("adapt/left_length/frame/tagRoot/combatUI"),
+		arg0_9.blurPanel:Find("adapt/left_length/frame/tagRoot/loadingpic")
 	}
-	arg0_10.panels = {
-		AttireIconFramePanel.New(arg0_10._tf, arg0_10.event, arg0_10.contextData),
-		AttireChatFramePanel.New(arg0_10._tf, arg0_10.event, arg0_10.contextData),
-		AttireAchievementPanel.New(arg0_10._tf, arg0_10.event, arg0_10.contextData),
-		AttireCombatUIPanel.New(arg0_10._tf, arg0_10.event, arg0_10.contextData),
-		AttireLoadingPicPanel.New(arg0_10._tf, arg0_10.event, arg0_10.contextData)
+	arg0_9.panels = {
+		AttireIconFramePanel.New(arg0_9._tf, arg0_9.event, arg0_9.contextData),
+		AttireChatFramePanel.New(arg0_9._tf, arg0_9.event, arg0_9.contextData),
+		AttireAchievementPanel.New(arg0_9._tf, arg0_9.event, arg0_9.contextData),
+		AttireCombatUIPanel.New(arg0_9._tf, arg0_9.event, arg0_9.contextData),
+		AttireLoadingPicPanel.New(arg0_9._tf, arg0_9.event, arg0_9.contextData)
 	}
 end
 
-function var0_0.didEnter(arg0_11)
-	onButton(arg0_11, arg0_11.backBtn, function()
-		arg0_11:emit(var0_0.ON_BACK)
+function var0_0.didEnter(arg0_10)
+	onButton(arg0_10, arg0_10.backBtn, function()
+		arg0_10:emit(var0_0.ON_BACK)
 	end, SOUND_BACK)
 
-	for iter0_11, iter1_11 in ipairs(arg0_11.toggles) do
-		onToggle(arg0_11, iter1_11, function(arg0_13)
-			if arg0_13 then
-				arg0_11:switchPage(iter0_11)
+	for iter0_10, iter1_10 in ipairs(arg0_10.toggles) do
+		onToggle(arg0_10, iter1_10, function(arg0_12)
+			if arg0_12 then
+				arg0_10:switchPage(iter0_10)
 			end
 		end, SFX_PANEL)
 	end
 
-	local var0_11 = arg0_11.contextData.index or var0_0.PAGE_ICONFRAME
+	local var0_10 = arg0_10.contextData.index or var0_0.PAGE_ICONFRAME
 
-	triggerToggle(arg0_11.toggles[var0_11], true)
+	triggerToggle(arg0_10.toggles[var0_10], true)
 end
 
-function var0_0.switchPage(arg0_14, arg1_14)
-	if arg0_14.page then
-		arg0_14.panels[arg0_14.page]:ActionInvoke("Hide")
+function var0_0.switchPage(arg0_13, arg1_13)
+	if arg0_13.page then
+		arg0_13.panels[arg0_13.page]:ActionInvoke("Hide")
 	end
 
-	arg0_14.page = arg1_14
+	arg0_13.page = arg1_13
 
-	arg0_14.panels[arg0_14.page]:Load()
-	arg0_14.panels[arg0_14.page]:ActionInvoke("Show")
-	arg0_14:updateCurrPage()
+	arg0_13.panels[arg0_13.page]:Load()
+	arg0_13.panels[arg0_13.page]:ActionInvoke("Show")
+	arg0_13:updateCurrPage()
 end
 
-function var0_0.updateCurrPage(arg0_15)
-	assert(arg0_15.page)
-	arg0_15.panels[arg0_15.page]:ActionInvoke("Update", arg0_15.rawAttireVOs, arg0_15.playerVO)
+function var0_0.updateCurrPage(arg0_14)
+	assert(arg0_14.page)
+	arg0_14.panels[arg0_14.page]:ActionInvoke("Update", arg0_14.rawAttireVOs, arg0_14.playerVO)
 end
 
-function var0_0.updateTips(arg0_16, arg1_16)
-	for iter0_16, iter1_16 in ipairs(arg1_16) do
-		setActive(arg0_16.toggles[iter0_16]:Find("tip"), iter1_16)
+function var0_0.updateTips(arg0_15, arg1_15)
+	for iter0_15, iter1_15 in ipairs(arg1_15) do
+		setActive(arg0_15.toggles[iter0_15]:Find("tip"), iter1_15)
 	end
 end
 
-function var0_0.onBackPressed(arg0_17)
-	if arg0_17.panels[arg0_17.page].onBackPressed and arg0_17.panels[arg0_17.page]:onBackPressed() then
+function var0_0.onBackPressed(arg0_16)
+	if arg0_16.panels[arg0_16.page].onBackPressed and arg0_16.panels[arg0_16.page]:onBackPressed() then
 		-- block empty
 	else
-		var0_0.super.onBackPressed(arg0_17)
+		var0_0.super.onBackPressed(arg0_16)
 	end
 end
 
-function var0_0.willExit(arg0_18)
-	for iter0_18, iter1_18 in ipairs(arg0_18.panels) do
-		iter1_18:Destroy()
+function var0_0.willExit(arg0_17)
+	for iter0_17, iter1_17 in ipairs(arg0_17.panels) do
+		iter1_17:Destroy()
 	end
 end
 

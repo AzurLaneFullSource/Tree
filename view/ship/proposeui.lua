@@ -34,25 +34,26 @@ function var0_0.getUIName(arg0_1)
 	return "ProposeUI"
 end
 
-function var0_0.getResource(arg0_2, arg1_2)
-	local var0_2 = {}
-	local var1_2
+function var0_0.getResource(arg0_2)
+	local var0_2 = arg0_2.contextData
+	local var1_2 = {}
+	local var2_2
 
-	if arg1_2.shipId then
-		var1_2 = getProxy(BayProxy):getShipById(arg1_2.shipId):getConfigTable().nationality
-	elseif arg1_2.group then
-		var1_2 = arg1_2.group:getNation()
-	elseif arg1_2.skinId then
-		local var2_2 = pg.ship_skin_template[arg1_2.skinId]
+	if var0_2.shipId then
+		var2_2 = getProxy(BayProxy):getShipById(var0_2.shipId):getConfigTable().nationality
+	elseif var0_2.group then
+		var2_2 = var0_2.group:getNation()
+	elseif var0_2.skinId then
+		local var3_2 = pg.ship_skin_template[var0_2.skinId]
 
-		var1_2 = ShipGroup.getDefaultShipConfig(var2_2.ship_group).nationality
+		var2_2 = ShipGroup.getDefaultShipConfig(var3_2.ship_group).nationality
 	end
 
-	if var1_2 then
-		table.insert(var0_2, string.lower("ui/Propose" .. Nation.Nation2Side(var1_2) .. "UI"))
+	if var2_2 then
+		table.insert(var1_2, string.lower("ui/Propose" .. Nation.Nation2Side(var2_2) .. "UI"))
 	end
 
-	return table.insertto(var0_2, var0_0.super.getResource(arg0_2, arg1_2))
+	return table.insertto(var1_2, var0_0.super.getResource(arg0_2))
 end
 
 function var0_0.setShip(arg0_3, arg1_3)

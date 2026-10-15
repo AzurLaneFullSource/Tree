@@ -8,12 +8,12 @@ function var0_0.getUIName(arg0_1)
 	return "Dorm3dShopDetailWindow"
 end
 
-function var0_0.getResource(arg0_2, arg1_2)
+function var0_0.getResource(arg0_2)
 	local var0_2 = {
 		"weaponframes",
 		"ui/shoptip_atlas"
 	}
-	local var1_2 = (arg1_2 or arg0_2.contextData or {}).shopCfg
+	local var1_2 = (arg0_2.contextData or {}).shopCfg
 
 	local function var2_2(arg0_3)
 		if noEmptyStr(arg0_3) and not table.contains(var0_2, arg0_3) then
@@ -47,7 +47,7 @@ function var0_0.getResource(arg0_2, arg1_2)
 		var2_2(var5_2:getIcon())
 	end
 
-	return table.insertto(var0_2, var0_0.super.getResource(arg0_2, arg1_2))
+	return table.insertto(var0_2, var0_0.super.getResource(arg0_2))
 end
 
 function var0_0.init(arg0_5)

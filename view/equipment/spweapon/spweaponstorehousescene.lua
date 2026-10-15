@@ -4,7 +4,7 @@ function var0_0.getUIName(arg0_1)
 	return "SpWeaponStoreHouseUI"
 end
 
-function var0_0.getResource(arg0_2, arg1_2)
+function var0_0.getResource(arg0_2)
 	local var0_2 = {
 		"ui/equipmentui_atlas",
 		"ui/share/index_atlas",
@@ -34,7 +34,7 @@ function var0_0.getResource(arg0_2, arg1_2)
 	end
 
 	local var2_2 = getProxy(BayProxy)
-	local var3_2 = arg1_2 and arg1_2.shipId
+	local var3_2 = arg0_2.contextData.shipId
 	local var4_2 = var3_2 and var2_2:RawGetShipById(var3_2)
 
 	for iter0_2, iter1_2 in ipairs(var2_2:GetSpWeaponsInShips(var4_2)) do
@@ -57,7 +57,7 @@ function var0_0.getResource(arg0_2, arg1_2)
 		end
 	end
 
-	table.insertto(var0_2, var0_0.super.getResource(arg0_2, arg1_2))
+	table.insertto(var0_2, var0_0.super.getResource(arg0_2))
 
 	return var0_2
 end

@@ -86,13 +86,13 @@ function var0_0.findUI(arg0_6)
 		[var0_0.Shop] = arg0_6.shopToggle:Find("Red")
 	}
 	arg0_6.backBtn = var0_6:Find("back")
-	arg0_6.dayText = arg0_6._tf:Find("time/text")
+	arg0_6.dayText = arg0_6._tf:Find("left/time/text")
 
-	local var1_6 = arg0_6._tf:Find("time/icon")
+	local var1_6 = arg0_6._tf:Find("left/time/icon")
 
 	setText(var1_6, i18n("reflux_word_1"))
 
-	local var2_6 = arg0_6._tf:Find("time/icon1")
+	local var2_6 = arg0_6._tf:Find("left/time/icon1")
 
 	setText(var2_6, i18n("word_date"))
 end
