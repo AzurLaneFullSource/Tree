@@ -71,6 +71,7 @@ function var0_0.InitBtns(arg0_4)
 
 	for iter2_4, iter3_4 in ipairs(var0_0.GetSpecailBtns()) do
 		table.insert(arg0_4.specailBtns, iter3_4.New(arg0_4._tf, arg0_4.event))
+		warning("yzhspecailBtns", iter2_4)
 	end
 
 	if pg.SdkMgr.GetInstance():CheckAudit() then

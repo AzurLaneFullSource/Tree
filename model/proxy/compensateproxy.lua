@@ -92,6 +92,7 @@ end
 function var0_0.unpdateUnreadCount(arg0_10, arg1_10)
 	arg0_10._existUnreadCount = arg1_10
 
+	warning("yzh---_existUnreadCount", arg1_10)
 	arg0_10:sendNotification(var0_0.UPDATE_ATTACHMENT_COUNT)
 end
 

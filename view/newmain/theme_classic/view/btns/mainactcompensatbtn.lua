@@ -5,6 +5,8 @@ function var0_0.GetContainer(arg0_1)
 end
 
 function var0_0.InShowTime(arg0_2)
+	warning("InShowTime", getProxy(CompensateProxy):hasRewardCount())
+
 	return getProxy(CompensateProxy):hasRewardCount()
 end
 
