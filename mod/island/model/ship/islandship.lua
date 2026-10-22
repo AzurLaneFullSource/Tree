@@ -197,449 +197,415 @@ function var0_0.GetCurrentEnergy(arg0_20)
 		return math.min(arg0_20.maxEnerey, arg0_20.energy)
 	end
 
-	local var0_20 = pg.TimeMgr.GetInstance():GetServerTime()
-	local var1_20 = math.floor(arg0_20.energy + (var0_20 - arg0_20.recorverTime) / arg0_20.recoverSpeed)
-	local var2_20 = arg0_20:GetSkillAddRecoverSpeed()
+	return math.floor(arg0_20:GetCurrentEnergyDecimal())
+end
 
-	if var2_20 > 0 then
-		local var3_20 = math.floor((var0_20 - arg0_20.recorverTime) / arg0_20.recoverSpeed)
+function var0_0.GetCurrentEnergyDecimal(arg0_21)
+	local var0_21 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var1_21 = arg0_21.energy + (var0_21 - arg0_21.recorverTime) / arg0_21.recoverSpeed
+	local var2_21 = arg0_21:GetVaildStatusByType(IslandBuffType.SHIP_POWER_RECOVER)
+	local var3_21 = arg0_21:GetSkillAddRecoverSpeed()
+	local var4_21 = var1_21 + (var0_21 - arg0_21.recorverTime) / arg0_21.recoverSpeed * var3_21 * 0.01
 
-		var1_20 = var1_20 + math.floor(var3_20 * var2_20 * 0.01)
+	if #var2_21 == 0 then
+		return math.min(arg0_21.maxEnerey, var4_21)
 	end
 
-	local var4_20 = arg0_20:GetVaildStatusByType(IslandBuffType.SHIP_POWER_RECOVER)
+	local function var5_21(arg0_22, arg1_22, arg2_22, arg3_22)
+		local var0_22 = math.max(arg0_22, arg2_22)
+		local var1_22 = math.min(arg1_22, arg3_22)
 
-	if #var4_20 == 0 then
-		return math.min(arg0_20.maxEnerey, var1_20)
-	end
-
-	local function var5_20(arg0_21, arg1_21, arg2_21, arg3_21)
-		local var0_21 = math.max(arg0_21, arg2_21)
-		local var1_21 = math.min(arg1_21, arg3_21)
-
-		if var0_21 < var1_21 then
-			return var1_21 - var0_21
+		if var0_22 < var1_22 then
+			return var1_22 - var0_22
 		else
 			return 0
 		end
 	end
 
-	local var6_20 = var4_20:GetBuffEffect()[1] * 0.01
-	local var7_20 = var5_20(arg0_20.recorverTime, var0_20, var4_20:GetStartTime(), var4_20:GetEndTime())
-	local var8_20 = var1_20 + math.floor(var7_20 / arg0_20.recoverSpeed * var6_20)
+	local var6_21 = var2_21:GetBuffEffect()[1] * 0.01
+	local var7_21 = var4_21 + var5_21(arg0_21.recorverTime, var0_21, var2_21:GetStartTime(), var2_21:GetEndTime()) / arg0_21.recoverSpeed * var6_21
 
-	return math.min(arg0_20.maxEnerey, var8_20)
+	return math.min(arg0_21.maxEnerey, var7_21)
 end
 
-function var0_0.GetCurrentEnergyDecimal(arg0_22)
-	local var0_22 = pg.TimeMgr.GetInstance():GetServerTime()
-	local var1_22 = arg0_22.energy + (var0_22 - arg0_22.recorverTime) / arg0_22.recoverSpeed
-	local var2_22 = arg0_22:GetVaildStatusByType(IslandBuffType.SHIP_POWER_RECOVER)
-	local var3_22 = arg0_22:GetSkillAddRecoverSpeed()
+function var0_0.GetEnergyMaxTime(arg0_23)
+	local var0_23 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var1_23 = arg0_23.maxEnerey - arg0_23:GetCurrentEnergyDecimal()
+	local var2_23 = arg0_23:GetVaildStatusByType(IslandBuffType.SHIP_POWER_RECOVER)
+	local var3_23 = arg0_23:GetSkillAddRecoverSpeed()
+	local var4_23 = arg0_23.recoverSpeed / (1 + var3_23 * 0.01)
 
-	if var3_22 > 0 then
-		var1_22 = var1_22 + (var0_22 - arg0_22.recorverTime) / arg0_22.recoverSpeed * var3_22 * 0.01
+	if #var2_23 == 0 then
+		return var0_23 + math.floor(var1_23 * var4_23)
 	end
 
-	if #var2_22 == 0 then
-		return math.min(arg0_22.maxEnerey, var1_22)
+	if var0_23 <= var2_23:GetEndTime() then
+		local var5_23 = var2_23:GetEndTime() - var0_23
+		local var6_23 = var4_23 / (1 + var2_23:GetBuffEffect()[1] * 0.01)
+		local var7_23 = var6_23 * var5_23
+
+		if var1_23 <= var7_23 then
+			return var0_23 + math.floor(var1_23 / var6_23)
+		end
+
+		local var8_23 = var1_23 - var7_23
+
+		return var0_23 + math.floor(var8_23 / var4_23) + math.floor(var1_23 / var6_23)
 	end
 
-	local function var4_22(arg0_23, arg1_23, arg2_23, arg3_23)
-		local var0_23 = math.max(arg0_23, arg2_23)
-		local var1_23 = math.min(arg1_23, arg3_23)
+	return var0_23 + math.floor(var1_23 * var4_23)
+end
 
-		if var0_23 < var1_23 then
-			return var1_23 - var0_23
-		else
-			return 0
+function var0_0.AnySkillCanUpgrade(arg0_24)
+	return arg0_24:CanUpgradeSkill()
+end
+
+function var0_0.HasStatus(arg0_25)
+	return table.getCount(arg0_25:GetVaildStatus()) > 0
+end
+
+function var0_0.GetPower(arg0_26)
+	local var0_26 = arg0_26:GetLevel() * 1000000
+	local var1_26 = 0
+
+	for iter0_26, iter1_26 in pairs(arg0_26:GetAttrs()) do
+		var1_26 = var1_26 + iter1_26
+	end
+
+	return var0_26 + var1_26
+end
+
+function var0_0.GetName(arg0_27)
+	return arg0_27:getConfig("name")
+end
+
+function var0_0.GetEnName(arg0_28)
+	local var0_28 = arg0_28:GetModelUnit()
+
+	return pg.island_unit_character[var0_28].english_name
+end
+
+function var0_0.StaticGetName(arg0_29)
+	return pg.island_chara_template[arg0_29].name
+end
+
+function var0_0.GetPrefab(arg0_30)
+	return var0_0.StaticGetPrefab(arg0_30.configId)
+end
+
+function var0_0.GetModelUnit(arg0_31)
+	local var0_31 = arg0_31:getConfig("unit_id")
+
+	if arg0_31.cur_skin_id and arg0_31.cur_skin_id ~= 0 then
+		var0_31 = pg.island_skin_template[arg0_31.cur_skin_id].model
+
+		local var1_31 = getProxy(IslandProxy):GetIsland():GetCharacterAgency():GetCurrentSkinColorByShipId(arg0_31.id, arg0_31.cur_skin_id)
+
+		if var1_31 ~= 0 then
+			var0_31 = pg.island_skin_colordiff_template[var1_31].model
 		end
 	end
 
-	local var5_22 = var2_22:GetBuffEffect()[1] * 0.01
-	local var6_22 = var1_22 + var4_22(arg0_22.recorverTime, var0_22, var2_22:GetStartTime(), var2_22:GetEndTime()) / arg0_22.recoverSpeed * var5_22
-
-	return math.min(arg0_22.maxEnerey, var6_22)
+	return var0_31
 end
 
-function var0_0.GetEnergyMaxTime(arg0_24)
-	local var0_24 = pg.TimeMgr.GetInstance():GetServerTime()
-	local var1_24 = arg0_24.maxEnerey - arg0_24:GetCurrentEnergyDecimal()
-	local var2_24 = arg0_24:GetVaildStatusByType(IslandBuffType.SHIP_POWER_RECOVER)
-	local var3_24 = arg0_24:GetSkillAddRecoverSpeed()
-	local var4_24 = arg0_24.recoverSpeed / (1 + var3_24 * 0.01)
-
-	if #var2_24 == 0 then
-		return var0_24 + math.floor(var1_24 * var4_24)
-	end
-
-	if var0_24 <= var2_24:GetEndTime() then
-		local var5_24 = var2_24:GetEndTime() - var0_24
-		local var6_24 = var4_24 / (1 + var2_24:GetBuffEffect()[1] * 0.01)
-		local var7_24 = var6_24 * var5_24
-
-		if var1_24 <= var7_24 then
-			return var0_24 + math.floor(var1_24 / var6_24)
-		end
-
-		local var8_24 = var1_24 - var7_24
-
-		return var0_24 + math.floor(var8_24 / var4_24) + math.floor(var1_24 / var6_24)
-	end
-
-	return var0_24 + math.floor(var1_24 * var4_24)
+function var0_0.GetCurrentSkinId(arg0_32)
+	return arg0_32.cur_skin_id or 0
 end
 
-function var0_0.AnySkillCanUpgrade(arg0_25)
-	return arg0_25:CanUpgradeSkill()
-end
-
-function var0_0.HasStatus(arg0_26)
-	return table.getCount(arg0_26:GetVaildStatus()) > 0
-end
-
-function var0_0.GetPower(arg0_27)
-	local var0_27 = arg0_27:GetLevel() * 1000000
-	local var1_27 = 0
-
-	for iter0_27, iter1_27 in pairs(arg0_27:GetAttrs()) do
-		var1_27 = var1_27 + iter1_27
-	end
-
-	return var0_27 + var1_27
-end
-
-function var0_0.GetName(arg0_28)
-	return arg0_28:getConfig("name")
-end
-
-function var0_0.GetEnName(arg0_29)
-	local var0_29 = arg0_29:GetModelUnit()
-
-	return pg.island_unit_character[var0_29].english_name
-end
-
-function var0_0.StaticGetName(arg0_30)
-	return pg.island_chara_template[arg0_30].name
-end
-
-function var0_0.GetPrefab(arg0_31)
-	return var0_0.StaticGetPrefab(arg0_31.configId)
-end
-
-function var0_0.GetModelUnit(arg0_32)
-	local var0_32 = arg0_32:getConfig("unit_id")
-
-	if arg0_32.cur_skin_id and arg0_32.cur_skin_id ~= 0 then
-		var0_32 = pg.island_skin_template[arg0_32.cur_skin_id].model
-
-		local var1_32 = getProxy(IslandProxy):GetIsland():GetCharacterAgency():GetCurrentSkinColorByShipId(arg0_32.id, arg0_32.cur_skin_id)
-
-		if var1_32 ~= 0 then
-			var0_32 = pg.island_skin_colordiff_template[var1_32].model
-		end
-	end
-
-	return var0_32
-end
-
-function var0_0.GetCurrentSkinId(arg0_33)
-	return arg0_33.cur_skin_id or 0
-end
-
-function var0_0.GetModel(arg0_34)
-	local var0_34 = arg0_34:GetModelUnit()
-	local var1_34 = pg.island_unit_character[var0_34]
-	local var2_34 = var1_34.personal_ani
+function var0_0.GetModel(arg0_33)
+	local var0_33 = arg0_33:GetModelUnit()
+	local var1_33 = pg.island_unit_character[var0_33]
+	local var2_33 = var1_33.personal_ani
 
 	return {
-		model = var1_34.model,
-		animator = var1_34.animator,
-		personal_ani = var2_34
+		model = var1_33.model,
+		animator = var1_33.animator,
+		personal_ani = var2_33
 	}
 end
 
-function var0_0.GetModelBySkinAndColorId(arg0_35, arg1_35, arg2_35)
-	local var0_35 = arg0_35:getConfig("unit_id")
+function var0_0.GetModelBySkinAndColorId(arg0_34, arg1_34, arg2_34)
+	local var0_34 = arg0_34:getConfig("unit_id")
 
-	if arg1_35 and arg1_35 ~= 0 then
-		var0_35 = pg.island_skin_template[arg1_35].model
+	if arg1_34 and arg1_34 ~= 0 then
+		var0_34 = pg.island_skin_template[arg1_34].model
 
-		if arg2_35 ~= 0 then
-			var0_35 = pg.island_skin_colordiff_template[arg2_35].model
+		if arg2_34 ~= 0 then
+			var0_34 = pg.island_skin_colordiff_template[arg2_34].model
 		end
 	end
 
-	return var0_35
+	return var0_34
 end
 
-function var0_0.ChangeSkinId(arg0_36, arg1_36)
-	if arg0_36.cur_skin_id ~= arg1_36 then
-		arg0_36.cur_skin_id = arg1_36
+function var0_0.ChangeSkinId(arg0_35, arg1_35)
+	if arg0_35.cur_skin_id ~= arg1_35 then
+		arg0_35.cur_skin_id = arg1_35
 	end
 end
 
-function var0_0.GetCurSkinId(arg0_37)
-	return arg0_37.cur_skin_id or 0
+function var0_0.GetCurSkinId(arg0_36)
+	return arg0_36.cur_skin_id or 0
 end
 
-function var0_0.GetNewShipWord(arg0_38)
+function var0_0.GetNewShipWord(arg0_37)
 	return ""
 end
 
-function var0_0.GetShipGroup(arg0_39)
-	return arg0_39.configId
+function var0_0.GetShipGroup(arg0_38)
+	return arg0_38.configId
 end
 
-function var0_0.StaticGetPrefab(arg0_40)
-	local var0_40 = pg.island_chara_template[arg0_40].unit_id
+function var0_0.StaticGetPrefab(arg0_39)
+	local var0_39 = pg.island_chara_template[arg0_39].unit_id
 
-	return pg.island_unit_character[var0_40].IslandShipIcon
+	return pg.island_unit_character[var0_39].IslandShipIcon
 end
 
-function var0_0.UpdateState(arg0_41, arg1_41, arg2_41)
-	arg0_41.state = arg1_41
-	arg0_41.stateId = arg2_41
+function var0_0.UpdateState(arg0_40, arg1_40, arg2_40)
+	arg0_40.state = arg1_40
+	arg0_40.stateId = arg2_40
 end
 
-function var0_0.GetState(arg0_42)
-	if pg.TimeMgr.GetInstance():GetServerTime() >= arg0_42.recorverTime then
+function var0_0.GetState(arg0_41)
+	if pg.TimeMgr.GetInstance():GetServerTime() >= arg0_41.recorverTime then
 		return var0_0.STATE_NORMAL
 	end
 
-	return arg0_42.state
+	return arg0_41.state
 end
 
-function var0_0.GetStateId(arg0_43)
-	return arg0_43.stateId
+function var0_0.GetStateId(arg0_42)
+	return arg0_42.stateId
 end
 
-function var0_0.GetStatePlaceName(arg0_44)
-	return switch(arg0_44.state, {
+function var0_0.GetStatePlaceName(arg0_43)
+	return switch(arg0_43.state, {
 		[var0_0.STATE_DELEGATION] = function()
-			return pg.island_production_place[arg0_44.stateId].name
+			return pg.island_production_place[arg0_43.stateId].name
 		end,
 		[var0_0.STATE_TECHNOLOGY] = function()
-			return pg.island_production_place[arg0_44.stateId].name
+			return pg.island_production_place[arg0_43.stateId].name
 		end,
 		[var0_0.STATE_RESTAURANT] = function()
-			return pg.island_manage_restaurant[arg0_44.stateId].name
+			return pg.island_manage_restaurant[arg0_43.stateId].name
 		end
 	}, function()
 		return ""
 	end)
 end
 
-function var0_0.IsDelegable(arg0_49)
-	return arg0_49:GetState() == var0_0.STATE_NORMAL and not getProxy(IslandProxy):GetIsland():GetFollowerAgency():Following(arg0_49.id)
+function var0_0.IsDelegable(arg0_48)
+	return arg0_48:GetState() == var0_0.STATE_NORMAL and not getProxy(IslandProxy):GetIsland():GetFollowerAgency():Following(arg0_48.id)
 end
 
-function var0_0.GetBreakLevel(arg0_50)
-	return arg0_50.breakLevel
+function var0_0.GetBreakLevel(arg0_49)
+	return arg0_49.breakLevel
 end
 
-function var0_0.GetBreakMaxLevel(arg0_51)
-	return arg0_51:getConfig("upgrade_level")[2] + 1
+function var0_0.GetBreakMaxLevel(arg0_50)
+	return arg0_50:getConfig("upgrade_level")[2] + 1
 end
 
-function var0_0.GetBreakPhaseValue(arg0_52)
-	return arg0_52:getConfig("upgrade_level")[1]
+function var0_0.GetBreakPhaseValue(arg0_51)
+	return arg0_51:getConfig("upgrade_level")[1]
 end
 
-function var0_0.IsMaxBreakLevel(arg0_53)
-	return arg0_53:GetBreakMaxLevel() <= arg0_53:GetBreakLevel()
+function var0_0.IsMaxBreakLevel(arg0_52)
+	return arg0_52:GetBreakMaxLevel() <= arg0_52:GetBreakLevel()
 end
 
-function var0_0.CanBreakOut(arg0_54)
-	if arg0_54:IsMaxBreakLevel() then
+function var0_0.CanBreakOut(arg0_53)
+	if arg0_53:IsMaxBreakLevel() then
 		return false
 	end
 
-	local var0_54 = arg0_54:GetBreakPhaseValue()
+	local var0_53 = arg0_53:GetBreakPhaseValue()
 
-	return arg0_54.level % var0_54 == 0
+	return arg0_53.level % var0_53 == 0
 end
 
-function var0_0.UpgradeBreakOut(arg0_55)
-	arg0_55.breakLevel = arg0_55.breakLevel + 1
+function var0_0.UpgradeBreakOut(arg0_54)
+	arg0_54.breakLevel = arg0_54.breakLevel + 1
 
-	arg0_55:InitMaxLevel()
+	arg0_54:InitMaxLevel()
 
-	local var0_55 = arg0_55:GetMaxEnergy()
-	local var1_55 = var0_55 - arg0_55:GetEnergy()
+	local var0_54 = arg0_54:GetMaxEnergy()
+	local var1_54 = var0_54 - arg0_54:GetEnergy()
 
-	arg0_55:InitMaxEnergy(true)
+	arg0_54:InitMaxEnergy(true)
 
-	local var2_55 = arg0_55:GetMaxEnergy()
+	local var2_54 = arg0_54:GetMaxEnergy()
 
-	if var0_55 < var2_55 then
-		arg0_55.energy = var2_55 - var1_55
+	if var0_54 < var2_54 then
+		arg0_54.energy = var2_54 - var1_54
 	end
 
-	arg0_55:InitSkill()
+	arg0_54:InitSkill()
 end
 
-function var0_0.GetBreakoutMatrials(arg0_56)
-	local var0_56 = arg0_56:getConfig("upgrade_material")
-	local var1_56 = {}
-	local var2_56 = var0_56[arg0_56:GetBreakLevel()] or {}
+function var0_0.GetBreakoutMatrials(arg0_55)
+	local var0_55 = arg0_55:getConfig("upgrade_material")
+	local var1_55 = {}
+	local var2_55 = var0_55[arg0_55:GetBreakLevel()] or {}
 
-	for iter0_56, iter1_56 in ipairs(var2_56) do
-		table.insert(var1_56, {
+	for iter0_55, iter1_55 in ipairs(var2_55) do
+		table.insert(var1_55, {
 			type = DROP_TYPE_ISLAND_ITEM,
-			id = iter1_56[1],
-			count = iter1_56[2]
+			id = iter1_55[1],
+			count = iter1_55[2]
 		})
 	end
 
-	return var1_56
+	return var1_55
 end
 
-function var0_0.InitAttrs(arg0_57)
-	local var0_57 = arg0_57:GetBreakPhaseValue()
-	local var1_57 = math.floor(arg0_57.level / var0_57)
-	local var2_57 = arg0_57.level % var0_57
-	local var3_57 = arg0_57:getConfig("base_att")
+function var0_0.InitAttrs(arg0_56)
+	local var0_56 = arg0_56:GetBreakPhaseValue()
+	local var1_56 = math.floor(arg0_56.level / var0_56)
+	local var2_56 = arg0_56.level % var0_56
+	local var3_56 = arg0_56:getConfig("base_att")
 
-	for iter0_57, iter1_57 in ipairs(var3_57) do
-		local var4_57 = iter1_57[1]
-		local var5_57 = iter1_57[2]
-		local var6_57 = IslandShipAttr.GetAtrrName(var4_57)
+	for iter0_56, iter1_56 in ipairs(var3_56) do
+		local var4_56 = iter1_56[1]
+		local var5_56 = iter1_56[2]
+		local var6_56 = IslandShipAttr.GetAtrrName(var4_56)
 
-		arg0_57.attrs[var6_57] = var5_57
+		arg0_56.attrs[var6_56] = var5_56
 	end
 
-	local var7_57 = arg0_57:getConfig("growth_att")
+	local var7_56 = arg0_56:getConfig("growth_att")
 
-	for iter2_57, iter3_57 in ipairs(var7_57) do
-		local var8_57 = iter3_57[1]
-		local var9_57 = iter3_57[2]
-		local var10_57 = IslandShipAttr.GetAtrrName(var8_57)
-		local var11_57 = 0
+	for iter2_56, iter3_56 in ipairs(var7_56) do
+		local var8_56 = iter3_56[1]
+		local var9_56 = iter3_56[2]
+		local var10_56 = IslandShipAttr.GetAtrrName(var8_56)
+		local var11_56 = 0
 
-		for iter4_57 = 1, var1_57 do
-			var11_57 = var11_57 + var9_57[iter4_57] * var0_57
+		for iter4_56 = 1, var1_56 do
+			var11_56 = var11_56 + var9_56[iter4_56] * var0_56
 		end
 
-		if var1_57 < #var9_57 then
-			var11_57 = var11_57 + var9_57[var1_57 + 1] * var2_57
+		if var1_56 < #var9_56 then
+			var11_56 = var11_56 + var9_56[var1_56 + 1] * var2_56
 		end
 
-		arg0_57.attrs[var10_57] = arg0_57.attrs[var10_57] + var11_57
+		arg0_56.attrs[var10_56] = arg0_56.attrs[var10_56] + var11_56
 	end
 
-	for iter5_57, iter6_57 in pairs(arg0_57.extraAttrs) do
-		arg0_57.attrs[iter5_57] = arg0_57.attrs[iter5_57] + iter6_57
+	for iter5_56, iter6_56 in pairs(arg0_56.extraAttrs) do
+		arg0_56.attrs[iter5_56] = arg0_56.attrs[iter5_56] + iter6_56
 	end
 
-	for iter7_57, iter8_57 in pairs(arg0_57.attrs) do
-		arg0_57.attrs[iter7_57] = math.floor(iter8_57)
+	for iter7_56, iter8_56 in pairs(arg0_56.attrs) do
+		arg0_56.attrs[iter7_56] = math.floor(iter8_56)
 	end
 end
 
-function var0_0.GetGrowthAtt(arg0_58)
-	local var0_58 = {}
-	local var1_58 = arg0_58:getConfig("growth_att")
+function var0_0.GetGrowthAtt(arg0_57)
+	local var0_57 = {}
+	local var1_57 = arg0_57:getConfig("growth_att")
 
-	for iter0_58, iter1_58 in ipairs(var1_58) do
-		local var2_58 = iter1_58[1]
-		local var3_58 = iter1_58[2]
+	for iter0_57, iter1_57 in ipairs(var1_57) do
+		local var2_57 = iter1_57[1]
+		local var3_57 = iter1_57[2]
 
-		var0_58[IslandShipAttr.GetAtrrName(var2_58)] = var3_58[arg0_58:GetBreakLevel()] or 0
+		var0_57[IslandShipAttr.GetAtrrName(var2_57)] = var3_57[arg0_57:GetBreakLevel()] or 0
 	end
 
-	return var0_58
+	return var0_57
 end
 
-function var0_0.GetAttrs(arg0_59)
-	return arg0_59.attrs
+function var0_0.GetAttrs(arg0_58)
+	return arg0_58.attrs
 end
 
-function var0_0.GetAttr(arg0_60, arg1_60)
-	return arg0_60.attrs[arg1_60] or 0
+function var0_0.GetAttr(arg0_59, arg1_59)
+	return arg0_59.attrs[arg1_59] or 0
 end
 
-function var0_0.GetAttrGradeCnt(arg0_61, arg1_61)
-	local var0_61 = 0
+function var0_0.GetAttrGradeCnt(arg0_60, arg1_60)
+	local var0_60 = 0
 
-	for iter0_61, iter1_61 in pairs(arg0_61.attrs) do
-		if arg1_61 >= arg0_61:GetAttrGrade(iter0_61) then
-			var0_61 = var0_61 + 1
+	for iter0_60, iter1_60 in pairs(arg0_60.attrs) do
+		if arg1_60 >= arg0_60:GetAttrGrade(iter0_60) then
+			var0_60 = var0_60 + 1
+		end
+	end
+
+	return var0_60
+end
+
+function var0_0.GetAttrGradeByValue(arg0_61, arg1_61)
+	local var0_61 = pg.island_chara_att.all[#pg.island_chara_att.all]
+
+	for iter0_61, iter1_61 in ipairs(pg.island_chara_att.all) do
+		local var1_61 = pg.island_chara_att[iter1_61]
+		local var2_61 = var1_61.range[1]
+		local var3_61 = var1_61.range[2]
+
+		if var2_61 <= arg1_61 and arg1_61 <= var3_61 then
+			var0_61 = iter1_61
+
+			break
 		end
 	end
 
 	return var0_61
 end
 
-function var0_0.GetAttrGradeByValue(arg0_62, arg1_62)
-	local var0_62 = pg.island_chara_att.all[#pg.island_chara_att.all]
+function var0_0.GetAttrGrade(arg0_62, arg1_62)
+	local var0_62 = arg0_62:GetAttr(arg1_62)
 
-	for iter0_62, iter1_62 in ipairs(pg.island_chara_att.all) do
-		local var1_62 = pg.island_chara_att[iter1_62]
-		local var2_62 = var1_62.range[1]
-		local var3_62 = var1_62.range[2]
-
-		if var2_62 <= arg1_62 and arg1_62 <= var3_62 then
-			var0_62 = iter1_62
-
-			break
-		end
-	end
-
-	return var0_62
+	return arg0_62:GetAttrGradeByValue(var0_62)
 end
 
-function var0_0.GetAttrGrade(arg0_63, arg1_63)
-	local var0_63 = arg0_63:GetAttr(arg1_63)
+function var0_0.GetAttrGradeName(arg0_63, arg1_63)
+	local var0_63 = arg0_63:GetAttrGrade(arg1_63)
 
-	return arg0_63:GetAttrGradeByValue(var0_63)
+	return pg.island_chara_att[var0_63].name
 end
 
-function var0_0.GetAttrGradeName(arg0_64, arg1_64)
+function var0_0.GetAttrGradeEffect(arg0_64, arg1_64)
 	local var0_64 = arg0_64:GetAttrGrade(arg1_64)
 
-	return pg.island_chara_att[var0_64].name
+	return pg.island_chara_att[var0_64].effect
 end
 
-function var0_0.GetAttrGradeEffect(arg0_65, arg1_65)
-	local var0_65 = arg0_65:GetAttrGrade(arg1_65)
+function var0_0.SetUnlockExtraAttLimit(arg0_65)
+	arg0_65.unlockExtraAttLimit = true
 
-	return pg.island_chara_att[var0_65].effect
+	arg0_65:InitMaxExtraAttrs()
 end
 
-function var0_0.SetUnlockExtraAttLimit(arg0_66)
-	arg0_66.unlockExtraAttLimit = true
-
-	arg0_66:InitMaxExtraAttrs()
+function var0_0.IsUnlockExtraAttLimit(arg0_66)
+	return arg0_66.unlockExtraAttLimit
 end
 
-function var0_0.IsUnlockExtraAttLimit(arg0_67)
-	return arg0_67.unlockExtraAttLimit
-end
+function var0_0.InitMaxExtraAttrs(arg0_67)
+	for iter0_67, iter1_67 in ipairs(arg0_67:getConfig("extra_max")) do
+		local var0_67 = iter1_67[1]
+		local var1_67 = iter1_67[2][1]
+		local var2_67 = iter1_67[2][2]
+		local var3_67 = arg0_67.unlockExtraAttLimit and var2_67 or var1_67
+		local var4_67 = IslandShipAttr.GetAtrrName(var0_67)
 
-function var0_0.InitMaxExtraAttrs(arg0_68)
-	for iter0_68, iter1_68 in ipairs(arg0_68:getConfig("extra_max")) do
-		local var0_68 = iter1_68[1]
-		local var1_68 = iter1_68[2][1]
-		local var2_68 = iter1_68[2][2]
-		local var3_68 = arg0_68.unlockExtraAttLimit and var2_68 or var1_68
-		local var4_68 = IslandShipAttr.GetAtrrName(var0_68)
-
-		arg0_68.maxExtraAttrs[var4_68] = var3_68
+		arg0_67.maxExtraAttrs[var4_67] = var3_67
 	end
 end
 
-function var0_0.GetExtraAttrLimit(arg0_69, arg1_69)
-	return arg0_69.maxExtraAttrs[arg1_69] or 0
+function var0_0.GetExtraAttrLimit(arg0_68, arg1_68)
+	return arg0_68.maxExtraAttrs[arg1_68] or 0
 end
 
-function var0_0.GetExtraAttrValue(arg0_70, arg1_70)
-	return arg0_70.extraAttrs[arg1_70] or 0
+function var0_0.GetExtraAttrValue(arg0_69, arg1_69)
+	return arg0_69.extraAttrs[arg1_69] or 0
 end
 
-function var0_0.ExistPotency(arg0_71)
-	for iter0_71, iter1_71 in pairs(IslandShipAttr.ATTRS) do
-		if arg0_71:GetExtraAttrLimit(iter1_71) > arg0_71:GetExtraAttrValue(iter1_71) then
+function var0_0.ExistPotency(arg0_70)
+	for iter0_70, iter1_70 in pairs(IslandShipAttr.ATTRS) do
+		if arg0_70:GetExtraAttrLimit(iter1_70) > arg0_70:GetExtraAttrValue(iter1_70) then
 			return true
 		end
 	end
@@ -647,37 +613,37 @@ function var0_0.ExistPotency(arg0_71)
 	return false
 end
 
-function var0_0.AddExtraAttr(arg0_72, arg1_72, arg2_72)
-	local var0_72 = arg0_72:GetExtraAttrLimit(arg1_72)
-	local var1_72 = arg0_72:GetExtraAttrValue(arg1_72) + arg2_72
+function var0_0.AddExtraAttr(arg0_71, arg1_71, arg2_71)
+	local var0_71 = arg0_71:GetExtraAttrLimit(arg1_71)
+	local var1_71 = arg0_71:GetExtraAttrValue(arg1_71) + arg2_71
 
-	arg0_72.extraAttrs[arg1_72] = math.min(var1_72, var0_72)
+	arg0_71.extraAttrs[arg1_71] = math.min(var1_71, var0_71)
 
-	arg0_72:InitAttrs()
+	arg0_71:InitAttrs()
 end
 
-function var0_0.GetUpgradeExtraAttrConsume(arg0_73, arg1_73)
-	local var0_73 = table.indexof(IslandShipAttr.ATTRS, arg1_73)
+function var0_0.GetUpgradeExtraAttrConsume(arg0_72, arg1_72)
+	local var0_72 = table.indexof(IslandShipAttr.ATTRS, arg1_72)
 
-	if var0_73 <= 0 then
+	if var0_72 <= 0 then
 		return {}
 	end
 
-	local var1_73 = arg0_73:getConfig("att_item")
-	local var2_73 = {}
+	local var1_72 = arg0_72:getConfig("att_item")
+	local var2_72 = {}
 
-	for iter0_73, iter1_73 in ipairs(var1_73[var0_73] or {}) do
-		table.insert(var2_73, {
+	for iter0_72, iter1_72 in ipairs(var1_72[var0_72] or {}) do
+		table.insert(var2_72, {
 			count = 1,
 			type = DROP_TYPE_ISLAND_ITEM,
-			id = iter1_73
+			id = iter1_72
 		})
 	end
 
-	return var2_73
+	return var2_72
 end
 
-function var0_0.GetExtraAttrLimitUnlockConsume(arg0_74)
+function var0_0.GetExtraAttrLimitUnlockConsume(arg0_73)
 	return {
 		{
 			id = 100000,
@@ -687,113 +653,113 @@ function var0_0.GetExtraAttrLimitUnlockConsume(arg0_74)
 	}
 end
 
-function var0_0.InitSkill(arg0_75)
-	if arg0_75:getConfig("skill_unlock") <= arg0_75:GetBreakLevel() then
-		arg0_75.skill:Unlock()
+function var0_0.InitSkill(arg0_74)
+	if arg0_74:getConfig("skill_unlock") <= arg0_74:GetBreakLevel() then
+		arg0_74.skill:Unlock()
 	end
 end
 
-function var0_0.GetSkillUnlockLevel(arg0_76)
-	return arg0_76:getConfig("skill_unlock")
+function var0_0.GetSkillUnlockLevel(arg0_75)
+	return arg0_75:getConfig("skill_unlock")
 end
 
-function var0_0.GetSkill(arg0_77)
-	return arg0_77.skill
+function var0_0.GetSkill(arg0_76)
+	return arg0_76.skill
 end
 
-function var0_0.CanUpgradeSkill(arg0_78)
-	if not arg0_78.skill:IsUnlock() then
+function var0_0.CanUpgradeSkill(arg0_77)
+	if not arg0_77.skill:IsUnlock() then
 		return false
 	end
 
-	if arg0_78.skill:IsMaxLevel() then
+	if arg0_77.skill:IsMaxLevel() then
 		return false
 	end
 
-	local var0_78 = arg0_78.skill:GetUpgradeMaterial()
-	local var1_78 = getProxy(IslandProxy):GetIsland():GetInventoryAgency()
+	local var0_77 = arg0_77.skill:GetUpgradeMaterial()
+	local var1_77 = getProxy(IslandProxy):GetIsland():GetInventoryAgency()
 
-	return _.all(var0_78, function(arg0_79)
-		return var1_78:GetOwnCount(arg0_79.id) >= arg0_79.count
+	return _.all(var0_77, function(arg0_78)
+		return var1_77:GetOwnCount(arg0_78.id) >= arg0_78.count
 	end)
 end
 
-function var0_0.HasGreetingSkill(arg0_80)
-	local var0_80 = arg0_80:GetSkill()
+function var0_0.HasGreetingSkill(arg0_79)
+	local var0_79 = arg0_79:GetSkill()
 
-	return var0_80 and var0_80:IsUnlock() and var0_80:IsGreetingType()
+	return var0_79 and var0_79:IsUnlock() and var0_79:IsGreetingType()
 end
 
-function var0_0.ApplySkill(arg0_81, arg1_81)
-	arg0_81:GetSkill():Apply(arg0_81, arg1_81)
+function var0_0.ApplySkill(arg0_80, arg1_80)
+	arg0_80:GetSkill():Apply(arg0_80, arg1_80)
 end
 
-function var0_0.GetVaildStatusByGroup(arg0_82, arg1_82)
-	return _.select(arg0_82.status, function(arg0_83)
-		return not arg0_83:IsExpiration() and arg0_83:GetGroup() == arg1_82
+function var0_0.GetVaildStatusByGroup(arg0_81, arg1_81)
+	return _.select(arg0_81.status, function(arg0_82)
+		return not arg0_82:IsExpiration() and arg0_82:GetGroup() == arg1_81
 	end)
 end
 
-function var0_0.GetVaildStatus(arg0_84)
-	return _.select(arg0_84.status, function(arg0_85)
-		return not arg0_85:IsExpiration()
+function var0_0.GetVaildStatus(arg0_83)
+	return _.select(arg0_83.status, function(arg0_84)
+		return not arg0_84:IsExpiration()
 	end)
 end
 
-function var0_0.GetVaildStatusByType(arg0_86, arg1_86)
-	return _.select(arg0_86.status, function(arg0_87)
-		return not arg0_87:IsExpiration() and arg0_87:GetBuffType() == arg1_86
+function var0_0.GetVaildStatusByType(arg0_85, arg1_85)
+	return _.select(arg0_85.status, function(arg0_86)
+		return not arg0_86:IsExpiration() and arg0_86:GetBuffType() == arg1_85
 	end)
 end
 
-function var0_0.GetDisplayStatus(arg0_88)
-	return _.select(arg0_88.status, function(arg0_89)
-		return not arg0_89:IsExpiration() and arg0_89:CanDisplay()
+function var0_0.GetDisplayStatus(arg0_87)
+	return _.select(arg0_87.status, function(arg0_88)
+		return not arg0_88:IsExpiration() and arg0_88:CanDisplay()
 	end)
 end
 
-function var0_0.GetFavoriteGift(arg0_90)
-	return arg0_90:getConfig("gift_id")
+function var0_0.GetFavoriteGift(arg0_89)
+	return arg0_89:getConfig("gift_id")
 end
 
-function var0_0.IsFavoriteGift(arg0_91, arg1_91)
-	local var0_91 = arg0_91:GetFavoriteGift()
+function var0_0.IsFavoriteGift(arg0_90, arg1_90)
+	local var0_90 = arg0_90:GetFavoriteGift()
 
-	return _.any(var0_91, function(arg0_92)
-		return arg0_92 == arg1_91
+	return _.any(var0_90, function(arg0_91)
+		return arg0_91 == arg1_90
 	end)
 end
 
-function var0_0.AddStatus(arg0_93, arg1_93)
-	local var0_93 = _.detect(arg0_93.status, function(arg0_94)
-		return arg0_94.id == arg1_93.id
+function var0_0.AddStatus(arg0_92, arg1_92)
+	local var0_92 = _.detect(arg0_92.status, function(arg0_93)
+		return arg0_93.id == arg1_92.id
 	end)
 
-	if var0_93 then
-		table.removebyvalue(arg0_93.status, var0_93)
+	if var0_92 then
+		table.removebyvalue(arg0_92.status, var0_92)
 	end
 
-	local var1_93 = arg0_93:GetVaildStatus()
-	local var2_93 = arg1_93:GetDuelTypeList()
-	local var3_93 = _.detect(var1_93, function(arg0_95)
-		return table.contains(var2_93, arg0_95:GetGroup())
+	local var1_92 = arg0_92:GetVaildStatus()
+	local var2_92 = arg1_92:GetDuelTypeList()
+	local var3_92 = _.detect(var1_92, function(arg0_94)
+		return table.contains(var2_92, arg0_94:GetGroup())
 	end)
 
-	if var3_93 then
-		table.removebyvalue(arg0_93.status, var3_93)
+	if var3_92 then
+		table.removebyvalue(arg0_92.status, var3_92)
 	end
 
-	local var4_93 = arg1_93:GetDuelIdList()
-	local var5_93 = _.detect(var1_93, function(arg0_96)
-		return table.contains(var4_93, arg0_96.id)
+	local var4_92 = arg1_92:GetDuelIdList()
+	local var5_92 = _.detect(var1_92, function(arg0_95)
+		return table.contains(var4_92, arg0_95.id)
 	end)
 
-	if var5_93 then
-		table.removebyvalue(arg0_93.status, var5_93)
+	if var5_92 then
+		table.removebyvalue(arg0_92.status, var5_92)
 	end
 
-	pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildIslandShipAddBuff(arg0_93.id, arg1_93.id))
-	table.insert(arg0_93.status, arg1_93)
+	pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildIslandShipAddBuff(arg0_92.id, arg1_92.id))
+	table.insert(arg0_92.status, arg1_92)
 end
 
 return var0_0

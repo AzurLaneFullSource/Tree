@@ -190,7 +190,15 @@ pg.activity_medal_template.all = {
 	5115404,
 	5115405,
 	5115406,
-	5115407
+	5115407,
+	5161101,
+	5161102,
+	5161103,
+	5161104,
+	5161105,
+	5161106,
+	5161107,
+	5161108
 }
 pg.activity_medal_template.get_id_list_by_group = {
 	[5711] = {
@@ -428,6 +436,16 @@ pg.activity_medal_template.get_id_list_by_group = {
 		5115405,
 		5115406,
 		5115407
+	},
+	[51611] = {
+		5161101,
+		5161102,
+		5161103,
+		5161104,
+		5161105,
+		5161106,
+		5161107,
+		5161108
 	}
 }
 pg.base = pg.base or {}
@@ -2691,5 +2709,101 @@ end)()
 		activity_medal_name = "Sticker: Investigation Funds",
 		id = 5115407,
 		activity_medal_desc = "Feel free to use it as much as you want! Don't worry about the credit limit!"
+	}
+	pg.base.activity_medal_template[5161101] = {
+		prefab_node = "1",
+		next_medal = 0,
+		item = 66114,
+		remake_task_id = 0,
+		group = 51611,
+		task_id = 25739,
+		medal_asset = "ActivityMedal/5161101",
+		activity_medal_name = "Sticker: Fogbound Observatory",
+		id = 5161101,
+		activity_medal_desc = "\"Seek not the answers of days gone by in the reflections of the stars.\""
+	}
+	pg.base.activity_medal_template[5161102] = {
+		prefab_node = "2",
+		next_medal = 0,
+		item = 66115,
+		remake_task_id = 0,
+		group = 51611,
+		task_id = 25740,
+		medal_asset = "ActivityMedal/5161102",
+		activity_medal_name = "Sticker: Startrace Beacon",
+		id = 5161102,
+		activity_medal_desc = "Light the beacons. Seek the observatory."
+	}
+	pg.base.activity_medal_template[5161103] = {
+		prefab_node = "3",
+		next_medal = 0,
+		item = 66116,
+		remake_task_id = 0,
+		group = 51611,
+		task_id = 25741,
+		medal_asset = "ActivityMedal/5161103",
+		activity_medal_name = "Sticker: Lodestar's Staff",
+		id = 5161103,
+		activity_medal_desc = "Have you glimpsed the shimmering path hidden amidst the stars?"
+	}
+	pg.base.activity_medal_template[5161104] = {
+		prefab_node = "4",
+		next_medal = 0,
+		item = 66117,
+		remake_task_id = 0,
+		group = 51611,
+		task_id = 25742,
+		medal_asset = "ActivityMedal/5161104",
+		activity_medal_name = "Sticker: Limited-Edition Crystal Ball",
+		id = 5161104,
+		activity_medal_desc = "Must fortune-tellers also suffer the slings and arrows of outrageous FOMO?"
+	}
+	pg.base.activity_medal_template[5161105] = {
+		prefab_node = "5",
+		next_medal = 0,
+		item = 66118,
+		remake_task_id = 0,
+		group = 51611,
+		task_id = 25743,
+		medal_asset = "ActivityMedal/5161105",
+		activity_medal_name = "Sticker: Serpent of the Deep",
+		id = 5161105,
+		activity_medal_desc = "Whose hiss is this?"
+	}
+	pg.base.activity_medal_template[5161106] = {
+		prefab_node = "6",
+		next_medal = 0,
+		item = 66119,
+		remake_task_id = 0,
+		group = 51611,
+		task_id = 25744,
+		medal_asset = "ActivityMedal/5161106",
+		activity_medal_name = "Sticker: The Greatscythe",
+		id = 5161106,
+		activity_medal_desc = "Got a problem? Take it up with the scythe."
+	}
+	pg.base.activity_medal_template[5161107] = {
+		prefab_node = "7",
+		next_medal = 0,
+		item = 66120,
+		remake_task_id = 0,
+		group = 51611,
+		task_id = 25745,
+		medal_asset = "ActivityMedal/5161107",
+		activity_medal_name = "Sticker: Broken Spear",
+		id = 5161107,
+		activity_medal_desc = "Once the broken spear is forged anew–"
+	}
+	pg.base.activity_medal_template[5161108] = {
+		prefab_node = "8",
+		next_medal = 0,
+		item = 66121,
+		remake_task_id = 0,
+		group = 51611,
+		task_id = 25746,
+		medal_asset = "ActivityMedal/5161108",
+		activity_medal_name = "Sticker: Stellar Inversion",
+		id = 5161108,
+		activity_medal_desc = "\"The heavens have been reversed; the stars' arcs have shifted.\""
 	}
 end)()

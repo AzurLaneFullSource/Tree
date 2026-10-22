@@ -789,7 +789,7 @@ local function var7_0(arg0_57, arg1_57, arg2_57)
 		end
 	end
 
-	return var10_57
+	return var10_57 + 10
 end
 
 local function var8_0(arg0_58, arg1_58, arg2_58)
@@ -844,7 +844,7 @@ local function var8_0(arg0_58, arg1_58, arg2_58)
 		end
 	end
 
-	return var6_58
+	return var6_58 + 10
 end
 
 function var0_0.UpdateSpinePainting(arg0_59, arg1_59, arg2_59, arg3_59, arg4_59)

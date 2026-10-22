@@ -1366,7 +1366,7 @@ function var0_0.UpdateEffectInterLayer(arg0_110, arg1_110, arg2_110)
 	local var5_110 = GetOrAddComponent(arg0_110.frontTr, typeof(Canvas))
 
 	var5_110.overrideSorting = true
-	var5_110.sortingOrder = var3_110 + 1
+	var5_110.sortingOrder = var3_110 + 10
 	arg0_110.activeInterLayer = arg1_110
 
 	GetOrAddComponent(arg0_110.frontTr, typeof(GraphicRaycaster))

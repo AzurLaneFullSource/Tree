@@ -106,6 +106,7 @@ function var3_0.Cast(arg0_4, arg1_4, arg2_4)
 	end
 
 	if arg0_4._tempData.action then
+		arg1_4:SendAttackTrigger()
 		arg1_4:StateChange(var0_0.Battle.UnitState.STATE_SKILL_START)
 	end
 end

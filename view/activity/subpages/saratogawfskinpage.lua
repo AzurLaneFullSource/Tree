@@ -8,7 +8,7 @@ function var0_0.OnFirstFlush(arg0_1)
 			targets = arg0_1.ptData.targets,
 			level = arg0_1.ptData.level,
 			count = arg0_1.ptData.count,
-			resDrop = Drop.New(arg0_1.ptData:GetRes())
+			resDrop = arg0_1.ptData:GetRes()
 		})
 	end, SFX_PANEL)
 	onButton(arg0_1, arg0_1.battleBtn, function()

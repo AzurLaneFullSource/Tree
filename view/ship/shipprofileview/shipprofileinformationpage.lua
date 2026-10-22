@@ -203,7 +203,7 @@ function var0_0.UpdateLanguage(arg0_20)
 
 	setActive(arg0_20.voiceBtn, var5_20)
 
-	if var5_20 and ShipGroup.LockCv1(var0_20) then
+	if var5_20 and ShipSkin.LockCv1(arg0_20.skin.id) then
 		arg0_20:UpdateLang2()
 		setActive(arg0_20.voiceBtn, false)
 	end

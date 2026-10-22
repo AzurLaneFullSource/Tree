@@ -40,7 +40,7 @@ function var0_0.Show(arg0_7)
 	local var2_7 = arg0_7.ptData.level
 	local var3_7 = arg0_7.ptData.count
 
-	arg0_7:updateResIcon(Drop.New(arg0_7.ptData:GetRes()), arg0_7.ptData.type)
+	arg0_7:updateResIcon(arg0_7.ptData:GetRes(), arg0_7.ptData.type)
 	arg0_7:UpdateList(var0_7, var1_7, var2_7)
 
 	arg0_7.totalTxt.text = var3_7

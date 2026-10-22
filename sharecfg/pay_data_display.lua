@@ -169,6 +169,7 @@ pg.pay_data_display.all = {
 	168,
 	169,
 	170,
+	176,
 	1000,
 	1001,
 	1002,
@@ -287,6 +288,13 @@ pg.pay_data_display.all = {
 	5015,
 	5016,
 	5017,
+	5021,
+	5022,
+	5023,
+	5024,
+	5025,
+	5026,
+	5027,
 	70001,
 	70002
 }
@@ -461,6 +469,7 @@ pg.pay_data_display.get_id_list_by_extra_service = {
 		168,
 		169,
 		170,
+		176,
 		2001,
 		2002,
 		2003,
@@ -546,7 +555,14 @@ pg.pay_data_display.get_id_list_by_extra_service = {
 		5014,
 		5015,
 		5016,
-		5017
+		5017,
+		5021,
+		5022,
+		5023,
+		5024,
+		5025,
+		5026,
+		5027
 	},
 	[4] = {
 		1000,
@@ -20965,6 +20981,141 @@ end)()
 			}
 		}
 	}
+	pg.base.pay_data_display[176] = {
+		limit_group = 0,
+		name = "Angelic Wings Lucky Box",
+		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
+		type = 1,
+		second_text = "Many Rewards",
+		id = 176,
+		subject = "Anniv Rerun Outfits Lucky Box",
+		first_text = "Random Skin",
+		package_sort_id = 0,
+		tip = "",
+		money = 2999,
+		tip_open = 0,
+		tag = 2,
+		cash_show = 0,
+		gem = 0,
+		descrip = "Contains a random character outfit and a large amount of supplies ",
+		name_display = "Angelic Wings Lucky Box",
+		limit_type = 2,
+		type_order = 2,
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "fudai106",
+		extra_service = 3,
+		skin_inquire_relation = 86428,
+		limit_arg = 1,
+		id_str = "com.yostaren.azurlane.luckybag97",
+		first_pay_double = 0,
+		extra_gem = 0,
+		show_group = "",
+		package_tag_open = 0,
+		airijp_id = "com.yostaren.azurlane.luckybag97",
+		extra_service_item = {
+			{
+				2,
+				86428,
+				1
+			},
+			{
+				1,
+				14,
+				2026
+			},
+			{
+				2,
+				42086,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					10,
+					22
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					11,
+					4
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				42086,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81461,
+				1
+			}
+		},
+		first_icon = {
+			{
+				2,
+				86428,
+				1
+			},
+			{
+				1,
+				14,
+				2026
+			}
+		}
+	}
 	pg.base.pay_data_display[1000] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass",
@@ -23860,6 +24011,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.pay_data_display[2003] = {
 		limit_group = 1,
 		name = "PR Voucher - Series 1",
@@ -23924,8 +24077,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.pay_data_display[2004] = {
 		limit_group = 1,
 		name = "PR Blueprint Pack - Series 1",
@@ -31254,6 +31405,644 @@ end)()
 			{
 				2,
 				81416,
+				1
+			}
+		}
+	}
+	pg.base.pay_data_display[5021] = {
+		limit_group = 0,
+		name = "Tempesta Building Pack (Day 1)",
+		descrip_extra = "*Purchased items will be sent to your Mailbox.",
+		type = 0,
+		second_text = "",
+		type_order = 5,
+		subject = "Tempesta Building Pack (Day 1)",
+		package_sort_id = 0,
+		tip = "",
+		tip_open = 0,
+		money = 99,
+		cash_show = 0,
+		descrip = "Contains Gems x60 and Special General Blueprint - Series 8 x2.",
+		name_display = "Tempesta Building Pack (Day 1)",
+		gem = 0,
+		limit_arg = 1,
+		limit_type = 2,
+		package_tag = "",
+		picture = "fengfanv4_day1",
+		id_str = "com.yostaren.azurlane.pack52",
+		extra_gem = 0,
+		id = 5021,
+		airijp_id = "com.yostaren.azurlane.pack52",
+		first_icon = "",
+		first_text = "",
+		tag = 2,
+		akashi_pick = 1,
+		sub_display = "",
+		skin_inquire_relation = 0,
+		first_pay_double = 0,
+		extra_service = 3,
+		show_group = "",
+		package_tag_open = 0,
+		extra_service_item = {
+			{
+				2,
+				42076,
+				2
+			},
+			{
+				1,
+				14,
+				60
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					10,
+					22
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					11,
+					4
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				42076,
+				2
+			},
+			{
+				1,
+				14,
+				60
+			}
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81446,
+				1
+			}
+		}
+	}
+	pg.base.pay_data_display[5022] = {
+		limit_group = 0,
+		name = "Tempesta Building Pack (Day 2)",
+		descrip_extra = "*Purchased items will be sent to your Mailbox.",
+		type = 0,
+		second_text = "",
+		type_order = 5,
+		subject = "Tempesta Building Pack (Day 2)",
+		package_sort_id = 0,
+		tip = "",
+		tip_open = 0,
+		money = 99,
+		cash_show = 0,
+		descrip = "Contains Gems x200.",
+		name_display = "Tempesta Building Pack (Day 2)",
+		gem = 0,
+		limit_arg = 1,
+		limit_type = 2,
+		package_tag = "",
+		picture = "fengfanv4_day2",
+		id_str = "com.yostaren.azurlane.pack53",
+		extra_gem = 0,
+		id = 5022,
+		airijp_id = "com.yostaren.azurlane.pack53",
+		first_icon = "",
+		first_text = "",
+		tag = 2,
+		akashi_pick = 1,
+		sub_display = "",
+		skin_inquire_relation = 0,
+		first_pay_double = 0,
+		extra_service = 3,
+		show_group = "",
+		package_tag_open = 0,
+		extra_service_item = {
+			{
+				1,
+				14,
+				200
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					10,
+					23
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					11,
+					4
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				1,
+				14,
+				200
+			}
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81447,
+				1
+			}
+		}
+	}
+	pg.base.pay_data_display[5023] = {
+		limit_group = 0,
+		name = "Tempesta Building Pack (Day 3)",
+		descrip_extra = "*Purchased items will be sent to your Mailbox.",
+		type = 0,
+		second_text = "",
+		type_order = 5,
+		subject = "Tempesta Building Pack (Day 3)",
+		package_sort_id = 0,
+		tip = "",
+		tip_open = 0,
+		money = 99,
+		cash_show = 0,
+		descrip = "Contains Universal T4 Parts x5 and Cognitive Chips x200.",
+		name_display = "Tempesta Building Pack (Day 3)",
+		gem = 0,
+		limit_arg = 1,
+		limit_type = 2,
+		package_tag = "",
+		picture = "fengfanv4_day3",
+		id_str = "com.yostaren.azurlane.pack54",
+		extra_gem = 0,
+		id = 5023,
+		airijp_id = "com.yostaren.azurlane.pack54",
+		first_icon = "",
+		first_text = "",
+		tag = 2,
+		akashi_pick = 1,
+		sub_display = "",
+		skin_inquire_relation = 0,
+		first_pay_double = 0,
+		extra_service = 3,
+		show_group = "",
+		package_tag_open = 0,
+		extra_service_item = {
+			{
+				2,
+				30114,
+				5
+			},
+			{
+				2,
+				15008,
+				200
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					10,
+					24
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					11,
+					4
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				30114,
+				5
+			},
+			{
+				2,
+				15008,
+				200
+			}
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81448,
+				1
+			}
+		}
+	}
+	pg.base.pay_data_display[5024] = {
+		limit_group = 0,
+		name = "Tempesta Building Pack (Day 4)",
+		descrip_extra = "*Purchased items will be sent to your Mailbox.",
+		type = 0,
+		second_text = "",
+		type_order = 5,
+		subject = "Tempesta Building Pack (Day 4)",
+		package_sort_id = 0,
+		tip = "",
+		tip_open = 0,
+		money = 99,
+		cash_show = 0,
+		descrip = "Contains Gems x60 and a Prototype Bulin MKII.",
+		name_display = "Tempesta Building Pack (Day 4)",
+		gem = 0,
+		limit_arg = 1,
+		limit_type = 2,
+		package_tag = "",
+		picture = "fengfanv4_day4",
+		id_str = "com.yostaren.azurlane.pack55",
+		extra_gem = 0,
+		id = 5024,
+		airijp_id = "com.yostaren.azurlane.pack55",
+		first_icon = "",
+		first_text = "",
+		tag = 2,
+		akashi_pick = 1,
+		sub_display = "",
+		skin_inquire_relation = 0,
+		first_pay_double = 0,
+		extra_service = 3,
+		show_group = "",
+		package_tag_open = 0,
+		extra_service_item = {
+			{
+				4,
+				100011,
+				1
+			},
+			{
+				1,
+				14,
+				60
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					10,
+					25
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					11,
+					4
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				4,
+				100011,
+				1
+			},
+			{
+				1,
+				14,
+				60
+			}
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81449,
+				1
+			}
+		}
+	}
+	pg.base.pay_data_display[5025] = {
+		limit_group = 0,
+		name = "Tempesta Building Pack (Day 5)",
+		descrip_extra = "*Purchased items will be sent to your Mailbox.",
+		type = 0,
+		second_text = "",
+		type_order = 5,
+		subject = "Tempesta Building Pack (Day 5)",
+		package_sort_id = 0,
+		tip = "",
+		tip_open = 0,
+		money = 99,
+		cash_show = 0,
+		descrip = "Contains T2 EXP Data Pack x60.",
+		name_display = "Tempesta Building Pack (Day 5)",
+		gem = 0,
+		limit_arg = 1,
+		limit_type = 2,
+		package_tag = "",
+		picture = "fengfanv4_day5",
+		id_str = "com.yostaren.azurlane.pack56",
+		extra_gem = 0,
+		id = 5025,
+		airijp_id = "com.yostaren.azurlane.pack56",
+		first_icon = "",
+		first_text = "",
+		tag = 2,
+		akashi_pick = 1,
+		sub_display = "",
+		skin_inquire_relation = 0,
+		first_pay_double = 0,
+		extra_service = 3,
+		show_group = "",
+		package_tag_open = 0,
+		extra_service_item = {
+			{
+				2,
+				16502,
+				60
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					10,
+					26
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					11,
+					4
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				16502,
+				60
+			}
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81450,
+				1
+			}
+		}
+	}
+	pg.base.pay_data_display[5026] = {
+		limit_group = 0,
+		name = "Tempesta Building Pack (Day 6)",
+		descrip_extra = "*Purchased items will be sent to your Mailbox.",
+		type = 0,
+		second_text = "",
+		type_order = 5,
+		subject = "Tempesta Building Pack (Day 6)",
+		package_sort_id = 0,
+		tip = "",
+		tip_open = 0,
+		money = 99,
+		cash_show = 0,
+		descrip = "Contains Wisdom Cube x10 and Quick Finisher x5.",
+		name_display = "Tempesta Building Pack (Day 6)",
+		gem = 0,
+		limit_arg = 1,
+		limit_type = 2,
+		package_tag = "",
+		picture = "fengfanv4_day6",
+		id_str = "com.yostaren.azurlane.pack57",
+		extra_gem = 0,
+		id = 5026,
+		airijp_id = "com.yostaren.azurlane.pack57",
+		first_icon = "",
+		first_text = "",
+		tag = 2,
+		akashi_pick = 1,
+		sub_display = "",
+		skin_inquire_relation = 0,
+		first_pay_double = 0,
+		extra_service = 3,
+		show_group = "",
+		package_tag_open = 0,
+		extra_service_item = {
+			{
+				2,
+				20001,
+				10
+			},
+			{
+				2,
+				15003,
+				5
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					10,
+					27
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					11,
+					4
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				20001,
+				10
+			},
+			{
+				2,
+				15003,
+				5
+			}
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81451,
+				1
+			}
+		}
+	}
+	pg.base.pay_data_display[5027] = {
+		limit_group = 0,
+		name = "Tempesta Building Pack (Day 7)",
+		descrip_extra = "*Purchased items will be sent to your Mailbox.",
+		type = 0,
+		second_text = "",
+		type_order = 5,
+		subject = "Tempesta Building Pack (Day 7)",
+		package_sort_id = 0,
+		tip = "",
+		tip_open = 0,
+		money = 99,
+		cash_show = 0,
+		descrip = "Contains Gems x60 and Special General Blueprint - Series 9 x2.",
+		name_display = "Tempesta Building Pack (Day 7)",
+		gem = 0,
+		limit_arg = 1,
+		limit_type = 2,
+		package_tag = "",
+		picture = "fengfanv4_day7",
+		id_str = "com.yostaren.azurlane.pack58",
+		extra_gem = 0,
+		id = 5027,
+		airijp_id = "com.yostaren.azurlane.pack58",
+		first_icon = "",
+		first_text = "",
+		tag = 2,
+		akashi_pick = 1,
+		sub_display = "",
+		skin_inquire_relation = 0,
+		first_pay_double = 0,
+		extra_service = 3,
+		show_group = "",
+		package_tag_open = 0,
+		extra_service_item = {
+			{
+				2,
+				42086,
+				2
+			},
+			{
+				1,
+				14,
+				60
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					10,
+					28
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					11,
+					4
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				42086,
+				2
+			},
+			{
+				1,
+				14,
+				60
+			}
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81452,
 				1
 			}
 		}

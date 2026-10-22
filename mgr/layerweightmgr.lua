@@ -291,15 +291,17 @@ function var1_0.SetSpecificParent(arg0_18, arg1_18, arg2_18, arg3_18)
 	if arg3_18 then
 		arg0_18.indexDic[arg2_18] = arg0_18.indexDic[arg2_18] or {}
 
-		table.insert(arg0_18.indexDic[arg2_18], 1, arg1_18)
+		table.insert(arg0_18.indexDic[arg2_18], arg1_18)
 	else
+		arg0_18:ChangeOriginSortingOrder(arg1_18, arg2_18)
 		SetParent(arg1_18, arg2_18, false)
 	end
 end
 
 function var1_0.SequentizationUIIndex(arg0_19)
 	for iter0_19, iter1_19 in pairs(arg0_19.indexDic) do
-		for iter2_19, iter3_19 in ipairs(iter1_19) do
+		for iter2_19, iter3_19 in ipairs(underscore.reverse(iter1_19)) do
+			arg0_19:ChangeOriginSortingOrder(iter3_19, iter0_19)
 			SetParent(iter3_19, iter0_19, false)
 
 			if iter3_19:GetSiblingIndex() ~= iter2_19 - 1 then
@@ -339,6 +341,7 @@ function var1_0.CheckRecycleAdaptObj(arg0_21, arg1_21, arg2_21)
 	local var0_21 = arg0_21:GetAdaptObjFromUI(arg1_21)
 
 	if arg2_21 ~= nil then
+		arg0_21:ChangeOriginSortingOrder(arg1_21, arg2_21)
 		SetParent(arg1_21, arg2_21, false)
 	end
 
@@ -368,10 +371,39 @@ function var1_0.GetAdatpObjName(arg0_23, arg1_23)
 	return arg1_23.name .. var1_0.ADAPT_TAG
 end
 
-function var1_0.Log(arg0_24, arg1_24)
+function var1_0.GetOriginSortingOrder(arg0_24, arg1_24)
+	return switch(arg1_24, {
+		[arg0_24.uiOrigin] = function()
+			return 200
+		end,
+		[arg0_24.lvOrigin] = function()
+			return 5000
+		end
+	}, function()
+		return 0
+	end)
+end
+
+function var1_0.ChangeOriginSortingOrder(arg0_28, arg1_28, arg2_28)
+	if IsNil(arg1_28) or arg1_28.parent == arg2_28 then
+		return
+	end
+
+	local var0_28 = 0 - arg0_28:GetOriginSortingOrder(arg1_28.parent)
+
+	if arg2_28 then
+		var0_28 = var0_28 + arg0_28:GetOriginSortingOrder(arg2_28)
+	end
+
+	if var0_28 ~= 0 then
+		WorldConst.ArrayEffectOrder(arg1_28, var0_28)
+	end
+end
+
+function var1_0.Log(arg0_29, arg1_29)
 	if not var1_0.DEBUG then
 		return
 	end
 
-	originalPrint(arg1_24)
+	originalPrint(arg1_29)
 end

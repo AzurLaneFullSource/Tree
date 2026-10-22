@@ -38,7 +38,7 @@ function var0_0.UpdateView(arg0_6, arg1_6)
 	local var1_6 = arg1_6.targets
 	local var2_6 = arg1_6.level
 	local var3_6 = arg1_6.count
-	local var4_6 = Drop.New(arg1_6:GetRes()):getName()
+	local var4_6 = arg1_6:GetRes():getName()
 
 	if arg1_6.type == 2 then
 		arg0_6.resTitle, arg0_6.cntTitle = i18n("pt_count", i18n("pt_cosume", var4_6)), i18n("pt_total_count", i18n("pt_cosume", var4_6))

@@ -7,6 +7,130 @@ var0_0.word_legal_template_16 = {}
 local var1_0 = var0_0.word_legal_template_16
 
 function temp()
+	var1_0.久 = {
+		远 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.猫 = {
+		音 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.绊 = {
+		爱 = {
+			this = true,
+			· = {
+				E = {
+					l = {
+						e = {
+							g = {
+								a = {
+									n = {
+										t = {
+											this = true
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				A = {
+					n = {
+						n = {
+							i = {
+								v = {
+									e = {
+										r = {
+											s = {
+												a = {
+													r = {
+														y = {
+															this = true
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				S = {
+					u = {
+						p = {
+							e = {
+								r = {
+									G = {
+										a = {
+											m = {
+												e = {
+													r = {
+														this = true
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.白 = {
+		上 = {
+			吹 = {
+				雪 = {
+					this = true
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.时 = {
+		乃 = {
+			空 = {
+				this = true
+			}
+		},
+		崎 = {
+			狂 = {
+				三 = {
+					this = true
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var1_0.湊 = {
 		阿 = {
 			库 = {
@@ -346,6 +470,16 @@ function temp()
 					}
 				}
 			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.A = {
+		["2"] = {
+			this = true
 		}
 	}
 end

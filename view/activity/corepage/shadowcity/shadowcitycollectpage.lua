@@ -67,7 +67,9 @@ function var0_0.OnUpdateItem(arg0_4, arg1_4, arg2_4)
 
 	arg0_4:RefreshCountText(var0_4, arg2_4)
 
-	GetOrAddComponent(arg2_4:Find("owner"), typeof(CanvasGroup)).alpha = var0_4.count == var0_4.config.count and 0.5 or 1
+	local var4_4 = var0_4.count > 0 and var0_4.count >= var0_4.config.count
+
+	GetOrAddComponent(arg2_4:Find("owner"), typeof(CanvasGroup)).alpha = var4_4 and 0.5 or 1
 
 	setActive(arg2_4:Find("new"), var0_4.config.is_new == "1")
 end

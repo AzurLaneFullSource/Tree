@@ -4291,6 +4291,38 @@ pg.memory_template.all = {
 	5435,
 	5436,
 	5437,
+	5561,
+	5562,
+	5563,
+	5564,
+	5565,
+	5566,
+	5567,
+	5568,
+	5569,
+	5570,
+	5571,
+	5572,
+	5573,
+	5574,
+	5575,
+	5576,
+	5577,
+	5578,
+	5579,
+	5580,
+	5581,
+	5582,
+	5583,
+	5584,
+	5585,
+	5586,
+	5591,
+	5592,
+	5593,
+	5594,
+	5595,
+	5596,
 	5501,
 	5502,
 	5503,
@@ -81875,6 +81907,584 @@ end)()
 			"DUSHIQIUZHIDAZUOZHAN7"
 		}
 	}
+	pg.base.memory_template[5561] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "JUFENGYUWUAIHUILANG1",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "Interstellar Guidance",
+		condition = "Start EPS-1.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5561,
+		icon = "memory_jufengyuwuaihuilang1",
+		is_open = 0,
+		unlock_pre = {
+			"JUFENGYUWUAIHUILANG1"
+		}
+	}
+	pg.base.memory_template[5562] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "JUFENGYUWUAIHUILANG2",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "The Day the Stars Inverted",
+		condition = "Start EP1-1.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5562,
+		icon = "memory_jufengyuwuaihuilang1",
+		is_open = 0,
+		unlock_pre = {
+			"JUFENGYUWUAIHUILANG2"
+		}
+	}
+	pg.base.memory_template[5563] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "JUFENGYUWUAIHUILANG3",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "On a Day Worth Celebrating",
+		condition = "Start EP1-2.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5563,
+		icon = "memory_jufengyuwuaihuilang1",
+		is_open = 0,
+		unlock_pre = {
+			"JUFENGYUWUAIHUILANG3"
+		}
+	}
+	pg.base.memory_template[5564] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "JUFENGYUWUAIHUILANG4",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "In My Pajamas in Another World",
+		condition = "Start EP1-3.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5564,
+		icon = "memory_jufengyuwuaihuilang1",
+		is_open = 0,
+		unlock_pre = {
+			"JUFENGYUWUAIHUILANG4"
+		}
+	}
+	pg.base.memory_template[5565] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "JUFENGYUWUAIHUILANG5",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "A Lady and Her Escort",
+		condition = "Start EP1-4.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5565,
+		icon = "memory_jufengyuwuaihuilang1",
+		is_open = 0,
+		unlock_pre = {
+			"JUFENGYUWUAIHUILANG5"
+		}
+	}
+	pg.base.memory_template[5566] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "2078001",
+		type = 2,
+		mask = "bg/bg_memory",
+		title = "The Lost Fortune Teller",
+		condition = "Start EP2-1.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5566,
+		icon = "memory_jufengyuwuaihuilang1",
+		is_open = 0,
+		unlock_pre = {
+			"2078001"
+		}
+	}
+	pg.base.memory_template[5567] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "JUFENGYUWUAIHUILANG7",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "Startrace Beacon",
+		condition = "Start EP2-2.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5567,
+		icon = "memory_jufengyuwuaihuilang1",
+		is_open = 0,
+		unlock_pre = {
+			"JUFENGYUWUAIHUILANG7"
+		}
+	}
+	pg.base.memory_template[5568] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "JUFENGYUWUAIHUILANG8",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "Reflections of the Past",
+		condition = "Start EP2-3.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5568,
+		icon = "memory_jufengyuwuaihuilang1",
+		is_open = 0,
+		unlock_pre = {
+			"JUFENGYUWUAIHUILANG8"
+		}
+	}
+	pg.base.memory_template[5569] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "JUFENGYUWUAIHUILANG9",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "Lost Anne",
+		condition = "Start EP2-4.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5569,
+		icon = "memory_jufengyuwuaihuilang1",
+		is_open = 0,
+		unlock_pre = {
+			"JUFENGYUWUAIHUILANG9"
+		}
+	}
+	pg.base.memory_template[5570] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "JUFENGYUWUAIHUILANG10",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "Reflections Resurface",
+		condition = "Start EP3-1.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5570,
+		icon = "memory_jufengyuwuaihuilang1",
+		is_open = 0,
+		unlock_pre = {
+			"JUFENGYUWUAIHUILANG10"
+		}
+	}
+	pg.base.memory_template[5571] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "JUFENGYUWUAIHUILANG11",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "A Warning From the Observatory",
+		condition = "Start EP3-2.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5571,
+		icon = "memory_jufengyuwuaihuilang1",
+		is_open = 0,
+		unlock_pre = {
+			"JUFENGYUWUAIHUILANG11"
+		}
+	}
+	pg.base.memory_template[5572] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "2078002",
+		type = 2,
+		mask = "bg/bg_memory",
+		title = "The Sea Serpent",
+		condition = "Start EP3-3.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5572,
+		icon = "memory_jufengyuwuaihuilang1",
+		is_open = 0,
+		unlock_pre = {
+			"2078002"
+		}
+	}
+	pg.base.memory_template[5573] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "JUFENGYUWUAIHUILANG13",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "Detours",
+		condition = "Start EP4-1.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5573,
+		icon = "memory_jufengyuwuaihuilang1",
+		is_open = 0,
+		unlock_pre = {
+			"JUFENGYUWUAIHUILANG13"
+		}
+	}
+end)()
+;(function()
+	pg.base.memory_template[5574] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "JUFENGYUWUAIHUILANG14",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "What to Eat?",
+		condition = "Start EP4-2.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5574,
+		icon = "memory_jufengyuwuaihuilang1",
+		is_open = 0,
+		unlock_pre = {
+			"JUFENGYUWUAIHUILANG14"
+		}
+	}
+	pg.base.memory_template[5575] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "JUFENGYUWUAIHUILANG15",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "Looking in Reverse",
+		condition = "Start EP4-3.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5575,
+		icon = "memory_jufengyuwuaihuilang1",
+		is_open = 0,
+		unlock_pre = {
+			"JUFENGYUWUAIHUILANG15"
+		}
+	}
+	pg.base.memory_template[5576] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "2078003",
+		type = 2,
+		mask = "bg/bg_memory",
+		title = "Star-Sinking Abyss",
+		condition = "Start EP4-4.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5576,
+		icon = "memory_jufengyuwuaihuilang1",
+		is_open = 0,
+		unlock_pre = {
+			"2078003"
+		}
+	}
+	pg.base.memory_template[5577] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "JUFENGYUWUAIHUILANG17",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "Another Way",
+		condition = "Start EP4-5.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5577,
+		icon = "memory_jufengyuwuaihuilang1",
+		is_open = 0,
+		unlock_pre = {
+			"JUFENGYUWUAIHUILANG17"
+		}
+	}
+	pg.base.memory_template[5578] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "JUFENGYUWUAIHUILANG18",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "The Guide's Dream",
+		condition = "Start EP5-1.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5578,
+		icon = "memory_jufengyuwuaihuilang1",
+		is_open = 0,
+		unlock_pre = {
+			"JUFENGYUWUAIHUILANG18"
+		}
+	}
+	pg.base.memory_template[5579] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "2078004",
+		type = 2,
+		mask = "bg/bg_memory",
+		title = "Confrontation",
+		condition = "Start EP5-2.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5579,
+		icon = "memory_jufengyuwuaihuilang1",
+		is_open = 0,
+		unlock_pre = {
+			"2078004"
+		}
+	}
+	pg.base.memory_template[5580] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "JUFENGYUWUAIHUILANG20",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "The Church's Plans",
+		condition = "Start EP6-1.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5580,
+		icon = "memory_jufengyuwuaihuilang1",
+		is_open = 0,
+		unlock_pre = {
+			"JUFENGYUWUAIHUILANG20"
+		}
+	}
+	pg.base.memory_template[5581] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "2078005",
+		type = 2,
+		mask = "bg/bg_memory",
+		title = "The Final Obstacle",
+		condition = "Start EP6-2.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5581,
+		icon = "memory_jufengyuwuaihuilang1",
+		is_open = 0,
+		unlock_pre = {
+			"2078005"
+		}
+	}
+	pg.base.memory_template[5582] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "JUFENGYUWUAIHUILANG22",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "A Happy Ending",
+		condition = "Start EP6-3.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5582,
+		icon = "memory_jufengyuwuaihuilang1",
+		is_open = 0,
+		unlock_pre = {
+			"JUFENGYUWUAIHUILANG22"
+		}
+	}
+	pg.base.memory_template[5583] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "JUFENGYUWUAIHUILANG23",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "For the World and Its Future",
+		condition = "Start EX-1.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5583,
+		icon = "memory_jufengyuwuaihuilang2",
+		is_open = 0,
+		unlock_pre = {
+			"JUFENGYUWUAIHUILANG23"
+		}
+	}
+	pg.base.memory_template[5584] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "JUFENGYUWUAIHUILANG24",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "Two Alike",
+		condition = "Start EX-2.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5584,
+		icon = "memory_jufengyuwuaihuilang2",
+		is_open = 0,
+		unlock_pre = {
+			"JUFENGYUWUAIHUILANG24"
+		}
+	}
+	pg.base.memory_template[5585] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "JUFENGYUWUAIHUILANG25",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "Merkuriy's Promise",
+		condition = "Start EX-3.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5585,
+		icon = "memory_jufengyuwuaihuilang2",
+		is_open = 0,
+		unlock_pre = {
+			"JUFENGYUWUAIHUILANG25"
+		}
+	}
+	pg.base.memory_template[5586] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "JUFENGYUWUAIHUILANG26",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "One Sixth of the Light",
+		condition = "Start EX-4.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5586,
+		icon = "memory_jufengyuwuaihuilang2",
+		is_open = 0,
+		unlock_pre = {
+			"JUFENGYUWUAIHUILANG26"
+		}
+	}
+	pg.base.memory_template[5591] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "GUANGYUANDEYAOYUE1",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "Envoy Angel of Love Merkuriy",
+		condition = "Read the \"Heaven or Hell: The Beckoning\" side story.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5591,
+		icon = "memory_guangyuandeyaoyue",
+		is_open = 0,
+		unlock_pre = {
+			"GUANGYUANDEYAOYUE1"
+		}
+	}
+	pg.base.memory_template[5592] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "GUANGYUANDEYAOYUE2",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "The Hunter Becomes the Hunted",
+		condition = "Read the \"Heaven or Hell: The Beckoning\" side story.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5592,
+		icon = "memory_guangyuandeyaoyue",
+		is_open = 0,
+		unlock_pre = {
+			"GUANGYUANDEYAOYUE2"
+		}
+	}
+	pg.base.memory_template[5593] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "GUANGYUANDEYAOYUE3",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "Femme Fatale of the Bewitching Veil",
+		condition = "Read the \"Heaven or Hell: The Beckoning\" side story.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5593,
+		icon = "memory_guangyuandeyaoyue",
+		is_open = 0,
+		unlock_pre = {
+			"GUANGYUANDEYAOYUE3"
+		}
+	}
+	pg.base.memory_template[5594] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "GUANGYUANDEYAOYUE4",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "The Other Side of Purification",
+		condition = "Read the \"Heaven or Hell: The Beckoning\" side story.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5594,
+		icon = "memory_guangyuandeyaoyue",
+		is_open = 0,
+		unlock_pre = {
+			"GUANGYUANDEYAOYUE4"
+		}
+	}
+	pg.base.memory_template[5595] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "GUANGYUANDEYAOYUE5",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "Within the Heart of Darkness",
+		condition = "Read the \"Heaven or Hell: The Beckoning\" side story.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5595,
+		icon = "memory_guangyuandeyaoyue",
+		is_open = 0,
+		unlock_pre = {
+			"GUANGYUANDEYAOYUE5"
+		}
+	}
+	pg.base.memory_template[5596] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "GUANGYUANDEYAOYUE6",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "Fallen Wings in a Sea of Flowers",
+		condition = "Read the \"Heaven or Hell: The Beckoning\" side story.",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5596,
+		icon = "memory_guangyuandeyaoyue",
+		is_open = 0,
+		unlock_pre = {
+			"GUANGYUANDEYAOYUE6"
+		}
+	}
 	pg.base.memory_template[5501] = {
 		ship_group = 0,
 		subtitle = "",
@@ -82109,8 +82719,6 @@ end)()
 			"YICHANGDERICHANGZHAOMU10"
 		}
 	}
-end)()
-;(function()
 	pg.base.memory_template[5514] = {
 		ship_group = 0,
 		subtitle = "",
@@ -83335,6 +83943,8 @@ end)()
 			"NEPU_STAGE202"
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_template[10047] = {
 		ship_group = 0,
 		subtitle = "",
@@ -83911,8 +84521,6 @@ end)()
 			"LINGHANGYUANYANGCHENGJIHUA4"
 		}
 	}
-end)()
-;(function()
 	pg.base.memory_template[20004] = {
 		ship_group = 0,
 		subtitle = "",
@@ -85137,6 +85745,8 @@ end)()
 			"LINGHANGYUANTANXIN20"
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_template[20072] = {
 		ship_group = 0,
 		subtitle = "",
@@ -85713,8 +86323,6 @@ end)()
 			"LINGYANGZHEYANGCHENGJIHUA23"
 		}
 	}
-end)()
-;(function()
 	pg.base.memory_template[20104] = {
 		ship_group = 0,
 		subtitle = "",
@@ -86939,6 +87547,8 @@ end)()
 			"TANSUOZHEYANGCHENGJIHUA23"
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_template[20173] = {
 		ship_group = 0,
 		subtitle = "",
@@ -87515,8 +88125,6 @@ end)()
 			"TANSUOZHEXINZHIXUYU10"
 		}
 	}
-end)()
-;(function()
 	pg.base.memory_template[20206] = {
 		ship_group = 0,
 		subtitle = "",

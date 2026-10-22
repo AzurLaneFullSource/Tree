@@ -206,6 +206,7 @@ pg.furniture_data_template.all = {
 	348,
 	349,
 	350,
+	351,
 	100002,
 	100003,
 	100004,
@@ -286,6 +287,7 @@ pg.furniture_data_template.all = {
 	100086,
 	100088,
 	100089,
+	100091,
 	100090,
 	200001,
 	200002,
@@ -3661,7 +3663,34 @@ pg.furniture_data_template.all = {
 	343124,
 	343301,
 	343302,
-	343303
+	343303,
+	344001,
+	344002,
+	344101,
+	344102,
+	344103,
+	344104,
+	344105,
+	344106,
+	344107,
+	344108,
+	344109,
+	344110,
+	344111,
+	344112,
+	344113,
+	344114,
+	344115,
+	344116,
+	344117,
+	344118,
+	344119,
+	344301,
+	344302,
+	344303,
+	344304,
+	344305,
+	344306
 }
 pg.furniture_data_template.get_id_list_by_themeId = {
 	[0] = {
@@ -3865,6 +3894,7 @@ pg.furniture_data_template.get_id_list_by_themeId = {
 		348,
 		349,
 		350,
+		351,
 		100002,
 		100003,
 		100004,
@@ -3945,6 +3975,7 @@ pg.furniture_data_template.get_id_list_by_themeId = {
 		100086,
 		100088,
 		100089,
+		100091,
 		100090,
 		200001,
 		200002,
@@ -7581,6 +7612,35 @@ pg.furniture_data_template.get_id_list_by_themeId = {
 		343301,
 		343302,
 		343303
+	},
+	[144] = {
+		344001,
+		344002,
+		344101,
+		344102,
+		344103,
+		344104,
+		344105,
+		344106,
+		344107,
+		344108,
+		344109,
+		344110,
+		344111,
+		344112,
+		344113,
+		344114,
+		344115,
+		344116,
+		344117,
+		344118,
+		344119,
+		344301,
+		344302,
+		344303,
+		344304,
+		344305,
+		344306
 	}
 }
 pg.furniture_data_template.get_id_list_by_tag = {
@@ -9922,7 +9982,25 @@ pg.furniture_data_template.get_id_list_by_tag = {
 		343121,
 		343122,
 		343123,
-		343124
+		343124,
+		344101,
+		344102,
+		344103,
+		344104,
+		344105,
+		344106,
+		344107,
+		344108,
+		344109,
+		344110,
+		344111,
+		344112,
+		344113,
+		344114,
+		344115,
+		344116,
+		344117,
+		344118
 	},
 	{
 		1108,
@@ -10217,7 +10295,8 @@ pg.furniture_data_template.get_id_list_by_tag = {
 		340002,
 		341002,
 		342002,
-		343002
+		343002,
+		344002
 	},
 	{
 		1001,
@@ -10348,7 +10427,8 @@ pg.furniture_data_template.get_id_list_by_tag = {
 		340001,
 		341001,
 		342001,
-		343001
+		343001,
+		344001
 	},
 	{
 		1301,
@@ -10747,7 +10827,13 @@ pg.furniture_data_template.get_id_list_by_tag = {
 		341304,
 		343301,
 		343302,
-		343303
+		343303,
+		344301,
+		344302,
+		344303,
+		344304,
+		344305,
+		344306
 	},
 	{
 		1,
@@ -10945,6 +11031,7 @@ pg.furniture_data_template.get_id_list_by_tag = {
 		100086,
 		100088,
 		100089,
+		100091,
 		100090,
 		31101,
 		54104,
@@ -11171,7 +11258,8 @@ pg.furniture_data_template.get_id_list_by_tag = {
 		340105,
 		341119,
 		342117,
-		343119
+		343119,
+		344119
 	},
 	{
 		106,
@@ -11256,7 +11344,8 @@ pg.furniture_data_template.get_id_list_by_tag = {
 		343,
 		344,
 		347,
-		348
+		348,
+		351
 	}
 }
 pg.furniture_data_template.get_id_list_by_type = {
@@ -11390,7 +11479,8 @@ pg.furniture_data_template.get_id_list_by_type = {
 		340002,
 		341002,
 		342002,
-		343002
+		343002,
+		344002
 	},
 	{
 		120,
@@ -13729,7 +13819,25 @@ pg.furniture_data_template.get_id_list_by_type = {
 		343121,
 		343122,
 		343123,
-		343124
+		343124,
+		344101,
+		344102,
+		344103,
+		344104,
+		344105,
+		344106,
+		344107,
+		344108,
+		344110,
+		344111,
+		344112,
+		344113,
+		344114,
+		344115,
+		344116,
+		344117,
+		344118,
+		344119
 	},
 	{
 		1108,
@@ -14024,7 +14132,8 @@ pg.furniture_data_template.get_id_list_by_type = {
 		340001,
 		341001,
 		342001,
-		343001
+		343001,
+		344001
 	},
 	{
 		1101,
@@ -14193,7 +14302,8 @@ pg.furniture_data_template.get_id_list_by_type = {
 		340102,
 		343105,
 		343116,
-		343120
+		343120,
+		344109
 	},
 	{
 		349,
@@ -14581,7 +14691,13 @@ pg.furniture_data_template.get_id_list_by_type = {
 		341304,
 		343301,
 		343302,
-		343303
+		343303,
+		344301,
+		344302,
+		344303,
+		344304,
+		344305,
+		344306
 	},
 	{
 		1,
@@ -14756,6 +14872,7 @@ pg.furniture_data_template.get_id_list_by_type = {
 		347,
 		348,
 		350,
+		351,
 		100002,
 		100004,
 		100005,
@@ -14881,6 +14998,7 @@ pg.furniture_data_template.get_id_list_by_type = {
 		100083,
 		100086,
 		100089,
+		100091,
 		100090,
 		30123,
 		35128,
@@ -25054,6 +25172,50 @@ end)()
 		},
 		interAction_group = {}
 	}
+	pg.base.furniture_data_template[351] = {
+		effect = "",
+		name = "Miniature Startrace Beacon",
+		gain_by = "Tempesta and the Corridor of Fog",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 1,
+		count = 1,
+		describe = "A miniature model of a Startrace Beacon. Its dazzling starlight continues to illuminate the darkness.\nGiven to Commanders who participated in the Tempesta and the Corridor of Fog event.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 0,
+		icon = "fengfan4xunzhangicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 5,
+		tag = 8,
+		comfortable = 0,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 351,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		spine = {
+			{
+				"fengfan4xunzhang",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
 	pg.base.furniture_data_template[100002] = {
 		can_rotate = 0,
 		name = "Air Pump of Friendship",
@@ -30726,9 +30888,88 @@ end)()
 		},
 		interAction_group = {}
 	}
+	pg.base.furniture_data_template[100091] = {
+		gain_by = "",
+		name = "啾啾的移动飞艇",
+		count = 1,
+		type = 11,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "",
+		comfortable = 0,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 0,
+		icon = "yidongchengbaoicon",
+		deblocking = 1,
+		level = 1,
+		describe = "魔力蒸腾，向西六十里出发啾！",
+		rarity = 4,
+		can_rotate = 0,
+		tag = 6,
+		spine_action_replace = "",
+		belong = 1,
+		spine_extra = "",
+		canputon = 0,
+		id = 100091,
+		advice = 0,
+		size = {
+			7,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"yidongchengbao",
+				"normal",
+				nil,
+				true
+			},
+			{},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			},
+			{
+				1,
+				1
+			},
+			0.5
+		},
+		followBone = {
+			"char",
+			1
+		},
+		interAction_group = {}
+	}
 	pg.base.furniture_data_template[100090] = {
 		effect = "",
-		name = "藏宝旋风",
+		name = "Treasure Cyclone",
 		gain_by = "",
 		type = 11,
 		dir = 0,
@@ -30736,7 +30977,7 @@ end)()
 		picture = "",
 		is_get_time_note = 0,
 		count = 1,
-		describe = "快跟上，宝藏要逃走了！",
+		describe = "Hurry up! The treasure's getting away!",
 		is_3d_obj = 0,
 		spine_combine_action_replace = "",
 		themeId = 0,
@@ -31764,6 +32005,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[1105] = {
 		effect = "",
 		name = "Newspaper Cushion",
@@ -31852,8 +32095,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[1107] = {
 		effect = "",
 		name = "Radish Seedlings",
@@ -35911,6 +36152,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[5109] = {
 		effect = "",
 		name = "Podium",
@@ -36000,8 +36243,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[5112] = {
 		effect = "",
 		name = "Brick Table",
@@ -40269,6 +40510,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[11103] = {
 		effect = "",
 		name = "Garden Bench",
@@ -40369,8 +40612,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[11105] = {
 		effect = "",
 		name = "Dream Pot",
@@ -44579,6 +44820,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[14110] = {
 		effect = "",
 		name = "Cloud Sofa",
@@ -44669,8 +44912,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[14112] = {
 		effect = "",
 		name = "Saturn Table",
@@ -49601,6 +49842,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[18302] = {
 		effect = "",
 		name = "Area Gate",
@@ -49677,8 +49920,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[18304] = {
 		effect = "",
 		name = "Minimap",
@@ -54240,6 +54481,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[22201] = {
 		effect = "",
 		name = "Cup of Tea",
@@ -54316,8 +54559,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[22203] = {
 		effect = "",
 		name = "Tea Party Snacks",
@@ -59148,6 +59389,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[28001] = {
 		effect = "",
 		name = "Forest Wallpaper",
@@ -59218,8 +59461,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[28101] = {
 		effect = "",
 		name = "Forest Bush",
@@ -63757,6 +63998,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[30120] = {
 		effect = "",
 		name = "Cake Slice Table",
@@ -63883,8 +64126,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[30122] = {
 		can_rotate = 0,
 		name = "Red Cannon",
@@ -68367,6 +68608,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[37114] = {
 		effect = "",
 		name = "Sewer Hole",
@@ -68443,8 +68686,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[37116] = {
 		effect = "",
 		name = "Snowman Bath",
@@ -72725,6 +72966,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[40111] = {
 		effect = "",
 		name = "Snowy Fence",
@@ -72801,8 +73044,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[40114] = {
 		effect = "",
 		name = "Penguinjuu",
@@ -77297,6 +77538,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[44101] = {
 		effect = "",
 		name = "Rain-Drenched Grass Patch",
@@ -77411,8 +77654,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[44103] = {
 		effect = "",
 		name = "Rain-Drenched Bush",
@@ -81547,6 +81788,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[46126] = {
 		effect = "",
 		name = "Projector",
@@ -81631,8 +81874,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[46128] = {
 		effect = "",
 		name = "Exposed Circuitry",
@@ -85939,6 +86180,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[49121] = {
 		effect = "",
 		name = "Emblematic Carpet",
@@ -86015,8 +86258,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[49301] = {
 		effect = "",
 		name = "Lattice Window",
@@ -90323,6 +90564,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[54104] = {
 		effect = "",
 		name = "Strawberry Sticks",
@@ -90419,8 +90662,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[55001] = {
 		effect = "",
 		name = "Holoflooring",
@@ -94631,6 +94872,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[58113] = {
 		effect = "",
 		name = "Open-Air Bath",
@@ -94753,8 +94996,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[58115] = {
 		effect = "",
 		name = "Lion Dancers",
@@ -98997,6 +99238,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[62107] = {
 		effect = "",
 		name = "Iris River",
@@ -99073,8 +99316,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[62109] = {
 		effect = "",
 		name = "Iris Flower Bed",
@@ -103402,6 +103643,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[68112] = {
 		can_rotate = 0,
 		name = "Manjuu Cruiseship Float",
@@ -103559,8 +103802,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[68114] = {
 		can_rotate = 0,
 		name = "Manjuu Roller Coaster",
@@ -108161,6 +108402,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[72113] = {
 		effect = "",
 		name = "Banana Tree",
@@ -108237,8 +108480,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[72115] = {
 		effect = "",
 		name = "Pacific Reef",
@@ -112602,6 +112843,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[76115] = {
 		effect = "",
 		name = "Potted Bamboo",
@@ -112678,8 +112921,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[76117] = {
 		effect = "",
 		name = "Panda Drawers",
@@ -117024,6 +117265,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[80304] = {
 		effect = "",
 		name = "Wall-Mounted Clock",
@@ -117100,8 +117343,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[80306] = {
 		effect = "",
 		name = "Bottle Cap Decorations",
@@ -121215,6 +121456,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[84171] = {
 		effect = "",
 		name = "Intact Houses (Blue)",
@@ -121322,8 +121565,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[84174] = {
 		can_rotate = 1,
 		name = "Greenscreen",
@@ -125666,6 +125907,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[88110] = {
 		effect = "",
 		name = "Devilmanjuu",
@@ -125742,8 +125985,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[88112] = {
 		effect = "",
 		name = "Wine Barrel",
@@ -129801,6 +130042,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[91302] = {
 		effect = "",
 		name = "Wall-Mounted Speaker 2",
@@ -129877,8 +130120,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[91304] = {
 		effect = "",
 		name = "Square Ballerina Manjuu Portrait",
@@ -133987,6 +134228,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[95133] = {
 		effect = "",
 		name = "Siren Alchemy Cauldron",
@@ -134091,8 +134334,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[95140] = {
 		effect = "",
 		name = "Giant Manuscript",
@@ -138388,6 +138629,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[98312] = {
 		effect = "",
 		name = "Manjuu Portrait 1",
@@ -138464,8 +138707,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[98314] = {
 		effect = "",
 		name = "Manjuu Portrait 3",
@@ -143080,6 +143321,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[302112] = {
 		effect = "",
 		name = "Palais Staircase",
@@ -143156,8 +143399,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[302114] = {
 		effect = "",
 		name = "Palais Desk",
@@ -147734,6 +147975,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[305114] = {
 		effect = "",
 		name = "Bamboo Fence (Short)",
@@ -147810,8 +148053,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[305116] = {
 		effect = "",
 		name = "Shinobi Mansion Porch",
@@ -152525,6 +152766,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[310110] = {
 		effect = "",
 		name = "Backstage Shoe Rack",
@@ -152601,8 +152844,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[310112] = {
 		effect = "",
 		name = "Bunny Make-Up Chair 1 (With Tail)",
@@ -157305,6 +157546,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[315112] = {
 		gain_by = "",
 		name = "Creepy Streetlight",
@@ -157459,8 +157702,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[316001] = {
 		icon = "dibantolicon",
 		name = "Princessy Flooring",
@@ -161917,6 +162158,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[320101] = {
 		gain_by = "",
 		name = "Med Station Height Measurer",
@@ -162085,8 +162328,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[320103] = {
 		effect = "",
 		name = "Med Station Stool",
@@ -166711,6 +166952,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[325116] = {
 		effect = "",
 		name = "Wooden Shelf 2",
@@ -166787,8 +167030,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[325118] = {
 		effect = "",
 		name = "Study Desk",
@@ -171270,6 +171511,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[332106] = {
 		effect = "",
 		name = "Buckets of Purifying",
@@ -171358,8 +171601,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[332108] = {
 		effect = "",
 		name = "Temple Entrance",
@@ -175978,6 +176219,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[335113] = {
 		effect = "",
 		name = "Spring Auction Assistant",
@@ -176073,8 +176316,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[335115] = {
 		effect = "",
 		name = "Spring Auction Display Case 2",
@@ -180638,6 +180879,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[341112] = {
 		gain_by = "",
 		name = "Abandoned Isolation Tank",
@@ -180777,8 +181020,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[341114] = {
 		effect = "",
 		name = "Abandoned Hospital Storage 2",
@@ -183314,6 +183555,1297 @@ end)()
 		canputonGrid = {},
 		can_trigger = {
 			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[344001] = {
+		icon = "dibantegicon",
+		name = "Guild Floor",
+		gain_by = "",
+		type = 4,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "teg/dibanteg",
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 144,
+		size = "",
+		spine_extra = "",
+		level = 1,
+		describe = "Make your way into the guild hall and start your new life as an adventurer!",
+		rarity = 4,
+		advice = 0,
+		tag = 4,
+		spine_action_replace = "",
+		belong = 0,
+		deblocking = 1,
+		canputon = 0,
+		comfortable = 4,
+		id = 344001,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[344002] = {
+		icon = "qiangbitegicon",
+		name = "Guild Wall",
+		gain_by = "",
+		type = 1,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "teg/qiangbiteg",
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 144,
+		size = "",
+		spine_extra = "",
+		level = 5,
+		describe = "Make your way into the guild hall and start your new life as an adventurer!",
+		rarity = 4,
+		advice = 0,
+		tag = 3,
+		spine_action_replace = "",
+		belong = 0,
+		deblocking = 1,
+		canputon = 0,
+		comfortable = 4,
+		id = 344002,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[344101] = {
+		effect = "",
+		name = "Guild Mimic",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Maybe you should call it out before someone dives in head first!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 144,
+		icon = "baoxiangguaitegicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 344101,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"baoxiangguaiteg",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[344102] = {
+		effect = "",
+		name = "Guild Cupboard",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "teg/bianguiteg",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "The tableware is neatly arranged and ready to use.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 144,
+		icon = "bianguitegicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 2,
+		canputon = 0,
+		id = 344102,
+		can_rotate = 0,
+		size = {
+			1,
+			6
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[344103] = {
+		gain_by = "",
+		name = "Guild Long Table",
+		count = 1,
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "",
+		comfortable = 4,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 144,
+		icon = "changzhuotegicon",
+		deblocking = 1,
+		level = 1,
+		describe = "A long table lined with tasty food galore! Enjoy a well-deserved break and eat up!",
+		rarity = 4,
+		can_rotate = 1,
+		tag = 1,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 344103,
+		advice = 0,
+		size = {
+			4,
+			10
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"changzhuoteg",
+				"normal"
+			},
+			{},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit1",
+						nil,
+						"sit"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					1
+				},
+				{
+					{
+						"sit1"
+					},
+					{
+						"sit2"
+					},
+					{
+						"sit3"
+					}
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		spine_extra = {
+			{
+				{},
+				{
+					0,
+					0
+				},
+				{
+					1,
+					1
+				}
+			},
+			{
+				{},
+				{
+					0,
+					0
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		followBone = {
+			{
+				"char1",
+				1
+			},
+			{
+				"char2",
+				1
+			},
+			{
+				"char3",
+				1
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[344104] = {
+		effect = "",
+		name = "Guild Save Point",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Saving often is a good habit to have!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 144,
+		icon = "cundangdiantegicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 344104,
+		can_rotate = 0,
+		size = {
+			4,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"cundangdianteg",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[344105] = {
+		effect = "",
+		name = "Guild Prayer Pedestal",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Blow them out and make a wish~",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 144,
+		icon = "daogaotaitegicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 344105,
+		can_rotate = 0,
+		size = {
+			4,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"daogaotaiteg",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[344106] = {
+		effect = "",
+		name = "Guild Manjuu Knight Statue",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "teg/diaoxiangteg",
+		is_get_time_note = 0,
+		count = 2,
+		describe = "The knightly manjuu statue commands respect and lends the guild hall a stately and dignified mood.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 144,
+		icon = "diaoxiangtegicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 2,
+		canputon = 0,
+		id = 344106,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[344107] = {
+		effect = "",
+		name = "Guild Hooded Manjuu",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Put on the hood and become a bird of mystery, chirp!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 144,
+		icon = "doumaojiutegicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 344107,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"doumaojiuteg",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[344108] = {
+		effect = "",
+		name = "Guild Square Table",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "A table often used for idle chatter or killing time. A new quest might come around, too.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 144,
+		icon = "fangzhuotegicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 344108,
+		can_rotate = 0,
+		size = {
+			4,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"fangzhuoteg",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[344109] = {
+		effect = "",
+		name = "Guild Red Carpet",
+		gain_by = "",
+		type = 5,
+		dir = 0,
+		dorm_id = 0,
+		picture = "teg/hongditanteg",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Make a grand entrance with style!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 144,
+		icon = "hongditantegicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 2,
+		canputon = 0,
+		id = 344109,
+		can_rotate = 0,
+		size = {
+			3,
+			20
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[344110] = {
+		effect = "",
+		name = "Guild Reception Desk",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Please get your documents ready and line up in front of the reception desk.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 144,
+		icon = "jiedaizhuotegicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 344110,
+		can_rotate = 0,
+		size = {
+			9,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"jiedaizhuoteg",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[344111] = {
+		effect = "",
+		name = "Guild Altar",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "For staff only! No touching!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 144,
+		icon = "jitantegicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 344111,
+		can_rotate = 0,
+		size = {
+			8,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"jitanteg",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[344112] = {
+		effect = "",
+		name = "Guild Armored Manjuu",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "A courageous knight manjuu that upholds the peace and safety of the guild hall at all times.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 144,
+		icon = "kaijiajiutegicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 344112,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"kaijiajiuteg",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[344113] = {
+		effect = "",
+		name = "Guild Divider",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "teg/langanteg",
+		is_get_time_note = 0,
+		count = 2,
+		describe = "Step over it and you'll get points docked off your next quest!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 144,
+		icon = "langantegicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 2,
+		canputon = 0,
+		id = 344113,
+		can_rotate = 0,
+		size = {
+			1,
+			6
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[344114] = {
+		effect = "",
+		name = "Guild Pony Messenger",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "The guild's trusty messenger! It delivers everyone's mail!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 144,
+		icon = "mategicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 344114,
+		can_rotate = 0,
+		size = {
+			5,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"mateg",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[344115] = {
+		effect = "",
+		name = "Guild Storage",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "teg/muxiangteg",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Bits and bobs left behind by adventurers over time. You might just find something useful.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 144,
+		icon = "muxiangtegicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 2,
+		canputon = 0,
+		id = 344115,
+		can_rotate = 0,
+		size = {
+			2,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[344116] = {
+		effect = "",
+		name = "Guild Weapon Stash",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Swords, axes, spears... Make sure you know how to handle one of these before setting off!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 144,
+		icon = "wuqitongtegicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 344116,
+		can_rotate = 0,
+		size = {
+			2,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"wuqitongteg",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[344117] = {
+		gain_by = "",
+		name = "Guild Chess Table",
+		count = 1,
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "",
+		comfortable = 2,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 144,
+		icon = "yuanzhuotegicon",
+		deblocking = 1,
+		level = 1,
+		describe = "How about a thrilling and mentally stimulating game of manjuu chess?",
+		rarity = 2,
+		can_rotate = 0,
+		tag = 1,
+		spine_action_replace = "",
+		belong = 1,
+		spine_extra = "",
+		canputon = 0,
+		id = 344117,
+		advice = 0,
+		size = {
+			6,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"yuanzhuotegB",
+				"normal"
+			},
+			{
+				"yuanzhuotegT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			-1
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[344118] = {
+		effect = "",
+		name = "Guild Lucky Plant",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "teg/zhiwuteg",
+		is_get_time_note = 0,
+		count = 2,
+		describe = "Rumor has it that if you touch this strange plant before setting out on a quest, your success rate goes up!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 144,
+		icon = "zhiwutegicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 1,
+		canputon = 0,
+		id = 344118,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[344119] = {
+		gain_by = "",
+		name = "Guild Quest Board",
+		count = 1,
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "",
+		comfortable = 4,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 144,
+		icon = "renwubantegicon",
+		deblocking = 1,
+		level = 1,
+		describe = "Requests, lotteries, inquiries... You can find all kinds of things posted on it!",
+		rarity = 4,
+		can_rotate = 0,
+		tag = 7,
+		spine_action_replace = "",
+		belong = 1,
+		spine_extra = "",
+		canputon = 0,
+		id = 344119,
+		advice = 0,
+		size = {
+			6,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"renwubanteg",
+				"normal"
+			},
+			{},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"walk1",
+						0,
+						"walk"
+					},
+					{
+						"stand2",
+						0,
+						"stand2"
+					},
+					{
+						"walk2",
+						0,
+						"walk"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					0
+				}
+			},
+			{},
+			{
+				0,
+				0
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			1
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[344301] = {
+		effect = "",
+		name = "Guild Candle",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 5,
+		describe = "This candle has seen many a sleepless night filling reports.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 144,
+		icon = "bidengtegicon",
+		spine_extra = "",
+		level = 5,
+		advice = 0,
+		rarity = 1,
+		tag = 5,
+		comfortable = 1,
+		spine_action_replace = "",
+		belong = 2,
+		deblocking = 1,
+		canputon = 0,
+		id = 344301,
+		can_rotate = 0,
+		size = {
+			2,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"bidengteg",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[344302] = {
+		effect = "",
+		name = "Guild Window",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Open the window and see the world spread before your eyes! Your next adventure awaits beyond the horizon!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 144,
+		icon = "chuanghutegicon",
+		spine_extra = "",
+		level = 5,
+		advice = 0,
+		rarity = 3,
+		tag = 5,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 2,
+		deblocking = 1,
+		canputon = 0,
+		id = 344302,
+		can_rotate = 0,
+		size = {
+			10,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"chuanghuteg",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[344303] = {
+		effect = "",
+		name = "Guild Adventure Map",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		picture = "teg/dituteg",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "This map is just for reference! Don't blame me if you get lost or fall into a trap for following it blindly!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 144,
+		icon = "ditutegicon",
+		spine_extra = "",
+		level = 5,
+		advice = 0,
+		rarity = 3,
+		tag = 5,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 2,
+		comfortable = 3,
+		canputon = 0,
+		id = 344303,
+		can_rotate = 0,
+		size = {
+			10,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[344304] = {
+		effect = "",
+		name = "Guild Honor Flag",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		picture = "teg/qizhiteg",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Raise the flag for all to see! The guild hall is open for one and all, peep!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 144,
+		icon = "qizhitegicon",
+		spine_extra = "",
+		level = 5,
+		advice = 0,
+		rarity = 2,
+		tag = 5,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 2,
+		comfortable = 2,
+		canputon = 0,
+		id = 344304,
+		can_rotate = 0,
+		size = {
+			2,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[344305] = {
+		effect = "",
+		name = "Devil Manjuu Idol",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Take on that unreal difficulty quest! Take it on or you're a chicken, peep!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 144,
+		icon = "emohuategicon",
+		spine_extra = "",
+		level = 5,
+		advice = 0,
+		rarity = 3,
+		tag = 5,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 2,
+		deblocking = 1,
+		canputon = 0,
+		id = 344305,
+		can_rotate = 0,
+		size = {
+			4,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"emohuateg",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[344306] = {
+		effect = "",
+		name = "Angel Manjuu Idol",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "I'm praying for your swift and safe return, peep~",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 144,
+		icon = "tianshihuategicon",
+		spine_extra = "",
+		level = 5,
+		advice = 0,
+		rarity = 3,
+		tag = 5,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 2,
+		deblocking = 1,
+		canputon = 0,
+		id = 344306,
+		can_rotate = 0,
+		size = {
+			4,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"tianshihuateg",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
 		},
 		interAction_group = {}
 	}

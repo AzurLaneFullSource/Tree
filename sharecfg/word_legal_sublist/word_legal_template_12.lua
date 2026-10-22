@@ -394,6 +394,26 @@ function temp()
 		},
 		鸣 = {
 			this = true
+		},
+		伊 = {
+			尔 = {
+				· = {
+					贝 = {
+						号 = {
+							this = true,
+							（ = {
+								后 = {
+									排 = {
+										） = {
+											this = true
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 end
@@ -539,6 +559,15 @@ function temp()
 						尔 = {
 							this = true
 						}
+					}
+				}
+			}
+		},
+		利 = {
+			米 = {
+				耶 = {
+					号 = {
+						this = true
 					}
 				}
 			}

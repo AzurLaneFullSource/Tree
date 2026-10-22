@@ -7,6 +7,88 @@ var0_0.word_legal_template_15 = {}
 local var1_0 = var0_0.word_legal_template_15
 
 function temp()
+	var1_0.冈 = {
+		依 = {
+			沙 = {
+				瓦 = {
+					号 = {
+						this = true
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.君 = {
+		主 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.菈 = {
+		菈 = {
+			· = {
+				撒 = {
+					塔 = {
+						琳 = {
+							· = {
+								戴 = {
+									比 = {
+										路 = {
+											克 = {
+												this = true
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.梦 = {
+		梦 = {
+			· = {
+				贝 = {
+					莉 = {
+						雅 = {
+							· = {
+								戴 = {
+									比 = {
+										路 = {
+											克 = {
+												this = true
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var1_0.七 = {
 		省 = {
 			this = true
@@ -146,6 +228,27 @@ function temp()
 		睦 = {
 			号 = {
 				this = true
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.铁 = {
+		角 = {
+			号 = {
+				this = true,
+				（ = {
+					前 = {
+						排 = {
+							） = {
+								this = true
+							}
+						}
+					}
+				}
 			}
 		}
 	}
@@ -343,6 +446,9 @@ function temp()
 	var1_0["2"] = {
 		["2"] = {
 			this = true
+		},
+		B = {
+			this = true
 		}
 	}
 end
@@ -353,130 +459,6 @@ function temp()
 	var1_0["3"] = {
 		["3"] = {
 			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var1_0.久 = {
-		远 = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var1_0.猫 = {
-		音 = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var1_0.绊 = {
-		爱 = {
-			this = true,
-			· = {
-				E = {
-					l = {
-						e = {
-							g = {
-								a = {
-									n = {
-										t = {
-											this = true
-										}
-									}
-								}
-							}
-						}
-					}
-				},
-				A = {
-					n = {
-						n = {
-							i = {
-								v = {
-									e = {
-										r = {
-											s = {
-												a = {
-													r = {
-														y = {
-															this = true
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				},
-				S = {
-					u = {
-						p = {
-							e = {
-								r = {
-									G = {
-										a = {
-											m = {
-												e = {
-													r = {
-														this = true
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var1_0.白 = {
-		上 = {
-			吹 = {
-				雪 = {
-					this = true
-				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var1_0.时 = {
-		乃 = {
-			空 = {
-				this = true
-			}
-		},
-		崎 = {
-			狂 = {
-				三 = {
-					this = true
-				}
-			}
 		}
 	}
 end

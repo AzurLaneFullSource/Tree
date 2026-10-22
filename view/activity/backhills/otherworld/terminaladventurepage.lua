@@ -63,7 +63,7 @@ function var0_0.OnInit(arg0_3)
 end
 
 function var0_0.InitPtUI(arg0_5)
-	LoadImageSpriteAsync(Drop.New(arg0_5.ptData:GetRes()):getIcon(), arg0_5.ptIconTF, false)
+	LoadImageSpriteAsync(arg0_5.ptData:GetRes():getIcon(), arg0_5.ptIconTF, false)
 	arg0_5.awardUIList:make(function(arg0_6, arg1_6, arg2_6)
 		if arg0_6 == UIItemList.EventUpdate then
 			local var0_6 = arg1_6 + 1

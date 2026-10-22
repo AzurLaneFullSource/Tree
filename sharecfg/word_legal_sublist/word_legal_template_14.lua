@@ -7,6 +7,97 @@ var0_0.word_legal_template_14 = {}
 local var1_0 = var0_0.word_legal_template_14
 
 function temp()
+	var1_0.水 = {
+		星 = {
+			纪 = {
+				念 = {
+					this = true,
+					["."] = {
+						改 = {
+							this = true
+						}
+					},
+					· = {
+						M = {
+							E = {
+								T = {
+									A = {
+										this = true
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			号 = {
+				this = true
+			}
+		},
+		濑 = {
+			伊 = {
+				织 = {
+					this = true
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.恰 = {
+		巴 = {
+			耶 = {
+				夫 = {
+					this = true
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.古 = {
+		比 = {
+			雪 = {
+				夫 = {
+					this = true
+				}
+			}
+		},
+		手 = {
+			川 = {
+				唯 = {
+					this = true
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.摩 = {
+		尔 = {
+			曼 = {
+				斯 = {
+					克 = {
+						this = true
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var1_0.红 = {
 		色 = {
 			山 = {
@@ -437,88 +528,6 @@ function temp()
 			萝 = {
 				丝 = {
 					this = true
-				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var1_0.冈 = {
-		依 = {
-			沙 = {
-				瓦 = {
-					号 = {
-						this = true
-					}
-				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var1_0.君 = {
-		主 = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var1_0.菈 = {
-		菈 = {
-			· = {
-				撒 = {
-					塔 = {
-						琳 = {
-							· = {
-								戴 = {
-									比 = {
-										路 = {
-											克 = {
-												this = true
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var1_0.梦 = {
-		梦 = {
-			· = {
-				贝 = {
-					莉 = {
-						雅 = {
-							· = {
-								戴 = {
-									比 = {
-										路 = {
-											克 = {
-												this = true
-											}
-										}
-									}
-								}
-							}
-						}
-					}
 				}
 			}
 		}

@@ -276,55 +276,61 @@ function var0_0.initNotificationHandleDic(arg0_22)
 
 			arg0_46.viewComponent:emit(NewMainMediator.REMOVE_LAYERS, arg1_46:getBody())
 		end,
-		[PlayerProxy.UPDATED] = function(arg0_47, arg1_47)
-			arg0_47.viewComponent:OnPlayerUpdated()
+		[GAME.STORY_BEGIN] = function(arg0_47, arg1_47)
+			arg0_47.viewComponent:emit(NewMainScene.STORY_BEGIN)
 		end,
-		[GAME.END_REFLUX_CG] = function(arg0_48, arg1_48)
-			arg0_48.viewComponent:ShowOrHideBtnEffect(true)
+		[GAME.STORY_END] = function(arg0_48, arg1_48)
+			arg0_48.viewComponent:emit(NewMainScene.STORY_END)
 		end,
-		[GAME.START_REFLUX_CG] = function(arg0_49, arg1_49)
-			arg0_49.viewComponent:ShowOrHideBtnEffect(false)
+		[PlayerProxy.UPDATED] = function(arg0_49, arg1_49)
+			arg0_49.viewComponent:OnPlayerUpdated()
 		end,
-		[ActivityProxy.UPDATED_TIP] = function(arg0_50, arg1_50)
-			arg0_50.viewComponent:emit(MainBaseActivityBtn.UPDATED_TIP)
+		[GAME.END_REFLUX_CG] = function(arg0_50, arg1_50)
+			arg0_50.viewComponent:ShowOrHideBtnEffect(true)
 		end,
-		[MiniGameProxy.ON_HUB_DATA_UPDATE] = function(arg0_51, arg1_51)
-			local var0_51 = arg0_51.viewComponent:GetFlagShip()
+		[GAME.START_REFLUX_CG] = function(arg0_51, arg1_51)
+			arg0_51.viewComponent:ShowOrHideBtnEffect(false)
+		end,
+		[ActivityProxy.UPDATED_TIP] = function(arg0_52, arg1_52)
+			arg0_52.viewComponent:emit(MainBaseActivityBtn.UPDATED_TIP)
+		end,
+		[MiniGameProxy.ON_HUB_DATA_UPDATE] = function(arg0_53, arg1_53)
+			local var0_53 = arg0_53.viewComponent:GetFlagShip()
 
-			if arg0_51.viewComponent.theme and arg0_51.viewComponent.theme:IsLoaded() then
-				arg0_51.viewComponent.theme:Refresh(var0_51)
+			if arg0_53.viewComponent.theme and arg0_53.viewComponent.theme:IsLoaded() then
+				arg0_53.viewComponent.theme:Refresh(var0_53)
 			end
 		end,
-		[GAME.CRUSING_CMD_DONE] = function(arg0_52, arg1_52)
-			local var0_52 = arg1_52:getBody()
-			local var1_52 = var0_52.awards
-			local var2_52 = var0_52.callback
+		[GAME.CRUSING_CMD_DONE] = function(arg0_54, arg1_54)
+			local var0_54 = arg1_54:getBody()
+			local var1_54 = var0_54.awards
+			local var2_54 = var0_54.callback
 
-			arg0_52.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_52, var2_52)
+			arg0_54.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_54, var2_54)
 		end
 	}
 end
 
-function var0_0.BuildDebugBattleLoop(arg0_53, arg1_53)
+function var0_0.BuildDebugBattleLoop(arg0_55, arg1_55)
 	if not IsUnityEditor then
 		return
 	end
 
-	local var0_53 = {}
+	local var0_55 = {}
 
-	for iter0_53, iter1_53 in arg1_53:gmatch("%s+(%S+)") do
-		table.insert(var0_53, iter0_53)
+	for iter0_55, iter1_55 in arg1_55:gmatch("%s+(%S+)") do
+		table.insert(var0_55, iter0_55)
 	end
 
-	local var1_53 = {
-		loopCount = tonumber(var0_53[2]),
-		loopStages = underscore.rest(var0_53, 3),
+	local var1_55 = {
+		loopCount = tonumber(var0_55[2]),
+		loopStages = underscore.rest(var0_55, 3),
 		tempList = {}
 	}
 
-	_G.InDebugBattleLoop = var1_53
+	_G.InDebugBattleLoop = var1_55
 
-	arg0_53.viewComponent:CheckDebugBattleLoop()
+	arg0_55.viewComponent:CheckDebugBattleLoop()
 end
 
 return var0_0

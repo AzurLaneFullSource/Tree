@@ -19,6 +19,8 @@ var0_0.ON_ENTER_DONE = "NewMainScene.ON_ENTER_DONE"
 var0_0.ENTER_SILENT_VIEW = "NewMainScene.ENTER_SILENT_VIEW"
 var0_0.EXIT_SILENT_VIEW = "NewMainScene.EXIT_SILENT_VIEW"
 var0_0.L2D_BOUND_CHANGE = "NewMainScene.L2D_BOUND_CHANGE"
+var0_0.STORY_BEGIN = "NewMainScene.STORY_BEGIN"
+var0_0.STORY_END = "NewMainScene.STORY_END"
 var0_0.RESET_L2D = "NewMainScene.RESET_L2D"
 
 function var0_0.getUIName(arg0_1)

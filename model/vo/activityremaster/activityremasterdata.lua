@@ -217,72 +217,77 @@ function var0_0.GetFurnitureTotalCnt(arg0_27)
 end
 
 function var0_0.GetStartTime(arg0_28, arg1_28)
-	local var0_28 = getProxy(ActivityRemasterProxy).actTimeID
-	local var1_28 = pg.activity_re_timer[var0_28].timer[2]
+	local var0_28 = arg0_28:GetStartTimeTable(arg1_28)
 
-	return pg.TimeMgr.GetInstance():parseTimeFromConfig(var1_28)
+	return pg.TimeMgr.GetInstance():parseTimeFromConfig(var0_28)
 end
 
-function var0_0.GetActivityTimeDesc(arg0_29, arg1_29, arg2_29)
+function var0_0.GetStartTimeTable(arg0_29, arg1_29)
 	local var0_29 = getProxy(ActivityRemasterProxy).actTimeID
 
-	if not pg.activity_re_timer[var0_29] then
+	return pg.activity_re_timer[var0_29].timer[2]
+end
+
+function var0_0.GetActivityTimeDesc(arg0_30, arg1_30, arg2_30)
+	local var0_30 = getProxy(ActivityRemasterProxy).actTimeID
+
+	if not pg.activity_re_timer[var0_30] then
 		return ""
 	end
 
-	local var1_29 = arg0_29:getConfig("act_time")
-	local var2_29
+	local var1_30 = arg0_30:getConfig("act_time")
+	local var2_30
 
-	for iter0_29, iter1_29 in ipairs(var1_29) do
-		if iter1_29[1] == arg1_29 then
-			var2_29 = iter1_29
+	for iter0_30, iter1_30 in ipairs(var1_30) do
+		if iter1_30[1] == arg1_30 then
+			var2_30 = iter1_30
 
 			break
 		end
 	end
 
-	if not var2_29 then
+	if not var2_30 then
 		return ""
 	end
 
-	local var3_29 = getProxy(ActivityProxy):RawGetActivityById(arg1_29)
+	local var3_30 = getProxy(ActivityProxy):RawGetActivityById(arg1_30)
 
-	if not var3_29 or var3_29:isEnd() then
+	if not var3_30 or var3_30:isEnd() then
 		return ""
 	end
 
-	local var4_29 = pg.TimeMgr.GetInstance():STimeDescC(var3_29.stopTime, "%Y/%m/%d/%H/%M/%S")
-	local var5_29 = string.split(var4_29, "/")
-	local var6_29 = pg.activity_re_timer[var0_29].timer[2]
-	local var7_29 = var2_29[1]
-	local var8_29 = var2_29[2]
-	local var9_29 = var2_29[3]
-	local var10_29 = pg.activity_re_timer[var0_29].is_maintain == var0_0.MAINTAIN
+	local var4_30 = pg.TimeMgr.GetInstance():STimeDescC(var3_30.stopTime, "%Y/%m/%d/%H/%M/%S")
+	local var5_30 = string.split(var4_30, "/")
+	local var6_30 = pg.activity_re_timer[var0_30].timer[2]
+	local var7_30 = var2_30[1]
+	local var8_30 = var2_30[2]
+	local var9_30 = var2_30[3]
+	local var10_30 = pg.activity_re_timer[var0_30].is_maintain == var0_0.MAINTAIN
 
-	return GetActTimeDesc(arg2_29, var10_29, var6_29[1][2], var6_29[1][3], var5_29[2], var5_29[3], var5_29[4], var5_29[5], var5_29[6])
+	return GetActTimeDesc(arg2_30, var10_30, var6_30[1][2], var6_30[1][3], var5_30[2], var5_30[3], var5_30[4], var5_30[5], var5_30[6])
 end
 
-function var0_0.GetActivityTimeDescByBanner(arg0_30, arg1_30, arg2_30)
-	local var0_30 = arg0_30:getConfig("act_time")
-	local var1_30
+function var0_0.GetActivityTimeDescByBanner(arg0_31, arg1_31, arg2_31)
+	local var0_31 = arg0_31:getConfig("act_time")
+	local var1_31
 
-	for iter0_30, iter1_30 in ipairs(var0_30) do
-		if iter1_30[3] == arg1_30 then
-			var1_30 = iter1_30[1]
+	for iter0_31, iter1_31 in ipairs(var0_31) do
+		if iter1_31[3] == arg1_31 then
+			var1_31 = iter1_31[1]
 
 			break
 		end
 	end
 
-	if not var1_30 then
+	if not var1_31 then
 		return ""
 	end
 
-	return arg0_30:GetActivityTimeDesc(var1_30, arg2_30)
+	return arg0_31:GetActivityTimeDesc(var1_31, arg2_31)
 end
 
-function var0_0.GetName(arg0_31)
-	return arg0_31:getConfig("name") or ""
+function var0_0.GetName(arg0_32)
+	return arg0_32:getConfig("name") or ""
 end
 
 return var0_0

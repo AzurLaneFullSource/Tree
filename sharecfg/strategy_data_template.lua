@@ -386,6 +386,10 @@ pg.strategy_data_template.all = {
 	201909,
 	201910,
 	201911,
+	201924,
+	201928,
+	201935,
+	201940,
 	205001,
 	205002,
 	205003,
@@ -4669,6 +4673,50 @@ end)()
 		desc = "During battle, when Azuchi's HP drops below 20.0%: she will enter the <color=#92fc63>Berserk state, becoming invulnerable for 15s</color>. This effect has a 45s CD.\nWhile in the Berserk state, Azuchi inflicts no damage with her projectiles. Instead, she will restore 3.0% of her max HP each time her projectiles hit one of your ships.\n\n- Hard Mode Details -\nThe hitbox of your Vanguard fleet is <color=#92fc63>limited to only the frontmost ship, and the size of the hitbox is also significantly reduced</color>.\nWhen your ship is hit, it will become invulnerable for a short period of time.\n\nEnemy DMG dealt is <color=#ffc038>significantly increased</color>. Enemy projectiles cannot be nullified by airstrikes; however, when an ally launches an airstrike, the frontmost ship of the Vanguard fleet becomes invulnerable for 3s.\nThe ￼<color=#92fc63>DMG reduction/evasion effects</color> of following gear or skills are rendered ineffective:\n[Fiercer When Cornered], [Operation Rainbow], [Eleventh Hour], [I Will Not Yield!]",
 		arg = {}
 	}
+	pg.base.strategy_data_template[201924] = {
+		buff_id = 201924,
+		name = "Corridor of Fog",
+		iconSize = "",
+		type = 10,
+		id = 201924,
+		icon = "201924",
+		buff_type = 0,
+		desc = "Under the interference of the Corridor of Fog. Reduces allies' ACC by 5.0%, and increases enemies' SPD and EVA by 10.0%.",
+		arg = {}
+	}
+	pg.base.strategy_data_template[201928] = {
+		buff_id = 0,
+		name = "Star-Sinking Abyss",
+		iconSize = "",
+		type = 10,
+		id = 201928,
+		icon = "201928",
+		buff_type = 0,
+		desc = "During battle, whirlpools will move around the battlefield. Allies and enemies caught in the whirlpool will have heavily reduced SPD and take DMG over time.",
+		arg = {}
+	}
+	pg.base.strategy_data_template[201935] = {
+		buff_id = 0,
+		name = "Challenge Mode",
+		iconSize = "",
+		type = 10,
+		id = 201935,
+		icon = "200908",
+		buff_type = 0,
+		desc = "At the start of battle, Ormrinn Langi is protected by the Star-Sinking Beast, Orm, and allies will only be able to damage the Star-Sinking Beast, Orm. When Star-Sinking Beast, Orm's HP falls below 20.0%, it will permanently enter an Ethereal state and become invulnerable to attacks; at that point, <color=#92fc63>Ormrinn Langi can be damaged</color>. Star-Sinking Beast, Orm is immune to normal Burn effects, but <color=#92fc63>takes 50.0% increased DMG while afflicted with Burn</color>.",
+		arg = {}
+	}
+	pg.base.strategy_data_template[201940] = {
+		buff_id = 0,
+		name = "Challenge Mode",
+		iconSize = "",
+		type = 10,
+		id = 201940,
+		icon = "200908",
+		buff_type = 0,
+		desc = "At the start of battle, Ormrinn Langi is protected by the Star-Sinking Beast, Orm, and allies will only be able to damage the Star-Sinking Beast, Orm. When Star-Sinking Beast, Orm's HP falls below 20.0%, it will enter an Ethereal state and become invulnerable to attacks; at that point, <color=#92fc63>Ormrinn Langi can be damaged</color>. While in the Ethereal state, Star-Sinking Beast, Orm restores 5.0% HP per second; upon reaching 60.0% HP, Star-Sinking Beast, Orm loses the Ethereal state, and Ormrinn Langi can no longer be damaged.\nStar-Sinking Beast, Orm is immune to normal Burn effects, but <color=#92fc63>takes 50.0% increased DMG and cannot restore HP while afflicted with Burn</color>.\n\n- Hard Mode Details -\nThe hitbox of your Vanguard fleet is <color=#92fc63>limited to only the frontmost ship, and the size of the hitbox is also significantly reduced</color>.\nWhen your ship is hit, it will become invulnerable for a short period of time.\n\nEnemy DMG dealt is <color=#ffc038>significantly increased</color>. Enemy projectiles cannot be nullified by airstrikes; however, when an ally launches an airstrike, the frontmost ship of the Vanguard fleet becomes invulnerable for 3s.\n\nThe <color=#92fc63>DMG reduction/evasion effects</color> of the following gear or skills are rendered ineffective:\n[Fiercer When Cornered], [Operation Rainbow], [Eleventh Hour], [I Will Not Yield!]",
+		arg = {}
+	}
 	pg.base.strategy_data_template[205001] = {
 		buff_id = 205001,
 		name = "活动关卡标志A",
@@ -4823,6 +4871,8 @@ end)()
 		desc = "15s after the battle starts, and every 20s after that: your fleet receives supporting barrages; enemies hit by these barrages have their DMG taken increased by 3.0% for 8s.",
 		arg = {}
 	}
+end)()
+;(function()
 	pg.base.strategy_data_template[300008] = {
 		buff_id = 0,
 		name = "Core Level 4",
@@ -4867,8 +4917,6 @@ end)()
 		desc = "15s after the battle starts, and every 20s after that: your fleet receives supporting barrages; enemies hit by these barrages have their DMG taken increased by 3.0% for 8s.",
 		arg = {}
 	}
-end)()
-;(function()
 	pg.base.strategy_data_template[300012] = {
 		buff_id = 0,
 		name = "Core Level 4",
