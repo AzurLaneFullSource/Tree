@@ -10,22 +10,13 @@ function var0_0.getResource(arg0_2, arg1_2)
 	if arg0_2:IsImageTgName() then
 		local var1_2 = getProxy(ActivityProxy):getCorePanelActivities(arg0_2.contextData.coreName)
 
-		warning(PrintTable(var1_2))
-
 		for iter0_2, iter1_2 in ipairs(var1_2) do
 			local var2_2 = string.lower(iter1_2:getConfig("title_res_tag"))
 			local var3_2 = "coreactivityuitable/" .. var2_2 .. "_text"
 			local var4_2 = "coreactivityuitable/" .. var2_2 .. "_text_selected"
-			local var5_2 = checkABExist(var3_2)
-			local var6_2 = checkABExist(var4_2)
 
-			if var5_2 then
-				table.insert(var0_2, var3_2)
-			end
-
-			if var6_2 then
-				table.insert(var0_2, var4_2)
-			end
+			table.insert(var0_2, var3_2)
+			table.insert(var0_2, var4_2)
 		end
 	end
 
